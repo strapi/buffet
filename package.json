@@ -7,15 +7,22 @@
     "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments --ignore components/**/*.test.js",
     "build-storybook": "build-storybook",
     "lint": "eslint --cache src .storybook stories",
+    "lint:staged": "lint-staged",
+    "lint:fix": "eslint src/ .storybook/ stories/ --fix",
+    "pretty-quick:staged": "pretty-quick --staged",
     "storybook": "start-storybook -p 6006"
   },
-  "precommit": "NODE_ENV=production lint-staged",
   "lint-staged": {
     "*.{js,jsx}": [
       "pretty-quick --staged",
-      "eslint src/ --fix",
+      "yarn run lint:fix",
       "git add --force"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:staged"
+    }
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
