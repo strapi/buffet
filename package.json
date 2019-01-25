@@ -9,7 +9,6 @@
     "lint": "eslint --cache src .storybook stories",
     "lint:staged": "lint-staged",
     "lint:fix": "eslint src/ .storybook/ stories/ --fix",
-    "pretty-quick:staged": "pretty-quick --staged",
     "storybook": "start-storybook -p 6006"
   },
   "lint-staged": {
