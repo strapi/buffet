@@ -77,7 +77,6 @@
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
     "plop": "^2.2.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^1.16.1",
     "pretty-quick": "^1.10.0",
     "rimraf": "^2.6.2",
