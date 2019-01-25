@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import validate from '../../utils/inputsValidation';
 
+// NOTE: The api should have the error prop only
 class ErrorWrapper extends React.Component {
   state = { error: false, errorMessage: '', hasInitialValue: false };
 
