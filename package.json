@@ -16,6 +16,7 @@
     "*.{js,jsx}": [
       "pretty-quick --staged",
       "yarn run lint:fix",
+      "yarn run lint",
       "git add --force"
     ]
   },
