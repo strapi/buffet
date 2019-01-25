@@ -5,8 +5,17 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments --ignore components/**/*.test.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint --cache src .storybook stories",
+    "storybook": "start-storybook -p 6006"
+  },
+  "precommit": "NODE_ENV=production lint-staged",
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "eslint src/ --fix",
+      "git add --force"
+    ]
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -24,10 +33,22 @@
     "@storybook/addon-links": "^4.1.11",
     "@storybook/addons": "^4.1.11",
     "@storybook/react": "^4.1.11",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.1.3",
     "css-loader": "^1.0.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
+    "prettier": "^1.16.1",
+    "pretty-quick": "^1.10.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.23.0",
