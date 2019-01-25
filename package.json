@@ -6,10 +6,14 @@
   "scripts": {
     "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments --ignore components/**/*.test.js",
     "build-storybook": "build-storybook",
-    "lint": "eslint --cache src .storybook stories",
+    "lint": "eslint --cache src .storybook internals stories",
     "lint:staged": "lint-staged",
-    "lint:fix": "eslint src/ .storybook/ stories/ --fix",
-    "storybook": "start-storybook -p 6006"
+    "lint:fix": "eslint src/ .storybook/ stories/ internals/ --fix",
+    "storybook": "start-storybook -p 6006",
+    "pretest": "yarn test:clean && yarn lint",
+    "test:clean": "rimraf ./coverage",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -17,12 +21,20 @@
       "yarn run lint:fix",
       "yarn run lint",
       "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:staged"
+      "pre-commit": "yarn lint:staged",
+      "pre-push": "yarn test"
     }
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -34,24 +46,33 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.1.11",
     "@storybook/addon-links": "^4.1.11",
     "@storybook/addons": "^4.1.11",
     "@storybook/react": "^4.1.11",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.1.3",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.12.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jest": "^22.1.3",
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "jest-styled-components": "^6.3.1",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
     "prettier": "^1.16.1",
