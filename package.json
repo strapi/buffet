@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "buffet",
+  "main": "dist/index",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments --ignore components/**/*.test.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.5.10",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.1.3",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
