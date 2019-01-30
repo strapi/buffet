@@ -29,4 +29,16 @@ describe('<Button />', () => {
     const renderedComponent = enzymeFind(wrapper, Button);
     expect(renderedComponent.prop('attribute')).toBeUndefined();
   });
+
+  it('should adopt a default type button', () => {
+    const wrapper = mount(<Button />);
+    const renderedComponent = enzymeFind(wrapper, Button);
+    expect(renderedComponent.prop('type')).toEqual('button');
+  });
+
+  it('should adopt a type submit', () => {
+    const wrapper = mount(<Button type="submit" />);
+    const renderedComponent = enzymeFind(wrapper, Button);
+    expect(renderedComponent.prop('type')).toEqual('submit');
+  });
 });
