@@ -25,6 +25,7 @@ const StyledButton = styled.button`
   cursor:pointer;
   outline: 0;
   height: 30px;
+  font-family: 'LatoSemiBold';
   &:hover {
     -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
     -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
