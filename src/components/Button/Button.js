@@ -1,14 +1,9 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from 'react';
+import StyledButton from './StyledButton';
 
-const Button = styled.button``;
-
-Button.defaultProps = {
-  type: 'button',
-};
-
-Button.propTypes = {
-  type: PropTypes.string,
-};
+function Button(props) {
+  const content = props.label ? props.label : props.children;
+  return <StyledButton {...props}>{content}</StyledButton>;
+}
 
 export default Button;
