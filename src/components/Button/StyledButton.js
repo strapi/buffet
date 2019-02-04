@@ -1,110 +1,87 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-
-const darkBlue = '#1C5DE7';
-// const mediumBlue = '#005EEA';
-// const lightBlue = '#0097F6';
-
-const lightGrey = '#F6F6F6';
-const mediumGrey = '#979797';
-
-const darkOrange = '#F64D0A';
-const orangeBorder = 'rgba(255, 0, 0, 0.2)';
-const orangeBkgd = 'rgba(255, 0, 0, 0.15)';
-// const mediumOrange = '#F64D0A';
-// const lightOrange = '#F68E0E';
+import colors from '../../assets/styles/Colors';
+import sizes from '../../assets/styles/Sizes';
+import mixins from '../../assets/styles/Mixins';
 
 const StyledButton = styled.button`
-  font-size: 1em;
-  margin: 1em;
-  padding: 0 1em;
-  border-radius: 3px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+
+  /*
+   * Theme
+   */
+
+  // General style
+  ${mixins().bbox}
+  height: ${sizes.button.height.large};
+  padding: 0 ${sizes.button.padding.large};
+  font-family: 'LatoSemiBold';
+  font-size: 13px;
+  line-height: 100%;
+  border-radius: ${sizes.button.radius};
   cursor:pointer;
   outline: 0;
-  height: 30px;
-  font-family: 'LatoSemiBold';
   &:hover {
-    -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
-    -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+    ${mixins(colors.lightGreyAlpha).bshadow}
   }
   &:active {
-    -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.1);
-    box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.1);
+    ${mixins(colors.lightGreyAlpha).bshadow}
   }
 
-  // Type
+  // Specific style
   ${props =>
-    props.type === 'primary' &&
+    props.color === 'primary' &&
     css`
-      background-image: linear-gradient(
-        to right top,
-        #306ded,
-        #2f78f1,
-        #3283f3,
-        #3a8ef6,
-        #4598f7
-      );
-      color: white;
+      background-image: ${colors.blueGradient};
+      color: ${colors.white};
       border: 0;
     `}
-
+ 
   ${props =>
-    props.type === 'secondary' &&
+    props.color === 'secondary' &&
     css`
-      border: 1px solid ${mediumGrey};
-      background-color: ${lightGrey};
+      border: 1px solid ${colors.darkBlue};
+      color: ${colors.darkBlue};
+      padding: 0 ${sizes.button.padding.small};
+      height: ${sizes.button.height.small};
+      line-height: 24px;
     `}}
 
   ${props =>
-    props.type === 'cancel' &&
+    props.color === 'cancel' &&
     css`
-      border: 1px solid ${mediumGrey};
-      background-color: ${lightGrey};
-      color: ${mediumGrey};
+      border: 1px solid ${colors.mediumGrey};
+      color: ${colors.mediumGrey};
     `}}
-      
+
   ${props =>
-    props.type === 'outline' &&
+    props.color === 'delete' &&
     css`
-      border: 1px solid ${darkBlue};
-      color: ${darkBlue};
-      height: 26px;
-      font-size: 14px;
-    `}
-  
-  ${props =>
-    props.type === 'danger' &&
-    css`
-      border: 1px solid ${darkOrange};
-      color: ${darkOrange};
-    `}
-  
-  ${props =>
-    props.type === 'delete' &&
-    css`
-      border: 1px solid ${orangeBorder};
-      background-color: ${orangeBkgd};
-      color: ${darkOrange};
+      border: 1px solid ${colors.orangeBorder};
+      background-color: ${colors.orangeBkgd};
+      color: ${colors.darkOrange};
     `}
 
-  // Left icons  
+
+  /*
+  * Left icons
+  */
+
+  // General style
   ${props =>
-    props.icon &&
+    !!props.icon &&
     css`
       &::before {
         font-family: 'FontAwesome';
         font-weight: 600;
         font-size: 14px;
-        margin-right: 13px;
+        margin-right: 10px;
         line-height: 100%;
+        display: inline-block;
+        vertical-align: middle;
       }
     `}   
 
+  // Icon specified
   ${props =>
     props.icon === 'add' &&
     css`
@@ -113,30 +90,33 @@ const StyledButton = styled.button`
       }
     `}      
 
-    ${props =>
-      props.icon === 'back' &&
-      css`
-        &::before {
-          content: '\f053';
-        }
-      `}      
-  
-      ${props =>
-        props.icon === 'trash' &&
-        css`
-          &::before {
-            content: '\f014';
-            font-size: 18px;
-          }
-        `}
-  `;
+  ${props =>
+    props.icon === 'back' &&
+    css`
+      &::before {
+        content: '\f053';
+      }
+    `}      
+
+  ${props =>
+    props.icon === 'trash' &&
+    css`
+      &::before {
+        content: '\f014';
+        vertical-align: inherit;
+      }
+    `}
+`;
 
 StyledButton.defaultProps = {
-  type: 'button'
+  type: 'button',
+  color: 'primary',
 };
 
 StyledButton.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
+  icon: PropTypes.oneOf(['add', 'back', 'trash']),
 };
 
 export default StyledButton;

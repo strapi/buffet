@@ -38,7 +38,7 @@ class ErrorWrapper extends React.Component {
 
     if (hasInitialValue) {
       const {
-        target: { value }
+        target: { value },
       } = e;
       const errorType = validate(value, validations, type);
       const errorMessage = translatedErrors[errorType] || '';
@@ -75,7 +75,7 @@ ErrorWrapper.propTypes = {
   translatedErrors: PropTypes.object,
   type: PropTypes.string,
   validations: PropTypes.object,
-  value: PropTypes.any
+  value: PropTypes.any,
 };
 
 ErrorWrapper.defaultProps = {
@@ -92,11 +92,11 @@ ErrorWrapper.defaultProps = {
     min: 'This is too small',
     minLength: 'This is too short',
     required: 'This value is required',
-    regex: 'Thid does not match the format'
+    regex: 'Thid does not match the format',
   },
   type: 'text',
   validations: {},
-  value: null
+  value: null,
 };
 
 export default ErrorWrapper;

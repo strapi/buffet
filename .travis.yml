@@ -25,6 +25,7 @@ before_script:
 script:
   - yarn run lint
   - yarn run test
+  - yarn run build
 
 cache:
   directories:

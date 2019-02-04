@@ -7,40 +7,29 @@ const stories = storiesOf('Button|Button', module);
 
 // Primary
 stories.add('Button|ButtonPrimary', () => (
-  <Button type="primary" label="Save" />
+  <Button type="submit" color="primary" label="Save" />
 ));
 stories.add('Button|ButtonPrimaryIcon', () => (
-  <Button type="primary" icon="add" label="Save" />
+  <Button type="submit" color="primary" icon="add" label="Save" />
 ));
 
 // Secondary
 stories.add('Button|ButtonSecondary', () => (
-  <Button type="secondary" label="Text" />
+  <Button type="submit" color="secondary" label="Text" />
 ));
 stories.add('Button|ButtonSecondaryIcon+', () => (
-  <Button type="secondary" icon="add" label="Add" />
+  <Button type="submit" color="secondary" icon="add" label="Add" />
 ));
 stories.add('Button|ButtonSecondaryIcon<', () => (
-  <Button type="secondary" icon="back" label="Back" />
+  <Button type="submit" color="secondary" icon="back" label="Back" />
 ));
 
 // Cancel
 stories.add('Button|ButtonCancel', () => (
-  <Button type="cancel" label="Cancel" />
+  <Button type="submit" color="cancel" label="Cancel" />
 ));
 
-// Outline
-stories.add('Button|ButtonOutline', () => (
-  <Button type="outline" label="Text" />
-));
-stories.add('Button|ButtonOutline+', () => (
-  <Button type="outline" icon="add" label="Text" />
-));
-
-// Danger
-stories.add('Button|ButtonDanger', () => (
-  <Button type="danger" label="Danger" />
-));
+// Delete
 stories.add('Button|ButtonDelete', () => (
-  <Button type="delete" icon="trash" label="Delete" />
+  <Button type="submit" color="delete" icon="trash" label="Delete" />
 ));
