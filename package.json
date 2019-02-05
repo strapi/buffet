@@ -4,7 +4,7 @@
   "main": "dist/index",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments --ignore components/**/*.test.js",
+    "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "build-storybook": "build-storybook",
     "lint": "eslint --cache src .storybook internals stories",
     "lint:staged": "lint-staged",
@@ -14,7 +14,8 @@
     "pretest": "yarn test:clean && yarn lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "test:update": "cross-env NODE_ENV=test jest -u"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -42,9 +43,11 @@
     "prop-types": "^15.5.10",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.7.0",
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-env": "^7.3.1",
@@ -56,6 +59,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "bootstrap": "^4.2.1",
     "cross-env": "^5.1.3",
     "css-loader": "^1.0.0",
     "enzyme": "^3.8.0",

@@ -72,11 +72,11 @@ describe('<ErrorWrapper />', () => {
     const props = {
       onBlur: false,
       translatedErrors: {
-        required: 'Required'
+        required: 'Required',
       },
       type: 'text',
       value: '1',
-      validations: { required: true }
+      validations: { required: true },
     };
     const e = { target: { value: '' } };
 
@@ -100,7 +100,7 @@ describe('<ErrorWrapper />', () => {
       translatedErrors: {},
       type: 'text',
       value: '1',
-      validations: { required: true }
+      validations: { required: true },
     };
     const e = { target: { value: '' } };
 
@@ -125,7 +125,7 @@ describe('<ErrorWrapper />', () => {
       didCheckErrors: false,
       error: false,
       type: 'text',
-      value: ''
+      value: '',
     };
 
     renderedComponent = mount(<ErrorWrapper {...props} />);
@@ -146,7 +146,7 @@ describe('<ErrorWrapper />', () => {
     renderedComponent.setProps({
       didCheckErrors: true,
       error: true,
-      errorMessage: 'error'
+      errorMessage: 'error',
     });
 
     setTimeout(() => {
@@ -157,7 +157,7 @@ describe('<ErrorWrapper />', () => {
     renderedComponent.setProps({
       didCheckErrors: false,
       error: false,
-      errorMessage: 'error'
+      errorMessage: 'error',
     });
 
     setTimeout(() => {

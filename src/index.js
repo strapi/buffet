@@ -1,1 +1,2 @@
-export { default } from './components/Button';
+export { default as Button } from './components/Button';
+export { default as GlobalStyles } from './components/GlobalStyles';
