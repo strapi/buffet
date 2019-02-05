@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-const Font = createGlobalStyle`
+const General = createGlobalStyle`
 html, body { -webkit-font-smoothing: antialiased; }
 `;
 
-export default Font;
+export default General;
