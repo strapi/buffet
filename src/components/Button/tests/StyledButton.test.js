@@ -1,12 +1,11 @@
 import React from 'react';
-/* eslint-disable */
 import { mount } from 'enzyme';
 import { enzymeFind } from 'styled-components/test-utils';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { StyledButton } from '../index';
-import colors from '../../../assets/styles/Colors';
+import colors from '../../../assets/styles/colors';
 
 describe('<StyledButton />', () => {
   describe('<StyledButton /> attributes', () => {

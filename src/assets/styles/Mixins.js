@@ -1,4 +1,4 @@
-import colors from './Colors';
+import colors from './colors';
 
 export const mixins = (color = colors.lightGrey) => ({
   bbox:

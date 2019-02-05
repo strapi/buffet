@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import colors from '../../assets/styles/Colors';
-import sizes from '../../assets/styles/Sizes';
-import mixins from '../../assets/styles/Mixins';
+import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
+import mixins from '../../assets/styles/mixins';
 
 const StyledButton = styled.button`
 
   /*
    * Theme
-   */
+   */ 
 
   // General style
   ${mixins().bbox}
@@ -35,7 +35,7 @@ const StyledButton = styled.button`
       color: ${colors.white};
       border: 0;
     `}
- 
+    
   ${props =>
     props.color === 'secondary' &&
     css`
@@ -114,9 +114,9 @@ StyledButton.defaultProps = {
 };
 
 StyledButton.propTypes = {
-  type: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
   icon: PropTypes.oneOf(['add', 'back', 'trash']),
+  type: PropTypes.string,
 };
 
 export default StyledButton;

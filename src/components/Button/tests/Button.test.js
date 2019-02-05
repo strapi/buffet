@@ -1,9 +1,5 @@
-/* eslint-disable */
-
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { enzymeFind } from 'styled-components/test-utils';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import 'jest-styled-components';
 import Button from '../Button';
 import StyledButton from '../StyledButton';
