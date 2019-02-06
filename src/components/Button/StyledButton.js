@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   font-family: 'LatoSemiBold';
   font-size: 13px;
   line-height: 100%;
-  border-radius: ${sizes.button.radius};
+  border-radius: ${sizes.radius};
   cursor:pointer;
   outline: 0;
   &:hover {

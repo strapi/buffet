@@ -1,4 +1,5 @@
 const sizes = {
+  radius: '3px',
   button: {
     height: {
       small: '26px',
@@ -8,7 +9,10 @@ const sizes = {
       small: '15px',
       large: '30px',
     },
-    radius: '3px',
+  },
+  input: {
+    height: '34px',
+    padding: '10px',
   },
 };
 

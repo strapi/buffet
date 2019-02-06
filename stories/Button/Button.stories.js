@@ -3,33 +3,32 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Button from '../../src/components/Button';
 
-const stories = storiesOf('Button|Button', module);
+storiesOf('Button|Button', module)
+  // Primary
+  .add('Button|ButtonPrimary', () => (
+    <Button type="submit" color="primary" label="Save" />
+  ))
+  .add('Button|ButtonPrimaryIcon', () => (
+    <Button type="submit" color="primary" icon="add" label="Save" />
+  ))
 
-// Primary
-stories.add('Button|ButtonPrimary', () => (
-  <Button type="submit" color="primary" label="Save" />
-));
-stories.add('Button|ButtonPrimaryIcon', () => (
-  <Button type="submit" color="primary" icon="add" label="Save" />
-));
+  // Secondary
+  .add('Button|ButtonSecondary', () => (
+    <Button type="submit" color="secondary" label="Text" />
+  ))
+  .add('Button|ButtonSecondaryIcon+', () => (
+    <Button type="submit" color="secondary" icon="add" label="Add" />
+  ))
+  .add('Button|ButtonSecondaryIcon<', () => (
+    <Button type="submit" color="secondary" icon="back" label="Back" />
+  ))
 
-// Secondary
-stories.add('Button|ButtonSecondary', () => (
-  <Button type="submit" color="secondary" label="Text" />
-));
-stories.add('Button|ButtonSecondaryIcon+', () => (
-  <Button type="submit" color="secondary" icon="add" label="Add" />
-));
-stories.add('Button|ButtonSecondaryIcon<', () => (
-  <Button type="submit" color="secondary" icon="back" label="Back" />
-));
+  // Cancel
+  .add('Button|ButtonCancel', () => (
+    <Button type="submit" color="cancel" label="Cancel" />
+  ))
 
-// Cancel
-stories.add('Button|ButtonCancel', () => (
-  <Button type="submit" color="cancel" label="Cancel" />
-));
-
-// Delete
-stories.add('Button|ButtonDelete', () => (
-  <Button type="submit" color="delete" icon="trash" label="Delete" />
-));
+  // Delete
+  .add('Button|ButtonDelete', () => (
+    <Button type="submit" color="delete" icon="trash" label="Delete" />
+  ));
