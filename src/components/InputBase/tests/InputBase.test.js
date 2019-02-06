@@ -1,13 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
-/* eslint-disable */
-
 import InputBase from '../index';
 import InputIcon from '../../InputIcon';
 
 const defaultProps = {
-  type: 'text'
+  type: 'text',
 };
 const renderComponent = (props = defaultProps) => {
   const wrapper = mount(<InputBase {...props} />);

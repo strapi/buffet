@@ -11,6 +11,7 @@ describe('<StyledInputIcon />', () => {
     afterEach(() => {
       renderedComponent.unmount();
     });
+
     it('should have a default type equals to search', () => {
       renderedComponent = renderComponent({ type: 'search' });
       const defaultType = 'search';

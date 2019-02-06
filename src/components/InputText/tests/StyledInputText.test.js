@@ -14,6 +14,7 @@ describe('<StyledInputText />', () => {
     afterEach(() => {
       renderedComponent.unmount();
     });
+
     it('should have a default type equals to text', () => {
       renderedComponent = renderComponent({ type: 'text' });
       const defaultType = 'text';

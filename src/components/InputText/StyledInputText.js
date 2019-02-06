@@ -5,9 +5,6 @@ import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
 
 const StyledInputText = styled.input`
-  /*
-  * Theme
-  */
 
   // General style
   ${mixins().bbox}
