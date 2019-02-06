@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import InputText from '../../src/components/InputText';
 import InputBase from '../../src/components/InputBase';
+import Textarea from '../../src/components/Textarea';
 
 storiesOf('Input|Input', module)
   // Simple Text input
@@ -28,4 +29,9 @@ storiesOf('Input|Input', module)
       type="password"
       placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
     />
+  ))
+
+  // Textarea input
+  .add('Input|InputTextareaWrapper', () => (
+    <Textarea rows="4" placeholder="Write your little description here…" />
   ));

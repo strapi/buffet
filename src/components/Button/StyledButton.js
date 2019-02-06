@@ -11,7 +11,6 @@ const StyledButton = styled.button`
    */ 
 
   // General style
-  ${mixins().bbox}
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.large};
   font-family: 'LatoSemiBold';

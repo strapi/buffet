@@ -1,13 +1,17 @@
+/**
+ *
+ * InputText
+ *
+ */
+
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
-import mixins from '../../assets/styles/mixins';
 
 const StyledInputText = styled.input`
 
   // General style
-  ${mixins().bbox}
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};

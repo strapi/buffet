@@ -2,9 +2,6 @@
 
 exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] = `
 .c0 {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   height: 30px;
   padding: 0 30px;
   font-family: 'LatoSemiBold';
@@ -53,9 +50,6 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] 
 
 exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] = `
 .c0 {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   height: 30px;
   padding: 0 30px;
   font-family: 'LatoSemiBold';
@@ -104,9 +98,6 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] 
 
 exports[`<StyledButton /> <StyledButton /> icons should render the add trash 1`] = `
 .c0 {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   height: 30px;
   padding: 0 30px;
   font-family: 'LatoSemiBold';
