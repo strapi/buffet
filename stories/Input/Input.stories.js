@@ -8,6 +8,7 @@ import Textarea from '../../src/components/Textarea';
 storiesOf('Input|Input', module)
   // Simple Text input
   .add('Input|InputText', () => <InputText type="text" placeholder="Text" />)
+
   // Text input
   .add('Input|InputTextWithWrapper', () => (
     <InputBase type="text" placeholder="Text" />
@@ -27,7 +28,7 @@ storiesOf('Input|Input', module)
   .add('Input|InputPasswordWrapper', () => (
     <InputBase
       type="password"
-      placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+      placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
     />
   ))
 

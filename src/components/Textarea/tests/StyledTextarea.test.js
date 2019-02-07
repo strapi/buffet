@@ -11,7 +11,7 @@ describe('<Textarea />', () => {
     renderedComponent.unmount();
   });
 
-  it('Expect to have unit tests specified', () => {
+  it('should have a placeholder null if not specified', () => {
     renderedComponent = renderComponent();
     expect(renderedComponent.at(0).prop('placeholder')).toBe(null);
   });

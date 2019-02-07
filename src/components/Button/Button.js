@@ -25,4 +25,5 @@ Button.propTypes = {
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
 };
+
 export default Button;

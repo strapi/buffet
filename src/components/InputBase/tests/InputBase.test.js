@@ -22,7 +22,7 @@ describe('<InputBase />', () => {
     expect(wrapper.state().showPassword).toEqual(true);
   });
 
-  it('should have a default type equals to button', () => {
+  it('the input should have the search icon if the type is search', () => {
     const defaultType = 'search';
     const props = Object.assign(defaultProps, { type: defaultType });
     const wrapper = renderComponent(props);

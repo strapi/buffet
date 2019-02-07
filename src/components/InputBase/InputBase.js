@@ -38,6 +38,7 @@ class InputBase extends React.Component {
     );
   }
 }
+
 InputBase.defaultProps = {
   label: null,
   placeholder: null,
