@@ -18,5 +18,5 @@ storiesOf('Label|Label', module)
 
   // Label with message as a func
   .add('Label|MessageAsFunc', () => (
-    <Label htmlFor="input" message={message()} />
+    <Label htmlFor="input" message={message} />
   ));

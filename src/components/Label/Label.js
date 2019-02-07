@@ -6,14 +6,21 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isFunction } from 'lodash';
 import StylesTextArea from './StyledLabel';
 
 function Label(props) {
-  let content = props.children;
+  const content = (() => {
+    if (isFunction(props.message)) {
+      return props.message();
+    }
 
-  if (props.message) {
-    content = props.message;
-  }
+    if (props.message) {
+      return props.message;
+    }
+
+    return props.children;
+  })();
 
   return <StylesTextArea htmlFor={props.htmlFor}>{content}</StylesTextArea>;
 }

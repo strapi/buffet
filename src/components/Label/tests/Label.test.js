@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import { isFunction } from 'lodash';
+import { isFunction } from 'lodash';
 import Label from '../index';
 
 let renderedComponent;
@@ -25,5 +25,15 @@ describe('<Label />', () => {
     });
 
     expect(renderedComponent.prop('message')).toEqual('text');
+  });
+
+  it('render the <Label /> with message props as a function', () => {
+    const messageFunc = () => 'text';
+    renderedComponent = renderComponent({
+      htmlFor: 'inputName',
+      message: messageFunc,
+    });
+    expect(isFunction(renderedComponent.prop('message'))).toBe(true);
+    expect(renderedComponent.prop('message')).toEqual(messageFunc);
   });
 });
