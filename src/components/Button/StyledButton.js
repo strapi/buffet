@@ -108,8 +108,9 @@ const StyledButton = styled.button`
 `;
 
 StyledButton.defaultProps = {
-  type: 'button',
   color: 'primary',
+  icon: null,
+  type: 'button',
 };
 
 StyledButton.propTypes = {

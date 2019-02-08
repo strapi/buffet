@@ -5,6 +5,11 @@ import Button from '../../src/components/Button';
 
 storiesOf('Button|Button', module)
   // Primary
+  .add('Button|ButtonPrimaryWithLabelAsChild', () => (
+    <Button type="submit" color="primary">
+      Save
+    </Button>
+  ))
   .add('Button|ButtonPrimary', () => (
     <Button type="submit" color="primary" label="Save" />
   ))
