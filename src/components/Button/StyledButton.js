@@ -11,13 +11,12 @@ const StyledButton = styled.button`
    */ 
 
   // General style
-  ${mixins().bbox}
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.large};
   font-family: 'LatoSemiBold';
   font-size: 13px;
   line-height: 100%;
-  border-radius: ${sizes.button.radius};
+  border-radius: ${sizes.radius};
   cursor:pointer;
   outline: 0;
   &:hover {
@@ -109,8 +108,9 @@ const StyledButton = styled.button`
 `;
 
 StyledButton.defaultProps = {
-  type: 'button',
   color: 'primary',
+  icon: null,
+  type: 'button',
 };
 
 StyledButton.propTypes = {
