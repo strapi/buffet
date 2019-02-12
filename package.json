@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "invariant": "^2.2.4",
     "lodash": "^4.17.11",
     "prop-types": "^15.5.10",
     "react": "^16.7.0",
