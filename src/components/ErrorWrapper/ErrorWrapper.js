@@ -67,15 +67,15 @@ class ErrorWrapper extends React.Component {
 }
 
 ErrorWrapper.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   didCheckErrors: PropTypes.bool,
   error: PropTypes.bool,
   errorMessage: PropTypes.string,
   onBlur: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  translatedErrors: PropTypes.object,
+  translatedErrors: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   type: PropTypes.string,
-  validations: PropTypes.object,
-  value: PropTypes.any,
+  validations: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
 };
 
 ErrorWrapper.defaultProps = {

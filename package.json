@@ -39,8 +39,10 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "invariant": "^2.2.4",
     "lodash": "^4.17.11",
     "prop-types": "^15.5.10",
+    "rc-input-number": "^4.3.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",

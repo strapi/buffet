@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
 import InputText from '../../src/components/InputText';
 import InputBase from '../../src/components/InputBase';
 import Textarea from '../../src/components/Textarea';
