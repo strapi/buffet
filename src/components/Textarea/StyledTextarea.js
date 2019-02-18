@@ -21,7 +21,8 @@ const StyledTextarea = styled.textarea`
   border: 1px solid ${colors.greyBorder}
   border-radius: ${sizes.radius};
   color: ${colors.blueTxt}
-  background-color: transparent;
+  background-color: ${colors.white};
+  
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
