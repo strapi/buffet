@@ -8,13 +8,14 @@ const SelectStyled = styled.select`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   cursor: pointer;
   outline: 0;
-  border: 1px solid ${colors.greyBorder}
+  border: 1px solid ${colors.lightGrey}
   border-radius: ${sizes.radius};
-  color: ${colors.blueTxt}
+  color: ${colors.blueTxt};
   background-color: ${colors.white};
 
   padding-right: 30px;
@@ -24,11 +25,12 @@ const SelectStyled = styled.select`
   background-image: url(${img});
   background-repeat: no-repeat;
   background-position: right;
+  
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
   &:focus {
-    border-color: ${colors.blueBorder}
+    border-color: ${colors.blueBorder};
   }
 `;
 

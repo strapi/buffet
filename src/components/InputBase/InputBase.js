@@ -23,17 +23,20 @@ class InputBase extends React.Component {
         {(this.props.type === 'search' || this.props.type === 'email') && (
           <InputIcon type={this.props.type} />
         )}
-        <StyledInputText
-          {...this.props}
-          type={this.state.showPassword ? 'text' : this.props.type}
-          className={this.state.showPassword ? 'shown' : ''}
-          placeholder={this.props.placeholder}
-        />
         {this.props.type === 'password' && (
-          <button type="button" onClick={this.handleClick}>
+          <button
+            type="button"
+            onClick={this.handleClick}
+            className={this.state.showPassword ? 'shown' : ''}
+          >
             <InputIcon type={this.props.type} />
           </button>
         )}
+        <StyledInputText
+          {...this.props}
+          type={this.state.showPassword ? 'text' : this.props.type}
+          placeholder={this.props.placeholder}
+        />
       </StyledInputBase>
     );
   }

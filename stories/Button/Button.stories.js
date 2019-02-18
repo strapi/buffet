@@ -21,9 +21,6 @@ storiesOf('Button|Button', module)
   .add('Button|ButtonSecondary', () => (
     <Button type="submit" color="secondary" label="Text" />
   ))
-  .add('Button|ButtonSecondaryIcon+', () => (
-    <Button type="submit" color="secondary" icon="add" label="Add" />
-  ))
   .add('Button|ButtonSecondaryIcon<', () => (
     <Button type="submit" color="secondary" icon="back" label="Back" />
   ))

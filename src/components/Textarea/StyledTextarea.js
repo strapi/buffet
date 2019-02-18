@@ -14,11 +14,12 @@ const StyledTextarea = styled.textarea`
   width: 100%;
   height: calc(${sizes.input.height} * 4);
   padding: ${sizes.input.padding} ${sizes.input.padding};
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   cursor: pointer;
   outline: 0;
-  border: 1px solid ${colors.greyBorder}
+  border: 1px solid ${colors.lightGrey}
   border-radius: ${sizes.radius};
   color: ${colors.blueTxt}
   background-color: ${colors.white};

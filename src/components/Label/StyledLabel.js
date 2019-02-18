@@ -4,7 +4,8 @@ import colors from '../../assets/styles/colors';
 
 const StyledTextarea = styled.label`
   width: 100%;
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   color: ${colors.blueTxt};
 `;

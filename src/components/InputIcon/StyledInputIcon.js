@@ -21,7 +21,7 @@ const StyledIcon = styled.span`
       ::before {
         font-family: 'FontAwesome';
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 100%;
         display: inline-block;
         vertical-align: middle;
