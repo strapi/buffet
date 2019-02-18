@@ -13,7 +13,6 @@ import {
   commonDefaultProps,
   commonPropTypes,
 } from '../../commonPropTypes/input';
-// import styled from 'styled-components';
 
 function InputNumber({
   autoFocus,

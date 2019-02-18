@@ -9,10 +9,6 @@ const StyledInputNumber = createGlobalStyle`
   .rc-input-number.inputNumber {
     width: 100%;
     height: ${sizes.input.height};
-    font-family: 'Lato';
-    font-weight: 600;
-    font-size: 13px;
-    color: ${colors.blueTxt};
     background-color: ${colors.white};
     border: 0;
     box-shadow: none;
@@ -27,6 +23,10 @@ const StyledInputNumber = createGlobalStyle`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
       border-radius: ${sizes.radius};
       text-align: left;
+      font-family: 'Lato';
+      font-weight: 600;
+      font-size: 13px;
+      color: ${colors.blueTxt};
 
       &::-webkit-input-placeholder {
         color: ${colors.greyPlaceholder};
