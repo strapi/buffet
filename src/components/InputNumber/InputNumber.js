@@ -5,8 +5,10 @@
  */
 
 import React from 'react';
+import 'rc-input-number/assets/index.css';
 import RcInputNumber from 'rc-input-number';
 import PropTypes from 'prop-types';
+import StyledInputNumber from './StyledInputNumber';
 import {
   commonDefaultProps,
   commonPropTypes,
@@ -34,15 +36,19 @@ function InputNumber({
   };
 
   return (
-    <RcInputNumber
-      autoFocus={autoFocus}
-      id={id || name}
-      name={name}
-      onChange={handleChange}
-      tabIndex={tabIndex}
-      value={value}
-      {...rest}
-    />
+    <React.Fragment>
+      <StyledInputNumber />
+      <RcInputNumber
+        autoFocus={autoFocus}
+        id={id || name}
+        name={name}
+        onChange={handleChange}
+        tabIndex={tabIndex}
+        value={value}
+        className="inputNumber"
+        {...rest}
+      />
+    </React.Fragment>
   );
 }
 

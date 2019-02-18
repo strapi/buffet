@@ -17,7 +17,6 @@ const SelectStyled = styled.select`
   border-radius: ${sizes.radius};
   color: ${colors.blueTxt};
   background-color: ${colors.white};
-
   padding-right: 30px;
   appearance: none;
   -webkit-appearance: none;

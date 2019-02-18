@@ -21,16 +21,15 @@ const StyledTextarea = styled.textarea`
   outline: 0;
   border: 1px solid ${colors.lightGrey}
   border-radius: ${sizes.radius};
-  color: ${colors.blueTxt}
+  color: ${colors.blueTxt};
   background-color: ${colors.white};
   
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
   &:focus {
-    border-color: ${colors.blueBorder}
+    border-color: ${colors.blueBorder};
   }
-  
 `;
 
 StyledTextarea.defaultProps = {
