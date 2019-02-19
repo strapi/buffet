@@ -52,6 +52,7 @@ InputBase.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   type: PropTypes.oneOf(['text', 'search', 'password', 'email', 'textarea']),
+  value: PropTypes.string.isRequired,
 };
 
 export default InputBase;
