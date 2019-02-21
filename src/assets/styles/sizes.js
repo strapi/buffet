@@ -14,6 +14,10 @@ const sizes = {
     height: '34px',
     padding: '10px',
   },
+  checkbox: {
+    height: '14px',
+    width: '14px',
+  },
 };
 
 export default sizes;

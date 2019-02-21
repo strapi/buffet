@@ -3,28 +3,34 @@ import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import StyledInputText from '../index';
+import InputText from '../index';
 import sizes from '../../../assets/styles/sizes';
 
 let renderedComponent;
-const renderComponent = (props = {}) => mount(<StyledInputText {...props} />);
+const initProps = {
+  name: 'inputText',
+  value: '',
+};
+const renderComponent = (props = initProps) => mount(<InputText {...props} />);
 
-describe('<StyledInputText />', () => {
-  describe('<StyledInputText /> attributes', () => {
+describe('<InputText />', () => {
+  describe('<InputText /> attributes', () => {
     afterEach(() => {
       renderedComponent.unmount();
     });
 
     it('should have a default type equals to text', () => {
-      renderedComponent = renderComponent({ type: 'text' });
+      renderedComponent = renderComponent({ ...initProps, type: 'text' });
       const defaultType = 'text';
       expect(renderedComponent.at(0).prop('type')).toBe(defaultType);
     });
   });
 
-  describe('<StyledInputText /> style', () => {
+  describe('<InputText /> style', () => {
     it('should render left icon space', () => {
-      const tree = renderer.create(<StyledInputText type="search" />).toJSON();
+      const tree = renderer
+        .create(<InputText {...initProps} type="search" />)
+        .toJSON();
       expect(tree).toHaveStyleRule(
         'padding-left',
         `calc(${sizes.input.height} + ${sizes.input.padding})`

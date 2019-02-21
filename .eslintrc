@@ -5,24 +5,41 @@
     "prettier/react",
     "plugin:jest/recommended"
   ],
-  "plugins": ["prettier", "jest", "react", "jsx-a11y"],
+  "plugins": [
+    "prettier",
+    "jest",
+    "react",
+    "jsx-a11y"
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
     "react/prop-types": 2,
     "no-underscore-dangle": 0,
-    "import/imports-first": ["error", "absolute-first"],
+    "import/imports-first": [
+      "error",
+      "absolute-first"
+    ],
     "import/newline-after-import": "error",
     "import/no-extraneous-dependencies": 1,
     "react/forbid-prop-types": 1,
     "react/destructuring-assignment": 0,
-    "arrow-body-style": [2, "as-needed"],
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
     "class-methods-use-this": 0,
-    "comma-dangle": [2, "always-multiline"],
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
     "import/no-dynamic-require": 0,
     "import/no-named-as-default": 0,
     "import/no-unresolved": 2,
@@ -48,9 +65,19 @@
     "no-console": 1,
     "no-unused-vars": 2,
     "no-use-before-define": 0,
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": false,
+        "array": false
+      }
+    ],
     "prefer-template": 2,
     "react/jsx-closing-tag-location": 0,
-    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-first-prop-new-line": [
+      2,
+      "multiline"
+    ],
     "react/jsx-no-target-blank": 0,
     "react/jsx-uses-vars": 2,
     "react/sort-prop-types": 2

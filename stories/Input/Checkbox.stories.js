@@ -2,13 +2,13 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
 
-import Textarea from '../../src/components/Textarea';
+import Checkbox from '../../src/components/Checkbox';
 import Form from '../components/Form';
 
-class TextareaStory extends React.Component {
+class CheckboxStory extends React.Component {
   state = {
     value: {
-      textarea: '',
+      inputCheckbox: false,
     },
   };
 
@@ -23,16 +23,17 @@ class TextareaStory extends React.Component {
 
     return (
       <Form>
-        <Textarea
-          rows="4"
-          name="textarea"
-          placeholder="Write your little description here…"
+        <Checkbox
+          name="inputCheckbox"
           onChange={this.handleChange}
-          value={value.textarea}
+          value={value.inputCheckbox}
+          message="Checkbox"
         />
       </Form>
     );
   }
 }
 
-storiesOf('Input|Input', module).add('Input|Textarea', () => <TextareaStory />);
+storiesOf('Input|Input', module).add('Input|InputText|Checkbox', () => (
+  <CheckboxStory />
+));

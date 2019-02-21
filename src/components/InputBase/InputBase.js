@@ -44,12 +44,14 @@ class InputBase extends React.Component {
 
 InputBase.defaultProps = {
   label: null,
+  onChange: null,
   placeholder: null,
   type: 'text',
 };
 
 InputBase.propTypes = {
   label: PropTypes.string,
+  onChange: PropTypes.func,
   placeholder: PropTypes.string,
   type: PropTypes.oneOf(['text', 'search', 'password', 'email', 'textarea']),
   value: PropTypes.string.isRequired,

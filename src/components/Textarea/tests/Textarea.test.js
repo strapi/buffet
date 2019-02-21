@@ -4,7 +4,8 @@ import { mount } from 'enzyme';
 import Textarea from '../index';
 
 let renderedComponent;
-const renderComponent = (props = {}) => mount(<Textarea {...props} />);
+const renderComponent = (props = { name: 'textarea', value: '' }) =>
+  mount(<Textarea {...props} />);
 
 describe('<Textarea />', () => {
   afterEach(() => {

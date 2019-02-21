@@ -5,7 +5,6 @@
  */
 
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
@@ -23,7 +22,6 @@ const StyledTextarea = styled.textarea`
   border-radius: ${sizes.radius};
   color: ${colors.blueTxt};
   background-color: ${colors.white};
-  
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
@@ -31,13 +29,5 @@ const StyledTextarea = styled.textarea`
     border-color: ${colors.blueBorder};
   }
 `;
-
-StyledTextarea.defaultProps = {
-  placeholder: null,
-};
-
-StyledTextarea.propTypes = {
-  placeholder: PropTypes.string,
-};
 
 export default StyledTextarea;
