@@ -6,6 +6,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  commonDefaultProps,
+  commonPropTypes,
+} from '../../commonPropTypes/input';
 import StyledInputBase from './StyledInputBase';
 import StyledInputText from '../InputText';
 import InputIcon from '../InputIcon';
@@ -43,18 +47,17 @@ class InputBase extends React.Component {
 }
 
 InputBase.defaultProps = {
+  ...commonDefaultProps,
   label: null,
-  onChange: null,
-  placeholder: null,
   type: 'text',
+  value: null,
 };
 
 InputBase.propTypes = {
+  ...commonPropTypes,
   label: PropTypes.string,
-  onChange: PropTypes.func,
-  placeholder: PropTypes.string,
   type: PropTypes.oneOf(['text', 'search', 'password', 'email', 'textarea']),
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 export default InputBase;

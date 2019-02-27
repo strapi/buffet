@@ -3,5 +3,6 @@ export default {
   id: null,
   onChange: () => {},
   options: [],
+  placeholder: null,
   tabIndex: '0',
 };

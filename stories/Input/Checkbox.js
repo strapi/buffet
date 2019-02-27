@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
-
 import Checkbox from '../../src/components/Checkbox';
 import Form from '../components/Form';
 
-class CheckboxStory extends React.Component {
+export default class CheckboxStory extends React.Component {
   state = {
     value: {
       inputCheckbox: false,
@@ -34,6 +32,7 @@ class CheckboxStory extends React.Component {
   }
 }
 
-storiesOf('Input|Input', module).add('Input|InputText|Checkbox', () => (
-  <CheckboxStory />
-));
+// storiesOf('Inputs', module)
+//   .add('Checkbox', () => (
+//   <CheckboxStory />
+// ));

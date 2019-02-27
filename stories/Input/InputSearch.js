@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
-
 import InputBase from '../../src/components/InputBase';
 import Form from '../components/Form';
 
-class InputSearchStory extends React.Component {
+export default class InputSearchStory extends React.Component {
   state = {
     value: {
       inputText: '',
@@ -34,7 +32,3 @@ class InputSearchStory extends React.Component {
     );
   }
 }
-
-storiesOf('Input|Input', module).add('Input|InputText|Search', () => (
-  <InputSearchStory />
-));

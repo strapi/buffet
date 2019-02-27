@@ -65,8 +65,7 @@ Checkbox.propTypes = {
       params: PropTypes.object,
     }),
   ]),
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.bool.isRequired,
+  value: PropTypes.bool,
 };
 
 export default Checkbox;

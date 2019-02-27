@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
 import Select from '../../src/components/Select';
 import Form from '../components/Form';
 
-class SelectStory extends React.PureComponent {
+export default class SelectStory extends React.PureComponent {
   state = {
     value: {
       inputSelect: '',
@@ -32,5 +31,3 @@ class SelectStory extends React.PureComponent {
     );
   }
 }
-
-storiesOf('Input|Input', module).add('Input|Select', () => <SelectStory />);

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
-
 import InputBase from '../../src/components/InputBase';
 import Form from '../components/Form';
 
-class InputEmailStory extends React.Component {
+export default class InputTextStory extends React.Component {
   state = {
     value: {
       inputText: '',
@@ -24,9 +22,9 @@ class InputEmailStory extends React.Component {
     return (
       <Form>
         <InputBase
-          type="email"
+          type="text"
           name="inputText"
-          placeholder="john.doe@strapi.io"
+          placeholder="Text"
           onChange={this.handleChange}
           value={value.inputText}
         />
@@ -34,7 +32,3 @@ class InputEmailStory extends React.Component {
     );
   }
 }
-
-storiesOf('Input|Input', module).add('Input|InputText|Email', () => (
-  <InputEmailStory />
-));

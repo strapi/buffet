@@ -12,27 +12,18 @@ import {
 } from '../../commonPropTypes/input';
 import StyledTextArea from './StyledTextarea';
 
-function Textarea({ onChange, value, ...rest }) {
-  const handleInputChange = e => {
-    const target = e.target;
-    onChange({ target });
-  };
-
-  return (
-    <StyledTextArea onChange={handleInputChange} value={value} {...rest} />
-  );
+function Textarea(props) {
+  return <StyledTextArea {...props} />;
 }
 
 Textarea.defaultProps = {
   ...commonDefaultProps,
-  placeholder: null,
+  value: null,
 };
 
 Textarea.propTypes = {
   ...commonPropTypes,
-  onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 export default Textarea;

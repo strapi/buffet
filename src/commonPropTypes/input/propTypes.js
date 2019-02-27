@@ -5,5 +5,6 @@ export default {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   tabIndex: PropTypes.string,
 };

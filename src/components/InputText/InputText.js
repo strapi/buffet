@@ -12,28 +12,19 @@ import {
 } from '../../commonPropTypes/input';
 import StyledInputText from './StyledInputText';
 
-function InputText({ onChange, value, ...rest }) {
-  const handleInputChange = e => {
-    const target = e.target;
-    onChange({ target });
-  };
-
-  return (
-    <StyledInputText onChange={handleInputChange} value={value} {...rest} />
-  );
+function InputText(props) {
+  return <StyledInputText {...props} />;
 }
 
 InputText.defaultProps = {
   ...commonDefaultProps,
-  onChange: null,
-  placeholder: null,
+  value: null,
 };
 
 InputText.propTypes = {
   ...commonPropTypes,
   onChange: PropTypes.func,
-  placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 export default InputText;

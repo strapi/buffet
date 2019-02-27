@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
-
 import Textarea from '../../src/components/Textarea';
 import Form from '../components/Form';
 
-class TextareaStory extends React.Component {
+export default class TextareaStory extends React.Component {
   state = {
     value: {
       textarea: '',
@@ -34,5 +32,3 @@ class TextareaStory extends React.Component {
     );
   }
 }
-
-storiesOf('Input|Input', module).add('Input|Textarea', () => <TextareaStory />);
