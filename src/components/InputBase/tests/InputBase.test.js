@@ -5,6 +5,8 @@ import InputIcon from '../../InputIcon';
 
 const defaultProps = {
   type: 'text',
+  name: 'inputText',
+  value: '',
 };
 const renderComponent = (props = defaultProps) => {
   const wrapper = mount(<InputBase {...props} />);

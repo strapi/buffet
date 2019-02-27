@@ -15,19 +15,21 @@ const StyledInputText = styled.input`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   cursor: pointer;
   outline: 0;
-  border: 1px solid ${colors.greyBorder}
+  border: 1px solid ${colors.lightGrey};
   border-radius: ${sizes.radius};
-  color: ${colors.blueTxt}
+  color: ${colors.blueTxt};
   background-color: transparent;
+  
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
   &:focus {
-    border-color: ${colors.blueBorder}
+    border-color: ${colors.blueBorder};
   }
 
   // Search with left icon
@@ -39,7 +41,7 @@ const StyledInputText = styled.input`
 
   // Password with right icon
   ${props =>
-    (props.type === 'email' || props.type === 'text') &&
+    props.type === 'password' &&
     css`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}  

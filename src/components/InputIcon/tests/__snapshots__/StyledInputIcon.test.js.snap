@@ -2,21 +2,21 @@
 
 exports[`<StyledInputIcon /> <StyledInputIcon /> icon attributes should render the email icon 1`] = `
 <span
-  className="sc-bdVaJa lkPXav"
+  className="sc-bdVaJa gyWphi"
   type="email"
 />
 `;
 
 exports[`<StyledInputIcon /> <StyledInputIcon /> icon attributes should render the password icon 1`] = `
 <span
-  className="sc-bdVaJa fsSfwc"
+  className="sc-bdVaJa jScmnl"
   type="password"
 />
 `;
 
 exports[`<StyledInputIcon /> <StyledInputIcon /> icon attributes should render the search icon 1`] = `
 <span
-  className="sc-bdVaJa otneW"
+  className="sc-bdVaJa jPRPOx"
   type="search"
 />
 `;

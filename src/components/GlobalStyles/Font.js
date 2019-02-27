@@ -27,37 +27,37 @@ const Font = createGlobalStyle`
 }
 
 @font-face {
-  font-family: 'LatoLight';
+  font-family: 'Lato';
   src: url(${latoLight2}) format("woff2"), url(${latoLight}) format("woff");
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'LatoRegular';
+  font-family: 'Lato';
   src: url(${latoRegular2}) format("woff2"), url(${latoRegular}) format("woff");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'LatoMedium';
+  font-family: 'Lato';
   src: url(${latoMedium2}) format("woff2"), url(${latoMedium}) format("woff");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
   src: url(${latoSemiBold2}) format("woff2"), url(${latoSemiBold}) format("woff");
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'LatoBold';
+  font-family: 'Lato';
   src: url(${latoBold2}) format("woff2"), url(${latoBold}) format("woff");
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 }`;
 

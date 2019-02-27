@@ -4,7 +4,8 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] 
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   line-height: 100%;
   border-radius: 3px;
@@ -30,8 +31,8 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] 
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 14px;
-  margin-right: 10px;
+  font-size: 13px;
+  margin-right: 8px;
   line-height: 100%;
   display: inline-block;
   vertical-align: middle;
@@ -52,7 +53,8 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] 
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   line-height: 100%;
   border-radius: 3px;
@@ -78,8 +80,8 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] 
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 14px;
-  margin-right: 10px;
+  font-size: 13px;
+  margin-right: 8px;
   line-height: 100%;
   display: inline-block;
   vertical-align: middle;
@@ -87,6 +89,7 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] 
 
 .c0::before {
   content: '\\f067';
+  margin-right: 13px;
 }
 
 <button
@@ -100,7 +103,8 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add trash 1`]
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   line-height: 100%;
   border-radius: 3px;
@@ -126,16 +130,20 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add trash 1`]
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 14px;
-  margin-right: 10px;
+  font-size: 13px;
+  margin-right: 8px;
   line-height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
 
 .c0::before {
-  content: '\\f014';
-  vertical-align: inherit;
+  content: '';
+  background-image: url(IMAGE_MOCK);
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 11px;
+  height: 12px;
 }
 
 <button

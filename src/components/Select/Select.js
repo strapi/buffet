@@ -12,7 +12,6 @@ import {
   commonPropTypes,
 } from '../../commonPropTypes/input';
 import SelectStyled from './SelectStyled';
-// import styled from 'styled-components';
 
 function Select({
   autoFocus,

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react'; // eslint-disable-line import/no-extraneous-dependencies
-
 import InputNumber from '../../src/components/InputNumber';
 import Form from '../components/Form';
 
-class InputNumberStory extends React.Component {
+export default class InputNumberStory extends React.Component {
   state = { value: { inputNumber: null } };
 
   handleChange = ({ target }) =>
@@ -27,7 +25,3 @@ class InputNumberStory extends React.Component {
     );
   }
 }
-
-storiesOf('Input|Input', module).add('Input|InputNumber', () => (
-  <InputNumberStory />
-));

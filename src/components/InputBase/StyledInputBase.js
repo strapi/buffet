@@ -4,34 +4,38 @@ import sizes from '../../assets/styles/sizes';
 
 const StyledInputWrapper = styled.div`
   position: relative;
+  background-color: ${colors.white};
   span {
     z-index: 0;
   }
-  input {
-    position: relative;
-    z-index: 1;
-    & + button {
-      width: ${sizes.input.height};
-      height: ${sizes.input.height};
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      cursor: pointer;
-      outline: 0;
-      border: 0;
-      background: transparent;
-      &:hover {
-        span::before {
-          color: ${colors.black};
-        }
-      }
-    }
-    &.shown + button {
+  button[type='button'] {
+    width: ${sizes.input.height};
+    height: ${sizes.input.height};
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    &:hover {
       span::before {
         color: ${colors.black};
       }
     }
+    &.shown {
+      span::before {
+        color: ${colors.black};
+      }
+      & + input[type='text'] {
+        padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
+      }
+    }
+  }
+  input {
+    position: relative;
+    z-index: 1;
   }
 `;
 

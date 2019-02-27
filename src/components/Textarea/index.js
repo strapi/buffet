@@ -1,1 +1,1 @@
-export { default } from './StyledTextarea';
+export { default } from './Textarea';

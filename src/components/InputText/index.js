@@ -1,1 +1,1 @@
-export { default } from './StyledInputText';
+export { default } from './InputText';

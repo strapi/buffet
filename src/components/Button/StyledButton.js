@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
+import img from '../../assets/icons/icon_trash.svg';
 
 const StyledButton = styled.button`
 
@@ -13,17 +14,18 @@ const StyledButton = styled.button`
   // General style
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.large};
-  font-family: 'LatoSemiBold';
+  font-family: 'Lato';
+  font-weight: 600;
   font-size: 13px;
   line-height: 100%;
   border-radius: ${sizes.radius};
   cursor:pointer;
   outline: 0;
   &:hover {
-    ${mixins(colors.lightGreyAlpha).bshadow}
+    ${mixins(colors.lightGreyAlpha).bshadow};
   }
   &:active {
-    ${mixins(colors.lightGreyAlpha).bshadow}
+    ${mixins(colors.lightGreyAlpha).bshadow};
   }
 
   // Specific style
@@ -42,7 +44,6 @@ const StyledButton = styled.button`
       color: ${colors.darkBlue};
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
-      line-height: 24px;
     `}}
 
   ${props =>
@@ -58,6 +59,8 @@ const StyledButton = styled.button`
       border: 1px solid ${colors.orangeBorder};
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
+      padding: 0 ${sizes.button.padding.small};
+      display: flex;
     `}
 
 
@@ -72,8 +75,8 @@ const StyledButton = styled.button`
       &::before {
         font-family: 'FontAwesome';
         font-weight: 600;
-        font-size: 14px;
-        margin-right: 10px;
+        font-size: 13px;
+        margin-right: 8px;
         line-height: 100%;
         display: inline-block;
         vertical-align: middle;
@@ -86,6 +89,7 @@ const StyledButton = styled.button`
     css`
       &::before {
         content: '\f067';
+        margin-right: 13px;
       }
     `}      
 
@@ -101,8 +105,12 @@ const StyledButton = styled.button`
     props.icon === 'trash' &&
     css`
       &::before {
-        content: '\f014';
-        vertical-align: inherit;
+        content: '';
+        background-image: url(${img});
+        background-repeat: no-repeat;
+        background-position: left;
+        width: 11px;
+        height: 12px;
       }
     `}
 `;
