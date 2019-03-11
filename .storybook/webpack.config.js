@@ -4,13 +4,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg|jpeg)$/,
-        loaders: ['file-loader'],
-        include: path.resolve(__dirname, '../'),
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+        include: path.resolve(__dirname, '../node_modules/'),
       },
       {
         test: /\.scss$/,

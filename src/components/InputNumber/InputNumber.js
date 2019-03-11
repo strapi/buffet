@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import 'rc-input-number/assets/index.css';
 import RcInputNumber from 'rc-input-number';
 import PropTypes from 'prop-types';
 import StyledInputNumber from './StyledInputNumber';
@@ -13,6 +12,9 @@ import {
   commonDefaultProps,
   commonPropTypes,
 } from '../../commonPropTypes/input';
+
+// Copied css from the rc-input-number-lib
+import './rc-input-number.css';
 
 function InputNumber({
   autoFocus,
