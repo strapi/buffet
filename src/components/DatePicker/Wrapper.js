@@ -22,6 +22,8 @@ const Wrapper = styled.div`
   }
   .DateInput_input {
     padding: 0 10px;
+    color: #333740;
+    font-weight: 600;
     background: transparent;
     line-height: ${sizes.input.height};
     font-size: 13px;
