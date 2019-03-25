@@ -49,6 +49,7 @@
     "react-dom": "^16.7.0",
     "react-moment-proptypes": "^1.6.0",
     "react-test-renderer": "^16.7.0",
+    "reactstrap": "^7.1.0",
     "styled-components": "^4.1.2"
   },
   "devDependencies": {
