@@ -31,8 +31,3 @@ export default class CheckboxStory extends React.Component {
     );
   }
 }
-
-// storiesOf('Inputs', module)
-//   .add('Checkbox', () => (
-//   <CheckboxStory />
-// ));
