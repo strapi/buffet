@@ -21,12 +21,14 @@ export default class SelectStory extends React.PureComponent {
 
     return (
       <Form>
-        <Select
-          name="inputSelect"
-          onChange={this.handleChange}
-          options={options}
-          value={value.inputSelect}
-        />
+        <div className="col-6">
+          <Select
+            name="inputSelect"
+            onChange={this.handleChange}
+            options={options}
+            value={value.inputSelect}
+          />
+        </div>
       </Form>
     );
   }

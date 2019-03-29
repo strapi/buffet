@@ -21,13 +21,15 @@ export default class TextareaStory extends React.Component {
 
     return (
       <Form>
-        <Textarea
-          rows="4"
-          name="textarea"
-          placeholder="Write your little description here…"
-          onChange={this.handleChange}
-          value={value.textarea}
-        />
+        <div className="col-6">
+          <Textarea
+            rows="4"
+            name="textarea"
+            placeholder="Write your little description here…"
+            onChange={this.handleChange}
+            value={value.textarea}
+          />
+        </div>
       </Form>
     );
   }

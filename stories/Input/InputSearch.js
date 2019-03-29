@@ -21,13 +21,15 @@ export default class InputSearchStory extends React.Component {
 
     return (
       <Form>
-        <InputBase
-          type="search"
-          name="inputText"
-          placeholder="Tap something to search"
-          onChange={this.handleChange}
-          value={value.inputText}
-        />
+        <div className="col-6">
+          <InputBase
+            type="search"
+            name="inputText"
+            placeholder="Tap something to search"
+            onChange={this.handleChange}
+            value={value.inputText}
+          />
+        </div>
       </Form>
     );
   }

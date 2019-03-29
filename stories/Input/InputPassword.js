@@ -21,13 +21,15 @@ export default class InputPasswordStory extends React.Component {
 
     return (
       <Form>
-        <InputBase
-          type="password"
-          name="inputText"
-          placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-          onChange={this.handleChange}
-          value={value.inputText}
-        />
+        <div className="col-6">
+          <InputBase
+            type="password"
+            name="inputText"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+            onChange={this.handleChange}
+            value={value.inputText}
+          />
+        </div>
       </Form>
     );
   }

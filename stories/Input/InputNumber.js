@@ -16,11 +16,13 @@ export default class InputNumberStory extends React.Component {
 
     return (
       <Form>
-        <InputNumber
-          name="inputNumber"
-          onChange={this.handleChange}
-          value={value.inputNumber}
-        />
+        <div className="col-6">
+          <InputNumber
+            name="inputNumber"
+            onChange={this.handleChange}
+            value={value.inputNumber}
+          />
+        </div>
       </Form>
     );
   }

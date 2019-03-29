@@ -21,12 +21,14 @@ export default class CheckboxStory extends React.Component {
 
     return (
       <Form>
-        <Checkbox
-          name="inputCheckbox"
-          onChange={this.handleChange}
-          value={value.inputCheckbox}
-          message="Checkbox"
-        />
+        <div className="col-4">
+          <Checkbox
+            name="inputCheckbox"
+            onChange={this.handleChange}
+            value={value.inputCheckbox}
+            message="Checkbox"
+          />
+        </div>
       </Form>
     );
   }

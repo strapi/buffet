@@ -21,13 +21,15 @@ export default class InputTextStory extends React.Component {
 
     return (
       <Form>
-        <InputBase
-          type="text"
-          name="inputText"
-          placeholder="Text"
-          onChange={this.handleChange}
-          value={value.inputText}
-        />
+        <div className="col-6">
+          <InputBase
+            type="text"
+            name="inputText"
+            placeholder="Text"
+            onChange={this.handleChange}
+            value={value.inputText}
+          />
+        </div>
       </Form>
     );
   }

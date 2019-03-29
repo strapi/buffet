@@ -21,13 +21,15 @@ export default class InputEmailStory extends React.Component {
 
     return (
       <Form>
-        <InputBase
-          type="email"
-          name="inputText"
-          placeholder="john.doe@strapi.io"
-          onChange={this.handleChange}
-          value={value.inputText}
-        />
+        <div className="col-6">
+          <InputBase
+            type="email"
+            name="inputText"
+            placeholder="john.doe@strapi.io"
+            onChange={this.handleChange}
+            value={value.inputText}
+          />
+        </div>
       </Form>
     );
   }
