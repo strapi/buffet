@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
 import { isFunction } from 'lodash';
-import Label from '../index';
+import { Label } from '../Label';
 
 let renderedComponent;
 const renderComponent = (props = {}) => mount(<Label {...props} />);

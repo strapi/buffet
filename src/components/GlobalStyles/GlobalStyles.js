@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import General from './General';
 import Font from './Font';
 
@@ -11,4 +11,4 @@ function GlobalStyles() {
   );
 }
 
-export default GlobalStyles;
+export default memo(GlobalStyles);

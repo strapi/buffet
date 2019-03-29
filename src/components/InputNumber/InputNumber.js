@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 import RcInputNumber from 'rc-input-number';
 import PropTypes from 'prop-types';
 import StyledInputNumber from './StyledInputNumber';
@@ -16,7 +16,7 @@ import {
 // Copied css from the rc-input-number-lib
 import './rc-input-number.css';
 
-function InputNumber({
+export function InputNumber({
   autoFocus,
   id,
   name,
@@ -62,4 +62,4 @@ InputNumber.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-export default InputNumber;
+export default memo(InputNumber);

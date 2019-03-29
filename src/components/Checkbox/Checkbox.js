@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import {
   commonDefaultProps,
@@ -14,7 +14,7 @@ import StyledCheckboxWrapper from './StyledCheckboxWrapper';
 import StyledCheckbox from './StyledCheckbox';
 import Label from '../Label';
 
-function Checkbox({
+export function Checkbox({
   autoFocus,
   id,
   message,
@@ -55,6 +55,7 @@ Checkbox.defaultProps = {
   value: false,
   message: null,
 };
+
 Checkbox.propTypes = {
   ...commonPropTypes,
   message: PropTypes.oneOfType([
@@ -68,4 +69,4 @@ Checkbox.propTypes = {
   value: PropTypes.bool,
 };
 
-export default Checkbox;
+export default memo(Checkbox);

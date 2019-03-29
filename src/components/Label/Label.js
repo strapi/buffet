@@ -4,12 +4,12 @@
  *
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { isFunction } from 'lodash';
 import StylesTextArea from './StyledLabel';
 
-function Label(props) {
+export function Label(props) {
   const content = (() => {
     if (isFunction(props.message)) {
       return props.message();
@@ -43,4 +43,4 @@ Label.propTypes = {
   ]),
 };
 
-export default Label;
+export default memo(Label);

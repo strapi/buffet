@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import invariant from 'invariant';
 import {
@@ -13,7 +13,7 @@ import {
 } from '../../commonPropTypes/input';
 import SelectStyled from './SelectStyled';
 
-function Select({
+export function Select({
   autoFocus,
   id,
   name,
@@ -24,7 +24,7 @@ function Select({
   ...rest
 }) {
   const lengthOfReactElementsInOptions = options.filter(option =>
-    React.isValidElement(option)
+    React.isValidElement(option),
   ).length;
   const formatOptions = () =>
     options.map(option => (
@@ -37,7 +37,7 @@ function Select({
     ));
   const renderOptions = () => {
     const areOptionsValidReactElements = options.every(option =>
-      React.isValidElement(option)
+      React.isValidElement(option),
     );
 
     return areOptionsValidReactElements ? options : formatOptions();
@@ -46,7 +46,7 @@ function Select({
   if (lengthOfReactElementsInOptions > 0) {
     invariant(
       lengthOfReactElementsInOptions === options.length,
-      'You have mixed up React Element and non React Elements in your options array '
+      'You have mixed up React Element and non React Elements in your options array ',
     );
   }
 
@@ -84,7 +84,7 @@ Select.propTypes = {
       }),
       PropTypes.string,
       PropTypes.node,
-    ])
+    ]),
   ),
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -93,4 +93,4 @@ Select.propTypes = {
   ]).isRequired,
 };
 
-export default Select;
+export default memo(Select);

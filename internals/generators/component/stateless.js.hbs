@@ -4,11 +4,11 @@
  *
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
-function {{ properCase name }}() {
+export function {{ properCase name }}() {
   return (
     <div>
       {{ properCase name }}
@@ -19,4 +19,4 @@ function {{ properCase name }}() {
 {{ properCase name }}.defaultProps = {};
 {{ properCase name }}.propTypes = {};
 
-export default {{ properCase name }};
+export default memo({{ properCase name }});

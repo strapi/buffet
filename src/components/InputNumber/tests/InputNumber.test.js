@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import RcInputNumber from 'rc-input-number';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-import InputNumber from '../index';
+import { InputNumber } from '../InputNumber';
 
 let renderedComponent;
 
