@@ -11,6 +11,7 @@ import InputTextStory from './InputText';
 import SelectStory from './Select';
 import TextareaStory from './Textarea';
 import DatePickerStory from './DatePicker';
+import InputsStory from './AllInputs';
 
 storiesOf('Inputs', module)
   .add('Checkbox', () => <CheckboxStory />)
@@ -21,4 +22,5 @@ storiesOf('Inputs', module)
   .add('Search', () => <InputSearchStory />)
   .add('Text', () => <InputTextStory />)
   .add('Textarea', () => <TextareaStory />)
-  .add('Select', () => <SelectStory />);
+  .add('Select', () => <SelectStory />)
+  .add('All Inputs', () => <InputsStory />);

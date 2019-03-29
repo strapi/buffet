@@ -4,6 +4,7 @@ module.exports = {
     '!src/**/*.test.{js,jsx}',
     '!src/**/index.{js,jsx}',
     '!src/index.js',
+    '!src/components/InputsIndex/*.js',
     '!src/utils/*.{js,jsx}', // This should be tested
     '!src/assets/**/*.{js,jsx}',
     '!src/components/GlobalStyles/*.{js,jsx}',

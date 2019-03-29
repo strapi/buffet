@@ -28,20 +28,23 @@ const inputs = {
   textarea: Textarea,
 };
 
-function InputsIndex({ onChange, type, ...rest }) {
+/* istanbul ignore next */
+export function InputsIndex({ onChange, type, ...rest }) {
   const Compo = inputs[type] || UnknowInput;
 
   return (
     <Error {...rest} type={type}>
-      {({ canCheckError, onBlur, error, setCheck }) => (
+      {({ canCheckError, onBlur, error, dispatch }) => (
         <>
           <Label htmlFor={rest.name} message={rest.label} />
           <Compo
             onBlur={onBlur}
             onChange={e => {
               if (!canCheckError) {
-                setCheck();
+                dispatch({ type: 'SET_CHECK' });
               }
+
+              dispatch({ type: 'SET_ERROR', error: null });
 
               onChange(e);
             }}
