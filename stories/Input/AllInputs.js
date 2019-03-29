@@ -5,6 +5,7 @@ import Form from '../components/Form';
 const form = {
   firstName: {
     className: 'col-6',
+    description: 'You should enter your name',
     label: 'First Name',
     placeholder: 'Vi',
     type: 'text',

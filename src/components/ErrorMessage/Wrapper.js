@@ -5,6 +5,10 @@ const Wrapper = styled.div`
   color: #ff203c;
   font-size: 13px;
   font-family: 'Lato';
+  > span {
+    display: inline-box;
+    margin-bottom: 14px;
+  }
 `;
 
 export default Wrapper;

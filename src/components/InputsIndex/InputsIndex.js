@@ -13,23 +13,25 @@ import DatePicker from '../DatePicker';
 import Error from '../Error';
 import ErrorMessage from '../ErrorMessage';
 import Label from '../Label';
-import Number from '../InputNumber';
+import InputNumber from '../InputNumber';
+import Small from '../Small';
 import StringType from '../InputBase';
 import Textarea from '../Textarea';
+import Spacer from './Spacer';
 import UnknowInput from './UnknownInput';
 
 const inputs = {
   checkbox: Checkbox,
   date: DatePicker,
   email: StringType,
-  number: Number,
+  number: InputNumber,
   string: StringType,
   text: StringType,
   textarea: Textarea,
 };
 
 /* istanbul ignore next */
-export function InputsIndex({ onChange, type, ...rest }) {
+export function InputsIndex({ description, onChange, type, ...rest }) {
   const Compo = inputs[type] || UnknowInput;
 
   return (
@@ -51,7 +53,10 @@ export function InputsIndex({ onChange, type, ...rest }) {
             {...rest}
             type={type}
           />
+          {description && <Small error={error}>{description}</Small>}
           {error && <ErrorMessage>{error}</ErrorMessage>}
+
+          {!error && !description && <Spacer />}
         </>
       )}
     </Error>
@@ -59,11 +64,13 @@ export function InputsIndex({ onChange, type, ...rest }) {
 }
 
 InputsIndex.defaultProps = {
+  description: null,
   onChange: () => {},
   type: null,
 };
 
 InputsIndex.propTypes = {
+  description: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.string,
 };

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.form`
-  padding-top=: 39px;
+  padding-top: 39px;
 `;
 
 function Form({ children, onSubmit, ...rest }) {

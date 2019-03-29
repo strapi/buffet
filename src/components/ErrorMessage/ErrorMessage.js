@@ -12,7 +12,7 @@ import Wrapper from './Wrapper';
 export function ErrorMessage({ children }) {
   return (
     <Wrapper>
-      <span>{children}</span>
+      <span>{children}&nbsp;</span>
     </Wrapper>
   );
 }
