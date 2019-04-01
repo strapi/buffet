@@ -11,6 +11,7 @@ import {
   commonPropTypes,
 } from '../../commonPropTypes/input';
 
+import Label from '../Label';
 import StyledEnumerationWrapper from './StyledEnumerationWrapper';
 import StyledEnumeration from './StyledEnumeration';
 
@@ -28,13 +29,15 @@ function Enumeration({ id, name, onChange, options, value }) {
   return (
     <StyledEnumerationWrapper>
       {options.map(option => (
-        <StyledEnumeration
-          key={option}
-          checked={option === value}
-          name={name}
-          onChange={handleChange}
-          value={option}
-        />
+        <Label key={option} htmlFor={id || name}>
+          <StyledEnumeration
+            checked={option === value}
+            name={id || name}
+            onChange={handleChange}
+            value={option}
+          />
+          <span>{option}</span>
+        </Label>
       ))}
     </StyledEnumerationWrapper>
   );
