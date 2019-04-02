@@ -18,7 +18,12 @@ export default class EnumerationStory extends React.Component {
 
   render() {
     const { value } = this.state;
-    const options = ['first', 'second', 'third'];
+
+    const options = [
+      { value: 'option1', label: 'option 1' },
+      { value: 'option2', label: 'option 2' },
+      { value: 'option3', label: 'option 3' },
+    ];
 
     return (
       <Form>

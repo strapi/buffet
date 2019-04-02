@@ -28,14 +28,14 @@ function Enumeration({ id, name, onChange, options, value }) {
   return (
     <StyledEnumerationWrapper>
       {options.map(option => (
-        <Label key={option} htmlFor={id || name}>
+        <Label key={option.value} htmlFor={id || name}>
           <StyledEnumeration
-            checked={option === value}
+            checked={option.value === value}
             name={id || name}
             onChange={handleChange}
-            value={option}
+            value={option.value}
           />
-          <span>{option}</span>
+          <span>{option.label}</span>
         </Label>
       ))}
     </StyledEnumerationWrapper>
@@ -53,7 +53,12 @@ Enumeration.propTypes = {
   ...commonPropTypes,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.string),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   value: PropTypes.string,
 };
 

@@ -6,7 +6,20 @@ import Enumeration from '../index';
 const defaultProps = {
   name: 'enumeration',
   type: 'radio',
-  options: ['first', 'second', 'third'],
+  options: [
+    {
+      value: 'first',
+      label: 'first option',
+    },
+    {
+      value: 'second',
+      label: 'second option',
+    },
+    {
+      value: 'third',
+      label: 'third option',
+    },
+  ],
 };
 const renderComponent = (props = defaultProps) => {
   const wrapper = mount(<Enumeration {...props} />);
