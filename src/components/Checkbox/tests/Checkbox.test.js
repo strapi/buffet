@@ -38,4 +38,13 @@ describe('<Checkbox />', () => {
     };
     expect(onChange).toHaveBeenLastCalledWith(expected);
   });
+
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = Checkbox;
+
+    expect(onChange).toBeDefined();
+    expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);
+  });
 });

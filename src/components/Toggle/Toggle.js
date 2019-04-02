@@ -18,7 +18,6 @@ import StyledToggle from './StyledToggle';
 function Toggle({ id, name, onChange, value }) {
   const handleChange = () => {
     const target = {
-      id,
       name,
       type: 'checkbox',
       value: !value,
@@ -30,7 +29,12 @@ function Toggle({ id, name, onChange, value }) {
   return (
     <StyledToggleWrapper>
       <Label htmlFor={id || name}>
-        <StyledToggle value={value} name={id || name} onChange={handleChange} />
+        <StyledToggle
+          value={value}
+          id={id || name}
+          name={id || name}
+          onChange={handleChange}
+        />
         <span>OFF</span>
         <span>ON</span>
       </Label>
@@ -40,11 +44,13 @@ function Toggle({ id, name, onChange, value }) {
 
 Toggle.defaultProps = {
   ...commonDefaultProps,
+  onChange: () => {},
   value: false,
 };
 Toggle.propTypes = {
   ...commonPropTypes,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   value: PropTypes.bool,
 };
 
