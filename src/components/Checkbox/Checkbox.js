@@ -67,6 +67,7 @@ Checkbox.propTypes = {
     }),
   ]),
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   value: PropTypes.bool,
 };
 

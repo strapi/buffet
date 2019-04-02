@@ -18,7 +18,6 @@ import StyledEnumeration from './StyledEnumeration';
 function Enumeration({ id, name, onChange, options, value }) {
   const handleChange = event => {
     const target = {
-      id,
       name,
       type: 'radio',
       value: event.target.value,
@@ -45,14 +44,15 @@ function Enumeration({ id, name, onChange, options, value }) {
 
 Enumeration.defaultProps = {
   ...commonDefaultProps,
-  name: null,
+  onChange: () => {},
   options: null,
   value: null,
 };
 
 Enumeration.propTypes = {
   ...commonPropTypes,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.string),
   value: PropTypes.string,
 };
