@@ -33,8 +33,6 @@ const inputs = {
 export function InputsIndex({ description, onChange, type, ...rest }) {
   const Compo = inputs[type] || UnknowInput;
 
-  console.log(rest);
-
   return (
     <Error {...rest} type={type}>
       {({ canCheckError, onBlur, error, dispatch }) => (

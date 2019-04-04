@@ -4,7 +4,7 @@ import Form from '../components/Form';
 
 const form = {
   firstName: {
-    class: 'col-6',
+    styleName: 'col-6',
     description: 'You should enter your name',
     label: 'First Name',
     placeholder: 'Vi',
@@ -15,7 +15,7 @@ const form = {
     },
   },
   lastName: {
-    class: 'col-6',
+    styleName: 'col-6',
     label: 'Last Name',
     placeholder: 'Ky',
     type: 'text',
@@ -24,7 +24,7 @@ const form = {
     },
   },
   email: {
-    class: 'col-6',
+    styleName: 'col-6',
     label: 'Email',
     placeholder: 'hi@strapi.io',
     type: 'email',
@@ -60,7 +60,7 @@ const InputsStory = () => {
   return (
     <Form>
       {Object.keys(form).map(input => (
-        <div key={input} className={form[input].class}>
+        <div key={input} className={form[input].styleName}>
           <Inputs
             {...form[input]}
             name={input}
