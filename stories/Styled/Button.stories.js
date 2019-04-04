@@ -1,9 +1,9 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import Button from '../../src/components/Button';
+import Button from '../../src/styled/Button';
 
-storiesOf('Button|Button', module)
+storiesOf('Styled|Button', module)
   // Primary
   .add('Primary', () => (
     <Button type="submit" color="primary">

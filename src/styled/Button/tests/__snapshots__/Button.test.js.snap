@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] = `
+exports[`<Button /> <Button /> icons should render the add back 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
@@ -49,7 +49,7 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add back 1`] 
 />
 `;
 
-exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] = `
+exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
@@ -99,7 +99,7 @@ exports[`<StyledButton /> <StyledButton /> icons should render the add icon 1`] 
 />
 `;
 
-exports[`<StyledButton /> <StyledButton /> icons should render the add trash 1`] = `
+exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;

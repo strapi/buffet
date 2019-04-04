@@ -1,3 +1,9 @@
+/**
+ *
+ * Button
+ *
+ */
+
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
@@ -5,11 +11,11 @@ import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
 import img from '../../assets/icons/icon_trash.svg';
 
-const StyledButton = styled.button`
+const Button = styled.button`
 
   /*
-   * Theme
-   */ 
+  * Theme
+  */ 
 
   // General style
   height: ${sizes.button.height.large};
@@ -115,16 +121,16 @@ const StyledButton = styled.button`
     `}
 `;
 
-StyledButton.defaultProps = {
+Button.defaultProps = {
   color: 'primary',
   icon: null,
   type: 'button',
 };
 
-StyledButton.propTypes = {
+Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
   icon: PropTypes.oneOf(['add', 'back', 'trash']),
   type: PropTypes.string,
 };
 
-export default StyledButton;
+export default Button;

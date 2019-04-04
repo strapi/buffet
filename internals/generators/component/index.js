@@ -14,6 +14,13 @@ module.exports = {
     {
       type: 'list',
       name: 'type',
+      message: 'Select the type of element',
+      default: 'Styled',
+      choices: () => ['Styled', 'Component', 'Combined'],
+    },
+    {
+      type: 'list',
+      name: 'type',
       message: 'Select the type of component',
       default: 'Stateless Function',
       choices: () => [
@@ -67,7 +74,8 @@ module.exports = {
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
+        path:
+          '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
         templateFile: './component/test.js.hbs',
         abortOnFail: true,
       },
