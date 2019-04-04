@@ -16,15 +16,6 @@ import StyledEnumerationWrapper from './StyledEnumerationWrapper';
 import StyledEnumeration from './StyledEnumeration';
 
 function Enumeration({ id, name, onChange, options, value }) {
-  const handleChange = event => {
-    const target = {
-      name,
-      type: 'radio',
-      value: event.target.value,
-    };
-    onChange({ target });
-  };
-
   return (
     <StyledEnumerationWrapper>
       {options.map(option => (
@@ -32,7 +23,7 @@ function Enumeration({ id, name, onChange, options, value }) {
           <StyledEnumeration
             checked={option.value === value}
             name={id || name}
-            onChange={handleChange}
+            onChange={onChange}
             value={option.value}
           />
           <span>{option.label}</span>

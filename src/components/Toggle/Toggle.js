@@ -16,16 +16,6 @@ import StyledToggleWrapper from './StyledToggleWrapper';
 import StyledToggle from './StyledToggle';
 
 function Toggle({ id, name, onChange, value }) {
-  const handleChange = () => {
-    const target = {
-      name,
-      type: 'checkbox',
-      value: !value,
-    };
-
-    onChange({ target });
-  };
-
   return (
     <StyledToggleWrapper>
       <Label htmlFor={id || name}>
@@ -33,7 +23,9 @@ function Toggle({ id, name, onChange, value }) {
           value={value}
           id={id || name}
           name={id || name}
-          onChange={handleChange}
+          onChange={e => {
+            onChange({ target: { name, value: e.target.checked } });
+          }}
         />
         <span>OFF</span>
         <span>ON</span>

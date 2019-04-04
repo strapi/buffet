@@ -32,27 +32,6 @@ describe('<Enumeration />', () => {
     renderComponent();
   });
 
-  it('should send a string', () => {
-    const onChange = jest.fn();
-    const value = 'second';
-    const renderedComponent = renderComponent({
-      ...defaultProps,
-      onChange,
-      value,
-    });
-    const element = renderedComponent.find('input').first();
-
-    element.simulate('change');
-    const expected = {
-      target: {
-        name: 'enumeration',
-        type: 'radio',
-        value: 'first',
-      },
-    };
-    expect(onChange).toHaveBeenLastCalledWith(expected);
-  });
-
   it('should use the defaultProps', () => {
     const {
       defaultProps: { onChange },

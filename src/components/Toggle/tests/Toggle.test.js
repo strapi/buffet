@@ -27,16 +27,9 @@ describe('<Toggle />', () => {
       value,
     });
     const element = renderedComponent.find('input');
-
     element.simulate('change');
-    const expected = {
-      target: {
-        name: 'toggle',
-        type: 'checkbox',
-        value: true,
-      },
-    };
-    expect(onChange).toHaveBeenLastCalledWith(expected);
+
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('should use the defaultProps', () => {
