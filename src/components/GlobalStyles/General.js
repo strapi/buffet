@@ -9,9 +9,6 @@ const General = createGlobalStyle`
     cursor: pointer;
     outline: 0;
   }
-  input {
-    max-width: 100% !important;
-  }
 `;
 
 export default General;

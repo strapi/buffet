@@ -6,7 +6,6 @@
 
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 
 import Checkbox from '../Checkbox';
 import DatePicker from '../DatePicker';
@@ -33,6 +32,8 @@ const inputs = {
 /* istanbul ignore next */
 export function InputsIndex({ description, onChange, type, ...rest }) {
   const Compo = inputs[type] || UnknowInput;
+
+  console.log(rest);
 
   return (
     <Error {...rest} type={type}>
