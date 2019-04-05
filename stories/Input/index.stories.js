@@ -12,7 +12,7 @@ import SelectStory from './Select';
 import TextareaStory from './Textarea';
 import DatePickerStory from './DatePicker';
 
-storiesOf('Inputs', module)
+storiesOf('Single|Inputs', module)
   .add('Checkbox', () => <CheckboxStory />)
   .add('DatePicker', () => <DatePickerStory />)
   .add('Email', () => <EmailStory />)

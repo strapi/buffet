@@ -1,11 +1,16 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import GlobalStyles from '../index';
+import GlobalStyles from '../index';
+
+const renderComponent = () => {
+  const wrapper = shallow(<GlobalStyles />);
+
+  return wrapper;
+};
 
 describe('<GlobalStyles />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('should not crash', () => {
+    renderComponent();
   });
 });
