@@ -9,6 +9,6 @@ const defaultProps = {
   name: 'checkbox',
 };
 
-storiesOf('Components|Checkbox', module).add('Checkbox|WithLabel', () => (
+storiesOf('Components|Checkbox', module).add('CheckboxWithLabel', () => (
   <Checkbox {...defaultProps} />
 ));

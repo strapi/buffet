@@ -9,7 +9,6 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const StyledTextarea = styled.textarea`
-
   width: 100%;
   height: calc(${sizes.input.height} * 4);
   padding: ${sizes.input.padding} ${sizes.input.padding};

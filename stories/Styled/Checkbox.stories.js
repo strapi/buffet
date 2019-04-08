@@ -3,6 +3,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Checkbox from '../../src/styled/Checkbox';
 
-storiesOf('Styled|Checkbox', module).add('Checkbox|Simple', () => (
+storiesOf('Styled|Checkbox', module).add('Simple', () => (
   <Checkbox name="inputCheckbox" message="Checkbox" />
 ));
