@@ -14,7 +14,6 @@ const StyledCheckboxWrapper = styled.div`
   width: 100%;
   height: auto;
   padding-left: calc(${sizes.checkbox.width} + 10px);
-
   input + label {
     cursor: pointer;
     &:before {

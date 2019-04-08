@@ -1,19 +1,19 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Checkbox from '../index';
+import Toggle from '../index';
 
 const defaultProps = {
+  name: 'toggle',
   type: 'checkbox',
-  name: 'checkbox',
 };
 const renderComponent = (props = defaultProps) => {
-  const wrapper = mount(<Checkbox {...props} />);
+  const wrapper = mount(<Toggle {...props} />);
 
   return wrapper;
 };
 
-describe('<Checkbox />', () => {
+describe('<Toggle />', () => {
   it('should not crash', () => {
     renderComponent();
   });
@@ -27,22 +27,15 @@ describe('<Checkbox />', () => {
       value,
     });
     const element = renderedComponent.find('input');
-
     element.simulate('change');
-    const expected = {
-      target: {
-        name: 'checkbox',
-        type: 'checkbox',
-        value: true,
-      },
-    };
-    expect(onChange).toHaveBeenLastCalledWith(expected);
+
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('should use the defaultProps', () => {
     const {
       defaultProps: { onChange },
-    } = Checkbox;
+    } = Toggle;
 
     expect(onChange).toBeDefined();
     expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);

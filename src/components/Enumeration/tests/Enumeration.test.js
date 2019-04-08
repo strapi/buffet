@@ -1,0 +1,43 @@
+import React from 'react';
+import { mount } from 'enzyme';
+
+import Enumeration from '../index';
+
+const defaultProps = {
+  name: 'enumeration',
+  type: 'radio',
+  options: [
+    {
+      value: 'first',
+      label: 'first option',
+    },
+    {
+      value: 'second',
+      label: 'second option',
+    },
+    {
+      value: 'third',
+      label: 'third option',
+    },
+  ],
+};
+const renderComponent = (props = defaultProps) => {
+  const wrapper = mount(<Enumeration {...props} />);
+
+  return wrapper;
+};
+
+describe('<Enumeration />', () => {
+  it('should not crash', () => {
+    renderComponent();
+  });
+
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = Enumeration;
+
+    expect(onChange).toBeDefined();
+    expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);
+  });
+});

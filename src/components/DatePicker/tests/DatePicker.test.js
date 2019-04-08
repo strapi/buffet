@@ -47,4 +47,13 @@ describe('<DatePicker />', () => {
       target: { name: 'inputDate', type: 'date', value: updatedValue },
     });
   });
+
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = DatePicker;
+
+    expect(onChange).toBeDefined();
+    expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);
+  });
 });

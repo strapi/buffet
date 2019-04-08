@@ -52,6 +52,7 @@ function Checkbox({
 
 Checkbox.defaultProps = {
   ...commonDefaultProps,
+  onChange: () => {},
   value: false,
   message: null,
 };
@@ -65,6 +66,8 @@ Checkbox.propTypes = {
       params: PropTypes.object,
     }),
   ]),
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   value: PropTypes.bool,
 };
 
