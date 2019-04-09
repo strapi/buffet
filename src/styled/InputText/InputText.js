@@ -9,8 +9,7 @@ import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
-const StyledInputText = styled.input`
-
+const InputText = styled.input`
   // General style
   width: 100%;
   height: ${sizes.input.height};
@@ -24,7 +23,6 @@ const StyledInputText = styled.input`
   border-radius: ${sizes.radius};
   color: ${colors.blueTxt};
   background-color: transparent;
-  
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
@@ -47,12 +45,12 @@ const StyledInputText = styled.input`
     `}}  
 `;
 
-StyledInputText.defaultProps = {
+InputText.defaultProps = {
   type: 'text',
 };
 
-StyledInputText.propTypes = {
+InputText.propTypes = {
   type: PropTypes.string,
 };
 
-export default StyledInputText;
+export default InputText;

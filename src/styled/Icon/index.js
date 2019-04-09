@@ -1,34 +1,28 @@
+/**
+ *
+ * Icon
+ *
+ */
+
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
-const StyledIcon = styled.span`
-  position: absolute;
-  top: 0;
+const Icon = styled.span`
   width: ${sizes.input.height};
   height: ${sizes.input.height};
   display: flex;
-
-  /*
-   * Input with left icon
-   */
-  ${props =>
-    props.type !== 'text' &&
-    css`
-      background-color: ${colors.greyIconBkgd};
-      left: 0;
-      ::before {
-        font-family: 'FontAwesome';
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        margin: auto;
-        color: ${colors.greyIconColor};
-      }
-    `}}
+  ::before {
+    font-family: 'FontAwesome';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    color: ${colors.greyIconColor};
+  }
     
   /*
    * Specific icon
@@ -38,6 +32,7 @@ const StyledIcon = styled.span`
   ${props =>
     props.type === 'search' &&
     css`
+      background-color: ${colors.greyIconBkgd};
       ::before {
         content: '\f002';
       }
@@ -47,6 +42,7 @@ const StyledIcon = styled.span`
   ${props =>
     props.type === 'email' &&
     css`
+      background-color: ${colors.greyIconBkgd};
       ::before {
         content: '\f1fa';
       }
@@ -56,19 +52,18 @@ const StyledIcon = styled.span`
   ${props =>
     props.type === 'password' &&
     css`
-      background-color: transparent;
       ::before {
         content: '\f06e';
       }
     `}}
-       
 `;
 
-StyledIcon.defaultProps = {
+Icon.defaultProps = {
   type: 'search',
 };
-StyledIcon.propTypes = {
+
+Icon.propTypes = {
   type: PropTypes.string,
 };
 
-export default StyledIcon;
+export default Icon;

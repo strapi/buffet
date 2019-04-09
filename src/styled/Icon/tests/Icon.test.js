@@ -1,13 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
-import StyledInputIcon from '../index';
+import Icon from '../index';
 
 let renderedComponent;
-const renderComponent = (props = {}) => mount(<StyledInputIcon {...props} />);
+const renderComponent = (props = {}) => mount(<Icon {...props} />);
 
-describe('<StyledInputIcon />', () => {
-  describe('<StyledInputIcon /> attributes', () => {
+describe('<Icon />', () => {
+  describe('<Icon /> attributes', () => {
     afterEach(() => {
       renderedComponent.unmount();
     });
@@ -18,21 +18,19 @@ describe('<StyledInputIcon />', () => {
       expect(renderedComponent.at(0).prop('type')).toBe(defaultType);
     });
   });
-  describe('<StyledInputIcon /> icon attributes', () => {
+  describe('<Icon /> icon attributes', () => {
     it('should render the search icon', () => {
-      const tree = renderer.create(<StyledInputIcon type="search" />).toJSON();
+      const tree = renderer.create(<Icon type="search" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render the email icon', () => {
-      const tree = renderer.create(<StyledInputIcon type="email" />).toJSON();
+      const tree = renderer.create(<Icon type="email" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render the password icon', () => {
-      const tree = renderer
-        .create(<StyledInputIcon type="password" />)
-        .toJSON();
+      const tree = renderer.create(<Icon type="password" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

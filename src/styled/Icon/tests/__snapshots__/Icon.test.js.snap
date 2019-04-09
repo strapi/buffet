@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> <Icon /> icon attributes should render the email icon 1`] = `
+<span
+  className="sc-bdVaJa fBhdmK"
+  type="email"
+/>
+`;
+
+exports[`<Icon /> <Icon /> icon attributes should render the password icon 1`] = `
+<span
+  className="sc-bdVaJa jSlhwP"
+  type="password"
+/>
+`;
+
+exports[`<Icon /> <Icon /> icon attributes should render the search icon 1`] = `
+<span
+  className="sc-bdVaJa jmujDp"
+  type="search"
+/>
+`;

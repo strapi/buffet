@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import InputBase from '../index';
-import InputIcon from '../../InputIcon';
+
+import InputIcon from '../../../styled/Icon';
 
 const defaultProps = {
   type: 'text',

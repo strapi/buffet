@@ -12,7 +12,7 @@ import {
 } from '../../commonPropTypes/input';
 import StyledInputBase from './StyledInputBase';
 import StyledInputText from '../InputText';
-import InputIcon from '../InputIcon';
+import InputIcon from '../../styled/Icon';
 
 class InputBase extends React.Component {
   state = { showPassword: false };
