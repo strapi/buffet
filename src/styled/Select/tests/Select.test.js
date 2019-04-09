@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Textarea from '../index';
+import Select from '../index';
 
 const renderComponent = () => {
-  const wrapper = shallow(<Textarea />);
+  const wrapper = shallow(<Select />);
 
   return wrapper;
 };
 
-describe('<Textarea />', () => {
+describe('<Select />', () => {
   it('should not crash', () => {
     renderComponent();
   });

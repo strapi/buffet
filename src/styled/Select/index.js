@@ -1,9 +1,15 @@
+/**
+ *
+ * Select
+ *
+ */
+
 import styled from 'styled-components';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import img from '../../assets/icons/icon_select.svg';
 
-const SelectStyled = styled.select`
+const Select = styled.select`
 
   width: 100%;
   height: ${sizes.input.height};
@@ -33,4 +39,4 @@ const SelectStyled = styled.select`
   }
 `;
 
-export default SelectStyled;
+export default Select;
