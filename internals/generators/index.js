@@ -1,8 +1,8 @@
 const path = require('path');
 const { exec } = require('child_process');
-const styledGenerator = require('./styled/index.js');
-const componentGenerator = require('./component/index.js');
-const combinedGenerator = require('./combined/index.js');
+const styledGenerator = require('./styled');
+const componentGenerator = require('./component');
+const combinedGenerator = require('./combined');
 
 module.exports = plop => {
   plop.setGenerator('styled', styledGenerator);

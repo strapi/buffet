@@ -35,17 +35,11 @@ const Toggle = styled.input`
 `;
 
 Toggle.defaultProps = {
-  id: null,
-  name: null,
   type: 'checkbox',
 };
 
 Toggle.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
-  value: PropTypes.bool.isRequired,
 };
 
 export default Toggle;

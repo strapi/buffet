@@ -25,15 +25,11 @@ const Enumeration = styled.input`
 `;
 
 Enumeration.defaultProps = {
-  name: null,
   type: 'radio',
 };
 
 Enumeration.propTypes = {
-  name: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
-  value: PropTypes.string.isRequired,
 };
 
 export default Enumeration;

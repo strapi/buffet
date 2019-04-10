@@ -13,7 +13,6 @@ import { SingleDatePicker } from 'react-dates';
 
 import Datepicker from '../../styled/Datepicker';
 
-/* eslint-disable react/prefer-stateless-function */
 class DatePicker extends React.PureComponent {
   state = { date: null, isFocused: false };
 
@@ -35,9 +34,9 @@ class DatePicker extends React.PureComponent {
   handleDateChange = date => {
     const { name, onChange } = this.props;
 
-    this.setState({ date });
-
-    onChange({ target: { name, type: 'date', value: date } });
+    this.setState({ date }, () =>
+      onChange({ target: { name, type: 'date', value: date } }),
+    );
   };
 
   handleFocusChange = ({ focused }) => {

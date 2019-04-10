@@ -4,11 +4,7 @@ import 'jest-styled-components';
 
 import Checkbox from '../index';
 
-const renderComponent = () => {
-  const wrapper = shallow(<Checkbox />);
-
-  return wrapper;
-};
+const renderComponent = () => shallow(<Checkbox />);
 
 describe('<Checkbox />', () => {
   it('should not crash', () => {

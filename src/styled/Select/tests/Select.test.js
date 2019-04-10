@@ -3,11 +3,7 @@ import { shallow } from 'enzyme';
 
 import Select from '../index';
 
-const renderComponent = () => {
-  const wrapper = shallow(<Select />);
-
-  return wrapper;
-};
+const renderComponent = () => shallow(<Select />);
 
 describe('<Select />', () => {
   it('should not crash', () => {

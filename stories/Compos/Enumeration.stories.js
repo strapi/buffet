@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import Enumeration from '../../src/components/Enumeration';
 
 function EnumerationStory() {
-  const [val, setValue] = useState(false);
+  const [val, setValue] = useState('');
 
   const options = [
     { value: 'option1', label: 'option 1' },

@@ -7,11 +7,7 @@ import InputText from '../index';
 
 import sizes from '../../../assets/styles/sizes';
 
-const renderComponent = () => {
-  const wrapper = shallow(<InputText />);
-
-  return wrapper;
-};
+const renderComponent = () => shallow(<InputText />);
 
 describe('<InputText />', () => {
   it('should not crash', () => {

@@ -3,11 +3,7 @@ import { shallow } from 'enzyme';
 
 import Label from '../index';
 
-const renderComponent = () => {
-  const wrapper = shallow(<Label />);
-
-  return wrapper;
-};
+const renderComponent = () => shallow(<Label />);
 
 describe('<Label />', () => {
   it('should not crash', () => {
