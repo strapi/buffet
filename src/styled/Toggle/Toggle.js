@@ -1,6 +1,6 @@
 /**
  *
- * StyledToggle
+ * Toggle
  *
  */
 
@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import colors from '../../assets/styles/colors';
 
-const StyledToggle = styled.input`
+const Toggle = styled.input`
   position: absolute;
   top: 0;
   left: 0;
@@ -34,13 +34,13 @@ const StyledToggle = styled.input`
   }
 `;
 
-StyledToggle.defaultProps = {
+Toggle.defaultProps = {
   id: null,
   name: null,
   type: 'checkbox',
 };
 
-StyledToggle.propTypes = {
+Toggle.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -48,4 +48,4 @@ StyledToggle.propTypes = {
   value: PropTypes.bool.isRequired,
 };
 
-export default StyledToggle;
+export default Toggle;

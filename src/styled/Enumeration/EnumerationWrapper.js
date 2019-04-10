@@ -1,6 +1,6 @@
 /**
  *
- * StyledEnumerationWrapper
+ * EnumerationWrapper
  *
  */
 
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 import colors from '../../assets/styles/colors';
 
-const StyledEnumerationWrapper = styled.div`
+const EnumerationWrapper = styled.div`
   border: 1px solid ${colors.lightGrey};
   width: fit-content;
   height: 34px;
@@ -34,4 +34,4 @@ const StyledEnumerationWrapper = styled.div`
   }
 `;
 
-export default StyledEnumerationWrapper;
+export default EnumerationWrapper;

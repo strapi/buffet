@@ -1,36 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import InputNumber from '../../src/components/InputNumber';
 
-const defaultProps = {
-  name: 'input',
-};
+function InputNumberStory() {
+  const [val, setValue] = useState(null);
 
-class InputNumberStory extends React.Component {
-  state = {
-    value: {
-      input: null,
-    },
+  const defaultProps = {
+    name: 'input',
   };
 
-  handleChange = ({ target }) => {
-    this.setState(prevState => ({
-      value: { ...prevState.value, [target.name]: target.value },
-    }));
-  };
-
-  render() {
-    const { value } = this.state;
-
-    return (
-      <InputNumber
-        {...defaultProps}
-        onChange={this.handleChange}
-        value={value.input}
-      />
-    );
-  }
+  return (
+    <InputNumber
+      {...defaultProps}
+      onChange={({ target: { value } }) => setValue(value)}
+      value={val}
+    />
+  );
 }
 
 storiesOf('Components|InputNumber', module).add('Default', () => (

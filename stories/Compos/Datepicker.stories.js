@@ -1,36 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import DatePicker from '../../src/components/DatePicker';
 
-const defaultProps = {
-  name: 'date',
-};
+function DatePickerStory() {
+  const [val, setValue] = useState('');
 
-class DatePickerStory extends React.Component {
-  state = {
-    value: {
-      date: '',
-    },
+  const defaultProps = {
+    name: 'date',
   };
 
-  handleChange = ({ target }) => {
-    this.setState(prevState => ({
-      value: { ...prevState.value, [target.name]: target.value },
-    }));
-  };
-
-  render() {
-    const { value } = this.state;
-
-    return (
-      <DatePicker
-        {...defaultProps}
-        onChange={this.handleChange}
-        value={value.date}
-      />
-    );
-  }
+  return (
+    <DatePicker
+      {...defaultProps}
+      onChange={({ target: { value } }) => setValue(value)}
+      value={val}
+    />
+  );
 }
 
 storiesOf('Components|DatePicker', module).add('Simple', () => (

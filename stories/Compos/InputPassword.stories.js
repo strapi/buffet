@@ -1,38 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import InputText from '../../src/components/InputText';
 
-const defaultProps = {
-  placeholder: '●●●●●●',
-  name: 'input',
-  type: 'password',
-};
+function InputTextStory() {
+  const [val, setValue] = useState('');
 
-class InputTextStory extends React.Component {
-  state = {
-    value: {
-      input: '',
-    },
+  const defaultProps = {
+    placeholder: '●●●●●●',
+    name: 'input',
+    type: 'password',
   };
 
-  handleChange = ({ target }) => {
-    this.setState(prevState => ({
-      value: { ...prevState.value, [target.name]: target.value },
-    }));
-  };
-
-  render() {
-    const { value } = this.state;
-
-    return (
-      <InputText
-        {...defaultProps}
-        onChange={this.handleChange}
-        value={value.input}
-      />
-    );
-  }
+  return (
+    <InputText
+      {...defaultProps}
+      onChange={({ target: { value } }) => setValue(value)}
+      value={val}
+    />
+  );
 }
 
 storiesOf('Components|InputPassword', module).add('Default', () => (

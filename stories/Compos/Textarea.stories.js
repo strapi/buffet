@@ -1,38 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import Textarea from '../../src/components/Textarea';
 
-const defaultProps = {
-  placeholder: 'Write your little description here…',
-  name: 'textarea',
-  rows: '4',
-};
+function TextareaStory() {
+  const [val, setValue] = useState('');
 
-class TextareaStory extends React.Component {
-  state = {
-    value: {
-      textarea: '',
-    },
+  const defaultProps = {
+    placeholder: 'Write your little description here…',
+    name: 'textarea',
+    rows: '4',
   };
 
-  handleChange = ({ target }) => {
-    this.setState(prevState => ({
-      value: { ...prevState.value, [target.name]: target.value },
-    }));
-  };
-
-  render() {
-    const { value } = this.state;
-
-    return (
-      <Textarea
-        {...defaultProps}
-        onChange={this.handleChange}
-        value={value.textarea}
-      />
-    );
-  }
+  return (
+    <Textarea
+      {...defaultProps}
+      onChange={({ target: { value } }) => setValue(value)}
+      value={val}
+    />
+  );
 }
 
 storiesOf('Components|Textarea', module).add('Simple', () => <TextareaStory />);

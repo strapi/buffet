@@ -1,6 +1,6 @@
 /**
  *
- * StyledEnumeration
+ * Enumeration
  *
  */
 
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 
-const StyledEnumeration = styled.input`
+const Enumeration = styled.input`
   position: absolute;
   top: 0;
   left: 0;
@@ -24,16 +24,16 @@ const StyledEnumeration = styled.input`
   }
 `;
 
-StyledEnumeration.defaultProps = {
+Enumeration.defaultProps = {
   name: null,
   type: 'radio',
 };
 
-StyledEnumeration.propTypes = {
+Enumeration.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
   value: PropTypes.string.isRequired,
 };
 
-export default StyledEnumeration;
+export default Enumeration;

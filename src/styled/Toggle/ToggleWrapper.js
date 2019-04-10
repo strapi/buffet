@@ -1,6 +1,6 @@
 /**
  *
- * StyledToggleWrapper
+ * ToggleWrapper
  *
  */
 
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 import colors from '../../assets/styles/colors';
 
-const StyledToggleWrapper = styled.div`
+const ToggleWrapper = styled.div`
   width: fit-content;
   height: 34px;
   border: 1px solid ${colors.lightGrey};
@@ -28,4 +28,4 @@ const StyledToggleWrapper = styled.div`
   }
 `;
 
-export default StyledToggleWrapper;
+export default ToggleWrapper;

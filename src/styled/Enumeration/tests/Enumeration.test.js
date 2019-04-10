@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import GlobalStyles from '../index';
+// import Enumeration from '../index';
 
-describe('<GlobalStyles />', () => {
+describe('<Enumeration />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

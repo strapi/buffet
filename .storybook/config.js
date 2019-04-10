@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
-import GlobalStyles from '../src/components/GlobalStyles';
+import GlobalStyle from '../src/styled/GlobalStyle';
 
 addDecorator(story => (
   <React.Fragment>
-    <GlobalStyles />
+    <GlobalStyle />
     {story()}
   </React.Fragment>
 ));

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
+
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import Select from '../../src/components/Select';
+import Toggle from '../../src/components/Toggle';
 
-function SelectStory() {
-  const [val, setValue] = useState('');
+function ToggleStory() {
+  const [val, setValue] = useState(false);
 
   const defaultProps = {
-    name: 'select',
-    options: ['first option', 'second option'],
+    name: 'toggle',
   };
 
   return (
-    <Select
+    <Toggle
       {...defaultProps}
       onChange={({ target: { value } }) => setValue(value)}
       value={val}
@@ -20,4 +20,4 @@ function SelectStory() {
   );
 }
 
-storiesOf('Components|Select', module).add('Simple', () => <SelectStory />);
+storiesOf('Components|Toggle', module).add('Simple', () => <ToggleStory />);
