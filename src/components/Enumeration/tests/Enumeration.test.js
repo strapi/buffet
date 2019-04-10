@@ -21,11 +21,8 @@ const defaultProps = {
     },
   ],
 };
-const renderComponent = (props = defaultProps) => {
-  const wrapper = mount(<Enumeration {...props} />);
-
-  return wrapper;
-};
+const renderComponent = (props = defaultProps) =>
+  mount(<Enumeration {...props} />);
 
 describe('<Enumeration />', () => {
   it('should not crash', () => {

@@ -1,4 +1,5 @@
 const sizes = {
+  margin: '10',
   radius: '3px',
   button: {
     height: {

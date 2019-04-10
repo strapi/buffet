@@ -7,11 +7,8 @@ const defaultProps = {
   type: 'checkbox',
   name: 'checkbox',
 };
-const renderComponent = (props = defaultProps) => {
-  const wrapper = mount(<Checkbox {...props} />);
-
-  return wrapper;
-};
+const renderComponent = (props = defaultProps) =>
+  mount(<Checkbox {...props} />);
 
 describe('<Checkbox />', () => {
   it('should not crash', () => {

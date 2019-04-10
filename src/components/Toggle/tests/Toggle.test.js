@@ -7,11 +7,7 @@ const defaultProps = {
   name: 'toggle',
   type: 'checkbox',
 };
-const renderComponent = (props = defaultProps) => {
-  const wrapper = mount(<Toggle {...props} />);
-
-  return wrapper;
-};
+const renderComponent = (props = defaultProps) => mount(<Toggle {...props} />);
 
 describe('<Toggle />', () => {
   it('should not crash', () => {

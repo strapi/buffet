@@ -1,4 +1,7 @@
-import StyledButton from './StyledButton';
+/**
+ *
+ * Button
+ *
+ */
 
-export { default } from './Button';
-export { StyledButton };
+export { default } from '../../styled/Button';

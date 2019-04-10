@@ -56,18 +56,13 @@ module.exports = {
       {
         type: 'add',
         path: '../../src/components/{{properCase name}}/index.js',
-        templateFile: './component/index.js.hbs',
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '../../src/components/{{properCase name}}/{{properCase name}}.js',
         templateFile: componentTemplate,
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
+        path:
+          '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
         templateFile: './component/test.js.hbs',
         abortOnFail: true,
       },
