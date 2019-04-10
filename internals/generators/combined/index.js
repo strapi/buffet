@@ -1,20 +1,20 @@
 /**
- * Component Generator
+ * Combined Generator
  */
 
 /* eslint strict: ["off"] */
 
 'use strict';
 
-const componentExists = require('../utils/componentExists');
+const combinedExists = require('../utils/combinedExists');
 
 module.exports = {
-  description: 'Add an unconnected component',
+  description: 'Add an unconnected combined',
   prompts: [
     {
       type: 'list',
       name: 'type',
-      message: 'Select the type of component',
+      message: 'Select the type of combined',
       default: 'Stateless Function',
       choices: () => [
         'Stateless Function',
@@ -29,8 +29,8 @@ module.exports = {
       default: 'Button',
       validate: value => {
         if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component with this name already exists'
+          return combinedExists(value)
+            ? 'A combined with this name already exists'
             : true;
         }
 
@@ -44,33 +44,33 @@ module.exports = {
 
     switch (data.type) {
       case 'Stateless Function': {
-        componentTemplate = './component/stateless.js.hbs';
+        componentTemplate = './combined/stateless.js.hbs';
         break;
       }
       default: {
-        componentTemplate = './component/class.js.hbs';
+        componentTemplate = './combined/class.js.hbs';
       }
     }
 
     const actions = [
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/index.js',
+        path: '../../src/combined/{{properCase name}}/index.js',
         templateFile: componentTemplate,
         abortOnFail: true,
       },
       {
         type: 'add',
         path:
-          '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
-        templateFile: './component/test.js.hbs',
+          '../../src/combined/{{properCase name}}/tests/{{properCase name}}.test.js',
+        templateFile: './combined/test.js.hbs',
         abortOnFail: true,
       },
     ];
 
     actions.push({
       type: 'prettify',
-      path: '/components/',
+      path: '/combined/',
     });
 
     return actions;
