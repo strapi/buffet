@@ -20,5 +20,9 @@ const colors = {
   greyIconBkgd: '#FAFAFB',
   greyIconColor: '#B3B5B9',
   blueBorder: '#78caff',
+
+  // timepicker
+  blueIconTxt: '#367CF7',
+  blueIconBkgd: '#E8F0FA',
 };
 export default colors;

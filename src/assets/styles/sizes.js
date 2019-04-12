@@ -19,6 +19,11 @@ const sizes = {
     height: '14px',
     width: '14px',
   },
+  timepicker: {
+    list: {
+      height: '144px',
+    },
+  },
 };
 
 export default sizes;
