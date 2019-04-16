@@ -38,7 +38,12 @@ TimeList.defaultProps = {
 TimeList.propTypes = {
   isOpen: PropTypes.bool,
   onClick: PropTypes.func,
-  options: PropTypes.array,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   value: PropTypes.string,
 };
 

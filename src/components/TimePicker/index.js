@@ -46,6 +46,15 @@ const format = array =>
     return string;
   });
 
+const short = hour => {
+  const array = hour.split(':');
+  if (array.length > 2) {
+    return array.slice(0, -1).join(':');
+  }
+
+  return hour;
+};
+
 const getOptions = () => {
   const hours = Array.from({ length: 24 }, (_, k) => k);
   const options = hours.reduce((acc, cur) => {
@@ -80,7 +89,9 @@ function TimePicker(props) {
   const [changed, setChanged] = useState(false);
   const [focused, setFocused] = useState(false);
 
-  const { name, onChange, value } = props;
+  const [inputVal, setInputVal] = useState('');
+
+  const { name, onChange, seconds, value } = props;
 
   const handleBlur = () => {
     if (changed) {
@@ -92,7 +103,9 @@ function TimePicker(props) {
         },
       });
       setChanged(false);
+      formatInputValue(timeFormatter(value));
     }
+
     setFocused(false);
   };
 
@@ -102,9 +115,18 @@ function TimePicker(props) {
       target: {
         name,
         type: 'text',
-        value: target.value,
+        value: timeFormatter(target.value),
       },
     });
+    formatInputValue(target.value);
+  };
+
+  const formatInputValue = time => {
+    if (!seconds) {
+      setInputVal(short(time));
+    } else {
+      setInputVal(time);
+    }
   };
 
   return (
@@ -116,7 +138,7 @@ function TimePicker(props) {
         onChange={handleChange}
         onClick={() => setFocused(true)}
         onKeyPress={e => (e.key === 'Enter' ? handleBlur() : '')}
-        value={value}
+        value={inputVal}
       />
       <Icon type="time" />
       <TimeList
@@ -131,12 +153,14 @@ function TimePicker(props) {
 
 TimePicker.defaultProps = {
   onChange: () => {},
+  seconds: false,
   value: '',
 };
 
 TimePicker.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  seconds: PropTypes.bool,
   value: PropTypes.string,
 };
 

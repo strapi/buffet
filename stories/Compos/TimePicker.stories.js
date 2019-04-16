@@ -14,7 +14,11 @@ function TimePickerStory() {
   return (
     <TimePicker
       {...defaultProps}
-      onChange={({ target: { value } }) => setValue(value)}
+      onChange={({ target: { value } }) => {
+        console.log(value);
+        setValue(value);
+      }}
+      seconds={false}
       value={val}
     />
   );
