@@ -1,4 +1,7 @@
 const sizes = {
+  tablet: '768px',
+  desktop: '1024px',
+  wide: '1280px',
   margin: '10',
   radius: '3px',
   button: {
