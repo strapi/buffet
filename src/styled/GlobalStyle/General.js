@@ -20,6 +20,11 @@ const General = createGlobalStyle`
     cursor: pointer;
     outline: 0;
   }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 export default General;

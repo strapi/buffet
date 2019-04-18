@@ -25,6 +25,7 @@ const colors = {
   // Specific to table
   greyHeader: '#F3F3F4',
   greySubtitle: '#787E8F',
+  greyHover: '#F7F8F8',
 
   // Specific to timepicker
   blueIconTxt: '#367CF7',

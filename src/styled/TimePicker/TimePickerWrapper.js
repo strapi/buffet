@@ -27,6 +27,10 @@ const TimePickerWrapper = styled.div`
       &:before {
         color: ${colors.blueIconTxt};
       }
+      & + ul {
+        background-color: ${colors.white};
+        border-top: 1px solid ${colors.blueBorder};
+      }
     }
     &:focus {
       border-bottom-left-radius: 0;
@@ -35,10 +39,10 @@ const TimePickerWrapper = styled.div`
   }
   ul {
     position: absolute;
-    background-color: ${colors.white};
-    top: calc(${sizes.input.height} - ${sizes.margin * 0.3}px);
+    background-color: transaprent;
+    border-top: 1px solid transaprent;
+    top: calc(${sizes.input.height} - ${sizes.margin * 0.1}px);
     left: 0;
-    z-index: -1;
   }
 `;
 

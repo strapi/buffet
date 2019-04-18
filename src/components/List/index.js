@@ -7,52 +7,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StyledList from '../../styled/List';
-import ListHeader from '../ListHeader';
 import ListRow from '../ListRow';
 
-function List({ hasEditBtn, hasHeader, list, title, schema, subtitle }) {
+import StyledList from '../../styled/List';
+
+function List(props) {
+  const { list, customRowComponent } = props;
+
   return (
     <StyledList>
-      <ListHeader title={title} subtitle={subtitle} hasEditBtn={hasEditBtn} />
-      <div className="table-wrapper">
-        <table>
-          {hasHeader && (
-            <thead>
-              <ListRow cells={schema} />
-            </thead>
+      <table>
+        <tbody>
+          {list.map(item =>
+            customRowComponent ? (
+              <React.Fragment key={JSON.stringify(item)}>
+                {customRowComponent(item)}
+              </React.Fragment>
+            ) : (
+              <ListRow cells={item} key={JSON.stringify(item)} />
+            ),
           )}
-          <tbody>
-            {list.map(item => (
-              <ListRow
-                cells={item}
-                key={JSON.stringify(item)}
-                schema={schema}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
     </StyledList>
   );
 }
 
 List.defaultProps = {
-  hasEditBtn: false,
-  hasHeader: false,
   list: [],
-  title: null,
-  schema: {},
-  subtitle: null,
+  customRowComponent: null,
 };
 
 List.propTypes = {
-  hasEditBtn: PropTypes.bool,
-  hasHeader: PropTypes.bool,
-  list: PropTypes.array,
-  schema: PropTypes.object,
-  subtitle: PropTypes.string,
-  title: PropTypes.string,
+  customRowComponent: PropTypes.func,
+  list: PropTypes.instanceOf(Array),
 };
 
 export default List;

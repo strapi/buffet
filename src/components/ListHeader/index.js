@@ -12,14 +12,10 @@ import ListTitle from '../../styled/ListTitle';
 import ListSubtitle from '../../styled/ListSubtitle';
 import Button from '../Button';
 
-function ListHeader({ hasEditBtn, title, subtitle }) {
+function ListHeader({ button, title, subtitle }) {
   return (
     <StyledListHeader>
-      {hasEditBtn && (
-        <Button type="submit" color="secondary" icon="add">
-          New
-        </Button>
-      )}
+      {button && <Button {...button} />}
       <ListTitle>{title}</ListTitle>
       <ListSubtitle>{subtitle}</ListSubtitle>
     </StyledListHeader>
@@ -27,13 +23,17 @@ function ListHeader({ hasEditBtn, title, subtitle }) {
 }
 
 ListHeader.defaultProps = {
-  hasEditBtn: false,
+  button: null,
   title: null,
   subtitle: null,
 };
 
 ListHeader.propTypes = {
-  hasEditBtn: PropTypes.bool,
+  button: PropTypes.shape({
+    color: PropTypes.string,
+    icon: PropTypes.string,
+    type: PropTypes.string,
+  }),
   subtitle: PropTypes.string,
   title: PropTypes.string,
 };

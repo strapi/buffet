@@ -6,35 +6,25 @@ import List from '../../src/components/List';
 
 function ListStory() {
   const defaultProps = {
-    name: 'time',
-    title: '4 Modèles sont disponibles',
-    hasEditBtn: true,
-    schema: {
-      icon: null,
-      name: 'nom',
-      description: 'description',
-      fields: 'fields',
-    },
     list: [
       {
-        icon: 'fa-cube',
-        name: 'article njfkeqzjfkebzqjkfbejzkbfjkezbfjkezbjkebfjz',
-        description: 'content type description',
+        firstname: 'John',
+        name: 'Doe',
+        description:
+          'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
         fields: 2,
       },
       {
-        icon: 'fa-cube',
-        name: 'users',
-        description: 'content type description',
-        fields: 2,
-        source: 'users-permissions',
+        firstname: 'John',
+        name: 'Smith',
+        description: 'Tenderloin drumstick cupim cow.',
+        fields: 3,
       },
       {
-        icon: 'fa-cube',
-        name: 'permissions',
-        description: 'content type description',
+        firstname: 'Will',
+        name: 'Smith',
+        description: 'Pancetta pig buffalo bresaola.',
         fields: 1,
-        source: 'users-permissions',
       },
     ],
   };
@@ -42,4 +32,4 @@ function ListStory() {
   return <List {...defaultProps} />;
 }
 
-storiesOf('Components|List', module).add('CTB List', () => <ListStory />);
+storiesOf('Components|List', module).add('Default', () => <ListStory />);

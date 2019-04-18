@@ -10,10 +10,10 @@ import 'font-awesome/css/font-awesome.min.css';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
-const ListWrapper = styled.div`
+const List = styled.div`
   background: white;
-  font-family: 'Lato';
-  box-shadow: 0 2px 4px ${colors.lightGrey};
+  width: 100%;
+  overflow-x: scroll;
   i {
     display: inline-block;
     text-rendering: auto;
@@ -21,16 +21,19 @@ const ListWrapper = styled.div`
     font-weight: 600;
     color: ${colors.blueTxt};
     font-style: initial;
-    padding-left: 2.25rem;
+    font-size: 13px;
+    &.link-icon {
+      padding-left: 2.25rem;
+    }
   }
-  .table-wrapper {
-    width: 100%;
-    overflow-x: scroll;
+  p {
+    font-size: 1.3rem;
   }
   table {
     border-collapse: collapse;
     width: 100%;
     min-width: 500px;
+    font-family: 'Lato';
   }
   thead {
     tr {
@@ -56,18 +59,20 @@ const ListWrapper = styled.div`
     td {
       padding: 0.75em;
       vertical-align: top;
+      font-size: 1.3rem;
       line-height: 3.4rem;
-      &.icon-cell {
-        line-height: 3rem;
+      &:first-of-type {
+        padding-left: calc(3rem + 0.75em);
+      }
+      &:last-of-type {
+        padding-right: calc(3rem + 0.75em);
       }
     }
   }
   @media (min-width: ${sizes.tablet}) {
-    .table-wrapper {
-      width: 100%;
-      overflow-x: inherit;
-    }
+    width: 100%;
+    overflow-x: inherit;
   }
 `;
 
-export default ListWrapper;
+export default List;
