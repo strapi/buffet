@@ -5,15 +5,16 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import {
+  commonDefaultProps,
+  commonPropTypes,
+} from '../../commonPropTypes/list';
 
 import ListRow from '../ListRow';
 
 import StyledList from '../../styled/List';
 
-function List(props) {
-  const { list, customRowComponent } = props;
-
+function List({ list, customRowComponent }) {
   return (
     <StyledList>
       <table>
@@ -34,13 +35,11 @@ function List(props) {
 }
 
 List.defaultProps = {
-  list: [],
-  customRowComponent: null,
+  ...commonDefaultProps,
 };
 
 List.propTypes = {
-  customRowComponent: PropTypes.func,
-  list: PropTypes.instanceOf(Array),
+  ...commonPropTypes,
 };
 
 export default List;

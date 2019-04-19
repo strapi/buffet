@@ -24,6 +24,7 @@ function Links({ links }) {
 Links.defaultProps = {
   links: null,
 };
+
 Links.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({

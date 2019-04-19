@@ -5,59 +5,37 @@
  */
 
 import React from 'react';
+import {
+  commonDefaultProps as headerCommonDefaultProps,
+  commonPropTypes as headerCommonPropTypes,
+} from '../../commonPropTypes/listheader';
+import {
+  commonDefaultProps,
+  commonPropTypes,
+} from '../../commonPropTypes/list';
 
 import ListCard from '../../styled/ListCard';
 
 import ListHeader from '../../components/ListHeader';
 import ListCompo from '../../components/List';
 
-function List() {
-  const onClick = () => {
-    console.log('New Model'); // eslint-disable-line no-console
-  };
-
-  const initProps = {
-    title: '4 Modèles sont disponibles',
-    button: {
-      color: 'secondary',
-      icon: 'add',
-      label: 'New',
-      onClick,
-      type: 'submit',
-    },
-    list: [
-      {
-        firstname: 'John',
-        name: 'Doe',
-        description:
-          'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
-        fields: 2,
-      },
-      {
-        firstname: 'John',
-        name: 'Smith',
-        description: 'Tenderloin drumstick cupim cow.',
-        fields: 3,
-      },
-      {
-        firstname: 'Will',
-        name: 'Smith',
-        description: 'Pancetta pig buffalo bresaola.',
-        fields: 1,
-      },
-    ],
-  };
-
+function List({ title, subtitle, button, list }) {
   return (
     <ListCard>
-      <ListHeader
-        title={initProps.title}
-        subtitle={initProps.subtitle}
-        button={initProps.button}
-      />
-      <ListCompo list={initProps.list} />
+      <ListHeader title={title} subtitle={subtitle} button={button} />
+      <ListCompo list={list} />
     </ListCard>
   );
 }
+
+List.defaultProps = {
+  ...headerCommonDefaultProps,
+  ...commonDefaultProps,
+};
+
+List.propTypes = {
+  ...headerCommonPropTypes,
+  ...commonPropTypes,
+};
 
 export default List;

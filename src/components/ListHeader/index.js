@@ -5,7 +5,10 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import {
+  commonDefaultProps,
+  commonPropTypes,
+} from '../../commonPropTypes/listheader';
 
 import StyledListHeader from '../../styled/ListHeader';
 import ListTitle from '../../styled/ListTitle';
@@ -23,19 +26,11 @@ function ListHeader({ button, title, subtitle }) {
 }
 
 ListHeader.defaultProps = {
-  button: null,
-  title: null,
-  subtitle: null,
+  ...commonDefaultProps,
 };
 
 ListHeader.propTypes = {
-  button: PropTypes.shape({
-    color: PropTypes.string,
-    icon: PropTypes.string,
-    type: PropTypes.string,
-  }),
-  subtitle: PropTypes.string,
-  title: PropTypes.string,
+  ...commonPropTypes,
 };
 
 export default ListHeader;
