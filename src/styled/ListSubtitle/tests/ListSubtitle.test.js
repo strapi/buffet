@@ -1,11 +1,12 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import ListSubtitle from '../index';
+import ListSubtitle from '../index';
+
+const renderComponent = () => shallow(<ListSubtitle />);
 
 describe('<ListSubtitle />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('should not crash', () => {
+    renderComponent();
   });
 });

@@ -1,11 +1,12 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import ListHeader from '../index';
+import ListHeader from '../index';
+
+const renderComponent = () => shallow(<ListHeader />);
 
 describe('<ListHeader />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('should not crash', () => {
+    renderComponent();
   });
 });

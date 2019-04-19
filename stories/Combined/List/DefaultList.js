@@ -1,9 +1,11 @@
 import React from 'react';
+
+/* eslint-disable import/no-extraneous-dependencies */
 import { text, object } from '@storybook/addon-knobs';
 
 import List from '../../../src/combined/List';
 
-const CombinedList = () => {
+function CombinedList() {
   const onClick = () => {
     console.log('New Model'); // eslint-disable-line no-console
   };
@@ -44,6 +46,6 @@ const CombinedList = () => {
   };
 
   return <List {...initProps} />;
-};
+}
 
 export default CombinedList;

@@ -26,9 +26,6 @@ const List = styled.div`
       padding-left: 2.25rem;
     }
   }
-  p {
-    font-size: 1.3rem;
-  }
   table {
     border-collapse: collapse;
     width: 100%;
@@ -49,7 +46,7 @@ const List = styled.div`
   tbody:before {
     content: '-';
     display: block;
-    line-height: 0.1em;
+    line-height: 1.1em;
     color: transparent;
   }
   tbody {
@@ -60,7 +57,7 @@ const List = styled.div`
       padding: 0.75em;
       vertical-align: top;
       font-size: 1.3rem;
-      line-height: 3.4rem;
+      line-height: 1.8rem;
       &:first-of-type {
         padding-left: calc(3rem + 0.75em);
       }

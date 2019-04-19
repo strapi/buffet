@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+/* eslint-disable import/no-extraneous-dependencies */
 import { text, object } from '@storybook/addon-knobs';
 
 import List from '../../../src/combined/List';
@@ -78,7 +79,7 @@ CustomRow.propTypes = {
   onClick: PropTypes.func,
 };
 
-const CombinedList = () => {
+function CombinedList() {
   const onClick = () => {
     console.log('New field'); // eslint-disable-line no-console
   };
@@ -164,6 +165,6 @@ const CombinedList = () => {
       customRowComponent={props => <CustomRow {...props} />}
     />
   );
-};
+}
 
 export default CombinedList;
