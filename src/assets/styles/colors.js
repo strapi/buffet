@@ -30,5 +30,9 @@ const colors = {
   // Specific to timepicker
   blueIconTxt: '#367CF7',
   blueIconBkgd: '#E8F0FA',
+
+  // Specific to tabs
+  greyTabBkgd: 'rgb(242, 242, 242)',
+  blueTabBorder: '#1C5DE7',
 };
 export default colors;

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 
 import StyledTimePicker, { TimePickerWrapper } from '../../styled/TimePicker';
 import Icon from '../../styled/Icon';
-import TimeList from './TimeList';
+import TimeList from '../TimeList';
 
 export const timeFormatter = time => {
   const newTime = Array(3)

@@ -69,7 +69,7 @@ describe('<TimePicker />', () => {
       renderComponent();
     });
 
-    it('should send a string onChange', () => {
+    it('should send a formatted string onChange', () => {
       const onChange = jest.fn();
       const value = '';
       const renderedComponent = renderComponent({
@@ -86,33 +86,10 @@ describe('<TimePicker />', () => {
         target: {
           name: 'time',
           type: 'text',
-          value: '10',
+          value: '10:00:00',
         },
       };
       expect(onChange).toHaveBeenCalledWith(expected);
     });
-
-    // it('should send a string on list item click', () => {
-    //   const onChange = jest.fn();
-    //   const renderedComponent = renderComponent({ ...defaultProps, onChange });
-
-    //   const element = renderedComponent.find('li').first();
-
-    //   element.simulate('click');
-
-    //   const expected = {
-    //     target: {
-    //       name: 'time',
-    //       type: 'text',
-    //       value: '00:00:00',
-    //     },
-    //   };
-    //   console.log(element);
-
-    //   //const { onChange }
-
-    //   expect(onChange).toHaveBeenCalledWith(expected);
-    //   expect(true).toBe(true);
-    // });
   });
 });
