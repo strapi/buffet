@@ -6,8 +6,8 @@ git:
 language: node_js
 
 node_js:
-  - '10'
-  - '11'
+  - "10"
+  - "11"
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -15,6 +15,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - git fetch -a
   - git fetch origin master
+  - cd buffet
 
 install:
   - yarn
@@ -29,4 +30,4 @@ script:
 
 cache:
   directories:
-    - 'node_modules'
+    - "node_modules"
