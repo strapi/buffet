@@ -50,7 +50,8 @@
     "react-moment-proptypes": "^1.6.0",
     "react-test-renderer": "^16.7.0",
     "reactstrap": "^7.1.0",
-    "styled-components": "^4.1.2"
+    "styled-components": "^4.1.2",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

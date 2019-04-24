@@ -1,0 +1,17 @@
+export default {
+  translatedErrors: {
+    email: 'This is not an email',
+    string: 'This is not a string',
+    number: 'This is not a number',
+    json: 'This is not a JSON',
+    max: 'This is too high',
+    maxLength: 'This is too long',
+    min: 'This is too small',
+    minLength: 'This is too short',
+    required: 'This value is required',
+    regex: 'Thid does not match the format',
+  },
+  type: null,
+  validations: null,
+  value: null,
+};
