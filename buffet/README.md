@@ -16,7 +16,6 @@ yarn
 yarn storybook
 ```
 
-
 ## Commands
 
 ### Generators
@@ -32,6 +31,7 @@ Allows you to auto-generate boilerplate code for common parts of your applicatio
 ```bash
 yarn run lint
 ```
+
 Lints your JavaScript and your CSS.
 
 ```bash
@@ -40,9 +40,7 @@ yarn run lint:fix
 
 Fix your Javascript
 
-
 ### Testing
-
 
 #### Unit Testing
 
@@ -50,7 +48,7 @@ Fix your Javascript
 yarn run test
 ```
 
-Tests your application with the unit tests specified in the **/tests/*.js files throughout the application.
+Tests your application with the unit tests specified in the \*_/tests/_.js files throughout the application.
 All the test commands allow an optional -- [string] argument to filter the tests run by Jest. Useful if you need to run a specific test only.
 
 #### Watching
