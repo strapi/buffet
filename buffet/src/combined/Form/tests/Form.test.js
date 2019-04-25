@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import ErrorMessage from '../index';
+// import Form from '../index';
 
-describe('<ErrorMessage />', () => {
+describe('<Form />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

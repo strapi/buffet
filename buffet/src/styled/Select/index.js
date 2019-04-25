@@ -10,13 +10,11 @@ import sizes from '../../assets/styles/sizes';
 import img from '../../assets/icons/icon_select.svg';
 
 const Select = styled.select`
-
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-family: 'Lato';
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 400;
+  font-size: 1.3rem;
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey}

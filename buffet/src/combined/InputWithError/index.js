@@ -8,9 +8,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Error from '../../components/Error';
-import ErrorMessage from '../../components/ErrorMessage';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
+
+import Description from '../../styled/Description';
+import ErrorMessage from '../../styled/ErrorMessage';
+import { InputWrapper } from '../../styled/Form';
 
 import {
   commonDefaultProps,
@@ -30,7 +33,7 @@ function InputWithError({
   return (
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
-        <>
+        <InputWrapper>
           <Label htmlFor={name}>{label}</Label>
           <Input
             name={name}
@@ -51,11 +54,9 @@ function InputWithError({
             value={value}
             {...rest}
           />
-
-          {error}
-          {!error && <p>{description}</p>}
+          {!error && <Description>{description}</Description>}
           {error && <ErrorMessage>{error}</ErrorMessage>}
-        </>
+        </InputWrapper>
       )}
     </Error>
   );

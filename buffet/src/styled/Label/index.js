@@ -9,9 +9,8 @@ import colors from '../../assets/styles/colors';
 
 const Label = styled.label`
   width: 100%;
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: ${colors.blueTxt};
 `;
 

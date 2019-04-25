@@ -53,7 +53,7 @@ class DatePicker extends React.PureComponent {
         <SingleDatePicker
           date={date}
           focused={isFocused}
-          id={id}
+          id={id || 'date'}
           displayFormat={displayFormat}
           numberOfMonths={1}
           onFocusChange={this.handleFocusChange}

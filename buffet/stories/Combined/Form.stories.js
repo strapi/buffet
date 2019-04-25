@@ -1,21 +1,19 @@
 import React, { useReducer } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import InputWithError from '../../src/combined/InputWithError';
-import Form from '../../src/components/Form';
-
 import reducer from '../utils/reducer';
+
+import Form from '../../src/combined/Form';
 
 const form = {
   firstName: {
     styleName: 'col-6',
-    description: 'You should enter your name',
+    description: 'You should enter your firstname',
     label: 'First Name',
     placeholder: 'Vi',
     type: 'text',
     validations: {
       required: true,
-      uppercase: true,
     },
   },
   lastName: {
@@ -24,6 +22,16 @@ const form = {
     label: 'Last Name',
     placeholder: 'Ky',
     type: 'text',
+    validations: {
+      required: true,
+      uppercase: true,
+    },
+  },
+  birthdate: {
+    styleName: 'col-6',
+    label: 'Birth date',
+    description: 'You should enter your birth date',
+    type: 'date',
     validations: {
       required: true,
     },
@@ -38,9 +46,20 @@ const form = {
       required: true,
     },
   },
+  password: {
+    styleName: 'col-6',
+    description: 'You should enter your password',
+    label: 'Password',
+    placeholder: '●●●●●●',
+    type: 'password',
+    validations: {
+      required: true,
+      min: 8,
+    },
+  },
 };
 
-function InputStory() {
+function FormStory() {
   const [values, dispatch] = useReducer(reducer, {});
 
   const handleChange = ({ target: { name, value } }) => {
@@ -57,21 +76,13 @@ function InputStory() {
   };
 
   return (
-    <Form onSubmit={onSubmit}>
-      {Object.keys(form).map(input => (
-        <div className={form[input].styleName} key={input}>
-          <InputWithError
-            {...form[input]}
-            name={input}
-            onChange={handleChange}
-            value={values[input] || ''}
-          />
-        </div>
-      ))}
-    </Form>
+    <Form
+      form={form}
+      onChange={handleChange}
+      onSubmit={onSubmit}
+      values={values}
+    />
   );
 }
 
-storiesOf('Combined|InputWithError', module).add('Simple', () => (
-  <InputStory />
-));
+storiesOf('Combined|FormWithErrors', module).add('Simple', () => <FormStory />);

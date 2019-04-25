@@ -4,12 +4,13 @@
  *
  */
 
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ErrorMessage = styled.div``;
+import colors from '../../assets/styles/colors';
 
-// ErrorMessage.defaultProps = {};
-// ErrorMessage.propTypes = {};
+const ErrorMessage = styled.p`
+  font-size: 1.3rem;
+  color: ${colors.darkOrange};
+`;
 
 export default ErrorMessage;

@@ -1,12 +1,12 @@
 import React, { useReducer } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-
 import { storiesOf } from '@storybook/react';
-import ErrorMessage from '../../src/components/ErrorMessage';
-import Error from '../../src/components/Error';
-import InputText from '../../src/components/InputText';
 
 import reducer from '../utils/reducer';
+
+import Error from '../../src/components/Error';
+import InputText from '../../src/components/InputText';
+import ErrorMessage from '../../src/styled/ErrorMessage';
 
 function InputStory() {
   const [values, dispatchValue] = useReducer(reducer, {});
@@ -50,8 +50,6 @@ function InputStory() {
             }}
             value={values.firstname || ''}
           />
-          {error}
-
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </>
       )}

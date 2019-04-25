@@ -139,9 +139,8 @@ const InputNumber = styled.div`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
       border-radius: ${sizes.radius};
       text-align: left;
-      font-family: 'Lato';
       font-weight: 600;
-      font-size: 13px;
+      font-size: 1.3rem;
       color: ${colors.blueTxt};
 
       &::-webkit-input-placeholder {
