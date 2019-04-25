@@ -24,14 +24,16 @@ function InputNumber({
   ...rest
 }) {
   const handleChange = data => {
-    const target = {
-      id,
-      name,
-      type: 'number',
-      value: data,
-    };
+    if (data) {
+      const target = {
+        id,
+        name,
+        type: 'number',
+        value: data,
+      };
 
-    onChange({ target });
+      onChange({ target });
+    }
   };
 
   return (

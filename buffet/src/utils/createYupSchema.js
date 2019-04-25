@@ -13,7 +13,7 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
   }
 
   if (type === 'number') {
-    schema = schema.number(translatedErrors.number);
+    schema = yup.number().typeError(translatedErrors.number);
   }
 
   Object.keys(validations).forEach(validation => {

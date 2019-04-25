@@ -57,6 +57,17 @@ const form = {
       min: 8,
     },
   },
+  number: {
+    styleName: 'col-6',
+    description: 'You should enter how many children you have',
+    label: 'Children',
+    placeholder: '2',
+    type: 'number',
+    validations: {
+      required: true,
+      max: 99,
+    },
+  },
 };
 
 function FormStory() {
