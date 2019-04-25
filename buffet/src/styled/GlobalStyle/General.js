@@ -14,6 +14,10 @@ const General = createGlobalStyle`
   body {
     margin: ${sizes.margin * 1.8}px ${sizes.margin * 2}px;
     padding: ${sizes.margin * 1.8}px;
+    margin: 20px 18px;
+  }
+  p {
+    margin: 0;
   }
   a, button {
     cursor: pointer;
