@@ -47,7 +47,7 @@ function Select({
   if (lengthOfReactElementsInOptions > 0) {
     invariant(
       lengthOfReactElementsInOptions === options.length,
-      'You have mixed up React Element and non React Elements in your options array ',
+      'You have mixed up React Elements and non React Elements in your options array ',
     );
   }
 

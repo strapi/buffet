@@ -22,7 +22,7 @@ const Button = styled.button`
   padding: 0 ${sizes.button.padding.large};
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: 100%;
+  line-height: 1.6rem;
   border-radius: ${sizes.radius};
   cursor:pointer;
   outline: 0;
@@ -65,6 +65,7 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
+      line-height: 1.5rem;
       display: flex;
     `}
 
@@ -82,7 +83,7 @@ const Button = styled.button`
         font-weight: 600;
         font-size: 1.3rem;
         margin-right: 8px;
-        line-height: 100%;
+        line-height: 1.8rem;
         display: inline-block;
         vertical-align: middle;
       }

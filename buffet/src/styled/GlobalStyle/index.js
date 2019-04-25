@@ -4,10 +4,10 @@ import Font from './Font';
 
 function GlobalStyles() {
   return (
-    <React.Fragment>
+    <>
       <General />
       <Font />
-    </React.Fragment>
+    </>
   );
 }
 

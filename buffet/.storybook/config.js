@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import GlobalStyle from '../src/styled/GlobalStyle';
 
 addDecorator(story => (
-  <React.Fragment>
+  <>
     <GlobalStyle />
     {story()}
-  </React.Fragment>
+  </>
 ));
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/);
