@@ -11,7 +11,7 @@ import sizes from '../../assets/styles/sizes';
 const Input = styled.div`
   position: relative;
   padding-bottom: ${sizes.margin * 2.7}px;
-  margin-bottom: ${sizes.margin * 2}px;
+  margin-bottom: ${sizes.margin * 1.8}px;
   label {
     display: block;
     margin-bottom: 1.1rem;

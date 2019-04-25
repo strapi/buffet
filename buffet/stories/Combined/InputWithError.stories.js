@@ -57,18 +57,22 @@ function InputStory() {
   };
 
   return (
-    <Form onSubmit={onSubmit}>
-      {Object.keys(form).map(input => (
-        <div className={form[input].styleName} key={input}>
-          <InputWithError
-            {...form[input]}
-            name={input}
-            onChange={handleChange}
-            value={values[input] || ''}
-          />
+    <div className="container">
+      <Form onSubmit={onSubmit}>
+        <div className="row">
+          {Object.keys(form).map(input => (
+            <div className={form[input].styleName} key={input}>
+              <InputWithError
+                {...form[input]}
+                name={input}
+                onChange={handleChange}
+                value={values[input] || ''}
+              />
+            </div>
+          ))}
         </div>
-      ))}
-    </Form>
+      </Form>
+    </div>
   );
 }
 

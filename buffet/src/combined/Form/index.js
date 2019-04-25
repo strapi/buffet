@@ -13,16 +13,18 @@ import InputWithError from '../InputWithError';
 function Form({ form, onChange, onSubmit, values }) {
   return (
     <FormComponent onSubmit={onSubmit}>
-      {Object.keys(form).map(input => (
-        <div className={form[input].styleName} key={input}>
-          <InputWithError
-            {...form[input]}
-            name={input}
-            onChange={onChange}
-            value={values[input] || ''}
-          />
-        </div>
-      ))}
+      <div className="row">
+        {Object.keys(form).map(input => (
+          <div className={form[input].styleName} key={input}>
+            <InputWithError
+              {...form[input]}
+              name={input}
+              onChange={onChange}
+              value={values[input] || ''}
+            />
+          </div>
+        ))}
+      </div>
     </FormComponent>
   );
 }

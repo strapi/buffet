@@ -76,12 +76,14 @@ function FormStory() {
   };
 
   return (
-    <Form
-      form={form}
-      onChange={handleChange}
-      onSubmit={onSubmit}
-      values={values}
-    />
+    <div className="container">
+      <Form
+        form={form}
+        onChange={handleChange}
+        onSubmit={onSubmit}
+        values={values}
+      />
+    </div>
   );
 }
 

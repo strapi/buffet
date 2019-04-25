@@ -4,7 +4,7 @@ import * as yup from 'yup';
 const createYupSchema = (type, validations, translatedErrors = {}) => {
   let schema = yup.mixed();
 
-  if (['text', 'textarea', 'email'].includes(type)) {
+  if (['text', 'textarea', 'email', 'password'].includes(type)) {
     schema = yup.string(translatedErrors.string);
   }
 
@@ -47,7 +47,7 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
           break;
         case 'uppercase':
           if (['text', 'textarea', 'email', 'string'].includes(type)) {
-            schema = schema.strict().uppercase();
+            schema = schema.strict().uppercase(translatedErrors.uppercase);
           }
           break;
         case 'positive':

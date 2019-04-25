@@ -14,7 +14,7 @@ import reducer from '../../utils/reducer';
 import {
   commonDefaultProps,
   commonPropTypes,
-} from '../../commonPropTypes/input';
+} from '../../commonPropTypes/error';
 
 function Error({ children, translatedErrors, type, validations, value }) {
   const [state, dispatch] = useReducer(reducer, {
