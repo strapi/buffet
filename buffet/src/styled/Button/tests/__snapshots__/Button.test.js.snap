@@ -4,9 +4,8 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 100%;
   border-radius: 3px;
   cursor: pointer;
@@ -31,7 +30,7 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-right: 8px;
   line-height: 100%;
   display: inline-block;
@@ -53,9 +52,8 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 100%;
   border-radius: 3px;
   cursor: pointer;
@@ -80,7 +78,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-right: 8px;
   line-height: 100%;
   display: inline-block;
@@ -103,9 +101,8 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 100%;
   border-radius: 3px;
   cursor: pointer;
@@ -130,7 +127,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 .c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-right: 8px;
   line-height: 100%;
   display: inline-block;
