@@ -43,19 +43,19 @@ const List = styled.div`
       }
     }
   }
-  tbody:before {
-    content: '-';
-    display: block;
-    line-height: 1.1em;
-    color: transparent;
-  }
+  // tbody:before {
+  //   content: '-';
+  //   display: block;
+  //   line-height: 1.1em;
+  //   color: transparent;
+  // }
   tbody {
     tr {
       height: 5.4rem;
     }
     td {
       padding: 0.75em;
-      vertical-align: top;
+      vertical-align: middle;
       font-size: 1.3rem;
       line-height: 1.8rem;
       &:first-of-type {
