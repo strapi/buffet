@@ -14,6 +14,12 @@ const Tab = styled.li`
   display: inline-block;
   width: calc(100% / ${props => props.count});
   height: 3.6rem;
+  &:first-of-type a {
+    border-top-left-radius: 2px;
+  }
+  &:last-of-type a {
+    border-top-right-radius: 2px;
+  }
   button {
     width: 100%;
     height: 100%;
