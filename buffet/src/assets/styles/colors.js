@@ -34,5 +34,6 @@ const colors = {
   // Specific to tabs
   greyTabBkgd: 'rgb(242, 242, 242)',
   blueTabBorder: '#1C5DE7',
+  greyLink: '#F5F5F5',
 };
 export default colors;
