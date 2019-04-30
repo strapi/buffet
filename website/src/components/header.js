@@ -34,8 +34,8 @@ const Navigation = ({ siteTitle }) => (
           <div style={{
             height: 356,
             padding: 36,
-            margin: '0 -36',
-            marginBottom: -72,
+            margin: '0 -36px',
+            marginBottom: '-72px',
             background: '#ffffff',
             boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)'
           }}
