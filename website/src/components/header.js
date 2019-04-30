@@ -1,42 +1,97 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Header = ({ siteTitle }) => (
+import Button from './button'
+
+import background from '../images/header@2x.png'
+
+const Navigation = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      width: '100%',
+      height: 595,
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: 'contain',
+      backgroundPosition: 'center'
     }}
   >
-    <div
+    <div 
+      class="container"
       style={{
+        height: '100%',
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+        maxWidth: 1270,
+      }}  
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
+      <div 
+        class="row align-items-end"
+        style={{
+          height: '100%'
+        }}
+      >
+        <div class="col-5 offset-lg-6">
+          <div style={{
+            height: 356,
+            padding: 36,
+            margin: '0 -36',
+            marginBottom: -72,
+            background: '#ffffff',
+            boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)'
           }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+          >
+            <h2
+              style={{
+                position: 'relative',
+                display: 'inline-block',
+                width: '75%', // 8 columns
+                color: '#3B3B3B',
+                fontSize: 32,
+                fontFamily: 'Lato',
+                fontWeight: 700,
+                lineHeight: '40px'
+              }}
+            >
+              Buffet JS :  All-you-can-eat React components library
+              <span 
+                style={{
+                  position: 'absolute',
+                  left: 70, bottom: -24,
+                  width: 36,
+                  height: 6,
+                  backgroundColor: '#0B269C',
+                  transform: 'rotate(20deg)'
+                }}
+              ></span>
+            </h2>
+            <p
+              style={{
+                width: '75%', // 8 columns
+                marginTop: 54,
+                marginBottom: 60,
+                color: '#3B3B3B',
+                fontSize: 18,
+                fontFamily: 'Lato',
+                lineHeight: '24px'
+              }}
+            >
+              A design system to create better user experience values for application interfaces.
+            </p>
+            <Button url='/' type='main'>Check it out</Button>
+          </div>
+        </div>
+      </div>
     </div>
+    
   </header>
 )
 
-Header.propTypes = {
+Navigation.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Navigation.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Navigation

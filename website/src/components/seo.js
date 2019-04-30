@@ -77,7 +77,11 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css' />
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700' />
+    </Helmet>
   )
 }
 

@@ -1,0 +1,68 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+
+const Button = ({ url, type = 'main', children }) => (
+  <Link 
+    to={url}
+    style={{
+      display: 'inline-block',
+      height: 48,
+      padding: '0 36px',
+      borderRadius: 24,
+      backgroundColor: type === 'main' ? '#FF9C95': '#0B269C',
+      textAlign: 'left',
+      textDecoration: 'none',
+      textTransform: 'uppercase',
+      lineHeight: '48px',
+      color: '#ffffff',
+      fontSize: 12,
+      fontFamily: 'Lato',
+      fontWeight: 700,
+      letterSpacing: 0.7
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center'
+      }}
+    >
+    {children}
+    <span
+      style={{
+        position: 'relative',
+        display: 'inline-block',
+        width: 24,
+        height: 1,
+        marginTop: -1,
+        marginLeft: 36,
+        background: '#ffffff'
+      }}
+    >
+      <span
+        style={{
+          position: 'absolute',
+          right: -1, top: -2,
+          width: 6,
+          height: 6,
+          borderRight: '1px solid #ffffff',
+          borderTop: '1px solid #ffffff',
+          transform: 'rotate(45deg)'
+        }}
+      ></span>
+    </span>
+    </div>
+  
+  </Link>
+)
+
+Button.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Button.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Button
