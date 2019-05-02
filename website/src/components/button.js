@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-const Button = ({ url, type = 'main', children }) => (
+const Button = ({ url, type = 'main', onClick, children, style }) => (
   <Link 
-    to={url}
+    to={url || ''}
+    onClick={onClick}
     style={{
       display: 'inline-block',
       height: 48,
@@ -19,7 +20,8 @@ const Button = ({ url, type = 'main', children }) => (
       fontSize: 12,
       fontFamily: 'Lato',
       fontWeight: 700,
-      letterSpacing: 0.7
+      letterSpacing: 0.7,
+      ...style
     }}
   >
     <div
