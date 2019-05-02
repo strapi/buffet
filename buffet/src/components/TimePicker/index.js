@@ -105,7 +105,6 @@ function TimePicker(props) {
       setChanged(false);
       formatInputValue(timeFormatter(value));
     }
-
     setFocused(false);
   };
 
@@ -137,7 +136,8 @@ function TimePicker(props) {
         onBlur={handleBlur}
         onChange={handleChange}
         onClick={() => setFocused(true)}
-        onKeyPress={e => (e.key === 'Enter' ? handleBlur() : '')}
+        onKeyPress={e => (e.key === 'Enter' ? handleBlur(e) : '')}
+        type="text"
         value={inputVal}
       />
       <Icon type="time" />

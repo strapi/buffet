@@ -36,6 +36,15 @@ const form = {
       required: true,
     },
   },
+  birthtime: {
+    styleName: 'col-6',
+    label: 'Birth time',
+    description: 'You should enter your birth time',
+    type: 'time',
+    validations: {
+      required: true,
+    },
+  },
   email: {
     styleName: 'col-6',
     description: 'You should enter your email',

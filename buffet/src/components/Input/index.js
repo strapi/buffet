@@ -14,6 +14,7 @@ import InputNumber from '../InputNumber';
 import InputText from '../InputText';
 import Select from '../Select';
 import Textarea from '../Textarea';
+import TimePicker from '../TimePicker';
 import Toggle from '../Toggle';
 import UnknowInput from '../UnknowInput';
 
@@ -25,6 +26,7 @@ const inputs = {
   number: InputNumber,
   text: InputText,
   textarea: Textarea,
+  time: TimePicker,
   select: Select,
   email: InputText,
   password: InputText,

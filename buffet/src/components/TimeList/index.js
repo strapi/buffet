@@ -18,10 +18,11 @@ function TimeList({ isOpen, options, onClick, value }) {
             type="radio"
             onChange={onClick}
             value={option.value}
+            id={option.value}
             name="time"
             checked={option.value === value}
           />
-          <div>{option.label}</div>
+          <label htmlFor={option.value}>{option.label}</label>
         </li>
       ))}
     </StyledTimeList>
