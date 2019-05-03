@@ -17,7 +17,7 @@ const Navigation = ({ siteTitle }) => (
     }}
   >
     <div 
-      class="container"
+      className="container"
       style={{
         height: '100%',
         margin: `0 auto`,
@@ -25,20 +25,22 @@ const Navigation = ({ siteTitle }) => (
       }}  
     >
       <div 
-        class="row align-items-end"
+        className="row align-items-end container_description"
         style={{
           height: '100%'
         }}
       >
-        <div class="col-5 offset-lg-6">
-          <div style={{
-            height: 356,
-            padding: 36,
-            margin: '0 -36px',
-            marginBottom: '-72px',
-            background: '#ffffff',
-            boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)'
-          }}
+        <div className="col-lg-5 offset-lg-6 col-xs-12">
+          <div
+            className="wrapper_description"
+            style={{
+              height: 356,
+              padding: 36,
+              margin: '0 -36px',
+              marginBottom: '-72px',
+              background: '#ffffff',
+              boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)'
+            }}
           >
             <h2
               style={{
@@ -52,7 +54,7 @@ const Navigation = ({ siteTitle }) => (
                 lineHeight: '40px'
               }}
             >
-              Buffet JS :  All-you-can-eat React components library
+              Buffet JS: <br className="d-block d-sm-none"/>All-you-can-eat React components library
               <span 
                 style={{
                   position: 'absolute',

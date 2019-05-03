@@ -1,0 +1,125 @@
+/* Mobile */
+
+@media only screen and (max-width: 812px) {
+  .button {
+    position: relative;
+    width: 100% !important;
+    padding-right: 94px !important;
+  }
+  
+  .button_arrow{
+    position: absolute !important;
+    top: 24px; right: 36px;
+  }
+  
+  nav.navigation {
+    height: 72px !important;
+  }
+  
+  nav.navigation .wrapper_logo {
+    height: 100%;
+    padding-top: 24px;
+  }
+  
+  nav.navigation .logo {
+    padding-top: 0 !important;
+  }
+  
+  nav.navigation .logo img {
+    max-height: 20px;
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+  }
+  
+  header {
+    height: calc(100vh - 72px) !important;
+    max-height: 595px;
+    background-size: cover !important;
+  }
+  
+ 
+  header .wrapper_description {
+    height: auto !important;
+    margin: 0 !important;
+    margin-bottom: 24px !important;
+    padding: 40px 25px !important;
+  }
+  
+  header .wrapper_description h2 {
+    width: 100% !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+  
+  header .wrapper_description p {
+    width: 100% !important;
+    margin-top: 72px !important;
+  }
+  
+  main.container {
+    padding: 0 !important;
+  }
+  
+  .home_description p {
+    margin: 0 !important;
+    padding: 50px 15px 0;
+    text-align: left !important;
+  } 
+  
+  .home_consistent h3 {
+    margin-top: 72px !important;
+    margin-left: 15px;
+    padding: 0 15px;
+  }
+  
+  .home_consistent p {
+    margin: 0 !important;
+    padding: 32px 15px 0;
+    font-size: 14px !important;
+    text-align: left !important;
+  } 
+  
+  .home_playground {
+    margin: 40px 15px 0 !important;
+  }
+  
+  .home_main_cta {
+    margin: 0 !important;
+  }
+  
+  .home_philosophy {
+    padding-bottom: 84px;
+  }
+  
+  .home_philosophy h3 {
+    margin-top: 72px !important;
+    margin-left: 15px;
+    padding: 0 15px;
+  }
+  
+  .home_philosophy img {
+    max-width: 90px !important;
+    max-height: 90px !important
+  }
+  
+  .home_philosophy p {
+    font-size: 14px !important;
+  }
+  
+  .home_philosophy .align-items-center {
+    margin-top: 40px !important;
+  }
+  
+  .home_philosophy .align-items-center > div {
+    padding: 0 30px !important;
+    text-align: left !important;
+  }
+  
+  .home_philosophy .home_philosophy_section_title {
+    margin: 0 !important;
+    margin-top: 32px !important;
+    padding: 0 !important;
+  }
+}
+

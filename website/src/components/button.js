@@ -6,6 +6,7 @@ const Button = ({ url, type = 'main', onClick, children, style }) => (
   <Link 
     to={url || ''}
     onClick={onClick}
+    className="button"
     style={{
       display: 'inline-block',
       height: 48,
@@ -32,6 +33,7 @@ const Button = ({ url, type = 'main', onClick, children, style }) => (
     >
     {children}
     <span
+      className="button_arrow"
       style={{
         position: 'relative',
         display: 'inline-block',

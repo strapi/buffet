@@ -40,24 +40,22 @@ function withImageData(WrappedComponent) {
   );
 }
 
-{/* <Img fluid={data.logo.childImageSharp.fluid} />,
-<Img fluid={data.iconSlack.childImageSharp.fluid} /> */}
-
 
 const Logo =  withImageData(props => (
-  <Img fluid={props.imageData.logo.childImageSharp.fluid} />
+  <Img fluid={props.imageData.logo.childImageSharp.fluid} alt="Logo Buffet.js" />
 ));
 
 const IconSlack = withImageData(props => (
-  <Img fluid={props.imageData.iconSlack.childImageSharp.fluid} />
+  <Img fluid={props.imageData.iconSlack.childImageSharp.fluid} alt="Slack icon" />
 ));
 
 const IconGitHub = withImageData(props => (
-  <Img fluid={props.imageData.iconGitHub.childImageSharp.fluid} />
+  <Img fluid={props.imageData.iconGitHub.childImageSharp.fluid} alt="GitHub icon" />
 ));
 
-const Navigation = ({ siteTitle }) => (
+const Navigation = () => (
   <nav
+    className="navigation"
     style={{
       height: '120px',
       boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)',
@@ -73,8 +71,8 @@ const Navigation = ({ siteTitle }) => (
       }}
     >
       <div className='row' style={{ height: '100%' }}>
-        <div className='col-lg-4'>
-          <h1 style={{ display:'inline-block', height: '100%', paddingTop: 40, width: '100%', maxWidth: 255 }}>
+        <div className='col-lg-4 col-xs-12 wrapper_logo'>
+          <h1 className="logo" style={{ display:'inline-block', height: '100%', paddingTop: 40, width: '100%', maxWidth: 255 }}>
             <Link
               to='/'
             >
@@ -92,7 +90,7 @@ const Navigation = ({ siteTitle }) => (
           }}
         >
           <ul 
-            className='row align-items-center'
+            className='row align-items-center d-none d-lg-flex'
             style={{
               listStyleType: 'none',
               margin: 0,
@@ -101,8 +99,8 @@ const Navigation = ({ siteTitle }) => (
           >
             <li><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
             <li style={{ padding: '0 36px' }}>
-              <Link
-                to='https://slack.strapi.io/'
+              <a
+                href='https://slack.strapi.io/'
                 style={{
                   display: 'inline-block',
                   width: 28,
@@ -110,11 +108,11 @@ const Navigation = ({ siteTitle }) => (
                 }}
               >
                 <IconSlack /> 
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to='https://github.com/strapi/buffet'
+              <a
+                href='https://github.com/strapi/buffet'
                 style={{
                   display: 'inline-block',
                   width: 28,
@@ -122,11 +120,11 @@ const Navigation = ({ siteTitle }) => (
                 }}
               >
                 <IconGitHub /> 
-              </Link>
+              </a>
             </li>
             <li>
             <Link
-                to='https://github.com/strapi/buffet'
+                to='/'
                 style={{
                   position: 'relative',
                   display: 'inline-block',
