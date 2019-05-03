@@ -4,6 +4,8 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import GitHubButton from 'react-github-btn'
 
+import Paragraph from "./Paragraph"
+
 function withImageData(WrappedComponent) {
   return props => (
  
@@ -40,7 +42,6 @@ function withImageData(WrappedComponent) {
   );
 }
 
-
 const Logo =  withImageData(props => (
   <Img fluid={props.imageData.logo.childImageSharp.fluid} alt="Logo Buffet.js" />
 ));
@@ -71,7 +72,7 @@ const Navigation = () => (
       }}
     >
       <div className='row' style={{ height: '100%' }}>
-        <div className='col-lg-4 col-xs-12 wrapper_logo'>
+        <div className='col-lg-4 col-9 wrapper_logo'>
           <h1 className="logo" style={{ display:'inline-block', height: '100%', paddingTop: 40, width: '100%', maxWidth: 255 }}>
             <Link
               to='/'
@@ -81,7 +82,7 @@ const Navigation = () => (
           </h1>
         </div>
         <div 
-          className='col-lg-8'
+          className='col-lg-8 col-3'
           style={{
             display: 'flex',
             justifyContent: 'flex-end',
@@ -89,16 +90,29 @@ const Navigation = () => (
             height: '100%'
           }}
         >
+          <div 
+            className="icon_responsive_menu d-inline-block d-sm-none"
+            onClick={(e) => {
+              e.currentTarget.classList.toggle('open');
+
+              e.currentTarget.nextElementSibling.classList.toggle('open_menu');
+            }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <ul 
-            className='row align-items-center d-none d-lg-flex'
+            className='menu row align-items-center'
             style={{
               listStyleType: 'none',
               margin: 0,
               padding: 0
             }}
           >
-            <li><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
-            <li style={{ padding: '0 36px' }}>
+            <li className="d-block d-sm-none" style={{ marginBottom: -100 }}><Paragraph style={{ textAlign: 'center' }}>Made with love by Strapi</Paragraph></li>
+            <li className="order-3" style={{ marginTop: -40 }}><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
+            <li className="order-1" style={{ padding: '0 36px' }}>
               <a
                 href='https://slack.strapi.io/'
                 style={{
@@ -110,7 +124,7 @@ const Navigation = () => (
                 <IconSlack /> 
               </a>
             </li>
-            <li>
+            <li className="order-2">
               <a
                 href='https://github.com/strapi/buffet'
                 style={{
@@ -122,7 +136,7 @@ const Navigation = () => (
                 <IconGitHub /> 
               </a>
             </li>
-            <li>
+            <li className="order-4">
             <Link
                 to='/'
                 style={{
