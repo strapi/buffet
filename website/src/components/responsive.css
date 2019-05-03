@@ -85,6 +85,10 @@
     transition: opacity .3s ease-out .2s;
   }
   
+  .menu li:nth-of-type(2) {
+    margin-top: -40px;
+  }
+  
   .menu li:nth-of-type(3), .menu li:nth-of-type(4) {
     width: 50%;
     padding: 0 10px !important;
@@ -110,6 +114,9 @@
   }
   
   nav.navigation {
+    z-index: 10;
+    position: fixed;
+    top: 0; left: 0; right: 0;
     height: 72px !important;
   }
   
@@ -132,9 +139,9 @@
   header {
     height: calc(100vh - 72px) !important;
     max-height: 595px;
+    margin-top: 72px !important;
     background-size: cover !important;
   }
-  
  
   header .wrapper_description {
     height: auto !important;

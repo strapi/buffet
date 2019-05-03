@@ -111,8 +111,8 @@ const Navigation = () => (
             }}
           >
             <li className="d-block d-sm-none" style={{ marginBottom: -100 }}><Paragraph style={{ textAlign: 'center' }}>Made with love by Strapi</Paragraph></li>
-            <li className="order-3" style={{ marginTop: -40 }}><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
-            <li className="order-1" style={{ padding: '0 36px' }}>
+            <li className="order-lg-1 order-3" ><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
+            <li className="order-lg-2 order-1" style={{ padding: '0 36px' }}>
               <a
                 href='https://slack.strapi.io/'
                 style={{
@@ -124,7 +124,7 @@ const Navigation = () => (
                 <IconSlack /> 
               </a>
             </li>
-            <li className="order-2">
+            <li className="order-lg-3 order-2">
               <a
                 href='https://github.com/strapi/buffet'
                 style={{
@@ -136,7 +136,7 @@ const Navigation = () => (
                 <IconGitHub /> 
               </a>
             </li>
-            <li className="order-4">
+            <li className="order-lg-4 order-4">
             <Link
                 to='/'
                 style={{
