@@ -68,6 +68,7 @@
   }
   
   .menu li {
+    display: block !important;
     opacity: 0;
     width: 100%;
     text-align: center;

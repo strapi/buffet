@@ -72,7 +72,7 @@ const Navigation = () => (
       }}
     >
       <div className='row' style={{ height: '100%' }}>
-        <div className='col-lg-4 col-9 wrapper_logo'>
+        <div className='col-lg-3 col-9 wrapper_logo'>
           <h1 className="logo" style={{ display:'inline-block', height: '100%', paddingTop: 40, width: '100%', maxWidth: 255 }}>
             <Link
               to='/'
@@ -82,7 +82,7 @@ const Navigation = () => (
           </h1>
         </div>
         <div 
-          className='col-lg-8 col-3'
+          className='col-lg-9 col-3'
           style={{
             display: 'flex',
             justifyContent: 'flex-end',
@@ -91,7 +91,7 @@ const Navigation = () => (
           }}
         >
           <div 
-            className="icon_responsive_menu d-inline-block d-sm-none"
+            className="icon_responsive_menu d-inline-block d-xs-none"
             onClick={(e) => {
               e.currentTarget.classList.toggle('open');
 
@@ -110,7 +110,7 @@ const Navigation = () => (
               padding: 0
             }}
           >
-            <li className="d-block d-sm-none" style={{ marginBottom: -100 }}><Paragraph style={{ textAlign: 'center' }}>Made with love by Strapi</Paragraph></li>
+            <li className="d-block d-md-none" style={{ marginBottom: -100 }}><Paragraph style={{ textAlign: 'center' }}>Made with love by Strapi</Paragraph></li>
             <li className="order-lg-1 order-3" ><GitHubButton href='https://github.com/strapi/buffet' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star strapi/buffet on GitHub'>Star</GitHubButton></li>
             <li className="order-lg-2 order-1" style={{ padding: '0 36px' }}>
               <a
