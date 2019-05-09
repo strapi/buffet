@@ -163,19 +163,19 @@ const IndexPage = () => (
                 <H4 style={{ marginTop: 36 }}>Toggle & Enumeration</H4>
                 <Enumeration
                   name="enumeration"
-                  value="first"
+                  value="milk"
                   options={[
                     {
-                      value: "first",
-                      label: "first option",
+                      value: "flour",
+                      label: "Flour",
                     },
                     {
-                      value: "second",
-                      label: "second option",
+                      value: "milk",
+                      label: "Milk",
                     },
                     {
-                      value: "third",
-                      label: "third option",
+                      value: "butter",
+                      label: "Butter",
                     },
                   ]}
                 />
