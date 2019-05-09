@@ -141,8 +141,8 @@ const Navigation = () => (
               </a>
             </li>
             <li className="order-lg-4 order-4">
-            <Link
-                to='/storybook/'
+            <a
+                href='/storybook/'
                 style={{
                   position: 'relative',
                   display: 'inline-block',
@@ -178,7 +178,7 @@ const Navigation = () => (
                   }}
                 >
                 </span>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const Button = ({ url, type = 'main', onClick, children, style }) => (
-  <Link 
-    to={url || ''}
+  <a 
+    href={url || ''}
     onClick={onClick}
     className="button"
     style={{
@@ -58,7 +58,7 @@ const Button = ({ url, type = 'main', onClick, children, style }) => (
     </span>
     </div>
   
-  </Link>
+  </a>
 )
 
 Button.propTypes = {
