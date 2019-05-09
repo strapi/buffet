@@ -78,11 +78,11 @@ const IndexPage = () => (
               <div className="col-lg-6 col-sm-12">
                 <H4>Inputs</H4>
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label>Reservation Date</Label>
+                  <Label htmlFor="date">Reservation Date</Label>
                 </div>
                 <DatePicker name="date" />
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label>Title of the recipe</Label>
+                  <Label htmlFor="search">Title of the recipe</Label>
                 </div>
                 <InputText
                   name="search"
@@ -91,7 +91,7 @@ const IndexPage = () => (
                   value=""
                 />
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label>Search for your favorite restaurant</Label>
+                  <Label htmlFor="search">Search for your favorite restaurant</Label>
                 </div>
                 <InputText
                   name="search"
@@ -100,7 +100,7 @@ const IndexPage = () => (
                   value=""
                 />
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label>Recipe resume</Label>
+                  <Label htmlFor="textarea">Recipe resume</Label>
                 </div>
                 <Textarea
                   name="textarea"
@@ -161,6 +161,9 @@ const IndexPage = () => (
                   Add new ingredient
                 </Btn>
                 <H4 style={{ marginTop: 36 }}>Toggle & Enumeration</H4>
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label htmlFor="enumeration">Enumeration</Label>
+                </div>
                 <Enumeration
                   name="enumeration"
                   value="milk"
@@ -180,7 +183,7 @@ const IndexPage = () => (
                   ]}
                 />
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label>Toggle</Label>
+                  <Label htmlFor="toggle">Toggle</Label>
                 </div>
                 <div style={{ marginTop: 6 }}>
                   <Toggle name="toggle" />
@@ -195,7 +198,7 @@ const IndexPage = () => (
           className="col-lg-12 col-md-12"
           style={{ marginTop: 40, textAlign: "center" }}
         >
-          <Button url="/" type="main">
+          <Button url="/storybook/" type="main">
             See all components
           </Button>
         </div>

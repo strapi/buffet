@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 function withImageData(WrappedComponent) {
@@ -53,6 +53,8 @@ const Footer = () => (
         <div className="col-12" style={{ textAlign: 'center' }}>
         <a
           href='https://slack.strapi.io/'
+          target='_blank'
+          rel='noopener noreferrer'
           style={{
             display: 'inline-block',
             width: 28,
@@ -64,6 +66,8 @@ const Footer = () => (
         </a>
         <a
           href='https://github.com/strapi/buffet'
+          target='_blank'
+          rel='noopener noreferrer'
           style={{
             display: 'inline-block',
             width: 28,
@@ -84,7 +88,7 @@ const Footer = () => (
               fontSize: 14,
               fontFamily: 'Lato'
           }}>
-          Made with love by <Link to="https://www.strapi.io" style={{ textDecoration: 'none', color: '#0B269C' }}>Strapi</Link></p>
+          Made with love by <a href="https://www.strapi.io" target='_blank' rel='noopener noreferrer' style={{ textDecoration: 'none', color: '#0B269C' }}>Strapi</a></p>
         </div>
       </div>
     </div>

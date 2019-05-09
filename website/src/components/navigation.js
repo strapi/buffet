@@ -115,6 +115,8 @@ const Navigation = () => (
             <li className="order-lg-2 order-1" style={{ padding: '0 36px' }}>
               <a
                 href='https://slack.strapi.io/'
+                target='_blank'
+                rel='noopener noreferrer'
                 style={{
                   display: 'inline-block',
                   width: 28,
@@ -127,6 +129,8 @@ const Navigation = () => (
             <li className="order-lg-3 order-2">
               <a
                 href='https://github.com/strapi/buffet'
+                target='_blank'
+                rel='noopener noreferrer'
                 style={{
                   display: 'inline-block',
                   width: 28,
@@ -138,7 +142,7 @@ const Navigation = () => (
             </li>
             <li className="order-lg-4 order-4">
             <Link
-                to='/'
+                to='/storybook/'
                 style={{
                   position: 'relative',
                   display: 'inline-block',

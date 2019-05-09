@@ -1,0 +1,24 @@
+{
+  "name": "buffet-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "cd website && node server.js",
+    "start:build": "yarn build:website && cd website && node server.js",
+    "build:website": "cd buffet && yarn build-storybook && cd ../website && yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strapi/buffet.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strapi/buffet/issues"
+  },
+  "homepage": "https://github.com/strapi/buffet#readme"
+}

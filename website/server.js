@@ -1,6 +1,9 @@
+const startingTime = Date.now();
+
 const koa = require("koa")
 const path = require("path")
 const serve = require("koa-static")
+const chalk = require('chalk')
 
 // Create instance.
 const app = new koa()
@@ -8,6 +11,9 @@ const app = new koa()
 /*
   NOTE: Don't forget to redirect /storybook to /storybook/
 */
+
+console.log();
+console.log(`${chalk.green('success')} Koa application instantiated`, `${Date.now() - startingTime}ms`);
 
 // Router.
 app.use(async (ctx, next) => {
@@ -43,8 +49,15 @@ app.use(async (ctx, next) => {
   return await serve(__dirname + "/public/", {
     defer: true,
   })(ctx, next)
-})
+});
 
-app.listen(4000)
+console.log(`${chalk.green('success')} Router setup`, `${Date.now() - startingTime}ms`);
 
-console.log("Listening on port 4000")
+app.listen(4000);
+
+console.log(`${chalk.green('success')} Listening port 4000`, `${Date.now() - startingTime}ms`);
+
+console.log();
+console.log(chalk.green('ready') + ' Open the website at http://localhost:4000');
+console.log();
+

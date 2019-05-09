@@ -79,7 +79,7 @@ const Navigation = ({ siteTitle }) => (
             >
               A design system to create better user experience values for application interfaces.
             </p>
-            <Button url='/' type='main'>Check it out</Button>
+            <Button url='/storybook/' type='main'>Check it out</Button>
           </div>
         </div>
       </div>
