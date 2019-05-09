@@ -89,9 +89,9 @@ function TimePicker(props) {
   const [changed, setChanged] = useState(false);
   const [focused, setFocused] = useState(false);
 
-  const [inputVal, setInputVal] = useState('');
-
   const { name, onChange, seconds, value } = props;
+
+  const [inputVal, setInputVal] = useState(seconds ? value : short(value));
 
   const handleBlur = () => {
     if (changed) {
@@ -99,11 +99,11 @@ function TimePicker(props) {
         target: {
           name,
           type: 'text',
-          value: value ? timeFormatter(value) : '',
+          value: value ? timeFormatter(inputVal) : '',
         },
       });
       setChanged(false);
-      formatInputValue(timeFormatter(value));
+      formatInputValue(timeFormatter(inputVal));
     }
     setFocused(false);
   };
@@ -145,7 +145,7 @@ function TimePicker(props) {
         isOpen={focused}
         options={getOptions()}
         onClick={handleChange}
-        value={roundHour(timeFormatter(value))}
+        value={roundHour(timeFormatter(inputVal))}
       />
     </TimePickerWrapper>
   );

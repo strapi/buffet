@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
@@ -15,6 +16,9 @@ function TimePickerStory() {
     <TimePicker
       {...defaultProps}
       onChange={({ target: { value } }) => {
+        const hour = moment(value, 'HH:mm:ss');
+        hour.toISOString();
+        hour.format();
         setValue(value);
       }}
       seconds={false}

@@ -19,6 +19,7 @@ const DatePicker = styled.div`
     box-sizing: border-box;
   }
   .DateInput {
+    width: 100%;
     &::before {
       content: '\f073';
       position: absolute;
@@ -53,6 +54,9 @@ const DatePicker = styled.div`
     &::-webkit-input-placeholder {
       color: ${colors.greyPlaceholder};
     }
+  }
+  .SingleDatePicker, .SingleDatePickerInput__withBorder {
+    width: 100%;
   }
   .SingleDatePickerInput__withBorder {
     border: 0;

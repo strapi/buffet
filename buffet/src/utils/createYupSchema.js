@@ -16,6 +16,14 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
     schema = yup.number().typeError(translatedErrors.number);
   }
 
+  console.log('ERRORS ---');
+  console.log(type);
+
+  if (['date', 'time'].includes(type)) {
+    console.log('HEY');
+    schema = schema.date().typeError(translatedErrors.date);
+  }
+
   Object.keys(validations).forEach(validation => {
     const validationValue = validations[validation];
 

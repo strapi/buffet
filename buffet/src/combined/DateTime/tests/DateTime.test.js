@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import Description from '../index';
+// import DateTime from '../index';
 
-describe('<Description />', () => {
+describe('<DateTime />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

@@ -1,5 +1,6 @@
 export default {
   translatedErrors: {
+    date: 'This is not a date',
     email: 'This is not an email',
     string: 'This is not a string',
     number: 'This is not a number',
