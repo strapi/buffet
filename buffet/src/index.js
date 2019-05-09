@@ -1,5 +1,6 @@
 export { default as Button } from './components/Button';
 export { default as DatePicker } from './components/DatePicker';
+export { default as Enumeration } from './components/Enumeration';
 export { default as GlobalStyle } from './styled/GlobalStyle';
 export { default as InputNumber } from './components/InputNumber';
 export { default as InputText } from './components/InputText';

@@ -65,7 +65,7 @@ const IndexPage = () => (
           <div
             className="home_playground"
             style={{
-              height: '100%',
+              height: "100%",
               maxHeight: 566,
               padding: 36,
               marginTop: 16,
@@ -77,13 +77,31 @@ const IndexPage = () => (
             <div className="row">
               <div className="col-lg-6 col-sm-12">
                 <H4>Inputs</H4>
-                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Reservation Date</Label></div>
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label>Reservation Date</Label>
+                </div>
                 <DatePicker name="date" />
-                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Title of the recipe</Label></div>
-                <InputText name="search" type="text" placeholder="Chocolate Cake" value="" />
-                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Search for your favorite restaurant</Label></div>
-                <InputText name="search" type="search" placeholder="Louie Louie, Paris 11" value="" />
-                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Recipe resume</Label></div>
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label>Title of the recipe</Label>
+                </div>
+                <InputText
+                  name="search"
+                  type="text"
+                  placeholder="Chocolate Cake"
+                  value=""
+                />
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label>Search for your favorite restaurant</Label>
+                </div>
+                <InputText
+                  name="search"
+                  type="search"
+                  placeholder="Louie Louie, Paris 11"
+                  value=""
+                />
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label>Recipe resume</Label>
+                </div>
                 <Textarea
                   name="textarea"
                   value="This chocolate cake is going to make you crazy!"
@@ -96,7 +114,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
-                  style={{ marginTop: 16}}
+                  style={{ marginTop: 16 }}
                 >
                   Save the recipe
                 </Btn>
@@ -106,7 +124,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
-                  style={{ marginTop: 16}}
+                  style={{ marginTop: 16 }}
                 >
                   Add new recipe
                 </Btn>
@@ -117,7 +135,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
-                  style={{ marginTop: 16}}
+                  style={{ marginTop: 16 }}
                 >
                   Delete the recipe
                 </Btn>
@@ -127,7 +145,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
-                  style={{ marginTop: 16}}
+                  style={{ marginTop: 16 }}
                 >
                   Select an ingredient
                 </Btn>
@@ -138,12 +156,12 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
-                  style={{ marginTop: 16}}
+                  style={{ marginTop: 16 }}
                 >
                   Add new ingredient
                 </Btn>
                 <H4 style={{ marginTop: 36 }}>Toggle & Enumeration</H4>
-                {/* <Enumeration
+                <Enumeration
                   name="enumeration"
                   value="first"
                   options={[
@@ -160,9 +178,13 @@ const IndexPage = () => (
                       label: "third option",
                     },
                   ]}
-                /> */}
-                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Toggle</Label></div>
-                <div style={{ marginTop: 6 }}><Toggle name="toggle" /></div>
+                />
+                <div style={{ marginTop: 30, marginBottom: 10 }}>
+                  <Label>Toggle</Label>
+                </div>
+                <div style={{ marginTop: 6 }}>
+                  <Toggle name="toggle" />
+                </div>
               </div>
             </div>
           </div>
