@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Buffet.js — React Components Library built with styled-components`,
@@ -26,6 +28,17 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          buffet: path.resolve(__dirname, "../buffet/dist"),
+          react: path.resolve(__dirname, "node_modules/react"),
+          "react-dom": path.resolve(__dirname, "node_modules/react-dom"),
+        },
+        extensions: [],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -8,7 +8,15 @@ import Header from "../components/header"
 import H3 from "../components/h3"
 import Paragraph from "../components/Paragraph"
 
-import { Textarea, Button as Btn, GlobalStyle } from "../../../buffet/dist"
+import {
+  Button as Btn,
+  DatePicker,
+  Enumeration,
+  InputText,
+  GlobalStyle,
+  Textarea,
+  Toggle,
+} from "buffet"
 
 import IconOpenSource from "../images/icon_opensource.svg"
 import IconConsistent from "../images/icon_consistent.svg"
@@ -63,21 +71,82 @@ const IndexPage = () => (
             }}
           >
             <div className="row">
-              <div class="col-lg-8">
+              <div className="col-lg-8">
+                <DatePicker name="date" />
+                <InputText name="search" type="text" value="Text" />
+                <InputText name="search" type="search" value="Search" />
                 <Textarea
                   name="textarea"
-                  value=""
+                  value="Textarea"
                   placeholder="qklsjdqkljdskljkl"
                 />
               </div>
               <div className="col-lg-4">
                 <Btn
+                  name="save_recipe"
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
                 >
-                  Click on me
+                  Save the recipe
                 </Btn>
+                <Btn
+                  name="add_recipe"
+                  icon="add"
+                  onClick={e => {
+                    window.confirm("Please confirm")
+                  }}
+                >
+                  Add new recipe
+                </Btn>
+                <Btn
+                  name="delete_recipe"
+                  color="delete"
+                  icon="trash"
+                  onClick={e => {
+                    window.confirm("Please confirm")
+                  }}
+                >
+                  Delete the recipe
+                </Btn>
+                <Btn
+                  name="select_ingredient"
+                  color="secondary"
+                  onClick={e => {
+                    window.confirm("Please confirm")
+                  }}
+                >
+                  Select an ingredient
+                </Btn>
+                <Btn
+                  name="add_ingredient"
+                  color="secondary"
+                  icon="add"
+                  onClick={e => {
+                    window.confirm("Please confirm")
+                  }}
+                >
+                  Add new ingredient
+                </Btn>
+                <Enumeration
+                  name="enumeration"
+                  value="first"
+                  options={[
+                    {
+                      value: "first",
+                      label: "first option",
+                    },
+                    {
+                      value: "second",
+                      label: "second option",
+                    },
+                    {
+                      value: "third",
+                      label: "third option",
+                    },
+                  ]}
+                />
+                <Toggle name="toggle" />
               </div>
             </div>
           </div>

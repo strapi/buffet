@@ -37,9 +37,6 @@
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "invariant": "^2.2.4",
