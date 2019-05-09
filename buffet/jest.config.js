@@ -10,6 +10,7 @@ module.exports = {
     '!src/commonPropTypes/**/*.{js,jsx}',
     '!src/**/stories/*.{js,jsx}',
     '!dist/**/*.{js,jsx}',
+    '!storybook-static/*.{js,jsx}',
   ],
   coverageThreshold: {
     global: {
