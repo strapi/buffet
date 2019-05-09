@@ -9,7 +9,7 @@
 # production
 /build
 /dist
-/storybook-static
+/buffet/storybook-static
 
 # misc
 .DS_Store
