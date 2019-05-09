@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 import Header from "../components/header"
 import H3 from "../components/h3"
+import H4 from "../components/h4"
 import Paragraph from "../components/Paragraph"
 
 import {
@@ -14,6 +15,7 @@ import {
   Enumeration,
   InputText,
   GlobalStyle,
+  Label,
   Textarea,
   Toggle,
 } from "buffet"
@@ -59,11 +61,13 @@ const IndexPage = () => (
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-8 offset-lg-2 col-xs-12">
+        <div className="col-lg-8 offset-lg-2 col-md-12">
           <div
             className="home_playground"
             style={{
-              height: 566,
+              height: '100%',
+              maxHeight: 566,
+              padding: 36,
               marginTop: 16,
               borderRadius: 2,
               boxShadow: "0 2px 4px 0 #e3e9f3",
@@ -71,22 +75,28 @@ const IndexPage = () => (
             }}
           >
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-6 col-sm-12">
+                <H4>Inputs</H4>
+                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Reservation Date</Label></div>
                 <DatePicker name="date" />
-                <InputText name="search" type="text" value="Text" />
-                <InputText name="search" type="search" value="Search" />
+                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Title of the recipe</Label></div>
+                <InputText name="search" type="text" placeholder="Chocolate Cake" value="" />
+                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Search for your favorite restaurant</Label></div>
+                <InputText name="search" type="search" placeholder="Louie Louie, Paris 11" value="" />
+                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Recipe resume</Label></div>
                 <Textarea
                   name="textarea"
-                  value="Textarea"
-                  placeholder="qklsjdqkljdskljkl"
+                  value="This chocolate cake is going to make you crazy!"
                 />
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-5 offset-lg-1 col-md-12">
+                <H4>Buttons - Primary/Secondary</H4>
                 <Btn
                   name="save_recipe"
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
+                  style={{ marginTop: 16}}
                 >
                   Save the recipe
                 </Btn>
@@ -96,6 +106,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
+                  style={{ marginTop: 16}}
                 >
                   Add new recipe
                 </Btn>
@@ -106,6 +117,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
+                  style={{ marginTop: 16}}
                 >
                   Delete the recipe
                 </Btn>
@@ -115,6 +127,7 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
+                  style={{ marginTop: 16}}
                 >
                   Select an ingredient
                 </Btn>
@@ -125,10 +138,12 @@ const IndexPage = () => (
                   onClick={e => {
                     window.confirm("Please confirm")
                   }}
+                  style={{ marginTop: 16}}
                 >
                   Add new ingredient
                 </Btn>
-                <Enumeration
+                <H4 style={{ marginTop: 36 }}>Toggle & Enumeration</H4>
+                {/* <Enumeration
                   name="enumeration"
                   value="first"
                   options={[
@@ -145,8 +160,9 @@ const IndexPage = () => (
                       label: "third option",
                     },
                   ]}
-                />
-                <Toggle name="toggle" />
+                /> */}
+                <div style={{ marginTop: 30, marginBottom: 10 }}><Label>Toggle</Label></div>
+                <div style={{ marginTop: 6 }}><Toggle name="toggle" /></div>
               </div>
             </div>
           </div>
@@ -154,8 +170,8 @@ const IndexPage = () => (
       </div>
       <div className="row home_main_cta">
         <div
-          className="col-lg-12 col-xs-12"
-          style={{ paddingTop: 40, textAlign: "center" }}
+          className="col-lg-12 col-md-12"
+          style={{ marginTop: 40, textAlign: "center" }}
         >
           <Button url="/" type="main">
             See all components

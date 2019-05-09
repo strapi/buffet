@@ -186,11 +186,22 @@
   } 
   
   .home_playground {
+    max-height: 100% !important;
     margin: 40px 15px 0 !important;
+    padding: 0 36px 0 !important;
+  }
+  
+  .home_playground h4 {
+    margin-top: 36px !important;
+  }
+  
+  .home_playground .offset-lg-1 {
+    display: flex;
+    flex-direction: column;
   }
   
   .home_main_cta {
-    margin: 0 !important;
+    margin: 36px 0 0 !important;
   }
   
   .home_philosophy {
