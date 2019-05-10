@@ -24,16 +24,14 @@ function InputNumber({
   ...rest
 }) {
   const handleChange = data => {
-    if (data) {
-      const target = {
-        id,
-        name,
-        type: 'number',
-        value: data,
-      };
+    const target = {
+      id,
+      name,
+      type: 'number',
+      value: data,
+    };
 
-      onChange({ target });
-    }
+    onChange({ target });
   };
 
   return (
@@ -54,6 +52,7 @@ function InputNumber({
 
 InputNumber.defaultProps = {
   ...commonDefaultProps,
+  value: null,
 };
 
 InputNumber.propTypes = {

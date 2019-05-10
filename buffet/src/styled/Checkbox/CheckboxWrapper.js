@@ -15,6 +15,7 @@ const CheckboxWrapper = styled.div`
     width: fit-content;
     cursor: pointer;
     vertical-align: middle;
+    margin-bottom: 0;
   }
   input + label {
     margin-left: ${sizes.margin}px;

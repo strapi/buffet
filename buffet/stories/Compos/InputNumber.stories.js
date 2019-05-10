@@ -13,7 +13,9 @@ function InputNumberStory() {
   return (
     <InputNumber
       {...defaultProps}
-      onChange={({ target: { value } }) => setValue(value)}
+      onChange={({ target: { value } }) => {
+        setValue(value);
+      }}
       value={val}
     />
   );

@@ -39,7 +39,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
   return (
     <Row onClick={onClick}>
       <td style={styles.iconCell}>
-        <i className={icon} />
+        <i className={`fa ${icon}`} />
       </td>
       <td style={styles.nameCell}>
         <p>

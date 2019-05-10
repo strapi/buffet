@@ -39,7 +39,6 @@ function Error({ children, translatedErrors, type, validations, value }) {
   };
 
   const handleBlur = async ({ target }) => {
-    console.log('BLUUUR');
     if (canCheck) {
       try {
         await createYupSchema(type, validations, translatedErrors).validate(

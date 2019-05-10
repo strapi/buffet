@@ -16,22 +16,6 @@ const form = {
       required: true,
     },
   },
-  enum: {
-    styleName: 'col-6',
-    description: 'You should enter your lastname',
-    label: 'Last Name',
-    placeholder: 'Ky',
-    type: 'enum',
-    options: [
-      { value: 'option1', label: 'option 1' },
-      { value: 'option2', label: 'option 2' },
-      { value: 'option3', label: 'option 3' },
-    ],
-    validations: {
-      required: true,
-      uppercase: true,
-    },
-  },
   lastName: {
     styleName: 'col-6',
     description: 'You should enter your lastname',
@@ -99,9 +83,6 @@ function FormStory() {
   const [values, dispatch] = useReducer(reducer, {});
 
   const handleChange = ({ target: { name, value } }) => {
-    console.log(name);
-    console.log(value);
-
     dispatch({
       type: 'ON_CHANGE',
       key: name,

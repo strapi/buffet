@@ -1,4 +1,4 @@
-import { isBoolean } from 'lodash';
+import { isBoolean, isNaN } from 'lodash';
 import * as yup from 'yup';
 
 const createYupSchema = (type, validations, translatedErrors = {}) => {
@@ -13,14 +13,13 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
   }
 
   if (type === 'number') {
-    schema = yup.number().typeError(translatedErrors.number);
+    schema = yup
+      .number()
+      .transform(cv => (isNaN(cv) ? undefined : cv))
+      .typeError(translatedErrors.number);
   }
 
-  console.log('ERRORS ---');
-  console.log(type);
-
   if (['date', 'time'].includes(type)) {
-    console.log('HEY');
     schema = schema.date().typeError(translatedErrors.date);
   }
 
