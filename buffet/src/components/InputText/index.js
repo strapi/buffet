@@ -57,7 +57,7 @@ InputText.defaultProps = {
   ...commonDefaultProps,
   onChange: () => {},
   type: 'text',
-  value: null,
+  value: '',
 };
 
 InputText.propTypes = {
