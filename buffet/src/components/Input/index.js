@@ -34,9 +34,9 @@ const inputs = {
 };
 
 function Input({ onChange, type, ...rest }) {
-  const Compo = inputs[type] || UnknowInput;
+  const InputComponent = inputs[type] || UnknowInput;
 
-  return <Compo onChange={onChange} type={type} {...rest} />;
+  return <InputComponent onChange={onChange} type={type} {...rest} />;
 }
 
 Input.defaultProps = {

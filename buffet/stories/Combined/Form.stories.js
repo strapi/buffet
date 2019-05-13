@@ -91,7 +91,6 @@ function FormStory() {
   };
 
   const onSubmit = () => {
-    console.log('HEY');
     console.log(values);
   };
 

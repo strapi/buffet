@@ -52,7 +52,6 @@ function InputStory() {
   };
 
   const onSubmit = () => {
-    console.log('HEY');
     console.log(values);
   };
 

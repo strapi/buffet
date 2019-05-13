@@ -41,7 +41,6 @@ const TimeList = styled.ul`
       opacity: 0;
       z-index: 1;
       cursor: pointer;
-      background-color: red;
       &:checked + label,
       &:hover + label {
         background-color: ${colors.greyIconBkgd};
