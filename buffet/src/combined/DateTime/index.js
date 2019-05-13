@@ -76,7 +76,6 @@ function DateTime({ name, onChange, value }) {
       <DatePicker
         name="date"
         onChange={({ target }) => {
-          console.log('Date changed');
           setDate(target.value, timestamp);
         }}
         value={timestamp}
@@ -84,7 +83,6 @@ function DateTime({ name, onChange, value }) {
       <TimePicker
         name="time"
         onChange={({ target }) => {
-          console.log('Time changed');
           setTime(target.value);
         }}
         seconds={false}
