@@ -33,7 +33,7 @@ const colors = {
   blueIconBkgd: '#E8F0FA',
 
   // Specific to tabs
-  greyTabBkgd: 'rgb(242, 242, 242)',
+  greyTabBkgd: '#F2F2F2',
   blueTabBorder: '#1C5DE7',
   greyLink: '#F5F5F5',
 };

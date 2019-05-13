@@ -12,6 +12,7 @@ import StyledTimePicker, { TimePickerWrapper } from '../../styled/TimePicker';
 import Icon from '../../styled/Icon';
 import TimeList from '../TimeList';
 
+// Convert time array to formatted time string
 export const timeFormatter = time => {
   const newTime = Array(3)
     .fill('00')
@@ -22,6 +23,7 @@ export const timeFormatter = time => {
   return format(newTime).join(':');
 };
 
+// Convert time string to time array
 const splitArray = string => {
   if (isInteger(toNumber(string)) && string) {
     const stringFormat = string.length === 3 ? `0${string}` : string;
@@ -37,6 +39,7 @@ const splitArray = string => {
   return array.reverse().filter(v => !!v);
 };
 
+// Ensure two-digit format for minutes and seconds
 const format = array =>
   array.map((string, i) => {
     if (string.length < 2) {
@@ -46,6 +49,7 @@ const format = array =>
     return string;
   });
 
+// Hide seconds if needed
 const short = hour => {
   const array = hour.split(':');
   if (array.length > 2) {
@@ -55,6 +59,7 @@ const short = hour => {
   return hour;
 };
 
+// Generate options for TimeList display
 const getOptions = () => {
   const hours = Array.from({ length: 24 }, (_, k) => k);
   const options = hours.reduce((acc, cur) => {
@@ -69,12 +74,7 @@ const getOptions = () => {
   return options;
 };
 
-const nearest = (arr, val) =>
-  arr.reduce(
-    (p, n) => (Math.abs(p) > Math.abs(n - val) ? n - val : p),
-    Infinity,
-  ) + val;
-
+// Find the nearest time option to select a TimeList value
 const roundHour = time => {
   const arr = splitArray(time);
   const nearMin = nearest([0, 30, 60], parseInt(arr[1], 10));
@@ -84,6 +84,13 @@ const roundHour = time => {
 
   return format(arr.reverse()).join(':');
 };
+
+// Set the nearest option to select a TimeList value
+const nearest = (arr, val) =>
+  arr.reduce(
+    (p, n) => (Math.abs(p) > Math.abs(n - val) ? n - val : p),
+    Infinity,
+  ) + val;
 
 function TimePicker(props) {
   const [changed, setChanged] = useState(false);

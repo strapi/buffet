@@ -14,12 +14,12 @@ import ListRow from '../ListRow';
 
 import StyledList from '../../styled/List';
 
-function List({ list, customRowComponent }) {
+function List({ items, customRowComponent }) {
   return (
     <StyledList>
       <table>
         <tbody>
-          {list.map(item =>
+          {items.map(item =>
             customRowComponent ? (
               <React.Fragment key={JSON.stringify(item)}>
                 {customRowComponent(item)}
