@@ -52,6 +52,7 @@ function InputNumber({
 
 InputNumber.defaultProps = {
   ...commonDefaultProps,
+  value: null,
 };
 
 InputNumber.propTypes = {

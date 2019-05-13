@@ -14,9 +14,8 @@ const InputText = styled.input`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey};

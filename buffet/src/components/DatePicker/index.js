@@ -33,10 +33,11 @@ class DatePicker extends React.PureComponent {
 
   handleDateChange = date => {
     const { name, onChange } = this.props;
-
-    this.setState({ date }, () =>
-      onChange({ target: { name, type: 'date', value: date } }),
-    );
+    if (moment(date).isValid()) {
+      this.setState({ date }, () =>
+        onChange({ target: { name, type: 'date', value: date } }),
+      );
+    }
   };
 
   handleFocusChange = ({ focused }) => {
@@ -53,7 +54,7 @@ class DatePicker extends React.PureComponent {
         <SingleDatePicker
           date={date}
           focused={isFocused}
-          id={id}
+          id={id || 'date'}
           displayFormat={displayFormat}
           numberOfMonths={1}
           onFocusChange={this.handleFocusChange}

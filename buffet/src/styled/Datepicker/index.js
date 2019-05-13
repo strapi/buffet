@@ -12,12 +12,14 @@ import sizes from '../../assets/styles/sizes';
 
 const DatePicker = styled.div`
   position: relative;
+  z-index: 9;
   * {
     font-family: 'Lato';
     outline: 0;
     box-sizing: border-box;
   }
   .DateInput {
+    width: 100%;
     &::before {
       content: '\f073';
       position: absolute;
@@ -42,7 +44,7 @@ const DatePicker = styled.div`
     width: 100%;
     height: ${sizes.input.height};
     padding: 0 ${sizes.input.padding};
-    font-size: 13px;
+    font-size: 1.3rem;
     cursor: pointer;
     border: 1px solid ${colors.lightGrey};
     border-radius: ${sizes.radius};
@@ -52,6 +54,9 @@ const DatePicker = styled.div`
     &::-webkit-input-placeholder {
       color: ${colors.greyPlaceholder};
     }
+  }
+  .SingleDatePicker, .SingleDatePickerInput__withBorder {
+    width: 100%;
   }
   .SingleDatePickerInput__withBorder {
     border: 0;
@@ -68,7 +73,7 @@ const DatePicker = styled.div`
       padding-top: 5px;
       padding-bottom: 5px;
       small {
-        font-size: 13px;
+        font-size: 1.3rem;
       }
     }
   }
@@ -84,7 +89,7 @@ const DatePicker = styled.div`
     display: none;
   }
   .CalendarMonth_caption {
-    font-size: 13px;
+    font-size: 1.3rem;
   }
   .DayPicker_transitionContainer {
     padding: 4px;
@@ -127,7 +132,7 @@ const DatePicker = styled.div`
     cursor: pointer;
     width: 34px;
     height: 28px;
-    font-size: 13px;
+    font-size: 1.3rem;
     &, &.CalendarDay__selected, &.CalendarDay__selected:active, &.CalendarDay__selected:hover, &.CalendarDay__default:hover {
       border: 0;
     }

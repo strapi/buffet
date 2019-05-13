@@ -5,8 +5,6 @@
  */
 
 import styled from 'styled-components';
-import 'font-awesome/css/font-awesome.min.css';
-
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
@@ -17,7 +15,6 @@ const List = styled.div`
   i {
     display: inline-block;
     text-rendering: auto;
-    font-family: 'FontAwesome';
     font-weight: 600;
     color: ${colors.blueTxt};
     font-style: initial;

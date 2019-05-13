@@ -2,21 +2,21 @@
 
 exports[`<Icon /> <Icon /> icon attributes should render the email icon 1`] = `
 <span
-  className="sc-bdVaJa vCpER"
+  className="sc-bdVaJa jZemWK"
   type="email"
 />
 `;
 
 exports[`<Icon /> <Icon /> icon attributes should render the password icon 1`] = `
 <span
-  className="sc-bdVaJa bsAsFL"
+  className="sc-bdVaJa uCfRx"
   type="password"
 />
 `;
 
 exports[`<Icon /> <Icon /> icon attributes should render the search icon 1`] = `
 <span
-  className="sc-bdVaJa fCPlqW"
+  className="sc-bdVaJa fbXJab"
   type="search"
 />
 `;

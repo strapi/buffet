@@ -89,9 +89,9 @@ function TimePicker(props) {
   const [changed, setChanged] = useState(false);
   const [focused, setFocused] = useState(false);
 
-  const [inputVal, setInputVal] = useState('');
-
   const { name, onChange, seconds, value } = props;
+
+  const [inputVal, setInputVal] = useState(seconds ? value : short(value));
 
   const handleBlur = () => {
     if (changed) {
@@ -99,26 +99,18 @@ function TimePicker(props) {
         target: {
           name,
           type: 'text',
-          value: value ? timeFormatter(value) : '',
+          value: value ? timeFormatter(inputVal) : '',
         },
       });
       setChanged(false);
-      formatInputValue(timeFormatter(value));
+      formatInputValue(timeFormatter(inputVal));
     }
-
     setFocused(false);
   };
 
   const handleChange = ({ target }) => {
     setChanged(true);
-    onChange({
-      target: {
-        name,
-        type: 'text',
-        value: timeFormatter(target.value),
-      },
-    });
-    formatInputValue(target.value);
+    updateTime(target.value);
   };
 
   const formatInputValue = time => {
@@ -129,6 +121,21 @@ function TimePicker(props) {
     }
   };
 
+  const handleClick = ({ target }) => {
+    updateTime(target.value);
+  };
+
+  const updateTime = time => {
+    formatInputValue(time);
+    onChange({
+      target: {
+        name,
+        type: 'text',
+        value: timeFormatter(time),
+      },
+    });
+  };
+
   return (
     <TimePickerWrapper>
       <StyledTimePicker
@@ -137,15 +144,16 @@ function TimePicker(props) {
         onBlur={handleBlur}
         onChange={handleChange}
         onClick={() => setFocused(true)}
-        onKeyPress={e => (e.key === 'Enter' ? handleBlur() : '')}
+        onKeyPress={e => (e.key === 'Enter' ? handleBlur(e) : '')}
+        type="text"
         value={inputVal}
       />
       <Icon type="time" />
       <TimeList
         isOpen={focused}
         options={getOptions()}
-        onClick={handleChange}
-        value={roundHour(timeFormatter(value))}
+        onClick={handleClick}
+        value={roundHour(timeFormatter(inputVal))}
       />
     </TimePickerWrapper>
   );

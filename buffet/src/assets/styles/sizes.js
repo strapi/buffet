@@ -15,8 +15,8 @@ const sizes = {
     },
   },
   input: {
-    height: '34px',
-    padding: '10px',
+    height: '3.4rem',
+    padding: '1rem',
   },
   checkbox: {
     height: '14px',

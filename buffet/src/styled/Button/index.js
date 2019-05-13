@@ -20,9 +20,8 @@ const Button = styled.button`
   // General style
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.large};
-  font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 1.6rem;
   border-radius: ${sizes.radius};
   cursor:pointer;
@@ -82,7 +81,7 @@ const Button = styled.button`
       &::before {
         font-family: 'FontAwesome';
         font-weight: 600;
-        font-size: 13px;
+        font-size: 1.3rem;
         margin-right: 8px;
         line-height: 1.8rem;
         display: inline-block;
@@ -96,7 +95,7 @@ const Button = styled.button`
     css`
       &::before {
         content: '\f067';
-        margin-right: 13px;
+        margin-right: ${sizes.margin * 1.3}px;
       }
     `}      
 
