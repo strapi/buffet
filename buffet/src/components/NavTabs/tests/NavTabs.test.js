@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import Links from '../index';
+// import NavTabs from '../index';
 
-describe('<Links />', () => {
+describe('<NavTabs />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

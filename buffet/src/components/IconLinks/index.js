@@ -1,6 +1,6 @@
 /**
  *
- * Links
+ * IconLinks
  *
  */
 
@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import StyledLinks from '../../styled/Links';
 
-function Links({ links }) {
+function IconLinks({ links }) {
   return (
     <StyledLinks>
       {links.map(icon => (
@@ -21,11 +21,10 @@ function Links({ links }) {
   );
 }
 
-Links.defaultProps = {
+IconLinks.defaultProps = {
   links: null,
 };
-
-Links.propTypes = {
+IconLinks.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       icon: PropTypes.string,
@@ -34,4 +33,4 @@ Links.propTypes = {
   ),
 };
 
-export default Links;
+export default IconLinks;

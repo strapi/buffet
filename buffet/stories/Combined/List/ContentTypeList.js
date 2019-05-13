@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { text, object } from '@storybook/addon-knobs';
 
 import List from '../../../src/combined/List';
-import Links from '../../../src/components/Links';
+import IconLinks from '../../../src/components/IconLinks';
 import Row from '../../../src/styled/CustomRow';
 
 const CustomRow = ({ icon, description, links, name, onClick }) => {
@@ -51,7 +51,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
       </td>
       <td style={styles.linksCell}>
         <div style={styles.links}>
-          <Links links={links} />
+          <IconLinks links={links} />
         </div>
       </td>
     </Row>
