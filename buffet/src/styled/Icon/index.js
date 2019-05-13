@@ -56,7 +56,17 @@ const Icon = styled.span`
         content: '\f06e';
       }
     `}}
-`;
+  
+  // Time
+  ${props =>
+    props.type === 'time' &&
+    css`
+      background-color: ${colors.greyIconBkgd};
+      ::before {
+        content: '\f017';
+      }
+    `}}
+  `;
 
 Icon.defaultProps = {
   type: 'search',
