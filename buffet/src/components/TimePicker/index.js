@@ -110,14 +110,7 @@ function TimePicker(props) {
 
   const handleChange = ({ target }) => {
     setChanged(true);
-    onChange({
-      target: {
-        name,
-        type: 'text',
-        value: timeFormatter(target.value),
-      },
-    });
-    formatInputValue(target.value);
+    updateTime(target.value);
   };
 
   const formatInputValue = time => {
@@ -126,6 +119,21 @@ function TimePicker(props) {
     } else {
       setInputVal(time);
     }
+  };
+
+  const handleClick = ({ target }) => {
+    updateTime(target.value);
+  };
+
+  const updateTime = time => {
+    formatInputValue(time);
+    onChange({
+      target: {
+        name,
+        type: 'text',
+        value: timeFormatter(time),
+      },
+    });
   };
 
   return (
@@ -144,7 +152,7 @@ function TimePicker(props) {
       <TimeList
         isOpen={focused}
         options={getOptions()}
-        onClick={handleChange}
+        onClick={handleClick}
         value={roundHour(timeFormatter(inputVal))}
       />
     </TimePickerWrapper>

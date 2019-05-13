@@ -5,7 +5,7 @@
     "prettier/react",
     "plugin:jest/recommended"
   ],
-  "plugins": ["prettier", "jest", "react", "jsx-a11y"],
+  "plugins": ["prettier", "jest", "react", "react-hooks", "jsx-a11y"],
   "rules": {
     "react/jsx-filename-extension": [
       1,

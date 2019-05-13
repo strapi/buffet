@@ -51,12 +51,11 @@ function DateTime({ name, onChange, value }) {
     };
 
     timestamp.set(timeObj);
-    setDate(timestamp, timestamp);
+    setDate(timestamp);
   };
 
   const setDate = (date, time) => {
     const newDate = time || date;
-
     date.set(getTimeObject(newDate));
     date.toISOString();
     date.format();
@@ -70,13 +69,14 @@ function DateTime({ name, onChange, value }) {
       const newDate = value._isAMomentObject === true ? value : moment(value);
       setDate(newDate);
     }
-  }, [value]);
+  }, []);
 
   return (
     <div>
       <DatePicker
         name="date"
         onChange={({ target }) => {
+          console.log('Date changed');
           setDate(target.value, timestamp);
         }}
         value={timestamp}
@@ -84,6 +84,7 @@ function DateTime({ name, onChange, value }) {
       <TimePicker
         name="time"
         onChange={({ target }) => {
+          console.log('Time changed');
           setTime(target.value);
         }}
         seconds={false}
