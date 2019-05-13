@@ -20,7 +20,7 @@ ChildId.propTypes = {
   }).isRequired,
 };
 
-const navLinks = object('Links', [
+const links = object('Links', [
   {
     label: 'Roles \u0026 Permissions',
     to: '/plugins/users-permissions/roles',
@@ -42,7 +42,7 @@ const navLinks = object('Links', [
 function CombinedTabs() {
   return (
     <div>
-      <NavTabs links={navLinks} />
+      <NavTabs links={links} />
       <Route path="/plugins/:pluginId/:id" component={ChildId} exact />
     </div>
   );
