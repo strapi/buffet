@@ -1,11 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { addDecorator, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { themes } from '@storybook/theming';
 
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 import GlobalStyle from '../src/styled/GlobalStyle';
+
+addParameters({
+  options: {
+    theme: themes.dark,
+  },
+});
 
 addDecorator(story => (
   <>
@@ -13,6 +20,7 @@ addDecorator(story => (
     {story()}
   </>
 ));
+
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/);
 function loadStories() {
