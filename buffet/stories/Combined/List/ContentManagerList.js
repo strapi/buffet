@@ -61,7 +61,7 @@ function CombinedList() {
   };
   const title = text('Title', 'Types de contenu');
   const subtitle = text('Subtitle', 'Configurez les paramètres spécifiques');
-  const list = object('List', [
+  const items = object('List', [
     {
       icon: 'fa-cube',
       name: 'article',
@@ -82,7 +82,7 @@ function CombinedList() {
   const initProps = {
     title,
     subtitle,
-    list,
+    items,
   };
 
   return (

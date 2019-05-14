@@ -19,11 +19,11 @@ import ListCard from '../../styled/ListCard';
 import ListHeader from '../../components/ListHeader';
 import ListCompo from '../../components/List';
 
-function List({ title, subtitle, button, list, customRowComponent }) {
+function List({ title, subtitle, button, items, customRowComponent }) {
   return (
     <ListCard>
       <ListHeader title={title} subtitle={subtitle} button={button} />
-      <ListCompo list={list} customRowComponent={customRowComponent} />
+      <ListCompo items={items} customRowComponent={customRowComponent} />
     </ListCard>
   );
 }
