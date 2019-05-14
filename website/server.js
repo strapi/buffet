@@ -18,35 +18,43 @@ console.log(`${chalk.green('success')} Koa application instantiated`, `${Date.no
 // Router.
 app.use(async (ctx, next) => {
   const parse = path.parse(ctx.url)
-
+  let pathToServe;
+  
+  // Extract path from original url.
   ctx.url = path.join(parse.dir, parse.base)
 
-  if (ctx.request.href.indexOf("storybook") !== -1) {
-    if (ctx.url === "/storybook") {
-      ctx.url = "/index.html"
-    } else {
-      const parsing = path.parse(ctx.url)
-      const dir = parsing.dir.replace("/storybook", "")
-
-      ctx.url = path.join(dir, parsing.base)
+  if (ctx.request.href.indexOf('storybook') !== -1) {
+    // Redirect to /storybook/ instead of /storybook to correctly serve the assets.
+    if (ctx.url === '/storybook' && ctx.request.href[ctx.request.href.length - 1] !== '/') {
+      return ctx.redirect('/storybook/');
+    } 
+    
+    // Remove /storybook to serve assets.
+    ctx.url = ctx.url.replace('/storybook', '');
+    
+    // Serve index.html as default page (Storybook).
+    if (ctx.url === '') {
+      ctx.url = '/index.html'
     }
-
-    const pathToStoryBook = path.join(
-      __dirname + "/..",
-      "buffet",
-      "storybook-static/"
+    
+    // Set path where retrieving the assets.
+    pathToServe = path.join(
+      __dirname + '/..',
+      'buffet',
+      'storybook-static/'
     )
-
-    return await serve(pathToStoryBook, {
-      defer: true,
-    })(ctx, next)
+  } else {
+     // Server index.html as default page (Gatsby).
+    if (ctx.url === "/") {
+      ctx.url = "/index.html"
+    }
+    
+    // Set path where retrieving the assets.
+    pathToServe = path.join(__dirname, 'public');
   }
-
-  if (ctx.url === "/") {
-    ctx.url = "/index.html"
-  }
-
-  return await serve(__dirname + "/public/", {
+ 
+  // Serve the assets.
+  return await serve(pathToServe, {
     defer: true,
   })(ctx, next)
 });
