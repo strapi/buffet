@@ -102,7 +102,7 @@ function CombinedList() {
     onClick,
     type: 'submit',
   });
-  const list = object('List', [
+  const items = object('Items', [
     {
       icon: 'fa-cube',
       name: 'title',
@@ -156,7 +156,7 @@ function CombinedList() {
   const initProps = {
     title,
     button,
-    list,
+    items,
   };
 
   return (

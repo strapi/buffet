@@ -1,6 +1,6 @@
 /**
  *
- * ListCard
+ * Card
  *
  */
 
@@ -9,10 +9,11 @@ import styled from 'styled-components';
 import sizes from '../../assets/styles/sizes';
 import colors from '../../assets/styles/colors';
 
-const ListCard = styled.div`
+const Card = styled.div`
   background: white;
   font-family: 'Lato';
   box-shadow: 0 2px 4px ${colors.lightGrey};
+  position: relative;
   .table-wrapper {
     width: 100%;
     overflow-x: scroll;
@@ -25,4 +26,4 @@ const ListCard = styled.div`
   }
 `;
 
-export default ListCard;
+export default Card;

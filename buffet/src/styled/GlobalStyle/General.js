@@ -9,9 +9,9 @@ const General = createGlobalStyle`
   html, body { -webkit-font-smoothing: antialiased; }
   html {
     font-size: 62.5%;
-    background-color: ${colors.greyBkgd};
   }
   body {
+    background-color: ${colors.greyIconBkgd};
     margin: ${sizes.margin * 1.8}px ${sizes.margin * 2}px;
     padding: ${sizes.margin * 1.8}px;
     margin: 20px 18px;

@@ -15,7 +15,6 @@ const colors = {
   orangeBkgd: 'rgba(255, 0, 0, 0.15)',
   black: '#000000',
   white: '#ffffff',
-  greyBkgd: 'rgba(14, 22, 34, 0.02)',
 
   // Specific to inputs
   greyPlaceholder: '#919BAE',

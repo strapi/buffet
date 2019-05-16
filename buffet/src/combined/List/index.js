@@ -14,17 +14,17 @@ import {
   commonPropTypes,
 } from '../../commonPropTypes/list';
 
-import ListCard from '../../styled/ListCard';
+import Card from '../../styled/Card';
 
 import ListHeader from '../../components/ListHeader';
 import ListCompo from '../../components/List';
 
-function List({ title, subtitle, button, list, customRowComponent }) {
+function List({ title, subtitle, button, items, customRowComponent }) {
   return (
-    <ListCard>
+    <Card>
       <ListHeader title={title} subtitle={subtitle} button={button} />
-      <ListCompo list={list} customRowComponent={customRowComponent} />
-    </ListCard>
+      <ListCompo items={items} customRowComponent={customRowComponent} />
+    </Card>
   );
 }
 

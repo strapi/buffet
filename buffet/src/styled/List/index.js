@@ -40,15 +40,24 @@ const List = styled.div`
       }
     }
   }
-  // tbody:before {
-  //   content: '-';
-  //   display: block;
-  //   line-height: 1.1em;
-  //   color: transparent;
-  // }
   tbody {
     tr {
       height: 5.4rem;
+      &::before {
+        content: '-';
+        display: inline-block;
+        line-height: 1.1em;
+        color: transparent;
+        background-color: transparent;
+        position: absolute;
+        left: ${sizes.margin * 2.8}px;
+        width: calc(100% - ${sizes.margin * 6.4}px);
+        height: 1px;
+        margin-top: -${sizes.margin * 0.1}px;
+      }
+      &:not(:first-of-type)::before {
+        background-color: rgba(14, 22, 34, 0.04);
+      }
     }
     td {
       padding: 0.75em;
@@ -57,6 +66,7 @@ const List = styled.div`
       line-height: 1.8rem;
       &:first-of-type {
         padding-left: calc(3rem + 0.75em);
+        padding-left: ${sizes.margin * 2.8}px;
       }
       &:last-of-type {
         padding-right: calc(3rem + 0.75em);
