@@ -1,23 +1,37 @@
 const path = require('path');
 
-const config = {
-  mode: 'development',
+module.exports = {
   entry: './src/index.js',
+  mode: 'development',
+  devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    library: 'buffet',
+    libraryTarget: 'umd',
+  },
+  externals: {
+    react: 'react',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
-      { test: /\.svg$/, loader: 'svg-loader?pngScale=2' },
-      { test: /\.css$/, loader: 'css-loader' },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'svg-url-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+      },
     ],
   },
 };
-
-module.exports = config;
