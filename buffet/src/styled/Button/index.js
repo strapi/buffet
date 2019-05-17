@@ -40,6 +40,13 @@ const Button = styled.button`
       background-image: ${colors.blueGradient};
       color: ${colors.white};
       border: 0;
+      ${props.icon &&
+        css`
+          &::before {
+            content: '\f067';
+            margin-right: ${sizes.margin * 1.3}px;
+          }
+        `}
     `}
     
   ${props =>
@@ -65,10 +72,20 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
-      line-height: 1.5rem;
+      line-height: 1.3rem;
       display: flex;
+      ${props.icon &&
+        css`
+          &::before {
+            content: '';
+            background-image: url(${img});
+            background-repeat: no-repeat;
+            background-position: left;
+            width: 11px;
+            height: 12px;
+          }
+        `}
     `}
-
 
   /*
   * Left icons
@@ -76,7 +93,7 @@ const Button = styled.button`
 
   // General style
   ${props =>
-    !!props.icon &&
+    props.icon &&
     css`
       &::before {
         font-family: 'FontAwesome';
@@ -87,49 +104,18 @@ const Button = styled.button`
         display: inline-block;
         vertical-align: middle;
       }
-    `}   
-
-  // Icon specified
-  ${props =>
-    props.icon === 'add' &&
-    css`
-      &::before {
-        content: '\f067';
-        margin-right: ${sizes.margin * 1.3}px;
-      }
-    `}      
-
-  ${props =>
-    props.icon === 'back' &&
-    css`
-      &::before {
-        content: '\f053';
-      }
-    `}      
-
-  ${props =>
-    props.icon === 'trash' &&
-    css`
-      &::before {
-        content: '';
-        background-image: url(${img});
-        background-repeat: no-repeat;
-        background-position: left;
-        width: 11px;
-        height: 12px;
-      }
-    `}
+    `}     
 `;
 
 Button.defaultProps = {
   color: 'primary',
-  icon: null,
+  icon: false,
   type: 'button',
 };
 
 Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
-  icon: PropTypes.oneOf(['add', 'back', 'trash']),
+  icon: PropTypes.bool,
   type: PropTypes.string,
 };
 

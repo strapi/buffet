@@ -158,7 +158,6 @@ function CombinedList() {
     button,
     items,
   };
-  console.log(initProps);
 
   return (
     <List

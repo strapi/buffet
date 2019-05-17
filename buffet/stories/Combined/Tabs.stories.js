@@ -6,9 +6,9 @@ import { withKnobs } from '@storybook/addon-knobs';
 import DefaultTabs, { CustomTabs } from './Tabs';
 
 storiesOf('Combined|Tabs', module)
+  .addDecorator(withKnobs)
   .addDecorator(
     StoryRouter({}, { initialEntries: ['/plugins/users-permissions/roles'] }),
   )
-  .addDecorator(withKnobs)
   .add('String', () => DefaultTabs())
   .add('Component', () => CustomTabs());

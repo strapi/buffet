@@ -15,6 +15,7 @@ import {
 
 import DatePicker from '../../components/DatePicker';
 import TimePicker from '../../components/TimePicker';
+import StyledDateTime from '../../styled/DateTime';
 
 const UNITS = ['hour', 'minute', 'second'];
 
@@ -72,7 +73,7 @@ function DateTime({ name, onChange, value }) {
   }, []);
 
   return (
-    <div>
+    <StyledDateTime>
       <DatePicker
         name="date"
         onChange={({ target }) => {
@@ -88,7 +89,7 @@ function DateTime({ name, onChange, value }) {
         seconds={false}
         value={getTimeString(timestamp)}
       />
-    </div>
+    </StyledDateTime>
   );
 }
 

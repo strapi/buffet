@@ -9,12 +9,16 @@ const General = createGlobalStyle`
   html, body { -webkit-font-smoothing: antialiased; }
   html {
     font-size: 62.5%;
-    background-color: ${colors.greyBkgd};
   }
   body {
+    background-color: ${colors.greyIconBkgd};
     margin: ${sizes.margin * 1.8}px ${sizes.margin * 2}px;
     padding: ${sizes.margin * 1.8}px;
     margin: 20px 18px;
+  }
+  h1 {
+  }
+  h2 {
   }
   p {
     margin: 0;
@@ -23,7 +27,7 @@ const General = createGlobalStyle`
     cursor: pointer;
     outline: 0;
   }
-  p, input, label, button {
+  h1, h2, h3, p, input, label, button {
     font-family: 'Lato';
   }
   input:-webkit-autofill,
@@ -38,6 +42,16 @@ const General = createGlobalStyle`
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  // Storybook
+  .story {
+    section div {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: ${sizes.margin * 1.8}px;
+      margin-right: ${sizes.margin * 2}px;
+    }
   }
 `;
 
