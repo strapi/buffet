@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, children }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -86,6 +86,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css"
       />
+      {children}
       {/* <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,700,900' /> */}
     </Helmet>
   )

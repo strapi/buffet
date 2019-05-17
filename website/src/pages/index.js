@@ -26,7 +26,9 @@ import IconCommunity from "../images/icon_community.svg"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}>
+      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    </SEO>
     <GlobalStyle />
     <Header />
     <main
@@ -327,6 +329,13 @@ const IndexPage = () => (
             Get updates about Buffet.JS
           </h2>
           <form
+            action="https://strapi.us8.list-manage.com/subscribe/post?u=eda9bfc8dd339b19e11e4b691&amp;id=60e952219b" 
+            method="post" 
+            id="mc-embedded-subscribe-form" 
+            name="mc-embedded-subscribe-form" 
+            className="validate" 
+            target="_blank" 
+            noValidate
             style={{
               position: "relative",
               width: "100%",
@@ -337,9 +346,10 @@ const IndexPage = () => (
             }}
           >
             <input
+              id="mce-EMAIL"
               autoComplete="off"
               type="email"
-              name="email"
+              name="EMAIL"
               placeholder="Enter your email"
               style={{
                 width: "100%",
@@ -352,17 +362,30 @@ const IndexPage = () => (
                 color: "#3B3B3B",
                 outline: "none",
               }}
+              onKeyDown={e => {    
+                if (e.key === 'Enter') {
+                  document.getElementById("mc-embedded-subscribe-form").submit();
+                }
+              }}
             />
+            <div 
+              style={{
+                position: "absolute",
+                left: -5000
+              }}
+              aria-hidden="true"
+            >
+              <input type="text" name="b_eda9bfc8dd339b19e11e4b691_60e952219b" tabIndex="-1" value="" readOnly />
+            </div>
             <Button
               onClick={e => {
                 e.preventDefault()
                 e.stopPropagation()
-
-                const email = e.currentTarget.previousSibling.value
-
-                console.log("Do something...", email)
+                
+                document.getElementById("mc-embedded-subscribe-form").submit();
               }}
               type="secondary"
+              target="_blank"
               style={{
                 position: "absolute",
                 top: 0,
