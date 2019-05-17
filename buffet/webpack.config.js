@@ -16,6 +16,10 @@ const config = {
       },
       { test: /\.svg$/, loader: 'svg-loader?pngScale=2' },
       { test: /\.css$/, loader: 'css-loader' },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
 };
