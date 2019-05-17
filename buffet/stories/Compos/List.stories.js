@@ -7,7 +7,7 @@ import List from '../../src/components/List';
 
 function ListStory() {
   const defaultProps = {
-    list: [
+    items: [
       {
         firstname: 'John',
         name: 'Doe',

@@ -5,27 +5,33 @@ import { storiesOf } from '@storybook/react';
 
 import Table from '../../src/components/Table';
 
+function EmptyTableStory() {
+  return <Table />;
+}
+
 function TableStory() {
   const defaultProps = {
+    checkEnabled: true,
     items: [
       {
-        firstname: 'John',
-        name: 'Doe',
-        description:
-          'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
-        fields: 2,
+        created_at: 1558010491450,
+        email: 'soup@strapi.io',
+        id: 1,
+        provider: 'local',
+        resetPasswordToken: null,
+        role: 2,
+        updated_at: 1558010491457,
+        username: 'Soup',
       },
       {
-        firstname: 'John',
-        name: 'Smith',
-        description: 'Tenderloin drumstick cupim cow.',
-        fields: 3,
-      },
-      {
-        firstname: 'Will',
-        name: 'Smith',
-        description: 'Pancetta pig buffalo bresaola.',
-        fields: 1,
+        created_at: 1558010565409,
+        email: 'jim@strapi.io',
+        id: 2,
+        provider: 'local',
+        resetPasswordToken: null,
+        role: 1,
+        updated_at: 1558010565413,
+        username: 'jimminy',
       },
     ],
   };
@@ -33,4 +39,6 @@ function TableStory() {
   return <Table {...defaultProps} />;
 }
 
-storiesOf('Components|Table', module).add('Default', () => <TableStory />);
+storiesOf('Components|Table', module)
+  .add('Default', () => <TableStory />)
+  .add('Empty', () => <EmptyTableStory />);
