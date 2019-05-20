@@ -11,7 +11,7 @@ storiesOf('Styled|Button', module)
     </Button>
   ))
   .add('Primary|Add', () => (
-    <Button type="submit" color="primary" icon="add">
+    <Button type="submit" color="primary" icon>
       Add
     </Button>
   ))
@@ -23,7 +23,7 @@ storiesOf('Styled|Button', module)
     </Button>
   ))
   .add('Secondary|Back', () => (
-    <Button type="submit" color="primary" icon="back">
+    <Button type="submit" color="primary" icon>
       Back
     </Button>
   ))
@@ -37,7 +37,7 @@ storiesOf('Styled|Button', module)
 
   // Delete
   .add('Delete', () => (
-    <Button type="submit" color="delete" icon="trash">
+    <Button type="submit" color="delete" icon>
       Delete
     </Button>
   ));

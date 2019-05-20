@@ -26,7 +26,6 @@ Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
   icon: PropTypes.bool,
-  // icon: PropTypes.oneOf(['add', 'back', 'trash']),
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
 };

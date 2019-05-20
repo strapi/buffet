@@ -17,7 +17,7 @@ function CombinedList() {
     onClick,
     type: 'submit',
   });
-  const list = object('List', [
+  const list = object('Items', [
     {
       firstname: 'John',
       name: 'Doe',

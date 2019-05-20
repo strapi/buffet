@@ -11,6 +11,9 @@ import GlobalStyle from '../src/styled/GlobalStyle';
 addParameters({
   options: {
     theme: themes.dark,
+    showPanel: true,
+    panelPosition: 'right',
+    sortStoriesByKind: true,
   },
 });
 

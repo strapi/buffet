@@ -8,7 +8,7 @@ import ListSubtitle from '../../src/styled/ListSubtitle';
 
 storiesOf('Styled|ListHeader', module).add('Simple', () => (
   <ListHeader>
-    <Button icon="add" color="secondary">
+    <Button icon color="secondary">
       New
     </Button>
     <ListTitle>4 Modèles sont disponibles</ListTitle>
