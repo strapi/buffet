@@ -13,10 +13,12 @@ import { gradient } from '../../utils/gradient';
 import colors from '../../assets/styles/colors';
 
 function NavTabs({ links }) {
+  let color = colors.greyLink;
+
   return (
     <ul>
       {links.map((link, index) => {
-        const color = gradient(colors.greyLink, 1.5);
+        color = gradient(color, 1.5);
         const content = link.label ? <p>{link.label}</p> : link.compo || null;
 
         return (

@@ -20,7 +20,7 @@ function Form({ form, onChange, onSubmit, values }) {
               {...form[input]}
               name={input}
               onChange={onChange}
-              value={values[input]}
+              value={values[input] || form[input].value}
             />
           </div>
         ))}

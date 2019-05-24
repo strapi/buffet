@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import {
   commonDefaultProps,
   commonPropTypes,
+  controlledPropTypes,
 } from '../../commonPropTypes/input';
 
 import Label from '../Label';
@@ -36,15 +37,14 @@ function Enumeration({ id, name, onChange, options, value }) {
 
 Enumeration.defaultProps = {
   ...commonDefaultProps,
-  onChange: () => {},
   options: null,
   value: null,
 };
 
 Enumeration.propTypes = {
   ...commonPropTypes,
+  ...controlledPropTypes,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,

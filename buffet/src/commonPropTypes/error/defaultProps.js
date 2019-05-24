@@ -14,6 +14,6 @@ export default {
     uppercase: 'This must be a upper case string',
   },
   type: null,
-  validations: null,
+  validations: {},
   value: null,
 };

@@ -23,4 +23,4 @@ function DateTimeStory() {
   );
 }
 
-storiesOf('Combined|DateTime', module).add('Simple', () => <DateTimeStory />);
+storiesOf('Combined', module).add('DateTime', () => <DateTimeStory />);

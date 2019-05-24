@@ -1,20 +1,64 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
+import { withStorySource } from '@storybook/addon-storysource';
+
 import Label from '../../src/components/Label';
 
 const message = () => "I'm a label as function";
 
-storiesOf('Components|Label', module)
-  // Label with message as a string
-  .add('MessageAsString', () => (
-    <Label htmlFor="input" message="I'm a label as string" />
-  ))
+function LabelStory() {
+  return (
+    <div className="story">
+      <div className="container">
+        <h1>Label</h1>
+        <section>
+          <div className="row">
+            <div className="col-12">
+              <Label htmlFor="input" message="Input label" />
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Examples</h2>
+          <div className="row">
+            <div className="col-12">
+              <Label htmlFor="input" message="I'm a label as string" />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <Label htmlFor="input">
+                <span>I&apos;m a label as child</span>
+              </Label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <Label htmlFor="input" message={message} />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
 
-  // Label with message as a string
-  .add('MessageAsChildren', () => (
-    <Label htmlFor="input">I&apos;m a label as child</Label>
-  ))
+const source = `
+import { Label } from 'buffet'; 
 
-  // Label with message as a func
-  .add('MessageAsFunc', () => <Label htmlFor="input" message={message} />);
+// Label string
+<Label htmlFor="input" message="I'm a label as string" />
+
+// Label node
+<Label htmlFor="input">
+  <span>I'm a label as child</span>
+</Label>
+
+// Label function
+const message = () => "I'm a label as function";
+<Label htmlFor="input" message={message} />`;
+
+storiesOf('Components', module)
+  .addDecorator(withStorySource(source))
+  .add('Label', () => LabelStory());

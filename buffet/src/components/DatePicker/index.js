@@ -10,6 +10,10 @@ import moment from 'moment';
 import momentPropTypes from 'react-moment-proptypes';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
+import {
+  uncontrolledDefaultProps,
+  uncontrolledPropTypes,
+} from '../../commonPropTypes/input';
 
 import Datepicker from '../../styled/Datepicker';
 
@@ -66,18 +70,18 @@ class DatePicker extends React.PureComponent {
 }
 
 DatePicker.defaultProps = {
+  ...uncontrolledDefaultProps,
   displayFormat: 'MMMM DD YY',
   id: 'date',
-  onChange: () => {},
   value: null,
   withDefaultValue: true,
 };
 
 DatePicker.propTypes = {
+  ...uncontrolledPropTypes,
   displayFormat: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
   value: PropTypes.oneOfType([momentPropTypes.momentObj, PropTypes.string]),
   withDefaultValue: PropTypes.bool,
 };

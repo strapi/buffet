@@ -46,11 +46,20 @@ const General = createGlobalStyle`
 
   // Storybook
   .story {
+    section {
+      padding-bottom: ${sizes.margin * 0.9}px;
+    }
     section div {
-      display: inline-block;
-      width: fit-content;
-      margin-bottom: ${sizes.margin * 1.8}px;
-      margin-right: ${sizes.margin * 2}px;
+      &.row {
+        margin-bottom: ${sizes.margin * 1.8}px;
+      }
+      &.btn-wrapper {
+        display: inline-block;
+        width: fit-content;
+        margin-bottom: ${sizes.margin * 1.8}px;
+        margin-right: ${sizes.margin * 2}px;
+        height: ${sizes.button.height.large};
+      }
     }
   }
 `;

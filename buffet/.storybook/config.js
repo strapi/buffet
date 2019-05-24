@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
 import { themes } from '@storybook/theming';
 
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
@@ -17,6 +18,7 @@ addParameters({
   },
 });
 
+addDecorator(withKnobs);
 addDecorator(story => (
   <>
     <GlobalStyle />

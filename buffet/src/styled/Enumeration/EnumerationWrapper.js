@@ -9,15 +9,16 @@ import styled from 'styled-components';
 import colors from '../../assets/styles/colors';
 
 const EnumerationWrapper = styled.div`
-  border: 1px solid ${colors.lightGrey};
   width: fit-content;
   height: 34px;
+  border: 1px solid ${colors.lightGrey};
+  background-color: white;
   label {
     position: relative;
-    color: ${colors.black};
-    height: 100%;
     display: inline-block;
+    height: 100%;
     width: fit-content;
+    color: ${colors.black};
     span {
       display: inline-block;
       padding: 0 1.5rem;

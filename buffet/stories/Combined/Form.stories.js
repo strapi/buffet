@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
+import { withStorySource } from '@storybook/addon-storysource';
 import reducer from '../utils/reducer';
 
 import Form from '../../src/combined/Form';
@@ -15,6 +16,7 @@ const form = {
     validations: {
       required: true,
     },
+    value: 'User',
   },
   lastName: {
     styleName: 'col-6',
@@ -77,6 +79,31 @@ const form = {
       max: 99,
     },
   },
+  role: {
+    styleName: 'col-6',
+    description: 'Choose a role',
+    label: 'Role',
+    type: 'select',
+    options: ['Administrator', 'User'],
+    value: 'User',
+  },
+  icon: {
+    styleName: 'col-6',
+    description: 'Add an icon',
+    label: 'Icon',
+    type: 'bool',
+  },
+  options: {
+    styleName: 'col-6',
+    description: 'Add an icon',
+    label: 'Options',
+    type: 'enum',
+    options: [
+      { value: 'option1', label: 'option 1' },
+      { value: 'option2', label: 'option 2' },
+    ],
+    value: 'option1',
+  },
 };
 
 function FormStory() {
@@ -95,15 +122,22 @@ function FormStory() {
   };
 
   return (
-    <div className="container">
-      <Form
-        form={form}
-        onChange={handleChange}
-        onSubmit={onSubmit}
-        values={values}
-      />
+    <div className="story">
+      <div className="container">
+        <h1>Form</h1>
+        <Form
+          form={form}
+          onChange={handleChange}
+          onSubmit={onSubmit}
+          values={values}
+        />
+      </div>
     </div>
   );
 }
 
-storiesOf('Combined|FormWithErrors', module).add('Simple', () => <FormStory />);
+const source = ``;
+
+storiesOf('Combined', module)
+  .addDecorator(withStorySource(source))
+  .add('Form', () => <FormStory />);

@@ -15,8 +15,6 @@ import ListRow from '../ListRow';
 import StyledList from '../../styled/List';
 
 function List({ items, customRowComponent }) {
-  console.log(items);
-  
   return (
     <StyledList>
       <table>

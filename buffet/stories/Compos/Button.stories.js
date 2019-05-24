@@ -1,11 +1,12 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
+import { boolean, text, radios } from '@storybook/addon-knobs';
+import { withStorySource } from '@storybook/addon-storysource';
 
 import Button from '../../src/components/Button';
 
-function CombinedList() {
+function ButtonStory() {
   const colors = {
     primary: 'primary',
     secondary: 'secondary',
@@ -18,49 +19,78 @@ function CombinedList() {
   const icon = boolean('Icon', false);
 
   return (
-    <>
-      <div className="story">
+    <div className="story">
+      <div className="container">
         <h1>Button</h1>
         <section>
           <h2>Play with the knobs to interact with the compo</h2>
-          <Button type="submit" color={color} icon={icon} label={title} />
+          <div className="btn-wrapper">
+            <Button type="submit" color={color} icon={icon} label={title} />
+          </div>
         </section>
         <section>
           <h2>Examples</h2>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit">Save</Button>
           </div>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit" color="primary" icon>
               Add
             </Button>
           </div>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit" color="delete">
               Delete
             </Button>
           </div>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit" color="delete" icon>
               Delete
             </Button>
           </div>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit" color="cancel">
               Cancel
             </Button>
           </div>
-          <div>
+          <div className="btn-wrapper">
             <Button type="submit" color="secondary">
               Text
             </Button>
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
-storiesOf('Components|Button', module)
-  .addDecorator(withKnobs)
-  .add('Button', () => CombinedList());
+const source = `
+import { Button } from 'buffet'; 
+
+<Button type="submit">
+  Save
+</Button>
+
+<Button type="submit" color="primary" icon>
+  Add
+</Button>
+
+<Button type="submit" color="delete">
+  Delete
+</Button>
+
+<Button type="submit" color="delete" icon>
+  Delete
+</Button>
+
+<Button type="submit" color="cancel">
+  Cancel
+</Button>
+
+<Button type="submit" color="secondary">
+  Text
+</Button>`;
+
+storiesOf('Components', module)
+  .addDecorator(withStorySource(source))
+  .add('Button', () => ButtonStory());
