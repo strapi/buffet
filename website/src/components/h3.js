@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const H3 = ({ children, style }) => (
   <h3
@@ -11,28 +11,31 @@ const H3 = ({ children, style }) => (
       fontSize: 24,
       fontWeight: 700,
       marginBottom: 15,
-      ...style
+      ...style,
     }}
   >
-    <span 
+    <span
       style={{
         position: 'absolute',
-        left: 0, bottom: -15,
+        left: 0,
+        bottom: -15,
         width: 36,
         height: 6,
-        backgroundColor: '#0B269C'
+        backgroundColor: '#0B269C',
       }}
-    ></span>
+    />
     {children}
   </h3>
-)
+);
 
 H3.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  children: PropTypes.node,
+  style: PropTypes.object,
+};
 
 H3.defaultProps = {
-  siteTitle: ``,
-}
+  children: null,
+  style: {},
+};
 
-export default H3
+export default H3;

@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
 
-import Button from './button'
+import Button from './button';
 
-import background from '../images/header@2x.png'
+import background from '../images/header@2x.png';
 
-const Navigation = ({ siteTitle }) => (
+const Navigation = () => (
   <header
     style={{
       width: '100%',
@@ -13,21 +12,21 @@ const Navigation = ({ siteTitle }) => (
       backgroundImage: `url(${background})`,
       backgroundRepeat: 'repeat',
       backgroundSize: 'contain',
-      backgroundPosition: 'center'
+      backgroundPosition: 'center',
     }}
   >
-    <div 
+    <div
       className="container"
       style={{
         height: '100%',
-        margin: `0 auto`,
+        margin: '0 auto',
         maxWidth: 1270,
-      }}  
+      }}
     >
-      <div 
+      <div
         className="row align-items-end container_description"
         style={{
-          height: '100%'
+          height: '100%',
         }}
       >
         <div className="col-lg-5 offset-lg-6 col-xs-12">
@@ -39,7 +38,7 @@ const Navigation = ({ siteTitle }) => (
               margin: '0 -36px',
               marginBottom: '-72px',
               background: '#ffffff',
-              boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)'
+              boxShadow: '0 2px 4px 0 rgba(234, 234, 234, 0.5)',
             }}
           >
             <h2
@@ -51,20 +50,23 @@ const Navigation = ({ siteTitle }) => (
                 fontSize: 32,
                 fontFamily: 'Lato',
                 fontWeight: 700,
-                lineHeight: '40px'
+                lineHeight: '40px',
               }}
             >
-              Buffet JS: <br className="d-block d-sm-none"/>All-you-can-eat React components library
-              <span 
+              Buffet JS:
+              <br className="d-block d-sm-none" />
+              All-you-can-eat React components library
+              <span
                 style={{
                   position: 'absolute',
-                  left: 70, bottom: -24,
+                  left: 70,
+                  bottom: -24,
                   width: 36,
                   height: 6,
                   backgroundColor: '#0B269C',
-                  transform: 'rotate(20deg)'
+                  transform: 'rotate(20deg)',
                 }}
-              ></span>
+              />
             </h2>
             <p
               style={{
@@ -74,26 +76,24 @@ const Navigation = ({ siteTitle }) => (
                 color: '#3B3B3B',
                 fontSize: 18,
                 fontFamily: 'Lato',
-                lineHeight: '24px'
+                lineHeight: '24px',
               }}
             >
-              A design system to create better user experience values for application interfaces.
+              A design system to create better user experience values for
+              application interfaces.
             </p>
-            <Button url='/storybook/' type='main'>Check it out</Button>
+            <Button url="/storybook/" type="main">
+              Check it out
+            </Button>
           </div>
         </div>
       </div>
     </div>
-    
   </header>
-)
+);
 
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-}
+Navigation.propTypes = {};
 
-Navigation.defaultProps = {
-  siteTitle: ``,
-}
+Navigation.defaultProps = {};
 
-export default Navigation
+export default Navigation;

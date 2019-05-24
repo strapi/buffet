@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const H4 = ({ children, style }) => (
   <h4
@@ -10,19 +10,21 @@ const H4 = ({ children, style }) => (
       fontSize: 20,
       fontWeight: 400,
       marginBottom: 15,
-      ...style
+      ...style,
     }}
   >
     {children}
   </h4>
-)
+);
 
 H4.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  children: PropTypes.node,
+  style: PropTypes.object,
+};
 
 H4.defaultProps = {
-  siteTitle: ``,
-}
+  children: null,
+  style: {},
+};
 
-export default H4
+export default H4;

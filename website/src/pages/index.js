@@ -1,14 +1,5 @@
-import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-import Button from "../components/button"
-import Header from "../components/header"
-import H3 from "../components/h3"
-import H4 from "../components/h4"
-import Paragraph from "../components/Paragraph"
-
+import React from 'react';
+/* eslint-disable */
 import {
   Button as Btn,
   DatePicker,
@@ -18,31 +9,44 @@ import {
   Label,
   Textarea,
   Toggle,
-} from "buffet"
+} from 'buffet';
+/* eslint-enable */
 
-import IconOpenSource from "../images/icon_opensource.svg"
-import IconConsistent from "../images/icon_consistent.svg"
-import IconCommunity from "../images/icon_community.svg"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
+import Button from '../components/button';
+import Header from '../components/header';
+import H3 from '../components/h3';
+import H4 from '../components/h4';
+import Paragraph from '../components/paragraph';
+
+import IconOpenSource from '../images/icon_opensource.svg';
+import IconConsistent from '../images/icon_consistent.svg';
+import IconCommunity from '../images/icon_community.svg';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}>
-      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <SEO title="Home" keywords={['gatsby', 'application', 'react']}>
+      <script
+        type="text/javascript"
+        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+      />
     </SEO>
     <GlobalStyle />
     <Header />
     <main
       className="container"
       style={{
-        padding: "142px 0 100px",
-        margin: `0 auto`,
+        padding: '142px 0 100px',
+        margin: '0 auto',
         maxWidth: 1240,
       }}
     >
       <div className="row home_description">
         <div className="col-lg-4 offset-lg-4 col-xs-12">
-          <Paragraph style={{ textAlign: "center", margin: "0 -36px" }}>
-            Buffet is Strapi's open-source component system to create digital
+          <Paragraph style={{ textAlign: 'center', margin: '0 -36px' }}>
+            Buffet is Strapi&apos;s open-source component system to create digital
             applications. Based on style-components, it is made available for
             the community...
           </Paragraph>
@@ -56,7 +60,7 @@ const IndexPage = () => (
         </div>
         <div className="col-lg-4 offset-lg-2 col-xs-12  ">
           <Paragraph style={{ marginTop: 20 }}>
-            Buffet is Strapi's open-source component system to create digital
+            Buffet is Strapi&apos;s open-source component system to create digital
             applications. Based on style-components, it is made available for
             the community...
           </Paragraph>
@@ -67,13 +71,13 @@ const IndexPage = () => (
           <div
             className="home_playground"
             style={{
-              height: "100%",
+              height: '100%',
               maxHeight: 566,
               padding: 36,
               marginTop: 16,
               borderRadius: 2,
-              boxShadow: "0 2px 4px 0 #e3e9f3",
-              backgroundColor: "#ffffff",
+              boxShadow: '0 2px 4px 0 #e3e9f3',
+              backgroundColor: '#ffffff',
             }}
           >
             <div className="row">
@@ -93,7 +97,9 @@ const IndexPage = () => (
                   value=""
                 />
                 <div style={{ marginTop: 30, marginBottom: 10 }}>
-                  <Label htmlFor="search">Search for your favorite restaurant</Label>
+                  <Label htmlFor="search">
+                    Search for your favorite restaurant
+                  </Label>
                 </div>
                 <InputText
                   name="search"
@@ -113,8 +119,8 @@ const IndexPage = () => (
                 <H4>Buttons - Primary/Secondary</H4>
                 <Btn
                   name="save_recipe"
-                  onClick={e => {
-                    window.confirm("Please confirm")
+                  onClick={() => {
+                    window.confirm('Please confirm');
                   }}
                   style={{ marginTop: 16 }}
                 >
@@ -123,8 +129,8 @@ const IndexPage = () => (
                 <Btn
                   name="add_recipe"
                   icon="add"
-                  onClick={e => {
-                    window.confirm("Please confirm")
+                  onClick={() => {
+                    window.confirm('Please confirm');
                   }}
                   style={{ marginTop: 16 }}
                 >
@@ -134,8 +140,8 @@ const IndexPage = () => (
                   name="delete_recipe"
                   color="delete"
                   icon="trash"
-                  onClick={e => {
-                    window.confirm("Please confirm")
+                  onClick={() => {
+                    window.confirm('Please confirm');
                   }}
                   style={{ marginTop: 16 }}
                 >
@@ -144,8 +150,8 @@ const IndexPage = () => (
                 <Btn
                   name="select_ingredient"
                   color="secondary"
-                  onClick={e => {
-                    window.confirm("Please confirm")
+                  onClick={() => {
+                    window.confirm('Please confirm');
                   }}
                   style={{ marginTop: 16 }}
                 >
@@ -155,8 +161,8 @@ const IndexPage = () => (
                   name="add_ingredient"
                   color="secondary"
                   icon="add"
-                  onClick={e => {
-                    window.confirm("Please confirm")
+                  onClick={() => {
+                    window.confirm('Please confirm');
                   }}
                   style={{ marginTop: 16 }}
                 >
@@ -171,16 +177,16 @@ const IndexPage = () => (
                   value="milk"
                   options={[
                     {
-                      value: "flour",
-                      label: "Flour",
+                      value: 'flour',
+                      label: 'Flour',
                     },
                     {
-                      value: "milk",
-                      label: "Milk",
+                      value: 'milk',
+                      label: 'Milk',
                     },
                     {
-                      value: "butter",
-                      label: "Butter",
+                      value: 'butter',
+                      label: 'Butter',
                     },
                   ]}
                 />
@@ -198,7 +204,7 @@ const IndexPage = () => (
       <div className="row home_main_cta">
         <div
           className="col-lg-12 col-md-12"
-          style={{ marginTop: 40, textAlign: "center" }}
+          style={{ marginTop: 40, textAlign: 'center' }}
         >
           <Button url="/storybook/" type="main">
             See all components
@@ -213,7 +219,7 @@ const IndexPage = () => (
           <div className="row align-items-center" style={{ marginTop: 72 }}>
             <div
               className="col-lg-4 col-xs-12"
-              style={{ paddingLeft: "calc(36px + 15px)" }}
+              style={{ paddingLeft: 'calc(36px + 15px)' }}
             >
               <img
                 style={{ width: 160, height: 160 }}
@@ -223,16 +229,16 @@ const IndexPage = () => (
             </div>
             <div
               className="col-lg-8 col-xs-12"
-              style={{ paddingLeft: "calc(36px + 15px)" }}
+              style={{ paddingLeft: 'calc(36px + 15px)' }}
             >
               <h3
                 className="home_philosophy_section_title"
                 style={{
-                  color: "#0B269C",
-                  fontFamily: "Lato",
+                  color: '#0B269C',
+                  fontFamily: 'Lato',
                   fontSize: 14,
                   fontWeight: 700,
-                  textTransform: "uppercase",
+                  textTransform: 'uppercase',
                   letterSpacing: 2,
                 }}
               >
@@ -241,7 +247,7 @@ const IndexPage = () => (
               <Paragraph style={{ marginTop: 8 }}>
                 We strongly believe in the principles of open-source and shared
                 contributions. Everyone eating at the buffet is welcomed to
-                contribute as well.{" "}
+                contribute as well.
               </Paragraph>
             </div>
           </div>
@@ -250,11 +256,11 @@ const IndexPage = () => (
               <h3
                 className="home_philosophy_section_title"
                 style={{
-                  color: "#0B269C",
-                  fontFamily: "Lato",
+                  color: '#0B269C',
+                  fontFamily: 'Lato',
                   fontSize: 14,
                   fontWeight: 700,
-                  textTransform: "uppercase",
+                  textTransform: 'uppercase',
                   letterSpacing: 2,
                 }}
               >
@@ -263,12 +269,12 @@ const IndexPage = () => (
               <Paragraph style={{ marginTop: 8 }}>
                 Based on styled-components, every Buffet component harmonises
                 with the others to ensure the user experience stays consistent
-                throughout the whole journey.{" "}
+                throughout the whole journey.
               </Paragraph>
             </div>
             <div
               className="col-lg-5 col-xs-12 order-1 order-lg-2"
-              style={{ paddingRight: "calc(36px + 15px)", textAlign: "right" }}
+              style={{ paddingRight: 'calc(36px + 15px)', textAlign: 'right' }}
             >
               <img
                 style={{ width: 160, height: 160 }}
@@ -280,7 +286,7 @@ const IndexPage = () => (
           <div className="row align-items-center" style={{ marginTop: 84 }}>
             <div
               className="col-lg-4 col-xs-12"
-              style={{ paddingLeft: "calc(36px + 15px)" }}
+              style={{ paddingLeft: 'calc(36px + 15px)' }}
             >
               <img
                 style={{ width: 160, height: 160 }}
@@ -290,16 +296,16 @@ const IndexPage = () => (
             </div>
             <div
               className="col-lg-8 col-xs-12"
-              style={{ paddingLeft: "calc(36px + 15px)" }}
+              style={{ paddingLeft: 'calc(36px + 15px)' }}
             >
               <h3
                 className="home_philosophy_section_title"
                 style={{
-                  color: "#0B269C",
-                  fontFamily: "Lato",
+                  color: '#0B269C',
+                  fontFamily: 'Lato',
                   fontSize: 14,
                   fontWeight: 700,
-                  textTransform: "uppercase",
+                  textTransform: 'uppercase',
                   letterSpacing: 2,
                 }}
               >
@@ -308,7 +314,7 @@ const IndexPage = () => (
               <Paragraph style={{ marginTop: 8 }}>
                 Created with the community in mind, Buffet is made by developers
                 for developers. It is fully supported by its creators (and by
-                open-source contributors).{" "}
+                open-source contributors).
               </Paragraph>
             </div>
           </div>
@@ -319,30 +325,30 @@ const IndexPage = () => (
           <h2
             style={{
               marginTop: 120,
-              textAlign: "center",
+              textAlign: 'center',
               fontSize: 24,
-              fontFamily: "Lato",
+              fontFamily: 'Lato',
               fontWeight: 900,
-              color: "#3b3b3b",
+              color: '#3b3b3b',
             }}
           >
             Get updates about Buffet.JS
           </h2>
           <form
-            action="https://strapi.us8.list-manage.com/subscribe/post?u=eda9bfc8dd339b19e11e4b691&amp;id=60e952219b" 
-            method="post" 
-            id="mc-embedded-subscribe-form" 
-            name="mc-embedded-subscribe-form" 
-            className="validate" 
-            target="_blank" 
+            action="https://strapi.us8.list-manage.com/subscribe/post?u=eda9bfc8dd339b19e11e4b691&amp;id=60e952219b"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
             noValidate
             style={{
-              position: "relative",
-              width: "100%",
+              position: 'relative',
+              width: '100%',
               height: 50,
               marginTop: 52,
               borderRadius: 25,
-              overflow: "hidden",
+              overflow: 'hidden',
             }}
           >
             <input
@@ -352,45 +358,53 @@ const IndexPage = () => (
               name="EMAIL"
               placeholder="Enter your email"
               style={{
-                width: "100%",
+                width: '100%',
                 height: 50,
-                padding: "0 36px",
-                backgroundColor: "#ffffff",
-                border: "none",
+                padding: '0 36px',
+                backgroundColor: '#ffffff',
+                border: 'none',
                 fontSize: 14,
-                fontFamily: "Lato",
-                color: "#3B3B3B",
-                outline: "none",
+                fontFamily: 'Lato',
+                color: '#3B3B3B',
+                outline: 'none',
               }}
-              onKeyDown={e => {    
+              onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                  document.getElementById("mc-embedded-subscribe-form").submit();
+                  document
+                    .getElementById('mc-embedded-subscribe-form')
+                    .submit();
                 }
               }}
             />
-            <div 
+            <div
               style={{
-                position: "absolute",
-                left: -5000
+                position: 'absolute',
+                left: -5000,
               }}
               aria-hidden="true"
             >
-              <input type="text" name="b_eda9bfc8dd339b19e11e4b691_60e952219b" tabIndex="-1" value="" readOnly />
+              <input
+                type="text"
+                name="b_eda9bfc8dd339b19e11e4b691_60e952219b"
+                tabIndex="-1"
+                value=""
+                readOnly
+              />
             </div>
             <Button
-              onClick={e => {
-                e.preventDefault()
-                e.stopPropagation()
-                
-                document.getElementById("mc-embedded-subscribe-form").submit();
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                document.getElementById('mc-embedded-subscribe-form').submit();
               }}
               type="secondary"
               target="_blank"
               style={{
-                position: "absolute",
+                position: 'absolute',
                 top: 0,
                 right: 0,
-                cursor: "pointer",
+                cursor: 'pointer',
               }}
             >
               Subscribe
@@ -400,6 +414,6 @@ const IndexPage = () => (
       </div>
     </main>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Navigation from "./navigation"
-import Footer from "./footer"
+import Navigation from './navigation';
+import Footer from './footer';
 
-import "./layout.css"
-import "./responsive.css"
+import './layout.css';
+import './responsive.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -34,10 +34,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

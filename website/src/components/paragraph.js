@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Paragraph = ({ children, style }) => (
   <p
@@ -9,19 +9,21 @@ const Paragraph = ({ children, style }) => (
       fontSize: 16,
       lineHeight: '24px',
       textAlign: 'left',
-      ...style
+      ...style,
     }}
   >
     {children}
   </p>
-)
+);
 
-Paragraph.ParagraphpropTypes = {
-  siteTitle: PropTypes.string,
-}
+Paragraph.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.object,
+};
 
 Paragraph.defaultProps = {
-  siteTitle: ``,
-}
+  children: null,
+  style: {},
+};
 
 export default Paragraph;
