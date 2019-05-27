@@ -18,6 +18,11 @@ const Table = styled.div`
     min-width: 500px;
     font-family: 'Lato';
   }
+  tr {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    text-align: left;
+  }
   thead {
     tr {
       height: 3rem;

@@ -22,16 +22,6 @@ function Table({ checkEnabled, items, customRowComponent }) {
     <StyledTable>
       <table>
         <TableHeader cells={items} checkEnabled={checkEnabled} />
-        {/* <thead>
-          {items.map(item => {
-            <TableRow
-              checkEnabled={checkEnabled}
-              cells={item}
-              key={JSON.stringify(item)}
-            />;
-          })}
-        </thead> */}
-
         <tbody>
           {items.length > 0 ? (
             items.map(item =>
@@ -40,7 +30,12 @@ function Table({ checkEnabled, items, customRowComponent }) {
                   {customRowComponent(item)}
                 </React.Fragment>
               ) : (
-                <TableRow cells={item} key={JSON.stringify(item)} />
+                <TableRow
+                  cells={item}
+                  checkEnabled={checkEnabled}
+                  customRowComponent={customRowComponent}
+                  key={JSON.stringify(item)}
+                />
               ),
             )
           ) : (
