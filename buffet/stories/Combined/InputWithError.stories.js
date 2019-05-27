@@ -10,9 +10,8 @@ import Form from '../../src/components/Form';
 const form = {
   checkbox: {
     styleName: 'col-6',
-    description: 'Checkbox input',
-    label: 'First Name',
-    placeholder: 'Vi',
+    description: 'Select to set this field as required',
+    label: 'Required field',
     type: 'checkbox',
   },
   text: {
@@ -31,15 +30,6 @@ const form = {
     label: 'Birth date',
     description: 'You should enter your birth date',
     type: 'date',
-    validations: {
-      required: true,
-    },
-  },
-  birthtime: {
-    styleName: 'col-6',
-    label: 'Birth time',
-    description: 'You should enter your birth hour',
-    type: 'time',
     validations: {
       required: true,
     },
@@ -76,7 +66,7 @@ const form = {
       max: 99,
     },
   },
-  role: {
+  select: {
     styleName: 'col-6',
     description: 'Choose a role',
     label: 'Role',
@@ -104,7 +94,7 @@ const form = {
 };
 
 function InputCompo(props) {
-  const [val, setValue] = useState('');
+  const [val, setValue] = useState(null);
 
   return (
     <InputWithError
@@ -130,10 +120,18 @@ function InputStory() {
     text: 'text',
     textarea: 'textarea',
     time: 'time',
-    toggle: 'toggle',
+    toggle: 'bool',
   };
 
   const type = radios('Types', types, 'text');
+
+  const errors = {
+    required: 'required',
+    uppercase: 'uppercase',
+    min: 'email',
+  };
+
+  const error = radios('Error', errors, 'text');
 
   return (
     <div className="story">
@@ -142,7 +140,12 @@ function InputStory() {
         <section>
           <h2>Play with the knobs to interact with the compo</h2>
           <div>
-            <InputCompo name="input" type={type} {...form[type]} />
+            <InputCompo
+              name="input"
+              type={type}
+              {...form[type]}
+              error={error}
+            />
           </div>
         </section>
         <section>

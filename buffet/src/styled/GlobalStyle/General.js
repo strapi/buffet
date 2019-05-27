@@ -61,6 +61,15 @@ const General = createGlobalStyle`
         height: ${sizes.button.height.large};
       }
     }
+    pre {
+      background-color: #f6f8fa;
+      border-radius: 3px;
+      font-size: 85%;
+      line-height: 1.45;
+      overflow: auto;
+      padding: 16px;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    }
   }
 `;
 
