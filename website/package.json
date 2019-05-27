@@ -1,7 +1,7 @@
 {
   "name": "buffet-website",
   "private": true,
-  "description": "The website to introduce the Buffet.js library and the concepts/philosophy behind it",
+  "description": "The website which presents the Buffet.js library and the concepts/philosophy",
   "version": "0.1.0",
   "author": "Strapi Team <hi@strapi.io>",
   "dependencies": {
