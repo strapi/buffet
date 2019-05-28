@@ -1,10 +1,12 @@
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-family: 'Lato';
+  background: #FAFAFB;
 }
 body {
   margin: 0;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
