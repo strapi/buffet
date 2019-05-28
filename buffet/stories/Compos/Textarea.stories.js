@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
+import { withStorySource } from '@storybook/addon-storysource';
+
 import Textarea from '../../src/components/Textarea';
 
 function TextareaStory() {
@@ -9,16 +11,37 @@ function TextareaStory() {
   const defaultProps = {
     placeholder: 'Write your little description here…',
     name: 'textarea',
-    rows: '4',
   };
 
   return (
+    <div className="story">
+      <div className="container">
+        <h1>Textarea</h1>
+        <Textarea
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
+    </div>
+  );
+}
+
+const source = `
+import React, { useState } from 'react';
+import { Textarea } from 'buffet'; 
+
+function TextareaStory() {
+  const [val, setValue] = useState('');
+
+  return (
     <Textarea
-      {...defaultProps}
       onChange={({ target: { value } }) => setValue(value)}
       value={val}
     />
   );
-}
+}`;
 
-storiesOf('Components|Textarea', module).add('Simple', () => <TextareaStory />);
+storiesOf('Components', module)
+  .addDecorator(withStorySource(source))
+  .add('Textarea', () => <TextareaStory />);

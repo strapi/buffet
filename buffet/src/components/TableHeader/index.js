@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { get } from 'lodash';
 import Checkbox from '../../styled/Checkbox';
 
 function TableHeader({
@@ -18,7 +18,6 @@ function TableHeader({
   sortOrder,
   onChangeSort,
 }) {
-  // etat manquant
   const checkValue = rows.length > 0 && rows.every(row => row.isCheck === true);
   const shouldDisplayNotChecked =
     rows.some(row => row.isCheck === true) && !checkValue;
@@ -38,8 +37,14 @@ function TableHeader({
         {cells.length > 0 ? (
           cells.map(cell => {
             const { displayValue, value, isSortEnabled } = cell;
+
             const shouldDisplaySort = isSortEnabled && sortBy === value;
-            const firstSort = cells.filter(item => item.isSortEnabled)[0].value;
+
+            const firstSort = get(
+              cells.filter(item => item.isSortEnabled),
+              [0, 'value'],
+              null,
+            );
 
             return (
               <td

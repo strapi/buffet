@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { upperFirst } from 'lodash';
 import {
   commonDefaultProps,
   commonPropTypes,
@@ -29,7 +30,13 @@ function Table({
   sortOrder,
   onChangeSort,
 }) {
-  const headerCells = customRowComponent ? headers : Object.keys(items);
+  const headerCells = customRowComponent
+    ? headers
+    : Object.keys(items[0] || {}).map(header => ({
+      displayValue: upperFirst(header),
+      value: header,
+      isSortEnabled: false,
+    }));
   const numberOfSelectedEntries = items.filter(item => item.isCheck === true)
     .length;
   const showDeleteAll = numberOfSelectedEntries > 0;
@@ -91,7 +98,14 @@ Table.defaultProps = {
 
 Table.propTypes = {
   ...commonPropTypes,
-  actionCollapseInfos: PropTypes.bool,
+  actionCollapseInfos: PropTypes.shape({
+    actionInfoShape: PropTypes.string,
+    numberOfSelectedEntries: PropTypes.number,
+    onConfirmSelectAllAction: PropTypes.func,
+    translatedActionInfo: PropTypes.string,
+    translatedNumberOfEntries: PropTypes.string,
+    translatedNumberOfEntry: PropTypes.string,
+  }),
 };
 
 export default Table;

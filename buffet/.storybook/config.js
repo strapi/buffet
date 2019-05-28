@@ -1,18 +1,31 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { addDecorator, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { themes } from '@storybook/theming';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 import GlobalStyle from '../src/styled/GlobalStyle';
 
+addParameters({
+  options: {
+    theme: themes.dark,
+    showPanel: true,
+    panelPosition: 'right',
+    sortStoriesByKind: true,
+  },
+});
+
+addDecorator(withKnobs);
 addDecorator(story => (
   <>
     <GlobalStyle />
     {story()}
   </>
 ));
+
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /.stories.js$/);
 function loadStories() {

@@ -12,6 +12,7 @@ function EmptyTableStory() {
 function TableStory() {
   const defaultProps = {
     checkEnabled: true,
+    headers: [],
     items: [
       {
         id: 1,

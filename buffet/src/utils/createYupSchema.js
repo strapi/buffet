@@ -4,7 +4,7 @@ import * as yup from 'yup';
 const createYupSchema = (type, validations, translatedErrors = {}) => {
   let schema = yup.mixed();
 
-  if (['text', 'textarea', 'email', 'password'].includes(type)) {
+  if (['text', 'textarea', 'email', 'password', 'select'].includes(type)) {
     schema = yup.string(translatedErrors.string);
   }
 

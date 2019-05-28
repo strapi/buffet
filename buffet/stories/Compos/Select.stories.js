@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
+import { withStorySource } from '@storybook/addon-storysource';
+
 import Select from '../../src/components/Select';
 
 function SelectStory() {
@@ -8,16 +10,41 @@ function SelectStory() {
 
   const defaultProps = {
     name: 'select',
-    options: ['first option', 'second option'],
+    options: ['First option', 'Second option'],
   };
 
   return (
-    <Select
-      {...defaultProps}
-      onChange={({ target: { value } }) => setValue(value)}
-      value={val}
-    />
+    <div className="story">
+      <div className="container">
+        <h1>Select</h1>
+        <Select
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
+    </div>
   );
 }
 
-storiesOf('Components|Select', module).add('Simple', () => <SelectStory />);
+const source = `
+import React, { useState } from 'react';
+import { Select } from 'buffet'; 
+
+function SelectStory() {
+  const [val, setValue] = useState(');
+  const options = ['first option', 'second option'];
+
+  <Select
+    name="select"
+    onChange={({ target: { value } }) => {
+      setValue(value);
+    }}
+    options={options}
+    value={val}
+  />
+}`;
+
+storiesOf('Components', module)
+  .addDecorator(withStorySource(source))
+  .add('Select', () => <SelectStory />);

@@ -30,12 +30,24 @@ function InputWithError({
   value,
   ...rest
 }) {
+  let inputValue;
+
+  switch (type) {
+    case 'checkbox':
+    case 'bool':
+      inputValue = value || false;
+      break;
+    default:
+      inputValue = value || '';
+  }
+
   return (
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
         <InputWrapper>
           <Label htmlFor={name}>{label}</Label>
           <Input
+            {...rest}
             name={name}
             onBlur={onBlur}
             onChange={e => {
@@ -51,8 +63,7 @@ function InputWithError({
               onChange(e);
             }}
             type={type}
-            value={value}
-            {...rest}
+            value={inputValue}
           />
           {!error && <Description>{description}</Description>}
           {error && <ErrorMessage>{error}</ErrorMessage>}

@@ -1,29 +1,35 @@
-import React, { useReducer } from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
+import { radios } from '@storybook/addon-knobs';
+import { withStorySource } from '@storybook/addon-storysource';
+
 import InputWithError from '../../src/combined/InputWithError';
 import Form from '../../src/components/Form';
 
-import reducer from '../utils/reducer';
-
 const form = {
-  firstName: {
+  checkbox: {
     styleName: 'col-6',
-    description: 'You should enter your name',
+    description: 'Select to set this field as required',
+    label: 'Required field',
+    type: 'checkbox',
+  },
+  text: {
+    styleName: 'col-6',
+    description: 'You should enter your firstname',
     label: 'First Name',
-    placeholder: 'Vi',
+    placeholder: 'Viky',
     type: 'text',
     validations: {
       required: true,
       uppercase: true,
     },
   },
-  lastName: {
+  date: {
     styleName: 'col-6',
-    description: 'You should enter your lastname',
-    label: 'Last Name',
-    placeholder: 'Ky',
-    type: 'text',
+    label: 'Birth date',
+    description: 'You should enter your birth date',
+    type: 'date',
     validations: {
       required: true,
     },
@@ -38,43 +44,129 @@ const form = {
       required: true,
     },
   },
+  password: {
+    styleName: 'col-6',
+    description: 'You should enter your password',
+    label: 'Password',
+    placeholder: '●●●●●●',
+    type: 'password',
+    validations: {
+      required: true,
+      min: 8,
+    },
+  },
+  number: {
+    styleName: 'col-6',
+    description: 'You should enter how many children you have',
+    label: 'Children',
+    placeholder: '2',
+    type: 'number',
+    validations: {
+      required: true,
+      max: 99,
+    },
+  },
+  select: {
+    styleName: 'col-6',
+    description: 'Choose a role',
+    label: 'Role',
+    type: 'select',
+    options: ['Administrator', 'User'],
+    value: 'User',
+  },
+  icon: {
+    styleName: 'col-6',
+    description: 'Add an icon',
+    label: 'Icon',
+    type: 'bool',
+  },
+  enum: {
+    styleName: 'col-6',
+    description: 'Add an icon',
+    label: 'Options',
+    type: 'enum',
+    options: [
+      { value: 'option1', label: 'option 1' },
+      { value: 'option2', label: 'option 2' },
+    ],
+    value: 'option1',
+  },
 };
 
-function InputStory() {
-  const [values, dispatch] = useReducer(reducer, {});
-
-  const handleChange = ({ target: { name, value } }) => {
-    dispatch({
-      type: 'ON_CHANGE',
-      key: name,
-      value,
-    });
-  };
-
-  const onSubmit = () => {
-    console.log(values);
-  };
+function InputCompo(props) {
+  const [val, setValue] = useState(null);
 
   return (
-    <div className="container">
-      <Form onSubmit={onSubmit}>
-        <div className="row">
-          {Object.keys(form).map(input => (
-            <div className={form[input].styleName} key={input}>
-              <InputWithError
-                {...form[input]}
-                name={input}
-                onChange={handleChange}
-                value={values[input] || ''}
-              />
+    <InputWithError
+      {...props}
+      onChange={({ target: { value } }) => {
+        setValue(value);
+      }}
+      value={val}
+    />
+  );
+}
+
+function InputStory() {
+  const types = {
+    checkbox: 'checkbox',
+    date: 'date',
+    email: 'email',
+    enum: 'enum',
+    number: 'number',
+    password: 'password',
+    search: 'search',
+    select: 'select',
+    text: 'text',
+    textarea: 'textarea',
+    time: 'time',
+    toggle: 'bool',
+  };
+
+  const type = radios('Types', types, 'text');
+
+  const errors = {
+    required: 'required',
+    uppercase: 'uppercase',
+    min: 'email',
+  };
+
+  const error = radios('Error', errors, 'text');
+
+  return (
+    <div className="story">
+      <div className="container">
+        <h1>Input with error</h1>
+        <section>
+          <h2>Play with the knobs to interact with the compo</h2>
+          <div>
+            <InputCompo
+              name="input"
+              type={type}
+              {...form[type]}
+              error={error}
+            />
+          </div>
+        </section>
+        <section>
+          <h2>Examples</h2>
+          <Form onSubmit={() => {}}>
+            <div className="row">
+              {Object.keys(form).map(input => (
+                <div className={form[input].styleName} key={input}>
+                  <InputCompo name={input} {...form[input]} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </Form>
+          </Form>
+        </section>
+      </div>
     </div>
   );
 }
 
-storiesOf('Combined|InputWithError', module).add('Simple', () => (
-  <InputStory />
-));
+const source = ``;
+
+storiesOf('Combined', module)
+  .addDecorator(withStorySource(source))
+  .add('InputWithError', () => InputStory());

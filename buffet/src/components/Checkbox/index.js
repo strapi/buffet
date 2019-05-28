@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import {
   commonDefaultProps,
   commonPropTypes,
+  uncontrolledDefaultProps,
+  uncontrolledPropTypes,
 } from '../../commonPropTypes/input';
 
 import StyledCheckbox, { CheckboxWrapper } from '../../styled/Checkbox';
@@ -52,11 +54,13 @@ function Checkbox({
 
 Checkbox.defaultProps = {
   ...commonDefaultProps,
+  ...uncontrolledDefaultProps,
   value: false,
   message: null,
 };
 Checkbox.propTypes = {
   ...commonPropTypes,
+  ...uncontrolledPropTypes,
   message: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
