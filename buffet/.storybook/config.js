@@ -2,7 +2,7 @@
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
 
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 import GlobalStyle from '../src/styled/GlobalStyle';

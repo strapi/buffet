@@ -69,7 +69,7 @@ function DateTime({ name, onChange, value }) {
       const newDate = value._isAMomentObject === true ? value : moment(value);
       setDate(newDate);
     }
-  }, []);
+  }, [setDate, value]);
 
   return (
     <div>

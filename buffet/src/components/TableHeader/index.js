@@ -9,22 +9,52 @@ import PropTypes from 'prop-types';
 
 import Checkbox from '../../styled/Checkbox';
 
-function TableHeader({ cells, checkEnabled }) {
+function TableHeader({
+  cells,
+  isCheckEnabled,
+  onSelectAll,
+  rows,
+  sortBy,
+  sortOrder,
+  onChangeSort,
+}) {
+  // etat manquant
+  const checkValue = rows.length > 0 && rows.every(row => row.isCheck === true);
+  const shouldDisplayNotChecked =
+    rows.some(row => row.isCheck === true) && !checkValue;
+
   return (
     <thead>
       <tr>
-        {checkEnabled && (
-          <td>
-            <Checkbox />
+        {isCheckEnabled && (
+          <td className="checkCell">
+            <Checkbox
+              onChange={onSelectAll}
+              checked={checkValue}
+              shouldDisplayNotChecked={shouldDisplayNotChecked}
+            />
           </td>
         )}
-
         {cells.length > 0 ? (
-          Object.keys(cells[0]).map(key => (
-            <td key={key} className={`${key}-cell`}>
-              <p>{key}</p>
-            </td>
-          ))
+          cells.map(cell => {
+            const { displayValue, value, isSortEnabled } = cell;
+            const shouldDisplaySort = isSortEnabled && sortBy === value;
+            const firstSort = cells.filter(item => item.isSortEnabled)[0].value;
+
+            return (
+              <td
+                key={JSON.stringify(cell)}
+                onClick={() => onChangeSort(value, firstSort, isSortEnabled)}
+              >
+                <p>
+                  {displayValue}
+                  {shouldDisplaySort && (
+                    <i className={`fa fa-sort-${sortOrder || 'asc'}`} />
+                  )}
+                </p>
+              </td>
+            );
+          })
         ) : (
           <td>
             <p>id</p>
@@ -36,13 +66,23 @@ function TableHeader({ cells, checkEnabled }) {
 }
 
 TableHeader.defaultProps = {
-  cells: null,
-  checkEnabled: false,
+  cells: [],
+  isCheckEnabled: false,
+  onChangeSort: () => {},
+  onSelectAll: () => {},
+  rows: [],
+  sortBy: null,
+  sortOrder: null,
 };
 
 TableHeader.propTypes = {
-  cells: PropTypes.instanceOf(Object),
-  checkEnabled: PropTypes.bool,
+  cells: PropTypes.array,
+  isCheckEnabled: PropTypes.bool,
+  onChangeSort: PropTypes.func,
+  onSelectAll: PropTypes.func,
+  rows: PropTypes.instanceOf(Object),
+  sortBy: PropTypes.string,
+  sortOrder: PropTypes.string,
 };
 
 export default TableHeader;

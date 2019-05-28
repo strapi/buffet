@@ -6,11 +6,15 @@ import Checkbox from '../index';
 const defaultProps = {
   type: 'checkbox',
   name: 'checkbox',
+  onChange: jest.fn(),
 };
 const renderComponent = (props = defaultProps) =>
   mount(<Checkbox {...props} />);
 
 describe('<Checkbox />', () => {
+  it('jj', () => {
+    expect(true).toBe(true);
+  });
   it('should not crash', () => {
     renderComponent();
   });

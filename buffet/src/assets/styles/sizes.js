@@ -27,6 +27,14 @@ const sizes = {
       height: '144px',
     },
   },
+  table: {
+    header: {
+      height: '41px',
+    },
+    deleteRow: {
+      height: '37px',
+    },
+  },
 };
 
 export default sizes;

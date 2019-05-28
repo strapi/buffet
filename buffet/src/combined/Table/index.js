@@ -11,9 +11,17 @@ import {
 } from '../../commonPropTypes/table';
 
 import TableCompo from '../../components/Table';
+import Card from '../../styled/Card';
 
 function Table(props) {
-  return <TableCompo {...props} />;
+  return (
+    <>
+      <Card>
+        <TableCompo {...props} />
+      </Card>
+      {/* <Paging count={12} page={1} range={5} /> */}
+    </>
+  );
 }
 
 Table.defaultProps = {

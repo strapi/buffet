@@ -37,13 +37,13 @@ function Checkbox({
   return (
     <CheckboxWrapper>
       <StyledCheckbox
+        {...rest}
         autoFocus={autoFocus}
         id={id || name}
         name={name}
         onChange={handleChange}
         tabIndex={tabIndex}
-        value={value}
-        {...rest}
+        checked={value}
       />
       <Label htmlFor={id || name} message={message} />
     </CheckboxWrapper>
