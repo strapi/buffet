@@ -8,16 +8,13 @@ import InputNumber from '../../src/components/InputNumber';
 function InputNumberStory() {
   const [val, setValue] = useState(null);
 
-  const defaultProps = {
-    name: 'input',
-  };
-
   return (
     <div className="story">
       <div className="container">
         <h1>Input Number</h1>
         <InputNumber
-          {...defaultProps}
+          autoFocus
+          name="inputNumber"
           onChange={({ target: { value } }) => {
             setValue(value);
           }}
@@ -30,7 +27,7 @@ function InputNumberStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { InputNumber } from 'buffet'; 
+import { InputNumber } from 'buffet';
 
 function InputNumberStory() {
   const [val, setValue] = useState(null);

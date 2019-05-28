@@ -14,7 +14,7 @@ const InputText = styled.input`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-weight: 600;
+  font-weight: ${sizes.input.fontWeight};
   font-size: 1.3rem;
   cursor: pointer;
   outline: 0;
@@ -41,7 +41,7 @@ const InputText = styled.input`
     props.type === 'password' &&
     css`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
-    `}}  
+    `}}
 `;
 
 InputText.defaultProps = {

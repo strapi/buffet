@@ -28,6 +28,11 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
 }
 
 .c0::before {
+  content: '\\f067';
+  margin-right: 13px;
+}
+
+.c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
   font-size: 1.3rem;
@@ -35,10 +40,6 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
   line-height: 1.8rem;
   display: inline-block;
   vertical-align: middle;
-}
-
-.c0::before {
-  content: '\\f053';
 }
 
 <button
@@ -76,6 +77,11 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 }
 
 .c0::before {
+  content: '\\f067';
+  margin-right: 13px;
+}
+
+.c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
   font-size: 1.3rem;
@@ -83,11 +89,6 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   line-height: 1.8rem;
   display: inline-block;
   vertical-align: middle;
-}
-
-.c0::before {
-  content: '\\f067';
-  margin-right: 13px;
 }
 
 <button
@@ -125,6 +126,11 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 }
 
 .c0::before {
+  content: '\\f067';
+  margin-right: 13px;
+}
+
+.c0::before {
   font-family: 'FontAwesome';
   font-weight: 600;
   font-size: 1.3rem;
@@ -132,15 +138,6 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   line-height: 1.8rem;
   display: inline-block;
   vertical-align: middle;
-}
-
-.c0::before {
-  content: '';
-  background-image: url(IMAGE_MOCK);
-  background-repeat: no-repeat;
-  background-position: left;
-  width: 11px;
-  height: 12px;
 }
 
 <button

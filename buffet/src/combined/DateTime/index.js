@@ -15,7 +15,7 @@ import {
 
 import DatePicker from '../../components/DatePicker';
 import TimePicker from '../../components/TimePicker';
-import StyledDateTime from '../../styled/DateTime';
+import Wrapper from './Warpper';
 
 const UNITS = ['hour', 'minute', 'second'];
 
@@ -44,11 +44,11 @@ function DateTime({ name, onChange, value }) {
   };
 
   const setTime = time => {
-    const timeArr = time.split(':');
+    const [hour, minute, second] = time.split(':');
     const timeObj = {
-      hour: timeArr[0],
-      minute: timeArr[1],
-      second: timeArr[2],
+      hour,
+      minute,
+      second,
     };
 
     timestamp.set(timeObj);
@@ -73,7 +73,7 @@ function DateTime({ name, onChange, value }) {
   }, [setDate, value]);
 
   return (
-    <StyledDateTime>
+    <Wrapper>
       <DatePicker
         name="date"
         onChange={({ target }) => {
@@ -89,7 +89,7 @@ function DateTime({ name, onChange, value }) {
         seconds={false}
         value={getTimeString(timestamp)}
       />
-    </StyledDateTime>
+    </Wrapper>
   );
 }
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-alert */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
 
 import Table from '../../src/components/Table';
@@ -214,7 +217,7 @@ function TableStory() {
     sortBy: 'id',
     rows: items,
   });
-  const areAllEntriesSelected = state.rows.every(row => row.isCheck == true);
+  const areAllEntriesSelected = state.rows.every(row => row.isCheck === true);
   const handleSelectAll = () => {
     const type = areAllEntriesSelected ? 'UNSELECT_ALL' : 'SELECT_ALL';
 

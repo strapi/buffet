@@ -17,6 +17,7 @@ const sizes = {
   input: {
     height: '3.4rem',
     padding: '1rem',
+    fontWeight: 400,
   },
   checkbox: {
     height: '14px',

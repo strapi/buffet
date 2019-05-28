@@ -12,7 +12,9 @@ const EnumerationWrapper = styled.div`
   width: fit-content;
   height: 34px;
   border: 1px solid ${colors.lightGrey};
+  border-radius: 3px;
   background-color: white;
+  overflow: hidden;
   label {
     position: relative;
     display: inline-block;
@@ -25,6 +27,7 @@ const EnumerationWrapper = styled.div`
       line-height: 32px;
       margin: auto;
       font-size: 12px;
+      letter-spacing: 0.65;
       text-transform: uppercase;
     }
     &:not(:last-of-type) {

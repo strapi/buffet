@@ -21,6 +21,7 @@ const Enumeration = styled.input`
     background-image: ${colors.blueGradient};
     color: ${colors.white};
     box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 800;
   }
 `;
 

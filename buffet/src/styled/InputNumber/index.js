@@ -35,9 +35,6 @@ const InputNumber = styled.div`
     -ms-touch-action: none;
     touch-action: none;
   }
-  .rc-input-number-handler-active {
-    background: #ddd;
-  }
   .rc-input-number-handler-up-inner,
   .rc-input-number-handler-down-inner {
     color: #666666;
@@ -139,7 +136,7 @@ const InputNumber = styled.div`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
       border-radius: ${sizes.radius};
       text-align: left;
-      font-weight: 600;
+      font-weight: ${sizes.input.fontWeight};
       font-size: 1.3rem;
       color: ${colors.blueTxt};
 

@@ -25,7 +25,7 @@ const TimeList = styled.ul`
   visibility: hidden;
   &.displayed {
     height: ${sizes.timepicker.list.height};
-    transition: all 0.3s 0s linear;
+    transition: all 0.25s ease-out;
     visibility: visible;
     border-color: ${colors.lightGrey};
   }

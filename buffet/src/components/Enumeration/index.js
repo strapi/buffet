@@ -37,6 +37,7 @@ function Enumeration({ id, name, onChange, options, value }) {
 
 Enumeration.defaultProps = {
   ...commonDefaultProps,
+  onChange: () => {},
   options: null,
   value: null,
 };

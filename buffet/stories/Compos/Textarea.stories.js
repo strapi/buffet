@@ -14,7 +14,7 @@ function TextareaStory() {
   };
 
   return (
-    <div className="story">
+    <div className="story" style={{ padding: '13px' }}>
       <div className="container">
         <h1>Textarea</h1>
         <Textarea
@@ -29,7 +29,7 @@ function TextareaStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { Textarea } from 'buffet'; 
+import { Textarea } from 'buffet';
 
 function TextareaStory() {
   const [val, setValue] = useState('');

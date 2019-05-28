@@ -12,9 +12,6 @@ const renderComponent = (props = defaultProps) =>
   mount(<Checkbox {...props} />);
 
 describe('<Checkbox />', () => {
-  it('jj', () => {
-    expect(true).toBe(true);
-  });
   it('should not crash', () => {
     renderComponent();
   });

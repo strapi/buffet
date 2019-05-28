@@ -69,11 +69,7 @@ function InputTextStory() {
               />
             </div>
             <div className="col-6">
-              <InputCompo
-                name="password"
-                placeholder="●●●●●●●●"
-                type="password"
-              />
+              <InputCompo name="password" placeholder="" type="password" />
             </div>
           </div>
         </section>
@@ -84,7 +80,7 @@ function InputTextStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { Input } from 'buffet'; 
+import { Input } from 'buffet';
 
 // Input Text
 function InputTextStory(props) {
