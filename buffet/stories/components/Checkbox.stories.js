@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Checkbox from '../../src/components/Checkbox';
+import Presentation from '../ui/Presentation';
 
 function CheckboxStory() {
   const [val, setValue] = React.useState(false);
@@ -13,16 +14,13 @@ function CheckboxStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Input Checkbox</h1>
-        <Checkbox
-          {...defaultProps}
-          onChange={({ target: { value } }) => setValue(value)}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="Checkbox">
+      <Checkbox
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+      />
+    </Presentation>
   );
 }
 

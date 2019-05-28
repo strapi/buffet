@@ -4,10 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Table from '../../src/components/Table';
-
-function EmptyTableStory() {
-  return <Table />;
-}
+import Presentation from '../ui/Presentation';
 
 function TableStory() {
   const defaultProps = {
@@ -31,9 +28,14 @@ function TableStory() {
     ],
   };
 
-  return <Table {...defaultProps} />;
+  return (
+    <Presentation title="Table">
+      {' '}
+      <Table {...defaultProps} />
+    </Presentation>
+  );
 }
 
 storiesOf('Components|Table', module)
   .add('Default', () => <TableStory />)
-  .add('Empty', () => <EmptyTableStory />);
+  .add('Empty', () => <Table />);

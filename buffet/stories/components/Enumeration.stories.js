@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Enumeration from '../../src/components/Enumeration';
+import Presentation from '../ui/Presentation';
 
 function EnumerationStory() {
   const [val, setValue] = useState('option1');
@@ -20,23 +21,20 @@ function EnumerationStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Enumeration</h1>
-        <Enumeration
-          {...defaultProps}
-          onChange={({ target: { value } }) => setValue(value)}
-          value={val}
-          options={options}
-        />
-      </div>
-    </div>
+    <Presentation title="Enumeration">
+      <Enumeration
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+        options={options}
+      />
+    </Presentation>
   );
 }
 
 const source = `
 import React, { useState } from 'react';
-import { Enumeration } from 'buffet'; 
+import { Enumeration } from 'buffet';
 
 function EnumerationStory() {
   const [val, setValue] = useState('option1');

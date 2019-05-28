@@ -14,7 +14,7 @@ const TimePicker = styled.input`
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
   font-family: 'Lato';
-  font-weight: 600;
+  font-weight: ${sizes.input.fontWeight};
   font-size: 13px;
   cursor: pointer;
   outline: 0;

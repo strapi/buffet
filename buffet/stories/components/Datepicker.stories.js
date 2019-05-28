@@ -4,20 +4,18 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import DatePicker from '../../src/components/DatePicker';
+import Presentation from '../ui/Presentation';
 
 function DatePickerStory() {
   return (
-    <div className="story">
-      <div className="container">
-        <h1>DatePicker</h1>
-        <DatePicker name="date" />
-      </div>
-    </div>
+    <Presentation title="Datepicker">
+      <DatePicker name="date" />
+    </Presentation>
   );
 }
 
 const source = `
-import { DatePicker } from 'buffet'; 
+import { DatePicker } from 'buffet';
 
 <DatePicker name="date" />`;
 

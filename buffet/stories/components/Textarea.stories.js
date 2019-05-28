@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Textarea from '../../src/components/Textarea';
+import Presentation from '../ui/Presentation';
 
 function TextareaStory() {
   const [val, setValue] = useState('');
@@ -14,16 +15,13 @@ function TextareaStory() {
   };
 
   return (
-    <div className="story" style={{ padding: '13px' }}>
-      <div className="container">
-        <h1>Textarea</h1>
-        <Textarea
-          {...defaultProps}
-          onChange={({ target: { value } }) => setValue(value)}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="Textarea">
+      <Textarea
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+      />
+    </Presentation>
   );
 }
 

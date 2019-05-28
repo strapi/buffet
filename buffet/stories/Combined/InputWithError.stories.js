@@ -6,6 +6,7 @@ import { withStorySource } from '@storybook/addon-storysource';
 
 import InputWithError from '../../src/combined/InputWithError';
 import Form from '../../src/components/Form';
+import Presentation from '../ui/Presentation';
 
 const form = {
   checkbox: {
@@ -132,13 +133,16 @@ function InputStory() {
   };
 
   const error = radios('Error', errors, 'text');
+  const description =
+    'This input is very usefull when you want to build dynamic form.';
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Input with error</h1>
-        <section>
-          <h2>Play with the knobs to interact with the compo</h2>
+    <Presentation title="Input with Errors" description={description}>
+      <>
+        <section style={{ marginTop: 29 }}>
+          <h2 style={{ marginBottom: 36 }}>
+            Play with the knobs to interact with the compo
+          </h2>
           <div>
             <InputCompo
               name="input"
@@ -148,8 +152,8 @@ function InputStory() {
             />
           </div>
         </section>
-        <section>
-          <h2>Examples</h2>
+        <section style={{ marginTop: 3 }}>
+          <h2 style={{ marginBottom: 36 }}>Examples</h2>
           <Form onSubmit={() => {}}>
             <div className="row">
               {Object.keys(form).map(input => (
@@ -160,8 +164,8 @@ function InputStory() {
             </div>
           </Form>
         </section>
-      </div>
-    </div>
+      </>
+    </Presentation>
   );
 }
 

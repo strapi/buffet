@@ -8,6 +8,7 @@ import { withStorySource } from '@storybook/addon-storysource';
 import List from '../../src/combined/List';
 import IconLinks from '../../src/components/IconLinks';
 import Row from '../../src/styled/CustomRow';
+import Presentation from '../ui/Presentation';
 
 const CustomRow = ({ icon, description, links, name, onClick }) => {
   const styles = {
@@ -144,21 +145,20 @@ function ListStory() {
   };
 
   return (
-    <div className="story">
-      <h1>List</h1>
-      <section>
-        <h2>Default List</h2>
+    <Presentation title="List" description="Create some lists">
+      <section style={{ marginTop: 29 }}>
+        <h2 style={{ marginBottom: 30 }}>Default List</h2>
         <List {...initProps} items={defaultItems} />
       </section>
-      <section>
-        <h2>List with custom row</h2>
+      <section style={{ marginTop: 25 }}>
+        <h2 style={{ marginBottom: 30 }}>List with custom row</h2>
         <List
           {...initProps}
           items={customItems}
           customRowComponent={props => <CustomRow {...props} />}
         />
       </section>
-    </div>
+    </Presentation>
   );
 }
 
@@ -195,19 +195,19 @@ function ListStory() {
     onClick,
     type: 'submit',
   };
-  
+
   <List title="2 Content Types are available" button={buttonProps} items={defaultItems} />
 }
 
 
 // List with custom row
 
-const CustomRow = ({ 
-  icon, 
-  description, 
-  links, 
-  name, 
-  onClick 
+const CustomRow = ({
+  icon,
+  description,
+  links,
+  name,
+  onClick
 }) => {
   const styles = {
     name: {
@@ -293,10 +293,10 @@ function ListStory() {
   };
 
   return (
-    <List 
-      title="2 Content Types are available" 
+    <List
+      title="2 Content Types are available"
       button={buttonProps}
-      customRowComponent={props => <CustomRow {...props} />} 
+      customRowComponent={props => <CustomRow {...props} />}
     />
   );
 }`;

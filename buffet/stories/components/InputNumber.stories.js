@@ -4,24 +4,22 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import InputNumber from '../../src/components/InputNumber';
+import Presentation from '../ui/Presentation';
 
 function InputNumberStory() {
   const [val, setValue] = useState(null);
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Input Number</h1>
-        <InputNumber
-          autoFocus
-          name="inputNumber"
-          onChange={({ target: { value } }) => {
-            setValue(value);
-          }}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="Number">
+      <InputNumber
+        autoFocus
+        name="inputNumber"
+        onChange={({ target: { value } }) => {
+          setValue(value);
+        }}
+        value={val}
+      />
+    </Presentation>
   );
 }
 

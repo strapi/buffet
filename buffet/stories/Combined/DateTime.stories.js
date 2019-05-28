@@ -4,19 +4,23 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 import moment from 'moment';
 
+import Presentation from '../ui/Presentation';
+
 import DateTime from '../../src/combined/DateTime';
 
 function DateTimeStory() {
   const [state, setValue] = useState(moment());
 
   return (
-    <DateTime
-      name="datetime"
-      onChange={({ target: { value } }) => {
-        setValue(value);
-      }}
-      value={state}
-    />
+    <Presentation title="DateTime">
+      <DateTime
+        name="datetime"
+        onChange={({ target: { value } }) => {
+          setValue(value);
+        }}
+        value={state}
+      />
+    </Presentation>
   );
 }
 

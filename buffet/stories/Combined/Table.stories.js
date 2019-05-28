@@ -10,6 +10,7 @@ import Table from '../../src/components/Table';
 import Checkbox from '../../src/styled/Checkbox';
 import IconLinks from '../../src/components/IconLinks';
 import Row from '../../src/styled/CustomRow';
+import Presentation from '../ui/Presentation';
 
 const CustomRow = ({ item, onSelect }) => {
   const { email, id, isCheck, links, onClick, provider, username } = item;
@@ -252,13 +253,15 @@ function TableStory() {
   };
 
   return (
-    <Table
-      {...initProps}
-      customRowComponent={props => <CustomRow {...props} />}
-      onChangeSort={(sortBy, nextSort, isSortEnabled) => {
-        dispatch({ type: 'CHANGE_SORT', sortBy, nextSort, isSortEnabled });
-      }}
-    />
+    <Presentation title="Table">
+      <Table
+        {...initProps}
+        customRowComponent={props => <CustomRow {...props} />}
+        onChangeSort={(sortBy, nextSort, isSortEnabled) => {
+          dispatch({ type: 'CHANGE_SORT', sortBy, nextSort, isSortEnabled });
+        }}
+      />
+    </Presentation>
   );
 }
 

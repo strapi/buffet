@@ -4,6 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import List from '../../src/components/List';
+import Presentation from '../ui/Presentation';
 
 function ListStory() {
   const defaultProps = {
@@ -30,7 +31,11 @@ function ListStory() {
     ],
   };
 
-  return <List {...defaultProps} />;
+  return (
+    <Presentation title="List">
+      <List {...defaultProps} />
+    </Presentation>
+  );
 }
 
 storiesOf('Components|List', module).add('Default', () => <ListStory />);

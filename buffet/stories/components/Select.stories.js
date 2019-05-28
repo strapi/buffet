@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Select from '../../src/components/Select';
+import Presentation from '../ui/Presentation';
 
 function SelectStory() {
   const [val, setValue] = useState('');
@@ -14,22 +15,19 @@ function SelectStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Select</h1>
-        <Select
-          {...defaultProps}
-          onChange={({ target: { value } }) => setValue(value)}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="Select">
+      <Select
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+      />
+    </Presentation>
   );
 }
 
 const source = `
 import React, { useState } from 'react';
-import { Select } from 'buffet'; 
+import { Select } from 'buffet';
 
 function SelectStory() {
   const [val, setValue] = useState(');

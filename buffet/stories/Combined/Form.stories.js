@@ -5,6 +5,7 @@ import { withStorySource } from '@storybook/addon-storysource';
 import reducer from '../utils/reducer';
 
 import Form from '../../src/combined/Form';
+import Presentation from '../ui/Presentation';
 
 const form = {
   firstName: {
@@ -122,17 +123,14 @@ function FormStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Form</h1>
-        <Form
-          form={form}
-          onChange={handleChange}
-          onSubmit={onSubmit}
-          values={values}
-        />
-      </div>
-    </div>
+    <Presentation title="Form" description="">
+      <Form
+        form={form}
+        onChange={handleChange}
+        onSubmit={onSubmit}
+        values={values}
+      />
+    </Presentation>
   );
 }
 

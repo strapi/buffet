@@ -6,6 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import TimePicker from '../../src/components/TimePicker';
+import Presentation from '../ui/Presentation';
 
 function TimePickerStory() {
   const [val, setValue] = useState('');
@@ -15,28 +16,25 @@ function TimePickerStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Timepicker</h1>
-        <TimePicker
-          {...defaultProps}
-          onChange={({ target: { value } }) => {
-            const hour = moment(value, 'HH:mm:ss');
-            hour.toISOString();
-            hour.format();
-            setValue(value);
-          }}
-          seconds={false}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="TimePicker">
+      <TimePicker
+        {...defaultProps}
+        onChange={({ target: { value } }) => {
+          const hour = moment(value, 'HH:mm:ss');
+          hour.toISOString();
+          hour.format();
+          setValue(value);
+        }}
+        seconds={false}
+        value={val}
+      />
+    </Presentation>
   );
 }
 
 const source = `
 import React, { useState } from 'react';
-import { TimePicker } from 'buffet'; 
+import { TimePicker } from 'buffet';
 
 function TimePickerStory() {
   const [val, setValue] = useState('');

@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Toggle from '../../src/components/Toggle';
+import Presentation from '../ui/Presentation';
 
 function ToggleStory() {
   const [val, setValue] = useState(false);
@@ -14,22 +15,19 @@ function ToggleStory() {
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Toggle</h1>
-        <Toggle
-          {...defaultProps}
-          onChange={({ target: { value } }) => setValue(value)}
-          value={val}
-        />
-      </div>
-    </div>
+    <Presentation title="Toggle">
+      <Toggle
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+      />
+    </Presentation>
   );
 }
 
 const source = `
 import React, { useState } from 'react';
-import { Toggle } from 'buffet'; 
+import { Toggle } from 'buffet';
 
 function ToggleStory() {
   const [val, setValue] = useState(false);
