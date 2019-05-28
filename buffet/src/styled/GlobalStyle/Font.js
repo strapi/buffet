@@ -29,21 +29,21 @@ const Font = createGlobalStyle`
 @font-face {
   font-family: 'Lato';
   src: url(${latoLight2}) format("woff2"), url(${latoLight}) format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url(${latoRegular2}) format("woff2"), url(${latoRegular}) format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: url(${latoMedium2}) format("woff2"), url(${latoMedium}) format("woff");
+  src: url(${latoRegular2}) format("woff2"), url(${latoRegular}) format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(${latoMedium2}) format("woff2"), url(${latoMedium}) format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
