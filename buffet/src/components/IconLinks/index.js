@@ -22,8 +22,9 @@ function IconLinks({ links }) {
 }
 
 IconLinks.defaultProps = {
-  links: null,
+  links: [],
 };
+
 IconLinks.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({

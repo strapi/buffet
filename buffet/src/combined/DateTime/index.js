@@ -21,7 +21,6 @@ const UNITS = ['hour', 'minute', 'second'];
 
 function DateTime({ name, onChange, value }) {
   const [timestamp, setTimestamp] = useState();
-
   const getTimeString = time => {
     const currTime = time || moment();
 
@@ -32,7 +31,6 @@ function DateTime({ name, onChange, value }) {
 
     return timeString;
   };
-
   const getTimeObject = time => {
     const timeObj = {};
 
@@ -42,7 +40,6 @@ function DateTime({ name, onChange, value }) {
 
     return timeObj;
   };
-
   const setTime = time => {
     const [hour, minute, second] = time.split(':');
     const timeObj = {
@@ -54,7 +51,6 @@ function DateTime({ name, onChange, value }) {
     timestamp.set(timeObj);
     setDate(timestamp);
   };
-
   const setDate = (date, time) => {
     const newDate = time || date;
     date.set(getTimeObject(newDate));

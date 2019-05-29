@@ -1,11 +1,26 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
-
-// import NavTabs from '../index';
+import StyledTab from '../../../styled/Tab';
+import NavTabs from '../index';
 
 describe('<NavTabs />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('It should not crash', () => {
+    shallow(<NavTabs />);
+  });
+
+  it('Should handle a custom component correctly', () => {
+    const Custom = () => <span>Custom Component</span>;
+    const links = [
+      {
+        to: '/',
+        compo: <Custom />,
+      },
+    ];
+    const renderedComponent = shallow(<NavTabs links={links} />);
+    const tab = renderedComponent.find(StyledTab);
+
+    expect(tab).toHaveLength(1);
+    expect(tab.at(0).find(Custom)).toHaveLength(1);
   });
 });

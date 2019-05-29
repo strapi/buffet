@@ -1,11 +1,18 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { mount } from 'enzyme';
 
-// import List from '../index';
+import List from '../index';
 
 describe('<List />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('Should not crash', () => {
+    mount(<List />);
+  });
+
+  it('Should use a custom row if provided', () => {
+    const items = [{ test: 'test' }];
+    const customRowComponent = jest.fn();
+    mount(<List items={items} customRowComponent={customRowComponent} />);
+
+    expect(customRowComponent).toHaveBeenCalledWith(items[0]);
   });
 });

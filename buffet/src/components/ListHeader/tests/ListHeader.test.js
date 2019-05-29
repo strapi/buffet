@@ -1,11 +1,10 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { mount } from 'enzyme';
 
-// import ListHeader from '../index';
+import ListHeader from '../index';
 
 describe('<ListHeader />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('Should not crash', () => {
+    mount(<ListHeader />);
   });
 });

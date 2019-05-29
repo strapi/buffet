@@ -9,9 +9,7 @@ import {
   commonDefaultProps,
   commonPropTypes,
 } from '../../commonPropTypes/list';
-
 import ListRow from '../ListRow';
-
 import StyledList from '../../styled/List';
 
 function List({ items, customRowComponent }) {

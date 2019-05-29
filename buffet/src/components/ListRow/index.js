@@ -22,7 +22,7 @@ function ListRow({ cells, onClick }) {
 }
 
 ListRow.defaultProps = {
-  cells: null,
+  cells: {},
   onClick: () => {},
 };
 
