@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { get } from 'lodash';
 import Error from '../../components/Error';
 import Label from '../../components/Label';
 import Description from '../../styled/Description';
@@ -68,6 +68,20 @@ function Inputs({
   }
   const allInputs = Object.assign(inputs, customInputs);
   const InputComponent = allInputs[type] || UnknowInput;
+
+  if (type === get(customInputs, 'type', '')) {
+    return (
+      <InputComponent
+        description={description}
+        label={label}
+        name={name}
+        onChange={onChange}
+        type={type}
+        validations={validations}
+        value={value}
+      />
+    );
+  }
 
   return (
     <Error name={name} type={type} validations={validations}>

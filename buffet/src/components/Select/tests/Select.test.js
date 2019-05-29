@@ -6,6 +6,7 @@ import Select from '../index';
 
 const initProps = {
   name: 'inputSelect',
+  onChange: jest.fn(),
   value: '',
 };
 let renderedComponent;

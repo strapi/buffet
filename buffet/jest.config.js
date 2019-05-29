@@ -12,14 +12,7 @@ module.exports = {
     '!dist/**/*.{js,jsx}',
     '!storybook-static/*.{js,jsx}',
   ],
-  coverageThreshold: {
-    global: {
-      statements: 90,
-      branches: 90,
-      functions: 90,
-      lines: 90,
-    },
-  },
+
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
     '.*\\.(css|less|styl|scss|sass)$': '<rootDir>/internals/mocks/cssModule.js',

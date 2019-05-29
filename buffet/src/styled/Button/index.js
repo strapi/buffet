@@ -15,7 +15,7 @@ const Button = styled.button`
 
   /*
   * Theme
-  */ 
+  */
 
   // General style
   height: ${sizes.button.height.large};
@@ -48,7 +48,7 @@ const Button = styled.button`
           }
         `}
     `}
-    
+
   ${props =>
     props.color === 'secondary' &&
     css`
@@ -104,7 +104,7 @@ const Button = styled.button`
         display: inline-block;
         vertical-align: middle;
       }
-    `}     
+    `}
 `;
 
 Button.defaultProps = {
@@ -115,7 +115,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
-  icon: PropTypes.bool,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   type: PropTypes.string,
 };
 
