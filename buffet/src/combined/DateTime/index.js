@@ -15,7 +15,7 @@ import {
 
 import DatePicker from '../../components/DatePicker';
 import TimePicker from '../../components/TimePicker';
-import Wrapper from './Warpper';
+import Wrapper from './Wrapper';
 
 const UNITS = ['hour', 'minute', 'second'];
 

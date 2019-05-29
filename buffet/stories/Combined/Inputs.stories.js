@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { radios } from '@storybook/addon-knobs';
 import { withStorySource } from '@storybook/addon-storysource';
 
-import InputWithError from '../../src/combined/InputWithError';
-import Form from '../../src/components/Form';
+import Inputs from '../../src/combined/Inputs';
 import Presentation from '../ui/Presentation';
 
 const form = {
@@ -31,6 +30,15 @@ const form = {
     label: 'Birth date',
     description: 'You should enter your birth date',
     type: 'date',
+    validations: {
+      required: true,
+    },
+  },
+  datetime: {
+    styleName: 'col-6',
+    label: 'Date Time',
+    description: 'Select a slot',
+    type: 'datetime',
     validations: {
       required: true,
     },
@@ -94,20 +102,6 @@ const form = {
   },
 };
 
-function InputCompo(props) {
-  const [val, setValue] = useState(null);
-
-  return (
-    <InputWithError
-      {...props}
-      onChange={({ target: { value } }) => {
-        setValue(value);
-      }}
-      value={val}
-    />
-  );
-}
-
 function InputStory() {
   const types = {
     checkbox: 'checkbox',
@@ -123,9 +117,7 @@ function InputStory() {
     time: 'time',
     toggle: 'bool',
   };
-
   const type = radios('Types', types, 'text');
-
   const errors = {
     required: 'required',
     uppercase: 'uppercase',
@@ -135,34 +127,45 @@ function InputStory() {
   const error = radios('Error', errors, 'text');
   const description =
     'This input is very usefull when you want to build dynamic form.';
+  const [state, setState] = React.useState({});
+  const handleChange = ({ target: { name, value } }) => {
+    setState({ [name]: value });
+  };
 
   return (
     <Presentation title="Input with Errors" description={description}>
       <>
         <section style={{ marginTop: 29 }}>
           <h2 style={{ marginBottom: 36 }}>
-            Play with the knobs to interact with the compo
+            Play with the knobs to interact with the component.
           </h2>
           <div>
-            <InputCompo
+            <Inputs
               name="input"
               type={type}
               {...form[type]}
               error={error}
+              value={state.input}
+              onChange={handleChange}
             />
           </div>
         </section>
         <section style={{ marginTop: 3 }}>
           <h2 style={{ marginBottom: 36 }}>Examples</h2>
-          <Form onSubmit={() => {}}>
+          <form onSubmit={() => {}}>
             <div className="row">
               {Object.keys(form).map(input => (
                 <div className={form[input].styleName} key={input}>
-                  <InputCompo name={input} {...form[input]} />
+                  <Inputs
+                    name={input}
+                    {...form[input]}
+                    onChange={handleChange}
+                    value={state[input] || form[input].value}
+                  />
                 </div>
               ))}
             </div>
-          </Form>
+          </form>
         </section>
       </>
     </Presentation>
@@ -171,6 +174,6 @@ function InputStory() {
 
 const source = ``;
 
-storiesOf('Combined', module)
+storiesOf('Custom', module)
   .addDecorator(withStorySource(source))
-  .add('InputWithError', () => InputStory());
+  .add('Inputs', () => <InputStory />);

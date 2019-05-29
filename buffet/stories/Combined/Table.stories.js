@@ -265,4 +265,4 @@ function TableStory() {
   );
 }
 
-storiesOf('Combined|Table', module).add('DefaultList', () => <TableStory />);
+storiesOf('Custom|Table', module).add('DefaultList', () => <TableStory />);

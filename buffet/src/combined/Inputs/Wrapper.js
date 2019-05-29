@@ -1,17 +1,16 @@
 /**
  *
- * InputWrapper
+ * Wrapper
  *
  */
 
 import styled from 'styled-components';
-
 import sizes from '../../assets/styles/sizes';
 
-const Input = styled.div`
+const Wrapper = styled.div`
   position: relative;
   padding-bottom: ${sizes.margin * 2.7}px;
-  margin-bottom: ${sizes.margin * 1.8}px;
+  margin-bottom: ${sizes.margin * 1.7}px;
   label {
     display: block;
     margin-bottom: 1.1rem;
@@ -28,4 +27,4 @@ const Input = styled.div`
   }
 `;
 
-export default Input;
+export default Wrapper;

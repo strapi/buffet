@@ -82,7 +82,7 @@ function CombinedTabs() {
   );
 }`;
 
-storiesOf('Combined', module)
+storiesOf('Custom', module)
   .addDecorator(
     StoryRouter({}, { initialEntries: ['/plugins/users-permissions/roles'] }),
   )

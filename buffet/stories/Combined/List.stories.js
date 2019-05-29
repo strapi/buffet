@@ -301,6 +301,6 @@ function ListStory() {
   );
 }`;
 
-storiesOf('Combined', module)
+storiesOf('Custom', module)
   .addDecorator(withStorySource(source))
   .add('List', () => ListStory());

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { radios } from '@storybook/addon-knobs';
 import { withStorySource } from '@storybook/addon-storysource';
 
-import Input from '../../src/components/Input';
+import Input from '../../src/components/InputText';
 
 function InputCompo(props) {
   const [val, setValue] = useState('');
@@ -82,8 +82,7 @@ const source = `
 import React, { useState } from 'react';
 import { Input } from 'buffet';
 
-// Input Text
-function InputTextStory(props) {
+function Example(props) {
   const [val, setValue] = useState('');
 
   return (
@@ -92,55 +91,7 @@ function InputTextStory(props) {
         setValue(value);
       }}
       placeholder="Lastname"
-      type="text"
-      value={val}
-    />
-  );
-}
-
-// Input Search
-function InputTextStory(props) {
-  const [val, setValue] = useState('');
-
-  return (
-    <Input
-      onChange={({ target: { value } }) => {
-        setValue(value);
-      }}
-      placeholder="Tap something to search…"
       type="search"
-      value={val}
-    />
-  );
-}
-
-// Input Email
-function InputTextStory(props) {
-  const [val, setValue] = useState('');
-
-  return (
-    <Input
-      onChange={({ target: { value } }) => {
-        setValue(value);
-      }}
-      placeholder="Write your email here…"
-      type="email"
-      value={val}
-    />
-  );
-}
-
-// Input Password
-function InputTextStory(props) {
-  const [val, setValue] = useState('');
-
-  return (
-    <Input
-      onChange={({ target: { value } }) => {
-        setValue(value);
-      }}
-      placeholder="●●●●●●●●"
-      type="password"
       value={val}
     />
   );
