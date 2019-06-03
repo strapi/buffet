@@ -12,8 +12,8 @@ import IconLinks from '../../src/components/IconLinks';
 import Row from '../../src/styled/CustomRow';
 import Presentation from '../ui/Presentation';
 
-const CustomRow = ({ item, onSelect }) => {
-  const { email, id, isCheck, links, onClick, provider, username } = item;
+const CustomRow = ({ row, onSelect }) => {
+  const { email, id, isCheck, links, onClick, provider, username } = row;
 
   const styles = {
     links: {
@@ -67,12 +67,13 @@ const CustomRow = ({ item, onSelect }) => {
 };
 
 CustomRow.defaultProps = {
-  item: {},
+  row: {},
   onSelect: () => {},
 };
 
 CustomRow.propTypes = {
-  item: PropTypes.shape({
+  onSelect: PropTypes.func,
+  row: PropTypes.shape({
     email: PropTypes.string,
     id: PropTypes.number,
     isCheck: PropTypes.bool,
@@ -86,80 +87,72 @@ CustomRow.propTypes = {
     provider: PropTypes.string,
     username: PropTypes.string,
   }),
-  onSelect: PropTypes.func,
 };
 
-const items = [
+const headers = [
+  {
+    name: 'Id',
+    value: 'id',
+    isSortEnabled: true,
+  },
+  {
+    name: 'Username',
+    value: 'username',
+    isSortEnabled: true,
+  },
+  {
+    name: 'Email',
+    value: 'email',
+    isSortEnabled: true,
+  },
+  {
+    name: 'Provider',
+    value: 'provider',
+    isSortEnabled: true,
+  },
+  {
+    name: 'Password',
+    value: 'password',
+    isSortEnabled: false,
+  },
+];
+const rows = [
   {
     created_at: 1558010491450,
     email: 'soup@strapi.io',
     id: 1,
-    links: [
-      {
-        icon: 'fa fa-pencil',
-        onClick: () => {
-          alert('Do you want to edit this item'); /* eslint no-alert: "error" */
-        },
-      },
-      {
-        icon: 'fa fa-trash',
-        onClick: () => {
-          alert('Do you want to delete this item');
-        },
-      },
-    ],
     provider: 'local',
     username: 'Soup',
-    isCheck: false,
   },
   {
     email: 'jim@strapi.io',
     id: 2,
-    links: [
-      {
-        icon: 'fa fa-pencil',
-        onClick: () => {
-          alert('Do you want to edit this item');
-        },
-      },
-      {
-        icon: 'fa fa-trash',
-        onClick: () => {
-          alert('Do you want to delete this item');
-        },
-      },
-    ],
     provider: 'local',
     username: 'jimminy',
-    isCheck: false,
   },
 ];
-
-const updater = (array, shouldCheck) =>
-  array.map(row => {
-    row.isCheck = shouldCheck;
-
-    return row;
-  });
 
 const updateAtIndex = (array, index, value) =>
   array.map((row, i) => {
     if (index === i) {
-      row.isCheck = value;
+      row._isChecked = value;
     }
 
     return row;
   });
 
+const updateRows = (array, shouldSelect) =>
+  array.map(row => {
+    row._isChecked = shouldSelect;
+
+    return row;
+  });
+
 function reducer(state, action) {
-  const { value, index, type, sortBy, nextSort, isSortEnabled } = action;
+  const { nextElement, sortBy, type } = action;
 
   switch (type) {
     case 'CHANGE_SORT':
-      if (!isSortEnabled) {
-        return state;
-      }
-
       if (state.sortBy === sortBy && state.sortOrder === 'asc') {
         return { ...state, sortOrder: 'desc' };
       }
@@ -169,97 +162,103 @@ function reducer(state, action) {
       }
 
       if (state.sortBy === sortBy && state.sortOrder === 'desc') {
-        return { ...state, sortOrder: 'asc', sortBy: nextSort };
+        return { ...state, sortOrder: 'asc', sortBy: nextElement };
       }
 
       return state;
-    case 'SELECT_ROW':
-      return { ...state, rows: updateAtIndex(state.rows, index, value) };
     case 'SELECT_ALL':
-      return { ...state, rows: updater(state.rows, true) };
+      return { ...state, rows: updateRows(state.rows, true) };
+    case 'SELECT_ROW':
+      return {
+        ...state,
+        rows: updateAtIndex(state.rows, action.index, !action.row._isChecked),
+      };
     case 'UNSELECT_ALL':
-      return { ...state, rows: updater(state.rows, false) };
+      return { ...state, rows: updateRows(state.rows, false) };
     default:
       return state;
   }
 }
 
-function TableStory() {
-  const headers = [
-    {
-      displayValue: 'id',
-      value: 'id',
-      isSortEnabled: true,
-    },
-    {
-      displayValue: 'Username',
-      value: 'username',
-      isSortEnabled: true,
-    },
-    {
-      displayValue: 'Email',
-      value: 'email',
-      isSortEnabled: true,
-    },
-    {
-      displayValue: 'Provider',
-      value: 'provider',
-      isSortEnabled: true,
-    },
-    {
-      displayValue: 'Password',
-      value: 'password',
-      isSortEnabled: false,
-    },
-    {},
-  ];
-  const [state, dispatch] = React.useReducer(reducer, {
-    sortOrder: 'asc',
-    sortBy: 'id',
-    rows: items,
+function init(initialState) {
+  const updatedRows = initialState.rows.map(row => {
+    row._isChecked = false;
+
+    return row;
   });
-  const areAllEntriesSelected = state.rows.every(row => row.isCheck === true);
-  const handleSelectAll = () => {
-    const type = areAllEntriesSelected ? 'UNSELECT_ALL' : 'SELECT_ALL';
 
-    dispatch({ type });
-  };
+  return { ...initialState, rows: updatedRows };
+}
 
-  const handleSelect = (element, index) => {
-    const type = 'SELECT_ROW';
-
-    dispatch({ type, value: !element.isCheck, index });
-  };
-
-  const onConfirmSelectAllAction = () => {
-    alert('Are you sure?');
-  };
-
-  const initProps = {
-    headers,
-    items: state.rows,
-    isCheckEnabled: true,
-    onSelect: handleSelect,
-    onSelectAll: handleSelectAll,
-    actionCollapseInfos: {
-      translatedNumberOfEntry: 'entry',
-      translatedNumberOfEntries: 'entries',
-      translatedActionInfo: 'Delete all',
-      actionInfoShape: 'trash',
-      onConfirmSelectAllAction,
+function TableStory() {
+  const [state, dispatch] = React.useReducer(
+    reducer,
+    {
+      headers,
+      rows,
+      sortBy: 'id',
+      sortOrder: 'asc',
     },
-    sortBy: state.sortBy,
-    sortOrder: state.sortOrder,
+    init,
+  );
+  const areAllEntriesSelected = state.rows.every(
+    row => row._isChecked === true,
+  );
+  const bulkActionProps = {
+    icon: 'trash',
+    onConfirm: () => {
+      alert('Are you sure you want to delete these entries?');
+    },
+    translatedNumberOfEntry: 'entry',
+    translatedNumberOfEntries: 'entries',
+    translatedAction: 'Delete all',
   };
 
   return (
     <Presentation title="Table">
       <Table
-        {...initProps}
-        customRowComponent={props => <CustomRow {...props} />}
-        onChangeSort={(sortBy, nextSort, isSortEnabled) => {
-          dispatch({ type: 'CHANGE_SORT', sortBy, nextSort, isSortEnabled });
+        headers={state.headers}
+        bulkActionProps={bulkActionProps}
+        onChangeSort={({
+          sortBy,
+          firstElementThatCanBeSorted,
+          isSortEnabled,
+        }) => {
+          if (isSortEnabled) {
+            dispatch({
+              type: 'CHANGE_SORT',
+              sortBy,
+              nextElement: firstElementThatCanBeSorted,
+            });
+          }
         }}
+        onSelect={(row, index) => {
+          dispatch({ type: 'SELECT_ROW', row, index });
+        }}
+        onSelectAll={() => {
+          const type = areAllEntriesSelected ? 'UNSELECT_ALL' : 'SELECT_ALL';
+
+          dispatch({ type });
+        }}
+        // rows={state.rows}
+
+        sortBy={state.sortBy}
+        sortOrder={state.sortOrder}
+        withBulkAction
+        rowLinks={[
+          {
+            icon: 'fa fa-pencil',
+            onClick: data => {
+              alert(`Do you want to edit ${data.username}?`);
+            },
+          },
+          {
+            icon: 'fa fa-trash',
+            onClick: data => {
+              alert(`Do you want to delete ${data.username}?`);
+            },
+          },
+        ]}
       />
     </Presentation>
   );

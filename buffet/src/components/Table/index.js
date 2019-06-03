@@ -6,11 +6,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { upperFirst } from 'lodash';
-import {
-  commonDefaultProps,
-  commonPropTypes,
-} from '../../commonPropTypes/table';
 
 import StyledTable from '../../styled/Table';
 import TableHeader from '../TableHeader';
@@ -19,93 +14,131 @@ import TableRowEmpty from '../../styled/TableRowEmpty';
 import ActionCollapse from './ActionCollapse';
 
 function Table({
-  actionCollapseInfos,
-  customRowComponent,
+  bulkActionProps,
+  customRow,
   headers,
-  isCheckEnabled,
-  items,
+  onChangeSort,
   onSelect,
   onSelectAll,
+  rows,
+  rowLinks,
   sortBy,
   sortOrder,
-  onChangeSort,
+  tableEmptyText,
+  withBulkAction,
 }) {
-  const headerCells = customRowComponent
-    ? headers
-    : Object.keys(items[0] || {}).map(header => ({
-      displayValue: upperFirst(header),
-      value: header,
-      isSortEnabled: false,
-    }));
-  const numberOfSelectedEntries = items.filter(item => item.isCheck === true)
-    .length;
-  const showDeleteAll = numberOfSelectedEntries > 0;
+  let colSpan = withBulkAction ? headers.length + 1 : headers.length;
+
+  if (rowLinks.length > 0) {
+    colSpan += 1;
+  }
+
+  const areAllEntriesSelected =
+    rows.length > 0 && rows.every(row => row._isChecked === true);
+  const shouldDisplayEmptyRow = rows.length === 0;
 
   return (
     <StyledTable>
-      <table className={showDeleteAll ? 'rowsSelected' : ''}>
+      <table className="">
         <TableHeader
-          cells={headerCells}
-          isCheckEnabled={isCheckEnabled}
-          rows={items}
+          headers={headers}
+          onChangeSort={onChangeSort}
           onSelectAll={onSelectAll}
+          rows={rows}
+          shouldAddTd={rowLinks.length > 0}
           sortBy={sortBy}
           sortOrder={sortOrder}
-          onChangeSort={onChangeSort}
+          withBulkAction={withBulkAction}
         />
-
         <tbody>
-          {items.length > 0 ? (
-            items.map((item, index) =>
-              customRowComponent ? (
-                <React.Fragment key={JSON.stringify(item)}>
-                  {customRowComponent({
-                    item,
-                    onSelect: () => {
-                      onSelect(item, index);
-                    },
-                  })}
-                </React.Fragment>
-              ) : (
-                <TableRow
-                  id={index}
-                  cells={item}
-                  isCheckEnabled={isCheckEnabled}
-                  onSelect={onSelect}
-                  key={JSON.stringify(item)}
-                />
-              ),
-            )
-          ) : (
-            <TableRowEmpty />
+          {withBulkAction && areAllEntriesSelected && (
+            <ActionCollapse
+              colSpan={colSpan}
+              numberOfSelectedEntries={rows.length}
+              {...bulkActionProps}
+            />
           )}
+          {shouldDisplayEmptyRow && (
+            <TableRowEmpty>
+              <td colSpan={colSpan}>{tableEmptyText}</td>
+            </TableRowEmpty>
+          )}
+          {!shouldDisplayEmptyRow &&
+            rows.map((row, index) => {
+              if (customRow) {
+                const Row = customRow;
+
+                return (
+                  <React.Fragment key={JSON.stringify(row)}>
+                    <Row row={row} headers={headers} onSelect={onSelect} />
+                  </React.Fragment>
+                );
+              }
+
+              return (
+                <TableRow
+                  key={JSON.stringify(row)}
+                  headers={headers}
+                  onSelect={() => onSelect(row, index)}
+                  row={row}
+                  rowLinks={rowLinks}
+                  withBulkAction={withBulkAction}
+                />
+              );
+            })}
         </tbody>
       </table>
-      {showDeleteAll && (
-        <ActionCollapse
-          numberOfSelectedEntries={numberOfSelectedEntries}
-          {...actionCollapseInfos}
-        />
-      )}
     </StyledTable>
   );
 }
 
 Table.defaultProps = {
-  ...commonDefaultProps,
-  actionCollapseInfos: null,
+  bulkActionProps: {
+    icon: 'trash',
+    onConfirm: () => {},
+    translatedNumberOfEntry: 'entry',
+    translatedNumberOfEntries: 'entries',
+    translatedAction: 'Delete all',
+  },
+  customRow: null,
+  headers: [],
+  onChangeSort: () => {},
+  onSelect: () => {},
+  onSelectAll: () => {},
+  rows: [],
+  rowLinks: [],
+  sortBy: null,
+  sortOrder: 'asc',
+  tableEmptyText: 'There is no data',
+  withBulkAction: false,
 };
 
 Table.propTypes = {
-  ...commonPropTypes,
-  actionCollapseInfos: PropTypes.shape({
-    actionInfoShape: PropTypes.string,
-    numberOfSelectedEntries: PropTypes.number,
-    onConfirmSelectAllAction: PropTypes.func,
-    translatedActionInfo: PropTypes.string,
+  bulkActionProps: PropTypes.shape({
+    icon: PropTypes.string,
+    onConfirm: PropTypes.func,
+    translatedAction: PropTypes.string,
     translatedNumberOfEntries: PropTypes.string,
     translatedNumberOfEntry: PropTypes.string,
   }),
+  customRow: PropTypes.func,
+  headers: PropTypes.arrayOf(
+    PropTypes.shape({
+      isSortEnabled: PropTypes.bool,
+      name: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
+
+  onChangeSort: PropTypes.func,
+  onSelect: PropTypes.func,
+  onSelectAll: PropTypes.func,
+  rowLinks: PropTypes.instanceOf(Array),
+  rows: PropTypes.instanceOf(Array),
+  sortBy: PropTypes.string,
+  sortOrder: PropTypes.string,
+  tableEmptyText: PropTypes.string,
+  withBulkAction: PropTypes.bool,
 };
 
 export default Table;

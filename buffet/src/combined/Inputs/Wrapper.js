@@ -4,7 +4,8 @@
  *
  */
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const Wrapper = styled.div`
@@ -25,6 +26,13 @@ const Wrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  ${({ error }) =>
+    !!error &&
+    css`
+      input {
+        border-color: ${colors.darkOrange};
+      }
+    `}
 `;
 
 export default Wrapper;

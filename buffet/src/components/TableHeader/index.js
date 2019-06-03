@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /**
  *
  * TableHeader
@@ -10,84 +11,93 @@ import { get } from 'lodash';
 import Checkbox from '../../styled/Checkbox';
 
 function TableHeader({
-  cells,
-  isCheckEnabled,
+  headers,
+  onChangeSort,
   onSelectAll,
   rows,
+  shouldAddTd,
   sortBy,
   sortOrder,
-  onChangeSort,
+  withBulkAction,
 }) {
-  const checkValue = rows.length > 0 && rows.every(row => row.isCheck === true);
+  const checked = rows.length > 0 && rows.every(row => row._isChecked === true);
   const shouldDisplayNotChecked =
-    rows.some(row => row.isCheck === true) && !checkValue;
+    rows.some(row => row._isChecked === true) && !checked;
 
   return (
     <thead>
       <tr>
-        {isCheckEnabled && (
+        {withBulkAction && (
           <td className="checkCell">
             <Checkbox
               onChange={onSelectAll}
-              checked={checkValue}
+              checked={checked}
               shouldDisplayNotChecked={shouldDisplayNotChecked}
             />
           </td>
         )}
-        {cells.length > 0 ? (
-          cells.map(cell => {
-            const { displayValue, value, isSortEnabled } = cell;
+        {headers.map(header => {
+          const { isSortEnabled, name, value } = header;
+          const shouldDisplaySort = isSortEnabled && sortBy === value;
+          const firstElementThatCanBeSorted = get(
+            headers.filter(h => h.isSortEnabled),
+            [0, 'value'],
+            null,
+          );
 
-            const shouldDisplaySort = isSortEnabled && sortBy === value;
-
-            const firstSort = get(
-              cells.filter(item => item.isSortEnabled),
-              [0, 'value'],
-              null,
-            );
-
-            return (
-              <td
-                key={JSON.stringify(cell)}
-                onClick={() => onChangeSort(value, firstSort, isSortEnabled)}
-              >
-                <p>
-                  {displayValue}
-                  {shouldDisplaySort && (
-                    <i className={`fa fa-sort-${sortOrder || 'asc'}`} />
-                  )}
-                </p>
-              </td>
-            );
-          })
-        ) : (
-          <td>
-            <p>id</p>
-          </td>
-        )}
+          return (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+            <td
+              key={value}
+              onClick={() => {
+                onChangeSort({
+                  sortBy: value,
+                  firstElementThatCanBeSorted,
+                  isSortEnabled,
+                });
+              }}
+            >
+              <p>
+                {name}
+                {shouldDisplaySort && (
+                  <i className={`fa fa-sort-${sortOrder || 'asc'}`} />
+                )}
+              </p>
+            </td>
+          );
+        })}
+        {shouldAddTd && <td />}
       </tr>
     </thead>
   );
 }
 
 TableHeader.defaultProps = {
-  cells: [],
-  isCheckEnabled: false,
+  headers: [],
   onChangeSort: () => {},
   onSelectAll: () => {},
   rows: [],
+  shouldAddTd: false,
   sortBy: null,
-  sortOrder: null,
+  sortOrder: 'asc',
+  withBulkAction: false,
 };
 
 TableHeader.propTypes = {
-  cells: PropTypes.array,
-  isCheckEnabled: PropTypes.bool,
+  headers: PropTypes.arrayOf(
+    PropTypes.shape({
+      isSortEnabled: PropTypes.bool,
+      name: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   onChangeSort: PropTypes.func,
   onSelectAll: PropTypes.func,
-  rows: PropTypes.instanceOf(Object),
+  rows: PropTypes.instanceOf(Array),
+  shouldAddTd: PropTypes.bool,
   sortBy: PropTypes.string,
   sortOrder: PropTypes.string,
+  withBulkAction: PropTypes.bool,
 };
 
 export default TableHeader;

@@ -35,9 +35,9 @@ const Table = styled.div`
     }
   }
   .deleteRow {
-    width: 100%;
+    // width: 100%;
     height: ${sizes.table.deleteRow.height};
-    position: absolute;
+    // position: absolute;
     left: 0;
     top: ${sizes.table.header.height};
     padding: 0 25px;

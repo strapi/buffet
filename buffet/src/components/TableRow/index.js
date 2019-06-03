@@ -7,40 +7,76 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isObject } from 'lodash';
-
 import StyledTableRow from '../../styled/TableRow';
 import Checkbox from '../../styled/Checkbox';
+import StyledLinks from '../../styled/Links';
 
-function TableRow({ cells, checkEnabled, isCheck, onClick, onSelect }) {
+function TableRow({ headers, onSelect, row, rowLinks, withBulkAction }) {
+  const displayedCells = headers.map(header => header.value);
+
   return (
-    <StyledTableRow onClick={onClick}>
-      {checkEnabled && (
+    <StyledTableRow>
+      {withBulkAction && (
         <td>
-          <Checkbox onChange={onSelect} checked={isCheck} />
+          <Checkbox onChange={onSelect} checked={row._isChecked} />
         </td>
       )}
-      {Object.keys(cells).map(key => (
-        <td key={key} className={`${key}-cell`}>
-          <p>{!isObject(cells[key]) && cells[key]}</p>
+      {displayedCells.map(cellName => {
+        const displayedValue = !isObject(row[cellName]) ? row[cellName] : '-';
+
+        return (
+          <td key={cellName} className={`${cellName}-cell`}>
+            <p>{displayedValue || '-'}</p>
+          </td>
+        );
+      })}
+      {rowLinks.length > 0 && (
+        <td>
+          <div style={{ width: 'fit-content', float: 'right' }}>
+            <StyledLinks>
+              {rowLinks.map(icon => (
+                <button
+                  key={icon.icon}
+                  onClick={() => icon.onClick(row)}
+                  type="button"
+                >
+                  <i className={`${icon.icon} link-icon`} />
+                </button>
+              ))}
+            </StyledLinks>
+          </div>
         </td>
-      ))}
+      )}
     </StyledTableRow>
   );
 }
 
 TableRow.defaultProps = {
-  cells: null,
-  checkEnabled: false,
-  isCheck: false,
-  onClick: () => {},
+  headers: {},
   onSelect: () => {},
+  row: [],
+  rowLinks: [],
+  withBulkAction: false,
 };
+
 TableRow.propTypes = {
-  cells: PropTypes.instanceOf(Object),
-  checkEnabled: PropTypes.bool,
-  isCheck: PropTypes.bool,
-  onClick: PropTypes.func,
+  headers: PropTypes.arrayOf(
+    PropTypes.shape({
+      isSortEnabled: PropTypes.bool,
+      name: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ),
   onSelect: PropTypes.func,
+  // eslint-disable-next-line react/forbid-prop-types
+  row: PropTypes.object,
+
+  rowLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.string,
+    }),
+  ),
+  withBulkAction: PropTypes.bool,
 };
 
 export default TableRow;

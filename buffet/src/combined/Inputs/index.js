@@ -86,7 +86,7 @@ function Inputs({
   return (
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
-        <Wrapper>
+        <Wrapper error={error}>
           <Label htmlFor={name}>{label}</Label>
           <InputComponent
             {...rest}

@@ -2,45 +2,49 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ActionCollapse({
+  colSpan,
   translatedNumberOfEntry,
   translatedNumberOfEntries,
-  translatedActionInfo,
-  actionInfoShape,
+  translatedAction,
+  icon,
   numberOfSelectedEntries,
-  onConfirmSelectAllAction,
+  onConfirm,
 }) {
   return (
-    <div className="deleteRow">
-      <p>
-        {numberOfSelectedEntries}
-        &nbsp;
-        {numberOfSelectedEntries > 1
-          ? translatedNumberOfEntries
-          : translatedNumberOfEntry}
-        &nbsp; selected&nbsp;-&nbsp;
-        <button onClick={onConfirmSelectAllAction} type="button">
-          <p>{translatedActionInfo}</p>
-          {actionInfoShape && <i className={`fa fa-${actionInfoShape}`} />}
-        </button>
-      </p>
-    </div>
+    <tr className="deleteRow">
+      <td colSpan={colSpan}>
+        <p>
+          {numberOfSelectedEntries}
+          &nbsp;
+          {numberOfSelectedEntries > 1
+            ? translatedNumberOfEntries
+            : translatedNumberOfEntry}
+          &nbsp; selected&nbsp;-&nbsp;
+          <button onClick={onConfirm} type="button">
+            <p>{translatedAction}</p>
+            {icon && <i className={`fa fa-${icon}`} />}
+          </button>
+        </p>
+      </td>
+    </tr>
   );
 }
 
 ActionCollapse.defaultProps = {
+  icon: 'trash',
   translatedNumberOfEntry: 'entry',
   translatedNumberOfEntries: 'entries',
-  translatedActionInfo: '',
-  actionInfoShape: null,
+  translatedAction: '',
   numberOfSelectedEntries: 0,
-  onConfirmSelectAllAction: () => {},
+  onConfirm: () => {},
 };
 
 ActionCollapse.propTypes = {
-  actionInfoShape: PropTypes.string,
+  colSpan: PropTypes.number.isRequired,
+  icon: PropTypes.string,
   numberOfSelectedEntries: PropTypes.number,
-  onConfirmSelectAllAction: PropTypes.func,
-  translatedActionInfo: PropTypes.string,
+  onConfirm: PropTypes.func,
+  translatedAction: PropTypes.string,
   translatedNumberOfEntries: PropTypes.string,
   translatedNumberOfEntry: PropTypes.string,
 };
