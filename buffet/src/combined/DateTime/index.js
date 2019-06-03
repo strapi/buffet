@@ -18,28 +18,29 @@ import TimePicker from '../../components/TimePicker';
 import Wrapper from './Wrapper';
 
 const UNITS = ['hour', 'minute', 'second'];
+export const getTimeString = time => {
+  const currTime = time || moment();
 
-function DateTime({ name, onChange, value }) {
+  const timeObj = getTimeObject(currTime);
+  const timeString = Object.keys(timeObj)
+    .map(key => (timeObj[key] < 10 ? `0${timeObj[key]}` : timeObj[key]))
+    .join(':');
+
+  return timeString;
+};
+export const getTimeObject = time => {
+  const timeObj = {};
+
+  UNITS.forEach(unit => {
+    timeObj[unit] = time.get(unit);
+  });
+
+  return timeObj;
+};
+
+function DateTime({ name, onChange, value, ...rest }) {
   const [timestamp, setTimestamp] = useState();
-  const getTimeString = time => {
-    const currTime = time || moment();
 
-    const timeObj = getTimeObject(currTime);
-    const timeString = Object.keys(timeObj)
-      .map(key => (timeObj[key] < 10 ? `0${timeObj[key]}` : timeObj[key]))
-      .join(':');
-
-    return timeString;
-  };
-  const getTimeObject = time => {
-    const timeObj = {};
-
-    UNITS.forEach(unit => {
-      timeObj[unit] = time.get(unit);
-    });
-
-    return timeObj;
-  };
   const setTime = time => {
     const [hour, minute, second] = time.split(':');
     const timeObj = {
@@ -56,6 +57,7 @@ function DateTime({ name, onChange, value }) {
     date.set(getTimeObject(newDate));
     date.toISOString();
     date.format();
+
     setTimestamp(date);
 
     onChange({ target: { name, type: 'date', value: date } });
@@ -66,11 +68,12 @@ function DateTime({ name, onChange, value }) {
       const newDate = value._isAMomentObject === true ? value : moment(value);
       setDate(newDate);
     }
-  }, [setDate, value]);
+  }, [value]);
 
   return (
     <Wrapper>
       <DatePicker
+        {...rest}
         name="date"
         onChange={({ target }) => {
           setDate(target.value, timestamp);
@@ -93,6 +96,7 @@ DateTime.defaultProps = {
   ...commonDefaultProps,
   onChange: () => {},
   value: null,
+  withDefaultValue: true,
 };
 
 DateTime.propTypes = {
@@ -103,6 +107,7 @@ DateTime.propTypes = {
     PropTypes.string,
     PropTypes.instanceOf(Date),
   ]),
+  withDefaultValue: PropTypes.bool,
 };
 
 export default DateTime;
