@@ -1,4 +1,5 @@
 import React from 'react';
+import { sortBy as sort } from 'lodash';
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
@@ -48,7 +49,7 @@ const rows = [
     email: 'jim@strapi.io',
     id: 2,
     provider: 'local',
-    username: 'jimminy',
+    username: 'Jimminy',
   },
 ];
 
@@ -134,6 +135,10 @@ function TableStory() {
     translatedAction: 'Delete all',
   };
 
+  const sortedRowsBy = sort(state.rows, [state.sortBy]);
+  const sortedRows =
+    state.sortOrder === 'asc' ? sortedRowsBy : sortedRowsBy.reverse();
+
   return (
     <Presentation title="Table">
       <Table
@@ -163,7 +168,7 @@ function TableStory() {
 
           dispatch({ type });
         }}
-        rows={state.rows}
+        rows={sortedRows}
         sortBy={state.sortBy}
         sortOrder={state.sortOrder}
         withBulkAction
@@ -187,6 +192,10 @@ function TableStory() {
 }
 
 const source = `
+import { Table } from 'buffet';
+import { sortBy as sort } from 'lodash';
+
+
 const headers = [
   {
     name: 'Id',
@@ -311,6 +320,9 @@ function Example() {
     translatedNumberOfEntries: 'entries',
     translatedAction: 'Delete all',
   };
+  const sortedRowsBy = sort(state.rows, [state.sortBy]);
+  const sortedRows =
+    state.sortOrder === 'asc' ? sortedRowsBy : sortedRowsBy.reverse();
 
   return (
     <Table
@@ -341,7 +353,7 @@ function Example() {
 
         dispatch({ type });
       }}
-      rows={state.rows}
+      rows={sortedRows}
       sortBy={state.sortBy}
       sortOrder={state.sortOrder}
       withBulkAction
