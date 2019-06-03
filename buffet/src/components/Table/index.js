@@ -81,7 +81,9 @@ function Table({
                   key={JSON.stringify(row)}
                   headers={headers}
                   onClick={onClickRow}
-                  onSelect={() => onSelect(row, index)}
+                  onSelect={() => {
+                    onSelect(row, index);
+                  }}
                   row={row}
                   rowLinks={rowLinks}
                   withBulkAction={withBulkAction}

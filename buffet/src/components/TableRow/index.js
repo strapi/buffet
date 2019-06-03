@@ -31,7 +31,13 @@ function TableRow({
     >
       {withBulkAction && (
         <td>
-          <Checkbox onChange={onSelect} checked={row._isChecked} />
+          <Checkbox
+            onClick={e => {
+              e.stopPropagation();
+            }}
+            onChange={onSelect}
+            checked={row._isChecked}
+          />
         </td>
       )}
       {displayedCells.map(cellName => {
