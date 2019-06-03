@@ -11,11 +11,24 @@ import StyledTableRow from '../../styled/TableRow';
 import Checkbox from '../../styled/Checkbox';
 import StyledLinks from '../../styled/Links';
 
-function TableRow({ headers, onSelect, row, rowLinks, withBulkAction }) {
+function TableRow({
+  headers,
+  onClick,
+  onSelect,
+  row,
+  rowLinks,
+  withBulkAction,
+}) {
   const displayedCells = headers.map(header => header.value);
 
   return (
-    <StyledTableRow>
+    <StyledTableRow
+      onClick={e => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick(e, row);
+      }}
+    >
       {withBulkAction && (
         <td>
           <Checkbox onChange={onSelect} checked={row._isChecked} />
@@ -37,7 +50,11 @@ function TableRow({ headers, onSelect, row, rowLinks, withBulkAction }) {
               {rowLinks.map(icon => (
                 <button
                   key={icon.icon}
-                  onClick={() => icon.onClick(row)}
+                  onClick={e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    icon.onClick(row);
+                  }}
                   type="button"
                 >
                   <i className={`${icon.icon} link-icon`} />
@@ -52,9 +69,10 @@ function TableRow({ headers, onSelect, row, rowLinks, withBulkAction }) {
 }
 
 TableRow.defaultProps = {
-  headers: {},
+  headers: [],
+  onClick: () => {},
   onSelect: () => {},
-  row: [],
+  row: {},
   rowLinks: [],
   withBulkAction: false,
 };
@@ -67,6 +85,7 @@ TableRow.propTypes = {
       value: PropTypes.string,
     }),
   ),
+  onClick: PropTypes.func,
   onSelect: PropTypes.func,
   // eslint-disable-next-line react/forbid-prop-types
   row: PropTypes.object,

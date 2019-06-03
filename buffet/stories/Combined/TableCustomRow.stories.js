@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
@@ -7,8 +8,45 @@ import { storiesOf } from '@storybook/react';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Table from '../../src/components/Table';
-
+import Row from '../../src/styled/CustomRow';
 import Presentation from '../ui/Presentation';
+
+const CustomRow = ({ row }) => {
+  const { email, id, provider, username } = row;
+
+  return (
+    <Row>
+      <td>
+        <p>{id}</p>
+      </td>
+      <td>
+        <p>{username}</p>
+      </td>
+      <td>
+        <p>{email}</p>
+      </td>
+      <td>
+        <p>{provider}</p>
+      </td>
+      <td>
+        <p>●●●●●●●●</p>
+      </td>
+    </Row>
+  );
+};
+
+CustomRow.defaultProps = {
+  row: {},
+};
+
+CustomRow.propTypes = {
+  row: PropTypes.shape({
+    email: PropTypes.string,
+    id: PropTypes.number,
+    provider: PropTypes.string,
+    username: PropTypes.string,
+  }),
+};
 
 const headers = [
   {
@@ -30,6 +68,7 @@ const headers = [
   {
     name: 'Password',
     value: 'password',
+    isSortEnabled: false,
   },
 ];
 const rows = [
@@ -51,12 +90,35 @@ const rows = [
 function TableStory() {
   return (
     <Presentation title="Table">
-      <Table headers={headers} rows={rows} />
+      <Table headers={headers} customRow={CustomRow} rows={rows} />
     </Presentation>
   );
 }
 
 const source = `
+const CustomRow = ({ row, onSelect }) => {
+  const { email, id, provider, username } = row;
+
+  return (
+    <tr>
+      <td>
+        <p>{id}</p>
+      </td>
+      <td>
+        <p>{username}</p>
+      </td>
+      <td>
+        <p>{email}</p>
+      </td>
+      <td>
+        <p>{provider}</p>
+      </td>
+      <td>
+        <p>●●●●●●●●</p>
+      </td>
+    </tr>
+  );
+};
 const headers = [
   {
     name: 'Id',
@@ -96,12 +158,18 @@ const rows = [
 ];
 
 function Example() {
+
   return (
-    <Table headers={headers} rows={rows} />
+    <Table
+      customRow={CustomRow}
+      headers={headers}
+      rows={rows}
+
+    />
   );
 }
 `;
 
 storiesOf('Custom|Table', module)
   .addDecorator(withStorySource(source))
-  .add('Simple', () => <TableStory />);
+  .add('With Custom row', () => <TableStory />);

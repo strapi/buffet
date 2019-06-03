@@ -34,7 +34,7 @@ ActionCollapse.defaultProps = {
   icon: 'trash',
   translatedNumberOfEntry: 'entry',
   translatedNumberOfEntries: 'entries',
-  translatedAction: '',
+  translatedAction: 'Delete all',
   numberOfSelectedEntries: 0,
   onConfirm: () => {},
 };

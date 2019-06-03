@@ -18,6 +18,7 @@ function Table({
   customRow,
   headers,
   onChangeSort,
+  onClickRow,
   onSelect,
   onSelectAll,
   rows,
@@ -79,6 +80,7 @@ function Table({
                 <TableRow
                   key={JSON.stringify(row)}
                   headers={headers}
+                  onClick={onClickRow}
                   onSelect={() => onSelect(row, index)}
                   row={row}
                   rowLinks={rowLinks}
@@ -103,6 +105,7 @@ Table.defaultProps = {
   customRow: null,
   headers: [],
   onChangeSort: () => {},
+  onClickRow: () => {},
   onSelect: () => {},
   onSelectAll: () => {},
   rows: [],
@@ -131,6 +134,7 @@ Table.propTypes = {
   ),
 
   onChangeSort: PropTypes.func,
+  onClickRow: PropTypes.func,
   onSelect: PropTypes.func,
   onSelectAll: PropTypes.func,
   rowLinks: PropTypes.instanceOf(Array),
