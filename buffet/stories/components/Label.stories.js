@@ -1,64 +1,66 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
-import Label from '../../src/components/Label';
+import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
-const message = () => "I'm a label as function";
+const styles = {
+  h1: {
+    marginBottom: 20,
+  },
+  h2: { marginTop: 18, marginBottom: 20 },
+  spacer: {
+    display: 'block',
+    marginBottom: 41,
+  },
+  p: { fontSize: 14 },
+  spacerCode: {
+    display: 'block',
+    marginBottom: 19,
+  },
+  strong: {
+    marginLeft: -16,
+    fontSize: 13,
+  },
+};
 
 function LabelStory() {
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Label</h1>
-        <section>
-          <div className="row">
-            <div className="col-12">
-              <Label htmlFor="input" message="Input label" />
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>Examples</h2>
-          <div className="row">
-            <div className="col-12">
-              <Label htmlFor="input" message="I'm a label as string" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <Label htmlFor="input">
-                <span>I&apos;m a label as child</span>
-              </Label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <Label htmlFor="input" message={message} />
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+    <>
+      <Presentation
+        title="Label"
+        description="The Label can handle different type of messages:"
+      />
+      <section style={{ marginLeft: 16, marginRight: 16, paddingTop: 7 }}>
+        <strong style={styles.strong}>Using string:</strong>
+        <span style={styles.spacerCode} />
+        <Pre language="javascript">
+          {`
+<Label htmlFor="input" message="Label" />
+`}
+        </Pre>
+        <span style={{ ...styles.spacer }} />
+        <strong style={styles.strong}>Using Children:</strong>
+        <span style={styles.spacerCode} />
+        <Pre language="Pre">
+          {`
+import { FormattedMessage } from 'react-intl':
+import { Label, InputText } from 'buffetjs';
+
+function Example() {
+  return (
+    <>
+      <Label htmlFor="input">Some Label</Label>
+      <InputText name="input" />
+    </>
+  );
+}
+`}
+        </Pre>
+      </section>
+    </>
   );
 }
 
-const source = `
-import { Label } from 'buffet'; 
-
-// Label string
-<Label htmlFor="input" message="I'm a label as string" />
-
-// Label node
-<Label htmlFor="input">
-  <span>I'm a label as child</span>
-</Label>
-
-// Label function
-const message = () => "I'm a label as function";
-<Label htmlFor="input" message={message} />`;
-
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Label', () => LabelStory());
+storiesOf('Components', module).add('Label', () => LabelStory());

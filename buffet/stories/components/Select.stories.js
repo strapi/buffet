@@ -7,7 +7,7 @@ import Select from '../../src/components/Select';
 import Presentation from '../ui/Presentation';
 
 function SelectStory() {
-  const [val, setValue] = useState('');
+  const [val, setValue] = useState('Second option');
 
   const defaultProps = {
     name: 'select',
@@ -15,7 +15,10 @@ function SelectStory() {
   };
 
   return (
-    <Presentation title="Select">
+    <Presentation
+      title="Select"
+      description="Checkout the Story to see how it works."
+    >
       <Select
         {...defaultProps}
         onChange={({ target: { value } }) => setValue(value)}
@@ -27,20 +30,22 @@ function SelectStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { Select } from 'buffet';
+import { Select } from 'buffetjs';
 
-function SelectStory() {
-  const [val, setValue] = useState(');
+function Example() {
+  const [val, setValue] = useState('first option');
   const options = ['first option', 'second option'];
 
-  <Select
-    name="select"
-    onChange={({ target: { value } }) => {
-      setValue(value);
-    }}
-    options={options}
-    value={val}
-  />
+  return (
+    <Select
+      name="select"
+      onChange={({ target: { value } }) => {
+        setValue(value);
+      }}
+      options={options}
+      value={val}
+    />
+  );
 }`;
 
 storiesOf('Components', module)

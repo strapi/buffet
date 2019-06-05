@@ -7,14 +7,15 @@ import moment from 'moment';
 import Presentation from '../ui/Presentation';
 
 import DateTime from '../../src/combined/DateTime';
-import Label from '../../src/components/Label';
 
 function DateTimeStory() {
   const [state, setValue] = useState(moment());
 
   return (
-    <Presentation title="DateTime">
-      <Label htmlFor="datetime">Enter a date</Label>
+    <Presentation
+      title="DateTime"
+      description="Checkout the Story to see how it works."
+    >
       <DateTime
         name="datetime"
         onChange={({ target: { value } }) => {
@@ -29,13 +30,12 @@ function DateTimeStory() {
 const source = `
 import React from 'react';
 import moment from 'moment';
-import { DateTime, Label } from 'buffet';
+import { DateTime } from 'buffetjs';
 
 function Example() {
   const [state, setValue] = useState(moment());
 
   return (
-    <Label htmlFor="datetime">Enter a date</Label>
     <DateTime
       name="datetime"
       onChange={({ target: { value } }) => {

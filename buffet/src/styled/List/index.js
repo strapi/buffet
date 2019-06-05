@@ -12,6 +12,8 @@ const List = styled.div`
   background: white;
   width: 100%;
   overflow-x: scroll;
+  position: relative;
+  border-radius: 3px;
   i {
     display: inline-block;
     text-rendering: auto;
@@ -21,6 +23,7 @@ const List = styled.div`
     font-size: 13px;
     &.link-icon {
       padding-left: 2.25rem;
+      font-weight: 100;
     }
   }
   table {
@@ -75,7 +78,7 @@ const List = styled.div`
   }
   @media (min-width: ${sizes.tablet}) {
     width: 100%;
-    overflow-x: inherit;
+    overflow-x: auto;
   }
 `;
 

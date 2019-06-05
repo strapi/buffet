@@ -5,6 +5,7 @@ import { radios } from '@storybook/addon-knobs';
 import { withStorySource } from '@storybook/addon-storysource';
 
 import Input from '../../src/components/InputText';
+import Presentation from '../ui/Presentation';
 
 function InputCompo(props) {
   const [val, setValue] = useState('');
@@ -28,26 +29,24 @@ function InputTextStory() {
     password: 'password',
   };
   const type = radios('Types', types, 'text');
-
   const defaultProps = {
     placeholder: 'Tap something…',
     name: 'input',
   };
 
   return (
-    <div className="story">
-      <div className="container">
-        <h1>Input Text</h1>
+    <>
+      <Presentation
+        title="InputText"
+        description="Play with the knobs to interact with the component."
+      >
         <section>
-          <h2>Play with the knobs to interact with the compo</h2>
-          <div className="row">
-            <div className="col-12">
-              <InputCompo {...defaultProps} type={type} />
-            </div>
+          <div>
+            <InputCompo type={type} {...defaultProps} />
           </div>
         </section>
-        <section>
-          <h2>Examples</h2>
+        <section style={{ marginTop: 30 }}>
+          <h2 style={{ marginBottom: 10 }}>Examples</h2>
           <div className="row">
             <div className="col-6">
               <InputCompo name="lastname" placeholder="Lastname" type="text" />
@@ -73,8 +72,8 @@ function InputTextStory() {
             </div>
           </div>
         </section>
-      </div>
-    </div>
+      </Presentation>
+    </>
   );
 }
 
@@ -87,6 +86,7 @@ function Example(props) {
 
   return (
     <Input
+      name="input"
       onChange={({ target: { value } }) => {
         setValue(value);
       }}

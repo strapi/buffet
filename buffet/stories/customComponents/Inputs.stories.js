@@ -102,54 +102,18 @@ const form = {
 };
 
 function InputStory() {
-  // const types = {
-  //   checkbox: 'checkbox',
-  //   date: 'date',
-  //   email: 'email',
-  //   enum: 'enum',
-  //   number: 'number',
-  //   password: 'password',
-  //   search: 'search',
-  //   select: 'select',
-  //   text: 'text',
-  //   textarea: 'textarea',
-  //   time: 'time',
-  //   toggle: 'bool',
-  // };
-  // const type = radios('Types', types, 'text');
-  // const errors = {
-  //   required: 'required',
-  //   uppercase: 'uppercase',
-  //   min: 'email',
-  // };
-
-  // const error = radios('Error', errors, 'text');
-  const description =
-    'This input is very usefull when you want to build dynamic form.';
   const [state, setState] = React.useState({});
   const handleChange = ({ target: { name, value } }) => {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
 
   return (
-    <Presentation title="Input with Errors" description={description}>
+    <Presentation
+      title="Input with Errors"
+      description="Checkout the Story to see how it works."
+    >
       <>
-        {/* <section style={{ marginTop: 29 }}>
-          <h2 style={{ marginBottom: 36 }}>
-            Play with the knobs to interact with the component.
-          </h2>
-          <div>
-            <Inputs
-              name="input"
-              type={type}
-              {...form[type]}
-              error={error}
-              value={state.input}
-              onChange={handleChange}
-            />
-          </div>
-        </section> */}
-        <section style={{ marginTop: 11 }}>
+        <section style={{ marginTop: 29 }}>
           <h2 style={{ marginBottom: 36 }}>Example</h2>
           <form onSubmit={() => {}}>
             <div className="row">

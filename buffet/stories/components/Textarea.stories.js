@@ -15,7 +15,10 @@ function TextareaStory() {
   };
 
   return (
-    <Presentation title="Textarea">
+    <Presentation
+      title="Textarea"
+      description="Checkout the Story to see how it works."
+    >
       <Textarea
         {...defaultProps}
         onChange={({ target: { value } }) => setValue(value)}
@@ -29,7 +32,7 @@ const source = `
 import React, { useState } from 'react';
 import { Textarea } from 'buffet';
 
-function TextareaStory() {
+function Example() {
   const [val, setValue] = useState('');
 
   return (

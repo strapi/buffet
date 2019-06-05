@@ -11,8 +11,9 @@ const Wrapper = styled.div`
   code {
     padding: 11px;
     padding-top: 0;
-    background-color: rgb(40, 44, 52);
     border-radius: 3px !important;
+    background-color: rgb(40, 44, 52);
+    font-size: 11px;
   }
 `;
 

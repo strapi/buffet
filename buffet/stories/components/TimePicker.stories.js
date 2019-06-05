@@ -16,7 +16,10 @@ function TimePickerStory() {
   };
 
   return (
-    <Presentation title="TimePicker">
+    <Presentation
+      title="TimePicker"
+      description="Checkout the Story to see how it works."
+    >
       <TimePicker
         {...defaultProps}
         onChange={({ target: { value } }) => {
@@ -35,8 +38,9 @@ function TimePickerStory() {
 const source = `
 import React, { useState } from 'react';
 import { TimePicker } from 'buffet';
+import moment from 'moment';
 
-function TimePickerStory() {
+function Example() {
   const [val, setValue] = useState('');
 
   return (
@@ -44,6 +48,7 @@ function TimePickerStory() {
       name="time"
       onChange={({ target: { value } }) => {
         const hour = moment(value, 'HH:mm:ss');
+
         hour.toISOString();
         hour.format();
         setValue(value);

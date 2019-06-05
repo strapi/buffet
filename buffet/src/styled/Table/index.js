@@ -12,18 +12,21 @@ import sizes from '../../assets/styles/sizes';
 const Table = styled.div`
   background: white;
   width: 100%;
-  overflow-x: scroll;
   position: relative;
+  overflow-x: scroll;
+  border-radius: 3px;
   background-color: ${colors.greyHover};
+  box-shadow: 0 2px 4px #e3e9f3;
   table,
   .deleteRow {
     min-width: 500px;
   }
   table {
-    border-collapse: collapse;
     width: 100%;
     min-width: 500px;
     font-family: 'Lato';
+    overflow: hidden;
+    border-collapse: collapse;
     &.rowsSelected {
       tbody {
         &::before {
@@ -103,6 +106,10 @@ const Table = styled.div`
         white-space: nowrap;
       }
     }
+  }
+  @media (min-width: ${sizes.tablet}) {
+    width: 100%;
+    overflow-x: auto;
   }
 `;
 

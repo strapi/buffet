@@ -21,7 +21,10 @@ function EnumerationStory() {
   };
 
   return (
-    <Presentation title="Enumeration">
+    <Presentation
+      title="Enumeration"
+      description="Checkout the Story to see how it works"
+    >
       <Enumeration
         {...defaultProps}
         onChange={({ target: { value } }) => setValue(value)}
@@ -34,7 +37,7 @@ function EnumerationStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { Enumeration } from 'buffet';
+import { Enumeration } from 'buffetjs';
 
 function EnumerationStory() {
   const [val, setValue] = useState('option1');

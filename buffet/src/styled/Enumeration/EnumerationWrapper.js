@@ -21,14 +21,14 @@ const EnumerationWrapper = styled.div`
     display: inline-block;
     height: 100%;
     width: fit-content;
-    color: ${colors.black};
+    color: ${colors.brightGrey};
     span {
       display: inline-block;
       padding: 0 1.5rem;
       line-height: 32px;
       margin: auto;
+      letter-spacing: 0.65px;
       font-size: 12px;
-      letter-spacing: 0.65;
       text-transform: uppercase;
     }
     &:not(:last-of-type) {

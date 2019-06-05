@@ -1,17 +1,18 @@
 import React from 'react';
 /* eslint-disable */
 import { storiesOf } from '@storybook/react';
+import 'react-highlight/node_modules/highlight.js/styles/tomorrow-night-bright.css';
 import Bash from '../ui/Bash';
 import Pre from '../ui/Pre';
 
 const styles = {
   h1: {
-    marginBottom: 20,
+    marginBottom: 35,
   },
-  h2: { marginTop: 18, marginBottom: 20 },
+  h2: { marginTop: 30, marginBottom: 18 },
   spacer: {
     display: 'block',
-    marginBottom: 17,
+    marginBottom: 27,
   },
   p: { fontSize: 14 },
   spacerCode: {

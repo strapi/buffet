@@ -21,11 +21,11 @@ const TimeList = styled.ul`
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  transition: all 0.3s 300ms linear;
+  transition: all 0.2s ease-out;
   visibility: hidden;
   &.displayed {
     height: ${sizes.timepicker.list.height};
-    transition: all 0.25s ease-out;
+    transition: all 0.2s ease-out;
     visibility: visible;
     border-color: ${colors.lightGrey};
   }

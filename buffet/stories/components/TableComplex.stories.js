@@ -140,7 +140,10 @@ function TableStory() {
     state.sortOrder === 'asc' ? sortedRowsBy : sortedRowsBy.reverse();
 
   return (
-    <Presentation title="Table">
+    <Presentation
+      title="Table"
+      description="Checkout the Story to see how it works."
+    >
       <Table
         headers={state.headers}
         bulkActionProps={bulkActionProps}
@@ -192,7 +195,7 @@ function TableStory() {
 }
 
 const source = `
-import { Table } from 'buffet';
+import { Table } from 'buffetjs';
 import { sortBy as sort } from 'lodash';
 
 
@@ -376,6 +379,6 @@ function Example() {
 }
 `;
 
-storiesOf('Custom|Table', module)
+storiesOf('Components|Table', module)
   .addDecorator(withStorySource(source))
   .add('Complex', () => <TableStory />);

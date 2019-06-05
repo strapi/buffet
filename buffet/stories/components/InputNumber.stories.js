@@ -10,7 +10,10 @@ function InputNumberStory() {
   const [val, setValue] = useState(null);
 
   return (
-    <Presentation title="Number">
+    <Presentation
+      title="Number"
+      description="Checkout the Story to see how it works"
+    >
       <InputNumber
         autoFocus
         name="inputNumber"
@@ -25,18 +28,20 @@ function InputNumberStory() {
 
 const source = `
 import React, { useState } from 'react';
-import { InputNumber } from 'buffet';
+import { InputNumber } from 'buffetjs';
 
 function InputNumberStory() {
   const [val, setValue] = useState(null);
 
-  <InputNumber
-    name="input"
-    onChange={({ target: { value } }) => {
-      setValue(value);
-    }}
-    value={val}
-  />
+  return (
+    <InputNumber
+      name="input"
+      onChange={({ target: { value } }) => {
+        setValue(value);
+      }}
+      value={val}
+    />
+  );
 }`;
 
 storiesOf('Components', module)

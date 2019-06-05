@@ -7,6 +7,7 @@ const Global = createGlobalStyle`
   font-family: Lato !important;
   padding-top: 12px;
   section {
+    font-size: 13px;
     padding-bottom: ${sizes.margin * 0.9}px;
   }
   section div {

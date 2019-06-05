@@ -15,3 +15,4 @@ export { default as Label } from './components/Label';
 export { default as Select } from './components/Select';
 export { default as Textarea } from './components/Textarea';
 export { default as Toggle } from './components/Toggle';
+export { default as CustomList } from './combined/List';
