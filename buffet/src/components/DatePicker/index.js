@@ -50,7 +50,7 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
-    const { displayFormat, id } = this.props;
+    const { displayFormat, id, name } = this.props;
     const { date, isFocused } = this.state;
 
     return (
@@ -58,7 +58,7 @@ class DatePicker extends React.PureComponent {
         <SingleDatePicker
           date={date}
           focused={isFocused}
-          id={id || 'date'}
+          id={id || name}
           displayFormat={displayFormat}
           numberOfMonths={1}
           onFocusChange={this.handleFocusChange}

@@ -93,7 +93,7 @@ describe('<Table />', () => {
     expect(collapse.prop('colSpan')).toBe(3);
   });
 
-  it('Should not display the ActionCollapse if one of the row is not checked', () => {
+  it('Should display the ActionCollapse if one of the row is not checked', () => {
     const headers = [
       {
         value: 'test',
@@ -122,7 +122,8 @@ describe('<Table />', () => {
     );
     const collapse = wrapper.find(ActionCollapse);
 
-    expect(collapse).toHaveLength(0);
+    expect(collapse).toHaveLength(1);
+    expect(collapse.prop('numberOfSelectedEntries')).toBe(1);
   });
 
   it('Should not display the ActionCollapse if the withBulkAction is false', () => {

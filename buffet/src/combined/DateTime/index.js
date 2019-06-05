@@ -39,7 +39,7 @@ export const getTimeObject = time => {
 };
 
 function DateTime({ name, onChange, value, ...rest }) {
-  const [timestamp, setTimestamp] = useState();
+  const [timestamp, setTimestamp] = useState(moment());
 
   const setTime = time => {
     const [hour, minute, second] = time.split(':');

@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import colors from '../../assets/styles/colors';
 
 const EnumerationWrapper = styled.div`
+  display: flex;
   width: fit-content;
   height: 34px;
   border: 1px solid ${colors.lightGrey};

@@ -35,7 +35,7 @@ function Table({
   }
 
   const areAllEntriesSelected =
-    rows.length > 0 && rows.every(row => row._isChecked === true);
+    rows.length > 0 && rows.some(row => row._isChecked === true);
   const shouldDisplayEmptyRow = rows.length === 0;
 
   return (
@@ -55,7 +55,9 @@ function Table({
           {withBulkAction && areAllEntriesSelected && (
             <ActionCollapse
               colSpan={colSpan}
-              numberOfSelectedEntries={rows.length}
+              numberOfSelectedEntries={
+                rows.filter(row => row._isChecked === true).length
+              }
               {...bulkActionProps}
             />
           )}

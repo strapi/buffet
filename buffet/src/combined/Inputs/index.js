@@ -98,6 +98,7 @@ function Inputs({
                   type: 'SET_CHECK',
                 });
               }
+
               dispatch({
                 type: 'SET_ERROR',
                 error: null,
