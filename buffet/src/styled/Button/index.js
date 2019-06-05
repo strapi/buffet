@@ -58,6 +58,8 @@ const Button = styled.button`
       height: ${sizes.button.height.small};
     `}}
 
+
+
   ${props =>
     props.color === 'cancel' &&
     css`
@@ -105,6 +107,23 @@ const Button = styled.button`
         vertical-align: middle;
       }
     `}
+
+    ${props =>
+    props.color === 'secondary' &&
+      props.icon &&
+      css`
+        &::before {
+          content: '\f067';
+          display: inline-block;
+          height: ${sizes.button.height.small};
+          margin-right: 8px;
+          line-height: ${sizes.button.height.small};
+          vertical-align: middle;
+          font-family: 'FontAwesome';
+          font-weight: 600;
+          font-size: 1.3rem;
+        }
+      `}
 `;
 
 Button.defaultProps = {

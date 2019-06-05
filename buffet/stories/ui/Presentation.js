@@ -5,7 +5,7 @@ function Presentation({ children, description, title }) {
   return (
     <div className="story">
       <h1 style={{ marginBottom: 15 }}>{title}</h1>
-      <p style={{ fontSize: 14 }}>{description}&nbsp;</p>
+      <p style={{ fontSize: 14, marginBottom: 28 }}>{description}&nbsp;</p>
       {children}
     </div>
   );

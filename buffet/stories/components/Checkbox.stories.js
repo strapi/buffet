@@ -14,19 +14,41 @@ function CheckboxStory() {
   };
 
   return (
-    <Presentation title="Checkbox">
-      <Checkbox
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-      />
+    <Presentation
+      title="Checkbox"
+      description="Checkout the Story to see how it works"
+    >
+      <div style={{ paddingTop: 7 }}>
+        <Checkbox
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
     </Presentation>
   );
 }
 
 const source = `
-import { Checkbox } from 'buffet';
-<Checkbox message="Check me" value={false} name="checkbox" />
+import { Checkbox } from 'buffetjs';
+
+function Example() {
+  const [val, setValue] = React.useState(false);
+  const defaultProps = {
+    message: 'Check me',
+    name: 'checkbox',
+  };
+
+  return (
+    <>
+      <Checkbox
+        {...defaultProps}
+        onChange={({ target: { value } }) => setValue(value)}
+        value={val}
+      />
+    </>
+  );
+}
 `;
 
 storiesOf('Components', module)

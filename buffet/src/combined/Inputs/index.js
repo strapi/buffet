@@ -87,9 +87,10 @@ function Inputs({
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
-          <Label htmlFor={name}>{label}</Label>
+          {type !== 'checkbox' && <Label htmlFor={name}>{label}</Label>}
           <InputComponent
             {...rest}
+            message={label} // Only for the checkbox
             name={name}
             onBlur={onBlur}
             onChange={e => {

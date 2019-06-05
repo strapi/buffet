@@ -71,7 +71,7 @@ class DatePicker extends React.PureComponent {
 
 DatePicker.defaultProps = {
   ...uncontrolledDefaultProps,
-  displayFormat: 'MMMM D, YY',
+  displayFormat: 'MMMM DD, YY',
   id: 'date',
   value: null,
   withDefaultValue: true,

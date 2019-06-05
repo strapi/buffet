@@ -2,6 +2,7 @@ export { default as Button } from './components/Button';
 export { default as DatePicker } from './components/DatePicker';
 export { default as DateTime } from './combined/DateTime';
 export { default as Enumeration } from './components/Enumeration';
+export { default as Fonts } from './styled/Fonts';
 export { default as GlobalStyle } from './styled/GlobalStyle';
 export { default as NavTabs } from './components/NavTabs';
 export { default as List } from './components/List';

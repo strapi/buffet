@@ -11,6 +11,7 @@ const form = {
     styleName: 'col-6',
     description: 'Select to set this field as required',
     label: 'Required field',
+    message: 'Check me',
     type: 'checkbox',
   },
   text: {

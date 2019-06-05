@@ -3,12 +3,13 @@ import React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { themes } from '@storybook/theming';
-import { createGlobalStyle } from 'styled-components';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+import 'react-highlight/node_modules/highlight.js/styles/tomorrow-night-bright.css';
 
 import GlobalStyle from '../src/styled/GlobalStyle';
+import Global from '../stories/ui/Global';
+import Fonts from '../src/styled/Fonts';
 
 const sizes = {
   tablet: '768px',
@@ -52,37 +53,6 @@ const sizes = {
 
 export default sizes;
 
-const Global = createGlobalStyle`
-// Storybook
-.story {
-  padding-top: 12px;
-  section {
-    padding-bottom: ${sizes.margin * 0.9}px;
-  }
-  section div {
-    &.row {
-      margin-bottom: ${sizes.margin * 1.8}px;
-    }
-    &.btn-wrapper {
-      display: inline-block;
-      width: fit-content;
-      margin-bottom: ${sizes.margin * 1.8}px;
-      margin-right: ${sizes.margin * 2}px;
-      height: ${sizes.button.height.large};
-    }
-  }
-  pre {
-    background-color: #f6f8fa;
-    border-radius: 3px;
-    font-size: 85%;
-    line-height: 1.45;
-    overflow: auto;
-    padding: 16px;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-}
-`;
-
 addParameters({
   options: {
     theme: themes.dark,
@@ -96,6 +66,7 @@ addDecorator(withKnobs);
 addDecorator(story => (
   <>
     <GlobalStyle />
+    <Fonts />
     <Global />
     {story()}
   </>

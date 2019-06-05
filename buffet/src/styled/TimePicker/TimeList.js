@@ -13,7 +13,7 @@ const TimeList = styled.ul`
   height: 0;
   font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: ${sizes.input.fontSize};
   color: ${colors.greyIconColor};
   border: 1px solid transparent;
   list-style: none;
