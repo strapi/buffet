@@ -4,11 +4,11 @@ import React from 'react';
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Table from '../../src/components/Table';
 
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 const headers = [
   {
@@ -41,7 +41,7 @@ const rows = [
     username: 'Soup',
   },
   {
-    email: 'jim@strapi.io',
+    email: 'john@strapi.io',
     id: 2,
     provider: 'local',
     username: 'jimminy',
@@ -54,7 +54,10 @@ function TableStory() {
       title="Table"
       description="Checkout the Story to see how it works."
     >
-      <Table headers={headers} rows={rows} />
+      <div style={{ paddingTop: 3, marginBottom: 21 }}>
+        <Table headers={headers} rows={rows} />
+      </div>
+      <Pre>{source}</Pre>
     </Presentation>
   );
 }
@@ -93,10 +96,10 @@ const rows = [
     username: 'Soup',
   },
   {
-    email: 'jim@strapi.io',
+    email: 'john@strapi.io',
     id: 2,
     provider: 'local',
-    username: 'jimminy',
+    username: 'john',
   },
 ];
 
@@ -107,6 +110,4 @@ function Example() {
 }
 `;
 
-storiesOf('Components|Table', module)
-  .addDecorator(withStorySource(source))
-  .add('Simple', () => <TableStory />);
+storiesOf('Components|Table', module).add('Simple', () => <TableStory />);

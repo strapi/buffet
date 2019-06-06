@@ -72,6 +72,7 @@ function ListStory() {
   };
 
   const title = text('Title', '2 Content Types are available');
+  const subtitle = text('Subtitle', 'Configure the specific settings');
   const buttonProps = {
     color: 'secondary',
     icon: true,
@@ -141,6 +142,7 @@ function ListStory() {
 
   const initProps = {
     title,
+    subtitle,
     button,
   };
 

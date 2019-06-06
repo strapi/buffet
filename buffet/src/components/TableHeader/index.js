@@ -57,7 +57,7 @@ function TableHeader({
                 });
               }}
             >
-              <p>
+              <p className={isSortEnabled ? 'clickable' : ''}>
                 {name}
                 {shouldDisplaySort && (
                   <i className={`fa fa-sort-${sortOrder || 'asc'}`} />

@@ -10,13 +10,12 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const Table = styled.div`
-  background: white;
   width: 100%;
   position: relative;
   overflow-x: scroll;
   border-radius: 3px;
-  background-color: ${colors.greyHover};
   box-shadow: 0 2px 4px #e3e9f3;
+  background: white;
   table,
   .deleteRow {
     min-width: 500px;
@@ -38,15 +37,14 @@ const Table = styled.div`
     }
   }
   .deleteRow {
-    // width: 100%;
     height: ${sizes.table.deleteRow.height};
-    // position: absolute;
     left: 0;
     top: ${sizes.table.header.height};
     padding: 0 25px;
     font-size: 1.3rem;
     line-height: ${sizes.table.deleteRow.height};
     background-color: ${colors.greyHover};
+    font-weight: 600;
     button {
       border: 0;
       padding: 0;
@@ -68,8 +66,8 @@ const Table = styled.div`
     padding-right: 2.5em;
     text-align: left;
     td {
-      padding: 0 25px;
       font-size: 1.3rem;
+      padding: 0 25px;
       &.checkCell {
         width: 50px;
       }
@@ -81,29 +79,58 @@ const Table = styled.div`
       font-weight: bold;
       text-transform: capitalize;
       td {
-        height: ${sizes.table.header.height};
         background-color: ${colors.greyHeader};
+        height: ${sizes.table.header.height};
         p {
           position: relative;
           padding-right: ${sizes.margin * 1.4}px;
           width: fit-content;
+          line-height: normal;
+          &.clickable {
+            cursor: pointer;
+          }
         }
         i {
           position: absolute;
-          top: -${sizes.margin * 0.2}px;
+          top: 0;
           right: 0;
+          line-height: 18px;
+          &.fa-sort-asc {
+            top: 4px;
+          }
+          &.fa-sort-desc {
+            top: -${sizes.margin * 0.2}px;
+          }
         }
       }
     }
   }
   tbody {
-    background-color: white;
+    background-color: ${colors.greyHover};
+    color: ${colors.blueTxt};
+    tr {
+      border-bottom: 1px solid ${colors.greySeparator};
+      background-color: white;
+      cursor: pointer;
+      button {
+        padding-bottom: 0;
+      }
+      &:hover {
+        background-color: white;
+        background-color: ${colors.greyHover};
+      }
+      &:not(.deleteRow) {
+        td {
+          height: ${sizes.table.row.height};
+        }
+      }
+    }
     td {
-      height: 59px;
       p {
         overflow-x: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        line-height: 16px;
       }
     }
   }

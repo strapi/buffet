@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isObject } from 'lodash';
-import StyledTableRow from '../../styled/TableRow';
 import Checkbox from '../../styled/Checkbox';
 import StyledLinks from '../../styled/Links';
 
@@ -22,7 +21,7 @@ function TableRow({
   const displayedCells = headers.map(header => header.value);
 
   return (
-    <StyledTableRow
+    <tr
       onClick={e => {
         e.preventDefault();
         e.stopPropagation();
@@ -70,7 +69,7 @@ function TableRow({
           </div>
         </td>
       )}
-    </StyledTableRow>
+    </tr>
   );
 }
 

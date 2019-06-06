@@ -68,6 +68,8 @@ function Table({
           )}
           {!shouldDisplayEmptyRow &&
             rows.map((row, index) => {
+              const key = row.id || `key${index}`;
+
               if (customRow) {
                 const Row = customRow;
 
@@ -80,7 +82,7 @@ function Table({
 
               return (
                 <TableRow
-                  key={JSON.stringify(row)}
+                  key={key}
                   headers={headers}
                   onClick={onClickRow}
                   onSelect={() => {

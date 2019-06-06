@@ -19,24 +19,26 @@ const Toggle = styled.input`
   margin: 0;
   opacity: 0;
   & + span {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
     background-image: ${colors.orangeGradient};
-    box-shadow: inset -1px 1px 3px ${colors.lightGreyAlpha};
     color: ${colors.white};
+    & + span {
+      color: ${colors.greyToggle};
+      background: white;
+    }
   }
   &:not(:checked) + span {
     font-weight: 800;
   }
   &:checked + span {
-    color: ${colors.black};
-    background: transparent;
+    color: ${colors.greyToggle};
+    background: white;
     & + span {
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
       background-image: ${colors.blueGradient};
       color: ${colors.white};
-      box-shadow: inset 1px 1px 3px ${colors.lightGreyAlpha};
       font-weight: 800;
     }
   }

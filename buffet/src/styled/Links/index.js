@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import colors from '../../assets/styles/colors';
 
 const Links = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const Links = styled.div`
     background: transparent;
     border: 0;
     outline: 0;
+    color: ${colors.blueTxt};
   }
 `;
 

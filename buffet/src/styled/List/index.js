@@ -9,11 +9,12 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const List = styled.div`
-  background: white;
   width: 100%;
-  overflow-x: scroll;
   position: relative;
+  overflow-x: scroll;
   border-radius: 3px;
+  box-shadow: 0 2px 4px #e3e9f3;
+  background: white;
   i {
     display: inline-block;
     text-rendering: auto;
@@ -44,6 +45,7 @@ const List = styled.div`
     }
   }
   tbody {
+    color: ${colors.blueTxt};
     tr {
       height: 5.4rem;
       &::before {
@@ -53,8 +55,8 @@ const List = styled.div`
         color: transparent;
         background-color: transparent;
         position: absolute;
-        left: ${sizes.margin * 2.8}px;
-        width: calc(100% - ${sizes.margin * 6.4}px);
+        left: ${sizes.margin * 2}px;
+        width: calc(100% - ${sizes.margin * 4}px);
         height: 1px;
         margin-top: -${sizes.margin * 0.1}px;
       }

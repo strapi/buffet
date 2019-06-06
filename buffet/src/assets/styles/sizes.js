@@ -32,10 +32,13 @@ const sizes = {
   },
   table: {
     header: {
-      height: '41px',
+      height: '36px',
+    },
+    row: {
+      height: '63px',
     },
     deleteRow: {
-      height: '37px',
+      height: '36px',
     },
   },
 };

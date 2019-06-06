@@ -5,10 +5,10 @@ import { sortBy as sort } from 'lodash';
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Table from '../../src/components/Table';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 const headers = [
   {
@@ -46,7 +46,7 @@ const rows = [
     username: 'Soup',
   },
   {
-    email: 'jim@strapi.io',
+    email: 'john@strapi.io',
     id: 2,
     provider: 'local',
     username: 'Jimminy',
@@ -144,52 +144,55 @@ function TableStory() {
       title="Table"
       description="Checkout the Story to see how it works."
     >
-      <Table
-        headers={state.headers}
-        bulkActionProps={bulkActionProps}
-        onChangeSort={({
-          sortBy,
-          firstElementThatCanBeSorted,
-          isSortEnabled,
-        }) => {
-          if (isSortEnabled) {
-            dispatch({
-              type: 'CHANGE_SORT',
-              sortBy,
-              nextElement: firstElementThatCanBeSorted,
-            });
-          }
-        }}
-        onClickRow={(e, data) => {
-          alert(`You have just clicked on ${data.username} row`);
-        }}
-        onSelect={(row, index) => {
-          dispatch({ type: 'SELECT_ROW', row, index });
-        }}
-        onSelectAll={() => {
-          const type = areAllEntriesSelected ? 'UNSELECT_ALL' : 'SELECT_ALL';
+      <div style={{ paddingTop: 3, marginBottom: 21 }}>
+        <Table
+          headers={state.headers}
+          bulkActionProps={bulkActionProps}
+          onChangeSort={({
+            sortBy,
+            firstElementThatCanBeSorted,
+            isSortEnabled,
+          }) => {
+            if (isSortEnabled) {
+              dispatch({
+                type: 'CHANGE_SORT',
+                sortBy,
+                nextElement: firstElementThatCanBeSorted,
+              });
+            }
+          }}
+          onClickRow={(e, data) => {
+            alert(`You have just clicked on ${data.username} row`);
+          }}
+          onSelect={(row, index) => {
+            dispatch({ type: 'SELECT_ROW', row, index });
+          }}
+          onSelectAll={() => {
+            const type = areAllEntriesSelected ? 'UNSELECT_ALL' : 'SELECT_ALL';
 
-          dispatch({ type });
-        }}
-        rows={sortedRows}
-        sortBy={state.sortBy}
-        sortOrder={state.sortOrder}
-        withBulkAction
-        rowLinks={[
-          {
-            icon: 'fa fa-pencil',
-            onClick: data => {
-              alert(`Do you want to edit ${data.username}?`);
+            dispatch({ type });
+          }}
+          rows={sortedRows}
+          sortBy={state.sortBy}
+          sortOrder={state.sortOrder}
+          withBulkAction
+          rowLinks={[
+            {
+              icon: 'fa fa-pencil',
+              onClick: data => {
+                alert(`Do you want to edit ${data.username}?`);
+              },
             },
-          },
-          {
-            icon: 'fa fa-trash',
-            onClick: data => {
-              alert(`Do you want to delete ${data.username}?`);
+            {
+              icon: 'fa fa-trash',
+              onClick: data => {
+                alert(`Do you want to delete ${data.username}?`);
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      </div>
+      <Pre>{source}</Pre>
     </Presentation>
   );
 }
@@ -235,7 +238,7 @@ const rows = [
     username: 'Soup',
   },
   {
-    email: 'jim@strapi.io',
+    email: 'john@strapi.io',
     id: 2,
     provider: 'local',
     username: 'jimminy',
@@ -379,6 +382,4 @@ function Example() {
 }
 `;
 
-storiesOf('Components|Table', module)
-  .addDecorator(withStorySource(source))
-  .add('Complex', () => <TableStory />);
+storiesOf('Components|Table', module).add('Complex', () => <TableStory />);
