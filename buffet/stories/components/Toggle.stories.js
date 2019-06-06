@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
-
 import Toggle from '../../src/components/Toggle';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function ToggleStory() {
   const [val, setValue] = useState(false);
@@ -15,21 +14,23 @@ function ToggleStory() {
   };
 
   return (
-    <Presentation title="Toggle">
-      <Toggle
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+    <Presentation
+      title="Toggle"
+      description="Similar to the Checkbox it returns only true or false."
+    >
+      <div style={{ marginBottom: 23 }}>
+        <Toggle
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
+      <Pre>
+        {`
 import React, { useState } from 'react';
 import { Toggle } from 'buffet';
 
-function ToggleStory() {
+function Example() {
   const [val, setValue] = useState(false);
 
   return (
@@ -39,8 +40,11 @@ function ToggleStory() {
       value={val}
     />
   );
-}`;
+}
+        `}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Toggle', () => <ToggleStory />);
+storiesOf('Components', module).add('Toggle', () => <ToggleStory />);

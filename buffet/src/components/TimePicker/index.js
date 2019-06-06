@@ -100,6 +100,7 @@ function TimePicker(props) {
   const { name, onChange, seconds, value } = props;
   const [inputVal, setInputVal] = useState(seconds ? value : short(value));
   const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef();
   const wrapperRef = useRef();
   const listRefs = getOptions().reduce((acc, curr) => {
     acc[curr.value] = useRef();
@@ -160,6 +161,7 @@ function TimePicker(props) {
   useShortcutEffect('enter', () => {
     if (isOpen) {
       setIsOpen(false);
+      inputRef.current.blur();
     }
   });
 
@@ -198,6 +200,7 @@ function TimePicker(props) {
         autoComplete="off"
         onChange={handleChange}
         onFocus={() => setIsOpen(true)}
+        ref={inputRef}
         type="text"
         value={inputVal}
       />

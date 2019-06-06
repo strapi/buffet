@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Select from '../../src/components/Select';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function SelectStory() {
   const [val, setValue] = useState('Second option');
@@ -15,20 +15,16 @@ function SelectStory() {
   };
 
   return (
-    <Presentation
-      title="Select"
-      description="Checkout the Story to see how it works."
-    >
-      <Select
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+    <Presentation title="Select" description="A simple select.">
+      <div style={{ marginBottom: 23 }}>
+        <Select
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
+      <Pre>
+        {`
 import React, { useState } from 'react';
 import { Select } from 'buffetjs';
 
@@ -46,8 +42,11 @@ function Example() {
       value={val}
     />
   );
-}`;
+}
+`}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Select', () => <SelectStory />);
+storiesOf('Components', module).add('Select', () => <SelectStory />);

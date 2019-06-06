@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import InputNumber from '../../src/components/InputNumber';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function InputNumberStory() {
   const [val, setValue] = useState(null);
@@ -12,25 +12,24 @@ function InputNumberStory() {
   return (
     <Presentation
       title="Number"
-      description="Checkout the Story to see how it works"
+      description="An input based on rc-input-number."
     >
-      <InputNumber
-        autoFocus
-        name="inputNumber"
-        onChange={({ target: { value } }) => {
-          setValue(value);
-        }}
-        value={val}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+      <div style={{ marginBottom: 23 }}>
+        <InputNumber
+          autoFocus
+          name="inputNumber"
+          onChange={({ target: { value } }) => {
+            setValue(value);
+          }}
+          value={val}
+        />
+      </div>
+      <Pre>
+        {`
 import React, { useState } from 'react';
 import { InputNumber } from 'buffetjs';
 
-function InputNumberStory() {
+function Example() {
   const [val, setValue] = useState(null);
 
   return (
@@ -42,8 +41,11 @@ function InputNumberStory() {
       value={val}
     />
   );
-}`;
+}
+`}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('InputNumber', () => <InputNumberStory />);
+storiesOf('Components', module).add('InputNumber', () => <InputNumberStory />);

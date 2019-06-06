@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 import moment from 'moment';
 
 import Presentation from '../ui/Presentation';
 
 import DateTime from '../../src/combined/DateTime';
+import Pre from '../ui/Pre';
 
 function DateTimeStory() {
   const [state, setValue] = useState(moment());
@@ -14,20 +14,19 @@ function DateTimeStory() {
   return (
     <Presentation
       title="DateTime"
-      description="Checkout the Story to see how it works."
+      description="Let the user pick a date and select a time."
     >
-      <DateTime
-        name="datetime"
-        onChange={({ target: { value } }) => {
-          setValue(value);
-        }}
-        value={state}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+      <div style={{ marginBottom: 23 }}>
+        <DateTime
+          name="datetime"
+          onChange={({ target: { value } }) => {
+            setValue(value);
+          }}
+          value={state}
+        />
+      </div>
+      <Pre>
+        {`
 import React from 'react';
 import moment from 'moment';
 import { DateTime } from 'buffetjs';
@@ -46,9 +45,10 @@ function Example() {
   );
 }
 
-export default Example;
-`;
+        `}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Custom', module)
-  .addDecorator(withStorySource(source))
-  .add('DateTime', () => <DateTimeStory />);
+storiesOf('Custom', module).add('DateTime', () => <DateTimeStory />);

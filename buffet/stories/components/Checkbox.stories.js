@@ -1,7 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Checkbox from '../../src/components/Checkbox';
 import Presentation from '../ui/Presentation';
@@ -37,6 +36,7 @@ function Example() {
   return (
     <>
       <Checkbox
+        message="Check me"
         name="checkbox"
         onChange={({ target }) => setValue(target.value)}
         value={value}
@@ -50,28 +50,4 @@ function Example() {
   );
 }
 
-const source = `
-import { Checkbox } from 'buffetjs';
-
-function Example() {
-  const [val, setValue] = React.useState(false);
-  const defaultProps = {
-    message: 'Check me',
-    name: 'checkbox',
-  };
-
-  return (
-    <>
-      <Checkbox
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-      />
-    </>
-  );
-}
-`;
-
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Checkbox', () => <CheckboxStory />);
+storiesOf('Components', module).add('Checkbox', () => <CheckboxStory />);

@@ -1,11 +1,10 @@
 import React from 'react';
 import { sortBy as sort } from 'lodash';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable  */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Table from '../../src/components/Table';
 import Presentation from '../ui/Presentation';
@@ -140,10 +139,7 @@ function TableStory() {
     state.sortOrder === 'asc' ? sortedRowsBy : sortedRowsBy.reverse();
 
   return (
-    <Presentation
-      title="Table"
-      description="Checkout the Story to see how it works."
-    >
+    <Presentation title="Table" description="Useful to display data.">
       <Table
         headers={state.headers}
         bulkActionProps={bulkActionProps}
@@ -380,5 +376,5 @@ function Example() {
 `;
 
 storiesOf('Components|Table', module)
-  .addDecorator(withStorySource(source))
+  // .addDecorator(withStorySource(source))
   .add('Complex', () => <TableStory />);

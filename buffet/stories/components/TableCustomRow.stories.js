@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable  */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
+// import { withStorySource } from '@storybook/addon-storysource';
 
 import Table from '../../src/components/Table';
 import Row from '../../src/styled/CustomRow';
@@ -89,10 +89,7 @@ const rows = [
 
 function TableStory() {
   return (
-    <Presentation
-      title="Table"
-      description="Checkout the Story to see how it works."
-    >
+    <Presentation title="Table" description="Useful to display data.">
       <Table headers={headers} customRow={CustomRow} rows={rows} />
     </Presentation>
   );
@@ -176,5 +173,5 @@ function Example() {
 `;
 
 storiesOf('Components|Table', module)
-  .addDecorator(withStorySource(source))
+  // .addDecorator(withStorySource(source))
   .add('With Custom row', () => <TableStory />);

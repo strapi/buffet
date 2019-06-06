@@ -2,10 +2,10 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import StoryRouter from 'storybook-react-router';
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import NavTabs from '../../src/components/NavTabs';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 const links = [
   {
@@ -28,13 +28,12 @@ const links = [
 
 function TabsStory() {
   return (
-    <Presentation title="Tabs">
-      <NavTabs links={links} />
-    </Presentation>
-  );
-}
-
-const source = `
+    <Presentation title="Tabs" description="Useful to handle navigation.">
+      <div style={{ paddingTop: 7, marginBottom: 23 }}>
+        <NavTabs links={links} />
+      </div>
+      <Pre>
+        {`
 import React from 'react';
 import { Route } from 'react-router-dom';
 
@@ -73,18 +72,22 @@ const links = [
   },
 ];
 
-function CombinedTabs() {
+function Example() {
   return (
     <div>
       <NavTabs links={links} />
       <Route path="/plugins/:pluginId/:id" component={ChildId} exact />
     </div>
   );
-}`;
+}
+        `}
+      </Pre>
+    </Presentation>
+  );
+}
 
 storiesOf('Custom', module)
   .addDecorator(
     StoryRouter({}, { initialEntries: ['/plugins/users-permissions/roles'] }),
   )
-  .addDecorator(withStorySource(source))
   .add('Tabs', () => TabsStory());
