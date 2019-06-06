@@ -16,7 +16,6 @@ function CheckboxStory() {
   return (
     <Presentation
       title="Checkbox"
-      // description="Checkout the Story to see how it works"
       description="A simple input that returns true or false."
     >
       <div style={{ paddingTop: 7, marginBottom: 23 }}>

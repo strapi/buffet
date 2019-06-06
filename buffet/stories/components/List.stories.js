@@ -10,23 +10,23 @@ function ListStory() {
   const defaultProps = {
     items: [
       {
-        firstname: 'John',
-        name: 'Doe',
+        firstname: 'Pierre',
+        lastname: 'Gagnaire',
         description:
           'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
-        fields: 2,
+        restaurant: 'Le Gaya',
       },
       {
-        firstname: 'John',
-        name: 'Smith',
+        firstname: 'Georges',
+        lastname: 'Blanc',
         description: 'Tenderloin drumstick cupim cow.',
-        fields: 3,
+        restaurant: 'Le Georges Blanc',
       },
       {
-        firstname: 'Will',
-        name: 'Smith',
+        firstname: 'Mars',
+        lastname: 'Veyrat',
         description: 'Pancetta pig buffalo bresaola.',
-        fields: 1,
+        restaurant: 'La Ferme de mon père',
       },
     ],
   };

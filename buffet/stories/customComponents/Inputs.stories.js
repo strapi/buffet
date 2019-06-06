@@ -18,9 +18,9 @@ const form = {
   },
   text: {
     styleName: 'col-6',
-    description: 'You should enter your firstname',
-    label: 'First Name',
-    placeholder: 'Viky',
+    description: 'You should enter your name',
+    label: 'Name',
+    placeholder: 'Paul Bocuse',
     type: 'text',
     validations: {
       required: true,

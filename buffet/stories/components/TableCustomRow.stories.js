@@ -12,7 +12,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 const CustomRow = ({ row }) => {
-  const { email, id, provider, username } = row;
+  const { firstname, id, lastname, receipe, restaurant } = row;
 
   return (
     <Row>
@@ -20,16 +20,16 @@ const CustomRow = ({ row }) => {
         <p>{id}</p>
       </td>
       <td>
-        <p>{username}</p>
+        <p>{firstname}</p>
       </td>
       <td>
-        <p>{email}</p>
+        <p>{lastname}</p>
       </td>
       <td>
-        <p>{provider}</p>
+        <p>{receipe}</p>
       </td>
       <td>
-        <p>●●●●●●●●</p>
+        <p>{restaurant}</p>
       </td>
     </Row>
   );
@@ -41,10 +41,11 @@ CustomRow.defaultProps = {
 
 CustomRow.propTypes = {
   row: PropTypes.shape({
-    email: PropTypes.string,
+    firstname: PropTypes.string,
     id: PropTypes.number,
-    provider: PropTypes.string,
-    username: PropTypes.string,
+    lastname: PropTypes.string,
+    receipe: PropTypes.string,
+    restaurant: PropTypes.string,
   }),
 };
 
@@ -52,38 +53,50 @@ const headers = [
   {
     name: 'Id',
     value: 'id',
+    isSortEnabled: true,
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
+    isSortEnabled: true,
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
+    isSortEnabled: true,
   },
   {
-    name: 'Provider',
-    value: 'provider',
+    name: 'Best receipe',
+    value: 'receipe',
+    isSortEnabled: true,
   },
   {
-    name: 'Password',
-    value: 'password',
-    isSortEnabled: false,
+    name: 'Main restaurant',
+    value: 'restaurant',
+    isSortEnabled: true,
   },
 ];
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
+    restaurant: 'Le Gaya',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'jimminy',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+    restaurant: 'Le Georges Blanc',
+  },
+  {
+    id: 3,
+    firstname: 'Mars',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
+    restaurant: 'La Ferme de mon père',
   },
 ];
 
@@ -101,64 +114,79 @@ function TableStory() {
 const source = `
 import { Table } from 'buffetjs';
 
-const CustomRow = ({ row, onSelect }) => {
-  const { email, id, provider, username } = row;
+const CustomRow = ({ row }) => {
+  const { firstname, id, lastname, receipe, restaurant } = row;
 
   return (
-    <tr>
+    <Row>
       <td>
         <p>{id}</p>
       </td>
       <td>
-        <p>{username}</p>
+        <p>{firstname}</p>
       </td>
       <td>
-        <p>{email}</p>
+        <p>{lastname}</p>
       </td>
       <td>
-        <p>{provider}</p>
+        <p>{receipe}</p>
       </td>
       <td>
-        <p>●●●●●●●●</p>
+        <p>{restaurant}</p>
       </td>
-    </tr>
+    </Row>
   );
 };
+
 const headers = [
   {
     name: 'Id',
     value: 'id',
+    isSortEnabled: true,
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
+    isSortEnabled: true,
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
+    isSortEnabled: true,
   },
   {
-    name: 'Provider',
-    value: 'provider',
+    name: 'Best receipe',
+    value: 'receipe',
+    isSortEnabled: true,
   },
   {
-    name: 'Password',
-    value: 'password',
+    name: 'Main restaurant',
+    value: 'restaurant',
+    isSortEnabled: true,
   },
 ];
+
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
+    restaurant: 'Le Gaya',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'jimminy',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+    restaurant: 'Le Georges Blanc',
+  },
+  {
+    id: 3,
+    firstname: 'Mars',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
+    restaurant: 'La Ferme de mon père',
   },
 ];
 
@@ -169,7 +197,6 @@ function Example() {
       customRow={CustomRow}
       headers={headers}
       rows={rows}
-
     />
   );
 }

@@ -15,7 +15,6 @@ import {
   commonDefaultProps,
   commonPropTypes,
 } from '../../commonPropTypes/input';
-// import { InputWrapper as Wrapper } from '../../styled/Form';
 import Checkbox from '../../components/Checkbox';
 import DatePicker from '../../components/DatePicker';
 import Enumeration from '../../components/Enumeration';

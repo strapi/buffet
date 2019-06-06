@@ -17,39 +17,47 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
     isSortEnabled: true,
   },
   {
-    name: 'Provider',
-    value: 'provider',
+    name: 'Best receipe',
+    value: 'receipe',
     isSortEnabled: true,
   },
   {
-    name: 'Password',
-    value: 'password',
-    isSortEnabled: false,
+    name: 'Main restaurant',
+    value: 'restaurant',
+    isSortEnabled: true,
   },
 ];
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
+    restaurant: 'Le Gaya',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'Jimminy',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+    restaurant: 'Le Georges Blanc',
+  },
+  {
+    id: 3,
+    firstname: 'Mars',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
+    restaurant: 'La Ferme de mon père',
   },
 ];
 
@@ -198,7 +206,6 @@ const source = `
 import { Table } from 'buffetjs';
 import { sortBy as sort } from 'lodash';
 
-
 const headers = [
   {
     name: 'Id',
@@ -206,39 +213,48 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
     isSortEnabled: true,
   },
   {
-    name: 'Provider',
-    value: 'provider',
+    name: 'Best receipe',
+    value: 'receipe',
     isSortEnabled: true,
   },
   {
-    name: 'Password',
-    value: 'password',
-    isSortEnabled: false,
+    name: 'Main restaurant',
+    value: 'restaurant',
+    isSortEnabled: true,
   },
 ];
+
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
+    restaurant: 'Le Gaya',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'jimminy',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+    restaurant: 'Le Georges Blanc',
+  },
+  {
+    id: 3,
+    firstname: 'Mars',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
+    restaurant: 'La Ferme de mon père',
   },
 ];
 

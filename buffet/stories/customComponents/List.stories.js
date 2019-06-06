@@ -119,19 +119,19 @@ function ListStory() {
 
   const defaultItems = [
     {
-      firstname: 'John',
-      name: 'Doe',
+      firstname: 'Georges',
+      name: 'Blanc',
       description:
         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
     },
     {
-      firstname: 'John',
-      name: 'Smith',
+      firstname: 'Joël',
+      name: 'Robuchon',
       description: 'Tenderloin drumstick cupim cow.',
     },
     {
-      firstname: 'Will',
-      name: 'Smith',
+      firstname: 'Michel',
+      name: 'Guerard',
       description: 'Pancetta pig buffalo bresaola.',
     },
   ];
@@ -164,144 +164,4 @@ function ListStory() {
   );
 }
 
-// const source = `
-// import React from 'react';
-// import { List, Row, IconLinks } from 'buffet';
-
-// // Default List
-
-// function ListStory() {
-//   const defaultItems = [
-//     {
-//       firstname: 'John',
-//       name: 'Doe',
-//       description:
-//         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
-//     },
-//     {
-//       firstname: 'John',
-//       name: 'Smith',
-//       description: 'Tenderloin drumstick cupim cow.',
-//     },
-//     {
-//       firstname: 'Will',
-//       name: 'Smith',
-//       description: 'Pancetta pig buffalo bresaola.',
-//     },
-//   ];
-
-//   const buttonProps = {
-//     color: 'secondary',
-//     icon: true,
-//     label: 'New',
-//     onClick,
-//     type: 'submit',
-//   };
-
-//   <List title="2 Content Types are available" button={buttonProps} items={defaultItems} />
-// }
-
-// // List with custom row
-
-// const CustomRow = ({
-//   icon,
-//   description,
-//   links,
-//   name,
-//   onClick
-// }) => {
-//   const styles = {
-//     name: {
-//       textTransform: 'capitalize',
-//     },
-//   };
-
-//   return (
-//     <Row onClick={onClick}>
-//       <td>
-//         <i className={\`fa \${icon}\`} />
-//       </td>
-//       <td>
-//         <p style={styles.name}>{name}</p>
-//       </td>
-//       <td>
-//         <p>{description}</p>
-//       </td>
-//       <td>
-//         <IconLinks links={links} />
-//       </td>
-//     </Row>
-//   );
-// };
-
-// function ListStory() {
-//   const onClick = () => {
-//     console.log('New Model');
-//   };
-
-//   const handleEditClick = e => {
-//     console.log('Edit');
-//     e.stopPropagation();
-//   };
-
-//   const handleDeleteClick = e => {
-//     console.log('Delete');
-//     e.stopPropagation();
-//   };
-
-//   const customItems = [
-//     {
-//       icon: 'fa-cube',
-//       name: 'article',
-//       description:
-//         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
-//       links: [
-//         {
-//           icon: 'fa fa-pencil',
-//           onClick: handleEditClick,
-//         },
-//         {
-//           icon: 'fa fa-trash',
-//           onClick: handleDeleteClick,
-//         },
-//       ],
-//       onClick: () => console.log('Article'),
-//     },
-//     {
-//       icon: 'fa-cube',
-//       name: 'users',
-//       description: 'Tenderloin drumstick cupim cow.',
-//       links: [
-//         {
-//           icon: 'fa fa-pencil',
-//           onClick: handleEditClick,
-//         },
-//         {
-//           icon: 'fa fa-trash',
-//           onClick: handleDeleteClick,
-//         },
-//       ],
-//       onClick: () => console.log('Users'),
-//     },
-//   ];
-
-//   const buttonProps = {
-//     color: 'secondary',
-//     icon: true,
-//     label: 'New',
-//     onClick,
-//     type: 'submit',
-//   };
-
-//   return (
-//     <List
-//       title="2 Content Types are available"
-//       button={buttonProps}
-//       customRowComponent={props => <CustomRow {...props} />}
-//     />
-//   );
-// }`;
-
-storiesOf('Custom', module)
-  // .addDecorator(withStorySource(source))
-  .add('List', () => ListStory());
+storiesOf('Custom', module).add('List', () => ListStory());

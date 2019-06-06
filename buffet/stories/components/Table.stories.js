@@ -15,35 +15,36 @@ const headers = [
     value: 'id',
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
   },
   {
-    name: 'Provider',
-    value: 'provider',
-  },
-  {
-    name: 'Password',
-    value: 'password',
+    name: 'Best receipe',
+    value: 'receipe',
   },
 ];
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'jimminy',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+  },
+  {
+    id: 2,
+    firstname: 'Marc',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
   },
 ];
 
@@ -67,35 +68,37 @@ const headers = [
     value: 'id',
   },
   {
-    name: 'Username',
-    value: 'username',
+    name: 'Firstname',
+    value: 'firstname',
   },
   {
-    name: 'Email',
-    value: 'email',
+    name: 'Lastname',
+    value: 'lastname',
   },
   {
-    name: 'Provider',
-    value: 'provider',
-  },
-  {
-    name: 'Password',
-    value: 'password',
+    name: 'Best receipe',
+    value: 'receipe',
   },
 ];
+
 const rows = [
   {
-    created_at: 1558010491450,
-    email: 'soup@strapi.io',
     id: 1,
-    provider: 'local',
-    username: 'Soup',
+    firstname: 'Pierre',
+    lastname: 'Gagnaire',
+    receipe: 'Ratatouille',
   },
   {
-    email: 'john@strapi.io',
     id: 2,
-    provider: 'local',
-    username: 'john',
+    firstname: 'Georges',
+    lastname: 'Blanc',
+    receipe: 'Beef bourguignon',
+  },
+  {
+    id: 2,
+    firstname: 'Marc',
+    lastname: 'Veyrat',
+    receipe: 'Lemon Chicken',
   },
 ];
 
