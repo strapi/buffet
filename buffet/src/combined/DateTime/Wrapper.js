@@ -5,6 +5,9 @@ const Wrapper = styled.div`
   > div:first-child {
     margin-right: 10px;
   }
+  > div:last-child {
+    max-width: 100px;
+  }
 `;
 
 export default Wrapper;
