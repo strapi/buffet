@@ -27,7 +27,7 @@ function DateTimeStory() {
       </div>
       <Pre>
         {`
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { DateTime } from 'buffetjs';
 

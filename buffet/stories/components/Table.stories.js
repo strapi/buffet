@@ -15,11 +15,11 @@ const headers = [
     value: 'id',
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
   },
   {
@@ -60,6 +60,7 @@ function TableStory() {
 }
 
 const source = `
+import React from 'react';
 import { Table } from 'buffetjs';
 
 const headers = [
@@ -68,11 +69,11 @@ const headers = [
     value: 'id',
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
   },
   {

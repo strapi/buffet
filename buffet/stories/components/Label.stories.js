@@ -45,6 +45,7 @@ function LabelStory() {
         <span style={styles.spacerCode} />
         <Pre language="Pre">
           {`
+import React from 'react';
 import { FormattedMessage } from 'react-intl':
 import { Label, InputText } from 'buffetjs';
 

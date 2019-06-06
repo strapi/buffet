@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 
@@ -7,7 +7,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function CheckboxStory() {
-  const [val, setValue] = React.useState(false);
+  const [val, setValue] = useState(false);
   const defaultProps = {
     message: 'Check me',
     name: 'checkbox',
@@ -27,19 +27,19 @@ function CheckboxStory() {
       </div>
       <Pre>
         {`
+import React, { useState } from 'react';
 import { Checkbox } from 'buffetjs';
 
 function Example() {
-  const [value, setValue] = React.useState{false};
+  const [value, setValue] = useState(false);
 
   return (
-    <>
-      <Checkbox
-        message="Check me"
-        name="checkbox"
-        onChange={({ target }) => setValue(target.value)}
-        value={value}
-    </>
+    <Checkbox
+      message="Check me"
+      name="checkbox"
+      onChange={({ target }) => setValue(target.value)}
+      value={value} 
+    />
   );
 }
 

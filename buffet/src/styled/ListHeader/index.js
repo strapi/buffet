@@ -14,6 +14,7 @@ const ListHeader = styled.div`
     position: absolute;
     top: 2rem;
     right: 3rem;
+    outline: 0;
   }
 `;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import moment from 'moment';
@@ -7,7 +7,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function DatePickerStory() {
-  const [value, setState] = React.useState(moment());
+  const [value, setState] = useState(moment());
 
   return (
     <Presentation
@@ -24,22 +24,21 @@ function DatePickerStory() {
       </div>
       <Pre>
         {`
-import { DatePicker } from 'buffetjs';
+import React, { useState } from 'react';
 import moment from 'moment';
+import { DatePicker } from 'buffetjs';
 
 function Example() {
-  const [value, setValue] = React.useState{moment};
+  const [value, setValue] = useState(moment());
 
   return (
-    <>
-      <DatePicker
-        name="datepicker" // This props is required
-        onChange={({ target }) => setValue(target.value)}
-        value={value}
-    </>
+    <DatePicker
+      name="datepicker" // This props is required
+      onChange={({ target }) => setValue(target.value)}
+      value={value}
+    />
   );
 }
-
 `}
       </Pre>
     </Presentation>

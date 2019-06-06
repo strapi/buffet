@@ -36,22 +36,13 @@ function TabsStory() {
         {`
 import React from 'react';
 import { Route } from 'react-router-dom';
-
-import NavTabs from '../../../src/components/NavTabs';
+import { Tabs } from 'buffetjs';
 
 const ChildId = ({ match }) => (
   <div>
     <h3>{match.params.id} page</h3>
   </div>
 );
-
-ChildId.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: null,
-    }).isRequired,
-  }).isRequired,
-};
 
 const links = [
   {
@@ -74,10 +65,10 @@ const links = [
 
 function Example() {
   return (
-    <div>
-      <NavTabs links={links} />
+    <>
+      <Tabs links={links} />
       <Route path="/plugins/:pluginId/:id" component={ChildId} exact />
-    </div>
+    </>
   );
 }
         `}

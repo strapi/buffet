@@ -56,12 +56,12 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
     isSortEnabled: true,
   },
@@ -112,6 +112,7 @@ function TableStory() {
 }
 
 const source = `
+import React from 'react';
 import { Table } from 'buffetjs';
 
 const CustomRow = ({ row }) => {
@@ -145,12 +146,12 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
     isSortEnabled: true,
   },

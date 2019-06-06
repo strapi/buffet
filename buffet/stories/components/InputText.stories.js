@@ -76,19 +76,19 @@ function InputTextStory() {
           <Pre>
             {`
 import React, { useState } from 'react';
-import { Input } from 'buffet';
+import { InputText } from 'buffet';
 
 function Example(props) {
   const [val, setValue] = useState('');
 
   return (
-    <Input
+    <InputText
       name="input"
       onChange={({ target: { value } }) => {
         setValue(value);
       }}
       placeholder="Lastname"
-      type="search"
+      type="${type}"
       value={val}
     />
   );

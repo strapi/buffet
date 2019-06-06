@@ -30,9 +30,18 @@ function ButtonStory() {
             <Button type="submit" color={color} icon={icon} label={label} />
           </div>
           <Pre>{`
-<Button color="${color}" icon={${icon}} label="${label}" />
+import React from 'react';
+import { Button } from 'buffetjs';
 
-<Button color="${color}" icon={${icon}}>${label}</Button>
+function Example() {
+  return (
+    <>
+      <Button color="${color}" icon={${icon}} label="${label}" />
+
+      <Button color="${color}" icon={${icon}}>${label}</Button>
+    </>
+  );
+}
 `}</Pre>
         </section>
 

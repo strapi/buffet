@@ -32,8 +32,8 @@ function TimePickerStory() {
       <Pre>
         {`
 import React, { useState } from 'react';
-import { TimePicker } from 'buffetjs';
 import moment from 'moment';
+import { TimePicker } from 'buffetjs';
 
 function Example() {
   const [val, setValue] = useState('');

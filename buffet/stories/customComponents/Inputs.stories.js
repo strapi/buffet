@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import Inputs from '../../src/combined/Inputs';
@@ -108,7 +108,7 @@ const form = {
 };
 
 function InputStory() {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
   const handleChange = ({ target: { name, value } }) => {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
@@ -140,6 +140,7 @@ function InputStory() {
         <section>
           <Pre>
             {`
+import React, { useState } from 'react';
 import { Inputs } from 'buffetjs';
 
 const Foo = () => (
@@ -247,32 +248,30 @@ const form = {
 };
 
 function Example() {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
   const handleChange = ({ target: { name, value } }) => {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
 
   return (
-    <>
-      <section style={{ marginTop: 3 }}>
-        <h2 style={{ marginBottom: 36 }}>Examples</h2>
-        <form onSubmit={() => {}}>
-          <div className="row">
-            {Object.keys(form).map(input => (
-              <div className={form[input].styleName} key={input}>
-                <Inputs
-                  customInputs={{ custom: Foo }} // Props to pass custom input type to the component
-                  name={input}
-                  {...form[input]}
-                  onChange={handleChange}
-                  value={state[input] || form[input].value}
-                />
-              </div>
-            ))}
-          </div>
-        </form>
-      </section>
-    </>
+    <section style={{ marginTop: 3 }}>
+      <h2 style={{ marginBottom: 36 }}>Examples</h2>
+      <form onSubmit={() => {}}>
+        <div className="row">
+          {Object.keys(form).map(input => (
+            <div className={form[input].styleName} key={input}>
+              <Inputs
+                customInputs={{ custom: Foo }} // Props to pass custom input type to the component
+                name={input}
+                {...form[input]}
+                onChange={handleChange}
+                value={state[input] || form[input].value}
+              />
+            </div>
+          ))}
+        </div>
+      </form>
+    </section>
   );
 }
             `}

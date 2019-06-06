@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { sortBy as sort } from 'lodash';
 /* eslint-disable  */
 /* eslint-disable no-alert */
@@ -17,12 +17,12 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
     isSortEnabled: true,
   },
@@ -120,7 +120,7 @@ function init(initialState) {
 }
 
 function TableStory() {
-  const [state, dispatch] = React.useReducer(
+  const [state, dispatch] = useReducer(
     reducer,
     {
       headers,
@@ -167,7 +167,7 @@ function TableStory() {
             }
           }}
           onClickRow={(e, data) => {
-            alert(`You have just clicked on ${data.username} row`);
+            alert(`You have just clicked on ${data.firstname} row`);
           }}
           onSelect={(row, index) => {
             dispatch({ type: 'SELECT_ROW', row, index });
@@ -185,13 +185,13 @@ function TableStory() {
             {
               icon: 'fa fa-pencil',
               onClick: data => {
-                alert(`Do you want to edit ${data.username}?`);
+                alert(`Do you want to edit ${data.firstname}?`);
               },
             },
             {
               icon: 'fa fa-trash',
               onClick: data => {
-                alert(`Do you want to delete ${data.username}?`);
+                alert(`Do you want to delete ${data.firstname}?`);
               },
             },
           ]}
@@ -203,6 +203,7 @@ function TableStory() {
 }
 
 const source = `
+import React, { useReducer } from 'react';
 import { Table } from 'buffetjs';
 import { sortBy as sort } from 'lodash';
 
@@ -213,12 +214,12 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Firstname',
+    name: 'First name',
     value: 'firstname',
     isSortEnabled: true,
   },
   {
-    name: 'Lastname',
+    name: 'Last name',
     value: 'lastname',
     isSortEnabled: true,
   },
@@ -317,7 +318,7 @@ function init(initialState) {
 }
 
 function Example() {
-  const [state, dispatch] = React.useReducer(
+  const [state, dispatch] = useReducer(
     reducer,
     {
       headers,
