@@ -16,6 +16,8 @@ const TimeList = styled.ul`
   font-size: ${sizes.input.fontSize};
   color: ${colors.greyIconColor};
   border: 1px solid transparent;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   list-style: none;
   padding: 0;
   margin: 0;
