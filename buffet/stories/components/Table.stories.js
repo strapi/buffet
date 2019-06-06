@@ -1,10 +1,9 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
-
 import Table from '../../src/components/Table';
 
 import Presentation from '../ui/Presentation';
@@ -50,11 +49,8 @@ const rows = [
 
 function TableStory() {
   return (
-    <Presentation
-      title="Table"
-      description="Checkout the Story to see how it works."
-    >
-      <div style={{ paddingTop: 3, marginBottom: 21 }}>
+    <Presentation title="Table" description="Useful to display data.">
+      <div style={{ paddingTop: 3, marginBottom: 35 }}>
         <Table headers={headers} rows={rows} />
       </div>
       <Pre>{source}</Pre>

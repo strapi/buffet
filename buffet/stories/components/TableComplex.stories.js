@@ -1,6 +1,6 @@
 import React from 'react';
 import { sortBy as sort } from 'lodash';
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable  */
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
@@ -140,11 +140,8 @@ function TableStory() {
     state.sortOrder === 'asc' ? sortedRowsBy : sortedRowsBy.reverse();
 
   return (
-    <Presentation
-      title="Table"
-      description="Checkout the Story to see how it works."
-    >
-      <div style={{ paddingTop: 3, marginBottom: 21 }}>
+    <Presentation title="Table" description="Useful to display data.">
+      <div style={{ paddingTop: 3, marginBottom: 35 }}>
         <Table
           headers={state.headers}
           bulkActionProps={bulkActionProps}

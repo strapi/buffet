@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Enumeration from '../../src/components/Enumeration';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function EnumerationStory() {
   const [val, setValue] = useState('option1');
@@ -23,23 +23,22 @@ function EnumerationStory() {
   return (
     <Presentation
       title="Enumeration"
-      description="Checkout the Story to see how it works"
+      description="Input that works like a select."
     >
-      <Enumeration
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-        options={options}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+      <div style={{ marginBottom: 23 }}>
+        <Enumeration
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+          options={options}
+        />
+      </div>
+      <Pre>
+        {`
 import React, { useState } from 'react';
 import { Enumeration } from 'buffetjs';
 
-function EnumerationStory() {
+function Example() {
   const [val, setValue] = useState('option1');
 
   const options = [
@@ -50,14 +49,17 @@ function EnumerationStory() {
 
   return (
     <Enumeration
-      onChange={({ target: { value } }) => setValue(value)}
-      value={val}
       name="enumeration"
+      onChange={({ target: { value } }) => setValue(value)}
       options={options}
+      value={val}
     />
   );
-}`;
+}
+`}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Enumeration', () => <EnumerationStory />);
+storiesOf('Components', module).add('Enumeration', () => <EnumerationStory />);

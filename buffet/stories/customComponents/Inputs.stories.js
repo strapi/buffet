@@ -1,11 +1,13 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
-
 import Inputs from '../../src/combined/Inputs';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
+const Foo = () => (
+  <div>This is a custom component that can be passed to the component</div>
+);
 const form = {
   checkbox: {
     styleName: 'col-6',
@@ -99,6 +101,10 @@ const form = {
     ],
     value: 'option1',
   },
+  custom: {
+    type: 'custom',
+    validations: {},
+  },
 };
 
 function InputStory() {
@@ -109,8 +115,8 @@ function InputStory() {
 
   return (
     <Presentation
-      title="Input with Errors"
-      description="Checkout the Story to see how it works."
+      title="Inputs"
+      description="Use this component to build dynamic forms."
     >
       <>
         <section style={{ marginTop: 29 }}>
@@ -120,6 +126,7 @@ function InputStory() {
               {Object.keys(form).map(input => (
                 <div className={form[input].styleName} key={input}>
                   <Inputs
+                    customInputs={{ custom: Foo }}
                     name={input}
                     {...form[input]}
                     onChange={handleChange}
@@ -130,13 +137,14 @@ function InputStory() {
             </div>
           </form>
         </section>
-      </>
-    </Presentation>
-  );
-}
+        <section>
+          <Pre>
+            {`
+import { Inputs } from 'buffetjs';
 
-const source = `
-import { Inputs } from 'buffet';
+const Foo = () => (
+  <div>This is a custom component that can be passed to the component</div>
+);
 
 const form = {
   checkbox: {
@@ -230,6 +238,12 @@ const form = {
     ],
     value: 'option1',
   },
+
+  // Add a custom type
+  customInput: {
+    type: 'custom',
+    validations: {},
+  },
 };
 
 function Example() {
@@ -247,6 +261,7 @@ function Example() {
             {Object.keys(form).map(input => (
               <div className={form[input].styleName} key={input}>
                 <Inputs
+                  customInputs={{ custom: Foo }} // Props to pass custom input type to the component
                   name={input}
                   {...form[input]}
                   onChange={handleChange}
@@ -260,9 +275,12 @@ function Example() {
     </>
   );
 }
+            `}
+          </Pre>
+        </section>
+      </>
+    </Presentation>
+  );
+}
 
-`;
-
-storiesOf('Custom', module)
-  .addDecorator(withStorySource(source))
-  .add('Inputs', () => <InputStory />);
+storiesOf('Custom', module).add('Inputs', () => <InputStory />);

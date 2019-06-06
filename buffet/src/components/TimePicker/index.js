@@ -4,13 +4,17 @@
  *
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { isInteger, toNumber } from 'lodash';
 import PropTypes from 'prop-types';
 
-import StyledTimePicker, { TimePickerWrapper } from '../../styled/TimePicker';
+import StyledTimePicker, {
+  TimePickerWrapper,
+  TimeList,
+} from '../../styled/TimePicker';
 import Icon from '../../styled/Icon';
-import TimeList from '../TimeList';
+import useEventListener from '../EventListener';
+import useShortcutEffect from '../Shortcut';
 
 // Convert time array to formatted time string
 export const timeFormatter = time => {
@@ -93,30 +97,75 @@ const nearest = (arr, val) =>
   ) + val;
 
 function TimePicker(props) {
-  const [changed, setChanged] = useState(false);
-  const [focused, setFocused] = useState(false);
-
   const { name, onChange, seconds, value } = props;
-
   const [inputVal, setInputVal] = useState(seconds ? value : short(value));
+  const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef();
+  const wrapperRef = useRef();
+  const listRefs = getOptions().reduce((acc, curr) => {
+    acc[curr.value] = useRef();
 
-  const handleBlur = () => {
-    if (changed) {
-      onChange({
-        target: {
-          name,
-          type: 'text',
-          value: value ? timeFormatter(inputVal) : '',
-        },
+    return acc;
+  }, {});
+  const currentTimeSelected = roundHour(timeFormatter(inputVal));
+
+  // Effect to enable scrolling
+  useEffect(() => {
+    if (isOpen) {
+      const currentRef = currentTimeSelected;
+      listRefs[currentRef].current.scrollIntoView({
+        block: 'start',
       });
-      setChanged(false);
-      formatInputValue(timeFormatter(inputVal));
     }
-    setFocused(false);
-  };
+  }, [isOpen, currentTimeSelected]);
+
+  // Custom hook to close the TimeList
+  useEventListener('click', event => {
+    if (!wrapperRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  });
+
+  // Custom hook to select a time using the keyboard's up arrow
+  useShortcutEffect('arrowUp', () => {
+    if (isOpen) {
+      const currentTimeIndex = getOptions().findIndex(
+        o => o.value === currentTimeSelected,
+      );
+      const optionsLength = getOptions().length;
+      const nextTime =
+        currentTimeIndex === optionsLength - 1
+          ? getOptions()[optionsLength - 1]
+          : getOptions()[currentTimeIndex + 1];
+
+      updateTime(nextTime.value);
+    }
+  });
+
+  // Custom hook to select a time using the keyboard's down arrow
+  useShortcutEffect('arrowDown', () => {
+    if (isOpen) {
+      const currentTimeIndex = getOptions().findIndex(
+        o => o.value === currentTimeSelected,
+      );
+      const nextTime =
+        currentTimeIndex === 0
+          ? getOptions()[0]
+          : getOptions()[currentTimeIndex - 1];
+
+      updateTime(nextTime.value);
+    }
+  });
+
+  // Custom hook to close the time list
+  useShortcutEffect('enter', () => {
+    if (isOpen) {
+      setIsOpen(false);
+      inputRef.current.blur();
+    }
+  });
 
   const handleChange = ({ target }) => {
-    setChanged(true);
     updateTime(target.value);
   };
 
@@ -130,6 +179,7 @@ function TimePicker(props) {
 
   const handleClick = ({ target }) => {
     updateTime(target.value);
+    setIsOpen(false);
   };
 
   const updateTime = time => {
@@ -144,24 +194,32 @@ function TimePicker(props) {
   };
 
   return (
-    <TimePickerWrapper>
+    <TimePickerWrapper ref={wrapperRef}>
       <StyledTimePicker
         {...props}
         autoComplete="off"
-        onBlur={handleBlur}
         onChange={handleChange}
-        onClick={() => setFocused(true)}
-        onKeyPress={e => (e.key === 'Enter' ? handleBlur(e) : '')}
+        onFocus={() => setIsOpen(true)}
+        ref={inputRef}
         type="text"
         value={inputVal}
       />
       <Icon type="time" />
-      <TimeList
-        isOpen={focused}
-        options={getOptions()}
-        onClick={handleClick}
-        value={roundHour(timeFormatter(inputVal))}
-      />
+      <TimeList className={isOpen && 'displayed'}>
+        {getOptions().map(option => (
+          <li key={option.value} ref={listRefs[option.value]}>
+            <input
+              type="radio"
+              onChange={handleClick}
+              value={option.value}
+              id={option.value}
+              name="time"
+              checked={option.value === roundHour(timeFormatter(inputVal))}
+            />
+            <label htmlFor={option.value}>{option.label}</label>
+          </li>
+        ))}
+      </TimeList>
     </TimePickerWrapper>
   );
 }

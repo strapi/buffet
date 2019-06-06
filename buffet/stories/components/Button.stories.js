@@ -2,38 +2,10 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { boolean, text, radios } from '@storybook/addon-knobs';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Button from '../../src/components/Button';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
-
-const source = `
-import { Button } from 'buffet';
-
-<Button type="submit">
-  Save
-</Button>
-
-<Button type="submit" color="primary" icon>
-  Add
-</Button>
-
-<Button type="submit" color="delete">
-  Delete
-</Button>
-
-<Button type="submit" color="delete" icon>
-  Delete
-</Button>
-
-<Button type="submit" color="cancel">
-  Cancel
-</Button>
-
-<Button type="submit" color="secondary">
-  Text
-</Button>`;
 
 function ButtonStory() {
   const colors = {
@@ -100,6 +72,4 @@ function ButtonStory() {
   );
 }
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Button', () => ButtonStory());
+storiesOf('Components', module).add('Button', () => ButtonStory());

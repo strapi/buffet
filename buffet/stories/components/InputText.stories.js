@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { radios } from '@storybook/addon-knobs';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Input from '../../src/components/InputText';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function InputCompo(props) {
   const [val, setValue] = useState('');
@@ -72,12 +72,9 @@ function InputTextStory() {
             </div>
           </div>
         </section>
-      </Presentation>
-    </>
-  );
-}
-
-const source = `
+        <section>
+          <Pre>
+            {`
 import React, { useState } from 'react';
 import { Input } from 'buffet';
 
@@ -96,8 +93,12 @@ function Example(props) {
     />
   );
 }
-`;
+            `}
+          </Pre>
+        </section>
+      </Presentation>
+    </>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('InputText', () => InputTextStory());
+storiesOf('Components', module).add('InputText', () => InputTextStory());

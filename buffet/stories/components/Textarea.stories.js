@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
 
 import Textarea from '../../src/components/Textarea';
 import Presentation from '../ui/Presentation';
+import Pre from '../ui/Pre';
 
 function TextareaStory() {
   const [val, setValue] = useState('');
@@ -15,20 +15,16 @@ function TextareaStory() {
   };
 
   return (
-    <Presentation
-      title="Textarea"
-      description="Checkout the Story to see how it works."
-    >
-      <Textarea
-        {...defaultProps}
-        onChange={({ target: { value } }) => setValue(value)}
-        value={val}
-      />
-    </Presentation>
-  );
-}
-
-const source = `
+    <Presentation title="Textarea" description="Enter and edit text.">
+      <div style={{ marginBottom: 23 }}>
+        <Textarea
+          {...defaultProps}
+          onChange={({ target: { value } }) => setValue(value)}
+          value={val}
+        />
+      </div>
+      <Pre>
+        {`
 import React, { useState } from 'react';
 import { Textarea } from 'buffet';
 
@@ -37,12 +33,16 @@ function Example() {
 
   return (
     <Textarea
+      name="textarea"
       onChange={({ target: { value } }) => setValue(value)}
       value={val}
     />
   );
-}`;
+}
+        `}
+      </Pre>
+    </Presentation>
+  );
+}
 
-storiesOf('Components', module)
-  .addDecorator(withStorySource(source))
-  .add('Textarea', () => <TextareaStory />);
+storiesOf('Components', module).add('Textarea', () => <TextareaStory />);
