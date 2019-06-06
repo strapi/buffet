@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
-import StyledTab from '../../../styled/Tab';
+
 import NavTabs from '../index';
+import StyledTab from '../../../styled/Tab';
 
 describe('<NavTabs />', () => {
   it('It should not crash', () => {

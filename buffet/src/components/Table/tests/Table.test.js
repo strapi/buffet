@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+
 import TableRowEmpty from '../../../styled/TableRowEmpty';
 import TableRow from '../../TableRow';
 import Table from '../index';

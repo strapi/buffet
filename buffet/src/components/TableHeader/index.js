@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /**
  *
  * TableHeader
@@ -10,6 +9,7 @@ import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import Checkbox from '../../styled/Checkbox';
 
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 function TableHeader({
   headers,
   onChangeSort,

@@ -41,9 +41,7 @@ function Example() {
       value={value} 
     />
   );
-}
-
-`}
+}`}
       </Pre>
     </Presentation>
   );

@@ -45,8 +45,14 @@ function IntroStory() {
             Import the GlobalStyles and the Fonts in your application:
           </strong>
           <span style={styles.spacerCode} />
-          <Pre language="javascript">
-            {`
+          <Pre language="javascript">{source}</Pre>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+const source = `
 import { Fonts, GlobalStyles } from 'buffetjs';
 
 function MyApp() {
@@ -57,12 +63,6 @@ function MyApp() {
       <HomePage />
     </>
   );
-}`}
-          </Pre>
-        </section>
-      </div>
-    </div>
-  );
-}
+}`;
 
 storiesOf('Get Started', module).add('Welcome', () => IntroStory());

@@ -12,7 +12,6 @@ function DatePickerStory() {
   return (
     <Presentation
       title="Datepicker"
-      // description="Checkout the Story to see how it works"
       description="A DatePicker based on react-datepicker that returns a moment object."
     >
       <div style={{ paddingTop: 7, marginBottom: 23 }}>
@@ -38,8 +37,7 @@ function Example() {
       value={value}
     />
   );
-}
-`}
+}`}
       </Pre>
     </Presentation>
   );

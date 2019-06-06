@@ -76,7 +76,7 @@ function ListStory() {
   };
 
   const title = text('Title', 'Best Top Chefs');
-  const subtitle = text('Subtitle', 'Configure the specific settings');
+  const subtitle = text('Subtitle', 'The most successful French Top Chefs');
   const buttonProps = {
     color: 'secondary',
     icon: true,
@@ -88,7 +88,7 @@ function ListStory() {
   const customItems = [
     {
       icon: 'fa-cube',
-      name: 'article',
+      name: 'ratatouille',
       description:
         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
       links: [
@@ -105,7 +105,7 @@ function ListStory() {
     },
     {
       icon: 'fa-cube',
-      name: 'users',
+      name: 'Alfredo Linguini',
       description: 'Tenderloin drumstick cupim cow.',
       links: [
         {
@@ -151,29 +151,32 @@ function ListStory() {
 
   return (
     <Presentation title="List" description="Display some data.">
-      <section style={{ marginTop: 29 }}>
+      <section style={{ marginTop: 29, paddingBottom: 40 }}>
         <h2 style={{ marginBottom: 30 }}>Default List</h2>
         <div style={{ marginBottom: 35 }}>
           <List {...initProps} items={defaultItems} />
         </div>
-        <Pre>{source}</Pre>
+        <Pre>{defaultListSource}</Pre>
       </section>
       <section style={{ marginTop: 25 }}>
         <h2 style={{ marginBottom: 30 }}>List with custom row</h2>
-        <List
-          {...initProps}
-          subtitle={subtitle}
-          items={customItems}
-          customRowComponent={props => <CustomRow {...props} />}
-        />
+        <div style={{ marginBottom: 35 }}>
+          <List
+            {...initProps}
+            subtitle={subtitle}
+            items={customItems}
+            customRowComponent={props => <CustomRow {...props} />}
+          />
+        </div>
+        <Pre>{customListSource}</Pre>
       </section>
     </Presentation>
   );
 }
 
-const source = `
+const defaultListSource = `
 import React from 'react';
-import { CustomList } from 'buffetjs';
+import { CustomList, IconLinks } from 'buffetjs';
 
 const rows = [
   {
@@ -208,6 +211,105 @@ function Example() {
 
   return (
     <CustomList {...props} items={rows} />
+  );
+}
+`;
+
+const customListSource = `
+import React from 'react';
+import { CustomList } from 'buffetjs';
+
+const CustomRow = ({ icon, description, links, name, onClick }) => {
+  const styles = {
+    name: {
+      textTransform: 'capitalize',
+    },
+  };
+
+  return (
+    <Row onClick={onClick}>
+      <td>
+        <i className={\`fa \${icon}\`} />
+      </td> 
+      <td>
+        <p style={styles.name}>{name}</p>
+      </td>
+      <td>
+        <p>{description}</p>
+      </td>
+      <td>
+        <IconLinks links={links} />
+      </td>
+    </Row>
+  );
+};
+
+
+function Example() {
+  const props = {
+    title: 'Best Top Chefs',
+    subtitle: 'The most successful French Top Chefs',
+    button: {
+      color: 'secondary',
+      icon: true,
+      label: 'New',
+      onClick: () => alert('Do you want to create a new chief entry?'),
+      type: 'button',
+    },
+  };
+
+  const handleEditClick = e => {
+    alert('Edit');
+    e.stopPropagation();
+  };
+
+  const handleDeleteClick = e => {
+    alert('Delete');
+    e.stopPropagation();
+  };
+
+  const rows = [
+    {
+      icon: 'fa-cube',
+      name: 'ratatouille',
+      description:
+        'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
+      links: [
+        {
+          icon: 'fa fa-pencil',
+          onClick: handleEditClick,
+        },
+        {
+          icon: 'fa fa-trash',
+          onClick: handleDeleteClick,
+        },
+      ],
+      onClick: () => alert('Ratatouille'),
+    },
+    {
+      icon: 'fa-cube',
+      name: 'users',
+      description: 'Tenderloin drumstick cupim cow.',
+      links: [
+        {
+          icon: 'fa fa-pencil',
+          onClick: handleEditClick,
+        },
+        {
+          icon: 'fa fa-trash',
+          onClick: handleDeleteClick,
+        },
+      ],
+      onClick: () => alert('Users'),
+    },
+  ];
+
+  return (
+    <CustomList 
+      {...props} 
+      items={rows} 
+      customRowComponent={props => <CustomRow {...props} />}
+    />
   );
 }
 `;

@@ -94,7 +94,6 @@ TableRow.propTypes = {
   onSelect: PropTypes.func,
   // eslint-disable-next-line react/forbid-prop-types
   row: PropTypes.object,
-
   rowLinks: PropTypes.arrayOf(
     PropTypes.shape({
       icon: PropTypes.string,

@@ -10,7 +10,6 @@ const TableRowEmpty = styled.tr`
   width: 100%;
   height: 108px;
   background: #ffffff;
-
   td {
     height: 106px;
     line-height: 106px;
