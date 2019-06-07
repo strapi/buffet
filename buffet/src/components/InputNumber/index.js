@@ -37,6 +37,7 @@ function InputNumber({
   return (
     <StyledInputNumber>
       <RcInputNumber
+        {...rest}
         autoFocus={autoFocus}
         id={id || name}
         name={name}
@@ -44,7 +45,6 @@ function InputNumber({
         tabIndex={tabIndex}
         value={value}
         className="inputNumber"
-        {...rest}
       />
     </StyledInputNumber>
   );
@@ -52,7 +52,7 @@ function InputNumber({
 
 InputNumber.defaultProps = {
   ...commonDefaultProps,
-  value: null,
+  value: 0,
 };
 
 InputNumber.propTypes = {

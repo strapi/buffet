@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import {
   commonDefaultProps,
   commonPropTypes,
+  uncontrolledDefaultProps,
+  uncontrolledPropTypes,
 } from '../../commonPropTypes/input';
 
 import Input, { InputWrapper } from '../../styled/InputText';
@@ -55,14 +57,14 @@ function InputText({
 
 InputText.defaultProps = {
   ...commonDefaultProps,
-  onChange: () => {},
+  ...uncontrolledDefaultProps,
   type: 'text',
   value: '',
 };
 
 InputText.propTypes = {
   ...commonPropTypes,
-  onChange: PropTypes.func,
+  ...uncontrolledPropTypes,
   type: PropTypes.string,
   value: PropTypes.string,
 };

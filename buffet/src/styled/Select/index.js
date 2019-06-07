@@ -14,7 +14,7 @@ const Select = styled.select`
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: ${sizes.input.fontSize};
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey}
@@ -28,7 +28,7 @@ const Select = styled.select`
   background-image: url(${img});
   background-repeat: no-repeat;
   background-position: right;
-  
+
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }

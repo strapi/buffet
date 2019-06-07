@@ -20,7 +20,7 @@ function Toggle({ id, name, onChange, value }) {
     <ToggleWrapper>
       <Label htmlFor={id || name}>
         <StyledToggle
-          value={value}
+          checked={value}
           id={id || name}
           name={id || name}
           onChange={e => {

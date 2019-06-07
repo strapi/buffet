@@ -15,6 +15,7 @@ const DatePicker = styled.div`
   z-index: 9;
   * {
     font-family: 'Lato';
+
     outline: 0;
     box-sizing: border-box;
   }
@@ -39,12 +40,13 @@ const DatePicker = styled.div`
     }
   }
   input {
+    font-weight: ${sizes.input.fontWeight};
     position: relative;
     z-index: 1;
     width: 100%;
     height: ${sizes.input.height};
     padding: 0 ${sizes.input.padding};
-    font-size: 1.3rem;
+    font-size: ${sizes.input.fontSize};
     cursor: pointer;
     border: 1px solid ${colors.lightGrey};
     border-radius: ${sizes.radius};

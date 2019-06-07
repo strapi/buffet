@@ -15,18 +15,19 @@ const colors = {
   orangeBkgd: 'rgba(255, 0, 0, 0.15)',
   black: '#000000',
   white: '#ffffff',
-  greyBkgd: 'rgba(14, 22, 34, 0.02)',
 
   // Specific to inputs
   greyPlaceholder: '#919BAE',
   greyIconBkgd: '#FAFAFB',
   greyIconColor: '#B3B5B9',
   blueBorder: '#78caff',
+  greyToggle: '#CED3DB',
 
   // Specific to table
   greyHeader: '#F3F3F4',
   greySubtitle: '#787E8F',
   greyHover: '#F7F8F8',
+  greySeparator: '#f1f1f2',
 
   // Specific to timepicker
   blueIconTxt: '#367CF7',

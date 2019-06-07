@@ -9,20 +9,25 @@ import styled from 'styled-components';
 import colors from '../../assets/styles/colors';
 
 const EnumerationWrapper = styled.div`
-  border: 1px solid ${colors.lightGrey};
+  display: flex;
   width: fit-content;
   height: 34px;
+  border: 1px solid ${colors.lightGrey};
+  border-radius: 3px;
+  background-color: white;
+  overflow: hidden;
   label {
     position: relative;
-    color: ${colors.black};
-    height: 100%;
     display: inline-block;
+    height: 100%;
     width: fit-content;
+    color: ${colors.brightGrey};
     span {
       display: inline-block;
       padding: 0 1.5rem;
       line-height: 32px;
       margin: auto;
+      letter-spacing: 0.65px;
       font-size: 12px;
       text-transform: uppercase;
     }

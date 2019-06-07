@@ -5,7 +5,7 @@
     "prettier/react",
     "plugin:jest/recommended"
   ],
-  "plugins": ["prettier", "jest", "react", "react-hooks", "jsx-a11y"],
+  "plugins": ["prettier", "jest", "react", "jsx-a11y"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -38,6 +38,8 @@
     "jsx-a11y/aria-props": 2,
     "jsx-a11y/heading-has-content": 0,
     "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/click-events-have-key-events": 1,
+    "jsx-a11y/no-noninteractive-element-interactions": 1,
     "jsx-a11y/mouse-events-have-key-events": 2,
     "jsx-a11y/role-has-required-aria-props": 2,
     "jsx-a11y/role-supports-aria-props": 2,

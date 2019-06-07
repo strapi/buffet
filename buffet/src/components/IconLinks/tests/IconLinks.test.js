@@ -1,11 +1,26 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { mount } from 'enzyme';
 
-// import IconLinks from '../index';
+import IconLinks from '../index';
 
 describe('<IconLinks />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('Should not crash', () => {
+    mount(<IconLinks />);
+  });
+
+  it('Should render some icons', () => {
+    const icons = [{ icon: 'trash', onClick: jest.fn() }];
+    const renderedComponent = mount(<IconLinks links={icons} />);
+    const buttons = renderedComponent.find('button');
+
+    buttons.at(0).simulate('click');
+
+    expect(icons[0].onClick).toHaveBeenCalled();
+    expect(
+      buttons
+        .at(0)
+        .find('i')
+        .prop('className'),
+    ).toContain('trash');
   });
 });

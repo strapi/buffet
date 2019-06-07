@@ -14,7 +14,8 @@ const Checkbox = styled.input`
   cursor: pointer;
   margin: 0;
   position: relative;
-  width: fit-content;
+  width: ${sizes.checkbox.width};
+  font-weight: ${sizes.checkbox.fontWeight};
   &:before {
     content: '';
     position: absolute;
@@ -40,7 +41,7 @@ const Checkbox = styled.input`
     text-align: center;
     font-size: 10px;
     font-family: 'FontAwesome';
-    font-weight: 600;
+    font-weight: 100;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
   }
@@ -51,6 +52,8 @@ const Checkbox = styled.input`
   }
   & + label {
     display: inline-block;
+    font-weight: ${sizes.input.fontWeight};
+    font-size: ${sizes.input.fontSize};
   }
 `;
 

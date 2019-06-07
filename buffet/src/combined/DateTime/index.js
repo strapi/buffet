@@ -15,50 +15,49 @@ import {
 
 import DatePicker from '../../components/DatePicker';
 import TimePicker from '../../components/TimePicker';
+import Wrapper from './Wrapper';
 
 const UNITS = ['hour', 'minute', 'second'];
+export const getTimeString = time => {
+  const currTime = time || moment();
 
-function DateTime({ name, onChange, value }) {
-  const [timestamp, setTimestamp] = useState();
+  const timeObj = getTimeObject(currTime);
+  const timeString = Object.keys(timeObj)
+    .map(key => (timeObj[key] < 10 ? `0${timeObj[key]}` : timeObj[key]))
+    .join(':');
 
-  const getTimeString = time => {
-    const currTime = time || moment();
+  return timeString;
+};
+export const getTimeObject = time => {
+  const timeObj = {};
 
-    const timeObj = getTimeObject(currTime);
-    const timeString = Object.keys(timeObj)
-      .map(key => (timeObj[key] < 10 ? `0${timeObj[key]}` : timeObj[key]))
-      .join(':');
+  UNITS.forEach(unit => {
+    timeObj[unit] = time.get(unit);
+  });
 
-    return timeString;
-  };
+  return timeObj;
+};
 
-  const getTimeObject = time => {
-    const timeObj = {};
-
-    UNITS.forEach(unit => {
-      timeObj[unit] = time.get(unit);
-    });
-
-    return timeObj;
-  };
+function DateTime({ name, onChange, value, ...rest }) {
+  const [timestamp, setTimestamp] = useState(moment());
 
   const setTime = time => {
-    const timeArr = time.split(':');
+    const [hour, minute, second] = time.split(':');
     const timeObj = {
-      hour: timeArr[0],
-      minute: timeArr[1],
-      second: timeArr[2],
+      hour,
+      minute,
+      second,
     };
 
     timestamp.set(timeObj);
     setDate(timestamp);
   };
-
   const setDate = (date, time) => {
     const newDate = time || date;
     date.set(getTimeObject(newDate));
     date.toISOString();
     date.format();
+
     setTimestamp(date);
 
     onChange({ target: { name, type: 'date', value: date } });
@@ -69,11 +68,12 @@ function DateTime({ name, onChange, value }) {
       const newDate = value._isAMomentObject === true ? value : moment(value);
       setDate(newDate);
     }
-  }, []);
+  }, [value]);
 
   return (
-    <div>
+    <Wrapper>
       <DatePicker
+        {...rest}
         name="date"
         onChange={({ target }) => {
           setDate(target.value, timestamp);
@@ -88,7 +88,7 @@ function DateTime({ name, onChange, value }) {
         seconds={false}
         value={getTimeString(timestamp)}
       />
-    </div>
+    </Wrapper>
   );
 }
 
@@ -96,6 +96,7 @@ DateTime.defaultProps = {
   ...commonDefaultProps,
   onChange: () => {},
   value: null,
+  withDefaultValue: true,
 };
 
 DateTime.propTypes = {
@@ -106,6 +107,7 @@ DateTime.propTypes = {
     PropTypes.string,
     PropTypes.instanceOf(Date),
   ]),
+  withDefaultValue: PropTypes.bool,
 };
 
 export default DateTime;

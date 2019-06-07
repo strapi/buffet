@@ -4,8 +4,12 @@ import { mount } from 'enzyme';
 import Textarea from '../index';
 
 let renderedComponent;
-const renderComponent = (props = { name: 'textarea', value: '' }) =>
-  mount(<Textarea {...props} />);
+const initProps = {
+  name: 'textarea',
+  onChange: jest.fn(),
+  value: '',
+};
+const renderComponent = (props = initProps) => mount(<Textarea {...props} />);
 
 describe('<Textarea />', () => {
   afterEach(() => {

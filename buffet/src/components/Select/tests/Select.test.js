@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
 
 import Select from '../index';
 
 const initProps = {
   name: 'inputSelect',
+  onChange: jest.fn(),
   value: '',
 };
 let renderedComponent;

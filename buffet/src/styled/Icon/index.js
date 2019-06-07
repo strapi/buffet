@@ -23,7 +23,7 @@ const Icon = styled.span`
     margin: auto;
     color: ${colors.greyIconColor};
   }
-    
+
   /*
    * Specific icon
    */
@@ -35,6 +35,7 @@ const Icon = styled.span`
       background-color: ${colors.greyIconBkgd};
       ::before {
         content: '\f002';
+        font-weight: 100;
       }
     `}}
 
@@ -44,19 +45,23 @@ const Icon = styled.span`
     css`
       background-color: ${colors.greyIconBkgd};
       ::before {
-        content: '\f1fa';
+        content: '@';
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 600;
       }
     `}}
-    
+
   // Password
   ${props =>
     props.type === 'password' &&
     css`
       ::before {
         content: '\f06e';
+        font-weight: 100;
       }
     `}}
-  
+
   // Time
   ${props =>
     props.type === 'time' &&

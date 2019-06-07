@@ -9,6 +9,7 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const TimePickerWrapper = styled.div`
+  max-width: 95px;
   z-index: 9;
   position: relative;
   background-color: ${colors.white};

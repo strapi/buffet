@@ -15,7 +15,7 @@ const Button = styled.button`
 
   /*
   * Theme
-  */ 
+  */
 
   // General style
   height: ${sizes.button.height.large};
@@ -40,8 +40,15 @@ const Button = styled.button`
       background-image: ${colors.blueGradient};
       color: ${colors.white};
       border: 0;
+      ${props.icon &&
+        css`
+          &::before {
+            content: '\f067';
+            margin-right: ${sizes.margin * 1.3}px;
+          }
+        `}
     `}
-    
+
   ${props =>
     props.color === 'secondary' &&
     css`
@@ -50,6 +57,8 @@ const Button = styled.button`
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
     `}}
+
+
 
   ${props =>
     props.color === 'cancel' &&
@@ -65,10 +74,20 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
-      line-height: 1.5rem;
+      line-height: 1.3rem;
       display: flex;
+      ${props.icon &&
+        css`
+          &::before {
+            content: '';
+            background-image: url(${img});
+            background-repeat: no-repeat;
+            background-position: left;
+            width: 11px;
+            height: 12px;
+          }
+        `}
     `}
-
 
   /*
   * Left icons
@@ -76,7 +95,7 @@ const Button = styled.button`
 
   // General style
   ${props =>
-    !!props.icon &&
+    props.icon &&
     css`
       &::before {
         font-family: 'FontAwesome';
@@ -87,49 +106,35 @@ const Button = styled.button`
         display: inline-block;
         vertical-align: middle;
       }
-    `}   
-
-  // Icon specified
-  ${props =>
-    props.icon === 'add' &&
-    css`
-      &::before {
-        content: '\f067';
-        margin-right: ${sizes.margin * 1.3}px;
-      }
-    `}      
-
-  ${props =>
-    props.icon === 'back' &&
-    css`
-      &::before {
-        content: '\f053';
-      }
-    `}      
-
-  ${props =>
-    props.icon === 'trash' &&
-    css`
-      &::before {
-        content: '';
-        background-image: url(${img});
-        background-repeat: no-repeat;
-        background-position: left;
-        width: 11px;
-        height: 12px;
-      }
     `}
+
+    ${props =>
+    props.color === 'secondary' &&
+      props.icon &&
+      css`
+        &::before {
+          content: '\f067';
+          display: inline-block;
+          height: ${sizes.button.height.small};
+          margin-right: 8px;
+          line-height: ${sizes.button.height.small};
+          vertical-align: middle;
+          font-family: 'FontAwesome';
+          font-weight: 600;
+          font-size: 1.3rem;
+        }
+      `}
 `;
 
 Button.defaultProps = {
   color: 'primary',
-  icon: null,
+  icon: false,
   type: 'button',
 };
 
 Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
-  icon: PropTypes.oneOf(['add', 'back', 'trash']),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   type: PropTypes.string,
 };
 

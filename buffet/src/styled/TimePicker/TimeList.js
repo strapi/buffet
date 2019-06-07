@@ -13,19 +13,26 @@ const TimeList = styled.ul`
   height: 0;
   font-family: 'Lato';
   font-weight: 600;
-  font-size: 13px;
+  font-size: ${sizes.input.fontSize};
   color: ${colors.greyIconColor};
   border: 1px solid transparent;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   list-style: none;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  transition: all 0.3s 300ms linear;
+  transition: all 0.2s ease-out;
   visibility: hidden;
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
   &.displayed {
     height: ${sizes.timepicker.list.height};
-    transition: all 0.3s 0s linear;
+    transition: all 0.2s ease-out;
     visibility: visible;
     border-color: ${colors.lightGrey};
   }
@@ -47,10 +54,11 @@ const TimeList = styled.ul`
       }
     }
     label {
-      width: 100%;
-      height: 100%;
+      display: block;
       position: relative;
       z-index: 0;
+      width: 100%;
+      height: 100%;
       padding: ${sizes.margin * 0.3}px 0 ${sizes.margin * 0.3}px
         calc(${sizes.input.height} + ${sizes.input.padding});
       font-size: 13px;
