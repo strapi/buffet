@@ -2,11 +2,11 @@
   <a href="https://buffetjs.io">
     <img height="35" src="https://cldup.com/ViG2KxiXwc-3000x3000.png" />
   </a>
-  
+
   <br /><br />
-  
+
   <strong>React Components Library made with styled-components</strong>
-  
+
   <p align="center">
     <a href="https://www.npmjs.org/package/buffet">
       <img src="https://img.shields.io/npm/dm/buffet.svg" alt="Monthly download on NPM" />
@@ -25,12 +25,12 @@
 ### Installation
 Using yarn
 ```bash
-yarn add buffet
+yarn add buffetjs
 ```
 
 or npm
 ```bash
-npm install buffet
+npm install buffetjs
 ```
 
 ### Example
@@ -41,7 +41,7 @@ In your frontend project, inject the component library as follows:
 import React from 'react';
 import {
   Enumeration,
-} from 'buffet';
+} from 'buffetjs';
 
 const Page = () => (
   <header>
