@@ -6,7 +6,6 @@ import {
   Enumeration,
   InputText,
   Fonts,
-  GlobalStyle,
   Label,
   Textarea,
   Toggle,
@@ -26,7 +25,7 @@ import IconOpenSource from '../images/icon_opensource.svg';
 import IconConsistent from '../images/icon_consistent.svg';
 import IconCommunity from '../images/icon_community.svg';
 
-const IndexPage = () => {
+const App = () => {
   const [state, setState] = React.useState({
     enumeration: 'milk',
     textarea: 'This chocolate cake is going to make you crazy!',
@@ -44,7 +43,6 @@ const IndexPage = () => {
         />
       </SEO>
       <Fonts />
-      <GlobalStyle />
       <Header />
       <main
         className="container"
@@ -444,5 +442,7 @@ const IndexPage = () => {
     </Layout>
   );
 };
+
+const IndexPage = () => <App />;
 
 export default IndexPage;

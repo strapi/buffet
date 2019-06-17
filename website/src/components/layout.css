@@ -12,6 +12,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1,
+h2,
+h3,
+p,
+input,
+label,
+button,
+input,
+textarea {
+  font-family: 'Lato' !important;
+}
+
 article,
 aside,
 details,
