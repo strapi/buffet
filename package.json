@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
   "scripts": {
+    "postinstall": "yarn setup",
+    "setup": "npm-run-all setup:*",
+    "setup:website": "cd website && yarn",
+    "setup:buffet": "cd buffet && yarn",
     "start": "cd website && node server.js",
     "start:build": "yarn build:website && cd website && node server.js",
+    "build": "cd buffet && yarn build",
     "build:website": "cd buffet && yarn build-storybook && cd ../website && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
