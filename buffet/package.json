@@ -1,8 +1,11 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.0",
   "name": "buffetjs",
   "main": "dist/index.js",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "cross-env rimraf dist && babel src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "build-storybook": "build-storybook",
@@ -12,6 +15,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "storybook": "start-storybook -p 3000",
     "pretest": "yarn test:clean && yarn lint",
+    "prepublishOnly": "npm run build",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
