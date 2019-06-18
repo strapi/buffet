@@ -46,23 +46,23 @@ const Main = () => {
       <div className="row home_description">
         <div className="col-lg-4 offset-lg-4 col-xs-12">
           <Paragraph style={{ textAlign: 'center', margin: '0 -36px' }}>
-            Buffet is Strapi&apos;s open-source component system to create
-            digital applications. Based on style-components, it is made
-            available for the community...
+            Buffet.js is Strapi&apos;s open-source component system. Based on
+            styled-components, Buffet.js aims to provide a good development
+            experience for programmers and facilitates contributions in the
+            ecosystem.
           </Paragraph>
         </div>
       </div>
       <div className="row home_consistent">
         <div className="col-lg-8 offset-lg-2 col-xs-12">
           <H3 style={{ marginTop: 124 }}>
-            A Consistent Styled Component Library
+            A Consistent Styled-Component Library
           </H3>
         </div>
         <div className="col-lg-4 offset-lg-2 col-xs-12  ">
           <Paragraph style={{ marginTop: 20 }}>
-            Buffet is Strapi&apos;s open-source component system to create
-            digital applications. Based on style-components, it is made
-            available for the community...
+            Buffet.js supplies a series of design principles to help the
+            community develop features consistently and efficiently.
           </Paragraph>
         </div>
       </div>
@@ -258,8 +258,7 @@ const Main = () => {
               </h3>
               <Paragraph style={{ marginTop: 8 }}>
                 We strongly believe in the principles of open-source and shared
-                contributions. Everyone eating at the buffet is welcomed to
-                contribute as well.
+                contributions. Contributions to the Buffet are welcomed.
               </Paragraph>
             </div>
           </div>
@@ -279,8 +278,8 @@ const Main = () => {
                 Buffet is consistent
               </h3>
               <Paragraph style={{ marginTop: 8 }}>
-                Based on styled-components, every Buffet component harmonises
-                with the others to ensure the user experience stays consistent
+                Based on styled-components, every Buffet.js component harmonizes
+                with the others to ensure a consistent user experience
                 throughout the whole journey.
               </Paragraph>
             </div>
@@ -327,9 +326,9 @@ const Main = () => {
                 Buffet is for the community
               </h3>
               <Paragraph style={{ marginTop: 8 }}>
-                Created with the community in mind, Buffet is made by developers
-                for developers. It is fully supported by its creators (and by
-                open-source contributors).
+                Created with the community in mind, Buffet.js is made by
+                developers for developers. It is fully supported by the core
+                team and by open-source contributors.
               </Paragraph>
             </div>
           </div>
@@ -347,7 +346,7 @@ const Main = () => {
               color: '#3b3b3b',
             }}
           >
-            Get updates about Buffet.JS
+            Get updates about Buffet.js
           </h2>
           <form
             action="https://strapi.us8.list-manage.com/subscribe/post?u=eda9bfc8dd339b19e11e4b691&amp;id=60e952219b"

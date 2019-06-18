@@ -12,7 +12,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 const CustomRow = ({ row }) => {
-  const { firstname, id, lastname, receipe, restaurant } = row;
+  const { firstname, id, lastname, recipe, restaurant } = row;
 
   return (
     <Row>
@@ -26,7 +26,7 @@ const CustomRow = ({ row }) => {
         <p>{lastname}</p>
       </td>
       <td>
-        <p>{receipe}</p>
+        <p>{recipe}</p>
       </td>
       <td>
         <p>{restaurant}</p>
@@ -44,7 +44,7 @@ CustomRow.propTypes = {
     firstname: PropTypes.string,
     id: PropTypes.number,
     lastname: PropTypes.string,
-    receipe: PropTypes.string,
+    recipe: PropTypes.string,
     restaurant: PropTypes.string,
   }),
 };
@@ -66,8 +66,8 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
     isSortEnabled: true,
   },
   {
@@ -81,21 +81,21 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
     restaurant: 'Le Gaya',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
     restaurant: 'Le Georges Blanc',
   },
   {
     id: 3,
     firstname: 'Mars',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
     restaurant: 'La Ferme de mon père',
   },
 ];
@@ -116,7 +116,7 @@ import React from 'react';
 import { Table } from 'buffetjs';
 
 const CustomRow = ({ row }) => {
-  const { firstname, id, lastname, receipe, restaurant } = row;
+  const { firstname, id, lastname, recipe, restaurant } = row;
 
   return (
     <Row>
@@ -130,7 +130,7 @@ const CustomRow = ({ row }) => {
         <p>{lastname}</p>
       </td>
       <td>
-        <p>{receipe}</p>
+        <p>{recipe}</p>
       </td>
       <td>
         <p>{restaurant}</p>
@@ -156,8 +156,8 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
     isSortEnabled: true,
   },
   {
@@ -172,21 +172,21 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
     restaurant: 'Le Gaya',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
     restaurant: 'Le Georges Blanc',
   },
   {
     id: 3,
     firstname: 'Mars',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
     restaurant: 'La Ferme de mon père',
   },
 ];
