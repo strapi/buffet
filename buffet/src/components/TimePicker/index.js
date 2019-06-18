@@ -102,6 +102,7 @@ function TimePicker(props) {
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef();
   const wrapperRef = useRef();
+  const listRef = useRef();
   const listRefs = getOptions().reduce((acc, curr) => {
     acc[curr.value] = useRef();
 
@@ -113,9 +114,8 @@ function TimePicker(props) {
   useEffect(() => {
     if (isOpen) {
       const currentRef = currentTimeSelected;
-      listRefs[currentRef].current.scrollIntoView({
-        block: 'start',
-      });
+
+      listRef.current.scrollTop = listRefs[currentRef].current.offsetTop;
     }
   }, [isOpen, currentTimeSelected]);
 
@@ -205,7 +205,7 @@ function TimePicker(props) {
         value={inputVal}
       />
       <Icon type="time" />
-      <TimeList className={isOpen && 'displayed'}>
+      <TimeList className={isOpen && 'displayed'} ref={listRef}>
         {getOptions().map(option => (
           <li key={option.value} ref={listRefs[option.value]}>
             <input

@@ -22,10 +22,11 @@ const Button = styled.button`
   padding: 0 ${sizes.button.padding.large};
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: 1.6rem;
+  line-height: ${sizes.button.height.large};
   border-radius: ${sizes.radius};
-  cursor:pointer;
+  cursor: pointer;
   outline: 0;
+  background-color: ${colors.white};
   &:hover {
     ${mixins(colors.lightGreyAlpha).bshadow};
   }
@@ -56,9 +57,15 @@ const Button = styled.button`
       color: ${colors.darkBlue};
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
+      line-height: ${sizes.button.height.small};
+      ${props.icon &&
+        css`
+          &::before {
+            content: '\f067';
+            margin-right: ${sizes.margin * 1.3}px;
+          }
+        `}
     `}}
-
-
 
   ${props =>
     props.color === 'cancel' &&
@@ -74,17 +81,16 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
-      line-height: 1.3rem;
-      display: flex;
       ${props.icon &&
         css`
           &::before {
             content: '';
+            vertical-align: middle;
             background-image: url(${img});
             background-repeat: no-repeat;
-            background-position: left;
+            background-position: top left;
             width: 11px;
-            height: 12px;
+            height: 16px;
           }
         `}
     `}
@@ -101,29 +107,12 @@ const Button = styled.button`
         font-family: 'FontAwesome';
         font-weight: 600;
         font-size: 1.3rem;
+        //line-height: 1.6rem;
         margin-right: 8px;
-        line-height: 1.8rem;
         display: inline-block;
-        vertical-align: middle;
+        //vertical-align: middle;
       }
     `}
-
-    ${props =>
-    props.color === 'secondary' &&
-      props.icon &&
-      css`
-        &::before {
-          content: '\f067';
-          display: inline-block;
-          height: ${sizes.button.height.small};
-          margin-right: 8px;
-          line-height: ${sizes.button.height.small};
-          vertical-align: middle;
-          font-family: 'FontAwesome';
-          font-weight: 600;
-          font-size: 1.3rem;
-        }
-      `}
 `;
 
 Button.defaultProps = {

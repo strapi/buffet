@@ -75,6 +75,11 @@ function Example() {
               Text
             </Button>
           </div>
+          <div className="btn-wrapper">
+            <Button type="submit" color="secondary" icon>
+              Text
+            </Button>
+          </div>
         </section>
       </>
     </Presentation>
