@@ -30,7 +30,7 @@ function InputTextStory() {
   };
   const type = radios('Types', types, 'text');
   const defaultProps = {
-    placeholder: 'Tap something…',
+    placeholder: 'Type something…',
     name: 'input',
   };
 
@@ -49,12 +49,12 @@ function InputTextStory() {
           <h2 style={{ marginBottom: 10 }}>Examples</h2>
           <div className="row">
             <div className="col-6">
-              <InputCompo name="lastname" placeholder="Lastname" type="text" />
+              <InputCompo name="lastname" placeholder="Last name" type="text" />
             </div>
             <div className="col-6">
               <InputCompo
                 name="search"
-                placeholder="Tap something to search…"
+                placeholder="Type something to search…"
                 type="search"
               />
             </div>

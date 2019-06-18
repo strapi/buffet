@@ -13,26 +13,26 @@ function ListStory() {
         firstname: 'Pierre',
         lastname: 'Gagnaire',
         description:
-          'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
+          'Food qualities braise chicken cuts bowl through slices butternut snack.',
         restaurant: 'Le Gaya',
       },
       {
         firstname: 'Georges',
         lastname: 'Blanc',
-        description: 'Tenderloin drumstick cupim cow.',
+        description: 'Flavor centerpiece plate.',
         restaurant: 'Le Georges Blanc',
       },
       {
-        firstname: 'Mars',
+        firstname: 'Marc',
         lastname: 'Veyrat',
-        description: 'Pancetta pig buffalo bresaola.',
+        description: 'Gastronomy atmosphere set aside.',
         restaurant: 'La Ferme de mon père',
       },
     ],
   };
 
   return (
-    <Presentation title="List" description="Display some data.">
+    <Presentation title="List" description="Display data.">
       <div style={{ paddingTop: 3, marginBottom: 35 }}>
         <List {...defaultProps} />
       </div>
@@ -50,19 +50,19 @@ const rows = [
     firstname: 'Pierre',
     lastname: 'Gagnaire',
     description:
-      'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
+      'Food qualities braise chicken cuts bowl through slices butternut snack.',
     restaurant: 'Le Gaya',
   },
   {
     firstname: 'Georges',
     lastname: 'Blanc',
-    description: 'Tenderloin drumstick cupim cow.',
+    description: 'Flavor centerpiece plate.',
     restaurant: 'Le Georges Blanc',
   },
   {
     firstname: 'Mars',
     lastname: 'Veyrat',
-    description: 'Pancetta pig buffalo bresaola.',
+    description: 'Gastronomy atmosphere set aside.',
     restaurant: 'La Ferme de mon père',
   },
 ];

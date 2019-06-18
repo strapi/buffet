@@ -23,8 +23,8 @@ const headers = [
     value: 'lastname',
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
   },
 ];
 const rows = [
@@ -32,25 +32,25 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
   },
   {
     id: 2,
     firstname: 'Marc',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
   },
 ];
 
 function TableStory() {
   return (
-    <Presentation title="Table" description="Useful to display data.">
+    <Presentation title="Table" description="Useful to display tabular data.">
       <div style={{ paddingTop: 3, marginBottom: 35 }}>
         <Table headers={headers} rows={rows} />
       </div>
@@ -77,8 +77,8 @@ const headers = [
     value: 'lastname',
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
   },
 ];
 
@@ -87,19 +87,19 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
   },
   {
     id: 2,
     firstname: 'Marc',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
   },
 ];
 

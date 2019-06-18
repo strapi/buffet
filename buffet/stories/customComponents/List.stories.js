@@ -150,7 +150,7 @@ function ListStory() {
   };
 
   return (
-    <Presentation title="List" description="Display some data.">
+    <Presentation title="List" description="Display data.">
       <section style={{ marginTop: 29, paddingBottom: 40 }}>
         <h2 style={{ marginBottom: 30 }}>Default List</h2>
         <div style={{ marginBottom: 35 }}>
@@ -230,7 +230,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
     <Row onClick={onClick}>
       <td>
         <i className={\`fa \${icon}\`} />
-      </td> 
+      </td>
       <td>
         <p style={styles.name}>{name}</p>
       </td>
@@ -305,9 +305,9 @@ function Example() {
   ];
 
   return (
-    <CustomList 
-      {...props} 
-      items={rows} 
+    <CustomList
+      {...props}
+      items={rows}
       customRowComponent={props => <CustomRow {...props} />}
     />
   );

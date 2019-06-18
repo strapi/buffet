@@ -30,7 +30,7 @@ function LabelStory() {
     <>
       <Presentation
         title="Label"
-        description="The Label can handle different type of messages:"
+        description="The label can handle different type of messages:"
       />
       <section style={{ marginLeft: 16, marginRight: 16, paddingTop: 7 }}>
         <strong style={styles.strong}>Using string:</strong>

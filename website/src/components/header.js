@@ -53,9 +53,9 @@ const Navigation = () => (
                 lineHeight: '40px',
               }}
             >
-              Buffet JS:
-              <br className="d-block d-sm-none" />
-              All-you-can-eat React components library
+              Buffet.js:
+              <br className="d-block d-sm-none" /> All-you-can-eat React
+              components library
               <span
                 style={{
                   position: 'absolute',
@@ -79,7 +79,7 @@ const Navigation = () => (
                 lineHeight: '24px',
               }}
             >
-              A design system to create better user experience values for
+              A design system for creating better user experiences in
               application interfaces.
             </p>
             <Button url="/storybook/" type="main">

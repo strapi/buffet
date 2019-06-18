@@ -27,8 +27,8 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
     isSortEnabled: true,
   },
   {
@@ -42,21 +42,21 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
     restaurant: 'Le Gaya',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
     restaurant: 'Le Georges Blanc',
   },
   {
     id: 3,
     firstname: 'Mars',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
     restaurant: 'La Ferme de mon père',
   },
 ];
@@ -224,8 +224,8 @@ const headers = [
     isSortEnabled: true,
   },
   {
-    name: 'Best receipe',
-    value: 'receipe',
+    name: 'Best recipe',
+    value: 'recipe',
     isSortEnabled: true,
   },
   {
@@ -240,21 +240,21 @@ const rows = [
     id: 1,
     firstname: 'Pierre',
     lastname: 'Gagnaire',
-    receipe: 'Ratatouille',
+    recipe: 'Ratatouille',
     restaurant: 'Le Gaya',
   },
   {
     id: 2,
     firstname: 'Georges',
     lastname: 'Blanc',
-    receipe: 'Beef bourguignon',
+    recipe: 'Beef bourguignon',
     restaurant: 'Le Georges Blanc',
   },
   {
     id: 3,
     firstname: 'Mars',
     lastname: 'Veyrat',
-    receipe: 'Lemon Chicken',
+    recipe: 'Lemon Chicken',
     restaurant: 'La Ferme de mon père',
   },
 ];
