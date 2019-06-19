@@ -8,7 +8,7 @@
 <strong>React Components Library made with styled-components</strong>
 
   <p align="center">
-    <a href="https://www.npmjs.org/package/buffet">
+    <a href="https://www.npmjs.org/package/buffetjs">
       <img src="https://img.shields.io/npm/dm/buffet.svg" alt="Monthly download on NPM" />
     </a>
     <a href="https://travis-ci.org/strapi/buffet">
