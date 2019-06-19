@@ -80,4 +80,4 @@ export default Page;
 
 ## Documentation
 
-<strong>See the documentation at [buffetjs.io/storybook](https://buffetjs.io/storybook) for more information.</strong>
+<strong>See the documentation at [buffetjs.io/storybook](https://buffetjs.io/storybook) for more informations.</strong>

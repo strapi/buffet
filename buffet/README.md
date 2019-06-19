@@ -1,58 +1,83 @@
-# Buffet.js
+<div align="center">
+  <a href="https://buffetjs.io">
+    <img height="35" src="https://cldup.com/ViG2KxiXwc-3000x3000.png" />
+  </a>
 
-Strapi Components library.
+<br /><br />
 
-## Install
+<strong>React Components Library made with styled-components</strong>
 
-Install the dependencies:
+  <p align="center">
+    <a href="https://www.npmjs.org/package/buffet">
+      <img src="https://img.shields.io/npm/dm/buffet.svg" alt="Monthly download on NPM" />
+    </a>
+    <a href="https://travis-ci.org/strapi/buffet">
+      <img src="https://travis-ci.org/strapi/buffet.svg?branch=master" alt="Travis Build Status" />
+    </a>
+    <a href="http://slack.strapi.io">
+      <img src="https://strapi-slack.herokuapp.com/badge.svg" alt="Strapi on Slack" />
+    </a>
+  </p>
+</div>
 
-```bash
-yarn
-```
+## Getting Started
 
-## Development
+### Installation
 
-```bash
-yarn storybook
-```
-
-## Commands
-
-### Generators
-
-```bash
-yarn run generate
-```
-
-Allows you to auto-generate boilerplate code for common parts of your application, specifically components.
-
-### Lint
+Using yarn
 
 ```bash
-yarn run lint
+yarn add buffetjs
 ```
 
-Lints your JavaScript and your CSS.
+or npm
 
 ```bash
-yarn run lint:fix
+npm install buffetjs
 ```
 
-Fix your Javascript
+### Example
 
-### Testing
+Import buffet.js into your project as follows:
 
-#### Unit Testing
+```js
+import React from 'react';
+import {
+  Enumeration,
+} from 'buffetjs';
 
-```bash
-yarn run test
+const Page = () => (
+  <header>
+    <p>Title</p>
+  </header>
+  <section>
+    <Enumeration
+      name="enumeration"
+      value="milk"
+      options={[
+        {
+          value: 'flour',
+          label: 'Flour',
+        },
+        {
+          value: 'milk',
+          label: 'Milk',
+        },
+        {
+          value: 'butter',
+          label: 'Butter',
+        },
+      ]}
+    />
+  </section>
+  <footer>
+    Made with love by Strapi
+  </footer>
+);
+
+export default Page;
 ```
 
-Tests your application with the unit tests specified in the \*_/tests/_.js files throughout the application.
-All the test commands allow an optional -- [string] argument to filter the tests run by Jest. Useful if you need to run a specific test only.
+## Documentation
 
-#### Watching
-
-```
-yarn run test:watch
-```
+<strong>See the documentation at [buffetjs.io/storybook](https://buffetjs.io/storybook) for more informations.</strong>
