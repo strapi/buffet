@@ -25,7 +25,7 @@ const keyCodes = {
   arrowdown: 40,
   enter: 13,
   f: 70,
-  tab: 91,
+  tab: 9,
 };
 
 function getShortcutKeys(keys) {
