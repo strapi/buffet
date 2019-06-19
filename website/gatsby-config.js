@@ -9,6 +9,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-54313258-11',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+
+        exclude: [],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$|\.jsx$/,
@@ -50,7 +60,10 @@ module.exports = {
           buffet: path.resolve(__dirname, '../buffet/dist'),
           react: path.resolve(__dirname, 'node_modules/react'),
           'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
-          'styled-components': path.resolve(__dirname, 'node_modules/styled-components'),
+          'styled-components': path.resolve(
+            __dirname,
+            'node_modules/styled-components'
+          ),
         },
         extensions: [],
       },
