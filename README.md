@@ -3,9 +3,9 @@
     <img height="35" src="https://cldup.com/ViG2KxiXwc-3000x3000.png" />
   </a>
 
-  <br /><br />
+<br /><br />
 
-  <strong>React Components Library made with styled-components</strong>
+<strong>React Components Library made with styled-components</strong>
 
   <p align="center">
     <a href="https://www.npmjs.org/package/buffet">
@@ -23,19 +23,22 @@
 ## Getting Started
 
 ### Installation
+
 Using yarn
+
 ```bash
 yarn add buffetjs
 ```
 
 or npm
+
 ```bash
 npm install buffetjs
 ```
 
 ### Example
 
-In your frontend project, inject the component library as follows:
+Import buffet.js into your project as follows:
 
 ```js
 import React from 'react';
@@ -77,4 +80,4 @@ export default Page;
 
 ## Documentation
 
-<strong>See the documentation at [buffetjs.io/storybook](https://buffetjs.io/storybook) for more information.</strong>
+<strong>See the documentation at [buffetjs.io/storybook](https://buffetjs.io/storybook) for more informations.</strong>

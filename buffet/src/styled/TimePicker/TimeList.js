@@ -30,6 +30,7 @@ const TimeList = styled.ul`
   }
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
+  scrollbar-width: none;
   &.displayed {
     height: ${sizes.timepicker.list.height};
     transition: all 0.2s ease-out;

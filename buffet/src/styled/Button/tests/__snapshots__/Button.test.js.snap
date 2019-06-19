@@ -6,10 +6,11 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
   padding: 0 30px;
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: 1.6rem;
+  line-height: 30px;
   border-radius: 3px;
   cursor: pointer;
   outline: 0;
+  background-color: #ffffff;
   background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
   color: #ffffff;
   border: 0;
@@ -37,9 +38,7 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
   font-weight: 600;
   font-size: 1.3rem;
   margin-right: 8px;
-  line-height: 1.8rem;
   display: inline-block;
-  vertical-align: middle;
 }
 
 <button
@@ -55,10 +54,11 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   padding: 0 30px;
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: 1.6rem;
+  line-height: 30px;
   border-radius: 3px;
   cursor: pointer;
   outline: 0;
+  background-color: #ffffff;
   background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
   color: #ffffff;
   border: 0;
@@ -86,9 +86,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   font-weight: 600;
   font-size: 1.3rem;
   margin-right: 8px;
-  line-height: 1.8rem;
   display: inline-block;
-  vertical-align: middle;
 }
 
 <button
@@ -104,10 +102,11 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   padding: 0 30px;
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: 1.6rem;
+  line-height: 30px;
   border-radius: 3px;
   cursor: pointer;
   outline: 0;
+  background-color: #ffffff;
   background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
   color: #ffffff;
   border: 0;
@@ -135,9 +134,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   font-weight: 600;
   font-size: 1.3rem;
   margin-right: 8px;
-  line-height: 1.8rem;
   display: inline-block;
-  vertical-align: middle;
 }
 
 <button

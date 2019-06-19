@@ -16,10 +16,14 @@ const Global = createGlobalStyle`
     }
     &.btn-wrapper {
       display: inline-block;
+      align-self: flex-end;
       width: fit-content;
       margin-bottom: ${sizes.margin * 1.8}px;
-      margin-right: ${sizes.margin * 2}px;
+      padding-right: ${sizes.margin * 2}px;
       height: ${sizes.button.height.large};
+      button {
+        outline: 0;
+      }
     }
   }
   pre {
