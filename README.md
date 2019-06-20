@@ -9,14 +9,14 @@
 
   <p align="center">
     <a href="https://www.npmjs.org/package/buffetjs">
-      <img src="https://img.shields.io/npm/dm/buffet.svg" alt="Monthly download on NPM" />
+      <img src="https://img.shields.io/npm/dm/buffetjs.svg" alt="Monthly download on NPM" />
     </a>
     <a href="https://travis-ci.org/strapi/buffet">
       <img src="https://travis-ci.org/strapi/buffet.svg?branch=master" alt="Travis Build Status" />
     </a>
-    <a href="http://slack.strapi.io">
+    <!-- <a href="http://slack.strapi.io">
       <img src="https://strapi-slack.herokuapp.com/badge.svg" alt="Strapi on Slack" />
-    </a>
+    </a> -->
   </p>
 </div>
 
@@ -28,12 +28,16 @@ Using yarn
 
 ```bash
 yarn add buffetjs
+# Install the required dependencies
+yarn add lodash prop-types react react-dom react-router-dom styled-components
 ```
 
 or npm
 
 ```bash
-npm install buffetjs
+npm install buffetjs --save
+# Install the required dependencies
+npm install lodash prop-types react react-dom react-router-dom styled-components --save
 ```
 
 ### Example
@@ -46,34 +50,39 @@ import {
   Enumeration,
 } from 'buffetjs';
 
-const Page = () => (
-  <header>
-    <p>Title</p>
-  </header>
-  <section>
-    <Enumeration
-      name="enumeration"
-      value="milk"
-      options={[
-        {
-          value: 'flour',
-          label: 'Flour',
-        },
-        {
-          value: 'milk',
-          label: 'Milk',
-        },
-        {
-          value: 'butter',
-          label: 'Butter',
-        },
-      ]}
-    />
-  </section>
-  <footer>
-    Made with love by Strapi
-  </footer>
-);
+const Page = () => {
+  const [state, setState] = React.useState('milk');
+
+  return (
+    <header>
+      <p>Title</p>
+    </header>
+    <section>
+      <Enumeration
+        name="enumeration"
+        onChange={({ target: { value } }) => setState(value)}
+        options={[
+          {
+            value: 'flour',
+            label: 'Flour',
+          },
+          {
+            value: 'milk',
+            label: 'Milk',
+          },
+          {
+            value: 'butter',
+            label: 'Butter',
+          },
+        ]}
+        value={state}
+      />
+    </section>
+    <footer>
+      Made with love by Strapi
+    </footer>
+  );
+}
 
 export default Page;
 ```

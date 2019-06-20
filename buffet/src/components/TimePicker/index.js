@@ -112,9 +112,9 @@ function TimePicker(props) {
 
   // Effect to enable scrolling
   useEffect(() => {
-    if (isOpen) {
-      const currentRef = currentTimeSelected;
+    const currentRef = currentTimeSelected;
 
+    if (isOpen && listRefs[currentRef]) {
       listRef.current.scrollTop = listRefs[currentRef].current.offsetTop;
     }
   }, [isOpen, currentTimeSelected]);
@@ -159,6 +159,13 @@ function TimePicker(props) {
 
   // Custom hook to close the time list
   useShortcutEffect('enter', () => {
+    if (isOpen) {
+      setIsOpen(false);
+      inputRef.current.blur();
+    }
+  });
+
+  useShortcutEffect('tab', () => {
     if (isOpen) {
       setIsOpen(false);
       inputRef.current.blur();
