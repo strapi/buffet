@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "buffetjs",
   "main": "dist/index.js",
   "license": "MIT",
@@ -37,6 +37,10 @@
     "hooks": {
       "pre-commit": "yarn lint:staged"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strapi/buffet.git"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
