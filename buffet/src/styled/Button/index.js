@@ -22,7 +22,7 @@ const Button = styled.button`
   padding: 0 ${sizes.button.padding.large};
   font-weight: 600;
   font-size: 1.3rem;
-  line-height: ${sizes.button.height.large};
+  line-height: normal;
   border-radius: ${sizes.radius};
   cursor: pointer;
   outline: 0;
@@ -57,7 +57,6 @@ const Button = styled.button`
       color: ${colors.darkBlue};
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
-      line-height: ${sizes.button.height.small};
       ${props.icon &&
         css`
           &::before {
