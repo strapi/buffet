@@ -38,6 +38,10 @@
       "pre-commit": "yarn lint:staged"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strapi/buffet.git"
+  },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
   },
