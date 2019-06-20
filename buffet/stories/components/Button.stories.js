@@ -45,8 +45,8 @@ function Example() {
 `}</Pre>
         </section>
 
-        <section style={{ marginTop: 30 }}>
-          <h2 style={{ marginBottom: 10 }}>Examples</h2>
+        <section style={{ marginTop: 32 }}>
+          <h2 style={{ marginBottom: 12 }}>Examples</h2>
           <div className="btn-wrapper">
             <Button type="submit">Save</Button>
           </div>
