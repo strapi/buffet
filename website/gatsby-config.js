@@ -6,7 +6,7 @@ module.exports = {
     description:
       'Buffet is an open-source React components system based on styled-components, made for creating better user experiences in application interfaces.',
     author: '@strapijs',
-    image: "/images/logo-buffetjs2X.jpg", // Path to your image you placed in the 'static' folder
+    image: "/images/cover-buffet.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     {
