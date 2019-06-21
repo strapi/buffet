@@ -432,7 +432,7 @@ const Main = () => {
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']}>
+    <SEO title="Buffetjs.io" keywords={['buffetjs', 'styled-components', 'react', 'design system', 'component library', 'open-source design system', 'javascript component library', 'strapi design system']}>
       <script
         type="text/javascript"
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
