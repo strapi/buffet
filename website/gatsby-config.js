@@ -4,8 +4,9 @@ module.exports = {
   siteMetadata: {
     title: 'Buffet.js — React Components Library built with styled-components',
     description:
-      'Buffet is an open-source components system to create digital applications. Based on styled-components, it is made available for the community...',
-    author: '@gatsbyjs',
+      'Buffet is an open-source React components system based on styled-components, made for creating better user experiences in application interfaces.',
+    author: '@strapijs',
+    image: "/images/cover-buffet.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     {
