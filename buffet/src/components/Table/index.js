@@ -15,6 +15,7 @@ import ActionCollapse from './ActionCollapse';
 
 function Table({
   bulkActionProps,
+  className,
   customRow,
   headers,
   onChangeSort,
@@ -39,7 +40,7 @@ function Table({
   const shouldDisplayEmptyRow = rows.length === 0;
 
   return (
-    <StyledTable>
+    <StyledTable className={className}>
       <table className="">
         <TableHeader
           headers={headers}
@@ -108,6 +109,7 @@ Table.defaultProps = {
     translatedNumberOfEntries: 'entries',
     translatedAction: 'Delete all',
   },
+  className: null,
   customRow: null,
   headers: [],
   onChangeSort: () => {},
@@ -130,6 +132,7 @@ Table.propTypes = {
     translatedNumberOfEntries: PropTypes.string,
     translatedNumberOfEntry: PropTypes.string,
   }),
+  className: PropTypes.string,
   customRow: PropTypes.func,
   headers: PropTypes.arrayOf(
     PropTypes.shape({

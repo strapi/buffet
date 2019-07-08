@@ -15,9 +15,9 @@ import Label from '../Label';
 
 import StyledToggle, { ToggleWrapper } from '../../styled/Toggle';
 
-function Toggle({ id, name, onChange, value }) {
+function Toggle({ id, className, name, onChange, value }) {
   return (
-    <ToggleWrapper>
+    <ToggleWrapper className={className}>
       <Label htmlFor={id || name}>
         <StyledToggle
           checked={value}

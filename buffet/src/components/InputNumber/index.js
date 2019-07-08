@@ -17,6 +17,7 @@ import StyledInputNumber from '../../styled/InputNumber';
 function InputNumber({
   autoFocus,
   id,
+  className,
   name,
   onChange,
   tabIndex,
@@ -35,7 +36,7 @@ function InputNumber({
   };
 
   return (
-    <StyledInputNumber>
+    <StyledInputNumber className={className}>
       <RcInputNumber
         {...rest}
         autoFocus={autoFocus}

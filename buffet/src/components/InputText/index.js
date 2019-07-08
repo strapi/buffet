@@ -25,12 +25,13 @@ function InputText({
   tabIndex,
   type,
   value,
+  className,
   ...rest
 }) {
   const [showPassword, togglePassword] = useState(false);
 
   return (
-    <InputWrapper>
+    <InputWrapper className={className}>
       {(type === 'search' || type === 'email') && <Icon type={type} />}
       {type === 'password' && (
         <button

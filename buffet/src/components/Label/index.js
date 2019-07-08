@@ -23,16 +23,22 @@ function Label(props) {
     return props.children;
   })();
 
-  return <StyledLabel htmlFor={props.htmlFor}>{content}</StyledLabel>;
+  return (
+    <StyledLabel htmlFor={props.htmlFor} className={props.className}>
+      {content}
+    </StyledLabel>
+  );
 }
 
 Label.defaultProps = {
   children: null,
+  className: null,
   message: null,
 };
 
 Label.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   htmlFor: PropTypes.string.isRequired,
   message: PropTypes.oneOfType([
     PropTypes.func,
