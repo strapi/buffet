@@ -17,9 +17,9 @@ import StyledEnumeration, {
   EnumerationWrapper,
 } from '../../styled/Enumeration';
 
-function Enumeration({ id, name, onChange, options, value }) {
+function Enumeration({ id, className, name, onChange, options, value }) {
   return (
-    <EnumerationWrapper>
+    <EnumerationWrapper className={className}>
       {options.map(option => (
         <Label key={option.value} htmlFor={id || name}>
           <StyledEnumeration

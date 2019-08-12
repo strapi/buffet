@@ -201,7 +201,7 @@ function TimePicker(props) {
   };
 
   return (
-    <TimePickerWrapper ref={wrapperRef}>
+    <TimePickerWrapper ref={wrapperRef} className={props.className}>
       <StyledTimePicker
         {...props}
         autoComplete="off"
@@ -232,12 +232,14 @@ function TimePicker(props) {
 }
 
 TimePicker.defaultProps = {
+  className: null,
   onChange: () => {},
   seconds: false,
   value: '',
 };
 
 TimePicker.propTypes = {
+  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   seconds: PropTypes.bool,

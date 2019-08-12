@@ -50,11 +50,11 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
-    const { displayFormat, id, name } = this.props;
+    const { className, displayFormat, id, name } = this.props;
     const { date, isFocused } = this.state;
 
     return (
-      <Datepicker>
+      <Datepicker className={className}>
         <SingleDatePicker
           date={date}
           focused={isFocused}

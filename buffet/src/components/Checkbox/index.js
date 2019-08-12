@@ -18,6 +18,7 @@ import Label from '../Label';
 
 function Checkbox({
   autoFocus,
+  className,
   id,
   message,
   name,
@@ -37,7 +38,7 @@ function Checkbox({
   };
 
   return (
-    <CheckboxWrapper>
+    <CheckboxWrapper className={className}>
       <StyledCheckbox
         {...rest}
         autoFocus={autoFocus}
