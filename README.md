@@ -1,3 +1,4 @@
+```html
 <div align="center">
   <a href="https://buffetjs.io">
     <img height="35" src="https://cldup.com/ViG2KxiXwc-3000x3000.png" />
@@ -19,7 +20,7 @@
     </a>
   </p>
 </div>
-
+```
 ## Getting Started
 
 ### Installation
@@ -44,7 +45,7 @@ npm install lodash prop-types react react-dom react-router-dom styled-components
 
 Import buffet.js into your project as follows:
 
-```js
+```jsx
 import React from 'react';
 import {
   Enumeration,
