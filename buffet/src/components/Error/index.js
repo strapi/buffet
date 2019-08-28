@@ -4,7 +4,7 @@
  *
  */
 
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 
@@ -16,11 +16,24 @@ import {
   commonPropTypes,
 } from '../../commonPropTypes/error';
 
-function Error({ children, translatedErrors, type, validations, value }) {
+function Error({
+  children,
+  errors,
+  translatedErrors,
+  type,
+  validations,
+  value,
+}) {
   const [state, dispatch] = useReducer(reducer, {
     error: false,
     canCheck: !isEmpty(value),
   });
+  useEffect(() => {
+    dispatch({
+      type: 'SET_ERROR',
+      error: errors,
+    });
+  }, [errors]);
 
   const { error, canCheck } = state;
 

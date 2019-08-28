@@ -47,6 +47,7 @@ const inputs = {
 function Inputs({
   customInputs,
   description,
+  errors,
   label,
   name,
   onChange,
@@ -83,7 +84,12 @@ function Inputs({
   }
 
   return (
-    <Error name={name} type={type} validations={validations}>
+    <Error
+      errors={errors[name] || false}
+      name={name}
+      type={type}
+      validations={validations}
+    >
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
           {type !== 'checkbox' && <Label htmlFor={name}>{label}</Label>}
@@ -109,7 +115,7 @@ function Inputs({
             value={inputValue}
           />
           {!error && <Description>{description}</Description>}
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {!!error && <ErrorMessage>{error}</ErrorMessage>}
         </Wrapper>
       )}
     </Error>
@@ -120,6 +126,7 @@ Inputs.defaultProps = {
   ...commonDefaultProps,
   customInputs: null,
   description: null,
+  errors: {},
   label: null,
   onChange: () => {},
 };
@@ -129,6 +136,8 @@ Inputs.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   customInputs: PropTypes.object,
   description: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  errors: PropTypes.object,
   label: PropTypes.string,
   onChange: () => {},
 };

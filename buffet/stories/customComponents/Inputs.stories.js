@@ -121,7 +121,11 @@ function InputStory() {
       <>
         <section style={{ marginTop: 29 }}>
           <h2 style={{ marginBottom: 36 }}>Example</h2>
-          <form onSubmit={() => {}}>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+            }}
+          >
             <div className="row">
               {Object.keys(form).map(input => (
                 <div className={form[input].styleName} key={input}>
