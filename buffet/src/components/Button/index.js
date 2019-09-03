@@ -6,12 +6,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import StyledButton from '../../styled/Button';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
-
-  return <StyledButton {...props}>{content}</StyledButton>;
+  const icon = props.icon ? <FontAwesomeIcon icon={faPlus} /> : null;
+  
+  return (
+    <StyledButton {...props}>
+      {icon}
+      {content}
+    </StyledButton>
+  );
 }
 
 Button.defaultProps = {
