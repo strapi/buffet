@@ -6,14 +6,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import StyledButton from '../../styled/Button';
+import StyledFontAwesomeIcon from '../../styled/Button/StyledFontAwesomeIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
-  const icon = props.icon ? <FontAwesomeIcon icon={faPlus} /> : null;
-  
+  const icon = props.icon ? <StyledFontAwesomeIcon icon={faPlus} /> : null;
+
   return (
     <StyledButton {...props}>
       {icon}
