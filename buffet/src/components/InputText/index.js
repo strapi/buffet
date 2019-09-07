@@ -14,7 +14,7 @@ import {
 } from '../../commonPropTypes/input';
 
 import Input, { InputWrapper } from '../../styled/InputText';
-import Icon from '../../styled/Icon';
+import Icon from '../Icon';
 
 function InputText({
   autoFocus,
@@ -32,14 +32,14 @@ function InputText({
 
   return (
     <InputWrapper className={className}>
-      {(type === 'search' || type === 'email') && <Icon type={type} />}
+      {(type === 'search' || type === 'email') && <Icon icon={type} />}
       {type === 'password' && (
         <button
           type="button"
           onClick={() => togglePassword(!showPassword)}
           className={showPassword ? 'shown' : ''}
         >
-          <Icon type={type} />
+          <Icon icon="eye" />
         </button>
       )}
       <Input
