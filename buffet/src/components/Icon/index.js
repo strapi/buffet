@@ -1,6 +1,11 @@
 import React, { Fragment, isValidElement } from 'react';
 import PropTypes from 'prop-types';
-import { faSearch, faEye } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch,
+  faEye,
+  faAngleLeft,
+  faAngleRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 import StyledIcon from '../../styled/Icon';
@@ -9,6 +14,8 @@ const iconMap = new Map([
   ['time', faClock],
   ['password', faEye],
   ['search', faSearch],
+  ['left', faAngleLeft],
+  ['right', faAngleRight],
 ]);
 
 function Icon({ icon, className }) {
