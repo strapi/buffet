@@ -11,13 +11,19 @@ const IconWrapper = styled.span`
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: ${colors.greyIconBkgd};
+  background-color: ${props =>
+    props.background ? colors.greyIconBkgd : 'transparent'};
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
+IconWrapper.defaultProps = {
+  background: true,
+};
+
 IconWrapper.propTypes = {
+  background: PropTypes.bool,
   icon: PropTypes.string.isRequired,
 };
 

@@ -8,10 +8,10 @@ import StyledIcon from '../../styled/Icon';
 
 library.add(faSearch, faEye, faClock);
 
-function Icon({ icon, className }) {
+function Icon({ icon, className, background }) {
   if (typeof icon === 'string') {
     return (
-      <IconWrapper>
+      <IconWrapper background={background}>
         <StyledIcon icon={icon} className={className || undefined} />
       </IconWrapper>
     );
@@ -24,9 +24,11 @@ function Icon({ icon, className }) {
 Icon.defaultProps = {
   className: null,
   icon: 'search',
+  background: null,
 };
 
 Icon.propTypes = {
+  background: PropTypes.bool,
   className: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 };

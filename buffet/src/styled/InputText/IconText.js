@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
-import Icon from '../Icon';
+import IconWrapper from '../Icon/IconWrapper';
 
-const IconText = styled(Icon).attrs({
-  as: 'span',
-})`
+const IconText = styled(IconWrapper)`
   transform: translateY(0);
   ::before {
     content: '${props => props.text}';
     font-family: Lato;
     font-size: 16px;
     font-weight: 600;
+    transform: translateY(-75%);
   }
 `;
 

@@ -41,7 +41,7 @@ function InputText({
           onClick={() => togglePassword(!showPassword)}
           className={showPassword ? 'shown' : ''}
         >
-          <Icon icon="eye" />
+          <Icon icon="eye" background={false} />
         </button>
       )}
       <Input
