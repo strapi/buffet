@@ -24,7 +24,6 @@ IconWrapper.defaultProps = {
 
 IconWrapper.propTypes = {
   background: PropTypes.bool,
-  icon: PropTypes.string.isRequired,
 };
 
 export default IconWrapper;
