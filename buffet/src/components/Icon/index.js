@@ -5,6 +5,8 @@ import {
   faEye,
   faAngleLeft,
   faAngleRight,
+  faSortDown,
+  faSortUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
@@ -16,6 +18,8 @@ const iconMap = new Map([
   ['search', faSearch],
   ['left', faAngleLeft],
   ['right', faAngleRight],
+  ['asc', faSortUp],
+  ['desc', faSortDown],
 ]);
 
 function Icon({ icon, className }) {

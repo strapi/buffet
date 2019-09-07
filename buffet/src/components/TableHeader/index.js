@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import Checkbox from '../../styled/Checkbox';
+import Icon from '../Icon';
 
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 function TableHeader({
@@ -59,9 +60,7 @@ function TableHeader({
             >
               <p className={isSortEnabled ? 'clickable' : ''}>
                 {name}
-                {shouldDisplaySort && (
-                  <i className={`fa fa-sort-${sortOrder || 'asc'}`} />
-                )}
+                {shouldDisplaySort && <Icon icon={sortOrder || 'asc'} />}
               </p>
             </td>
           );
