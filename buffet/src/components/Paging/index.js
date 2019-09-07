@@ -6,6 +6,8 @@
 
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 import StyledPaging from '../../styled/Paging';
@@ -20,7 +22,7 @@ function Paging({ count, page, onChange, range }) {
       <Pagination aria-label="Page navigation">
         <PaginationItem>
           <PaginationLink onClick={onChange} value={0}>
-            <i className="fa fa-angle-left" />
+            <FontAwesomeIcon icon={faAngleLeft} />
           </PaginationLink>
         </PaginationItem>
         {Array(pagesCount)
@@ -40,7 +42,7 @@ function Paging({ count, page, onChange, range }) {
           ))}
         <PaginationItem>
           <PaginationLink onClick={onChange} value={(pagesCount - 1) * range}>
-            <i className="fa fa-angle-right" />
+            <FontAwesomeIcon icon={faAngleRight} />
           </PaginationLink>
         </PaginationItem>
       </Pagination>
