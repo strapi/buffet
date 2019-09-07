@@ -6,22 +6,25 @@
 
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
-const Icon = styled.span`
+const Icon = styled(FontAwesomeIcon)`
   width: ${sizes.input.height};
   height: ${sizes.input.height};
+  color: ${colors.greyIconColor};
+  display: inline-block;
+  
   display: flex;
   ::before {
-    font-family: 'FontAwesome';
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;
     display: inline-block;
     vertical-align: middle;
     margin: auto;
-    color: ${colors.greyIconColor};
+    
   }
 
   /*
