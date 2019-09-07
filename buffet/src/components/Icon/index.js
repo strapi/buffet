@@ -7,6 +7,7 @@ import {
   faAngleRight,
   faSortDown,
   faSortUp,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
@@ -20,6 +21,7 @@ const iconMap = new Map([
   ['right', faAngleRight],
   ['asc', faSortUp],
   ['desc', faSortDown],
+  ['icon', faTrash],
 ]);
 
 function Icon({ icon, className }) {
