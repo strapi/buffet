@@ -15,6 +15,7 @@ import {
 
 import Input, { InputWrapper } from '../../styled/InputText';
 import Icon from '../Icon';
+import IconText from '../../styled/InputText/IconText';
 
 function InputText({
   autoFocus,
@@ -32,7 +33,8 @@ function InputText({
 
   return (
     <InputWrapper className={className}>
-      {(type === 'search' || type === 'email') && <Icon icon={type} />}
+      {type === 'search' && <Icon icon={type} />}
+      {type === 'email' && <IconText text="@" />}
       {type === 'password' && (
         <button
           type="button"

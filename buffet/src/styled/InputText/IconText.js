@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import colors from '../../assets/styles/colors';
-import Icon from "../Icon";
+import Icon from '../Icon';
 
 const IconText = styled(Icon).attrs({
-  as: "span",
+  as: 'span',
 })`
-  background-color: ${colors.greyIconBkgd};
+  transform: translateY(0);
   ::before {
     content: '${props => props.text}';
     font-family: Lato;
