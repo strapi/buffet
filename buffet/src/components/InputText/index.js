@@ -16,6 +16,7 @@ import {
 import Input, { InputWrapper } from '../../styled/InputText';
 import Icon from '../Icon';
 import IconText from '../../styled/InputText/IconText';
+import IconWrapper from '../../styled/InputText/IconWrapper';
 
 function InputText({
   autoFocus,
@@ -33,7 +34,11 @@ function InputText({
 
   return (
     <InputWrapper className={className}>
-      {type === 'search' && <Icon icon={type} />}
+      {type === 'search' && (
+        <IconWrapper>
+          <Icon icon={type} />
+        </IconWrapper>
+      )}
       {type === 'email' && <IconText text="@" />}
       {type === 'password' && (
         <button
@@ -41,7 +46,9 @@ function InputText({
           onClick={() => togglePassword(!showPassword)}
           className={showPassword ? 'shown' : ''}
         >
-          <Icon icon={type} background={false} />
+          <IconWrapper background={false}>
+            <Icon icon={type} />
+          </IconWrapper>
         </button>
       )}
       <Input

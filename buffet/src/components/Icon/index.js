@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { faSearch, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
-import IconWrapper from '../../styled/Icon/IconWrapper';
 import StyledIcon from '../../styled/Icon';
 
 const iconMap = new Map([
@@ -12,15 +11,10 @@ const iconMap = new Map([
   ['search', faSearch],
 ]);
 
-function Icon({ icon, className, background }) {
+function Icon({ icon, className }) {
   if (iconMap.has(icon)) {
     return (
-      <IconWrapper background={background}>
-        <StyledIcon
-          icon={iconMap.get(icon)}
-          className={className || undefined}
-        />
-      </IconWrapper>
+      <StyledIcon icon={iconMap.get(icon)} className={className || undefined} />
     );
   }
   if (isValidElement(icon)) {
@@ -33,11 +27,9 @@ function Icon({ icon, className, background }) {
 Icon.defaultProps = {
   className: null,
   icon: 'search',
-  background: null,
 };
 
 Icon.propTypes = {
-  background: PropTypes.bool,
   className: PropTypes.string,
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };

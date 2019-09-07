@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import IconWrapper from '../Icon/IconWrapper';
+import IconWrapper from './IconWrapper';
 
 const IconText = styled(IconWrapper)`
   transform: translateY(0);
