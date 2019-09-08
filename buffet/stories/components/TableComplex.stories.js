@@ -7,7 +7,7 @@ import { sortBy as sort } from 'lodash';
 import { storiesOf } from '@storybook/react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPencil } from '@fortawesome/fontawesome-svg-core';
+import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Table from '../../src/components/Table';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
@@ -185,7 +185,7 @@ function TableStory() {
           withBulkAction
           rowLinks={[
             {
-              icon: <FontAwesomeIcon icon={faPencil} />,
+              icon: <FontAwesomeIcon icon={faPencilAlt} />,
               onClick: data => {
                 alert(`Do you want to edit ${data.firstname}?`);
               },
@@ -208,8 +208,11 @@ const source = `
 import React, { useReducer } from 'react';
 import { Table } from 'buffetjs';
 import { sortBy as sort } from 'lodash';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPencil } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPencilAlt,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
 
 const headers = [
   {
@@ -383,13 +386,13 @@ function Example() {
       withBulkAction
       rowLinks={[
         {
-          icon: <FontAwesomeIcon icon={faPencil} />,
+          icon: <FontAwesomeIcon icon={faPencilAltl} />,
           onClick: data => {
             console.log(data);
           },
         },
         {
-          icon: <FontAwesomeIcon icon={faPencil} />,
+          icon: <FontAwesomeIcon icon={faTrash} />,
           onClick: data => {
             console.log(data);
           },

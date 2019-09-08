@@ -38,8 +38,12 @@ function ButtonStory() {
           <Pre>{`
 import React from 'react';
 import { Button } from 'buffetjs';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPencil } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlus,
+  faTrash,
+  faBaseballBall,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Example() {
   return (

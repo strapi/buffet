@@ -8,6 +8,12 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTrash,
+  faPencilAlt,
+  faCube,
+} from '@fortawesome/free-solid-svg-icons';
 import List from '../../src/combined/List';
 import IconLinks from '../../src/components/IconLinks';
 import Row from '../../src/styled/CustomRow';
@@ -24,7 +30,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
   return (
     <Row onClick={onClick}>
       <td>
-        <i className={`fa ${icon}`} />
+        <i className={icon} />
       </td>
       <td>
         <p style={styles.name}>{name}</p>
@@ -49,7 +55,7 @@ CustomRow.defaultProps = {
 
 CustomRow.propTypes = {
   description: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.node,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       icon: PropTypes.string,
@@ -87,33 +93,33 @@ function ListStory() {
 
   const customItems = [
     {
-      icon: 'fa-cube',
+      icon: <FontAwesomeIcon icon={faCube} />,
       name: 'ratatouille',
       description:
         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
       links: [
         {
-          icon: 'fa fa-pencil',
+          icon: <FontAwesomeIcon icon={faPencilAlt} />,
           onClick: handleEditClick,
         },
         {
-          icon: 'fa fa-trash',
+          icon: <FontAwesomeIcon icon={faTrash} />,
           onClick: handleDeleteClick,
         },
       ],
       onClick: () => alert('Article'),
     },
     {
-      icon: 'fa-cube',
+      icon: <FontAwesomeIcon icon={faCube} />,
       name: 'Alfredo Linguini',
       description: 'Tenderloin drumstick cupim cow.',
       links: [
         {
-          icon: 'fa fa-pencil',
+          icon: <FontAwesomeIcon icon={faPencilAlt} />,
           onClick: handleEditClick,
         },
         {
-          icon: 'fa fa-trash',
+          icon: <FontAwesomeIcon icon={faTrash} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -176,6 +182,9 @@ function ListStory() {
 
 const defaultListSource = `
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt, faCube } from "@fortawesome/free-solid-svg-icons";
+
 import { CustomList, IconLinks } from 'buffetjs';
 
 const rows = [
@@ -229,7 +238,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
   return (
     <Row onClick={onClick}>
       <td>
-        <i className={\`fa \${icon}\`} />
+        {icon}
       </td>
       <td>
         <p style={styles.name}>{name}</p>
@@ -270,33 +279,33 @@ function Example() {
 
   const rows = [
     {
-      icon: 'fa-cube',
+      icon: <FontAwesomeIcon icon={faCube} />,
       name: 'ratatouille',
       description:
         'Bacon ipsum dolor amet boudin shankle picanha shoulder bacon.',
       links: [
         {
-          icon: 'fa fa-pencil',
+          icon: <FontAwesomeIcon icon={faPencilAlt} />,
           onClick: handleEditClick,
         },
         {
-          icon: 'fa fa-trash',
+          icon: <FontAwesomeIcon icon={faTrash} />,
           onClick: handleDeleteClick,
         },
       ],
       onClick: () => alert('Ratatouille'),
     },
     {
-      icon: 'fa-cube',
+      icon: <FontAwesomeIcon icon={faCube} />,
       name: 'users',
       description: 'Tenderloin drumstick cupim cow.',
       links: [
         {
-          icon: 'fa fa-pencil',
+          icon: <FontAwesomeIcon icon={faPencilAlt} />,
           onClick: handleEditClick,
         },
         {
-          icon: 'fa fa-trash',
+          icon: <FontAwesomeIcon icon={faTrash} />,
           onClick: handleDeleteClick,
         },
       ],
