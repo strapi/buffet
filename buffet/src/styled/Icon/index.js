@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Icon = styled(FontAwesomeIcon)``;
 
 Icon.propTypes = {
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.any.isRequired,
 };
 
 export default Icon;

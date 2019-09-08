@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { omit } from 'lodash';
 import StyledButton from '../../styled/Button';
 import PrefixIcon from '../../styled/Button/PrefixIcon';
 
@@ -19,7 +20,7 @@ function Button(props) {
     );
 
   return (
-    <StyledButton {...props}>
+    <StyledButton {...omit(props, ['icon'])}>
       {icon}
       {content}
     </StyledButton>

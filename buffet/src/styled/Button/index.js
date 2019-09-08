@@ -76,7 +76,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   type: PropTypes.string,
 };
 
