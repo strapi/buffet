@@ -6,6 +6,8 @@ import { sortBy as sort } from 'lodash';
 /* eslint-disable no-param-reassign */
 import { storiesOf } from '@storybook/react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faPencil } from '@fortawesome/fontawesome-svg-core';
 import Table from '../../src/components/Table';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
@@ -183,13 +185,13 @@ function TableStory() {
           withBulkAction
           rowLinks={[
             {
-              icon: 'fa fa-pencil',
+              icon: <FontAwesomeIcon icon={faPencil} />,
               onClick: data => {
                 alert(`Do you want to edit ${data.firstname}?`);
               },
             },
             {
-              icon: 'fa fa-trash',
+              icon: <FontAwesomeIcon icon={faTrash} />,
               onClick: data => {
                 alert(`Do you want to delete ${data.firstname}?`);
               },
@@ -206,6 +208,8 @@ const source = `
 import React, { useReducer } from 'react';
 import { Table } from 'buffetjs';
 import { sortBy as sort } from 'lodash';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencil } from "@fortawesome/fontawesome-svg-core";
 
 const headers = [
   {
@@ -379,13 +383,13 @@ function Example() {
       withBulkAction
       rowLinks={[
         {
-          icon: 'fa fa-pencil',
+          icon: <FontAwesomeIcon icon={faPencil} />,
           onClick: data => {
             console.log(data);
           },
         },
         {
-          icon: 'fa fa-trash',
+          icon: <FontAwesomeIcon icon={faPencil} />,
           onClick: data => {
             console.log(data);
           },
