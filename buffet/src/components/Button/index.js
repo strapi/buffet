@@ -11,7 +11,12 @@ import PrefixIcon from '../../styled/Button/PrefixIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
-  const icon = props.icon ? <PrefixIcon icon={props.icon} /> : null;
+  const icon =
+    props.icon === true ? (
+      <PrefixIcon icon="plus" />
+    ) : (
+      <PrefixIcon icon={props.icon} />
+    );
 
   return (
     <StyledButton {...props}>
@@ -24,7 +29,7 @@ function Button(props) {
 Button.defaultProps = {
   children: null,
   color: 'primary',
-  icon: null,
+  icon: false,
   label: null,
   type: 'button',
 };
@@ -32,7 +37,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
-  icon: PropTypes.node,
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
 };

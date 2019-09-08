@@ -1,4 +1,4 @@
-import React, { Fragment, isValidElement } from 'react';
+import React, { isValidElement } from 'react';
 import PropTypes from 'prop-types';
 import {
   faSearch,
@@ -22,7 +22,7 @@ const iconMap = new Map([
   ['right', faAngleRight],
   ['asc', faSortUp],
   ['desc', faSortDown],
-  ['icon', faTrash],
+  ['trash', faTrash],
   ['plus', faPlus],
 ]);
 
@@ -33,7 +33,7 @@ function Icon({ icon, className }) {
     );
   }
   if (isValidElement(icon)) {
-    return <Fragment>{icon}</Fragment>;
+    return <span className={className}>{icon}</span>;
   }
 
   return null;
