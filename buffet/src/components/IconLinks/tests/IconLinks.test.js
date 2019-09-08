@@ -19,7 +19,7 @@ describe('<IconLinks />', () => {
     expect(
       buttons
         .at(0)
-        .find('i')
+        .find('svg')
         .prop('className'),
     ).toContain('trash');
   });
