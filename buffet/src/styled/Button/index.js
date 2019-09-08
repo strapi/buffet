@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
-import img from '../../assets/icons/icon_trash.svg';
 
 const Button = styled.button`
 
@@ -66,18 +65,6 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
-      ${props.icon &&
-        css`
-          &::before {
-            content: '';
-            vertical-align: middle;
-            background-image: url(${img});
-            background-repeat: no-repeat;
-            background-position: top left;
-            width: 11px;
-            height: 16px;
-          }
-        `}
     `}
 `;
 
