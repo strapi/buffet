@@ -6,13 +6,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import StyledButton from '../../styled/Button';
-import StyledFontAwesomeIcon from '../../styled/Button/StyledFontAwesomeIcon';
+import PrefixIcon from '../../styled/Button/PrefixIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
-  const icon = props.icon ? <StyledFontAwesomeIcon icon={faPlus} /> : null;
+  const icon = props.icon ? <PrefixIcon icon={props.icon} /> : null;
 
   return (
     <StyledButton {...props}>
@@ -25,7 +24,7 @@ function Button(props) {
 Button.defaultProps = {
   children: null,
   color: 'primary',
-  icon: false,
+  icon: null,
   label: null,
   type: 'button',
 };
@@ -33,7 +32,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
-  icon: PropTypes.bool,
+  icon: PropTypes.node,
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
 };
