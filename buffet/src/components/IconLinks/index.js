@@ -8,13 +8,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StyledLinks from '../../styled/Links';
+import Icon from '../Icon';
 
 function IconLinks({ links }) {
   return (
     <StyledLinks>
-      {links.map(icon => (
-        <button key={icon.icon} onClick={icon.onClick} type="button">
-          <i className={`${icon.icon} link-icon`} />
+      {links.map((icon, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <button key={index} onClick={icon.onClick} type="button">
+          <Icon className="link-icon" icon={icon.icon} />
         </button>
       ))}
     </StyledLinks>
@@ -28,7 +30,7 @@ IconLinks.defaultProps = {
 IconLinks.propTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string,
+      icon: PropTypes.node,
       onClick: PropTypes.func,
     }),
   ),

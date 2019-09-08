@@ -58,7 +58,7 @@ CustomRow.propTypes = {
   icon: PropTypes.node,
   links: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string,
+      icon: PropTypes.node,
       onClick: PropTypes.func,
     }),
   ),
@@ -182,8 +182,6 @@ function ListStory() {
 
 const defaultListSource = `
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPencilAlt, faCube } from "@fortawesome/free-solid-svg-icons";
 
 import { CustomList, IconLinks } from 'buffetjs';
 
@@ -227,6 +225,12 @@ function Example() {
 const customListSource = `
 import React from 'react';
 import { CustomList } from 'buffetjs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTrash,
+  faPencilAlt,
+  faCube,
+} from '@fortawesome/free-solid-svg-icons';
 
 const CustomRow = ({ icon, description, links, name, onClick }) => {
   const styles = {
