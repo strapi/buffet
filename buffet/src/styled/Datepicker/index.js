@@ -21,23 +21,6 @@ const DatePicker = styled.div`
   }
   .DateInput {
     width: 100%;
-    &::before {
-      content: '\f073';
-      position: absolute;
-      left: 1px;
-      top: 1px;
-      z-index: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 3px 0px 0px 3px;
-      background: #fafafb;
-      color: #b3b5b9;
-      text-align: center;
-      font-family: 'FontAwesome';
-      font-size: 14px;
-      line-height: 32px;
-      -webkit-font-smoothing: none;
-    }
   }
   input {
     font-weight: ${sizes.input.fontWeight};

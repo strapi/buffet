@@ -15,11 +15,12 @@ import {
 
 import Input, { InputWrapper } from '../../styled/InputText';
 import Icon from '../Icon';
-import IconText from '../../styled/InputText/IconText';
 import IconWrapper from '../../styled/InputText/IconWrapper';
+import PrefixIcon from './PrefixIcon';
 
 function InputText({
   autoFocus,
+  icon,
   id,
   message,
   name,
@@ -34,12 +35,7 @@ function InputText({
 
   return (
     <InputWrapper className={className}>
-      {type === 'search' && (
-        <IconWrapper>
-          <Icon icon={type} />
-        </IconWrapper>
-      )}
-      {type === 'email' && <IconText text="@" />}
+      <PrefixIcon icon={icon} type={type} />
       {type === 'password' && (
         <button
           type="button"
@@ -59,6 +55,7 @@ function InputText({
         tabIndex={tabIndex}
         type={showPassword ? 'text' : type}
         value={value}
+        icon={icon}
         {...rest}
       />
     </InputWrapper>
@@ -70,11 +67,13 @@ InputText.defaultProps = {
   ...uncontrolledDefaultProps,
   type: 'text',
   value: '',
+  icon: null,
 };
 
 InputText.propTypes = {
   ...commonPropTypes,
   ...uncontrolledPropTypes,
+  icon: PropTypes.node,
   type: PropTypes.string,
   value: PropTypes.string,
 };
