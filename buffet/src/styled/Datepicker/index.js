@@ -30,8 +30,8 @@ const DatePicker = styled.div`
       width: 32px;
       height: 32px;
       border-radius: 3px 0px 0px 3px;
-      background: #FAFAFB;
-      color: #B3B5B9;
+      background: #fafafb;
+      color: #b3b5b9;
       text-align: center;
       font-family: 'FontAwesome';
       font-size: 14px;
@@ -57,7 +57,8 @@ const DatePicker = styled.div`
       color: ${colors.greyPlaceholder};
     }
   }
-  .SingleDatePicker, .SingleDatePickerInput__withBorder {
+  .SingleDatePicker,
+  .SingleDatePickerInput__withBorder {
     width: 100%;
   }
   .SingleDatePickerInput__withBorder {
@@ -82,10 +83,10 @@ const DatePicker = styled.div`
 
   // To remove for new UI
   .DayPicker__withBorder {
-    margin-top -31px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border: 1px solid #f9f9f9;
     background: white;
+    position: absolute;
   }
   .DateInput_fang {
     display: none;
@@ -100,7 +101,7 @@ const DatePicker = styled.div`
     display: none;
   }
   .DayPickerNavigation {
-    div[role=button] {
+    div[role='button'] {
       font-size: 21px;
       width: 35px;
       height: 33px;
@@ -108,7 +109,8 @@ const DatePicker = styled.div`
       color: ${colors.black};
       border-radius: 0;
       text-align: center;
-      &, &:hover {
+      &,
+      &:hover {
         border: 0;
       }
       &.DayPickerNavigation_leftButton__horizontalDefault {
@@ -135,7 +137,11 @@ const DatePicker = styled.div`
     width: 34px;
     height: 28px;
     font-size: 1.3rem;
-    &, &.CalendarDay__selected, &.CalendarDay__selected:active, &.CalendarDay__selected:hover, &.CalendarDay__default:hover {
+    &,
+    &.CalendarDay__selected,
+    &.CalendarDay__selected:active,
+    &.CalendarDay__selected:hover,
+    &.CalendarDay__default:hover {
       border: 0;
     }
     &.CalendarDay__today {
