@@ -22,6 +22,9 @@ const DatePicker = styled.div`
   .DateInput {
     width: 100%;
   }
+  svg.fa-calendar-alt {
+    font-size: 14px;
+  }
   input {
     font-weight: ${sizes.input.fontWeight};
     position: relative;
