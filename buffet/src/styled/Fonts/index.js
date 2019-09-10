@@ -1,8 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import fontawesome from '../../assets/fonts/fontawesome/fontawesome-webfont.woff';
-import fontawesome2 from '../../assets/fonts/fontawesome/fontawesome-webfont.woff2';
-
 import latoLight from '../../assets/fonts/lato/lato-light/lato-light.woff';
 import latoLight2 from '../../assets/fonts/lato/lato-light/lato-light.woff2';
 
@@ -19,13 +16,6 @@ import latoBold from '../../assets/fonts/lato/lato-bold/lato-bold.woff';
 import latoBold2 from '../../assets/fonts/lato/lato-bold/lato-bold.woff2';
 
 const Font = createGlobalStyle`
-@font-face {
-  font-family: 'FontAwesome';
-  src: url(${fontawesome2}) format("woff2"), url(${fontawesome}) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'Lato';
   src: url(${latoLight2}) format("woff2"), url(${latoLight}) format("woff");
