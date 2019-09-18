@@ -185,13 +185,13 @@ function TableStory() {
           withBulkAction
           rowLinks={[
             {
-              icon: <FontAwesomeIcon icon={faPencilAlt} />,
+              icon: <FontAwesomeIcon icon={faPencilAlt} size="sm" />,
               onClick: data => {
                 alert(`Do you want to edit ${data.firstname}?`);
               },
             },
             {
-              icon: <FontAwesomeIcon icon={faTrash} />,
+              icon: <FontAwesomeIcon icon={faTrash} size="sm" />,
               onClick: data => {
                 alert(`Do you want to delete ${data.firstname}?`);
               },
