@@ -6,6 +6,7 @@ import { boolean, text, radios } from '@storybook/addon-knobs';
 import Button from '../../src/components/Button';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
+import Subtitle from '../ui/Subtitle';
 
 function ButtonStory() {
   const colors = {
@@ -46,7 +47,7 @@ function Example() {
         </section>
 
         <section style={{ marginTop: 32 }}>
-          <h2 style={{ marginBottom: 12 }}>Examples</h2>
+          <Subtitle style={{ marginBottom: 12 }}>Examples</Subtitle>
           <div className="btn-wrapper">
             <Button type="submit">Save</Button>
           </div>

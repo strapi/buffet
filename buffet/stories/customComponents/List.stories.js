@@ -13,6 +13,7 @@ import IconLinks from '../../src/components/IconLinks';
 import Row from '../../src/styled/CustomRow';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
+import Subtitle from '../ui/Subtitle';
 
 const CustomRow = ({ icon, description, links, name, onClick }) => {
   const styles = {
@@ -152,14 +153,14 @@ function ListStory() {
   return (
     <Presentation title="List" description="Display data.">
       <section style={{ marginTop: 29, paddingBottom: 40 }}>
-        <h2 style={{ marginBottom: 30 }}>Default List</h2>
+        <Subtitle style={{ marginBottom: 30 }}>Default List</Subtitle>
         <div style={{ marginBottom: 35 }}>
           <List {...initProps} items={defaultItems} />
         </div>
         <Pre>{defaultListSource}</Pre>
       </section>
       <section style={{ marginTop: 25 }}>
-        <h2 style={{ marginBottom: 30 }}>List with custom row</h2>
+        <Subtitle style={{ marginBottom: 30 }}>List with custom row</Subtitle>
         <div style={{ marginBottom: 35 }}>
           <List
             {...initProps}

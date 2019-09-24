@@ -20,7 +20,7 @@ const Button = styled.button`
   // General style
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.large};
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
   border-radius: ${sizes.radius};
@@ -106,10 +106,8 @@ const Button = styled.button`
         font-family: 'FontAwesome';
         font-weight: 600;
         font-size: 1.3rem;
-        //line-height: 1.6rem;
         margin-right: 8px;
         display: inline-block;
-        //vertical-align: middle;
       }
     `}
 `;

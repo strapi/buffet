@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Inputs from '../../src/combined/Inputs';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
+import Subtitle from '../ui/Subtitle';
 
 const Foo = () => (
   <div>This is a custom component that can be passed to the component</div>
@@ -120,7 +121,7 @@ function InputStory() {
     >
       <>
         <section style={{ marginTop: 29 }}>
-          <h2 style={{ marginBottom: 36 }}>Example</h2>
+          <Subtitle style={{ marginBottom: 36 }}>Example</Subtitle>
           <form onSubmit={() => {}}>
             <div className="row">
               {Object.keys(form).map(input => (
