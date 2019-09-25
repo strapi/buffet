@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { isObject } from 'lodash';
 import Checkbox from '../../styled/Checkbox';
 import StyledLinks from '../../styled/Links';
+import Icon from '../Icon';
 
 function TableRow({
   headers,
@@ -52,9 +53,10 @@ function TableRow({
         <td>
           <div style={{ width: 'fit-content', float: 'right' }}>
             <StyledLinks>
-              {rowLinks.map(icon => (
+              {rowLinks.map((icon, index) => (
                 <button
-                  key={icon.icon}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={index + icon}
                   onClick={e => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -62,7 +64,7 @@ function TableRow({
                   }}
                   type="button"
                 >
-                  <i className={`${icon.icon} link-icon`} />
+                  <Icon className="link-icon" icon={icon.icon} />
                 </button>
               ))}
             </StyledLinks>
@@ -96,7 +98,7 @@ TableRow.propTypes = {
   row: PropTypes.object,
   rowLinks: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string,
+      icon: PropTypes.node,
     }),
   ),
   withBulkAction: PropTypes.bool,

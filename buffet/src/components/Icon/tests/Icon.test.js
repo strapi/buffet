@@ -12,25 +12,20 @@ describe('<Icon />', () => {
       renderedComponent.unmount();
     });
 
-    it('should have a default type equals to search', () => {
-      renderedComponent = renderComponent({ type: 'search' });
+    it('should have a default icon equals to search', () => {
+      renderedComponent = renderComponent({ icon: 'search' });
       const defaultType = 'search';
-      expect(renderedComponent.at(0).prop('type')).toBe(defaultType);
+      expect(renderedComponent.at(0).prop('icon')).toBe(defaultType);
     });
   });
   describe('<Icon /> icon attributes', () => {
     it('should render the search icon', () => {
-      const tree = renderer.create(<Icon type="search" />).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render the email icon', () => {
-      const tree = renderer.create(<Icon type="email" />).toJSON();
+      const tree = renderer.create(<Icon icon="search" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render the password icon', () => {
-      const tree = renderer.create(<Icon type="password" />).toJSON();
+      const tree = renderer.create(<Icon icon="password" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

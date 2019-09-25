@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 function ActionCollapse({
   colSpan,
@@ -22,7 +23,7 @@ function ActionCollapse({
           &nbsp; selected&nbsp;-&nbsp;
           <button onClick={onConfirm} type="button">
             <p>{translatedAction}</p>
-            {icon && <i className={`fa fa-${icon}`} />}
+            {icon && <Icon icon={icon} />}
           </button>
         </p>
       </td>

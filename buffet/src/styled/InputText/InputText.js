@@ -31,7 +31,7 @@ const InputText = styled.input`
 
   // Search with left icon
   ${props =>
-    (props.type === 'search' || props.type === 'email') &&
+    (props.type === 'search' || props.type === 'email' || props.icon) &&
     css`
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}

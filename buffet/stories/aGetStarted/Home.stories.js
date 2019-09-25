@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint-disable */
 import { storiesOf } from '@storybook/react';
-import 'react-highlight/node_modules/highlight.js/styles/tomorrow-night-bright.css';
+import 'highlight.js/styles/tomorrow-night-bright.css';
 import Bash from '../ui/Bash';
 import Pre from '../ui/Pre';
 

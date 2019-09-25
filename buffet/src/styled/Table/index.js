@@ -90,15 +90,15 @@ const Table = styled.div`
             cursor: pointer;
           }
         }
-        i {
+        svg {
           position: absolute;
           top: 0;
           right: 0;
           line-height: 18px;
-          &.fa-sort-asc {
+          &.fa-sort-up {
             top: 4px;
           }
-          &.fa-sort-desc {
+          &.fa-sort-down {
             top: -${sizes.margin * 0.2}px;
           }
         }

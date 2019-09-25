@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> <Button /> icons should render the add back 1`] = `
+exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
@@ -26,19 +26,6 @@ exports[`<Button /> <Button /> icons should render the add back 1`] = `
   -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   box-shadow: inset 0 0 30px [object Object];
-}
-
-.c0::before {
-  content: '\\f067';
-  margin-right: 13px;
-}
-
-.c0::before {
-  font-family: 'FontAwesome';
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-right: 8px;
-  display: inline-block;
 }
 
 <button
@@ -76,19 +63,6 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   box-shadow: inset 0 0 30px [object Object];
 }
 
-.c0::before {
-  content: '\\f067';
-  margin-right: 13px;
-}
-
-.c0::before {
-  font-family: 'FontAwesome';
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-right: 8px;
-  display: inline-block;
-}
-
 <button
   className="c0"
   color="primary"
@@ -122,19 +96,6 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   box-shadow: inset 0 0 30px [object Object];
-}
-
-.c0::before {
-  content: '\\f067';
-  margin-right: 13px;
-}
-
-.c0::before {
-  font-family: 'FontAwesome';
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-right: 8px;
-  display: inline-block;
 }
 
 <button

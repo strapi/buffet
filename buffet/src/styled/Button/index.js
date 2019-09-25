@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
-import img from '../../assets/icons/icon_trash.svg';
 
 const Button = styled.button`
 
@@ -41,13 +40,6 @@ const Button = styled.button`
       background-image: ${colors.blueGradient};
       color: ${colors.white};
       border: 0;
-      ${props.icon &&
-        css`
-          &::before {
-            content: '\f067';
-            margin-right: ${sizes.margin * 1.3}px;
-          }
-        `}
     `}
 
   ${props =>
@@ -57,13 +49,6 @@ const Button = styled.button`
       color: ${colors.darkBlue};
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
-      ${props.icon &&
-        css`
-          &::before {
-            content: '\f067';
-            margin-right: ${sizes.margin * 1.3}px;
-          }
-        `}
     `}}
 
   ${props =>
@@ -80,37 +65,6 @@ const Button = styled.button`
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
-      ${props.icon &&
-        css`
-          &::before {
-            content: '';
-            vertical-align: middle;
-            background-image: url(${img});
-            background-repeat: no-repeat;
-            background-position: top left;
-            width: 11px;
-            height: 16px;
-          }
-        `}
-    `}
-
-  /*
-  * Left icons
-  */
-
-  // General style
-  ${props =>
-    props.icon &&
-    css`
-      &::before {
-        font-family: 'FontAwesome';
-        font-weight: 600;
-        font-size: 1.3rem;
-        //line-height: 1.6rem;
-        margin-right: 8px;
-        display: inline-block;
-        //vertical-align: middle;
-      }
     `}
 `;
 
@@ -122,7 +76,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   type: PropTypes.string,
 };
 

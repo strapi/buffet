@@ -9,6 +9,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import StyledPaging from '../../styled/Paging';
+import Icon from '../Icon';
 /* eslint-disable react/no-array-index-key */
 
 function Paging({ count, page, onChange, range }) {
@@ -20,7 +21,7 @@ function Paging({ count, page, onChange, range }) {
       <Pagination aria-label="Page navigation">
         <PaginationItem>
           <PaginationLink onClick={onChange} value={0}>
-            <i className="fa fa-angle-left" />
+            <Icon icon="left" />
           </PaginationLink>
         </PaginationItem>
         {Array(pagesCount)
@@ -40,7 +41,7 @@ function Paging({ count, page, onChange, range }) {
           ))}
         <PaginationItem>
           <PaginationLink onClick={onChange} value={(pagesCount - 1) * range}>
-            <i className="fa fa-angle-right" />
+            <Icon icon="right" />
           </PaginationLink>
         </PaginationItem>
       </Pagination>
