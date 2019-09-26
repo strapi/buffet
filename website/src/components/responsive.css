@@ -1,0 +1,251 @@
+/* Mobile */
+
+@media only screen and (max-width: 812px) {
+  .button {
+    position: relative;
+    width: 100% !important;
+    padding-right: 94px !important;
+  }
+
+  .icon_responsive_menu {
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 16px;
+  }
+
+  .icon_responsive_menu span {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: #0b269c;
+    border-radius: 2px;
+    margin-bottom: 6px;
+  }
+
+  .icon_responsive_menu.open span:first-of-type {
+    transition-delay: 0.22s;
+    background-color: transparent !important;
+    transition: background-color 0s linear 0.13s;
+  }
+
+  .icon_responsive_menu span:nth-of-type(2) {
+    width: 15px;
+    top: 7px;
+    transition: top 0.1s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
+      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .icon_responsive_menu.open span:nth-of-type(2) {
+    width: 25px;
+    top: 0;
+    transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.15s,
+      transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+    transform: translate3d(0, 7px, 0) rotate(45deg);
+  }
+
+  .icon_responsive_menu span:last-of-type {
+    top: 14px;
+    transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
+      transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .icon_responsive_menu.open span:last-of-type {
+    top: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+      transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+    transform: translate3d(0, 7px, 0) rotate(-45deg);
+  }
+
+  .menu {
+    z-index: 10;
+    overflow: hidden;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    display: flex !important;
+    height: 0px !important;
+    max-height: 595px;
+    padding: 0px !important;
+    background: #ffffff;
+    transition: all 0.3s ease-out 0.2s;
+  }
+
+  .menu li {
+    display: block !important;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .open_menu {
+    height: calc(100vh - 72px) !important;
+    padding: 72px 0px !important;
+    transition: height 0.2s ease-out;
+  }
+
+  .open_menu li {
+    opacity: 1;
+    transition: opacity 0.3s ease-out 0.2s;
+  }
+
+  .menu li:nth-of-type(2) {
+    margin-top: -40px;
+  }
+
+  .menu li:nth-of-type(3),
+  .menu li:nth-of-type(4) {
+    width: 50%;
+    padding: 0 10px !important;
+    text-align: right;
+  }
+
+  .menu li:nth-of-type(4) {
+    text-align: left;
+  }
+
+  .menu li:nth-of-type(3) a,
+  .menu li:nth-of-type(4) a {
+    width: 35px !important;
+    width: 35px !important;
+  }
+
+  .menu li a {
+    margin: 0 !important;
+  }
+
+  .button_arrow {
+    position: absolute !important;
+    top: 24px;
+    right: 36px;
+  }
+
+  nav.navigation {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px !important;
+  }
+
+  nav.navigation .wrapper_logo {
+    height: 100%;
+    padding-top: 24px;
+  }
+
+  nav.navigation .logo {
+    padding-top: 0 !important;
+  }
+
+  nav.navigation .logo img {
+    max-height: 20px;
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  header {
+    height: calc(100vh - 72px) !important;
+    max-height: 595px;
+    margin-top: 72px !important;
+    background-size: cover !important;
+  }
+
+  header .wrapper_description {
+    height: auto !important;
+    margin: 0 !important;
+    margin-bottom: 24px !important;
+    padding: 40px 25px !important;
+  }
+
+  header .wrapper_description h2 {
+    width: 100% !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+
+  header .wrapper_description p {
+    width: 100% !important;
+    margin-top: 72px !important;
+  }
+
+  main.container {
+    padding: 0 !important;
+  }
+
+  .home_description p {
+    margin: 0 !important;
+    padding: 50px 15px 0;
+    text-align: left !important;
+  }
+
+  .home_consistent h3 {
+    margin-top: 72px !important;
+    margin-left: 15px;
+    padding: 0 15px;
+  }
+
+  .home_consistent p {
+    margin: 0 !important;
+    padding: 32px 15px 0;
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .home_playground {
+    max-height: 100% !important;
+    margin: 40px 15px 0 !important;
+    padding: 0 36px 0 !important;
+  }
+
+  .home_playground h4 {
+    margin-top: 36px !important;
+  }
+
+  .home_playground .offset-lg-1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home_main_cta {
+    margin: 36px 0 0 !important;
+  }
+
+  .home_philosophy {
+    padding-bottom: 84px;
+  }
+
+  .home_philosophy h3 {
+    margin-top: 72px !important;
+    margin-left: 15px;
+    padding: 0 15px;
+  }
+
+  .home_philosophy img {
+    max-width: 90px !important;
+    max-height: 90px !important;
+  }
+
+  .home_philosophy p {
+    font-size: 14px !important;
+  }
+
+  .home_philosophy .align-items-center {
+    margin-top: 40px !important;
+  }
+
+  .home_philosophy .align-items-center > div {
+    padding: 0 30px !important;
+    text-align: left !important;
+  }
+
+  .home_philosophy .home_philosophy_section_title {
+    margin: 0 !important;
+    margin-top: 32px !important;
+    padding: 0 !important;
+  }
+}

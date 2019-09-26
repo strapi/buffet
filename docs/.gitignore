@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+storybook-static
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log
+node_modules
+.eslintcache
+.idea
+.vscode
+coverage/*
+.out/*
+configuration.json
+.vscode
+
+package-lock.json
+yarn.lock
