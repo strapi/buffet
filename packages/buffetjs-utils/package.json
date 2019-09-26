@@ -1,0 +1,15 @@
+{
+  "name": "@buffetjs/utils",
+  "version": "1.0.0",
+  "description": "Buffetjs Utils",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+  },
+  "author": "Strapi team",
+  "license": "MIT",
+  "dependencies": {
+    "yup": "^0.27.0"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "buffetjs-website",
+  "private": true,
+  "description": "The website which presents the Buffet.js library and the concepts/philosophy",
+  "version": "0.1.0",
+  "author": "Strapi Team <hi@strapi.io>",
+  "dependencies": {
+    "@buffetjs/core": "^1.0.0",
+    "@buffetjs/custom": "^1.0.0",
+    "@buffetjs/styles": "^1.0.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "chalk": "^2.4.2",
+    "gatsby": "^2.3.25",
+    "gatsby-image": "^2.0.39",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-google-analytics": "^2.0.21",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.18",
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-github-btn": "^1.0.5",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "gatsby-plugin-eslint": "^2.0.5",
+    "prettier": "^1.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strapi/buffet/website"
+  },
+  "bugs": {
+    "url": "https://github.com/strapi/buffet/issues"
+  }
+}
