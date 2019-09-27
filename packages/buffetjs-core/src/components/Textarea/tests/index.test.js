@@ -16,8 +16,8 @@ describe('<Textarea />', () => {
     renderedComponent.unmount();
   });
 
-  it('should have a placeholder null if not specified', () => {
+  it('should have a placeholder undefined if not specified', () => {
     renderedComponent = renderComponent();
-    expect(renderedComponent.at(0).prop('placeholder')).toBe(null);
+    expect(renderedComponent.at(0).prop('placeholder')).toBe(undefined);
   });
 });
