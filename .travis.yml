@@ -18,7 +18,6 @@ before_install:
   - export DISPLAY=:99.0
   - git fetch -a
   - git fetch origin master
-  - cd buffet
 
 install:
   - yarn
@@ -27,8 +26,8 @@ before_script:
   - git fetch origin master:master
 
 script:
-  - yarn run lint
-  - yarn run test
+  - yarn run -s lint
+  - yarn run -s test
 
 cache:
   directories:
