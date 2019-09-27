@@ -6,6 +6,7 @@ import { radios } from '@storybook/addon-knobs';
 import { InputText } from '@buffetjs/core';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
+import Subtitle from '../ui/Subtitle';
 
 function InputCompo(props) {
   const [val, setValue] = useState('');
@@ -46,7 +47,7 @@ function InputTextStory() {
           </div>
         </section>
         <section style={{ marginTop: 30 }}>
-          <h2 style={{ marginBottom: 10 }}>Examples</h2>
+          <Subtitle style={{ marginBottom: 10 }}>Examples</Subtitle>
           <div className="row">
             <div className="col-6">
               <InputCompo name="lastname" placeholder="Last name" type="text" />

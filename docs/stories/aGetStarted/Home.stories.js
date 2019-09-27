@@ -8,8 +8,9 @@ import Pre from '../ui/Pre';
 const styles = {
   h1: {
     marginBottom: 35,
+    fontWeight: 600,
   },
-  h2: { marginTop: 30, marginBottom: 18 },
+  h2: { marginTop: 30, marginBottom: 18, fontWeight: 600 },
   spacer: {
     display: 'block',
     marginBottom: 27,
@@ -19,6 +20,9 @@ const styles = {
     display: 'block',
     marginBottom: 3,
   },
+  strong: {
+    fontWeight: 600,
+  },
 };
 
 function IntroStory() {
@@ -27,14 +31,14 @@ function IntroStory() {
       <div className="container">
         <h1 style={styles.h1}>Get started with Buffet.js</h1>
         <section>
-          <strong>Using yarn:</strong>
+          <strong style={styles.strong}>Using yarn:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
             yarn add @buffetjs/core @buffetjs/styles prop-types lodash react
             react-dom styled-components
           </Bash>
           <span style={{ ...styles.spacer }} />
-          <strong>Using npm:</strong>
+          <strong style={styles.strong}>Using npm:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
             npm install @buffetjs/core @buffetjs/styles prop-types lodash react
@@ -43,7 +47,7 @@ function IntroStory() {
         </section>
         <section>
           <h2 style={styles.h2}>Setup</h2>
-          <strong>
+          <strong style={styles.strong}>
             Import the GlobalStyles and the Fonts in your application:
           </strong>
           <span style={styles.spacerCode} />

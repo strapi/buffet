@@ -41,7 +41,7 @@ const rows = [
     recipe: 'Beef bourguignon',
   },
   {
-    id: 2,
+    id: 3,
     firstname: 'Marc',
     lastname: 'Veyrat',
     recipe: 'Lemon Chicken',
@@ -96,7 +96,7 @@ const rows = [
     recipe: 'Beef bourguignon',
   },
   {
-    id: 2,
+    id: 3,
     firstname: 'Marc',
     lastname: 'Veyrat',
     recipe: 'Lemon Chicken',
