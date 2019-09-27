@@ -2,6 +2,7 @@
   "name": "buffetjs-monorepo",
   "private": true,
   "scripts": {
+    "setup": "yarn && yarn build",
     "build": "lerna run --stream build --no-private",
     "lint": "npm-run-all -p lint:code",
     "lint:code": "eslint .",

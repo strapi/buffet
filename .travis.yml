@@ -19,16 +19,15 @@ before_install:
   - git fetch -a
   - git fetch origin master
 
-install:
-  - yarn
-
 before_script:
   - git fetch origin master:master
+  - yarn setup
 
 script:
   - yarn run -s lint
   - yarn run -s test
 
 cache:
+  yarn: true
   directories:
     - 'node_modules'
