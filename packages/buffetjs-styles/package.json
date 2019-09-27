@@ -4,10 +4,11 @@
   "description": "Buffetjs Styles - The styling solution of Buffetjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "cross-env rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --c ../../.eslintrc src",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
   "keywords": [
     "styled-components",
