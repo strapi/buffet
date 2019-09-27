@@ -4,7 +4,7 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
   border-radius: 3px;
@@ -39,7 +39,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
   border-radius: 3px;
@@ -74,7 +74,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 .c0 {
   height: 30px;
   padding: 0 30px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
   border-radius: 3px;
