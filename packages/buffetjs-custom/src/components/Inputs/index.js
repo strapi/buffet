@@ -130,7 +130,6 @@ Inputs.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: () => {},
-  placeholder: PropTypes.string,
   type: PropTypes.string.isRequired,
   validations: PropTypes.object,
   value: PropTypes.any,

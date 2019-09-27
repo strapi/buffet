@@ -17,7 +17,14 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "import/no-extraneous-dependencies": 1,
+    "import/no-extraneous-dependencies": [
+      "warning",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": true
+      }
+    ],
     "react/forbid-prop-types": 1,
     "react/destructuring-assignment": 0,
     "arrow-body-style": [2, "as-needed"],

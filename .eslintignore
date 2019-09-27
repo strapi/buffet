@@ -1,0 +1,4 @@
+website/**
+packages/**/dist/**
+node_modules/**
+OLD/**

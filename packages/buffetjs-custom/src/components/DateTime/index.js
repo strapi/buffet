@@ -99,7 +99,6 @@ DateTime.defaultProps = {
 
 DateTime.propTypes = {
   autoFocus: PropTypes.bool,
-  className: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

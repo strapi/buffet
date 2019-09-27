@@ -92,6 +92,7 @@ class DatePicker extends React.PureComponent {
 }
 
 DatePicker.defaultProps = {
+  className: null,
   displayFormat: 'MMMM DD, YY',
   id: 'date',
   onChange: () => {},

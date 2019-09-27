@@ -16,15 +16,14 @@ import PrefixIcon from './PrefixIcon';
 
 function InputText({
   autoFocus,
+  className,
   icon,
   id,
-  message,
   name,
   onChange,
   tabIndex,
   type,
   value,
-  className,
   ...rest
 }) {
   const [showPassword, togglePassword] = useState(false);
@@ -61,9 +60,9 @@ function InputText({
 InputText.defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
+  className: null,
   icon: null,
   id: null,
-  onChange: () => {},
   placeholder: null,
   tabIndex: '0',
   type: 'text',

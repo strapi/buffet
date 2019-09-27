@@ -33,7 +33,6 @@ List.propTypes = {
     icon: PropTypes.bool,
     type: PropTypes.string,
   }),
-  className: PropTypes.string,
   customRowComponent: PropTypes.func,
   items: PropTypes.instanceOf(Array),
   subtitle: PropTypes.string,

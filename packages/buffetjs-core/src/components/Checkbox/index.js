@@ -50,10 +50,10 @@ function Checkbox({
 Checkbox.defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
+  className: null,
   id: null,
   message: null,
   onChange: () => {},
-  options: [],
   placeholder: null,
   tabIndex: '0',
   value: false,

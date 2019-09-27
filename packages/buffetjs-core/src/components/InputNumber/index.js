@@ -49,6 +49,7 @@ function InputNumber({
 InputNumber.defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
+  className: null,
   id: null,
   onChange: () => {},
   placeholder: null,

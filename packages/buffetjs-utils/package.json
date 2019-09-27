@@ -5,11 +5,18 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+    "build": "cross-env rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "lint": "eslint --c ../../.eslintrc src"
   },
   "author": "Strapi team",
   "license": "MIT",
   "dependencies": {
     "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.15"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.15"
   }
 }

@@ -6,7 +6,7 @@ const subtractLight = (color, amount) => {
   return c;
 };
 
-export const gradient = (colour, amount) => {
+const gradient = (colour, amount) => {
   let color =
     colour.indexOf('#') >= 0 ? colour.substring(1, colour.length) : colour;
   const percentage = parseInt((255 * amount) / 100, 10);
@@ -17,3 +17,5 @@ export const gradient = (colour, amount) => {
 
   return color;
 };
+
+export default gradient;

@@ -31,6 +31,7 @@ function List({ className, items, customRowComponent }) {
 }
 
 List.defaultProps = {
+  className: null,
   items: [],
   customRowComponent: null,
 };

@@ -73,7 +73,6 @@ Select.defaultProps = {
 Select.propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
-  className: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

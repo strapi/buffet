@@ -30,25 +30,17 @@ function Toggle({ id, className, name, onChange, value }) {
 }
 
 Toggle.defaultProps = {
-  autoComplete: 'off',
-  autoFocus: false,
+  className: null,
   id: null,
-  options: [],
-  placeholder: null,
-  tabIndex: '0',
   onChange: () => {},
   value: false,
 };
 
 Toggle.propTypes = {
-  autoFocus: PropTypes.bool,
   className: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  placeholder: PropTypes.string,
-  tabIndex: PropTypes.string,
-
   value: PropTypes.bool,
 };
 
