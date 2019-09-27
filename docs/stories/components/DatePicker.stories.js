@@ -25,7 +25,7 @@ function DatePickerStory() {
         {`
 import React, { useState } from 'react';
 import moment from 'moment';
-import { DatePicker } from 'buffetjs';
+import { DatePicker } from '@buffetjs/core';
 
 function Example() {
   const [value, setValue] = useState(moment());

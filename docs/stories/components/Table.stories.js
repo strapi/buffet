@@ -61,7 +61,7 @@ function TableStory() {
 
 const source = `
 import React from 'react';
-import { Table } from 'buffetjs';
+import { Table } from '@buffetjs/core';
 
 const headers = [
   {

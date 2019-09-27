@@ -47,7 +47,7 @@ function LabelStory() {
           {`
 import React from 'react';
 import { FormattedMessage } from 'react-intl':
-import { Label, InputText } from 'buffetjs/core';
+import { Label, InputText } from '@buffetjs/core';
 
 function Example() {
   return (

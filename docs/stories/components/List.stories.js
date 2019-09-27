@@ -43,7 +43,7 @@ function ListStory() {
 
 const source = `
 import React from 'react';
-import { List } from 'buffetjs/core';
+import { List } from '@buffetjs/core';
 
 const rows = [
   {

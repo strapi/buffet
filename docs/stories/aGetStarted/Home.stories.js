@@ -30,13 +30,15 @@ function IntroStory() {
           <strong>Using yarn:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
-            yarn add buffetjs lodash react react-dom styled-components
+            yarn add @buffetjs/core @buffetjs/styles prop-types lodash react
+            react-dom styled-components
           </Bash>
           <span style={{ ...styles.spacer }} />
           <strong>Using npm:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
-            npm install buffetjs lodash react react-dom styled-components --save
+            npm install @buffetjs/core @buffetjs/styles prop-types lodash react
+            react-dom styled-components --save
           </Bash>
         </section>
         <section>
@@ -53,7 +55,7 @@ function IntroStory() {
 }
 
 const source = `
-import { Fonts, GlobalStyle } from 'buffetjs';
+import { Fonts, GlobalStyle } from '@buffetjs/styles';
 
 function MyApp() {
   return (

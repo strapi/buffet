@@ -28,7 +28,7 @@ function ToggleStory() {
       <Pre>
         {`
 import React, { useState } from 'react';
-import { Toggle } from 'buffet';
+import { Toggle } from '@buffet/core';
 
 function Example() {
   const [val, setValue] = useState(false);

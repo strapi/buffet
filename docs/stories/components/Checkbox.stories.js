@@ -28,7 +28,7 @@ function CheckboxStory() {
       <Pre>
         {`
 import React, { useState } from 'react';
-import { Checkbox } from 'buffetjs';
+import { Checkbox } from '@buffetjs/core';
 
 function Example() {
   const [value, setValue] = useState(false);

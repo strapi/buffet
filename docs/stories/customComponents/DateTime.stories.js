@@ -28,7 +28,7 @@ function DateTimeStory() {
         {`
 import React, { useState } from 'react';
 import moment from 'moment';
-import { DateTime } from 'buffetjs/custom';
+import { DateTime } from '@buffetjs/custom';
 
 function Example() {
   const [state, setValue] = useState(moment());

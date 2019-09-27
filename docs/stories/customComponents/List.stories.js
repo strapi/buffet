@@ -184,7 +184,7 @@ const defaultListSource = `
 import React from 'react';
 
 import { List } from '@buffetjs/custom';
-import { IconLinks} from '@buffetjs/core';
+import { IconLinks } from '@buffetjs/core';
 
 const rows = [
   {

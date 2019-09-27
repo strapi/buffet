@@ -27,7 +27,7 @@ function InputNumberStory() {
       <Pre>
         {`
 import React, { useState } from 'react';
-import { InputNumber } from 'buffetjs';
+import { InputNumber } from '@buffetjs/core';
 
 function Example() {
   const [val, setValue] = useState(null);

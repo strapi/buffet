@@ -76,7 +76,7 @@ function InputTextStory() {
           <Pre>
             {`
 import React, { useState } from 'react';
-import { InputText } from 'buffetjs/core';
+import { InputText } from '@buffetjs/core';
 
 function Example(props) {
   const [val, setValue] = useState('');
