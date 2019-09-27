@@ -14,10 +14,13 @@ import {
 } from '../../commonPropTypes/input';
 
 import Input, { InputWrapper } from '../../styled/InputText';
-import Icon from '../../styled/Icon';
+import Icon from '../Icon';
+import IconWrapper from '../../styled/InputText/IconWrapper';
+import PrefixIcon from './PrefixIcon';
 
 function InputText({
   autoFocus,
+  icon,
   id,
   message,
   name,
@@ -32,14 +35,16 @@ function InputText({
 
   return (
     <InputWrapper className={className}>
-      {(type === 'search' || type === 'email') && <Icon type={type} />}
+      <PrefixIcon icon={icon} type={type} />
       {type === 'password' && (
         <button
           type="button"
           onClick={() => togglePassword(!showPassword)}
           className={showPassword ? 'shown' : ''}
         >
-          <Icon type={type} />
+          <IconWrapper background={false}>
+            <Icon icon={type} />
+          </IconWrapper>
         </button>
       )}
       <Input
@@ -50,6 +55,7 @@ function InputText({
         tabIndex={tabIndex}
         type={showPassword ? 'text' : type}
         value={value}
+        icon={icon}
         {...rest}
       />
     </InputWrapper>
@@ -61,11 +67,13 @@ InputText.defaultProps = {
   ...uncontrolledDefaultProps,
   type: 'text',
   value: '',
+  icon: null,
 };
 
 InputText.propTypes = {
   ...commonPropTypes,
   ...uncontrolledPropTypes,
+  icon: PropTypes.node,
   type: PropTypes.string,
   value: PropTypes.string,
 };

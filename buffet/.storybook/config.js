@@ -5,7 +5,6 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { themes } from '@storybook/theming';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
 
 import GlobalStyle from '../src/styled/GlobalStyle';
 import Global from '../stories/ui/Global';

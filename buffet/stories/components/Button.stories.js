@@ -1,8 +1,14 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-import { boolean, text, radios } from '@storybook/addon-knobs';
+import { text, radios } from '@storybook/addon-knobs';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlus,
+  faTrash,
+  faBaseballBall,
+} from '@fortawesome/free-solid-svg-icons';
 import Button from '../../src/components/Button';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
@@ -18,7 +24,7 @@ function ButtonStory() {
 
   const label = text('Title', 'Save');
   const color = radios('Color', colors, 'primary');
-  const icon = boolean('Icon', false);
+  const icon = <FontAwesomeIcon icon={faPlus} />;
 
   return (
     <Presentation
@@ -33,13 +39,19 @@ function ButtonStory() {
           <Pre>{`
 import React from 'react';
 import { Button } from 'buffetjs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlus,
+  faTrash,
+  faBaseballBall,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Example() {
   return (
     <>
-      <Button color="${color}" icon={${icon}} label="${label}" />
+      <Button color="${color}" icon={<FontAwesomeIcon icon={faPlus} />} label="${label}" />
 
-      <Button color="${color}" icon={${icon}}>${label}</Button>
+      <Button color="${color}" icon={<FontAwesomeIcon icon={faPlus} />}>${label}</Button>
     </>
   );
 }
@@ -62,7 +74,11 @@ function Example() {
             </Button>
           </div>
           <div className="btn-wrapper">
-            <Button type="submit" color="delete" icon>
+            <Button
+              type="submit"
+              color="delete"
+              icon={<FontAwesomeIcon icon={faTrash} />}
+            >
               Delete
             </Button>
           </div>
@@ -77,7 +93,11 @@ function Example() {
             </Button>
           </div>
           <div className="btn-wrapper">
-            <Button type="submit" color="secondary" icon>
+            <Button
+              type="submit"
+              color="secondary"
+              icon={<FontAwesomeIcon icon={faBaseballBall} />}
+            >
               Text
             </Button>
           </div>

@@ -31,7 +31,7 @@ const Checkbox = styled.input`
   }
   &:after {
     display: none;
-    content: '\f00c';
+    content: '✔';
     position: absolute;
     left: 0;
     top: 50%;
@@ -39,9 +39,8 @@ const Checkbox = styled.input`
     width: ${sizes.checkbox.width};
     height: ${sizes.checkbox.height};
     text-align: center;
-    font-size: 10px;
-    font-family: 'FontAwesome';
-    font-weight: 100;
+    font-size: 12px;
+    font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
   }

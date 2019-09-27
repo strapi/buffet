@@ -53,8 +53,8 @@ describe('<Button />', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render the add back', () => {
-      const tree = renderer.create(<Button icon="back" />).toJSON();
+    it('should render a custom icon', () => {
+      const tree = renderer.create(<Button icon={<p>Icon</p>} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 

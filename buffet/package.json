@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": "buffetjs",
   "main": "dist/index.js",
   "license": "MIT",
@@ -46,7 +46,10 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "invariant": "^2.2.4",
     "moment": "^2.24.0",
     "rc-input-number": "^4.3.9",

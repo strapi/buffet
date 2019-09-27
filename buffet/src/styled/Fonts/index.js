@@ -1,8 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import fontawesome from '../../assets/fonts/fontawesome/fontawesome-webfont.woff';
-import fontawesome2 from '../../assets/fonts/fontawesome/fontawesome-webfont.woff2';
-
 /* Lato (hairline, normal) */
 import latoHairline from '../../assets/fonts/lato/lato-hairline/lato-hairline.woff';
 import latoHairline2 from '../../assets/fonts/lato/lato-hairline/lato-hairline.woff2';
@@ -68,16 +65,6 @@ import latoBlackItalic from '../../assets/fonts/lato/lato-black-italic/lato-blac
 import latoBlackItalic2 from '../../assets/fonts/lato/lato-black-italic/lato-black-italic.woff2';
 
 const Font = createGlobalStyle`
-
-// FontAwesome
-@font-face {
-  font-family: 'FontAwesome';
-  src: url(${fontawesome2}) format("woff2"), url(${fontawesome}) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-// Lato
 @font-face {
   font-family: 'Lato';
   src: url(${latoHairline2}) format("woff2"), url(${latoHairline}) format("woff");

@@ -12,9 +12,10 @@ import StyledTimePicker, {
   TimePickerWrapper,
   TimeList,
 } from '../../styled/TimePicker';
-import Icon from '../../styled/Icon';
+import Icon from '../Icon';
 import useEventListener from '../EventListener';
 import useShortcutEffect from '../Shortcut';
+import IconWrapper from '../../styled/InputText/IconWrapper';
 
 // Convert time array to formatted time string
 export const timeFormatter = time => {
@@ -211,7 +212,9 @@ function TimePicker(props) {
         type="text"
         value={inputVal}
       />
-      <Icon type="time" />
+      <IconWrapper>
+        <Icon icon="time" />
+      </IconWrapper>
       <TimeList className={isOpen && 'displayed'} ref={listRef}>
         {getOptions().map(option => (
           <li key={option.value} ref={listRefs[option.value]}>
