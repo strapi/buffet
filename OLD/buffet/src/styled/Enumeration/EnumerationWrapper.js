@@ -29,6 +29,7 @@ const EnumerationWrapper = styled.div`
       margin: auto;
       letter-spacing: 0.65px;
       font-size: 12px;
+      font-weight: 500;
       text-transform: uppercase;
     }
     &:not(:last-of-type) {
