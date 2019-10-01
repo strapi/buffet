@@ -21,9 +21,10 @@ before_install:
 
 before_script:
   - git fetch origin master:master
-  - yarn setup
 
 script:
+  - yarn
+  - yarn run -s build
   - yarn run -s lint
   - yarn run -s test
 
