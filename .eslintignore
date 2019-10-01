@@ -3,3 +3,4 @@ packages/**/dist/**
 node_modules/**
 OLD/**
 internals/**
+docs/**
