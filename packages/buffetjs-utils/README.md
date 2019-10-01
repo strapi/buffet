@@ -1,4 +1,4 @@
-# Buffetjs Utils
+# Buffet.js Utils
 
 ## Getting Started
 

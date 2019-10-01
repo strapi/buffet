@@ -1,4 +1,4 @@
-# Buffetjs Custom
+# Buffet.js Custom
 
 ## Getting Started
 

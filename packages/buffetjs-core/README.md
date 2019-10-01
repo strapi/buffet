@@ -1,4 +1,4 @@
-# Buffetjs Core
+# Buffet.js Core
 
 ## Getting Started
 
