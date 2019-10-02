@@ -20,6 +20,8 @@
   </p>
 </div>
 
+⚠️ This package is deprecated, please use `@buffetjs/core` instead ⚠️
+
 ## Getting Started
 
 ### Installation
