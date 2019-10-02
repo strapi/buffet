@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Buffetjs Documentation",
   "main": "index.js",
@@ -12,8 +12,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@buffetjs/core": "1.0.0",
-    "@buffetjs/custom": "1.0.0",
+    "@buffetjs/core": "1.0.1",
+    "@buffetjs/custom": "1.0.1",
     "@buffetjs/styles": "1.0.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
