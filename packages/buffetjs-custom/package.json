@@ -44,5 +44,8 @@
     "styled-components"
   ],
   "author": "Strapi team",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

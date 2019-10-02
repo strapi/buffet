@@ -22,5 +22,8 @@
   },
   "peerDependencies": {
     "lodash": "^4.17.15"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
