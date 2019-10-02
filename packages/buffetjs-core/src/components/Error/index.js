@@ -8,7 +8,7 @@ import { useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 
-import createYupSchema from '@buffetjs/utils';
+import { createYupSchema } from '@buffetjs/utils';
 import reducer from './reducer';
 
 function Error({ children, translatedErrors, type, validations, value }) {
