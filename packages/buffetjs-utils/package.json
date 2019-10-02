@@ -1,0 +1,23 @@
+{
+  "name": "@buffetjs/utils",
+  "version": "1.0.0",
+  "description": "Buffetjs Utils",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "lint": "eslint --c ../../.eslintrc src",
+    "prepublishOnly": "npm run build",
+    "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+  },
+  "author": "Strapi team",
+  "license": "MIT",
+  "dependencies": {
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.15"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.15"
+  }
+}

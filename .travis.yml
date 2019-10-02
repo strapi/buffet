@@ -13,24 +13,22 @@ dist: xenial
 services:
   - xvfb
 
-
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - git fetch -a
   - git fetch origin master
-  - cd buffet
-
-install:
-  - yarn
 
 before_script:
   - git fetch origin master:master
 
 script:
-  - yarn run lint
-  - yarn run test
+  - yarn
+  - yarn run -s build
+  - yarn run -s lint
+  - yarn run -s test
 
 cache:
+  yarn: true
   directories:
     - 'node_modules'

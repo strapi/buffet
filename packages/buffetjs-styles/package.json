@@ -1,0 +1,41 @@
+{
+  "name": "@buffetjs/styles",
+  "version": "1.0.0",
+  "description": "Buffetjs Styles - The styling solution of Buffetjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --c ../../.eslintrc src",
+    "prepublishOnly": "npm run build",
+    "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+  },
+  "keywords": [
+    "styled-components",
+    "buffetjs",
+    "react",
+    "styles"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "react-dates": "^21.1.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "jest-styled-components": "^6.3.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
+    "styled-components": "^4.2.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^16.9.0",
+    "styled-components": "^4.1.2"
+  },
+  "author": "Strapi Team",
+  "license": "MIT"
+}

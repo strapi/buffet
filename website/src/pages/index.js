@@ -5,11 +5,11 @@ import {
   DatePicker,
   Enumeration,
   InputText,
-  Fonts,
   Label,
   Textarea,
   Toggle,
-} from 'buffet';
+} from '@buffetjs/core';
+import { Fonts } from '@buffetjs/styles';
 /* eslint-enable */
 
 import Layout from '../components/layout';
@@ -382,7 +382,7 @@ const Main = () => {
                 color: '#3B3B3B',
                 outline: 'none',
               }}
-              onKeyDown={e => {
+              onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   document
                     .getElementById('mc-embedded-subscribe-form')
@@ -406,7 +406,7 @@ const Main = () => {
               />
             </div>
             <Button
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -432,7 +432,19 @@ const Main = () => {
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Buffetjs.io" keywords={['buffetjs', 'styled-components', 'react', 'design system', 'component library', 'open-source design system', 'javascript component library', 'strapi design system']}>
+    <SEO
+      title="Buffetjs.io"
+      keywords={[
+        'buffetjs',
+        'styled-components',
+        'react',
+        'design system',
+        'component library',
+        'open-source design system',
+        'javascript component library',
+        'strapi design system',
+      ]}
+    >
       <script
         type="text/javascript"
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"

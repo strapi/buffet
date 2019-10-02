@@ -1,8 +1,8 @@
-# Buffet website
+# Buffet.js website
 
 ```
-# Install the dependencies
-$ yarn
+# Build the packages
+yarn build
 # Launch the website
 $ yarn develop
 ```

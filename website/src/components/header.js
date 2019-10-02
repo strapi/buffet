@@ -54,7 +54,9 @@ const Navigation = () => (
               }}
             >
               Buffet.js:
-              <br className="d-block d-sm-none" /> All-you-can-eat React
+              <br className="d-block d-sm-none" />
+              {' '}
+All-you-can-eat React
               components library
               <span
                 style={{

@@ -6,7 +6,7 @@ module.exports = {
     description:
       'Buffet is an open-source React components system based on styled-components, made for creating better user experiences in application interfaces.',
     author: '@strapijs',
-    image: "/images/cover-buffet.png", // Path to your image you placed in the 'static' folder
+    image: '/images/cover-buffet.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
     {
@@ -54,21 +54,16 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-alias-imports',
-      options: {
-        alias: {
-          buffet: path.resolve(__dirname, '../buffet/dist'),
-          react: path.resolve(__dirname, 'node_modules/react'),
-          'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
-          'styled-components': path.resolve(
-            __dirname,
-            'node_modules/styled-components'
-          ),
-        },
-        extensions: [],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-alias-imports',
+    //   options: {
+    //     alias: {
+    //       react: path.resolve(__dirname, 'node_modules/react'),
+    //       'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
+    //     },
+    //     extensions: [],
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

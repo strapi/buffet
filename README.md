@@ -20,8 +20,6 @@
   </p>
 </div>
 
-⚠️ This package is deprecated, please use `@buffetjs/core` instead ⚠️
-
 ## Getting Started
 
 ### Installation
@@ -29,7 +27,7 @@
 Using yarn
 
 ```bash
-yarn add buffetjs
+yarn add @buffetjs/core
 # Install the required dependencies
 yarn add lodash prop-types react react-dom react-router-dom styled-components
 ```
@@ -37,7 +35,7 @@ yarn add lodash prop-types react react-dom react-router-dom styled-components
 or npm
 
 ```bash
-npm install buffetjs --save
+npm install @buffetjs/core --save
 # Install the required dependencies
 npm install lodash prop-types react react-dom react-router-dom styled-components --save
 ```
@@ -50,7 +48,7 @@ Import buffet.js into your project as follows:
 import React from 'react';
 import {
   Enumeration,
-} from 'buffetjs';
+} from '@buffetjs/core';
 
 const Page = () => {
   const [state, setState] = React.useState('milk');
