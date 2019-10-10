@@ -4,7 +4,7 @@
  *
  */
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
@@ -31,15 +31,13 @@ const InputText = styled.input`
 
   // Search with left icon
   ${props =>
-    (props.type === 'search' || props.type === 'email' || props.icon) &&
-    css`
+    (props.type === 'search' || props.type === 'email' || props.icon) && `
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 
   // Password with right icon
   ${props =>
-    props.type === 'password' &&
-    css`
+    props.type === 'password' && `
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 `;
