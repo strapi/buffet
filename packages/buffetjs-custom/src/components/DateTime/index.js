@@ -33,7 +33,7 @@ export const getTimeObject = time => {
   return timeObj;
 };
 
-function DateTime({ name, onChange, value, ...rest }) {
+function DateTime({ name, onChange, value, tabIndex, ...rest }) {
   const [timestamp, setTimestamp] = useState(moment());
 
   const setTime = time => {
@@ -73,6 +73,7 @@ function DateTime({ name, onChange, value, ...rest }) {
         onChange={({ target }) => {
           setDate(target.value, timestamp);
         }}
+        tabIndex={tabIndex}
         value={timestamp}
       />
       <TimePicker
@@ -81,6 +82,7 @@ function DateTime({ name, onChange, value, ...rest }) {
           setTime(target.value);
         }}
         seconds={false}
+        tabIndex={tabIndex}
         value={getTimeString(timestamp)}
       />
     </Wrapper>
