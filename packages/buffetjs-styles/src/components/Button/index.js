@@ -4,7 +4,7 @@
  *
  */
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
@@ -35,16 +35,14 @@ const Button = styled.button`
 
   // Specific style
   ${props =>
-    props.color === 'primary' &&
-    css`
+    props.color === 'primary' && `
       background-image: ${colors.blueGradient};
       color: ${colors.white};
       border: 0;
     `}
 
   ${props =>
-    props.color === 'secondary' &&
-    css`
+    props.color === 'secondary' && `
       border: 1px solid ${colors.darkBlue};
       color: ${colors.darkBlue};
       padding: 0 ${sizes.button.padding.small};
@@ -52,15 +50,13 @@ const Button = styled.button`
     `}}
 
   ${props =>
-    props.color === 'cancel' &&
-    css`
+    props.color === 'cancel' && `
       border: 1px solid ${colors.mediumGrey};
       color: ${colors.mediumGrey};
     `}}
 
   ${props =>
-    props.color === 'delete' &&
-    css`
+    props.color === 'delete' && `
       border: 1px solid ${colors.orangeBorder};
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
