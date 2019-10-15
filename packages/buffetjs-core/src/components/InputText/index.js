@@ -36,6 +36,7 @@ function InputText({
           type="button"
           onClick={() => togglePassword(!showPassword)}
           className={showPassword ? 'shown' : ''}
+          tabIndex="-1"
         >
           <IconWrapper background={false}>
             <Icon icon={type} />
