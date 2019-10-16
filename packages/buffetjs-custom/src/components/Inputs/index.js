@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
+import { get, isEmpty } from 'lodash';
 import {
   DatePicker,
   Checkbox,
@@ -85,7 +85,12 @@ function Inputs({
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
-          {type !== 'checkbox' && <Label htmlFor={name}>{label}</Label>}
+          {type !== 'checkbox' && (
+            <Label htmlFor={name}>
+              {label}
+              {isEmpty(label) && <>&nbsp;</>}
+            </Label>
+          )}
           <InputComponent
             {...rest}
             message={label} // Only for the checkbox
