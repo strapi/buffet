@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import mixins from '../../assets/styles/mixins';
 import colors from '../../assets/styles/colors';
-import sizes from '../../assets/styles/sizes';
 
 const GlobalStyle = createGlobalStyle`
   * { ${mixins().bbox} }
@@ -12,9 +11,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${colors.greyIconBkgd};
-    margin: ${sizes.margin * 1.8}px ${sizes.margin * 2}px;
-    padding: ${sizes.margin * 1.8}px;
-    margin: 20px 18px;
   }
   p {
     margin: 0;

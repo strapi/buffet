@@ -3,6 +3,10 @@ import { sizes } from '@buffetjs/styles';
 
 const Global = createGlobalStyle`
 // Storybook
+body {
+  padding: ${sizes.margin * 1.8}px;  
+  margin: ${sizes.margin * 2}px ${sizes.margin * 1.8}px;
+}
 .story {
   font-family: Lato !important;
   padding-top: 12px;

@@ -10,7 +10,7 @@ import sizes from '../../assets/styles/sizes';
 
 const TimePickerWrapper = styled.div`
   max-width: 95px;
-  z-index: 9;
+  z-index: 99;
   position: relative;
   background-color: ${colors.white};
   span {

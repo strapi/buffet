@@ -9,7 +9,7 @@
     "format": "npm-run-all -p format:*",
     "format:code": "npm run prettier:code -- --write",
     "prettier:code": "prettier \"**/*.js\"",
-    "pretest": "npm run test:clean && lerna run --stream lint lint",
+    "pretest": "npm run test:clean && lerna run --stream lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",

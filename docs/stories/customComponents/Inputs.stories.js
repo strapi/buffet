@@ -29,6 +29,15 @@ const form = {
       uppercase: true,
     },
   },
+  time: {
+    styleName: 'col-6',
+    label: 'Time',
+    description: 'Select a slot',
+    type: 'time',
+    validations: {
+      required: true,
+    },
+  },
   datepicker: {
     styleName: 'col-6',
     label: 'Birth date',

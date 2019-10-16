@@ -53,6 +53,14 @@ class DatePicker extends React.PureComponent {
     });
   };
 
+  handleTabClick = ({ keyCode, which }) => {
+    const code = keyCode || which;
+
+    if (code === 9) {
+      this.handleOutsideClick();
+    }
+  };
+
   showDatepicker = () => {
     this.setState({
       visible: true,
@@ -60,7 +68,7 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
-    const { className, displayFormat, id, name } = this.props;
+    const { className, displayFormat, id, name, tabIndex } = this.props;
     const { date, isFocused, visible } = this.state;
 
     return (
@@ -74,6 +82,9 @@ class DatePicker extends React.PureComponent {
             readOnly
             icon={<FontAwesomeIcon icon={faCalendarAlt} />}
             onClick={this.showDatepicker}
+            onFocus={this.showDatepicker}
+            onKeyDown={this.handleTabClick}
+            tabIndex={tabIndex}
           />
         </div>
         {visible && (
@@ -96,6 +107,7 @@ DatePicker.defaultProps = {
   displayFormat: 'MMMM DD, YY',
   id: 'date',
   onChange: () => {},
+  tabIndex: '0',
   value: null,
   withDefaultValue: true,
 };
@@ -106,6 +118,7 @@ DatePicker.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  tabIndex: PropTypes.string,
   value: PropTypes.oneOfType([momentPropTypes.momentObj, PropTypes.string]),
   withDefaultValue: PropTypes.bool,
 };
