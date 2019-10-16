@@ -99,7 +99,7 @@ const nearest = (arr, val) =>
   ) + val;
 
 function TimePicker(props) {
-  const { name, onChange, seconds, value } = props;
+  const { name, onChange, seconds, tabIndex, value } = props;
   const [inputVal, setInputVal] = useState(seconds ? value : short(value));
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef();
@@ -212,6 +212,7 @@ function TimePicker(props) {
         ref={inputRef}
         type="text"
         value={inputVal}
+        tabIndex={tabIndex}
       />
       <IconWrapper>
         <Icon icon="time" />
@@ -226,6 +227,7 @@ function TimePicker(props) {
               id={option.value}
               name="time"
               checked={option.value === roundHour(timeFormatter(inputVal))}
+              tabIndex="-1"
             />
             <label htmlFor={option.value}>{option.label}</label>
           </li>
@@ -238,6 +240,7 @@ function TimePicker(props) {
 TimePicker.defaultProps = {
   className: null,
   onChange: () => {},
+  tabIndex: '0',
   seconds: false,
   value: '',
 };
@@ -247,6 +250,7 @@ TimePicker.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   seconds: PropTypes.bool,
+  tabIndex: PropTypes.string,
   value: PropTypes.string,
 };
 

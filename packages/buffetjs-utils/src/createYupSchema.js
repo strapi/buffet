@@ -19,7 +19,7 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
       .typeError(translatedErrors.number);
   }
 
-  if (['date', 'time'].includes(type)) {
+  if (['date', 'datetime'].includes(type)) {
     schema = schema.date().typeError(translatedErrors.date);
   }
 
