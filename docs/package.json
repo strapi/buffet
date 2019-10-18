@@ -14,6 +14,7 @@
   "dependencies": {
     "@buffetjs/core": "1.0.3",
     "@buffetjs/custom": "1.0.3",
+    "@buffetjs/icons": "1.0.0",
     "@buffetjs/styles": "1.0.3",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
