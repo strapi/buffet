@@ -17,10 +17,11 @@ const Wrapper = styled.div`
   }
   p {
     position: absolute;
-    bottom: -1px;
+    bottom: 0px;
     left: 0;
     width 100%;
     margin: 0;
+    line-height: 1.6rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
