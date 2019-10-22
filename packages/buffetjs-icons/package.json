@@ -3,6 +3,9 @@
   "version": "1.0.4",
   "description": "Icons kit",
   "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "test": "echo \"Error: no test specified\" && exit 1",
