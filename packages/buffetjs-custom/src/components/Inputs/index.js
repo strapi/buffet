@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
+import { get, isEmpty, isFunction } from 'lodash';
 import {
   DatePicker,
   Checkbox,
@@ -48,6 +48,7 @@ function Inputs({
   description,
   label,
   name,
+  onBlur: handleBlur,
   onChange,
   type,
   validations,
@@ -85,12 +86,17 @@ function Inputs({
     <Error name={name} type={type} validations={validations}>
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
-          {type !== 'checkbox' && <Label htmlFor={name}>{label}</Label>}
+          {type !== 'checkbox' && (
+            <Label htmlFor={name}>
+              {label}
+              {isEmpty(label) && <>&nbsp;</>}
+            </Label>
+          )}
           <InputComponent
             {...rest}
             message={label} // Only for the checkbox
             name={name}
-            onBlur={onBlur}
+            onBlur={isFunction(handleBlur) ? handleBlur : onBlur}
             onChange={e => {
               if (!canCheck) {
                 dispatch({
@@ -119,6 +125,7 @@ Inputs.defaultProps = {
   customInputs: null,
   description: null,
   label: null,
+  onBlur: null,
   onChange: () => {},
   validations: {},
   value: null,
@@ -129,6 +136,7 @@ Inputs.propTypes = {
   description: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
+  onBlur: PropTypes.func,
   onChange: () => {},
   type: PropTypes.string.isRequired,
   validations: PropTypes.object,
