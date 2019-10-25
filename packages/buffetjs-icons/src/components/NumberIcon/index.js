@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const NumberIcon = props => (
   <svg width="20" height="10" xmlns="http://www.w3.org/2000/svg" {...props}>
     <text
-      transform="translate(-8 -6)"
+      transform="translate(-8 -5)"
       fill={props.fill}
       fillRule="evenodd"
       fontFamily="Lato-Bold, Lato"

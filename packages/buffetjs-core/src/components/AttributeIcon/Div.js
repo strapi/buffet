@@ -2,13 +2,11 @@ import styled from 'styled-components';
 
 const Div = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 20px;
   width: 35px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
   > svg {
     align-self: center;
   }
