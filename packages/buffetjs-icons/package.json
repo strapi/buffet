@@ -30,5 +30,10 @@
     "react": "^16.10.2",
     "react-test-renderer": "^16.10.2",
     "styled-components": "^4.4.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^16.8.6",
+    "styled-components": "^4.1.2"
   }
 }
