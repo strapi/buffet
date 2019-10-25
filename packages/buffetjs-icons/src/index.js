@@ -1,5 +1,6 @@
 export { default as Bool } from './components/Bool';
 export { default as Calendar } from './components/Calendar';
+export { default as ContentType } from './components/ContentType';
 export { default as Component } from './components/Component';
 export { default as DynamicZone } from './components/DynamicZone';
 export { default as Email } from './components/Email';

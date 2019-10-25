@@ -7,6 +7,7 @@ import {
   Pencil,
   Remove,
   Calendar,
+  ContentType,
   Bool,
   Component,
   DynamicZone,
@@ -37,6 +38,10 @@ const IconsStory = () => {
     {
       name: 'component',
       Compo: Component,
+    },
+    {
+      name: 'content-type',
+      Compo: ContentType,
     },
     {
       name: 'dynamic-zone',
@@ -141,6 +146,10 @@ const icons = [
   {
     name: 'component',
     Compo: Component,
+  },
+  {
+    name: 'content-type',
+    Compo: ContentType,
   },
   {
     name: 'dynamic-zone',

@@ -4,6 +4,7 @@ import {
   Bool,
   Calendar,
   Component,
+  ContentType,
   DynamicZone,
   Email,
   Enumeration,
@@ -21,6 +22,7 @@ import Div from './Div';
 const types = {
   boolean: Bool,
   component: Component,
+  contenttype: ContentType,
   date: Calendar,
   datetime: Calendar,
   dynamiczone: DynamicZone,
