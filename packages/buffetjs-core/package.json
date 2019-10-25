@@ -14,6 +14,7 @@
     "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
   "dependencies": {
+    "@buffetjs/icons": "1.0.5",
     "@buffetjs/styles": "1.0.5",
     "@buffetjs/utils": "1.0.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",

@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get, isEmpty, isFunction } from 'lodash';
+import { isEmpty, isFunction } from 'lodash';
 import {
   DatePicker,
   Checkbox,
@@ -67,20 +67,6 @@ function Inputs({
   }
   const allInputs = Object.assign(inputs, customInputs);
   const InputComponent = allInputs[type] || UnknownInput;
-
-  if (type === get(customInputs, 'type', '')) {
-    return (
-      <InputComponent
-        description={description}
-        label={label}
-        name={name}
-        onChange={onChange}
-        type={type}
-        validations={validations}
-        value={value}
-      />
-    );
-  }
 
   return (
     <Error name={name} type={type} validations={validations}>
