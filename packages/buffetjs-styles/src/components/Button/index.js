@@ -96,7 +96,13 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'cancel',
+    'success',
+    'delete',
+  ]),
   type: PropTypes.string,
 };
 

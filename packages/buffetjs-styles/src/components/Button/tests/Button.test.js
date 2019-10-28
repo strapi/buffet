@@ -70,12 +70,17 @@ describe('<Button />', () => {
 
     it('should render the secondary style', () => {
       const tree = renderer.create(<Button color="secondary" />).toJSON();
-      expect(tree).toHaveStyleRule('color', colors.darkBlue);
+      expect(tree).toHaveStyleRule('color', colors.blue);
     });
 
     it('should render the cancel style', () => {
       const tree = renderer.create(<Button color="cancel" />).toJSON();
-      expect(tree).toHaveStyleRule('color', colors.mediumGrey);
+      expect(tree).toHaveStyleRule('color', colors.brightGrey);
+    });
+
+    it('should render the success style', () => {
+      const tree = renderer.create(<Button color="success" />).toJSON();
+      expect(tree).toHaveStyleRule('color', colors.white);
     });
 
     it('should render the delete style', () => {
