@@ -46,7 +46,6 @@ function LabelStory() {
         <Pre language="Pre">
           {`
 import React from 'react';
-import { FormattedMessage } from 'react-intl':
 import { Label, InputText } from '@buffetjs/core';
 
 function Example() {

@@ -13,6 +13,11 @@ export { default as List } from './components/List';
 export { default as ListHeader } from './components/ListHeader';
 export { default as ListRow } from './components/ListRow';
 export { default as NavTabs } from './components/NavTabs';
+export { default as PluginHeader } from './components/PluginHeader';
+export {
+  default as PluginHeaderActions,
+} from './components/PluginHeaderActions';
+export { default as PluginHeaderTitle } from './components/PluginHeaderTitle';
 export { default as PrefixIcon } from './components/PrefixIcon';
 export { default as Select } from './components/Select';
 export { default as Table } from './components/Table';
