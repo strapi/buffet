@@ -68,7 +68,7 @@ function Inputs({
   const allInputs = Object.assign(inputs, customInputs);
   const InputComponent = allInputs[type] || UnknownInput;
 
-  if (type === get(customInputs, 'type')) {
+  if (get(customInputs, type, null) !== null) {
     return (
       <InputComponent
         description={description}
