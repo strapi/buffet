@@ -56,7 +56,7 @@ const Button = styled.button`
     `
       border: 1px solid ${colors.brightGrey};
       color: ${colors.brightGrey};
-      background-color: transparent;
+      background-color: transparent; 
       :disabled:hover {
         box-shadow: none;
         cursor: initial;

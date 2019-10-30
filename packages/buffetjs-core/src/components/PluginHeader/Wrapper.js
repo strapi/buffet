@@ -11,17 +11,15 @@ const Wrapper = styled.div`
   .justify-content-end {
     display: flex;
   }
-  .header-title {
-    p {
-      width: 100%;
-      margin: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: #787e8f;
-    }
+  .header-title p {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #787e8f;
   }
 `;
 

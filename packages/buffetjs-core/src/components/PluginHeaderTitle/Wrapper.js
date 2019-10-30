@@ -30,6 +30,7 @@ const Wrapper = styled.div`
     font-size: 14px;
     color: rgba(16, 22, 34, 0.35);
     cursor: pointer;
+    outline: 0;
   }
 `;
 
