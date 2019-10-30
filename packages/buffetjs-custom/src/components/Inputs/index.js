@@ -46,6 +46,7 @@ const inputs = {
 function Inputs({
   customInputs,
   description,
+  error: inputError,
   label,
   name,
   onBlur: handleBlur,
@@ -72,6 +73,7 @@ function Inputs({
     return (
       <InputComponent
         description={description}
+        error={inputError}
         label={label}
         name={name}
         onChange={onChange}
@@ -84,7 +86,12 @@ function Inputs({
   }
 
   return (
-    <Error name={name} type={type} validations={validations}>
+    <Error
+      inputError={inputError}
+      name={name}
+      type={type}
+      validations={validations}
+    >
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
           {type !== 'checkbox' && (
@@ -125,6 +132,7 @@ function Inputs({
 Inputs.defaultProps = {
   customInputs: null,
   description: null,
+  error: null,
   label: null,
   onBlur: null,
   onChange: () => {},
@@ -135,6 +143,7 @@ Inputs.defaultProps = {
 Inputs.propTypes = {
   customInputs: PropTypes.object,
   description: PropTypes.string,
+  error: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,

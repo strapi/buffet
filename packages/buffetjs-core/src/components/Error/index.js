@@ -4,18 +4,34 @@
  *
  */
 
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 
 import { createYupSchema } from '@buffetjs/utils';
 import reducer from './reducer';
 
-function Error({ children, translatedErrors, type, validations, value }) {
+function Error({
+  children,
+  inputError,
+  translatedErrors,
+  type,
+  validations,
+  value,
+}) {
   const [state, dispatch] = useReducer(reducer, {
     error: false,
     canCheck: !isEmpty(value),
   });
+
+  useEffect(() => {
+    if (!isEmpty(inputError)) {
+      dispatch({
+        type: 'SET_ERROR',
+        error: inputError,
+      });
+    }
+  }, [inputError]);
 
   const { error, canCheck } = state;
 
@@ -44,10 +60,7 @@ function Error({ children, translatedErrors, type, validations, value }) {
         const { message } = err;
         setError(message);
       }
-
-      return;
     }
-    resetError();
   };
 
   if (children) {
