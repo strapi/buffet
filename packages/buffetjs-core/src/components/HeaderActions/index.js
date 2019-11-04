@@ -1,17 +1,16 @@
 /**
  *
- * PluginHeaderActions
+ * HeaderActions
  *
  */
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HeaderActions as Wrapper } from '@buffetjs/styles';
 
 import Button from '../Button';
 
-import Wrapper from './Wrapper';
-
-function PluginHeaderActions({ actions }) {
+function HeaderActions({ actions }) {
   return (
     <Wrapper>
       {actions.map(action => {
@@ -27,12 +26,12 @@ function PluginHeaderActions({ actions }) {
   );
 }
 
-PluginHeaderActions.defaultProps = {
+HeaderActions.defaultProps = {
   actions: [],
 };
 
-PluginHeaderActions.propTypes = {
+HeaderActions.propTypes = {
   actions: PropTypes.array,
 };
 
-export default PluginHeaderActions;
+export default HeaderActions;

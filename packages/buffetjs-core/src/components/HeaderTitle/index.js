@@ -1,9 +1,15 @@
+/**
+ *
+ * HeaderTitle
+ *
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Wrapper from './Wrapper';
+import { HeaderTitle as Wrapper } from '@buffetjs/styles';
 
-function PluginHeaderTitle({ title, cta }) {
+function HeaderTitle({ title, cta }) {
   const renderCTA = () => {
     if (cta) {
       const { icon, onClick } = cta;
@@ -26,12 +32,12 @@ function PluginHeaderTitle({ title, cta }) {
   );
 }
 
-PluginHeaderTitle.defaultProps = {
+HeaderTitle.defaultProps = {
   cta: null,
   title: null,
 };
 
-PluginHeaderTitle.propTypes = {
+HeaderTitle.propTypes = {
   cta: PropTypes.shape({
     icon: PropTypes.string,
     onClick: PropTypes.func,
@@ -39,4 +45,4 @@ PluginHeaderTitle.propTypes = {
   title: PropTypes.string,
 };
 
-export default PluginHeaderTitle;
+export default HeaderTitle;

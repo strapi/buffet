@@ -1,12 +1,12 @@
 /**
  *
- * Wrapper
+ * HeaderTitle
  *
  */
 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const HeaderTitle = styled.div`
   position: relative;
   padding-top: 0.7rem;
   h1 {
@@ -34,4 +34,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Wrapper;
+export default HeaderTitle;

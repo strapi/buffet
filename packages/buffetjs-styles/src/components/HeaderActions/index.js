@@ -1,12 +1,12 @@
 /**
  *
- * Wrapper
+ * HeaderActions
  *
  */
 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const HeaderActions = styled.div`
   display: flex;
   justify-content: flex-end;
   width: fit-content;
@@ -24,4 +24,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Wrapper;
+export default HeaderActions;

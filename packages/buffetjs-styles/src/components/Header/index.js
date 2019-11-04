@@ -1,12 +1,12 @@
 /**
  *
- * Wrapper
+ * Header
  *
  */
 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Header = styled.div`
   margin-bottom: 30px;
   .justify-content-end {
     display: flex;
@@ -23,4 +23,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Wrapper;
+export default Header;

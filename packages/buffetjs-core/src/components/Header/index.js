@@ -1,9 +1,15 @@
+/**
+ *
+ * Header
+ *
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Wrapper from './Wrapper';
+import { Header as Wrapper } from '@buffetjs/styles';
 
-function PluginHeader({ title, content, callToAction }) {
+function Header({ title, content, callToAction }) {
   return (
     <Wrapper>
       <div className="row">
@@ -17,16 +23,16 @@ function PluginHeader({ title, content, callToAction }) {
   );
 }
 
-PluginHeader.defaultProps = {
+Header.defaultProps = {
   callToAction: null,
   content: null,
   title: null,
 };
 
-PluginHeader.propTypes = {
+Header.propTypes = {
   callToAction: PropTypes.node,
   content: PropTypes.node,
   title: PropTypes.node,
 };
 
-export default PluginHeader;
+export default Header;
