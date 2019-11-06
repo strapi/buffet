@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 
 import { HeaderTitle as Wrapper } from '@buffetjs/styles';
 
-function HeaderTitle({ title, cta }) {
+function HeaderTitle({ title, children, cta }) {
+  const content = title || children;
   const renderCTA = () => {
     if (cta) {
       const { icon, onClick } = cta;
@@ -25,7 +26,7 @@ function HeaderTitle({ title, cta }) {
   return (
     <Wrapper>
       <h1>
-        {title}
+        {content}
         {renderCTA()}
       </h1>
     </Wrapper>
@@ -33,11 +34,13 @@ function HeaderTitle({ title, cta }) {
 }
 
 HeaderTitle.defaultProps = {
+  children: null,
   cta: null,
   title: null,
 };
 
 HeaderTitle.propTypes = {
+  children: PropTypes.node,
   cta: PropTypes.shape({
     icon: PropTypes.string,
     onClick: PropTypes.func,
