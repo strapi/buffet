@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> snapshot 1`] = `
+.c0 {
+  margin-bottom: 30px;
+}
+
+.c0 .justify-content-end {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .header-title p {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #787e8f;
+}
+
+<div
+  className="c0"
+/>
+`;

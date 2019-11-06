@@ -19,6 +19,7 @@ function ButtonStory() {
     primary: 'primary',
     secondary: 'secondary',
     cancel: 'cancel',
+    success: 'success',
     delete: 'delete',
   };
 
@@ -85,6 +86,11 @@ function Example() {
           <div className="btn-wrapper">
             <Button type="submit" color="cancel">
               Cancel
+            </Button>
+          </div>
+          <div className="btn-wrapper">
+            <Button type="submit" color="success">
+              Submit
             </Button>
           </div>
           <div className="btn-wrapper">
