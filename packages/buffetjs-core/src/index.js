@@ -13,7 +13,6 @@ export { default as List } from './components/List';
 export { default as ListHeader } from './components/ListHeader';
 export { default as ListRow } from './components/ListRow';
 export { default as NavTabs } from './components/NavTabs';
-export { default as Header } from './components/Header';
 export { default as HeaderActions } from './components/HeaderActions';
 export { default as HeaderTitle } from './components/HeaderTitle';
 export { default as PrefixIcon } from './components/PrefixIcon';

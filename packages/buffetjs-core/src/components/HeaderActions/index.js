@@ -14,10 +14,10 @@ function HeaderActions({ actions }) {
   return (
     <Wrapper>
       {actions.map(action => {
-        const { title } = action;
+        const { title, onClick } = action;
 
         return (
-          <Button key={title.props.id ? title.props.id : title} {...action}>
+          <Button key={title} onClick={onClick} {...action}>
             {title}
           </Button>
         );
@@ -31,7 +31,12 @@ HeaderActions.defaultProps = {
 };
 
 HeaderActions.propTypes = {
-  actions: PropTypes.array,
+  actions: PropTypes.arrayOf(
+    PropTypes.shape({
+      onClick: PropTypes.func,
+      title: PropTypes.string,
+    })
+  ),
 };
 
 export default HeaderActions;

@@ -6,6 +6,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { HeaderTitle as Wrapper } from '@buffetjs/styles';
 
@@ -13,10 +16,16 @@ function HeaderTitle({ title, children, cta }) {
   const content = title || children;
   const renderCTA = () => {
     if (cta) {
-      const { icon, onClick } = cta;
+      const { onClick } = cta;
 
       return (
-        <i className={`${icon}`} onClick={onClick} role="button" tabIndex="0" />
+        <FontAwesomeIcon
+          icon={faPencilAlt}
+          onClick={onClick}
+          role="button"
+          tabIndex="0"
+          size="sm"
+        />
       );
     }
 
@@ -42,7 +51,6 @@ HeaderTitle.defaultProps = {
 HeaderTitle.propTypes = {
   children: PropTypes.node,
   cta: PropTypes.shape({
-    icon: PropTypes.string,
     onClick: PropTypes.func,
   }),
   title: PropTypes.string,

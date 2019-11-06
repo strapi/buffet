@@ -19,6 +19,7 @@ const Header = styled.div`
     white-space: nowrap;
     font-size: 1.3rem;
     font-weight: 400;
+    line-height: normal;
     color: #787e8f;
   }
 `;

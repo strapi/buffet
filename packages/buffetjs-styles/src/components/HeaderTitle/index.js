@@ -22,12 +22,12 @@ const HeaderTitle = styled.div`
     text-transform: capitalize;
     padding-right: 18px;
   }
-  i {
+  svg {
     position: absolute;
     right: 0;
     top: 0;
-    margin-top: 9px;
-    font-size: 14px;
+    margin-top: 11px;
+    font-size: 12px;
     color: rgba(16, 22, 34, 0.35);
     cursor: pointer;
     outline: 0;
