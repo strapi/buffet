@@ -35,32 +35,58 @@ const Button = styled.button`
 
   // Specific style
   ${props =>
-    props.color === 'primary' && `
-      background-image: ${colors.blueGradient};
+    props.color === 'primary' &&
+    `
+      background-color: ${colors.blue};
       color: ${colors.white};
       border: 0;
     `}
 
   ${props =>
-    props.color === 'secondary' && `
-      border: 1px solid ${colors.darkBlue};
-      color: ${colors.darkBlue};
+    props.color === 'secondary' &&
+    `
+      border: 1px solid ${colors.blue};
+      color: ${colors.blue};
       padding: 0 ${sizes.button.padding.small};
       height: ${sizes.button.height.small};
     `}}
 
   ${props =>
-    props.color === 'cancel' && `
-      border: 1px solid ${colors.mediumGrey};
-      color: ${colors.mediumGrey};
+    props.color === 'cancel' &&
+    `
+      border: 1px solid ${colors.brightGrey};
+      color: ${colors.brightGrey};
+      background-color: transparent; 
+      :disabled:hover {
+        box-shadow: none;
+        cursor: initial;
+      }
     `}}
 
   ${props =>
-    props.color === 'delete' && `
+    props.color === 'delete' &&
+    `
       border: 1px solid ${colors.orangeBorder};
       background-color: ${colors.orangeBkgd};
       color: ${colors.darkOrange};
       padding: 0 ${sizes.button.padding.small};
+    `}
+
+  ${props =>
+    props.color === 'success' &&
+    `
+      border: 1px solid ${colors.green};
+      background-color: ${colors.green};
+      color: ${colors.white};
+      :disabled {
+        border: 1px solid ${colors.greyDisabledBkgd};
+        background-color: ${colors.greyDisabledBkgd};
+        color: ${colors.greyDisabledColor};
+        &:hover {
+          box-shadow: none;
+          cursor: initial;
+        }
+      }
     `}
 `;
 
@@ -71,7 +97,13 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['primary', 'secondary', 'cancel', 'delete']),
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'cancel',
+    'success',
+    'delete',
+  ]),
   type: PropTypes.string,
 };
 

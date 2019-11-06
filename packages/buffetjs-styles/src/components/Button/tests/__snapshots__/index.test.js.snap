@@ -11,7 +11,7 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
-  background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
+  background-color: #007EFF;
   color: #ffffff;
   border: 0;
 }
@@ -46,7 +46,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
-  background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
+  background-color: #007EFF;
   color: #ffffff;
   border: 0;
 }
@@ -81,7 +81,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
-  background-image: linear-gradient(to right top,#306ded,#2f78f1,#3283f3,#3a8ef6,#4598f7);
+  background-color: #007EFF;
   color: #ffffff;
   border: 0;
 }

@@ -1,4 +1,5 @@
 const colors = {
+  blue: '#007EFF',
   darkBlue: '#1C5DE7',
   mediumBlue: '#005EEA',
   lightBlue: '#0097F6',
@@ -6,7 +7,6 @@ const colors = {
   blueGradient:
     'linear-gradient(to right top, #306ded, #2f78f1, #3283f3, #3a8ef6, #4598f7)',
   orangeGradient: 'linear-gradient(to bottom right, #F65A1D, #F68E0E)',
-  mediumGrey: '#979797',
   brightGrey: '#9ea7b8',
   lightGrey: '#E3E9F3',
   lightGreyAlpha: 'rgba(0,0,0,0.1)',
@@ -15,6 +15,7 @@ const colors = {
   orangeBkgd: 'rgba(255, 0, 0, 0.15)',
   black: '#000000',
   white: '#ffffff',
+  green: '#6DBB1A',
 
   // Specific to inputs
   greyPlaceholder: '#919BAE',
@@ -37,5 +38,9 @@ const colors = {
   greyTabBkgd: '#F2F2F2',
   blueTabBorder: '#1C5DE7',
   greyLink: '#F5F5F5',
+
+  // Specific to button
+  greyDisabledBkgd: '#E9EAEB',
+  greyDisabledColor: '#B4B6BA',
 };
 export default colors;
