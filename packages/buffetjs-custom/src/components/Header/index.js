@@ -31,7 +31,10 @@ function Header({ actions, content, title }) {
 Header.defaultProps = {
   actions: [],
   content: null,
-  title: null,
+  title: {
+    label: null,
+    cta: null,
+  },
 };
 
 Header.propTypes = {

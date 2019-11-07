@@ -42,6 +42,10 @@ const DatePicker = styled.div`
     &::-webkit-input-placeholder {
       color: ${colors.greyPlaceholder};
     }
+    &:disabled {
+      background-color: transparent;
+      cursor: initial;
+    }
   }
   .SingleDatePicker,
   .SingleDatePickerInput__withBorder {

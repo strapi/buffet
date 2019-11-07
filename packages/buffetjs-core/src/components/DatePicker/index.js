@@ -68,7 +68,14 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
-    const { className, displayFormat, id, name, tabIndex } = this.props;
+    const {
+      className,
+      disabled,
+      displayFormat,
+      id,
+      name,
+      tabIndex,
+    } = this.props;
     const { date, isFocused, visible } = this.state;
 
     return (
@@ -78,6 +85,7 @@ class DatePicker extends React.PureComponent {
             type="text"
             name="start_date"
             id={id || name}
+            disabled={disabled}
             value={moment(date).format(displayFormat)}
             readOnly
             icon={<FontAwesomeIcon icon={faCalendarAlt} />}
@@ -104,6 +112,7 @@ class DatePicker extends React.PureComponent {
 
 DatePicker.defaultProps = {
   className: null,
+  disabled: false,
   displayFormat: 'MMMM DD, YY',
   id: 'date',
   onChange: () => {},
@@ -114,6 +123,7 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   displayFormat: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,

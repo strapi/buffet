@@ -14,16 +14,14 @@ const Wrapper = styled.div`
     display: block;
     margin-bottom: 1rem;
   }
-  p {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
+  > p {
+    padding-top: 11px;
     width 100%;
-    margin: 0;
-    line-height: 1.6rem;
+    line-height: normal;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: -8px;
   }
   ${({ error }) =>
     !!error &&
