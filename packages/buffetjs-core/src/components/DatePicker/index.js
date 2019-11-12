@@ -85,8 +85,7 @@ class DatePicker extends React.PureComponent {
             type="text"
             name="start_date"
             id={id || name}
-            disabled={disabled}
-            value={moment(date).format(displayFormat)}
+            value={date ? moment(date).format(displayFormat) : ''}
             readOnly
             icon={<FontAwesomeIcon icon={faCalendarAlt} />}
             onClick={this.showDatepicker}

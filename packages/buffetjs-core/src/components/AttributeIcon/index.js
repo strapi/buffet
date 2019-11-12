@@ -21,16 +21,20 @@ import Div from './Div';
 
 const types = {
   boolean: Bool,
+  biginteger: NumberIcon,
   component: Component,
   contenttype: ContentType,
   date: Calendar,
   datetime: Calendar,
+  decimal: NumberIcon,
   dynamiczone: DynamicZone,
   email: Email,
   enum: Enumeration,
   enumeration: Enumeration,
   files: Media,
   file: Media,
+  float: NumberIcon,
+  integer: NumberIcon,
   json: Json,
   JSON: Json,
   media: Media,
@@ -41,6 +45,7 @@ const types = {
   string: Text,
   text: Text,
   time: Calendar,
+  timestamp: Calendar,
   uid: Uid,
 };
 
