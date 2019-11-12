@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEmpty, isFunction } from 'lodash';
+import { get, isEmpty, isFunction } from 'lodash';
 import {
   DatePicker,
   Checkbox,
@@ -46,6 +46,7 @@ const inputs = {
 function Inputs({
   customInputs,
   description,
+  error: inputError,
   label,
   name,
   onBlur: handleBlur,
@@ -68,8 +69,29 @@ function Inputs({
   const allInputs = Object.assign(inputs, customInputs);
   const InputComponent = allInputs[type] || UnknownInput;
 
+  if (get(customInputs, type, null) !== null) {
+    return (
+      <InputComponent
+        description={description}
+        error={inputError}
+        label={label}
+        name={name}
+        onChange={onChange}
+        type={type}
+        validations={validations}
+        value={value}
+        {...rest}
+      />
+    );
+  }
+
   return (
-    <Error name={name} type={type} validations={validations}>
+    <Error
+      inputError={inputError}
+      name={name}
+      type={type}
+      validations={validations}
+    >
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
           {type !== 'checkbox' && (
@@ -110,6 +132,7 @@ function Inputs({
 Inputs.defaultProps = {
   customInputs: null,
   description: null,
+  error: null,
   label: null,
   onBlur: null,
   onChange: () => {},
@@ -120,6 +143,7 @@ Inputs.defaultProps = {
 Inputs.propTypes = {
   customInputs: PropTypes.object,
   description: PropTypes.string,
+  error: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,

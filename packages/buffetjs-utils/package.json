@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "Buffetjs Utils",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "files": [
     "dist/*"
   ],
