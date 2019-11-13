@@ -15,8 +15,9 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
   > p {
-    padding-top: 11px;
     width 100%;
+    padding-top: 11px;
+    font-size: 12px;
     line-height: normal;
     white-space: nowrap;
     overflow: hidden;

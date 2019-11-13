@@ -121,7 +121,7 @@ function Inputs({
             type={type}
             value={inputValue}
           />
-          {!error && <Description>{description}</Description>}
+          {!error && description && <Description>{description}</Description>}
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </Wrapper>
       )}
