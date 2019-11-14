@@ -23,7 +23,7 @@ const types = {
   boolean: Bool,
   biginteger: NumberIcon,
   component: Component,
-  contenttype: ContentType,
+  contentType: ContentType,
   date: Calendar,
   datetime: Calendar,
   decimal: NumberIcon,
