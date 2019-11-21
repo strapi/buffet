@@ -99,7 +99,7 @@ DateTime.defaultProps = {
   placeholder: null,
   tabIndex: '0',
   value: null,
-  withDefaultValue: true,
+  withDefaultValue: false,
 };
 
 DateTime.propTypes = {
