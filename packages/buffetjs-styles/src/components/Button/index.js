@@ -99,7 +99,6 @@ const Button = styled.button`
 
 Button.defaultProps = {
   color: 'primary',
-  icon: false,
   type: 'button',
 };
 

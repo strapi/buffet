@@ -10,7 +10,7 @@ import sizes from '../../assets/styles/sizes';
 
 const StyledTextarea = styled.textarea`
   width: 100%;
-  height: 19.3rem;
+  height: 19.1rem;
   padding: ${sizes.input.padding} ${sizes.input.padding};
   font-weight: ${sizes.input.fontWeight};
   font-size: ${sizes.input.fontSize};
