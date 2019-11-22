@@ -82,6 +82,7 @@ class DatePicker extends React.PureComponent {
       <StyledDatepicker className={className}>
         <div>
           <Input
+            disabled={disabled}
             type="text"
             name="start_date"
             id={id || name}
