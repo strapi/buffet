@@ -9,8 +9,7 @@ const IconWrapper = styled.span`
   color: ${colors.greyIconColor};
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   background-color: ${props =>
     props.background ? colors.greyIconBkgd : 'transparent'};
   display: flex;

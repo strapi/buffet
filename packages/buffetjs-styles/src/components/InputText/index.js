@@ -28,16 +28,21 @@ const InputText = styled.input`
   &:focus {
     border-color: ${colors.blueBorder};
   }
+  &:disabled {
+    background-color: ${colors.greyIconBkgd}
+  }
 
   // Search with left icon
   ${props =>
-    (props.type === 'search' || props.type === 'email' || props.icon) && `
+    (props.type === 'search' || props.type === 'email' || props.icon) &&
+    `
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 
   // Password with right icon
   ${props =>
-    props.type === 'password' && `
+    props.type === 'password' &&
+    `
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 `;

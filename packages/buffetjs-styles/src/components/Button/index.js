@@ -40,6 +40,13 @@ const Button = styled.button`
       background-color: ${colors.blue};
       color: ${colors.white};
       border: 0;
+      :disabled {
+        background-color: red;
+      }
+      :disabled:hover {
+        box-shadow: none;
+        cursor: initial;
+      }
     `}
 
   ${props =>
@@ -92,7 +99,6 @@ const Button = styled.button`
 
 Button.defaultProps = {
   color: 'primary',
-  icon: false,
   type: 'button',
 };
 

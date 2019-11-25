@@ -14,21 +14,22 @@ const Wrapper = styled.div`
     display: block;
     margin-bottom: 1rem;
   }
-  p {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
+  > p {
     width 100%;
-    margin: 0;
-    line-height: 1.6rem;
+    padding-top: 11px;
+    font-size: 12px;
+    line-height: normal;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: -8px;
   }
   ${({ error }) =>
     !!error &&
     css`
-      input {
+      input,
+      textarea,
+      select {
         border-color: ${colors.darkOrange};
       }
     `}
