@@ -27,7 +27,9 @@ const Wrapper = styled.div`
   ${({ error }) =>
     !!error &&
     css`
-      input {
+      input,
+      textarea,
+      select {
         border-color: ${colors.darkOrange};
       }
     `}

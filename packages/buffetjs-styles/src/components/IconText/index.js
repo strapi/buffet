@@ -9,7 +9,6 @@ const IconText = styled(IconWrapper)`
     font-family: Lato;
     font-size: 16px;
     font-weight: 600;
-    transform: translateY(-75%);
   }
 `;
 
