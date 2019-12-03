@@ -135,7 +135,11 @@ function InputStory() {
           <form onSubmit={() => {}}>
             <div className="row">
               {Object.keys(form).map(input => (
-                <div className={form[input].styleName} key={input}>
+                <div
+                  className={form[input].styleName}
+                  key={input}
+                  style={{ marginBottom: 4 }}
+                >
                   <Inputs
                     customInputs={{ custom: Foo }}
                     name={input}

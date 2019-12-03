@@ -10,6 +10,7 @@ const colors = {
   brightGrey: '#9ea7b8',
   lightGrey: '#E3E9F3',
   lightGreyAlpha: 'rgba(0,0,0,0.1)',
+  orange: '#F64D0A',
   darkOrange: '#F64D0A',
   orangeBorder: 'rgba(255, 0, 0, 0.2)',
   orangeBkgd: 'rgba(255, 0, 0, 0.15)',

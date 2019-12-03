@@ -9,10 +9,10 @@ import { colors, sizes } from '@buffetjs/styles';
 
 const Wrapper = styled.div`
   position: relative;
-  padding-bottom: ${sizes.margin * 2.7}px;
+  padding-bottom: ${sizes.margin * 2.3}px;
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
   }
   > p {
     width 100%;

@@ -32,6 +32,9 @@ const Button = styled.button`
   &:active {
     ${mixins(colors.lightGreyAlpha).bshadow};
   }
+  &:focus {
+    outline: 0;
+  }
 
   // Specific style
   ${props =>
@@ -73,9 +76,9 @@ const Button = styled.button`
   ${props =>
     props.color === 'delete' &&
     `
-      border: 1px solid ${colors.orangeBorder};
-      background-color: ${colors.orangeBkgd};
-      color: ${colors.darkOrange};
+      border: 1px solid ${colors.orange};
+      background-color: ${colors.orange};
+      color: ${colors.white};
       padding: 0 ${sizes.button.padding.small};
     `}
 

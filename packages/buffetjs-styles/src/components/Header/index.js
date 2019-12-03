@@ -10,7 +10,7 @@ const Header = styled.div`
   margin-bottom: 30px;
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 50px;
   .justify-content-end {
     display: flex;
   }
