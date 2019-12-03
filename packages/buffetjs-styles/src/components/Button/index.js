@@ -32,6 +32,9 @@ const Button = styled.button`
   &:active {
     ${mixins(colors.lightGreyAlpha).bshadow};
   }
+  &:focus {
+    outline: 0;
+  }
 
   // Specific style
   ${props =>

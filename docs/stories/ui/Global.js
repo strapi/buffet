@@ -16,7 +16,7 @@ body {
   }
   section div {
     &.row {
-      margin-bottom: ${sizes.margin * 1.8}px;
+      margin-bottom: ${sizes.margin * 2}px;
     }
     &.btn-wrapper {
       display: inline-block;

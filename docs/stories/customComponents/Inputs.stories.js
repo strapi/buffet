@@ -138,7 +138,7 @@ function InputStory() {
                 <div
                   className={form[input].styleName}
                   key={input}
-                  styles={{ marginBottom: 2 }}
+                  style={{ marginBottom: 4 }}
                 >
                   <Inputs
                     customInputs={{ custom: Foo }}
