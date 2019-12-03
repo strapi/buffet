@@ -47,7 +47,7 @@ Enumeration.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      value: PropTypes.any,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     })
   ),
   value: PropTypes.oneOfType([
