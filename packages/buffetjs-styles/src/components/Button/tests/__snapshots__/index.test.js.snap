@@ -7,7 +7,7 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
@@ -26,6 +26,10 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   box-shadow: inset 0 0 30px [object Object];
+}
+
+.c0:focus {
+  outline: 0;
 }
 
 .c0:disabled {
@@ -51,7 +55,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
@@ -70,6 +74,10 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   box-shadow: inset 0 0 30px [object Object];
+}
+
+.c0:focus {
+  outline: 0;
 }
 
 .c0:disabled {
@@ -95,7 +103,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   outline: 0;
   background-color: #ffffff;
@@ -114,6 +122,10 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
   box-shadow: inset 0 0 30px [object Object];
+}
+
+.c0:focus {
+  outline: 0;
 }
 
 .c0:disabled {
