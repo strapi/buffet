@@ -21,7 +21,7 @@ const Div = styled.div`
         return '#1c8ee2';
       case 'component':
         return '#666666';
-      case 'contenttype':
+      case 'contentType':
         return '#ff6458';
       case 'dynamiczone':
         return '#333333';
