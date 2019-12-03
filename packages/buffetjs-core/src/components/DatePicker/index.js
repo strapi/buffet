@@ -98,6 +98,7 @@ class DatePicker extends React.PureComponent {
         {visible && (
           <DayPickerSingleDateController
             date={date}
+            disabled={disabled}
             focused={isFocused}
             numberOfMonths={1}
             onFocusChange={this.handleFocusChange}
@@ -118,7 +119,7 @@ DatePicker.defaultProps = {
   onChange: () => {},
   tabIndex: '0',
   value: null,
-  withDefaultValue: true,
+  withDefaultValue: false,
 };
 
 DatePicker.propTypes = {
