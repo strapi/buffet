@@ -29,6 +29,9 @@ const TimePicker = styled.input`
   &:focus {
     border-color: ${colors.blueBorder};
   }
+  &:disabled {
+    cursor: initial;
+  }
 `;
 
 TimePicker.defaultProps = {

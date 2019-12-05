@@ -76,6 +76,7 @@ function Inputs({
         error={inputError}
         label={label}
         name={name}
+        onBlur={handleBlur}
         onChange={onChange}
         type={type}
         validations={validations}
@@ -121,7 +122,7 @@ function Inputs({
             type={type}
             value={inputValue}
           />
-          {!error && <Description>{description}</Description>}
+          {!error && description && <Description>{description}</Description>}
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </Wrapper>
       )}

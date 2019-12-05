@@ -21,7 +21,7 @@ const Toggle = styled.input`
   & + span {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    background-image: ${colors.orangeGradient};
+    background-color: ${colors.darkOrange};
     color: ${colors.white};
     & + span {
       color: ${colors.greyToggle};
@@ -37,7 +37,7 @@ const Toggle = styled.input`
     & + span {
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
-      background-image: ${colors.blueGradient};
+      background-color: ${colors.blue};
       color: ${colors.white};
       font-weight: 800;
     }

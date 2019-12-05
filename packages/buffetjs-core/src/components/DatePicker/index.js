@@ -68,13 +68,21 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
-    const { className, displayFormat, id, name, tabIndex } = this.props;
+    const {
+      className,
+      disabled,
+      displayFormat,
+      id,
+      name,
+      tabIndex,
+    } = this.props;
     const { date, isFocused, visible } = this.state;
 
     return (
       <StyledDatepicker className={className}>
         <div>
           <Input
+            disabled={disabled}
             type="text"
             name="start_date"
             id={id || name}
@@ -90,6 +98,7 @@ class DatePicker extends React.PureComponent {
         {visible && (
           <DayPickerSingleDateController
             date={date}
+            disabled={disabled}
             focused={isFocused}
             numberOfMonths={1}
             onFocusChange={this.handleFocusChange}
@@ -104,16 +113,18 @@ class DatePicker extends React.PureComponent {
 
 DatePicker.defaultProps = {
   className: null,
+  disabled: false,
   displayFormat: 'MMMM DD, YY',
   id: 'date',
   onChange: () => {},
   tabIndex: '0',
   value: null,
-  withDefaultValue: true,
+  withDefaultValue: false,
 };
 
 DatePicker.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   displayFormat: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,

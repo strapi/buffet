@@ -14,10 +14,15 @@ function HeaderActions({ actions }) {
   return (
     <Wrapper>
       {actions.map(action => {
-        const { title, onClick } = action;
+        const { disabled, title, onClick } = action;
 
         return (
-          <Button key={title} onClick={onClick} {...action}>
+          <Button
+            key={title}
+            onClick={onClick}
+            disabled={disabled || false}
+            {...action}
+          >
             {title}
           </Button>
         );
@@ -33,6 +38,7 @@ HeaderActions.defaultProps = {
 HeaderActions.propTypes = {
   actions: PropTypes.arrayOf(
     PropTypes.shape({
+      disabled: PropTypes.bool,
       onClick: PropTypes.func,
       title: PropTypes.string,
     })

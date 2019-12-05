@@ -49,6 +49,10 @@ const Checkbox = styled.input`
       display: block;
     }
   }
+  &:disabled {
+    background-color: ${colors.greyIconBkgd};
+    cursor: initial;
+  }
   & + label {
     display: inline-block;
     font-weight: ${sizes.input.fontWeight};

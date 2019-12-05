@@ -3,6 +3,9 @@
 exports[`<Header /> snapshot 1`] = `
 .c0 {
   margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+  height: 50px;
 }
 
 .c0 .justify-content-end {
@@ -22,6 +25,35 @@ exports[`<Header /> snapshot 1`] = `
   font-weight: 400;
   line-height: normal;
   color: #787e8f;
+}
+
+.c0 .sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: white;
+  width: calc(100vw - 30.5rem);
+  padding-right: 15px;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .sticky .row {
+  width: 100%;
+  margin: auto;
+}
+
+.c0 .sticky .row > div > div {
+  padding-top: 0;
+}
+
+.c0 .sticky .row > div > div button {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 <div

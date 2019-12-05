@@ -146,6 +146,10 @@ const InputNumber = styled.div`
       &:focus {
         border-color: ${colors.blueBorder};
       }
+      &:disabled {
+        cursor: initial;
+        background-color: ${colors.greyIconBkgd};
+      }
     }
     .rc-input-number-handler-wrap {
       width: 24px;
