@@ -73,7 +73,7 @@ const List = styled.div`
         padding-left: calc(3rem + 0.75em);
       }
       &:last-of-type:not(:first-of-type) {
-        padding-right: calc(3rem + 0.75em);
+        padding-right: calc(3rem - 0.7em);
       }
     }
   }
