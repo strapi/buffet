@@ -69,11 +69,10 @@ const List = styled.div`
       vertical-align: middle;
       font-size: 1.3rem;
       line-height: 1.8rem;
-      &:first-of-type {
+      &:first-of-type:not(:last-of-type) {
         padding-left: calc(3rem + 0.75em);
-        padding-left: ${sizes.margin * 2.8}px;
       }
-      &:last-of-type {
+      &:last-of-type:not(:first-of-type) {
         padding-right: calc(3rem + 0.75em);
       }
     }
