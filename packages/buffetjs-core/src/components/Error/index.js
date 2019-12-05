@@ -4,7 +4,7 @@
  *
  */
 
-import { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 
@@ -24,18 +24,22 @@ function Error({
     canCheck: !isEmpty(value),
   });
 
+  const ref = useRef();
+
   useEffect(() => {
-    if (!isEmpty(inputError)) {
-      dispatch({
-        type: 'SET_ERROR',
-        error: inputError,
-      });
-    }
+    dispatch({
+      type: 'SET_ERROR',
+      error: inputError,
+    });
   }, [inputError]);
 
   const { error, canCheck } = state;
 
   const resetError = () => {
+    if (!ref.current) {
+      return;
+    }
+
     dispatch({
       type: 'SET_ERROR',
       error: null,
@@ -43,6 +47,10 @@ function Error({
   };
 
   const setError = message => {
+    if (!ref.current) {
+      return;
+    }
+
     dispatch({
       type: 'SET_ERROR',
       error: message,
@@ -64,12 +72,17 @@ function Error({
   };
 
   if (children) {
-    return children({
-      canCheck,
-      dispatch,
-      error,
-      onBlur: handleBlur,
-    });
+    return (
+      <>
+        {children({
+          canCheck,
+          dispatch,
+          error,
+          onBlur: handleBlur,
+        })}
+        <span style={{ display: 'none' }} ref={ref}></span>
+      </>
+    );
   }
 }
 

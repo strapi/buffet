@@ -12,6 +12,7 @@ import PrefixIcon from '../PrefixIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
+  const { disabled } = props;
   const icon =
     props.icon === true ? (
       <PrefixIcon icon="plus" />
@@ -20,7 +21,7 @@ function Button(props) {
     );
 
   return (
-    <StyledButton {...omit(props, ['icon'])}>
+    <StyledButton {...omit(props, ['icon'])} disabled={disabled}>
       {icon}
       {content}
     </StyledButton>
@@ -30,6 +31,7 @@ function Button(props) {
 Button.defaultProps = {
   children: null,
   color: 'primary',
+  disabled: false,
   icon: false,
   label: null,
   type: 'button',
@@ -38,6 +40,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
+  disabled: PropTypes.bool,
   icon: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),

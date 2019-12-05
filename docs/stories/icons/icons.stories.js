@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import {
+  Arrow,
   Grab,
   GrabLarge,
   Pencil,
@@ -27,6 +28,10 @@ import Pre from '../ui/Pre';
 
 const IconsStory = () => {
   const icons = [
+    {
+      name: 'arrow',
+      Compo: Arrow,
+    },
     {
       name: 'bool',
       Compo: Bool,

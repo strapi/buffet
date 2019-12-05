@@ -85,7 +85,7 @@ describe('<Button />', () => {
 
     it('should render the delete style', () => {
       const tree = renderer.create(<Button color="delete" />).toJSON();
-      expect(tree).toHaveStyleRule('color', colors.darkOrange);
+      expect(tree).toHaveStyleRule('color', colors.white);
     });
   });
 });

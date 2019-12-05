@@ -4,24 +4,45 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { HeaderTitle, HeaderActions } from '@buffetjs/core';
 import { Header as Wrapper } from '@buffetjs/styles';
 
-function Header({ actions, content, title }) {
+function Header({ actions, content, stickable, title }) {
+  const [isHeaderSticky, setHeaderSticky] = useState(false);
+  const headerRef = useRef(null);
+
   const { label, cta } = title;
 
+  const handleScroll = () => {
+    setHeaderSticky(headerRef.current.getBoundingClientRect().top <= 20);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
+
   return (
-    <Wrapper>
-      <div className="row">
-        <div className="col-lg-6 header-title">
-          <HeaderTitle title={label} cta={cta} />
-          <p>{content}</p>
-        </div>
-        <div className="col-lg-6 justify-content-end">
-          <HeaderActions actions={actions} />
+    <Wrapper ref={headerRef}>
+      <div
+        className={`sticky-wrapper${
+          isHeaderSticky && stickable ? ' sticky' : ''
+        }`}
+      >
+        <div className="row">
+          <div className="col-sm-6 header-title">
+            <HeaderTitle title={label} cta={cta} />
+            <p>{content}</p>
+          </div>
+          <div className="col-sm-6 justify-content-end">
+            <HeaderActions actions={actions} />
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -31,7 +52,11 @@ function Header({ actions, content, title }) {
 Header.defaultProps = {
   actions: [],
   content: null,
-  title: null,
+  stickable: true,
+  title: {
+    label: null,
+    cta: null,
+  },
 };
 
 Header.propTypes = {
@@ -42,6 +67,7 @@ Header.propTypes = {
     })
   ),
   content: PropTypes.string,
+  stickable: PropTypes.bool,
   title: PropTypes.shape({
     cta: PropTypes.shape({
       icon: PropTypes.string,

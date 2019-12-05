@@ -33,7 +33,7 @@ export const getTimeObject = time => {
   return timeObj;
 };
 
-function DateTime({ name, onChange, value, tabIndex, ...rest }) {
+function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
   const [timestamp, setTimestamp] = useState(moment());
 
   const setTime = time => {
@@ -70,6 +70,7 @@ function DateTime({ name, onChange, value, tabIndex, ...rest }) {
       <DatePicker
         {...rest}
         name="date"
+        disabled={disabled}
         onChange={({ target }) => {
           setDate(target.value, timestamp);
         }}
@@ -78,6 +79,7 @@ function DateTime({ name, onChange, value, tabIndex, ...rest }) {
       />
       <TimePicker
         name="time"
+        disabled={disabled}
         onChange={({ target }) => {
           setTime(target.value);
         }}
@@ -91,16 +93,18 @@ function DateTime({ name, onChange, value, tabIndex, ...rest }) {
 
 DateTime.defaultProps = {
   autoFocus: false,
+  disabled: false,
   id: null,
   onChange: () => {},
   placeholder: null,
   tabIndex: '0',
   value: null,
-  withDefaultValue: true,
+  withDefaultValue: false,
 };
 
 DateTime.propTypes = {
   autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

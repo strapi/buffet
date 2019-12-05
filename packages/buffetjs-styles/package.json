@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/styles",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Buffetjs Styles - The styling solution of Buffetjs",
   "main": "dist/index.js",
   "module": "src/index.js",

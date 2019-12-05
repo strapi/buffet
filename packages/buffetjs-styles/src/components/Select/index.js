@@ -35,6 +35,10 @@ const Select = styled.select`
   &:focus {
     border-color: ${colors.blueBorder};
   }
+  &:disabled {
+    background-color: ${colors.greyIconBkgd};
+    cursor: initial;
+  }
 `;
 
 export default Select;
