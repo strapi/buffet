@@ -12,6 +12,7 @@ export { default as Media } from './components/Media';
 export { default as NumberIcon } from './components/NumberIcon';
 export { default as Password } from './components/Password';
 export { default as Pencil } from './components/Pencil';
+export { default as Plus } from './components/Plus';
 export { default as Relation } from './components/Relation';
 export { default as Remove } from './components/Remove';
 export { default as RichText } from './components/RichText';
