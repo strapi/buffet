@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Buffetjs Core Components",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -15,8 +15,8 @@
     "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
   "dependencies": {
-    "@buffetjs/icons": "1.1.0",
-    "@buffetjs/styles": "1.1.0",
+    "@buffetjs/icons": "1.1.1",
+    "@buffetjs/styles": "1.1.1",
     "@buffetjs/utils": "1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
