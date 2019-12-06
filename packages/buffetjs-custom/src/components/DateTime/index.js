@@ -14,6 +14,10 @@ import Wrapper from './Wrapper';
 
 const UNITS = ['hour', 'minute', 'second'];
 export const getTimeString = time => {
+  if (!time) {
+    return '';
+  }
+
   const currTime = time || moment();
 
   const timeObj = getTimeObject(currTime);
@@ -34,8 +38,8 @@ export const getTimeObject = time => {
 };
 
 function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
-  const [timestamp, setTimestamp] = useState(moment());
-
+  const [timestamp, setTimestamp] = useState('');
+  const [isInit, setIsInit] = useState(false);
   const setTime = time => {
     const [hour, minute, second] = time.split(':');
     const timeObj = {
@@ -43,9 +47,10 @@ function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
       minute,
       second,
     };
+    const currentDate = timestamp || moment();
 
-    timestamp.set(timeObj);
-    setDate(timestamp);
+    currentDate.set(timeObj);
+    setDate(currentDate);
   };
   const setDate = (date, time) => {
     const newDate = time || date;
@@ -55,21 +60,27 @@ function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
 
     setTimestamp(date);
 
-    onChange({ target: { name, type: 'date', value: date } });
+    onChange({ target: { name, type: 'datetime', value: date } });
   };
 
   useEffect(() => {
     if (!!value && moment(value).isValid()) {
       const newDate = value._isAMomentObject === true ? value : moment(value);
+
       setDate(newDate);
     }
-  }, [value]);
+    setIsInit(true);
+  }, []);
+
+  if (!isInit) {
+    return null;
+  }
 
   return (
     <Wrapper>
       <DatePicker
         {...rest}
-        name="date"
+        name="datetime"
         disabled={disabled}
         onChange={({ target }) => {
           setDate(target.value, timestamp);

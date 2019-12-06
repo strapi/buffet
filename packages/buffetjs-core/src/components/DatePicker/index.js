@@ -98,7 +98,6 @@ class DatePicker extends React.PureComponent {
         {visible && (
           <DayPickerSingleDateController
             date={date}
-            disabled={disabled}
             focused={isFocused}
             numberOfMonths={1}
             onFocusChange={this.handleFocusChange}
