@@ -46,7 +46,7 @@ const DatePicker = styled.div`
     }
     &:disabled {
       background-color: transparent;
-      cursor: initial;
+      cursor: not-allowed;
     }
   }
   .SingleDatePicker,
