@@ -63,7 +63,6 @@ const Button = styled.button`
       border: 1px solid ${colors.blue};
       color: ${colors.blue};
       padding: 0 ${sizes.button.padding.small};
-      height: ${sizes.button.height.small};
     `}}
 
   ${props =>
