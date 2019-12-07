@@ -140,6 +140,7 @@ function Inputs({
 Inputs.defaultProps = {
   customInputs: null,
   description: null,
+  id: null,
   error: null,
   label: null,
   onBlur: null,
@@ -152,6 +153,7 @@ Inputs.propTypes = {
   customInputs: PropTypes.object,
   description: PropTypes.string,
   error: PropTypes.string,
+  id: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
