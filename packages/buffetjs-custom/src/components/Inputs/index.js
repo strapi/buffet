@@ -47,6 +47,7 @@ function Inputs({
   customInputs,
   description,
   error: inputError,
+  id,
   label,
   name,
   onBlur: handleBlur,
@@ -68,6 +69,9 @@ function Inputs({
   }
   const allInputs = Object.assign(inputs, customInputs);
   const InputComponent = allInputs[type] || UnknownInput;
+  const inputId = id || name;
+  const descriptionId = `description-${inputId}`;
+  const errorId = `error-${inputId}`;
 
   if (get(customInputs, type, null) !== null) {
     return (
@@ -96,7 +100,7 @@ function Inputs({
       {({ canCheck, onBlur, error, dispatch }) => (
         <Wrapper error={error}>
           {type !== 'checkbox' && (
-            <Label htmlFor={name}>
+            <Label htmlFor={inputId}>
               {label}
               {isEmpty(label) && <>&nbsp;</>}
             </Label>
@@ -105,6 +109,9 @@ function Inputs({
             {...rest}
             message={label} // Only for the checkbox
             name={name}
+            id={inputId}
+            aria-describedby={`${(!error && description) ? descriptionId: ''} ${error ? errorId : ''}`}
+            aria-invalid={error ? 'true' : 'false'}
             onBlur={isFunction(handleBlur) ? handleBlur : onBlur}
             onChange={e => {
               if (!canCheck) {
@@ -122,8 +129,8 @@ function Inputs({
             type={type}
             value={inputValue}
           />
-          {!error && description && <Description>{description}</Description>}
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {!error && description && <Description id={descriptionId}>{description}</Description>}
+          {error && <ErrorMessage id={errorId}>{error}</ErrorMessage>}
         </Wrapper>
       )}
     </Error>
