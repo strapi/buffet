@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Plus = props => (
-  <svg width="10px" height="10px" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    viewBox="0 0 12 12"
+    width="14px"
+    height="14px"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <g stroke="none" strokeWidth="1" fill={props.fill} fillRule="evenodd">
       <g
         transform="translate(-1165.000000, -189.000000)"

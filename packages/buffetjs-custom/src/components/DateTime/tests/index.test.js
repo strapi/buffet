@@ -56,7 +56,7 @@ describe('<DateTime />', () => {
     expect(renderedComponent.prop('onChange')).toHaveBeenLastCalledWith({
       target: {
         name: 'datetime',
-        type: 'date',
+        type: 'datetime',
         value: expected,
       },
     });
@@ -89,7 +89,7 @@ describe('<DateTime />', () => {
     expect(renderedComponent.prop('onChange')).toHaveBeenLastCalledWith({
       target: {
         name: 'datetime',
-        type: 'date',
+        type: 'datetime',
         value: expected,
       },
     });

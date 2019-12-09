@@ -36,6 +36,11 @@ const Button = styled.button`
     outline: 0;
   }
 
+  > svg {
+    margin-right: 10px;
+    vertical-align: initial;
+  }
+
   // Specific style
   ${props =>
     props.color === 'primary' &&
@@ -58,7 +63,6 @@ const Button = styled.button`
       border: 1px solid ${colors.blue};
       color: ${colors.blue};
       padding: 0 ${sizes.button.padding.small};
-      height: ${sizes.button.height.small};
     `}}
 
   ${props =>

@@ -8,17 +8,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 import { Button as StyledButton } from '@buffetjs/styles';
+import { Plus } from '@buffetjs/icons';
 import PrefixIcon from '../PrefixIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
   const { disabled } = props;
   const icon =
-    props.icon === true ? (
-      <PrefixIcon icon="plus" />
-    ) : (
-      <PrefixIcon icon={props.icon} />
-    );
+    props.icon === true ? <Plus /> : <PrefixIcon icon={props.icon} />;
 
   return (
     <StyledButton {...omit(props, ['icon'])} disabled={disabled}>

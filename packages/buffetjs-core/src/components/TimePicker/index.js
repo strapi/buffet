@@ -196,7 +196,7 @@ function TimePicker(props) {
     onChange({
       target: {
         name,
-        type: 'text',
+        type: 'time',
         value: timeFormatter(time),
       },
     });

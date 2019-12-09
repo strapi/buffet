@@ -18,6 +18,7 @@ import {
   Media,
   NumberIcon,
   Password,
+  Plus,
   Relation,
   RichText,
   Text,
@@ -108,6 +109,10 @@ const IconsStory = () => {
     {
       name: 'remove',
       Compo: Remove,
+    },
+    {
+      name: 'plus',
+      Compo: Plus,
     },
   ];
 

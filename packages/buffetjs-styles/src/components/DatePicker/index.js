@@ -12,7 +12,9 @@ import sizes from '../../assets/styles/sizes';
 
 const DatePicker = styled.div`
   position: relative;
-  z-index: 9;
+  &.is-open {
+    z-index: 9;
+  }
   * {
     font-family: 'Lato';
 
@@ -44,7 +46,7 @@ const DatePicker = styled.div`
     }
     &:disabled {
       background-color: transparent;
-      cursor: initial;
+      cursor: not-allowed;
     }
   }
   .SingleDatePicker,
