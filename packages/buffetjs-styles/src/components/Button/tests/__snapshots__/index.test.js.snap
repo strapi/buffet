@@ -32,6 +32,11 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   outline: 0;
 }
 
+.c0 > svg {
+  margin-right: 10px;
+  vertical-align: initial;
+}
+
 .c0:disabled {
   background-color: red;
 }
@@ -80,6 +85,11 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   outline: 0;
 }
 
+.c0 > svg {
+  margin-right: 10px;
+  vertical-align: initial;
+}
+
 .c0:disabled {
   background-color: red;
 }
@@ -126,6 +136,11 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 
 .c0:focus {
   outline: 0;
+}
+
+.c0 > svg {
+  margin-right: 10px;
+  vertical-align: initial;
 }
 
 .c0:disabled {

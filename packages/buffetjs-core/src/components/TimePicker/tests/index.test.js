@@ -84,7 +84,7 @@ describe('<TimePicker />', () => {
       const expected = {
         target: {
           name: 'time',
-          type: 'text',
+          type: 'time',
           value: '10:00:00',
         },
       };

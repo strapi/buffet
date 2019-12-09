@@ -79,7 +79,7 @@ class DatePicker extends React.PureComponent {
     const { date, isFocused, visible } = this.state;
 
     return (
-      <StyledDatepicker className={className}>
+      <StyledDatepicker className={`${className} ${visible && 'is-open'}`}>
         <div>
           <Input
             disabled={disabled}
@@ -98,7 +98,6 @@ class DatePicker extends React.PureComponent {
         {visible && (
           <DayPickerSingleDateController
             date={date}
-            disabled={disabled}
             focused={isFocused}
             numberOfMonths={1}
             onFocusChange={this.handleFocusChange}

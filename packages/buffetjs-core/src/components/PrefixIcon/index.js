@@ -4,7 +4,7 @@ import { sizes } from '@buffetjs/styles';
 import Icon from '../Icon';
 
 const PrefixIcon = styled(Icon)`
-  margin-right: ${sizes.margin * 0.8}px;
+  margin-right: ${sizes.margin}px;
   font-size: 0.94em;
 `;
 
