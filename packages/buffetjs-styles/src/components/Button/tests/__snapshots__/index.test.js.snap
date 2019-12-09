@@ -34,7 +34,7 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
 
 .c0 > svg {
   margin-right: 10px;
-  vertical-align: initial;
+  vertical-align: middle;
 }
 
 .c0:disabled {
@@ -87,7 +87,7 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 
 .c0 > svg {
   margin-right: 10px;
-  vertical-align: initial;
+  vertical-align: middle;
 }
 
 .c0:disabled {
@@ -140,7 +140,7 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 
 .c0 > svg {
   margin-right: 10px;
-  vertical-align: initial;
+  vertical-align: middle;
 }
 
 .c0:disabled {
