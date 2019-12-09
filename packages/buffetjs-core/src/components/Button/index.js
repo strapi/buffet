@@ -15,7 +15,11 @@ function Button(props) {
   const content = props.label ? props.label : props.children;
   const { disabled } = props;
   const icon =
-    props.icon === true ? <Plus /> : <PrefixIcon icon={props.icon} />;
+    props.icon === true ? (
+      <Plus height="11px" width="11px" />
+    ) : (
+      <PrefixIcon icon={props.icon} />
+    );
 
   return (
     <StyledButton {...omit(props, ['icon'])} disabled={disabled}>

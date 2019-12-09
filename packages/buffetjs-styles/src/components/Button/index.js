@@ -38,7 +38,7 @@ const Button = styled.button`
 
   > svg {
     margin-right: 10px;
-    vertical-align: initial;
+    vertical-align: middle;
   }
 
   // Specific style
@@ -70,7 +70,7 @@ const Button = styled.button`
     `
       border: 1px solid ${colors.brightGrey};
       color: ${colors.brightGrey};
-      background-color: transparent; 
+      background-color: transparent;
       :disabled:hover {
         box-shadow: none;
         cursor: initial;
