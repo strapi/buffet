@@ -38,7 +38,7 @@ const Button = styled.button`
 
   > svg {
     margin-right: 10px;
-    vertical-align: middle;
+    vertical-align: initial;
   }
 
   // Specific style
