@@ -17,7 +17,9 @@ function Header({ actions, content, stickable, title }) {
   const { label, cta } = title;
 
   const handleScroll = () => {
-    setHeaderSticky(headerRef.current.getBoundingClientRect().top <= 20);
+    if (headerRef.current) {
+      setHeaderSticky(headerRef.current.getBoundingClientRect().top <= 20);
+    }
   };
 
   useEffect(() => {
