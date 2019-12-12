@@ -11,7 +11,7 @@ const sizes = {
     },
     padding: {
       small: '15px',
-      large: '30px',
+      large: '15px',
     },
   },
   input: {
