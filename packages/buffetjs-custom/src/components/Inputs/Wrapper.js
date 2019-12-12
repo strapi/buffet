@@ -12,12 +12,12 @@ const Wrapper = styled.div`
   padding-bottom: ${sizes.margin * 2.3}px;
   label {
     display: block;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
   }
   > p {
     width 100%;
-    padding-top: 11px;
-    font-size: 12px;
+    padding-top: 10px;
+    font-size: 13px;
     line-height: normal;
     white-space: nowrap;
     overflow: hidden;
