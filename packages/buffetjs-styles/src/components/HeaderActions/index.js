@@ -12,7 +12,7 @@ const HeaderActions = styled.div`
   width: fit-content;
   max-width: 100%;
   padding-top: 1rem;
-  button {
+  > button {
     margin-right: 0;
     margin-left: 1.8rem;
     max-width: 100%;

@@ -3,9 +3,24 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Header } from '@buffetjs/custom';
+import { InputText } from '@buffetjs/core';
+import styled from 'styled-components';
 
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
+
+const Wrapper = styled.div`
+  padding-top: 9px;
+  margin-bottom: 35px;
+
+  .input-wrapper {
+    margin-left: 1.8rem;
+    height: 30px;
+    > input {
+      height: 30px;
+    }
+  }
+`;
 
 function HeaderStory() {
   const cta = {
@@ -26,6 +41,13 @@ function HeaderStory() {
       color: 'success',
       type: 'submit',
     },
+    // Passing custom component
+    {
+      Component: InputText,
+      className: 'input-wrapper',
+      name: 'example',
+      key: 'example',
+    },
   ];
 
   const props = {
@@ -39,9 +61,9 @@ function HeaderStory() {
 
   return (
     <Presentation title="Header" description="Display data.">
-      <div style={{ paddingTop: 9, marginBottom: 35 }}>
+      <Wrapper>
         <Header {...props} />
-      </div>
+      </Wrapper>
       <Pre>{source}</Pre>
     </Presentation>
   );
@@ -50,6 +72,21 @@ function HeaderStory() {
 const source = `
 import React, { useState } from 'react';
 import { Header } from '@buffetjs/custom';
+import { InputText } from '@buffetjs/core';
+import styled from 'styled-components';
+
+const Wrapper = styled.div\`
+  padding-top: 9px;
+  margin-bottom: 35px;
+
+  .input-wrapper {
+    margin-left: 1.8rem;
+    height: 30px;
+    > input {
+      height: 30px;
+    }
+  }
+\`;
 
 function Example() {
   const cta = {
@@ -70,6 +107,12 @@ function Example() {
       color: 'success',
       type: 'submit',
     },
+    // Passing custom component
+    {
+      Component: InputText,
+      className: 'input-wrapper',
+      name: 'example',
+    },
   ];
 
   const headerProps = {
@@ -82,7 +125,9 @@ function Example() {
   };
 
   return (
-    <Header {...headerProps} />
+    <Wrapper>
+      <Header {...headerProps} />
+    </Wrapper>
   );
 }`;
 

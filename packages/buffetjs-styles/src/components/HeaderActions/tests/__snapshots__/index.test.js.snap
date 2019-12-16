@@ -17,7 +17,7 @@ exports[`<HeaderActions /> snapshot 1`] = `
   padding-top: 1rem;
 }
 
-.c0 button {
+.c0 > button {
   margin-right: 0;
   margin-left: 1.8rem;
   max-width: 100%;
