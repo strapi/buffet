@@ -13,8 +13,12 @@ import Button from '../Button';
 function HeaderActions({ actions }) {
   return (
     <Wrapper>
-      {actions.map(action => {
-        const { disabled, title, onClick } = action;
+      {actions.map((action, index) => {
+        const { Component, disabled, title, onClick } = action;
+
+        if (Component) {
+          return <Component {...action} key={action.key || index} />;
+        }
 
         return (
           <Button
