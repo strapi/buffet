@@ -89,6 +89,7 @@ const Button = styled.button`
   ${props =>
     props.color === 'success' &&
     `
+      min-width: ${sizes.button.minWidth.small};
       border: 1px solid ${colors.green};
       background-color: ${colors.green};
       color: ${colors.white};
