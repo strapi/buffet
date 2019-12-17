@@ -32,87 +32,153 @@ const IconsStory = () => {
     {
       name: 'arrow',
       Compo: Arrow,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'bool',
       Compo: Bool,
+      props: {
+        rectFill: '#b3b5b9',
+        pathFill: '#fff',
+      },
     },
     {
       name: 'calendar',
       Compo: Calendar,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'component',
       Compo: Component,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'content-type',
       Compo: ContentType,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'dynamic-zone',
       Compo: DynamicZone,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'email',
       Compo: Email,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'enum',
       Compo: Enumeration,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'grab',
       Compo: Grab,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'grab-large',
       Compo: GrabLarge,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'json',
       Compo: Json,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'media',
       Compo: Media,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'number',
       Compo: NumberIcon,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'password',
       Compo: Password,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'relation',
       Compo: Relation,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'text',
       Compo: Text,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'rich-text',
       Compo: RichText,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'uid',
       Compo: Uid,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
 
     {
       name: 'pencil',
       Compo: Pencil,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'remove',
       Compo: Remove,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'plus',
       Compo: Plus,
+      props: {
+        fill: '#b3b5b9',
+        height: '13px',
+        width: '13px',
+      },
     },
   ];
 
@@ -123,7 +189,7 @@ const IconsStory = () => {
     >
       <div className="container-fluid" style={{ marginBottom: 30 }}>
         <div className="row">
-          {icons.map(({ name, Compo }) => (
+          {icons.map(({ name, Compo, props }) => (
             <div key={name} className="col-4" style={{ marginBottom: 10 }}>
               <div
                 style={{
@@ -132,7 +198,7 @@ const IconsStory = () => {
                 }}
               >
                 <div style={{ width: 50 }}>
-                  <Compo fill="#b3b5b9" rectFill="#b3b5b9" pathFill="#fff" />
+                  <Compo {...props} />
                 </div>
                 <span>&nbsp; {name}</span>
               </div>
@@ -142,95 +208,189 @@ const IconsStory = () => {
       </div>
       <Pre>
         {`
-import { GrabLarge } from '@buffetjs/icons';
+import {
+  Arrow,
+  Grab,
+  GrabLarge,
+  Pencil,
+  Remove,
+  Calendar,
+  ContentType,
+  Bool,
+  Component,
+  DynamicZone,
+  Email,
+  Enumeration,
+  Json,
+  Media,
+  NumberIcon,
+  Password,
+  Plus,
+  Relation,
+  RichText,
+  Text,
+  Uid,
+} from '@buffetjs/icons';
 
 const icons = [
   {
+    name: 'arrow',
+    Compo: Arrow,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
     name: 'bool',
     Compo: Bool,
+    props: {
+      rectFill: '#b3b5b9',
+      pathFill: '#fff',
+    },
   },
   {
     name: 'calendar',
     Compo: Calendar,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'component',
     Compo: Component,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'content-type',
     Compo: ContentType,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'dynamic-zone',
     Compo: DynamicZone,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'email',
     Compo: Email,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'enum',
     Compo: Enumeration,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'grab',
     Compo: Grab,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'grab-large',
     Compo: GrabLarge,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'json',
     Compo: Json,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'media',
     Compo: Media,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'number',
     Compo: NumberIcon,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'password',
     Compo: Password,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'relation',
     Compo: Relation,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'text',
     Compo: Text,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'rich-text',
     Compo: RichText,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'uid',
     Compo: Uid,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
 
   {
     name: 'pencil',
     Compo: Pencil,
+    props: {
+      fill: '#b3b5b9',
+    },
   },
   {
     name: 'remove',
     Compo: Remove,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'plus',
+    Compo: Plus,
+    props: {
+      fill: '#b3b5b9',
+      height: '13px',
+      width: '13px',
+    },
   },
 ];
 
 const Example = () => (
-  icons.map(({name, Compo}) => (
+  icons.map(({ name, Compo, props }) => (
     <Compo
       key={name}
-      fill="#b3b5b9" // Change the fill of most icons
-      rectFill="#b3b5b9" // Change the fill for the Bool icon
-      pathFill="#fff" // Change the fill for the Bool icon
+      {...props}
     />
   )
 );

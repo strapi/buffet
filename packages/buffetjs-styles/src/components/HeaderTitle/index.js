@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const HeaderTitle = styled.div`
   position: relative;
-  padding-top: 0.7rem;
+  padding-top: 0.8rem;
   h1 {
     position: relative;
     width: fit-content;

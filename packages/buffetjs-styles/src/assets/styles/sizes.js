@@ -13,6 +13,10 @@ const sizes = {
       small: '15px',
       large: '15px',
     },
+    minWidth: {
+      small: '140px',
+      large: '140px',
+    },
   },
   input: {
     height: '3.4rem',

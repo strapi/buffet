@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Header } from '@buffetjs/custom';
-import { InputText } from '@buffetjs/core';
+// import { InputText } from '@buffetjs/core';
 import styled from 'styled-components';
 
 import Presentation from '../ui/Presentation';
@@ -41,13 +41,13 @@ function HeaderStory() {
       color: 'success',
       type: 'submit',
     },
-    // Passing custom component
-    {
-      Component: InputText,
-      className: 'input-wrapper',
-      name: 'example',
-      key: 'example',
-    },
+    // // Passing custom component
+    // {
+    //   Component: InputText,
+    //   className: 'input-wrapper',
+    //   name: 'example',
+    //   key: 'example',
+    // },
   ];
 
   const props = {

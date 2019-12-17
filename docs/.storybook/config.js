@@ -57,6 +57,7 @@ addParameters({
     showPanel: true,
     panelPosition: 'right',
     sortStoriesByKind: true,
+    panelPosition: 'bottom',
   },
 });
 

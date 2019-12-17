@@ -3,7 +3,7 @@
 exports[`<HeaderTitle /> snapshot 1`] = `
 .c0 {
   position: relative;
-  padding-top: 0.7rem;
+  padding-top: 0.8rem;
 }
 
 .c0 h1 {
