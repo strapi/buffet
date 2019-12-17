@@ -117,6 +117,7 @@ Button.propTypes = {
     'cancel',
     'success',
     'delete',
+    'none',
   ]),
   type: PropTypes.string,
 };
