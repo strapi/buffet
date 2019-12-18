@@ -48,13 +48,6 @@ const Button = styled.button`
       background-color: ${colors.blue};
       color: ${colors.white};
       border: 0;
-      :disabled {
-        background-color: red;
-      }
-      :disabled:hover {
-        box-shadow: none;
-        cursor: initial;
-      }
     `}
 
   ${props =>
@@ -84,6 +77,7 @@ const Button = styled.button`
       background-color: ${colors.orange};
       color: ${colors.white};
       padding: 0 ${sizes.button.padding.small};
+      
     `}
 
   ${props =>
@@ -93,7 +87,14 @@ const Button = styled.button`
       border: 1px solid ${colors.green};
       background-color: ${colors.green};
       color: ${colors.white};
-      :disabled {
+    `}
+
+  ${props =>
+    (props.color === 'success' ||
+      props.color === 'primary' ||
+      props.color === 'delete') &&
+    `
+      &:disabled {
         border: 1px solid ${colors.greyDisabledBkgd};
         background-color: ${colors.greyDisabledBkgd};
         color: ${colors.greyDisabledColor};
@@ -102,7 +103,7 @@ const Button = styled.button`
           cursor: initial;
         }
       }
-    `}
+    `};
 `;
 
 Button.defaultProps = {
