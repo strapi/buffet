@@ -76,6 +76,15 @@ const form = {
       min: 8,
     },
   },
+  url: {
+    styleName: 'col-6',
+    description: 'You should enter your url',
+    label: 'URL',
+    type: 'url',
+    validations: {
+      required: true,
+    },
+  },
   number: {
     styleName: 'col-6',
     description: 'You should enter how many children you have',
