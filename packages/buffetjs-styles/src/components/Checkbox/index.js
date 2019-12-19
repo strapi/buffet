@@ -5,6 +5,8 @@
  */
 
 import styled from 'styled-components';
+// import '@fortawesome/fontawesome-free/js/all.js';
+// import '@fortawesome/fontawesome-free/webfonts';
 import PropTypes from 'prop-types';
 
 import colors from '../../assets/styles/colors';
@@ -16,6 +18,10 @@ const Checkbox = styled.input`
   position: relative;
   width: ${sizes.checkbox.width};
   font-weight: ${sizes.checkbox.fontWeight};
+  &:focus,
+  &:active {
+    outline: 0;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -31,7 +37,8 @@ const Checkbox = styled.input`
   }
   &:after {
     display: none;
-    content: '✔';
+    content: '\f00c';
+    font-family: 'FontAwesome';
     position: absolute;
     left: 0;
     top: 50%;
@@ -39,7 +46,7 @@ const Checkbox = styled.input`
     width: ${sizes.checkbox.width};
     height: ${sizes.checkbox.height};
     text-align: center;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
@@ -49,6 +56,27 @@ const Checkbox = styled.input`
       display: block;
     }
   }
+
+  ${({ someChecked }) => {
+    if (someChecked) {
+      return `
+        &:after {
+          content: '\f068';
+          position: absolute;
+          display: block;
+          top: 50%;
+          left: 0px;
+          font-size: 10px;
+          font-family: 'FontAwesome';
+          font-weight: 100;
+          color: #1c5de7;
+        }
+      `;
+    }
+
+    return '';
+  }}
+
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: initial;
@@ -61,10 +89,12 @@ const Checkbox = styled.input`
 `;
 
 Checkbox.defaultProps = {
+  someChecked: false,
   type: 'checkbox',
 };
 
 Checkbox.propTypes = {
+  someChecked: PropTypes.bool,
   type: PropTypes.string,
 };
 
