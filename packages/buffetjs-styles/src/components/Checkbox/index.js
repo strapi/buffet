@@ -5,8 +5,6 @@
  */
 
 import styled from 'styled-components';
-// import '@fortawesome/fontawesome-free/js/all.js';
-// import '@fortawesome/fontawesome-free/webfonts';
 import PropTypes from 'prop-types';
 
 import colors from '../../assets/styles/colors';
@@ -40,13 +38,13 @@ const Checkbox = styled.input`
     content: '\f00c';
     font-family: 'FontAwesome';
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: 0px;
+    top: 55%;
     margin-top: calc(-${sizes.checkbox.width} / 2);
     width: ${sizes.checkbox.width};
     height: ${sizes.checkbox.height};
     text-align: center;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
