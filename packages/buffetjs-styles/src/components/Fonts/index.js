@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-
+import faBrandsLight from '@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff';
+import faBrandsLight2 from '@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2';
+import faRegularLight from '@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff';
+import faRegularLight2 from '@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2';
+import faSolidHeavy from '@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff';
+import faSolidHeavy2 from '@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2';
 /* Lato (hairline, normal) */
 import latoHairline from '../../assets/fonts/lato/lato-hairline/lato-hairline.woff';
 import latoHairline2 from '../../assets/fonts/lato/lato-hairline/lato-hairline.woff2';
@@ -65,6 +70,26 @@ import latoBlackItalic from '../../assets/fonts/lato/lato-black-italic/lato-blac
 import latoBlackItalic2 from '../../assets/fonts/lato/lato-black-italic/lato-black-italic.woff2';
 
 const Font = createGlobalStyle`
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(${faBrandsLight2}) format("woff2"), url(${faBrandsLight}) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(${faRegularLight2}) format("woff2"), url(${faRegularLight}) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(${faSolidHeavy2}) format("woff2"), url(${faSolidHeavy}) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 @font-face {
   font-family: 'Lato';
   src: url(${latoHairline2}) format("woff2"), url(${latoHairline}) format("woff");
