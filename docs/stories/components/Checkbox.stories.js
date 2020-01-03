@@ -21,7 +21,7 @@ function CheckboxStory() {
     key => checkboxes[key] === true
   );
 
-  const hasSomeCheckboxSelected = Object.keys(checkboxes).some(
+  const hasSomeCheckboxesSelected = Object.keys(checkboxes).some(
     key => checkboxes[key] === true
   );
 
@@ -52,14 +52,14 @@ function CheckboxStory() {
         />
       </div>
       <div style={{ marginTop: '-5px', marginBottom: 20 }}>
+        <Checkbox
+          name="selectAll"
+          onChange={handleChange}
+          message={message}
+          someChecked={hasSomeCheckboxesSelected && !areAllCheckboxesSelected}
+          value={areAllCheckboxesSelected}
+        />
         <ul>
-          <Checkbox
-            name="selectAll"
-            onChange={handleChange}
-            message={message}
-            someChecked={hasSomeCheckboxSelected && !areAllCheckboxesSelected}
-            value={areAllCheckboxesSelected}
-          />
           {Object.keys(checkboxes).map(current => {
             return (
               <li
@@ -88,7 +88,7 @@ import React, { useState } from 'react';
 import { Checkbox } from '@buffetjs/core';
 
 function Example() {
-  const [val, setValue] = useState(false);
+  const [value, setValue] = useState(false);
   const [checkboxes, setCheckboxValue] = useState({
     checkbox1: false,
     checkbox2: true,
@@ -102,7 +102,7 @@ function Example() {
     key => checkboxes[key] === true
   );
 
-  const hasSomeCheckboxSelected = Object.keys(checkboxes).some(
+  const hasSomeCheckboxesSelected = Object.keys(checkboxes).some(
     key => checkboxes[key] === true
   );
 
@@ -129,14 +129,14 @@ function Example() {
         value={value}
       />
       <div>
+        <Checkbox
+          name="selectAll"
+          onChange={handleChange}
+          message={message}
+          someChecked={hasSomeCheckboxesSelected && !areAllCheckboxesSelected}
+          value={areAllCheckboxesSelected}
+        />
         <ul>
-          <Checkbox
-            name="selectAll"
-            onChange={handleChange}
-            message={message}
-            someChecked={hasSomeCheckboxSelected && !areAllCheckboxesSelected}
-            value={areAllCheckboxesSelected}
-          />
           {Object.keys(checkboxes).map(current => {
             return (
               <li key={current} style={{ padding: 15 }}>
@@ -156,7 +156,7 @@ function Example() {
           })}
         </ul>
       </div>
-      </>
+    </>
   );
 }`}
       </Pre>
