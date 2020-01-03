@@ -14,7 +14,7 @@ function HeaderActions({ actions }) {
   return (
     <Wrapper>
       {actions.map((action, index) => {
-        const { Component, disabled, title, onClick } = action;
+        const { Component, disabled, label, onClick } = action;
 
         if (Component) {
           return <Component {...action} key={action.key || index} />;
@@ -22,12 +22,12 @@ function HeaderActions({ actions }) {
 
         return (
           <Button
-            key={title}
+            key={label}
             onClick={onClick}
             disabled={disabled || false}
             {...action}
           >
-            {title}
+            {label}
           </Button>
         );
       })}
