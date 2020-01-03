@@ -16,6 +16,10 @@ const Checkbox = styled.input`
   position: relative;
   width: ${sizes.checkbox.width};
   font-weight: ${sizes.checkbox.fontWeight};
+  &:focus,
+  &:active {
+    outline: 0;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -31,15 +35,16 @@ const Checkbox = styled.input`
   }
   &:after {
     display: none;
-    content: '✔';
+    content: '\f00c';
+    font-family: 'FontAwesome';
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: 0px;
+    top: 55%;
     margin-top: calc(-${sizes.checkbox.width} / 2);
     width: ${sizes.checkbox.width};
     height: ${sizes.checkbox.height};
     text-align: center;
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
@@ -49,6 +54,22 @@ const Checkbox = styled.input`
       display: block;
     }
   }
+
+  ${({ someChecked }) => {
+    if (someChecked) {
+      return `
+        &:after {
+          content: '\f068';
+          display: block;
+          top: 50%;
+          font-size: 10px;
+        }
+      `;
+    }
+
+    return '';
+  }}
+
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: initial;
@@ -61,10 +82,12 @@ const Checkbox = styled.input`
 `;
 
 Checkbox.defaultProps = {
+  someChecked: false,
   type: 'checkbox',
 };
 
 Checkbox.propTypes = {
+  someChecked: PropTypes.bool,
   type: PropTypes.string,
 };
 
