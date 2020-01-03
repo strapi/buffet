@@ -100,7 +100,6 @@ Error.defaultProps = {
     minLength: 'This is too short',
     required: 'This value is required',
     regex: 'This does not match the format',
-    url: 'This is not an url',
     uppercase: 'This must be a upper case string',
   },
   type: null,

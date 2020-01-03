@@ -4,18 +4,12 @@ import * as yup from 'yup';
 const createYupSchema = (type, validations, translatedErrors = {}) => {
   let schema = yup.mixed();
 
-  if (
-    ['text', 'textarea', 'email', 'password', 'select', 'url'].includes(type)
-  ) {
+  if (['text', 'textarea', 'email', 'password', 'select'].includes(type)) {
     schema = yup.string(translatedErrors.string);
   }
 
   if (type === 'email') {
     schema = schema.email(translatedErrors.email);
-  }
-
-  if (type === 'url') {
-    schema = schema.url(translatedErrors.url);
   }
 
   if (type === 'number') {
@@ -54,12 +48,12 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
           schema = schema.matches(validationValue, translatedErrors.regex);
           break;
         case 'lowercase':
-          if (['text', 'textarea', 'email', 'string', 'url'].includes(type)) {
+          if (['text', 'textarea', 'email', 'string'].includes(type)) {
             schema = schema.strict().lowercase();
           }
           break;
         case 'uppercase':
-          if (['text', 'textarea', 'email', 'string', 'url'].includes(type)) {
+          if (['text', 'textarea', 'email', 'string'].includes(type)) {
             schema = schema.strict().uppercase(translatedErrors.uppercase);
           }
           break;

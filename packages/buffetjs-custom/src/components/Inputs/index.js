@@ -39,7 +39,6 @@ const inputs = {
   time: TimePicker,
   select: Select,
   email: InputText,
-  url: InputText,
   password: InputText,
   search: InputText,
 };
