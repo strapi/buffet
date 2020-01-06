@@ -60,14 +60,9 @@ const Checkbox = styled.input`
       return `
         &:after {
           content: '\f068';
-          position: absolute;
           display: block;
           top: 50%;
-          left: 0px;
           font-size: 10px;
-          font-family: 'FontAwesome';
-          font-weight: 100;
-          color: #1c5de7;
         }
       `;
     }
