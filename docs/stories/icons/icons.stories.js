@@ -14,13 +14,17 @@ import {
   DynamicZone,
   Email,
   Enumeration,
+  Fail,
   Json,
   Media,
   NumberIcon,
   Password,
+  Pending,
+  Play,
   Plus,
   Relation,
   RichText,
+  Success,
   Text,
   Uid,
 } from '@buffetjs/icons';
@@ -87,6 +91,15 @@ const IconsStory = () => {
       },
     },
     {
+      name: 'fail',
+      Compo: Fail,
+      props: {
+        fill: '#b3b5b9',
+        width: '14px',
+        height: '15px',
+      },
+    },
+    {
       name: 'grab',
       Compo: Grab,
       props: {
@@ -126,6 +139,15 @@ const IconsStory = () => {
       Compo: Password,
       props: {
         fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'pending',
+      Compo: Pending,
+      props: {
+        fill: '#b3b5b9',
+        width: '14px',
+        height: '15px',
       },
     },
     {
@@ -178,6 +200,25 @@ const IconsStory = () => {
         fill: '#b3b5b9',
         height: '13px',
         width: '13px',
+      },
+    },
+    {
+      name: 'play',
+      Compo: Play,
+      props: {
+        fill: '#b3b5b9',
+        height: '13px',
+        width: '13px',
+      },
+    },
+    ,
+    {
+      name: 'success',
+      Compo: Success,
+      props: {
+        fill: '#b3b5b9',
+        height: '18px',
+        width: '18px',
       },
     },
   ];
