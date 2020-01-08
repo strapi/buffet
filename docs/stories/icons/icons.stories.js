@@ -95,7 +95,7 @@ const IconsStory = () => {
       Compo: Fail,
       props: {
         fill: '#b3b5b9',
-        width: '14px',
+        width: '15px',
         height: '15px',
       },
     },
@@ -146,7 +146,7 @@ const IconsStory = () => {
       Compo: Pending,
       props: {
         fill: '#b3b5b9',
-        width: '14px',
+        width: '15px',
         height: '15px',
       },
     },
@@ -332,6 +332,15 @@ const icons = [
     },
   },
   {
+    name: 'fail',
+    Compo: Fail,
+    props: {
+      fill: '#b3b5b9',
+      width: '15px',
+      height: '15px',
+    },
+  },
+  {
     name: 'grab',
     Compo: Grab,
     props: {
@@ -371,6 +380,15 @@ const icons = [
     Compo: Password,
     props: {
       fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'pending',
+    Compo: Pending,
+    props: {
+      fill: '#b3b5b9',
+      width: '15px',
+      height: '15px',
     },
   },
   {
@@ -423,6 +441,25 @@ const icons = [
       fill: '#b3b5b9',
       height: '13px',
       width: '13px',
+    },
+  },
+  {
+    name: 'play',
+    Compo: Play,
+    props: {
+      fill: '#b3b5b9',
+      height: '13px',
+      width: '13px',
+    },
+  },
+  ,
+  {
+    name: 'success',
+    Compo: Success,
+    props: {
+      fill: '#b3b5b9',
+      height: '18px',
+      width: '18px',
     },
   },
 ];
