@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const Play = ({ fill, ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 13 13"
-    width="13px"
-    height="13px"
+    viewBox="0 0 14 14"
+    width="18px"
+    height="18px"
     {...rest}
   >
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
