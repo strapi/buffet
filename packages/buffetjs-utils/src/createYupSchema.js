@@ -37,8 +37,10 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
           schema = schema.required(translatedErrors.required);
           break;
         case 'max':
-        case 'maxLength':
           schema = schema.max(validationValue, translatedErrors.max);
+          break;
+        case 'maxLength':
+          schema = schema.max(validationValue, translatedErrors.maxLength);
           break;
         case 'min':
         case 'minLength':
