@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Play = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 7" {...props}>
+const Play = ({ fill, ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 7" {...rest}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-1018.000000, -100.000000)"
-        fill={props.fill}
+        fill={fill}
         fillRule="nonzero"
       >
         <g transform="translate(537.000000, 85.000000)">

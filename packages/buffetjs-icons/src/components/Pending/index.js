@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pending = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" {...props}>
+const Pending = ({ fill, ...rest }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" {...rest}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-764.000000, -186.000000)"
-        fill="#FFB500"
+        fill={fill}
         fillRule="nonzero"
       >
         <g transform="translate(537.154730, 162.000000)">
