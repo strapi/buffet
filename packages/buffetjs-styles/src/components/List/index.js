@@ -12,7 +12,7 @@ const List = styled.div`
   width: 100%;
   position: relative;
   overflow-x: scroll;
-  border-radius: 3px;
+  border-radius: ${sizes.borderRadius};
   box-shadow: 0 2px 4px #e3e9f3;
   background: white;
   i {

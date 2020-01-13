@@ -28,9 +28,9 @@ const createYupSchema = (type, validations, translatedErrors = {}) => {
 
     if (
       !!validationValue ||
-      ((!isBoolean(validationValue) &&
+      (!isBoolean(validationValue) &&
         Number.isInteger(Math.floor(validationValue))) ||
-        validationValue === 0)
+      validationValue === 0
     ) {
       switch (validation) {
         case 'required':

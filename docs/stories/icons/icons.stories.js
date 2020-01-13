@@ -14,13 +14,17 @@ import {
   DynamicZone,
   Email,
   Enumeration,
+  Fail,
   Json,
   Media,
   NumberIcon,
   Password,
+  Pending,
+  Play,
   Plus,
   Relation,
   RichText,
+  Success,
   Text,
   Uid,
 } from '@buffetjs/icons';
@@ -87,6 +91,15 @@ const IconsStory = () => {
       },
     },
     {
+      name: 'fail',
+      Compo: Fail,
+      props: {
+        fill: '#b3b5b9',
+      },
+      width: '55px',
+      height: '55px',
+    },
+    {
       name: 'grab',
       Compo: Grab,
       props: {
@@ -124,6 +137,13 @@ const IconsStory = () => {
     {
       name: 'password',
       Compo: Password,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'pending',
+      Compo: Pending,
       props: {
         fill: '#b3b5b9',
       },
@@ -176,8 +196,21 @@ const IconsStory = () => {
       Compo: Plus,
       props: {
         fill: '#b3b5b9',
-        height: '13px',
-        width: '13px',
+      },
+    },
+    {
+      name: 'play',
+      Compo: Play,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    ,
+    {
+      name: 'success',
+      Compo: Success,
+      props: {
+        fill: '#b3b5b9',
       },
     },
   ];
@@ -291,6 +324,15 @@ const icons = [
     },
   },
   {
+    name: 'fail',
+    Compo: Fail,
+    props: {
+      fill: '#b3b5b9',
+    },
+    width: '55px',
+    height: '55px',
+  },
+  {
     name: 'grab',
     Compo: Grab,
     props: {
@@ -328,6 +370,13 @@ const icons = [
   {
     name: 'password',
     Compo: Password,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'pending',
+    Compo: Pending,
     props: {
       fill: '#b3b5b9',
     },
@@ -380,8 +429,21 @@ const icons = [
     Compo: Plus,
     props: {
       fill: '#b3b5b9',
-      height: '13px',
-      width: '13px',
+    },
+  },
+  {
+    name: 'play',
+    Compo: Play,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  ,
+  {
+    name: 'success',
+    Compo: Success,
+    props: {
+      fill: '#b3b5b9',
     },
   },
 ];

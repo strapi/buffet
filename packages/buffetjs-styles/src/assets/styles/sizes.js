@@ -3,7 +3,7 @@ const sizes = {
   desktop: '1024px',
   wide: '1280px',
   margin: '10',
-  radius: '2px',
+  borderRadius: '2px',
   button: {
     height: {
       small: '26px',

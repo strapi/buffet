@@ -110,7 +110,9 @@ function Inputs({
             message={label} // Only for the checkbox
             name={name}
             id={inputId}
-            aria-describedby={`${(!error && description) ? descriptionId: ''} ${error ? errorId : ''}`}
+            aria-describedby={`${!error && description ? descriptionId : ''} ${
+              error ? errorId : ''
+            }`}
             aria-invalid={error ? 'true' : 'false'}
             onBlur={isFunction(handleBlur) ? handleBlur : onBlur}
             onChange={e => {
@@ -129,7 +131,9 @@ function Inputs({
             type={type}
             value={inputValue}
           />
-          {!error && description && <Description id={descriptionId}>{description}</Description>}
+          {!error && description && (
+            <Description id={descriptionId}>{description}</Description>
+          )}
           {error && <ErrorMessage id={errorId}>{error}</ErrorMessage>}
         </Wrapper>
       )}

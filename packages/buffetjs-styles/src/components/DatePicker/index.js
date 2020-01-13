@@ -37,7 +37,7 @@ const DatePicker = styled.div`
     font-size: ${sizes.input.fontSize};
     cursor: pointer;
     border: 1px solid ${colors.lightGrey};
-    border-radius: ${sizes.radius};
+    border-radius: ${sizes.borderRadius};
     color: ${colors.black};
     background-color: transparent;
     padding-left: 42px;
