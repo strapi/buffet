@@ -7,7 +7,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function DatePickerStory() {
-  const [value, setState] = useState(moment());
+  const [value, setState] = useState(moment('01/11/2020'));
 
   return (
     <Presentation
