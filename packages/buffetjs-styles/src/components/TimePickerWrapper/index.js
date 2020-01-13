@@ -14,8 +14,8 @@ const TimePickerWrapper = styled.div`
   background-color: ${colors.white};
   span {
     z-index: 0;
-    border-top-left-radius: ${sizes.radius};
-    border-bottom-left-radius: ${sizes.radius};
+    border-top-left-radius: ${sizes.borderRadius};
+    border-bottom-left-radius: ${sizes.borderRadius};
   }
   input {
     position: relative;

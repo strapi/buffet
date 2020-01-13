@@ -134,7 +134,7 @@ const InputNumber = styled.div`
       cursor: pointer;
       outline: 0;
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
-      border-radius: ${sizes.radius};
+      border-radius: ${sizes.borderRadius};
       text-align: left;
       font-weight: ${sizes.input.fontWeight};
       font-size: 1.3rem;

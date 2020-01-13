@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Success = ({ fill, ...rest }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" {...rest}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 28 28"
+    width="18px"
+    height="18px"
+    {...rest}
+  >
     <defs>
       <filter
         x="-3.7%"

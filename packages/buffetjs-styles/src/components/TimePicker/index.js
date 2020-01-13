@@ -19,7 +19,7 @@ const TimePicker = styled.input`
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey};
-  border-radius: ${sizes.radius};
+  border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: transparent;
   padding-left: calc(${sizes.input.height} + ${sizes.input.padding});

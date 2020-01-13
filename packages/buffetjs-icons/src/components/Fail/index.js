@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Fail = ({ fill, ...rest }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" {...rest}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 15 15"
+    width="15px"
+    height="15px"
+    {...rest}
+  >
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g transform="translate(-765.000000, -186.000000)" stroke={fill}>
         <g transform="translate(537.154730, 162.000000)">
@@ -42,7 +48,7 @@ const Fail = ({ fill, ...rest }) => (
 );
 
 Fail.defaultProps = {
-  fill: '#fff',
+  fill: '#f64d0a',
 };
 
 Fail.propTypes = {

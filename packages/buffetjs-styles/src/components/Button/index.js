@@ -22,7 +22,7 @@ const Button = styled.button`
   font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
-  border-radius: ${sizes.radius};
+  border-radius: ${sizes.borderRadius};
   cursor: pointer;
   outline: 0;
   background-color: ${colors.white};

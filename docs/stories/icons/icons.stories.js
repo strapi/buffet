@@ -95,9 +95,9 @@ const IconsStory = () => {
       Compo: Fail,
       props: {
         fill: '#b3b5b9',
-        width: '15px',
-        height: '15px',
       },
+      width: '55px',
+      height: '55px',
     },
     {
       name: 'grab',
@@ -146,8 +146,6 @@ const IconsStory = () => {
       Compo: Pending,
       props: {
         fill: '#b3b5b9',
-        width: '15px',
-        height: '15px',
       },
     },
     {
@@ -198,8 +196,6 @@ const IconsStory = () => {
       Compo: Plus,
       props: {
         fill: '#b3b5b9',
-        height: '13px',
-        width: '13px',
       },
     },
     {
@@ -207,8 +203,6 @@ const IconsStory = () => {
       Compo: Play,
       props: {
         fill: '#b3b5b9',
-        height: '13px',
-        width: '13px',
       },
     },
     ,
@@ -217,8 +211,6 @@ const IconsStory = () => {
       Compo: Success,
       props: {
         fill: '#b3b5b9',
-        height: '18px',
-        width: '18px',
       },
     },
   ];
@@ -336,9 +328,9 @@ const icons = [
     Compo: Fail,
     props: {
       fill: '#b3b5b9',
-      width: '15px',
-      height: '15px',
     },
+    width: '55px',
+    height: '55px',
   },
   {
     name: 'grab',
@@ -387,8 +379,6 @@ const icons = [
     Compo: Pending,
     props: {
       fill: '#b3b5b9',
-      width: '15px',
-      height: '15px',
     },
   },
   {
@@ -439,8 +429,6 @@ const icons = [
     Compo: Plus,
     props: {
       fill: '#b3b5b9',
-      height: '13px',
-      width: '13px',
     },
   },
   {
@@ -448,8 +436,6 @@ const icons = [
     Compo: Play,
     props: {
       fill: '#b3b5b9',
-      height: '13px',
-      width: '13px',
     },
   },
   ,
@@ -458,8 +444,6 @@ const icons = [
     Compo: Success,
     props: {
       fill: '#b3b5b9',
-      height: '18px',
-      width: '18px',
     },
   },
 ];

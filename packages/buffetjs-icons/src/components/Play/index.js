@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Play = ({ fill, ...rest }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 7" {...rest}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 13 13"
+    width="13px"
+    height="13px"
+    {...rest}
+  >
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-1018.000000, -100.000000)"
@@ -22,7 +28,7 @@ const Play = ({ fill, ...rest }) => (
 );
 
 Play.defaultProps = {
-  fill: '#fff',
+  fill: '#b4b6ba',
 };
 
 Play.propTypes = {

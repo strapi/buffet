@@ -17,7 +17,7 @@ const StyledTextarea = styled.textarea`
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey}
-  border-radius: ${sizes.radius};
+  border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: ${colors.white};
   line-height: 18px;

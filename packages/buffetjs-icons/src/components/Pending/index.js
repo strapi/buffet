@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Pending = ({ fill, ...rest }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" {...rest}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 14 14"
+    width="14px"
+    height="14px"
+    {...rest}
+  >
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-764.000000, -186.000000)"
@@ -20,7 +26,7 @@ const Pending = ({ fill, ...rest }) => (
 );
 
 Pending.defaultProps = {
-  fill: '#fff',
+  fill: '#6DBB1A',
 };
 
 Pending.propTypes = {

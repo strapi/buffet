@@ -19,7 +19,7 @@ const InputText = styled.input`
   cursor: text;
   outline: 0;
   border: 1px solid ${colors.lightGrey};
-  border-radius: ${sizes.radius};
+  border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: transparent;
   &::-webkit-input-placeholder {

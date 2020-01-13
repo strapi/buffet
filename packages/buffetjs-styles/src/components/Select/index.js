@@ -18,7 +18,7 @@ const Select = styled.select`
   cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey}
-  border-radius: ${sizes.radius};
+  border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: ${colors.white};
   padding-right: 30px;
