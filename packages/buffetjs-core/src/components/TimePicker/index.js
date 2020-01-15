@@ -253,7 +253,7 @@ function TimePicker(props) {
               id={option.value}
               name="time"
               checked={option.value === currentTimeSelected}
-              tabIndex="-1"
+              tabIndex="0"
             />
             <label htmlFor={option.value}>{option.label}</label>
           </li>
