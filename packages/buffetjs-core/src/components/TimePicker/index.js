@@ -157,14 +157,13 @@ function TimePicker(props) {
   // Custom hook to select a time using the keyboard's up arrow
   useShortcutEffect('arrowUp', () => {
     if (isOpen) {
-      const currentTimeIndex = options.findIndex(
+      const currentIndex = options.findIndex(
         o => o.value === currentTimeSelected
       );
-      const optionsLength = options.length;
-      const nextTime =
-        currentTimeIndex === optionsLength - 1
-          ? options[optionsLength - 1]
-          : options[currentTimeIndex + 1];
+      if (!currentIndex) return;
+      const nextIndex = currentIndex - 1;
+
+      const nextTime = options[nextIndex] || options[currentIndex];
 
       updateTime(nextTime.value);
     }
@@ -173,11 +172,14 @@ function TimePicker(props) {
   // Custom hook to select a time using the keyboard's down arrow
   useShortcutEffect('arrowDown', () => {
     if (isOpen) {
-      const currentTimeIndex = options.findIndex(
+      const currentIndex = options.findIndex(
         o => o.value === currentTimeSelected
       );
-      const nextTime =
-        currentTimeIndex === 0 ? options[0] : options[currentTimeIndex - 1];
+      const lastIndex = options.length - 1;
+      if (currentIndex >= lastIndex) return;
+      const nextIndex = currentIndex + 1;
+
+      const nextTime = options[nextIndex] || options[lastIndex];
 
       updateTime(nextTime.value);
     }
