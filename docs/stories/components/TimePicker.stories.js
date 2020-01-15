@@ -27,6 +27,7 @@ function TimePickerStory() {
           }}
           seconds={false}
           value={val}
+          step={15}
         />
       </div>
       <Pre>
