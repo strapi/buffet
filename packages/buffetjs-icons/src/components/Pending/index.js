@@ -26,7 +26,7 @@ const Pending = ({ fill, ...rest }) => (
 );
 
 Pending.defaultProps = {
-  fill: '#6DBB1A',
+  fill: '#ffb500',
 };
 
 Pending.propTypes = {

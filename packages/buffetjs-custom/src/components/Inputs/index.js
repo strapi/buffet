@@ -156,7 +156,7 @@ Inputs.defaultProps = {
 Inputs.propTypes = {
   customInputs: PropTypes.object,
   description: PropTypes.string,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   id: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
