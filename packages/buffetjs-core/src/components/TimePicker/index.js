@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { isInteger, toNumber } from 'lodash';
 import PropTypes from 'prop-types';
 
@@ -17,6 +17,11 @@ import {
 import Icon from '../Icon';
 import useEventListener from '../../hooks/useEventListener';
 import useShortcutEffect from '../../hooks/useShortcutEffect';
+
+const MINUTES_IN_HOUR = 60;
+
+// Returns string with two digits padded at start with 0
+const pad = num => `0${num}`.substr(-2);
 
 // Convert time array to formatted time string
 export const timeFormatter = time => {
@@ -65,27 +70,43 @@ const short = hour => {
   return hour;
 };
 
-// Generate options for TimeList display
-const getOptions = () => {
-  const hours = Array.from({ length: 24 }, (_, k) => k);
-  const options = hours.reduce((acc, cur) => {
-    const hour = cur < 10 ? `0${cur}` : cur;
+// return array of minutes in hours with current step
+const getMinutesArr = step => {
+  const length = MINUTES_IN_HOUR / step;
 
-    return acc.concat([
-      { value: `${hour}:00:00`, label: `${hour}:00` },
-      { value: `${hour}:30:00`, label: `${hour}:30` },
-    ]);
+  return Array.from({ length }, (_v, i) => step * i);
+};
+
+// Generate options for TimeList display
+const getOptions = step => {
+  const hours = Array.from({ length: 24 }, (_, i) => i);
+  const minutes = getMinutesArr(step);
+
+  const options = hours.reduce((acc, cur) => {
+    const hour = pad(cur);
+
+    const hourOptions = minutes.map(minute => {
+      const label = `${hour}:${pad(minute)}`;
+
+      return { value: `${label}:00`, label };
+    });
+
+    return acc.concat(hourOptions);
   }, []);
 
   return options;
 };
 
 // Find the nearest time option to select a TimeList value
-const roundHour = time => {
+const roundHour = (time, step) => {
   const arr = splitArray(time);
-  const nearMin = nearest([0, 30, 60], parseInt(arr[1], 10));
+  const minutesArr = getMinutesArr(step);
+  const nearMin = nearest(
+    minutesArr.concat(MINUTES_IN_HOUR),
+    parseInt(arr[1], 10)
+  );
 
-  arr[1] = nearMin !== 30 ? '00' : '30';
+  arr[1] = minutesArr.includes(arr[1]) ? '00' : pad(nearMin);
   arr[2] = nearMin === 60 ? `${parseInt(arr[2], 10) + 1}` : arr[2];
 
   return format(arr.reverse()).join(':');
@@ -99,18 +120,23 @@ const nearest = (arr, val) =>
   ) + val;
 
 function TimePicker(props) {
-  const { name, onChange, seconds, tabIndex, value } = props;
+  const { name, onChange, seconds, tabIndex, value, step } = props;
   const [inputVal, setInputVal] = useState(seconds ? value : short(value));
   const [isOpen, setIsOpen] = useState(false);
+  const options = useMemo(() => getOptions(step), [step]);
   const inputRef = useRef();
   const wrapperRef = useRef();
   const listRef = useRef();
-  const listRefs = getOptions().reduce((acc, curr) => {
+  const listRefs = options.reduce((acc, curr) => {
     acc[curr.value] = useRef();
 
     return acc;
   }, {});
-  const currentTimeSelected = roundHour(timeFormatter(inputVal));
+
+  const currentTimeSelected = useMemo(
+    () => roundHour(timeFormatter(inputVal), step),
+    [inputVal, step]
+  );
 
   // Effect to enable scrolling
   useEffect(() => {
@@ -131,14 +157,13 @@ function TimePicker(props) {
   // Custom hook to select a time using the keyboard's up arrow
   useShortcutEffect('arrowUp', () => {
     if (isOpen) {
-      const currentTimeIndex = getOptions().findIndex(
+      const currentIndex = options.findIndex(
         o => o.value === currentTimeSelected
       );
-      const optionsLength = getOptions().length;
-      const nextTime =
-        currentTimeIndex === optionsLength - 1
-          ? getOptions()[optionsLength - 1]
-          : getOptions()[currentTimeIndex + 1];
+      if (!currentIndex) return;
+      const nextIndex = currentIndex - 1;
+
+      const nextTime = options[nextIndex] || options[currentIndex];
 
       updateTime(nextTime.value);
     }
@@ -147,13 +172,14 @@ function TimePicker(props) {
   // Custom hook to select a time using the keyboard's down arrow
   useShortcutEffect('arrowDown', () => {
     if (isOpen) {
-      const currentTimeIndex = getOptions().findIndex(
+      const currentIndex = options.findIndex(
         o => o.value === currentTimeSelected
       );
-      const nextTime =
-        currentTimeIndex === 0
-          ? getOptions()[0]
-          : getOptions()[currentTimeIndex - 1];
+      const lastIndex = options.length - 1;
+      if (currentIndex >= lastIndex) return;
+      const nextIndex = currentIndex + 1;
+
+      const nextTime = options[nextIndex] || options[lastIndex];
 
       updateTime(nextTime.value);
     }
@@ -218,7 +244,7 @@ function TimePicker(props) {
         <Icon icon="time" />
       </IconWrapper>
       <TimeList className={isOpen && 'displayed'} ref={listRef}>
-        {getOptions().map(option => (
+        {options.map(option => (
           <li key={option.value} ref={listRefs[option.value]}>
             <input
               type="radio"
@@ -226,8 +252,8 @@ function TimePicker(props) {
               value={option.value}
               id={option.value}
               name="time"
-              checked={option.value === roundHour(timeFormatter(inputVal))}
-              tabIndex="-1"
+              checked={option.value === currentTimeSelected}
+              tabIndex="0"
             />
             <label htmlFor={option.value}>{option.label}</label>
           </li>
@@ -243,6 +269,7 @@ TimePicker.defaultProps = {
   tabIndex: '0',
   seconds: false,
   value: '',
+  step: 30,
 };
 
 TimePicker.propTypes = {
@@ -250,6 +277,9 @@ TimePicker.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   seconds: PropTypes.bool,
+  step: (props, propName) =>
+    MINUTES_IN_HOUR % props[propName] > 0 &&
+    new Error('step should be divisible by 60'),
   tabIndex: PropTypes.string,
   value: PropTypes.string,
 };
