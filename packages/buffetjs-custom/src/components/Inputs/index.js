@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { get, isEmpty, isFunction } from 'lodash';
+import { get, isEmpty, isFunction, isUndefined } from 'lodash';
 import {
   DatePicker,
   Checkbox,
@@ -63,6 +63,9 @@ function Inputs({
     case 'checkbox':
     case 'bool':
       inputValue = value || false;
+      break;
+    case 'number':
+      inputValue = isUndefined(value) ? '' : value;
       break;
     default:
       inputValue = value || '';

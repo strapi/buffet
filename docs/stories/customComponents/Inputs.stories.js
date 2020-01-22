@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { Inputs } from '@buffetjs/custom';
+import { isUndefined } from 'lodash';
 
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
@@ -145,7 +146,11 @@ function InputStory() {
                     name={input}
                     {...form[input]}
                     onChange={handleChange}
-                    value={state[input] || form[input].value}
+                    value={
+                      isUndefined(state[input])
+                        ? form[input].value
+                        : state[input]
+                    }
                   />
                 </div>
               ))}
