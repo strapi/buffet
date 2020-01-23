@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/core",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Buffetjs Core Components",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -15,7 +15,7 @@
     "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
   "dependencies": {
-    "@buffetjs/hooks": "2.0.0",
+    "@buffetjs/hooks": "2.1.0",
     "@buffetjs/icons": "2.0.0",
     "@buffetjs/styles": "2.0.0",
     "@buffetjs/utils": "2.0.0",

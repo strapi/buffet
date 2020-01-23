@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/custom",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Buffetjs Custom Components",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -15,7 +15,7 @@
     "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
   "dependencies": {
-    "@buffetjs/core": "2.0.1",
+    "@buffetjs/core": "2.1.0",
     "@buffetjs/styles": "2.0.0",
     "@buffetjs/utils": "2.0.0",
     "moment": "^2.24.0",
