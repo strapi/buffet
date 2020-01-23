@@ -148,57 +148,77 @@ function TimePicker(props) {
   }, [isOpen, currentTimeSelected]);
 
   // Custom hook to close the TimeList
-  useEventListener('click', event => {
-    if (!wrapperRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  });
+  useEventListener(
+    'click',
+    event => {
+      if (!wrapperRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    },
+    isOpen
+  );
 
   // Custom hook to select a time using the keyboard's up arrow
-  useShortcutEffect('arrowUp', () => {
-    if (isOpen) {
-      const currentIndex = options.findIndex(
-        o => o.value === currentTimeSelected
-      );
-      if (!currentIndex) return;
-      const nextIndex = currentIndex - 1;
+  useShortcutEffect(
+    'arrowUp',
+    () => {
+      if (isOpen) {
+        const currentIndex = options.findIndex(
+          o => o.value === currentTimeSelected
+        );
+        if (!currentIndex) return;
+        const nextIndex = currentIndex - 1;
 
-      const nextTime = options[nextIndex] || options[currentIndex];
+        const nextTime = options[nextIndex] || options[currentIndex];
 
-      updateTime(nextTime.value);
-    }
-  });
+        updateTime(nextTime.value);
+      }
+    },
+    isOpen
+  );
 
   // Custom hook to select a time using the keyboard's down arrow
-  useShortcutEffect('arrowDown', () => {
-    if (isOpen) {
-      const currentIndex = options.findIndex(
-        o => o.value === currentTimeSelected
-      );
-      const lastIndex = options.length - 1;
-      if (currentIndex >= lastIndex) return;
-      const nextIndex = currentIndex + 1;
+  useShortcutEffect(
+    'arrowDown',
+    () => {
+      if (isOpen) {
+        const currentIndex = options.findIndex(
+          o => o.value === currentTimeSelected
+        );
+        const lastIndex = options.length - 1;
+        if (currentIndex >= lastIndex) return;
+        const nextIndex = currentIndex + 1;
 
-      const nextTime = options[nextIndex] || options[lastIndex];
+        const nextTime = options[nextIndex] || options[lastIndex];
 
-      updateTime(nextTime.value);
-    }
-  });
+        updateTime(nextTime.value);
+      }
+    },
+    isOpen
+  );
 
   // Custom hook to close the time list
-  useShortcutEffect('enter', () => {
-    if (isOpen) {
-      setIsOpen(false);
-      inputRef.current.blur();
-    }
-  });
+  useShortcutEffect(
+    'enter',
+    () => {
+      if (isOpen) {
+        setIsOpen(false);
+        inputRef.current.blur();
+      }
+    },
+    isOpen
+  );
 
-  useShortcutEffect('tab', () => {
-    if (isOpen) {
-      setIsOpen(false);
-      inputRef.current.blur();
-    }
-  });
+  useShortcutEffect(
+    'tab',
+    () => {
+      if (isOpen) {
+        setIsOpen(false);
+        inputRef.current.blur();
+      }
+    },
+    isOpen
+  );
 
   const handleChange = ({ target }) => {
     updateTime(target.value);
@@ -244,20 +264,21 @@ function TimePicker(props) {
         <Icon icon="time" />
       </IconWrapper>
       <TimeList className={isOpen && 'displayed'} ref={listRef}>
-        {options.map(option => (
-          <li key={option.value} ref={listRefs[option.value]}>
-            <input
-              type="radio"
-              onChange={handleClick}
-              value={option.value}
-              id={option.value}
-              name="time"
-              checked={option.value === currentTimeSelected}
-              tabIndex="0"
-            />
-            <label htmlFor={option.value}>{option.label}</label>
-          </li>
-        ))}
+        {isOpen &&
+          options.map(option => (
+            <li key={option.value} ref={listRefs[option.value]}>
+              <input
+                type="radio"
+                onChange={handleClick}
+                value={option.value}
+                id={option.value}
+                name="time"
+                checked={option.value === currentTimeSelected}
+                tabIndex="0"
+              />
+              <label htmlFor={option.value}>{option.label}</label>
+            </li>
+          ))}
       </TimeList>
     </TimePickerWrapper>
   );
