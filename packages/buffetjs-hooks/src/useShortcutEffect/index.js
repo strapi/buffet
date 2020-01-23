@@ -15,8 +15,8 @@ function getShortcutKeys(keys) {
   return keys.split('+').map(value => keyCodes[value.toLowerCase()]);
 }
 
-function useShortcutEffect(shortcut, listener) {
-  const activeKeys = useActiveKeys();
+function useShortcutEffect(shortcut, listener, isEnabled = true) {
+  const activeKeys = useActiveKeys(isEnabled);
   const listenerRef = useRef();
   listenerRef.current = listener;
 

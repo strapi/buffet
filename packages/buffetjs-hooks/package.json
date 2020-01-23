@@ -1,7 +1,7 @@
 {
-  "name": "@buffetjs/custom",
+  "name": "@buffetjs/hooks",
   "version": "2.1.0",
-  "description": "Buffetjs Custom Components",
+  "description": "Buffetjs react-hooks",
   "main": "dist/index.js",
   "module": "src/index.js",
   "files": [
@@ -14,38 +14,21 @@
     "prepublishOnly": "npm run build",
     "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
   },
-  "dependencies": {
-    "@buffetjs/core": "2.1.0",
-    "@buffetjs/styles": "2.0.0",
-    "@buffetjs/utils": "2.0.0",
-    "moment": "^2.24.0",
-    "react-moment-proptypes": "^1.7.0"
-  },
+  "license": "MIT",
+  "private": false,
   "devDependencies": {
-    "enzyme": "^3.10.0",
-    "lodash": "^4.17.11",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.1.0",
-    "styled-components": "^4.2.1"
+    "react": "^16.12.0"
   },
   "peerDependencies": {
-    "lodash": "^4.17.11",
-    "prop-types": "^15.5.10",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.1.0",
-    "styled-components": "^4.1.2"
+    "react": "^16.8.6"
   },
   "keywords": [
     "Buffetjs",
-    "react",
-    "components",
-    "styled-components"
+    "React",
+    "react-hooks",
+    "hooks"
   ],
   "author": "Strapi team",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
