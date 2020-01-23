@@ -1,0 +1,39 @@
+{
+  "name": "@buffetjs/hooks",
+  "version": "2.0.0",
+  "description": "Buffetjs react-hooks",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "lint": "eslint --c ../../.eslintrc src",
+    "prepublishOnly": "npm run build",
+    "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+  },
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "react": "^16.12.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "keywords": [
+    "Buffetjs",
+    "React",
+    "react-hooks",
+    "hooks"
+  ],
+  "author": "Strapi team",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strapi/buffet"
+  }
+}
