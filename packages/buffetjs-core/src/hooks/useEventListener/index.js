@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-function useEventListener(event, eventListener) {
+function useEventListener(event, eventListener, isEnabled = true) {
   const listenerRef = useRef();
   listenerRef.current = eventListener;
 
@@ -9,12 +9,16 @@ function useEventListener(event, eventListener) {
       listenerRef.current(e);
     }
 
-    window.addEventListener(event, handleEvent);
+    if (isEnabled) {
+      window.addEventListener(event, handleEvent);
+    } else {
+      window.removeEventListener(event, handleEvent);
+    }
 
     return () => {
       window.removeEventListener(event, handleEvent);
     };
-  }, [event]);
+  }, [event, isEnabled]);
 }
 
 export default useEventListener;
