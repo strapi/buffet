@@ -16,6 +16,7 @@ import {
 import { List } from '@buffetjs/custom';
 import { IconLinks } from '@buffetjs/core';
 import { CustomRow as Row } from '@buffetjs/styles';
+import { Plus } from '@buffetjs/icons';
 
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
@@ -86,7 +87,7 @@ function ListStory() {
   const subtitle = text('Subtitle', 'The most successful French Top Chefs');
   const buttonProps = {
     color: 'secondary',
-    icon: true,
+    icon: <Plus height="11px" width="11px" fill="#007EFF" />,
     label: 'New',
     onClick,
     type: 'button',

@@ -58,6 +58,7 @@ const Button = styled.button`
       padding: 0 ${sizes.button.padding.small};
       svg {
         fill: ${colors.blue};
+        vertical-align: initial;
       }
     `}}
 
