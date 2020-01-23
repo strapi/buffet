@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { isValidElement, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import invariant from 'invariant';
 import { Select as StyledSelect } from '@buffetjs/styles';
@@ -19,32 +19,31 @@ function Select({
   value,
   ...rest
 }) {
-  const lengthOfReactElementsInOptions = options.filter(option =>
-    React.isValidElement(option)
-  ).length;
-  const formatOptions = () =>
-    options.map(option => (
-      <option
-        key={JSON.stringify(option.value) || option}
-        value={option.value || option}
-      >
-        {option.label || option}
-      </option>
-    ));
-  const renderOptions = () => {
-    const areOptionsValidReactElements = options.every(option =>
-      React.isValidElement(option)
+  const renderedOptions = useMemo(() => {
+    const { length: reactElementsInOptionsLength } = options.filter(
+      isValidElement
     );
+    const areOptionsValidReactElements =
+      reactElementsInOptionsLength === options.length;
 
-    return areOptionsValidReactElements ? options : formatOptions();
-  };
+    if (reactElementsInOptionsLength > 0) {
+      invariant(
+        areOptionsValidReactElements,
+        'You have mixed up React Elements and non React Elements in your options array '
+      );
+    }
 
-  if (lengthOfReactElementsInOptions > 0) {
-    invariant(
-      lengthOfReactElementsInOptions === options.length,
-      'You have mixed up React Elements and non React Elements in your options array '
-    );
-  }
+    return areOptionsValidReactElements
+      ? options
+      : options.map(option => (
+        <option
+          key={JSON.stringify(option.value) || option}
+          value={option.value || option}
+        >
+          {option.label || option}
+        </option>
+      ));
+  }, [options]);
 
   return (
     <StyledSelect
@@ -56,7 +55,7 @@ function Select({
       value={value}
       {...rest}
     >
-      {renderOptions()}
+      {renderedOptions}
     </StyledSelect>
   );
 }
