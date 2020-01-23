@@ -16,8 +16,6 @@ import {
 } from '@buffetjs/styles';
 import { useEventListener, useShortcutEffect } from '@buffetjs/hooks';
 import Icon from '../Icon';
-// import useEventListener from '../../hooks/useEventListener';
-// import useShortcutEffect from '../../hooks/useShortcutEffect';
 
 const MINUTES_IN_HOUR = 60;
 
