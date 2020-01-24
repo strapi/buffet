@@ -10,6 +10,34 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
 
+const buttonsColors = {
+  primary: {
+    borderColor: colors.blue,
+    color: colors.white,
+    backgroundColor: colors.blue,
+  },
+  secondary: {
+    borderColor: colors.blue,
+    color: colors.blue,
+    backgroundColor: colors.white,
+  },
+  cancel: {
+    borderColor: colors.brightGrey,
+    color: colors.brightGrey,
+    backgroundColor: 'transparent',
+  },
+  delete: {
+    borderColor: colors.orange,
+    color: colors.white,
+    backgroundColor: colors.orange,
+  },
+  success: {
+    borderColor: colors.green,
+    color: colors.white,
+    backgroundColor: colors.green,
+  },
+};
+
 const Button = styled.button`
 
   /*
@@ -41,73 +69,46 @@ const Button = styled.button`
     vertical-align: initial;
   }
 
+  &:disabled {
+    &:hover {
+      box-shadow: none;
+      cursor: initial;
+    }
+  }
+
   // Specific style
-  ${props =>
-    props.color === 'primary' &&
+  ${({ color }) =>
+    color !== 'none' &&
     `
-      background-color: ${colors.blue};
-      color: ${colors.white};
-      border: 0;
+      background-color: ${buttonsColors[`${color}`].backgroundColor};
+      color: ${buttonsColors[`${color}`].color};
+      border: 1px solid ${buttonsColors[`${color}`].borderColor};
     `}
 
-  ${props =>
-    props.color === 'secondary' &&
-    `
-      border: 1px solid ${colors.blue};
-      color: ${colors.blue};
-      padding: 0 ${sizes.button.padding.small};
-      svg {
-        fill: ${colors.blue};
-        vertical-align: initial;
-      }
-    `}}
-
-  ${props =>
-    props.color === 'cancel' &&
-    `
-      border: 1px solid ${colors.brightGrey};
-      color: ${colors.brightGrey};
-      background-color: transparent;
-      :disabled:hover {
-        box-shadow: none;
-        cursor: initial;
-      }
-    `}}
-
-  ${props =>
-    props.color === 'delete' &&
-    `
-      border: 1px solid ${colors.orange};
-      background-color: ${colors.orange};
-      color: ${colors.white};
-      padding: 0 ${sizes.button.padding.small};
-      
-    `}
-
-  ${props =>
-    props.color === 'success' &&
-    `
-      min-width: ${sizes.button.minWidth.small};
-      border: 1px solid ${colors.green};
-      background-color: ${colors.green};
-      color: ${colors.white};
-    `}
-
-  ${props =>
-    (props.color === 'success' ||
-      props.color === 'primary' ||
-      props.color === 'delete') &&
+  ${({ color }) =>
+    color !== 'cancel' &&
+    color !== 'none' &&
     `
       &:disabled {
         border: 1px solid ${colors.greyDisabledBkgd};
         background-color: ${colors.greyDisabledBkgd};
         color: ${colors.greyDisabledColor};
-        &:hover {
-          box-shadow: none;
-          cursor: initial;
-        }
       }
-    `};
+    `}
+
+  ${({ color }) =>
+    color === 'delete' &&
+    `
+      padding: 0 ${sizes.button.padding.small};
+      
+    `}
+
+  ${({ color }) =>
+    color === 'success' &&
+    `
+      min-width: ${sizes.button.minWidth.small};
+    `}
+
 `;
 
 Button.defaultProps = {
@@ -128,3 +129,4 @@ Button.propTypes = {
 };
 
 export default Button;
+export { buttonsColors };

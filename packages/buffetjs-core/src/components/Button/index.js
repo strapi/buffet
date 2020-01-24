@@ -7,16 +7,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { omit } from 'lodash';
-import { Button as StyledButton } from '@buffetjs/styles';
+import { Button as StyledButton, buttonsColors } from '@buffetjs/styles';
 import { Plus } from '@buffetjs/icons';
 import PrefixIcon from '../PrefixIcon';
 
 function Button(props) {
   const content = props.label ? props.label : props.children;
-  const { disabled } = props;
+  const { disabled, color } = props;
+
   const icon =
     props.icon === true ? (
-      <Plus height="11px" width="11px" />
+      <Plus
+        height="11px"
+        width="11px"
+        fill={`${buttonsColors[`${color}`].color}`}
+      />
     ) : (
       <PrefixIcon icon={props.icon} />
     );
@@ -40,7 +45,14 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.node,
-  color: PropTypes.string,
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'cancel',
+    'success',
+    'delete',
+    'none',
+  ]),
   disabled: PropTypes.bool,
   icon: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   label: PropTypes.string,

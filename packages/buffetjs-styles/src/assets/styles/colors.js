@@ -44,4 +44,5 @@ const colors = {
   greyDisabledBkgd: '#E9EAEB',
   greyDisabledColor: '#B4B6BA',
 };
+
 export default colors;
