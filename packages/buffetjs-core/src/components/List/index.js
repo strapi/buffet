@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { List as StyledList } from '@buffetjs/styles';
 
@@ -15,14 +15,18 @@ function List({ className, items, customRowComponent }) {
     <StyledList className={className}>
       <table>
         <tbody>
-          {items.map(item =>
-            customRowComponent ? (
-              <React.Fragment key={JSON.stringify(item)}>
-                {customRowComponent(item)}
-              </React.Fragment>
-            ) : (
-              <ListRow cells={item} key={JSON.stringify(item)} />
-            )
+          {useMemo(
+            () =>
+              items.map(item =>
+                customRowComponent ? (
+                  <Fragment key={JSON.stringify(item)}>
+                    {customRowComponent(item)}
+                  </Fragment>
+                ) : (
+                  <ListRow cells={item} key={JSON.stringify(item)} />
+                )
+              ),
+            [customRowComponent, items]
           )}
         </tbody>
       </table>
