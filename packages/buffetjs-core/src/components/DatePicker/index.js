@@ -21,18 +21,18 @@ class DatePicker extends React.PureComponent {
   timer = null;
 
   componentDidMount() {
-    const { value, withDefaultValue } = this.props;
+    const { value, withDefaultValue, displayFormat } = this.props;
     let date = null;
     let displayedDate = '';
 
     if (withDefaultValue && !value) {
       date = moment();
-      displayedDate = date.format('MM/DD/YYYY');
+      displayedDate = date.format(displayFormat);
     }
 
     if (!!value && moment(value).isValid()) {
       date = value._isAMomentObject === true ? value : moment(value);
-      displayedDate = date.format('MM/DD/YYYY');
+      displayedDate = date.format(displayFormat);
     }
 
     this.setState({ date, displayedDate });
@@ -49,11 +49,11 @@ class DatePicker extends React.PureComponent {
   };
 
   handleDateChange = date => {
-    const { name, onChange } = this.props;
+    const { name, onChange, displayFormat } = this.props;
 
     if (moment(date).isValid()) {
       this.setState(
-        { date, displayedDate: date.format('MM/DD/YYYY'), visible: true },
+        { date, displayedDate: date.format(displayFormat), visible: true },
         () => onChange({ target: { name, type: 'date', value: date } })
       );
     }
