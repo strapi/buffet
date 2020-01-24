@@ -144,7 +144,7 @@ function TimePicker(props) {
     if (isOpen && listRefs[currentRef]) {
       listRef.current.scrollTop = listRefs[currentRef].current.offsetTop;
     }
-  }, [isOpen, currentTimeSelected]);
+  }, [isOpen, currentTimeSelected, listRefs]);
 
   // Custom hook to close the TimeList
   useEventListener(

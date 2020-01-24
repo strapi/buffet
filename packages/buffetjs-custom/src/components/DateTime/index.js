@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
@@ -52,16 +52,20 @@ function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
     currentDate.set(timeObj);
     setDate(currentDate);
   };
-  const setDate = (date, time) => {
-    const newDate = time || date;
-    date.set(getTimeObject(newDate));
-    date.toISOString();
-    date.format();
 
-    setTimestamp(date);
+  const setDate = useMemo(
+    () => (date, time) => {
+      const newDate = time || date;
+      date.set(getTimeObject(newDate));
+      date.toISOString();
+      date.format();
 
-    onChange({ target: { name, type: 'datetime', value: date } });
-  };
+      setTimestamp(date);
+
+      onChange({ target: { name, type: 'datetime', value: date } });
+    },
+    [name, onChange]
+  );
 
   useEffect(() => {
     if (!!value && moment(value).isValid()) {
@@ -70,7 +74,7 @@ function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
       setDate(newDate);
     }
     setIsInit(true);
-  }, []);
+  }, [setDate, value]);
 
   if (!isInit) {
     return null;
