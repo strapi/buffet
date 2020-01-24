@@ -5,7 +5,13 @@
     "prettier/react",
     "plugin:jest/recommended"
   ],
-  "plugins": ["prettier", "jest", "react", "jsx-a11y"],
+  "plugins": [
+    "prettier",
+    "jest",
+    "react",
+    "jsx-a11y",
+    "react-hooks",
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -69,7 +75,8 @@
     "react/jsx-first-prop-new-line": [2, "multiline"],
     "react/jsx-no-target-blank": 0,
     "react/jsx-uses-vars": 2,
-    "react/sort-prop-types": 2
+    "react/sort-prop-types": 2,
+    "react-hooks/exhaustive-deps": "error"
   },
   "globals": {
     "window": true,
