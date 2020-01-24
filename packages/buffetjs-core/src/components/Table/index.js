@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useMemo, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { Table as StyledTable, TableRowEmpty } from '@buffetjs/styles';
@@ -34,9 +34,16 @@ function Table({
     colSpan += 1;
   }
 
-  const areAllEntriesSelected =
-    rows.length > 0 && rows.some(row => row._isChecked === true);
-  const shouldDisplayEmptyRow = rows.length === 0;
+  const checkedRows = useMemo(
+    () => rows.filter(row => row._isChecked === true),
+    [rows]
+  );
+
+  const rowsLength = rows.length;
+  const checkedLength = checkedRows.length;
+  const areSomeRowsSelected = rowsLength > 0 && checkedLength > 0;
+  const areAllRowsSelected = rowsLength === checkedLength;
+  const shouldDisplayEmptyRow = rowsLength === 0;
 
   return (
     <StyledTable className={className}>
@@ -45,19 +52,18 @@ function Table({
           headers={headers}
           onChangeSort={onChangeSort}
           onSelectAll={onSelectAll}
-          rows={rows}
+          areAllRowsSelected={areAllRowsSelected}
+          areSomeRowsSelected={areSomeRowsSelected}
           shouldAddTd={rowLinks.length > 0}
           sortBy={sortBy}
           sortOrder={sortOrder}
           withBulkAction={withBulkAction}
         />
         <tbody>
-          {withBulkAction && areAllEntriesSelected && (
+          {withBulkAction && areSomeRowsSelected && (
             <ActionCollapse
               colSpan={colSpan}
-              numberOfSelectedEntries={
-                rows.filter(row => row._isChecked === true).length
-              }
+              numberOfSelectedEntries={checkedRows.length}
               {...bulkActionProps}
             />
           )}
@@ -67,33 +73,31 @@ function Table({
             </TableRowEmpty>
           )}
           {!shouldDisplayEmptyRow &&
-            rows.map((row, index) => {
-              const key = row.id || `key${index}`;
+          rows.map((row, index) => {
+            const key = row.id || `key${index}`;
 
-              if (customRow) {
-                const Row = customRow;
-
-                return (
-                  <React.Fragment key={JSON.stringify(row)}>
-                    <Row row={row} headers={headers} onSelect={onSelect} />
-                  </React.Fragment>
-                );
-              }
+            if (customRow) {
+              const Row = customRow;
 
               return (
-                <TableRow
-                  key={key}
-                  headers={headers}
-                  onClick={onClickRow}
-                  onSelect={() => {
-                    onSelect(row, index);
-                  }}
-                  row={row}
-                  rowLinks={rowLinks}
-                  withBulkAction={withBulkAction}
-                />
+                <Fragment key={JSON.stringify(row)}>
+                  <Row row={row} headers={headers} onSelect={onSelect} />
+                </Fragment>
               );
-            })}
+            }
+
+            return (
+              <TableRow
+                key={key}
+                headers={headers}
+                onClick={onClickRow}
+                onSelect={() => onSelect(row, index)}
+                row={row}
+                rowLinks={rowLinks}
+                withBulkAction={withBulkAction}
+              />
+            );
+          })}
         </tbody>
       </table>
     </StyledTable>

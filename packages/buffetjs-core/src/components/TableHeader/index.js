@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { Checkbox } from '@buffetjs/styles';
@@ -15,16 +15,13 @@ function TableHeader({
   headers,
   onChangeSort,
   onSelectAll,
-  rows,
   shouldAddTd,
   sortBy,
   sortOrder,
   withBulkAction,
+  areAllRowsSelected,
+  areSomeRowsSelected,
 }) {
-  const checked = rows.length > 0 && rows.every(row => row._isChecked === true);
-  const shouldDisplayNotChecked =
-    rows.some(row => row._isChecked === true) && !checked;
-
   return (
     <thead>
       <tr>
@@ -32,39 +29,43 @@ function TableHeader({
           <td className="checkCell">
             <Checkbox
               onChange={onSelectAll}
-              checked={checked}
-              shouldDisplayNotChecked={shouldDisplayNotChecked}
+              checked={areAllRowsSelected}
+              shouldDisplayNotChecked={areSomeRowsSelected}
             />
           </td>
         )}
-        {headers.map(header => {
-          const { isSortEnabled, name, value } = header;
-          const shouldDisplaySort = isSortEnabled && sortBy === value;
-          const firstElementThatCanBeSorted = get(
-            headers.filter(h => h.isSortEnabled),
-            [0, 'value'],
-            null
-          );
+        {useMemo(
+          () =>
+            headers.map(header => {
+              const { isSortEnabled, name, value } = header;
+              const shouldDisplaySort = isSortEnabled && sortBy === value;
+              const firstElementThatCanBeSorted = get(
+                headers.filter(h => h.isSortEnabled),
+                [0, 'value'],
+                null
+              );
 
-          return (
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-            <td
-              key={value}
-              onClick={() => {
-                onChangeSort({
-                  sortBy: value,
-                  firstElementThatCanBeSorted,
-                  isSortEnabled,
-                });
-              }}
-            >
-              <p className={isSortEnabled ? 'clickable' : ''}>
-                {name}
-                {shouldDisplaySort && <Icon icon={sortOrder || 'asc'} />}
-              </p>
-            </td>
-          );
-        })}
+              return (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                <td
+                  key={value}
+                  onClick={() => {
+                    onChangeSort({
+                      sortBy: value,
+                      firstElementThatCanBeSorted,
+                      isSortEnabled,
+                    });
+                  }}
+                >
+                  <p className={isSortEnabled ? 'clickable' : ''}>
+                    {name}
+                    {shouldDisplaySort && <Icon icon={sortOrder || 'asc'} />}
+                  </p>
+                </td>
+              );
+            }),
+          [headers, sortBy, sortOrder, onChangeSort]
+        )}
         {shouldAddTd && <td />}
       </tr>
     </thead>
@@ -72,10 +73,11 @@ function TableHeader({
 }
 
 TableHeader.defaultProps = {
+  areAllRowsSelected: false,
+  areSomeRowsSelected: false,
   headers: [],
   onChangeSort: () => {},
   onSelectAll: () => {},
-  rows: [],
   shouldAddTd: false,
   sortBy: null,
   sortOrder: 'asc',
@@ -83,6 +85,8 @@ TableHeader.defaultProps = {
 };
 
 TableHeader.propTypes = {
+  areAllRowsSelected: PropTypes.bool,
+  areSomeRowsSelected: PropTypes.bool,
   headers: PropTypes.arrayOf(
     PropTypes.shape({
       isSortEnabled: PropTypes.bool,
@@ -92,7 +96,6 @@ TableHeader.propTypes = {
   ),
   onChangeSort: PropTypes.func,
   onSelectAll: PropTypes.func,
-  rows: PropTypes.instanceOf(Array),
   shouldAddTd: PropTypes.bool,
   sortBy: PropTypes.string,
   sortOrder: PropTypes.string,

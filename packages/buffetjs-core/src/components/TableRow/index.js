@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { isObject } from 'lodash';
 import { Checkbox, Links as StyledLinks } from '@buffetjs/styles';
@@ -18,7 +18,21 @@ function TableRow({
   rowLinks,
   withBulkAction,
 }) {
-  const displayedCells = headers.map(header => header.value);
+  const displayedCells = useMemo(
+    () =>
+      headers
+        .map(({ value }) => value)
+        .map(cellName => {
+          const displayedValue = !isObject(row[cellName]) ? row[cellName] : '-';
+
+          return (
+            <td key={cellName} className={`${cellName}-cell`}>
+              <p>{displayedValue || '-'}</p>
+            </td>
+          );
+        }),
+    [headers, row]
+  );
 
   return (
     <tr
@@ -39,15 +53,7 @@ function TableRow({
           />
         </td>
       )}
-      {displayedCells.map(cellName => {
-        const displayedValue = !isObject(row[cellName]) ? row[cellName] : '-';
-
-        return (
-          <td key={cellName} className={`${cellName}-cell`}>
-            <p>{displayedValue || '-'}</p>
-          </td>
-        );
-      })}
+      {displayedCells}
       {rowLinks.length > 0 && (
         <td>
           <div style={{ width: 'fit-content', float: 'right' }}>
