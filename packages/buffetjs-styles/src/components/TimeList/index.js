@@ -14,7 +14,7 @@ const TimeList = styled.ul`
   font-family: 'Lato';
   font-weight: 600;
   font-size: ${sizes.input.fontSize};
-  color: ${colors.greyIconColor};
+  color: ${colors.greyPlaceholder};
   border: 1px solid transparent;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -51,7 +51,7 @@ const TimeList = styled.ul`
       cursor: pointer;
       &:checked + label,
       &:hover + label {
-        background-color: ${colors.greyIconBkgd};
+        background-color: ${colors.lightGrey};
       }
     }
     label {
