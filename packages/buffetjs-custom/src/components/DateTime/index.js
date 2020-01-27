@@ -37,7 +37,15 @@ export const getTimeObject = time => {
   return timeObj;
 };
 
-function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
+function DateTime({
+  disabled,
+  name,
+  onChange,
+  value,
+  tabIndex,
+  step,
+  ...rest
+}) {
   const [timestamp, setTimestamp] = useState('');
   const [isInit, setIsInit] = useState(false);
   const setTime = time => {
@@ -97,6 +105,7 @@ function DateTime({ disabled, name, onChange, value, tabIndex, ...rest }) {
         seconds={false}
         tabIndex={tabIndex}
         value={getTimeString(timestamp)}
+        step={step}
       />
     </Wrapper>
   );
@@ -111,6 +120,7 @@ DateTime.defaultProps = {
   tabIndex: '0',
   value: null,
   withDefaultValue: false,
+  step: 30,
 };
 
 DateTime.propTypes = {
@@ -120,6 +130,7 @@ DateTime.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  step: PropTypes.number,
   tabIndex: PropTypes.string,
   value: PropTypes.oneOfType([
     momentPropTypes.momentObj,
