@@ -22,6 +22,7 @@ function DateTimeStory() {
             setValue(value);
           }}
           value={state}
+          step={15}
         />
       </div>
       <Pre>
