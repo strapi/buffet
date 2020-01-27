@@ -20,7 +20,6 @@ const Story = () => {
     >
       <div style={{ marginBottom: 23 }}>
         <Button
-          primary
           type="button"
           onClick={() => setEnableActiveKeysListerner(prev => !prev)}
         >
@@ -56,7 +55,6 @@ const Example = () => {
   return (
     <>
       <Button
-        primary
         type="button"
         onClick={() => setEnableActiveKeysListerner(prev => !prev)}
       >

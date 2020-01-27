@@ -24,11 +24,7 @@ const Story = () => {
       description="Hook to listen to user's events."
     >
       <div style={{ marginBottom: 23 }}>
-        <Button
-          primary
-          type="button"
-          onClick={() => setEnableHook(prev => !prev)}
-        >
+        <Button type="button" onClick={() => setEnableHook(prev => !prev)}>
           {enableHook ? 'Disable' : 'Enable'} hook
         </Button>
         {enableHook && (
@@ -58,7 +54,6 @@ const Example = () => {
   return (
     <>
       <Button
-        primary
         type="button"
         onClick={() => setEnableHook(prev => !prev)}
       >

@@ -12,7 +12,7 @@ const Story = () => {
   useShortcutEffect(
     'tab',
     () => {
-      alert('You pressed a key');
+      console.log('You pressed a key');
     },
     enableHook
   );
@@ -23,11 +23,7 @@ const Story = () => {
       description="Hook to quickly add shortcut effect."
     >
       <div style={{ marginBottom: 23 }}>
-        <Button
-          primary
-          type="button"
-          onClick={() => setEnableHook(prev => !prev)}
-        >
+        <Button type="button" onClick={() => setEnableHook(prev => !prev)}>
           {enableHook ? 'Disable' : 'Enable'} hook
         </Button>
         {enableHook && (
@@ -59,7 +55,6 @@ const Example = () => {
   return (
     <>
       <Button
-        primary
         type="button"
         onClick={() => setEnableHook(prev => !prev)}
       >
