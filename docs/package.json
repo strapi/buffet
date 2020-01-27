@@ -15,6 +15,7 @@
   "dependencies": {
     "@buffetjs/core": "2.1.0",
     "@buffetjs/custom": "2.1.0",
+    "@buffetjs/hooks": "2.1.0",
     "@buffetjs/icons": "2.0.0",
     "@buffetjs/styles": "2.0.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
