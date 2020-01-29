@@ -28,10 +28,10 @@ const Header = styled.div`
   .sticky {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 30.6rem;
     z-index: 1050;
     background-color: white;
-    width: calc(100vw - 32.1rem);
+    width: calc(100vw - 30.6rem);
     padding-right: 15px;
     height: 60px;
     display: flex;
@@ -39,6 +39,9 @@ const Header = styled.div`
       width: 100%;
       margin: auto;
       margin-top: 16px;
+      .header-title p {
+        display: none;
+      }
       > div > div {
         padding-top: 0;
         h1 {
