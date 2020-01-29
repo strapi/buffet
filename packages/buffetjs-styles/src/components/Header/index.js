@@ -31,15 +31,22 @@ const Header = styled.div`
     right: 0;
     z-index: 1050;
     background-color: white;
-    width: calc(100vw - 30.5rem);
+    width: calc(100vw - 32.1rem);
     padding-right: 15px;
     height: 60px;
     display: flex;
     .row {
       width: 100%;
       margin: auto;
+      margin-top: 16px;
       > div > div {
         padding-top: 0;
+        h1 {
+          font-size: 2rem;
+          svg {
+            margin-top: 8px;
+          }
+        }
         button {
           margin-top: auto;
           margin-bottom: auto;
