@@ -30,10 +30,10 @@ exports[`<Header /> snapshot 1`] = `
 .c0 .sticky {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 30.6rem;
   z-index: 1050;
   background-color: white;
-  width: calc(100vw - 30.5rem);
+  width: calc(100vw - 30.6rem);
   padding-right: 15px;
   height: 60px;
   display: -webkit-box;
@@ -45,10 +45,23 @@ exports[`<Header /> snapshot 1`] = `
 .c0 .sticky .row {
   width: 100%;
   margin: auto;
+  margin-top: 16px;
+}
+
+.c0 .sticky .row .header-title p {
+  display: none;
 }
 
 .c0 .sticky .row > div > div {
   padding-top: 0;
+}
+
+.c0 .sticky .row > div > div h1 {
+  font-size: 2rem;
+}
+
+.c0 .sticky .row > div > div h1 svg {
+  margin-top: 8px;
 }
 
 .c0 .sticky .row > div > div button {
