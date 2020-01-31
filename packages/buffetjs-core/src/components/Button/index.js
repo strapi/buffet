@@ -15,11 +15,7 @@ function Button({ children, color, disabled, icon, label, ...rest }) {
 
   const img =
     icon === true ? (
-      <Plus
-        height="11px"
-        width="11px"
-        fill={`${colors.button[`${color}`].color}`}
-      />
+      <Plus height="11px" width="11px" fill={`${colors.button[color].color}`} />
     ) : (
       <PrefixIcon icon={icon} />
     );

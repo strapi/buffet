@@ -41,25 +41,29 @@ const Button = styled.button`
     vertical-align: initial;
   }
 
-  &:disabled {
+  ${({ disabled }) =>
+    disabled &&
+    `
     &:hover {
       box-shadow: none;
       cursor: initial;
     }
-  }
+    `}
+
 
   // Specific style
   ${({ color }) =>
     color !== 'none' &&
     `
-      background-color: ${colors.button[`${color}`].backgroundColor};
-      border: 1px solid ${colors.button[`${color}`].borderColor};
-      color: ${colors.button[`${color}`].color};
+      background-color: ${colors.button[color].backgroundColor};
+      border: 1px solid ${colors.button[color].borderColor};
+      color: ${colors.button[color].color};
     `}
 
-  ${({ color }) =>
+  ${({ color, disabled }) =>
     color !== 'cancel' &&
     color !== 'none' &&
+    disabled &&
     `
       &:disabled {
         background-color: ${colors.button.disabled.backgroundColor};
@@ -85,6 +89,7 @@ const Button = styled.button`
 
 Button.defaultProps = {
   color: 'primary',
+  disabled: false,
   type: 'button',
 };
 
@@ -97,6 +102,7 @@ Button.propTypes = {
     'delete',
     'none',
   ]),
+  disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 
