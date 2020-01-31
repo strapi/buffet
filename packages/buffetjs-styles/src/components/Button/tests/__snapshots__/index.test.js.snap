@@ -37,20 +37,10 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   vertical-align: initial;
 }
 
-.c0:disabled:hover {
-  box-shadow: none;
-  cursor: initial;
-}
-
-.c0:disabled {
-  background-color: #E9EAEB;
-  border: 1px solid #B4B6BA;
-  color: #B4B6BA;
-}
-
 <button
   className="c0"
   color="primary"
+  disabled={false}
   type="button"
 />
 `;
@@ -92,20 +82,10 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   vertical-align: initial;
 }
 
-.c0:disabled:hover {
-  box-shadow: none;
-  cursor: initial;
-}
-
-.c0:disabled {
-  background-color: #E9EAEB;
-  border: 1px solid #B4B6BA;
-  color: #B4B6BA;
-}
-
 <button
   className="c0"
   color="primary"
+  disabled={false}
   type="button"
 />
 `;
@@ -147,20 +127,10 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   vertical-align: initial;
 }
 
-.c0:disabled:hover {
-  box-shadow: none;
-  cursor: initial;
-}
-
-.c0:disabled {
-  background-color: #E9EAEB;
-  border: 1px solid #B4B6BA;
-  color: #B4B6BA;
-}
-
 <button
   className="c0"
   color="primary"
+  disabled={false}
   type="button"
 />
 `;
