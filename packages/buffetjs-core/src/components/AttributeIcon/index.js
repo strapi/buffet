@@ -14,14 +14,15 @@ import {
   Password,
   Relation,
   RichText,
+  SingleType,
   Text,
   Uid,
 } from '@buffetjs/icons';
 import Div from './Div';
 
 const types = {
-  boolean: Bool,
   biginteger: NumberIcon,
+  boolean: Bool,
   component: Component,
   contentType: ContentType,
   date: Calendar,
@@ -31,8 +32,8 @@ const types = {
   email: Email,
   enum: Enumeration,
   enumeration: Enumeration,
-  files: Media,
   file: Media,
+  files: Media,
   float: NumberIcon,
   integer: NumberIcon,
   json: Json,
@@ -42,6 +43,7 @@ const types = {
   password: Password,
   relation: Relation,
   richtext: RichText,
+  singleType: SingleType,
   string: Text,
   text: Text,
   time: Calendar,
