@@ -41,76 +41,55 @@ const Button = styled.button`
     vertical-align: initial;
   }
 
-  // Specific style
-  ${props =>
-    props.color === 'primary' &&
+  ${({ disabled }) =>
+    disabled &&
     `
-      background-color: ${colors.blue};
-      color: ${colors.white};
-      border: 0;
+    &:hover {
+      box-shadow: none;
+      cursor: initial;
+    }
     `}
 
-  ${props =>
-    props.color === 'secondary' &&
-    `
-      border: 1px solid ${colors.blue};
-      color: ${colors.blue};
-      padding: 0 ${sizes.button.padding.small};
-      svg {
-        fill: ${colors.blue};
-      }
-    `}}
 
-  ${props =>
-    props.color === 'cancel' &&
+  // Specific style
+  ${({ color }) =>
+    color !== 'none' &&
     `
-      border: 1px solid ${colors.brightGrey};
-      color: ${colors.brightGrey};
-      background-color: transparent;
-      :disabled:hover {
-        box-shadow: none;
-        cursor: initial;
-      }
-    `}}
+      background-color: ${colors.button[color].backgroundColor};
+      border: 1px solid ${colors.button[color].borderColor};
+      color: ${colors.button[color].color};
+    `}
 
-  ${props =>
-    props.color === 'delete' &&
+  ${({ color, disabled }) =>
+    color !== 'cancel' &&
+    color !== 'none' &&
+    disabled &&
     `
-      border: 1px solid ${colors.orange};
-      background-color: ${colors.orange};
-      color: ${colors.white};
+      &:disabled {
+        background-color: ${colors.button.disabled.backgroundColor};
+        border: 1px solid ${colors.button.disabled.borderColor};
+        color: ${colors.button.disabled.color};
+      }
+    `}
+
+  ${({ color }) =>
+    color === 'delete' &&
+    `
       padding: 0 ${sizes.button.padding.small};
       
     `}
 
-  ${props =>
-    props.color === 'success' &&
+  ${({ color }) =>
+    color === 'success' &&
     `
       min-width: ${sizes.button.minWidth.small};
-      border: 1px solid ${colors.green};
-      background-color: ${colors.green};
-      color: ${colors.white};
     `}
 
-  ${props =>
-    (props.color === 'success' ||
-      props.color === 'primary' ||
-      props.color === 'delete') &&
-    `
-      &:disabled {
-        border: 1px solid ${colors.greyDisabledBkgd};
-        background-color: ${colors.greyDisabledBkgd};
-        color: ${colors.greyDisabledColor};
-        &:hover {
-          box-shadow: none;
-          cursor: initial;
-        }
-      }
-    `};
 `;
 
 Button.defaultProps = {
   color: 'primary',
+  disabled: false,
   type: 'button',
 };
 
@@ -123,6 +102,7 @@ Button.propTypes = {
     'delete',
     'none',
   ]),
+  disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 

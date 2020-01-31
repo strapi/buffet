@@ -30,13 +30,13 @@ function HeaderStory() {
 
   const actions = [
     {
-      title: 'Cancel',
+      label: 'Cancel',
       onClick: () => alert('Cancel button clicked'),
       color: 'cancel',
       type: 'button',
     },
     {
-      title: 'Save',
+      label: 'Save',
       onClick: () => alert('Save button clicked'),
       color: 'success',
       type: 'submit',
