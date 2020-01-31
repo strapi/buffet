@@ -19,6 +19,7 @@ describe('<Textarea />', () => {
     const tree = renderer
       .create(<Textarea placeholder="Write a short description" />)
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 
@@ -26,6 +27,7 @@ describe('<Textarea />', () => {
     const tree = renderer
       .create(<Textarea value="Short description" />)
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });
