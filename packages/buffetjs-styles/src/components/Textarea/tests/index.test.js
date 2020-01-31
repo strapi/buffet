@@ -17,7 +17,7 @@ describe('<Textarea />', () => {
 
   it('should match the snapshot when empty', () => {
     const tree = renderer
-      .create(<Textarea placeolder="Write a short description" />)
+      .create(<Textarea placeholder="Write a short description" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
