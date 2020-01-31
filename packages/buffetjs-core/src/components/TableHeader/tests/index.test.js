@@ -8,7 +8,8 @@ describe('<TableHeader />', () => {
   describe('Checkbox behaviour', () => {
     it('Should display the check sign if all rows are selected (shouldDisplayNotChecked to false and checked to true)', () => {
       const props = {
-        rows: [{ _isChecked: true }, { _isChecked: true }],
+        areAllRowsSelected: true,
+        areSomeRowsSelected: false,
         withBulkAction: true,
       };
 
@@ -28,7 +29,8 @@ describe('<TableHeader />', () => {
     it('Should display the uncheck sign if not all the rows are selected (shouldDisplayNotChecked to true and checked to false)', () => {
       const props = {
         withBulkAction: true,
-        rows: [{ _isChecked: true }, { _isChecked: false }],
+        areAllRowsSelected: false,
+        areSomeRowsSelected: true,
       };
 
       const renderedComponent = mount(
@@ -47,7 +49,8 @@ describe('<TableHeader />', () => {
     it('Should display nothing if none of the rows are selected (all props to false)', () => {
       const props = {
         withBulkAction: true,
-        rows: [{ _isChecked: false }, { _isChecked: false }],
+        areAllRowsSelected: false,
+        areSomeRowsSelected: false,
       };
 
       const renderedComponent = mount(
@@ -63,10 +66,11 @@ describe('<TableHeader />', () => {
       expect(shouldDisplayNotChecked).toBeFalsy();
     });
 
-    it('Should display nothing if there is no rows', () => {
+    it('Should display nothing if there is no rows selected', () => {
       const props = {
         withBulkAction: true,
-        rows: [],
+        areAllRowsSelected: false,
+        areSomeRowsSelected: false,
       };
 
       const renderedComponent = mount(
