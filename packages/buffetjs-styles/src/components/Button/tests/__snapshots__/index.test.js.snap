@@ -12,8 +12,8 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   outline: 0;
   background-color: #ffffff;
   background-color: #007EFF;
-  color: #ffffff;
   border: 1px solid #007EFF;
+  color: #ffffff;
 }
 
 .c0:hover {
@@ -43,8 +43,8 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
 }
 
 .c0:disabled {
-  border: 1px solid #E9EAEB;
   background-color: #E9EAEB;
+  border: 1px solid #B4B6BA;
   color: #B4B6BA;
 }
 
@@ -67,8 +67,8 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   outline: 0;
   background-color: #ffffff;
   background-color: #007EFF;
-  color: #ffffff;
   border: 1px solid #007EFF;
+  color: #ffffff;
 }
 
 .c0:hover {
@@ -98,8 +98,8 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
 }
 
 .c0:disabled {
-  border: 1px solid #E9EAEB;
   background-color: #E9EAEB;
+  border: 1px solid #B4B6BA;
   color: #B4B6BA;
 }
 
@@ -122,8 +122,8 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   outline: 0;
   background-color: #ffffff;
   background-color: #007EFF;
-  color: #ffffff;
   border: 1px solid #007EFF;
+  color: #ffffff;
 }
 
 .c0:hover {
@@ -153,8 +153,8 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 }
 
 .c0:disabled {
-  border: 1px solid #E9EAEB;
   background-color: #E9EAEB;
+  border: 1px solid #B4B6BA;
   color: #B4B6BA;
 }
 
