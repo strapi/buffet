@@ -11,7 +11,7 @@ import sizes from '../../assets/styles/sizes';
 const StyledTextarea = styled.textarea`
   width: 100%;
   height: 19.1rem;
-  padding: calc(${sizes.input.padding}*0.6) ${sizes.input.padding};
+  padding: ${sizes.textarea.padding} ${sizes.input.padding};
   font-weight: ${sizes.input.fontWeight};
   font-size: ${sizes.input.fontSize};
   cursor: pointer;

@@ -29,6 +29,9 @@ const sizes = {
     width: '14px',
     fontWeight: 100,
   },
+  textarea: {
+    padding: '0.6rem',
+  },
   timepicker: {
     list: {
       height: '144px',
