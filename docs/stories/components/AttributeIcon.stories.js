@@ -22,9 +22,9 @@ function AttributeIconStory() {
       >
         {[
           'boolean',
-          'date',
           'component',
           'contentType',
+          'date',
           'dynamiczone',
           'email',
           'enum',
@@ -34,6 +34,7 @@ function AttributeIconStory() {
           'password',
           'relation',
           'richtext',
+          'singleType',
           'text',
           'uid',
         ].map(attr => (
@@ -54,9 +55,9 @@ const Example = () => (
     >
       {[
         'boolean',
-        'date',
         'component',
         'contentType',
+        'date',
         'dynamiczone',
         'email',
         'enum',
@@ -66,6 +67,7 @@ const Example = () => (
         'password',
         'relation',
         'richtext',
+        'singleType',
         'text',
         'uid',
       ].map(attr => (

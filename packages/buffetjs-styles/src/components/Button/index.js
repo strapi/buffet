@@ -10,34 +10,6 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
 
-const buttonsColors = {
-  primary: {
-    borderColor: colors.blue,
-    color: colors.white,
-    backgroundColor: colors.blue,
-  },
-  secondary: {
-    borderColor: colors.blue,
-    color: colors.blue,
-    backgroundColor: colors.white,
-  },
-  cancel: {
-    borderColor: colors.brightGrey,
-    color: colors.brightGrey,
-    backgroundColor: 'transparent',
-  },
-  delete: {
-    borderColor: colors.orange,
-    color: colors.white,
-    backgroundColor: colors.orange,
-  },
-  success: {
-    borderColor: colors.green,
-    color: colors.white,
-    backgroundColor: colors.green,
-  },
-};
-
 const Button = styled.button`
 
   /*
@@ -69,30 +41,34 @@ const Button = styled.button`
     vertical-align: initial;
   }
 
-  &:disabled {
+  ${({ disabled }) =>
+    disabled &&
+    `
     &:hover {
       box-shadow: none;
       cursor: initial;
     }
-  }
+    `}
+
 
   // Specific style
   ${({ color }) =>
     color !== 'none' &&
     `
-      background-color: ${buttonsColors[`${color}`].backgroundColor};
-      color: ${buttonsColors[`${color}`].color};
-      border: 1px solid ${buttonsColors[`${color}`].borderColor};
+      background-color: ${colors.button[color].backgroundColor};
+      border: 1px solid ${colors.button[color].borderColor};
+      color: ${colors.button[color].color};
     `}
 
-  ${({ color }) =>
+  ${({ color, disabled }) =>
     color !== 'cancel' &&
     color !== 'none' &&
+    disabled &&
     `
       &:disabled {
-        border: 1px solid ${colors.greyDisabledBkgd};
-        background-color: ${colors.greyDisabledBkgd};
-        color: ${colors.greyDisabledColor};
+        background-color: ${colors.button.disabled.backgroundColor};
+        border: 1px solid ${colors.button.disabled.borderColor};
+        color: ${colors.button.disabled.color};
       }
     `}
 
@@ -113,6 +89,7 @@ const Button = styled.button`
 
 Button.defaultProps = {
   color: 'primary',
+  disabled: false,
   type: 'button',
 };
 
@@ -125,8 +102,8 @@ Button.propTypes = {
     'delete',
     'none',
   ]),
+  disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 
 export default Button;
-export { buttonsColors };
