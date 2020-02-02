@@ -21,6 +21,7 @@ function ButtonStory() {
     cancel: 'cancel',
     success: 'success',
     delete: 'delete',
+    none: 'none',
   };
 
   const label = text('Title', 'Save');
@@ -104,6 +105,11 @@ function Example() {
               color="secondary"
               icon={<FontAwesomeIcon icon={faBaseballBall} />}
             >
+              Text
+            </Button>
+          </div>
+          <div className="btn-wrapper">
+            <Button type="submit" color="none">
               Text
             </Button>
           </div>

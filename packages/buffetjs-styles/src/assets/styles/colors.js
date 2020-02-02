@@ -41,7 +41,38 @@ const colors = {
   greyLink: '#F5F5F5',
 
   // Specific to button
-  greyDisabledBkgd: '#E9EAEB',
-  greyDisabledColor: '#B4B6BA',
+  button: {
+    primary: {
+      borderColor: '#007EFF',
+      color: '#ffffff',
+      backgroundColor: '#007EFF',
+    },
+    secondary: {
+      borderColor: '#007EFF',
+      color: '#007EFF',
+      backgroundColor: '#ffffff',
+    },
+    cancel: {
+      borderColor: '#9ea7b8',
+      color: '#9ea7b8',
+      backgroundColor: 'transparent',
+    },
+    delete: {
+      borderColor: '#F64D0A',
+      color: '#ffffff',
+      backgroundColor: '#F64D0A',
+    },
+    success: {
+      borderColor: '#6DBB1A',
+      color: '#ffffff',
+      backgroundColor: '#6DBB1A',
+    },
+    disabled: {
+      borderColor: '#B4B6BA',
+      color: '#B4B6BA',
+      backgroundColor: '#E9EAEB',
+    },
+  },
 };
+
 export default colors;

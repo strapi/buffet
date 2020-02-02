@@ -20,6 +20,7 @@ export { default as Plus } from './components/Plus';
 export { default as Relation } from './components/Relation';
 export { default as Remove } from './components/Remove';
 export { default as RichText } from './components/RichText';
+export { default as SingleType } from './components/SingleType';
 export { default as Success } from './components/Success';
 export { default as Text } from './components/Text';
 export { default as Uid } from './components/Uid';

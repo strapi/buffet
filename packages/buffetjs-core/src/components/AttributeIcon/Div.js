@@ -48,6 +48,8 @@ const Div = styled.div`
         return '#1c5de7';
       case 'richtext':
         return '#ff9200';
+      case 'singleType':
+        return '#F4A7B4';
       case 'uid':
         return '#c3814f';
       default:
