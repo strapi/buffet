@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textarea /> should match the snapshot when empty 1`] = `
+<textarea
+  className="sc-bdVaJa gcTGoK"
+  placeholder="Write a short description"
+/>
+`;
+
+exports[`<Textarea /> should match the snapshot when not empty 1`] = `
+<textarea
+  className="sc-bdVaJa gcTGoK"
+  value="Short description"
+/>
+`;
