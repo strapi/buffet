@@ -18,7 +18,7 @@
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
     "import/no-extraneous-dependencies": [
-      "warning",
+      "warn",
       {
         "devDependencies": true,
         "optionalDependencies": true,
