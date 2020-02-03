@@ -14,12 +14,6 @@ const DatePicker = styled.div`
   position: relative;
   &.is-open {
     z-index: 9;
-    > div:last-of-type {
-      width: 305px;
-      min-height: 292px;
-      position: absolute;
-      background-color: white;
-    }
   }
   * {
     font-family: 'Lato';
