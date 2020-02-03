@@ -19,8 +19,8 @@ class DatePicker extends React.PureComponent {
   state = {
     date: null,
     displayedDate: '',
-    visible: false,
     isFocused: false,
+    visible: false,
   };
 
   timer = null;
@@ -80,7 +80,7 @@ class DatePicker extends React.PureComponent {
   handleDateClick = date => {
     this.handleDateChange(date);
 
-    this.setState({ visible: false, isFocused: false });
+    this.hideDatepicker();
   };
 
   handleOutsideClick = () => {
