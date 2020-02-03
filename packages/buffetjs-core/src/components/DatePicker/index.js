@@ -16,7 +16,12 @@ import { DatePicker as StyledDatepicker } from '@buffetjs/styles';
 import Input from '../InputText';
 
 class DatePicker extends React.PureComponent {
-  state = { date: null, displayedDate: '', isFocused: false, visible: false };
+  state = {
+    date: null,
+    displayedDate: '',
+    visible: false,
+    isFocused: false,
+  };
 
   timer = null;
 
@@ -38,13 +43,23 @@ class DatePicker extends React.PureComponent {
     this.setState({ date, displayedDate });
   }
 
+  getVisibleDate = () => {
+    const { date } = this.state;
+    const month = moment(date).month() + 1;
+    const year = moment(date).year();
+
+    return moment(`${month} ${year}`, 'MM YYYY');
+  };
+
   handleChange = ({ target }) => {
     this.setState({ displayedDate: target.value });
 
     clearTimeout(this.timer);
 
     this.timer = setTimeout(() => {
+      this.setState({ isFocused: false });
       this.handleDateChange(moment(target.value));
+      this.setState({ isFocused: true });
     }, this.props.wait);
   };
 
@@ -53,21 +68,23 @@ class DatePicker extends React.PureComponent {
 
     if (moment(date).isValid()) {
       this.setState(
-        { date, displayedDate: date.format('MM/DD/YYYY'), visible: true },
+        {
+          date,
+          displayedDate: date.format('MM/DD/YYYY'),
+        },
         () => onChange({ target: { name, type: 'date', value: date } })
       );
     }
   };
 
-  handleFocusChange = ({ focused }) => {
-    /* istanbul ignore next */
-    this.setState({ isFocused: focused });
+  handleDateClick = date => {
+    this.handleDateChange(date);
+
+    this.setState({ visible: false, isFocused: false });
   };
 
   handleOutsideClick = () => {
-    this.setState({
-      visible: false,
-    });
+    this.hideDatepicker();
   };
 
   handleTabClick = ({ keyCode, which }) => {
@@ -81,6 +98,14 @@ class DatePicker extends React.PureComponent {
   showDatepicker = () => {
     this.setState({
       visible: true,
+      isFocused: true,
+    });
+  };
+
+  hideDatepicker = () => {
+    this.setState({
+      visible: false,
+      isFocused: false,
     });
   };
 
@@ -119,17 +144,20 @@ class DatePicker extends React.PureComponent {
             tabIndex={tabIndex}
           />
         </div>
-        {visible && (
-          <DayPickerSingleDateController
-            date={date}
-            focused={isFocused}
-            numberOfMonths={1}
-            keepOpenOnDateSelect
-            onFocusChange={this.handleFocusChange}
-            onDateChange={this.handleDateChange}
-            onOutsideClick={this.handleOutsideClick}
-          />
-        )}
+        <div>
+          {isFocused && (
+            <DayPickerSingleDateController
+              date={date}
+              focused
+              numberOfMonths={1}
+              keepOpenOnDateSelect
+              onDateChange={this.handleDateClick}
+              onOutsideClick={this.handleOutsideClick}
+              initialVisibleMonth={this.getVisibleDate}
+              daySize={37}
+            />
+          )}
+        </div>
       </StyledDatepicker>
     );
   }

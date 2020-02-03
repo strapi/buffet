@@ -14,6 +14,12 @@ const DatePicker = styled.div`
   position: relative;
   &.is-open {
     z-index: 9;
+    > div:last-of-type {
+      width: 305px;
+      min-height: 292px;
+      position: absolute;
+      background-color: white;
+    }
   }
   * {
     font-family: 'Lato';
@@ -65,7 +71,7 @@ const DatePicker = styled.div`
     border-top: 1px solid #f9f9f9;
     margin-top: -10px;
     li {
-      padding-top: 5px;
+      padding-top: 6px;
       padding-bottom: 5px;
       small {
         font-size: 1.3rem;
@@ -85,6 +91,7 @@ const DatePicker = styled.div`
   }
   .CalendarMonth_caption {
     font-size: 1.3rem;
+    padding-bottom: 45px;
   }
   .DayPicker_transitionContainer {
     padding: 4px;
@@ -127,8 +134,9 @@ const DatePicker = styled.div`
     position: relative;
     cursor: pointer;
     width: 34px;
-    height: 28px;
+    height: 18px;
     font-size: 1.3rem;
+
     &,
     &.CalendarDay__selected,
     &.CalendarDay__selected:active,
