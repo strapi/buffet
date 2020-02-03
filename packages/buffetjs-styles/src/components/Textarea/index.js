@@ -16,7 +16,7 @@ const StyledTextarea = styled.textarea`
   font-size: ${sizes.input.fontSize};
   cursor: pointer;
   outline: 0;
-  border: 1px solid ${colors.lightGrey}
+  border: 1px solid ${colors.lightGrey};
   border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: ${colors.white};
