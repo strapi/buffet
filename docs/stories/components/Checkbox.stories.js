@@ -62,10 +62,7 @@ function CheckboxStory() {
         <ul>
           {Object.keys(checkboxes).map(current => {
             return (
-              <li
-                key={current}
-                style={{ marginBottom: 1, paddingTop: 18, paddingLeft: 15 }}
-              >
+              <li key={current} style={{ paddingTop: 18, paddingLeft: 15 }}>
                 <Checkbox
                   name={current}
                   message={current}
