@@ -41,8 +41,6 @@ function Datepicker({
     let date = null;
     let displayedDate = '';
 
-    console.log(value);
-
     if (withDefaultValue && !value) {
       date = moment();
       displayedDate = date.format('MM/DD/YYYY');
@@ -92,7 +90,6 @@ function Datepicker({
     if (moment(date).isValid()) {
       onChange({ target: { name, type: 'date', value: date } });
 
-      console.log(date);
       setState(prevState => ({
         ...prevState,
         date,
