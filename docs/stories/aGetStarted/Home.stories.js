@@ -34,15 +34,15 @@ function IntroStory() {
           <strong style={styles.strong}>Using yarn:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
-            yarn add @buffetjs/core @buffetjs/styles prop-types lodash react
-            react-dom styled-components
+            yarn add @buffetjs/core @buffetjs/hooks @buffetjs/styles prop-types
+            lodash react react-dom styled-components react-is
           </Bash>
           <span style={{ ...styles.spacer }} />
           <strong style={styles.strong}>Using npm:</strong>
           <span style={styles.spacerCode} />
           <Bash language="Bash">
-            npm install @buffetjs/core @buffetjs/styles prop-types lodash react
-            react-dom styled-components --save
+            npm install @buffetjs/core @buffetjs/hooks @buffetjs/styles
+            prop-types lodash react react-dom react-is styled-components --save
           </Bash>
         </section>
         <section>
