@@ -41,6 +41,8 @@ function Datepicker({
     let date = null;
     let displayedDate = '';
 
+    console.log(value);
+
     if (withDefaultValue && !value) {
       date = moment();
       displayedDate = date.format('MM/DD/YYYY');
@@ -89,6 +91,8 @@ function Datepicker({
   const handleDateChange = date => {
     if (moment(date).isValid()) {
       onChange({ target: { name, type: 'date', value: date } });
+
+      console.log(date);
       setState(prevState => ({
         ...prevState,
         date,
@@ -100,11 +104,11 @@ function Datepicker({
   const handleDateClick = date => {
     handleDateChange(date);
 
-    hideDatepicker();
+    toggleDatepicker();
   };
 
   const handleOutsideClick = () => {
-    hideDatepicker();
+    toggleDatepicker();
   };
 
   const handleTabClick = ({ keyCode, which }) => {
@@ -115,12 +119,12 @@ function Datepicker({
     }
   };
 
-  const showDatepicker = () => {
-    setState(prevState => ({ ...prevState, visible: true, isFocused: true }));
-  };
-
-  const hideDatepicker = () => {
-    setState(prevState => ({ ...prevState, visible: false, isFocused: false }));
+  const toggleDatepicker = () => {
+    setState(prevState => ({
+      ...prevState,
+      visible: !prevState.visible,
+      isFocused: !prevState.isFocused,
+    }));
   };
 
   return (
@@ -135,8 +139,7 @@ function Datepicker({
           readOnly={readOnly}
           onChange={handleChange}
           icon={<FontAwesomeIcon icon={faCalendarAlt} />}
-          onClick={showDatepicker}
-          onFocus={showDatepicker}
+          onClick={toggleDatepicker}
           onKeyDown={handleTabClick}
           tabIndex={tabIndex}
         />
