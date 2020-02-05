@@ -1,7 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import Checkbox from '../index';
 
@@ -16,13 +14,6 @@ const renderComponent = (props = defaultProps) =>
 describe('<Checkbox />', () => {
   it('should not crash', () => {
     renderComponent();
-  });
-
-  it('should render message if specified', () => {
-    const { getByText } = render(
-      <Checkbox {...defaultProps} message="label" />
-    );
-    expect(getByText('label')).toBeInTheDocument();
   });
 
   it('should send a boolean', () => {
