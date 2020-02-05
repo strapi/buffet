@@ -70,7 +70,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c0 .DayPicker_weekHeader li {
-  padding-top: 5px;
+  padding-top: 6px;
   padding-bottom: 5px;
 }
 
@@ -91,6 +91,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 
 .c0 .CalendarMonth_caption {
   font-size: 1.3rem;
+  padding-bottom: 45px;
 }
 
 .c0 .DayPicker_transitionContainer {
@@ -136,7 +137,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   position: relative;
   cursor: pointer;
   width: 34px;
-  height: 28px;
+  height: 18px;
   font-size: 1.3rem;
 }
 
