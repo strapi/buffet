@@ -4,3 +4,4 @@ node_modules/**
 OLD/**
 internals/**
 docs/**
+packages/**/node_modules/**

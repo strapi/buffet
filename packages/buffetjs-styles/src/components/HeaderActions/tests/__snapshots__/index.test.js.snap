@@ -14,7 +14,7 @@ exports[`<HeaderActions /> snapshot 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
-  padding-top: 1rem;
+  padding-top: 0.9rem;
 }
 
 .c0 > button {

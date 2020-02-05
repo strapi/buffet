@@ -10,7 +10,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 const Wrapper = styled.div`
-  padding-top: 9px;
+  padding-top: 10px;
   margin-bottom: 35px;
 
   .input-wrapper {
