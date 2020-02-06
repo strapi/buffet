@@ -56,20 +56,13 @@ function Datepicker({
 
   const getDateValue = () => {
     const { date, displayedDate, visible } = state;
-    let dateValue = date ? moment(date).format(displayFormat) : '';
+    let dateValue = date ? date.format(displayFormat) : '';
 
     if (visible) {
       dateValue = displayedDate;
     }
 
     return dateValue;
-  };
-
-  const getVisibleDate = date => {
-    const month = moment(date).month() + 1;
-    const year = moment(date).year();
-
-    return moment(`${month} ${year}`, 'MM YYYY');
   };
 
   const handleChange = ({ target }) => {
@@ -82,7 +75,7 @@ function Datepicker({
     }));
 
     timer = setTimeout(() => {
-      handleDateChange(moment(target.value));
+      handleDateChange(moment(target.value, 'MM/DD/YYYY'));
     }, wait);
   };
 
@@ -101,11 +94,11 @@ function Datepicker({
   const handleDateClick = date => {
     handleDateChange(date);
 
-    toggleDatepicker();
+    toggleDatepicker(false);
   };
 
   const handleOutsideClick = () => {
-    toggleDatepicker();
+    toggleDatepicker(false);
   };
 
   const handleTabClick = ({ keyCode, which }) => {
@@ -116,11 +109,11 @@ function Datepicker({
     }
   };
 
-  const toggleDatepicker = () => {
+  const toggleDatepicker = shown => {
     setState(prevState => ({
       ...prevState,
-      visible: !prevState.visible,
-      isFocused: !prevState.isFocused,
+      visible: shown,
+      isFocused: shown,
     }));
   };
 
@@ -136,7 +129,7 @@ function Datepicker({
           readOnly={readOnly}
           onChange={handleChange}
           icon={<FontAwesomeIcon icon={faCalendarAlt} />}
-          onClick={toggleDatepicker}
+          onClick={() => toggleDatepicker(true)}
           onKeyDown={handleTabClick}
           tabIndex={tabIndex}
         />
@@ -148,7 +141,6 @@ function Datepicker({
           numberOfMonths={1}
           onDateChange={handleDateClick}
           onOutsideClick={handleOutsideClick}
-          initialVisibleMonth={() => getVisibleDate(state.date)}
           daySize={37}
           transitionDuration={0}
         />
