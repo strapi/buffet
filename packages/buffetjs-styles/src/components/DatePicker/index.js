@@ -86,6 +86,7 @@ const DatePicker = styled.div`
   .CalendarMonth_caption {
     font-size: 1.3rem;
     padding-bottom: 45px;
+    padding-top: 23px;
   }
   .DayPicker_transitionContainer {
     padding: 4px;
