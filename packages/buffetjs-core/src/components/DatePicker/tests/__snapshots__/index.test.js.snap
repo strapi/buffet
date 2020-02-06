@@ -92,6 +92,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 .c0 .CalendarMonth_caption {
   font-size: 1.3rem;
   padding-bottom: 45px;
+  padding-top: 23px;
 }
 
 .c0 .DayPicker_transitionContainer {
