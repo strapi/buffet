@@ -48,6 +48,11 @@ const sizes = {
       height: '36px',
     },
   },
+  fontWeight: {
+    regular: 400,
+    semiBold: 500,
+    bold: 600,
+  },
 };
 
 export default sizes;
