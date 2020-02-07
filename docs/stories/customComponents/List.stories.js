@@ -9,7 +9,7 @@ import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTrash,
+  faTrashAlt,
   faPencilAlt,
   faCube,
 } from '@fortawesome/free-solid-svg-icons';
@@ -104,7 +104,7 @@ function ListStory() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -120,7 +120,7 @@ function ListStory() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -229,7 +229,7 @@ import React from 'react';
 import { List } from '@buffetjs/custom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTrash,
+  faTrashAlt,
   faPencilAlt,
   faCube,
 } from '@fortawesome/free-solid-svg-icons';
@@ -295,7 +295,7 @@ function Example() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -311,7 +311,7 @@ function Example() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],

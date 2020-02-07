@@ -15,18 +15,6 @@ const List = styled.div`
   border-radius: ${sizes.borderRadius};
   box-shadow: 0 2px 4px #e3e9f3;
   background: white;
-  i {
-    display: inline-block;
-    text-rendering: auto;
-    font-weight: 600;
-    color: ${colors.blueTxt};
-    font-style: initial;
-    font-size: 13px;
-    &.link-icon {
-      padding-left: 2.25rem;
-      font-weight: 100;
-    }
-  }
   table {
     border-collapse: collapse;
     width: 100%;
