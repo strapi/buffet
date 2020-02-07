@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import 'react-dates/lib/css/_datepicker.css';
 
 import colors from '../../assets/styles/colors';
@@ -12,9 +13,13 @@ import sizes from '../../assets/styles/sizes';
 
 const DatePicker = styled.div`
   position: relative;
-  &.is-open {
+
+  ${({ isOpen }) =>
+    isOpen &&
+    `
     z-index: 9;
-  }
+  `}
+
   * {
     font-family: 'Lato';
 
@@ -163,5 +168,13 @@ const DatePicker = styled.div`
     }
   }
 `;
+
+DatePicker.defaultProps = {
+  isOpen: false,
+};
+
+DatePicker.propTypes = {
+  isOpen: PropTypes.bool,
+};
 
 export default DatePicker;

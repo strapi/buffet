@@ -4,15 +4,20 @@
  *
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
+
 import moment from 'moment';
 import momentPropTypes from 'react-moment-proptypes';
 import 'react-dates/initialize';
 import { DayPickerSingleDateController } from 'react-dates';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { DatePicker as StyledDatepicker } from '@buffetjs/styles';
+
+import reducer, { initialState } from './reducer';
+
 import Input from '../InputText';
 
 function Datepicker({
@@ -28,14 +33,7 @@ function Datepicker({
   tabIndex,
   wait,
 }) {
-  const [state, setState] = useState({
-    date: null,
-    displayedDate: '',
-    isFocused: false,
-    visible: false,
-    visibleDate: '',
-  });
-  let timer = null;
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     let date = null;
@@ -51,14 +49,24 @@ function Datepicker({
       displayedDate = date.format('MM/DD/YYYY');
     }
 
-    setState(prevState => ({ ...prevState, date, displayedDate }));
+    dispatch({
+      type: 'SET_DATE',
+      date,
+    });
+
+    dispatch({
+      type: 'SET_DISPLAYED_DATE',
+      displayedDate,
+    });
   }, []);
 
+  let timer = null;
+  const { date, displayedDate, isFocused, isVisible } = state;
+
   const getDateValue = () => {
-    const { date, displayedDate, visible } = state;
     let dateValue = date ? date.format(displayFormat) : '';
 
-    if (visible) {
+    if (isVisible) {
       dateValue = displayedDate;
     }
 
@@ -68,31 +76,39 @@ function Datepicker({
   const handleChange = ({ target }) => {
     clearTimeout(timer);
 
-    setState(prevState => ({
-      ...prevState,
-      displayedDate: target.value,
+    dispatch({
+      type: 'SET_IS_FOCUSED',
       isFocused: false,
-    }));
+    });
+
+    dispatch({
+      type: 'SET_DISPLAYED_DATE',
+      displayedDate: target.value,
+    });
 
     timer = setTimeout(() => {
       handleDateChange(moment(target.value, 'MM/DD/YYYY'));
     }, wait);
   };
 
-  const handleDateChange = date => {
-    if (moment(date).isValid()) {
-      onChange({ target: { name, type: 'date', value: date } });
+  const handleDateChange = dateValue => {
+    if (moment(dateValue).isValid()) {
+      onChange({ target: { name, type: 'date', value: dateValue } });
 
-      setState(prevState => ({
-        ...prevState,
-        date,
-        displayedDate: date.format('MM/DD/YYYY'),
-      }));
+      dispatch({
+        type: 'SET_DATE',
+        date: dateValue,
+      });
+
+      dispatch({
+        type: 'SET_DISPLAYED_DATE',
+        displayedDate: dateValue.format('MM/DD/YYYY'),
+      });
     }
   };
 
-  const handleDateClick = date => {
-    handleDateChange(date);
+  const handleDateClick = dateValue => {
+    handleDateChange(dateValue);
 
     toggleDatepicker(false);
   };
@@ -110,15 +126,19 @@ function Datepicker({
   };
 
   const toggleDatepicker = shown => {
-    setState(prevState => ({
-      ...prevState,
-      visible: shown,
+    dispatch({
+      type: 'SET_IS_VISIBLE',
+      isVisible: shown,
+    });
+
+    dispatch({
+      type: 'SET_IS_FOCUSED',
       isFocused: shown,
-    }));
+    });
   };
 
   return (
-    <StyledDatepicker className={`${className} ${state.visible && 'is-open'}`}>
+    <StyledDatepicker isOpen={isVisible} className={className}>
       <div>
         <Input
           disabled={disabled}
@@ -134,9 +154,9 @@ function Datepicker({
           tabIndex={tabIndex}
         />
       </div>
-      {state.isFocused && (
+      {isFocused && (
         <DayPickerSingleDateController
-          date={state.date}
+          date={date}
           focused
           numberOfMonths={1}
           onDateChange={handleDateClick}
