@@ -7,14 +7,14 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function DatePickerStory() {
-  const [value, setState] = useState(moment('01/11/2020'));
+  const [value, setState] = useState(moment([2020, 0, 11]));
 
   return (
     <Presentation
       title="Datepicker"
       description="A DatePicker based on react-datepicker that returns a moment object."
     >
-      <div style={{ paddingTop: 7, marginBottom: 23 }}>
+      <div style={{ paddingTop: 18, marginBottom: 22 }}>
         <DatePicker
           name="date"
           value={value}
@@ -28,7 +28,7 @@ import moment from 'moment';
 import { DatePicker } from '@buffetjs/core';
 
 function Example() {
-  const [value, setValue] = useState(moment());
+  const [value, setState] = useState(moment([2020, 0, 11]));
 
   return (
     <DatePicker
