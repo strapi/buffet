@@ -19,18 +19,16 @@ const Toggle = styled.input`
   cursor: pointer;
   margin: 0;
   opacity: 0;
-  & + span,
-  & + span + span {
-    font-weight: ${sizes.fontWeight.bold};
-  }
   & + span {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
     background-color: ${colors.darkOrange};
     color: ${colors.white};
+    font-weight: ${sizes.fontWeight.bold};
     & + span {
       color: ${colors.greyToggle};
       background: white;
+      font-weight: ${sizes.fontWeight.bold};
     }
   }
   &:not(:checked) + span {

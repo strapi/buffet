@@ -65,7 +65,7 @@ const Button = styled.button`
   ${({ color }) =>
     color === 'success' &&
     `
-      width: ${sizes.button.minWidth};
+      min-width: ${sizes.button.minWidth};
     `}
   
     // Icons
