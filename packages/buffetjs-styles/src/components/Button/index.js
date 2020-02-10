@@ -18,29 +18,20 @@ const Button = styled.button`
 
   // General style
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding.large};
-  font-weight: 500;
+  padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
+  font-weight: ${sizes.fontWeight.bold};
   font-size: 1.3rem;
   line-height: normal;
   border-radius: ${sizes.borderRadius};
   cursor: pointer;
   outline: 0;
   background-color: ${colors.white};
-  &:hover {
-    ${mixins(colors.lightGreyAlpha).bshadow};
-  }
-  &:active {
+  &:hover, &:active {
     ${mixins(colors.lightGreyAlpha).bshadow};
   }
   &:focus {
     outline: 0;
   }
-
-  > svg {
-    margin-right: 10px;
-    vertical-align: initial;
-  }
-
   ${({ disabled }) =>
     disabled &&
     `
@@ -49,7 +40,6 @@ const Button = styled.button`
       cursor: initial;
     }
     `}
-
 
   // Specific style
   ${({ color }) =>
@@ -73,18 +63,26 @@ const Button = styled.button`
     `}
 
   ${({ color }) =>
-    color === 'delete' &&
-    `
-      padding: 0 ${sizes.button.padding.small};
-      
-    `}
-
-  ${({ color }) =>
     color === 'success' &&
     `
-      min-width: ${sizes.button.minWidth.small};
+      width: ${sizes.button.minWidth};
     `}
-
+  
+    // Icons
+    svg {
+      vertical-align: initial;
+    }
+  
+    // FontAwesome icons
+    > span svg {
+      font-size: 10px;
+    }
+    // Custom icons
+    > svg {
+      height: 10px;
+      width: auto;
+      margin-right: 10px;
+    }
 `;
 
 Button.defaultProps = {

@@ -10,13 +10,10 @@ const sizes = {
       large: '30px',
     },
     padding: {
-      small: '15px',
-      large: '15px',
+      bottom: '2px',
+      leftRight: '15px',
     },
-    minWidth: {
-      small: '140px',
-      large: '140px',
-    },
+    minWidth: '140px',
   },
   input: {
     height: '3.4rem',
