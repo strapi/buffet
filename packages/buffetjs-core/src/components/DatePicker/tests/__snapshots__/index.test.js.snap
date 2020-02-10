@@ -6,10 +6,6 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   position: relative;
 }
 
-.c0.is-open {
-  z-index: 9;
-}
-
 .c0 * {
   font-family: 'Lato';
   outline: 0;
@@ -263,7 +259,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 <div
-    class="c0 null false"
+    class="c0"
   >
     <div>
       <div

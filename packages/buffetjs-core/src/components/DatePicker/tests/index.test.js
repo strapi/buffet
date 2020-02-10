@@ -97,7 +97,7 @@ describe('<DatePicker />', () => {
     const wrapper = renderComponent(props);
     const input = wrapper.find('input');
 
-    expect(input.props().value).toBe('July 05, 93');
+    expect(input.props().value).toBe('July 05, 1993');
   });
 
   it('should use the defaultProps', () => {
