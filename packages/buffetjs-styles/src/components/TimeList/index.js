@@ -63,7 +63,7 @@ const TimeList = styled.ul`
       padding: ${sizes.margin * 0.3}px 0 ${sizes.margin * 0.3}px
         calc(${sizes.input.height} + ${sizes.input.padding});
       font-size: 13px;
-      line-height: 24px;
+      line-height: 30px;
       margin-bottom: 0;
     }
   }

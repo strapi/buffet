@@ -33,7 +33,7 @@ const DatePicker = styled.div`
     font-size: 14px;
   }
   input {
-    font-weight: ${sizes.input.fontWeight};
+    font-weight: ${sizes.fontWeight.regular};
     position: relative;
     z-index: 1;
     width: 100%;

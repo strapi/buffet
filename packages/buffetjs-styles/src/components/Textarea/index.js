@@ -12,7 +12,7 @@ const StyledTextarea = styled.textarea`
   width: 100%;
   height: 19.1rem;
   padding: ${sizes.textarea.padding} ${sizes.input.padding};
-  font-weight: ${sizes.input.fontWeight};
+  font-weight: ${sizes.fontWeight.regular};
   font-size: ${sizes.input.fontSize};
   cursor: pointer;
   outline: 0;

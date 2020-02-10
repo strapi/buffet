@@ -18,13 +18,11 @@ const sizes = {
   input: {
     height: '3.4rem',
     padding: '1rem',
-    fontWeight: 400,
     fontSize: '1.3rem',
   },
   checkbox: {
     height: '14px',
     width: '14px',
-    fontWeight: 100,
   },
   textarea: {
     padding: '0.6rem',
