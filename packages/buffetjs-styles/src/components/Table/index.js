@@ -52,11 +52,11 @@ const Table = styled.div`
       background: transparent;
       color: ${colors.darkOrange};
       outline: 0;
-      i {
+      svg {
         margin-left: ${sizes.margin}px;
       }
       p,
-      i {
+      svg {
         display: inline;
       }
     }
@@ -86,6 +86,7 @@ const Table = styled.div`
           padding-right: ${sizes.margin * 1.4}px;
           width: fit-content;
           line-height: normal;
+          color: ${colors.blueTxt};
           &.clickable {
             cursor: pointer;
           }

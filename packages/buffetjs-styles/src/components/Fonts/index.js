@@ -15,6 +15,9 @@ import latoSemiBold from '../../assets/fonts/lato/Lato-SemiBold.ttf';
 /* Lato Bold */
 import latoBold from '../../assets/fonts/lato/Lato-Bold.ttf';
 
+/* Lato Black */
+import latoBlack from '../../assets/fonts/lato/Lato-Black.ttf';
+
 const Font = createGlobalStyle`
 @font-face {
   font-family: 'FontAwesome';
@@ -58,6 +61,14 @@ const Font = createGlobalStyle`
   font-family: 'Lato';
   src: url(${latoBold});
   font-weight: 600;
+  font-style: normal;
+};
+
+/* Lato Black - 900 */
+@font-face {
+  font-family: 'Lato';
+  src: url(${latoBlack});
+  font-weight: 900;
   font-style: normal;
 };`;
 
