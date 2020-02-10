@@ -172,7 +172,7 @@ function Datepicker({
 Datepicker.defaultProps = {
   className: null,
   disabled: false,
-  displayFormat: 'MMMM DD, YY',
+  displayFormat: 'MMMM DD, YYYY',
   id: 'date',
   onChange: () => {},
   readOnly: false,
