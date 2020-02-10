@@ -46,7 +46,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.1.0",
-    "styled-components": "^4.1.2"
+    "styled-components": "^5.0.0"
   },
   "keywords": [
     "Buffetjs",
