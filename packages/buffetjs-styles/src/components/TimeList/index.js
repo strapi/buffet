@@ -12,7 +12,7 @@ const TimeList = styled.ul`
   width: 100%;
   height: 0;
   font-family: 'Lato';
-  font-weight: 600;
+  font-weight: ${sizes.fontWeight.bold};
   font-size: ${sizes.input.fontSize};
   color: ${colors.greyIconColor};
   border: 1px solid transparent;

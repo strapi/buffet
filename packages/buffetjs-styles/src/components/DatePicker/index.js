@@ -65,7 +65,6 @@ const DatePicker = styled.div`
     border-color: ${colors.blueBorder};
   }
   .DayPicker_weekHeader {
-    font-weight: 700;
     color: ${colors.black};
     border-top: 1px solid #f9f9f9;
     margin-top: -10px;
@@ -104,7 +103,6 @@ const DatePicker = styled.div`
       font-size: 21px;
       width: 35px;
       height: 33px;
-      font-weight: 700;
       color: ${colors.black};
       border-radius: 0;
       text-align: center;

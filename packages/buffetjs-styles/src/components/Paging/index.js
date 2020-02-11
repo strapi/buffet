@@ -31,7 +31,7 @@ const Paging = styled.div`
       }
       &.selected {
         .page-link {
-          font-weight: 700;
+          font-weight: ${sizes.fontWeight.black};
         }
       }
       // Left & right arrows

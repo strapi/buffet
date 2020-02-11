@@ -27,18 +27,16 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   outline: 0;
 }
 
-.c0 svg {
-  vertical-align: initial;
-}
-
 .c0 > span svg {
   font-size: 10px;
+  vertical-align: initial;
 }
 
 .c0 > svg {
   height: 10px;
   width: auto;
   margin-right: 10px;
+  vertical-align: baseline;
 }
 
 <button
@@ -76,18 +74,16 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   outline: 0;
 }
 
-.c0 svg {
-  vertical-align: initial;
-}
-
 .c0 > span svg {
   font-size: 10px;
+  vertical-align: initial;
 }
 
 .c0 > svg {
   height: 10px;
   width: auto;
   margin-right: 10px;
+  vertical-align: baseline;
 }
 
 <button
@@ -125,18 +121,16 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
   outline: 0;
 }
 
-.c0 svg {
-  vertical-align: initial;
-}
-
 .c0 > span svg {
   font-size: 10px;
+  vertical-align: initial;
 }
 
 .c0 > svg {
   height: 10px;
   width: auto;
   margin-right: 10px;
+  vertical-align: baseline;
 }
 
 <button

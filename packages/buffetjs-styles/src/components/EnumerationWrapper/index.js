@@ -7,6 +7,7 @@
 import styled from 'styled-components';
 
 import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
 const EnumerationWrapper = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const EnumerationWrapper = styled.div`
       margin: auto;
       letter-spacing: 0.65px;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: ${sizes.fontWeight.semiBold};
       text-transform: uppercase;
     }
     &:not(:last-of-type) {

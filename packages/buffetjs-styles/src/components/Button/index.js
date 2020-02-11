@@ -68,20 +68,17 @@ const Button = styled.button`
       min-width: ${sizes.button.minWidth};
     `}
   
-    // Icons
-    svg {
-      vertical-align: initial;
-    }
-  
     // FontAwesome icons
     > span svg {
       font-size: 10px;
+      vertical-align: initial;
     }
     // Custom icons
     > svg {
       height: 10px;
       width: auto;
       margin-right: 10px;
+      vertical-align: baseline;
     }
 `;
 

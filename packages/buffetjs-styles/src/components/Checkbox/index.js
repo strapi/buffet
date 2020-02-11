@@ -44,7 +44,6 @@ const Checkbox = styled.input`
     height: ${sizes.checkbox.height};
     text-align: center;
     font-size: 9px;
-    font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
   }

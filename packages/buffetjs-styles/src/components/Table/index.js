@@ -44,7 +44,7 @@ const Table = styled.div`
     font-size: 1.3rem;
     line-height: ${sizes.table.deleteRow.height};
     background-color: ${colors.greyHover};
-    font-weight: 600;
+    font-weight: ${sizes.fontWeight.bold};
     button {
       border: 0;
       padding: 0;
@@ -76,7 +76,7 @@ const Table = styled.div`
   thead {
     tr {
       line-height: 0.1rem;
-      font-weight: bold;
+      font-weight: ${sizes.fontWeight.bold};
       text-transform: capitalize;
       td {
         background-color: ${colors.greyHeader};

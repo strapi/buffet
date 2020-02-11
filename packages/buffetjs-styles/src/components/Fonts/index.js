@@ -43,7 +43,7 @@ const Font = createGlobalStyle`
 /* Lato Regular - 400 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoRegular}) format("ttf");
+  src: url(${latoRegular}) format('truetype');
   font-weight: 400;
   font-style: normal;
 };
@@ -51,7 +51,7 @@ const Font = createGlobalStyle`
 /* Lato Semi-Bold - 500 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoSemiBold});
+  src: url(${latoSemiBold}) format('truetype');
   font-weight: 500;
   font-style: normal;
 };
@@ -59,7 +59,7 @@ const Font = createGlobalStyle`
 /* Lato Bold - 600 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoBold});
+  src: url(${latoBold}) format('truetype');
   font-weight: 600;
   font-style: normal;
 };
@@ -67,7 +67,7 @@ const Font = createGlobalStyle`
 /* Lato Black - 900 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoBlack});
+  src: url(${latoBlack}) format('truetype');
   font-weight: 900;
   font-style: normal;
 };`;

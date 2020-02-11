@@ -32,7 +32,7 @@ const Toggle = styled.input`
     }
   }
   &:not(:checked) + span {
-    font-weight: 900;
+    font-weight: ${sizes.fontWeight.black};
   }
   &:checked + span {
     color: ${colors.greyToggle};
@@ -42,7 +42,7 @@ const Toggle = styled.input`
       border-bottom-right-radius: 2px;
       background-color: ${colors.blue};
       color: ${colors.white};
-      font-weight: 900;
+      font-weight: ${sizes.fontWeight.black};
     }
   }
 `;
