@@ -59,7 +59,6 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c0 .DayPicker_weekHeader {
-  font-weight: 700;
   color: #000000;
   border-top: 1px solid #f9f9f9;
   margin-top: -10px;
@@ -103,7 +102,6 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   font-size: 21px;
   width: 35px;
   height: 33px;
-  font-weight: 700;
   color: #000000;
   border-radius: 0;
   text-align: center;
