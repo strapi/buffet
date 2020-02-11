@@ -6,7 +6,7 @@ import { text, radios } from '@storybook/addon-knobs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlus,
-  faTrash,
+  faTrashAlt,
   faBaseballBall,
 } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@buffetjs/core';
@@ -44,7 +44,7 @@ import { Button } from '@buffetjs/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlus,
-  faTrash,
+  faTrashAlt,
   faBaseballBall,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -79,7 +79,7 @@ function Example() {
             <Button
               type="submit"
               color="delete"
-              icon={<FontAwesomeIcon icon={faTrash} />}
+              icon={<FontAwesomeIcon icon={faTrashAlt} />}
             >
               Delete
             </Button>
