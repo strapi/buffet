@@ -136,7 +136,7 @@ const Table = styled.div`
   }
   span.link-icon {
     svg {
-      color: ${colors.greyAlpha};
+      color: ${colors.blueTxt};
     }
   }
   @media (min-width: ${sizes.tablet}) {
