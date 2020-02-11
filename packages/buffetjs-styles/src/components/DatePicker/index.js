@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import 'react-dates/lib/css/_datepicker.css';
 
 import colors from '../../assets/styles/colors';
@@ -12,9 +13,13 @@ import sizes from '../../assets/styles/sizes';
 
 const DatePicker = styled.div`
   position: relative;
-  &.is-open {
+
+  ${({ isOpen }) =>
+    isOpen &&
+    `
     z-index: 9;
-  }
+  `}
+
   * {
     font-family: 'Lato';
 
@@ -65,7 +70,7 @@ const DatePicker = styled.div`
     border-top: 1px solid #f9f9f9;
     margin-top: -10px;
     li {
-      padding-top: 5px;
+      padding-top: 6px;
       padding-bottom: 5px;
       small {
         font-size: 1.3rem;
@@ -85,6 +90,8 @@ const DatePicker = styled.div`
   }
   .CalendarMonth_caption {
     font-size: 1.3rem;
+    padding-bottom: 45px;
+    padding-top: 23px;
   }
   .DayPicker_transitionContainer {
     padding: 4px;
@@ -127,8 +134,9 @@ const DatePicker = styled.div`
     position: relative;
     cursor: pointer;
     width: 34px;
-    height: 28px;
+    height: 18px;
     font-size: 1.3rem;
+
     &,
     &.CalendarDay__selected,
     &.CalendarDay__selected:active,
@@ -160,5 +168,13 @@ const DatePicker = styled.div`
     }
   }
 `;
+
+DatePicker.defaultProps = {
+  isOpen: false,
+};
+
+DatePicker.propTypes = {
+  isOpen: PropTypes.bool,
+};
 
 export default DatePicker;
