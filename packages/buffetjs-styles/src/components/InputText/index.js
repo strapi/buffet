@@ -14,7 +14,7 @@ const InputText = styled.input`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-weight: ${sizes.input.fontWeight};
+  font-weight: ${sizes.fontWeight.regular};
   font-size: ${sizes.input.fontSize};
   cursor: text;
   outline: 0;

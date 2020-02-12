@@ -15,18 +15,6 @@ const List = styled.div`
   border-radius: ${sizes.borderRadius};
   box-shadow: 0 2px 4px #e3e9f3;
   background: white;
-  i {
-    display: inline-block;
-    text-rendering: auto;
-    font-weight: 600;
-    color: ${colors.blueTxt};
-    font-style: initial;
-    font-size: 13px;
-    &.link-icon {
-      padding-left: 2.25rem;
-      font-weight: 100;
-    }
-  }
   table {
     border-collapse: collapse;
     width: 100%;
@@ -37,7 +25,7 @@ const List = styled.div`
     tr {
       height: 3rem;
       line-height: 0.1rem;
-      font-weight: 600;
+      font-weight: ${sizes.fontWeight.bold};
       text-transform: capitalize;
       td {
         background-color: ${colors.greyHeader};
