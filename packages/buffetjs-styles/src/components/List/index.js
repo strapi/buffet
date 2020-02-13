@@ -25,7 +25,7 @@ const List = styled.div`
     tr {
       height: 3rem;
       line-height: 0.1rem;
-      font-weight: 600;
+      font-weight: ${sizes.fontWeight.bold};
       text-transform: capitalize;
       td {
         background-color: ${colors.greyHeader};

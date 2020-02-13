@@ -34,7 +34,7 @@ function Icon({ icon, className }) {
     );
   }
   if (isValidElement(icon)) {
-    return <span className={className}>{icon}</span>;
+    return icon;
   }
 
   return null;

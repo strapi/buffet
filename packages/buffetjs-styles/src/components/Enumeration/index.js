@@ -6,7 +6,9 @@
 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
 import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
 const Enumeration = styled.input`
   position: absolute;
@@ -21,7 +23,7 @@ const Enumeration = styled.input`
     background-image: ${colors.blueGradient};
     color: ${colors.white};
     box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
+    font-weight: ${sizes.fontWeight.bold};
   }
 `;
 

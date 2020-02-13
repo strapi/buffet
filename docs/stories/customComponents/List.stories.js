@@ -159,7 +159,7 @@ function ListStory() {
   return (
     <Presentation title="List" description="Display data.">
       <section style={{ marginTop: 29, paddingBottom: 40 }}>
-        <Subtitle style={{ marginBottom: 30 }}>Default List</Subtitle>
+        <Subtitle style={{ marginBottom: 32 }}>Default List</Subtitle>
         <div style={{ marginBottom: 35 }}>
           <List {...initProps} items={defaultItems} />
         </div>

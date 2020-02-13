@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import sizes from '../../assets/styles/sizes';
 
 const Header = styled.div`
   margin-bottom: 30px;
@@ -21,7 +22,7 @@ const Header = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: ${sizes.fontWeight.regular};
     line-height: normal;
     color: #787e8f;
   }

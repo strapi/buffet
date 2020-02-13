@@ -10,7 +10,7 @@ import sizes from '../../assets/styles/sizes';
 
 const Label = styled.label`
   width: 100%;
-  font-weight: 500;
+  font-weight: ${sizes.fontWeight.semiBold};
   font-size: ${sizes.input.fontSize};
   color: ${colors.blueTxt};
 `;

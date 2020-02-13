@@ -13,7 +13,7 @@ const Select = styled.select`
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
-  font-weight: 400;
+  font-weight: ${sizes.fontWeight.regular};
   font-size: ${sizes.input.fontSize};
   cursor: pointer;
   outline: 0;
