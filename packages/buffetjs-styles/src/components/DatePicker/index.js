@@ -69,7 +69,7 @@ const DatePicker = styled.div`
     border-top: 1px solid #f9f9f9;
     margin-top: -10px;
     li {
-      padding-top: 6px;
+      padding-top: 7px;
       padding-bottom: 5px;
       small {
         font-size: 1.3rem;
@@ -106,6 +106,7 @@ const DatePicker = styled.div`
       color: ${colors.black};
       border-radius: 0;
       text-align: center;
+      top: 20px;
       &,
       &:hover {
         border: 0;
