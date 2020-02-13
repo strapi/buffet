@@ -135,6 +135,11 @@ const Table = styled.div`
       }
     }
   }
+  span.link-icon {
+    svg {
+      color: ${colors.blueTxt};
+    }
+  }
   @media (min-width: ${sizes.tablet}) {
     width: 100%;
     overflow-x: auto;

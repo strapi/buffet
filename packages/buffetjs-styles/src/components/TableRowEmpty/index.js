@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const TableRowEmpty = styled.tr`
@@ -16,7 +17,7 @@ const TableRowEmpty = styled.tr`
     line-height: 106px;
     font-size: 1.3rem;
     font-weight: ${sizes.fontWeight.regular};
-    color: #333740;
+    color: ${colors.blueTxt};
     text-align: center;
     border-collapse: collapse;
     border-top: 1px solid #f1f1f2 !important;
