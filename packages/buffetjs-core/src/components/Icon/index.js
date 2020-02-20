@@ -8,7 +8,7 @@ import {
   faPencilAlt,
   faSortDown,
   faSortUp,
-  faTrash,
+  faTrashAlt,
   faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
@@ -23,7 +23,7 @@ const iconMap = new Map([
   ['pencil', faPencilAlt],
   ['asc', faSortUp],
   ['desc', faSortDown],
-  ['trash', faTrash],
+  ['trash', faTrashAlt],
   ['plus', faPlus],
 ]);
 
@@ -34,7 +34,7 @@ function Icon({ icon, className }) {
     );
   }
   if (isValidElement(icon)) {
-    return <span className={className}>{icon}</span>;
+    return icon;
   }
 
   return null;

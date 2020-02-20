@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
 const Toggle = styled.input`
   position: absolute;
@@ -23,13 +24,15 @@ const Toggle = styled.input`
     border-bottom-left-radius: 2px;
     background-color: ${colors.darkOrange};
     color: ${colors.white};
+    font-weight: ${sizes.fontWeight.bold};
     & + span {
       color: ${colors.greyToggle};
       background: white;
+      font-weight: ${sizes.fontWeight.bold};
     }
   }
   &:not(:checked) + span {
-    font-weight: 800;
+    font-weight: ${sizes.fontWeight.black};
   }
   &:checked + span {
     color: ${colors.greyToggle};
@@ -39,7 +42,7 @@ const Toggle = styled.input`
       border-bottom-right-radius: 2px;
       background-color: ${colors.blue};
       color: ${colors.white};
-      font-weight: 800;
+      font-weight: ${sizes.fontWeight.black};
     }
   }
 `;

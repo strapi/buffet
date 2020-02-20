@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import sizes from '../../assets/styles/sizes';
 
 const HeaderTitle = styled.div`
   position: relative;
@@ -16,7 +17,7 @@ const HeaderTitle = styled.div`
     margin-bottom: 0;
     font-size: 2.4rem;
     line-height: normal;
-    font-weight: 600;
+    font-weight: ${sizes.fontWeight.bold};
     text-transform: capitalize;
     padding-right: 18px;
     overflow: hidden;

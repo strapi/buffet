@@ -15,7 +15,6 @@ const Checkbox = styled.input`
   margin: 0;
   position: relative;
   width: ${sizes.checkbox.width};
-  font-weight: ${sizes.checkbox.fontWeight};
   &:focus,
   &:active {
     outline: 0;
@@ -45,7 +44,6 @@ const Checkbox = styled.input`
     height: ${sizes.checkbox.height};
     text-align: center;
     font-size: 9px;
-    font-weight: 400;
     color: ${colors.darkBlue};
     line-height: ${sizes.checkbox.height};
   }
@@ -76,7 +74,7 @@ const Checkbox = styled.input`
   }
   & + label {
     display: inline-block;
-    font-weight: ${sizes.input.fontWeight};
+    font-weight: ${sizes.fontWeight.regular};
     font-size: ${sizes.input.fontSize};
   }
 `;
