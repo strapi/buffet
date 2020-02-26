@@ -22,7 +22,7 @@ import {
   Play,
   Plus,
   Relation,
-  Regenerate,
+  Sync,
   Remove,
   RichText,
   SingleType,
@@ -187,8 +187,8 @@ const IconsStory = () => {
       },
     },
     {
-      name: 'regenerate',
-      Compo: Regenerate,
+      name: 'sync',
+      Compo: Sync,
       props: {
         fill: '#b3b5b9',
       },
@@ -277,7 +277,7 @@ import {
   Play,
   Plus,
   Relation,
-  Regenerate,
+  Sync,
   Remove,
   RichText,
   SingleType,
@@ -439,8 +439,8 @@ const icons = [
     },
   },
   {
-    name: 'regenerate',
-    Compo: Regenerate,
+    name: 'sync',
+    Compo: Sync,
     props: {
       fill: '#b3b5b9',
     },
