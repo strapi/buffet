@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Regenerate = ({ fill, ...rest }) => (
+const Sync = ({ fill, ...rest }) => (
   <svg
     viewBox="0 0 11 11"
     width="11"
@@ -17,12 +17,12 @@ const Regenerate = ({ fill, ...rest }) => (
   </svg>
 );
 
-Regenerate.defaultProps = {
+Sync.defaultProps = {
   fill: '#fff',
 };
 
-Regenerate.propTypes = {
+Sync.propTypes = {
   fill: PropTypes.string,
 };
 
-export default Regenerate;
+export default Sync;

@@ -17,7 +17,7 @@ export { default as Pencil } from './components/Pencil';
 export { default as Pending } from './components/Pending';
 export { default as Play } from './components/Play';
 export { default as Plus } from './components/Plus';
-export { default as Regenerate } from './components/Regenerate';
+export { default as Sync } from './components/Sync';
 export { default as Relation } from './components/Relation';
 export { default as Remove } from './components/Remove';
 export { default as RichText } from './components/RichText';
