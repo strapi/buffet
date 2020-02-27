@@ -1,5 +1,6 @@
 export { default as Arrow } from './components/Arrow';
 export { default as Bool } from './components/Bool';
+export { default as Carret } from './components/Carret';
 export { default as Calendar } from './components/Calendar';
 export { default as ContentType } from './components/ContentType';
 export { default as Component } from './components/Component';

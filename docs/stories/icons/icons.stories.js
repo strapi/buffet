@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import {
   Arrow,
   Bool,
+  Carret,
   Calendar,
   Component,
   ContentType,
@@ -48,6 +49,13 @@ const IconsStory = () => {
       props: {
         rectFill: '#b3b5b9',
         pathFill: '#fff',
+      },
+    },
+    {
+      name: 'carret',
+      Compo: Carret,
+      props: {
+        fill: '#b3b5b9',
       },
     },
     {
@@ -259,6 +267,7 @@ const IconsStory = () => {
 import {
   Arrow,
   Bool,
+  Carret
   Calendar,
   Component,
   ContentType,
@@ -300,6 +309,13 @@ const icons = [
     props: {
       rectFill: '#b3b5b9',
       pathFill: '#fff',
+    },
+  },
+  {
+    name: 'carret',
+    Compo: Carret,
+    props: {
+      fill: '#b3b5b9',
     },
   },
   {
