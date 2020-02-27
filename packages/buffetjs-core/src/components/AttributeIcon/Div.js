@@ -18,6 +18,7 @@ const Div = styled.div`
       case 'date':
       case 'datetime':
       case 'time':
+      case 'timestamp':
         return '#1c8ee2';
       case 'component':
         return '#666666';

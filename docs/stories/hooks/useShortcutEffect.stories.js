@@ -19,7 +19,7 @@ const Story = () => {
 
   return (
     <Presentation
-      title="useEventListener"
+      title="useShortcutEffect"
       description="Hook to quickly add shortcut effect."
     >
       <div style={{ marginBottom: 23 }}>
