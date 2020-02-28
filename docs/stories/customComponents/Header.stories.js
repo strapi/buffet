@@ -52,7 +52,7 @@ function HeaderStory() {
 
   const props = {
     title: {
-      label: 'Restaurant',
+      label: 'restaurant de paris',
       cta: cta,
     },
     content: 'Restaurant description',

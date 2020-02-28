@@ -19,7 +19,6 @@ const HeaderTitle = styled.div`
     font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 1px;
-    text-transform: capitalize;
     padding-right: 18px;
   }
   svg {
