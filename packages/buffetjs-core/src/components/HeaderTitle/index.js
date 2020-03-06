@@ -6,14 +6,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { upperFirst } from 'lodash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { HeaderTitle as Wrapper } from '@buffetjs/styles';
 
 function HeaderTitle({ title, children, cta }) {
-  const content = title || children;
+  const content = upperFirst(title) || children;
   const renderCTA = () => {
     if (cta) {
       const { onClick } = cta;

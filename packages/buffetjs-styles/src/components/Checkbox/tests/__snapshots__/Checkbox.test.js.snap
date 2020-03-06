@@ -7,7 +7,6 @@ exports[`<Checkbox /> should match snapshot 1`] = `
   margin: 0;
   position: relative;
   width: 14px;
-  font-weight: 100;
 }
 
 .c0:focus,
@@ -41,7 +40,6 @@ exports[`<Checkbox /> should match snapshot 1`] = `
   height: 14px;
   text-align: center;
   font-size: 9px;
-  font-weight: 400;
   color: #1C5DE7;
   line-height: 14px;
 }

@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import {
   Arrow,
   Bool,
+  Carret,
   Calendar,
   Component,
   ContentType,
@@ -22,6 +23,7 @@ import {
   Play,
   Plus,
   Relation,
+  Sync,
   Remove,
   RichText,
   SingleType,
@@ -47,6 +49,13 @@ const IconsStory = () => {
       props: {
         rectFill: '#b3b5b9',
         pathFill: '#fff',
+      },
+    },
+    {
+      name: 'carret',
+      Compo: Carret,
+      props: {
+        fill: '#b3b5b9',
       },
     },
     {
@@ -186,6 +195,13 @@ const IconsStory = () => {
       },
     },
     {
+      name: 'sync',
+      Compo: Sync,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
       name: 'remove',
       Compo: Remove,
       props: {
@@ -249,32 +265,34 @@ const IconsStory = () => {
       <Pre>
         {`
 import {
-  Arrow
-  Bool
-  Calendar
-  Component
-  ContentType
-  DynamicZone
-  Email
-  Enumeration
-  Fail
-  Grab
-  GrabLarge
-  Json
-  Media
-  NumberIcon
-  Password
-  Pencil
-  Pending
-  Play
-  Plus
-  Relation
-  Remove
-  RichText
-  SingleType
-  Success
-  Text
-  Uid
+  Arrow,
+  Bool,
+  Carret
+  Calendar,
+  Component,
+  ContentType,
+  DynamicZone,
+  Email,
+  Enumeration,
+  Fail,
+  Grab,
+  GrabLarge,
+  Json,
+  Media,
+  NumberIcon,
+  Password,
+  Pencil,
+  Pending,
+  Play,
+  Plus,
+  Relation,
+  Sync,
+  Remove,
+  RichText,
+  SingleType,
+  Success,
+  Text,
+  Uid,
 } from '@buffetjs/icons';
 
 const icons = [
@@ -291,6 +309,13 @@ const icons = [
     props: {
       rectFill: '#b3b5b9',
       pathFill: '#fff',
+    },
+  },
+  {
+    name: 'carret',
+    Compo: Carret,
+    props: {
+      fill: '#b3b5b9',
     },
   },
   {
@@ -387,29 +412,8 @@ const icons = [
     },
   },
   {
-    name: 'pencil',
-    Compo: Pencil,
-    props: {
-      fill: '#b3b5b9',
-    },
-  },
-  {
     name: 'pending',
     Compo: Pending,
-    props: {
-      fill: '#b3b5b9',
-    },
-  },
-  {
-    name: 'play',
-    Compo: Play,
-    props: {
-      fill: '#b3b5b9',
-    },
-  },
-  {
-    name: 'plus',
-    Compo: Plus,
     props: {
       fill: '#b3b5b9',
     },
@@ -422,8 +426,8 @@ const icons = [
     },
   },
   {
-    name: 'remove',
-    Compo: Remove,
+    name: 'text',
+    Compo: Text,
     props: {
       fill: '#b3b5b9',
     },
@@ -431,6 +435,49 @@ const icons = [
   {
     name: 'rich-text',
     Compo: RichText,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'uid',
+    Compo: Uid,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+
+  {
+    name: 'pencil',
+    Compo: Pencil,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'sync',
+    Compo: Sync,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'remove',
+    Compo: Remove,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'plus',
+    Compo: Plus,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'play',
+    Compo: Play,
     props: {
       fill: '#b3b5b9',
     },
@@ -445,20 +492,6 @@ const icons = [
   {
     name: 'success',
     Compo: Success,
-    props: {
-      fill: '#b3b5b9',
-    },
-  },
-  {
-    name: 'text',
-    Compo: Text,
-    props: {
-      fill: '#b3b5b9',
-    },
-  },
-  {
-    name: 'uid',
-    Compo: Uid,
     props: {
       fill: '#b3b5b9',
     },
