@@ -38,6 +38,30 @@ class DatePicker extends React.PureComponent {
     this.setState({ date, displayedDate });
   }
 
+  // Temporary fix it the component will be migrated to react hooks in another PR
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      const { value, withDefaultValue } = this.props;
+      let date = null;
+      let displayedDate = '';
+
+      if (withDefaultValue && !value) {
+        date = moment();
+        displayedDate = date.format('MM/DD/YYYY');
+      }
+
+      if (!!value && moment(value).isValid()) {
+        date = value._isAMomentObject === true ? value : moment(value);
+        displayedDate = date.format('MM/DD/YYYY');
+      }
+
+      // Disabling this rule as it this component will be updated in the upcoming
+      // ui improvement PR
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ date, displayedDate });
+    }
+  }
+
   handleChange = ({ target }) => {
     this.setState({ displayedDate: target.value });
 
