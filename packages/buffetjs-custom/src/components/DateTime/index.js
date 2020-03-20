@@ -76,9 +76,12 @@ function DateTime({
       const newDate = value._isAMomentObject === true ? value : moment(value);
 
       setDate(newDate);
+    } else {
+      setTimestamp('');
     }
+
     setIsInit(true);
-  }, []);
+  }, [value]);
 
   if (!isInit) {
     return null;

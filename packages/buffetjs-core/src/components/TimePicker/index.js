@@ -120,7 +120,7 @@ const nearest = (arr, val) =>
 
 function TimePicker(props) {
   const { name, onChange, seconds, tabIndex, value, step } = props;
-  const [inputVal, setInputVal] = useState(seconds ? value : short(value));
+  const [inputVal, setInputVal] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const options = useMemo(() => getOptions(step), [step]);
   const inputRef = useRef();
@@ -136,6 +136,15 @@ function TimePicker(props) {
     () => roundHour(timeFormatter(inputVal), step),
     [inputVal, step]
   );
+
+  // Effect to set the time
+  useEffect(() => {
+    if (!isOpen) {
+      const time = seconds ? value : short(value);
+
+      setInputVal(time);
+    }
+  }, [value, seconds, isOpen]);
 
   // Effect to enable scrolling
   useEffect(() => {

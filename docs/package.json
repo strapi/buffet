@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "description": "Buffetjs Documentation",
   "main": "index.js",
@@ -13,8 +13,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@buffetjs/core": "3.0.0",
-    "@buffetjs/custom": "3.0.0",
+    "@buffetjs/core": "3.0.1",
+    "@buffetjs/custom": "3.0.1",
     "@buffetjs/hooks": "3.0.0",
     "@buffetjs/icons": "3.0.0",
     "@buffetjs/styles": "3.0.0",
