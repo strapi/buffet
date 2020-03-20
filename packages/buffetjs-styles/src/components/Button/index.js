@@ -41,16 +41,6 @@ const Button = styled.button`
     vertical-align: initial;
   }
 
-  ${({ disabled }) =>
-    disabled &&
-    `
-    &:hover {
-      box-shadow: none;
-      cursor: initial;
-    }
-    `}
-
-
   // Specific style
   ${({ color }) =>
     color !== 'none' &&
@@ -60,15 +50,15 @@ const Button = styled.button`
       color: ${colors.button[color].color};
     `}
 
-  ${({ color, disabled }) =>
-    color !== 'cancel' &&
-    color !== 'none' &&
+  ${({ disabled }) =>
     disabled &&
     `
-      &:disabled {
-        background-color: ${colors.button.disabled.backgroundColor};
-        border: 1px solid ${colors.button.disabled.borderColor};
-        color: ${colors.button.disabled.color};
+      background-color: ${colors.button.disabled.backgroundColor};
+      border: 1px solid ${colors.button.disabled.borderColor};
+      color: ${colors.button.disabled.color};
+      &:hover {
+        box-shadow: none;
+        cursor: initial;
       }
     `}
 
@@ -84,7 +74,6 @@ const Button = styled.button`
     `
       min-width: ${sizes.button.minWidth.small};
     `}
-
 `;
 
 Button.defaultProps = {
