@@ -18,7 +18,7 @@ const Button = styled.button`
 
   // General style
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding.large};
+  padding: 0 ${sizes.button.padding};
   font-weight: 500;
   font-size: 1.3rem;
   line-height: normal;
@@ -60,13 +60,6 @@ const Button = styled.button`
         box-shadow: none;
         cursor: initial;
       }
-    `}
-
-  ${({ color }) =>
-    color === 'delete' &&
-    `
-      padding: 0 ${sizes.button.padding.small};
-      
     `}
 
   ${({ color }) =>
