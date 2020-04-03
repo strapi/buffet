@@ -113,6 +113,16 @@ function Example() {
               Text
             </Button>
           </div>
+          <div className="btn-wrapper">
+            <Button
+              type="submit"
+              color="delete"
+              icon={<FontAwesomeIcon icon={faBaseballBall} />}
+              disabled
+            >
+              Disabled
+            </Button>
+          </div>
         </section>
       </>
     </Presentation>

@@ -68,7 +68,7 @@ const colors = {
       backgroundColor: '#6DBB1A',
     },
     disabled: {
-      borderColor: '#B4B6BA',
+      borderColor: '#E9EAEB',
       color: '#B4B6BA',
       backgroundColor: '#E9EAEB',
     },
