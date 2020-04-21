@@ -149,7 +149,7 @@ const DatePicker = styled.div`
       }
     }
     &.CalendarDay__selected {
-      background-color: #005fea;
+      background-color: #007eff;
       color: #fff;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
       &.CalendarDay__today {
