@@ -1,4 +1,4 @@
-import React, { isValidElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   faSearch,
@@ -33,11 +33,8 @@ function Icon({ icon, className }) {
       <StyledIcon icon={iconMap.get(icon)} className={className || undefined} />
     );
   }
-  if (isValidElement(icon)) {
-    return icon;
-  }
 
-  return null;
+  return icon || null;
 }
 
 Icon.defaultProps = {

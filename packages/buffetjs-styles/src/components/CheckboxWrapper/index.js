@@ -8,17 +8,27 @@ import styled from 'styled-components';
 import sizes from '../../assets/styles/sizes';
 
 const CheckboxWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  height: 18px;
-  line-height: 18px;
-  input label {
-    cursor: pointer;
-    margin-bottom: 0 !important;
+  input {
+    margin-top: 4px;
+    width: 14px;
+    height: 12px;
   }
-  input + label {
-    margin-left: ${sizes.margin}px;
-    margin-bottom: 0;
+  input,
+  label {
+    display: inline-block;
+    vertical-align: top;
+  }
+  input {
+    margin-top: 4px;
+    & + label {
+      display: inline-block;
+      width: fit-content;
+      max-width: calc(100% - ${sizes.checkbox.width});
+      margin-left: ${sizes.margin}px;
+      margin-bottom: 0;
+      line-height: 18px;
+      cursor: pointer;
+    }
   }
 `;
 

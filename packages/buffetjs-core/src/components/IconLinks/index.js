@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /**
  *
  * IconLinks
@@ -13,8 +14,8 @@ import Icon from '../Icon';
 function IconLinks({ links }) {
   return (
     <StyledLinks>
-      {links.map(({ icon, onClick }) => (
-        <button key={icon} onClick={onClick} type="button">
+      {links.map(({ icon, onClick }, index) => (
+        <button key={index} onClick={onClick} type="button">
           <Icon className="link-icon" icon={icon} />
         </button>
       ))}
