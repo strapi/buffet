@@ -32,6 +32,7 @@ const Button = styled.button`
   &:focus {
     outline: 0;
   }
+
   ${({ disabled }) =>
     disabled &&
     `
@@ -50,15 +51,15 @@ const Button = styled.button`
       color: ${colors.button[color].color};
     `}
 
-  ${({ color, disabled }) =>
-    color !== 'cancel' &&
-    color !== 'none' &&
+  ${({ disabled }) =>
     disabled &&
     `
-      &:disabled {
-        background-color: ${colors.button.disabled.backgroundColor};
-        border: 1px solid ${colors.button.disabled.borderColor};
-        color: ${colors.button.disabled.color};
+      background-color: ${colors.button.disabled.backgroundColor};
+      border: 1px solid ${colors.button.disabled.borderColor};
+      color: ${colors.button.disabled.color};
+      &:hover {
+        box-shadow: none;
+        cursor: initial;
       }
     `}
 

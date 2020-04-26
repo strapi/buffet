@@ -6,6 +6,10 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   position: relative;
 }
 
+.c0.is-open {
+  z-index: 9;
+}
+
 .c0 * {
   font-family: 'Lato';
   outline: 0;
@@ -59,13 +63,14 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c0 .DayPicker_weekHeader {
+  font-weight: 700;
   color: #000000;
   border-top: 1px solid #f9f9f9;
   margin-top: -10px;
 }
 
 .c0 .DayPicker_weekHeader li {
-  padding-top: 7px;
+  padding-top: 5px;
   padding-bottom: 5px;
 }
 
@@ -86,8 +91,6 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 
 .c0 .CalendarMonth_caption {
   font-size: 1.3rem;
-  padding-bottom: 45px;
-  padding-top: 23px;
 }
 
 .c0 .DayPicker_transitionContainer {
@@ -102,10 +105,10 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   font-size: 21px;
   width: 35px;
   height: 33px;
+  font-weight: 700;
   color: #000000;
   border-radius: 0;
   text-align: center;
-  top: 20px;
 }
 
 .c0 .DayPickerNavigation div[role='button'],
@@ -133,7 +136,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
   position: relative;
   cursor: pointer;
   width: 34px;
-  height: 18px;
+  height: 28px;
   font-size: 1.3rem;
 }
 
@@ -157,7 +160,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c0 td.CalendarDay__selected {
-  background-color: #005fea;
+  background-color: #007EFF;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 }

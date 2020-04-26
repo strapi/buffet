@@ -75,11 +75,9 @@ describe('<DateTime />', () => {
     };
     const renderedComponent = mount(<DateTime {...props} />);
     const timepicker = renderedComponent.find(TimePicker);
-    const updatedValue = '10:10:10';
 
-    act(() => {
-      timepicker.props().onChange({ target: { value: updatedValue } });
-    });
+    const mock = { target: { value: '10' } };
+    timepicker.simulate('change', mock);
 
     const expected = value
       .set('hour', 10)

@@ -149,6 +149,7 @@ function Datepicker({
           readOnly={readOnly}
           onChange={handleChange}
           icon={<FontAwesomeIcon icon={faCalendarAlt} />}
+          onFocus={() => toggleDatepicker(true)}
           onClick={() => toggleDatepicker(true)}
           onKeyDown={handleTabClick}
           tabIndex={tabIndex}

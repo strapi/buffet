@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
-
+import { isEmpty, cloneDeep } from 'lodash';
 import { DatePicker, TimePicker } from '@buffetjs/core';
 import Wrapper from './Wrapper';
 
@@ -46,18 +46,18 @@ function DateTime({
   step,
   ...rest
 }) {
-  const [timestamp, setTimestamp] = useState('');
+  const [timestamp, setTimestamp] = useState(null);
   const [isInit, setIsInit] = useState(false);
-  const setTime = time => {
+  const setData = time => {
     const [hour, minute, second] = time.split(':');
     const timeObj = {
       hour,
       minute,
       second,
     };
-    const currentDate = timestamp || moment();
+    const currentDate = isEmpty(timestamp) ? moment() : cloneDeep(timestamp);
+    currentDate.set('hours', timeObj.hour);
 
-    currentDate.set(timeObj);
     setDate(currentDate);
   };
   const setDate = (date, time) => {
@@ -76,9 +76,12 @@ function DateTime({
       const newDate = value._isAMomentObject === true ? value : moment(value);
 
       setDate(newDate);
+    } else {
+      setTimestamp(null);
     }
+
     setIsInit(true);
-  }, []);
+  }, [value]);
 
   if (!isInit) {
     return null;
@@ -100,11 +103,11 @@ function DateTime({
         name="time"
         disabled={disabled}
         onChange={({ target }) => {
-          setTime(target.value);
+          setData(target.value);
         }}
         seconds={false}
         tabIndex={tabIndex}
-        value={getTimeString(timestamp)}
+        value={getTimeString(timestamp) || ''}
         step={step}
       />
     </Wrapper>
