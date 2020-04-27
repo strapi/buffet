@@ -15,11 +15,11 @@ const HeaderTitle = styled.div`
     width: fit-content;
     max-width: 100%;
     margin-bottom: 0;
+    padding-right: 18px;
     font-size: 2.4rem;
     line-height: normal;
     font-weight: ${sizes.fontWeight.bold};
     text-transform: capitalize;
-    padding-right: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

@@ -8,11 +8,6 @@ import styled from 'styled-components';
 import sizes from '../../assets/styles/sizes';
 
 const CheckboxWrapper = styled.div`
-  input {
-    margin-top: 4px;
-    width: 14px;
-    height: 12px;
-  }
   input,
   label {
     display: inline-block;
@@ -20,15 +15,17 @@ const CheckboxWrapper = styled.div`
   }
   input {
     margin-top: 4px;
-    & + label {
-      display: inline-block;
-      width: fit-content;
-      max-width: calc(100% - ${sizes.checkbox.width});
-      margin-left: ${sizes.margin}px;
-      margin-bottom: 0;
-      line-height: 18px;
-      cursor: pointer;
-    }
+    width: 14px;
+    height: 12px;
+  }
+  input + label {
+    display: inline-block;
+    width: fit-content;
+    max-width: calc(100% - ${sizes.checkbox.width});
+    margin-left: ${sizes.margin}px;
+    margin-bottom: 0;
+    line-height: 18px;
+    cursor: pointer;
   }
 `;
 
