@@ -16,7 +16,7 @@ const Button = styled.button`
   * Theme
   */
 
-  // General style
+  /* General style */
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
   font-weight: ${sizes.fontWeight.bold};
@@ -42,7 +42,7 @@ const Button = styled.button`
     }
     `}
 
-  // Specific style
+  /* Specific style */
   ${({ color }) =>
     color !== 'none' &&
     `
