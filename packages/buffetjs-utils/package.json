@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/utils",
-  "version": "3.0.2",
+  "version": "3.0.6",
   "description": "Buffetjs Utils",
   "main": "dist/index.js",
   "module": "src/index.js",

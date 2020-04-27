@@ -55,8 +55,11 @@ function DateTime({
       minute,
       second,
     };
+
     const currentDate = isEmpty(timestamp) ? moment() : cloneDeep(timestamp);
     currentDate.set('hours', timeObj.hour);
+    currentDate.set('minute', timeObj.minute);
+    currentDate.set('second', timeObj.second);
 
     setDate(currentDate);
   };
