@@ -42,11 +42,7 @@ function ButtonStory() {
 import React from 'react';
 import { Button } from '@buffetjs/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPlus,
-  faTrashAlt,
-  faBaseballBall,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Example() {
   return (

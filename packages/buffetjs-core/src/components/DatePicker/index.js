@@ -58,6 +58,7 @@ function Datepicker({
       type: 'SET_DISPLAYED_DATE',
       displayedDate,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let timer = null;
@@ -113,15 +114,11 @@ function Datepicker({
     toggleDatepicker(false);
   };
 
-  const handleOutsideClick = () => {
-    toggleDatepicker(false);
-  };
-
   const handleTabClick = ({ keyCode, which }) => {
     const code = keyCode || which;
 
     if (code === 9) {
-      handleOutsideClick();
+      toggleDatepicker(false);
     }
   };
 
@@ -161,7 +158,7 @@ function Datepicker({
           focused
           numberOfMonths={1}
           onDateChange={handleDateClick}
-          onOutsideClick={handleOutsideClick}
+          onOutsideClick={() => toggleDatepicker(false)}
           daySize={37}
           transitionDuration={0}
         />

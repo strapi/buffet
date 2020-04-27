@@ -69,12 +69,12 @@ const Button = styled.button`
       min-width: ${sizes.button.minWidth};
     `}
   
-    // FontAwesome icons
+    /* FontAwesome icons */
     > span svg {
       font-size: 10px;
       vertical-align: initial;
     }
-    // Custom icons
+    /* Custom icons */
     > svg {
       height: 10px;
       width: auto;

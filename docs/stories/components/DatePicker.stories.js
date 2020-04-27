@@ -33,7 +33,7 @@ function Example() {
   return (
     <DatePicker
       name="datepicker" // This props is required
-      onChange={({ target }) => setValue(target.value)}
+      onChange={({ target }) => setState(target.value)}
       value={value}
     />
   );
