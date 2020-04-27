@@ -5,6 +5,8 @@
  */
 
 import styled, { keyframes } from 'styled-components';
+import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
 const loading = keyframes`
   from {left: -200px; width: 30%;}
@@ -21,8 +23,8 @@ const LoadingBar = styled.div`
   margin-top: 10px;
   position: relative;
   overflow: hidden;
-  background-color: #f3f3f4;
-  border-radius: 2px;
+  background-color: ${colors.greyHeader};
+  border-radius: ${sizes.borderRadius};
   &:before {
     display: block;
     position: absolute;
@@ -34,9 +36,5 @@ const LoadingBar = styled.div`
     animation: ${loading} 2s linear infinite;
   }
 `;
-
-LoadingBar.defaultProps = {};
-
-LoadingBar.propTypes = {};
 
 export default LoadingBar;
