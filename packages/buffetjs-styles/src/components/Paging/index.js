@@ -23,7 +23,6 @@ const Paging = styled.div`
         font-family: 'Lato';
         font-size: 12px;
         background-color: transparent;
-        //padding: 0 ${sizes.margin * 0.5}px;
         color: ${colors.blueTxt};
         &:hover {
           background-color: transparent;
@@ -31,10 +30,10 @@ const Paging = styled.div`
       }
       &.selected {
         .page-link {
-          font-weight: 700;
+          font-weight: ${sizes.fontWeight.black};
         }
       }
-      // Left & right arrows
+      /* Left & right arrows */
       &:first-of-type,
       &:last-of-type {
         .page-link {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import sizes from '../../assets/styles/sizes';
 
 import IconWrapper from '../IconWrapper';
 
@@ -8,7 +9,7 @@ const IconText = styled(IconWrapper)`
     content: '${props => props.text}';
     font-family: Lato;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: ${sizes.fontWeight.bold};
   }
 `;
 

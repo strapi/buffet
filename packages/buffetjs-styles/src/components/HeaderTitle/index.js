@@ -5,27 +5,30 @@
  */
 
 import styled from 'styled-components';
+import sizes from '../../assets/styles/sizes';
 
 const HeaderTitle = styled.div`
   position: relative;
-  padding-top: 0.8rem;
+  padding-top: 0.5rem;
   h1 {
     position: relative;
     width: fit-content;
     max-width: 100%;
+    margin-bottom: 0;
+    padding-right: 18px;
+    font-size: 2.4rem;
+    line-height: normal;
+    font-weight: ${sizes.fontWeight.bold};
+    text-transform: capitalize;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 1px;
-    padding-right: 18px;
   }
   svg {
     position: absolute;
     right: 0;
     top: 0;
-    margin-top: 11px;
+    margin-top: 12px;
     font-size: 12px;
     color: rgba(16, 22, 34, 0.35);
     cursor: pointer;

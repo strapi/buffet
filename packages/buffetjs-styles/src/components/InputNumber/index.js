@@ -136,7 +136,7 @@ const InputNumber = styled.div`
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
       border-radius: ${sizes.borderRadius};
       text-align: left;
-      font-weight: ${sizes.input.fontWeight};
+      font-weight: ${sizes.fontWeight.regular};
       font-size: 1.3rem;
       color: ${colors.blueTxt};
 

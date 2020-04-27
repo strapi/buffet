@@ -5,6 +5,7 @@
  */
 
 import styled from 'styled-components';
+import sizes from '../../assets/styles/sizes';
 
 const Header = styled.div`
   margin-bottom: 30px;
@@ -21,25 +22,35 @@ const Header = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: ${sizes.fontWeight.regular};
     line-height: normal;
     color: #787e8f;
   }
   .sticky {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 30.6rem;
     z-index: 1050;
     background-color: white;
-    width: calc(100vw - 30.5rem);
+    width: calc(100vw - 30.6rem);
     padding-right: 15px;
     height: 60px;
     display: flex;
     .row {
       width: 100%;
       margin: auto;
+      margin-top: 16px;
+      .header-title p {
+        display: none;
+      }
       > div > div {
         padding-top: 0;
+        h1 {
+          font-size: 2rem;
+          svg {
+            margin-top: 8px;
+          }
+        }
         button {
           margin-top: auto;
           margin-bottom: auto;

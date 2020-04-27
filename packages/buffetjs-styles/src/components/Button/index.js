@@ -16,32 +16,33 @@ const Button = styled.button`
   * Theme
   */
 
-  // General style
+  /* General style */
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding};
-  font-weight: 500;
+  padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
+  font-weight: ${sizes.fontWeight.bold};
   font-size: 1.3rem;
   line-height: normal;
   border-radius: ${sizes.borderRadius};
   cursor: pointer;
   outline: 0;
   background-color: ${colors.white};
-  &:hover {
-    ${mixins(colors.lightGreyAlpha).bshadow};
-  }
-  &:active {
+  &:hover, &:active {
     ${mixins(colors.lightGreyAlpha).bshadow};
   }
   &:focus {
     outline: 0;
   }
 
-  > svg {
-    margin-right: 10px;
-    vertical-align: initial;
-  }
+  ${({ disabled }) =>
+    disabled &&
+    `
+    &:hover {
+      box-shadow: none;
+      cursor: initial;
+    }
+    `}
 
-  // Specific style
+  /* Specific style */
   ${({ color }) =>
     color !== 'none' &&
     `
@@ -65,8 +66,21 @@ const Button = styled.button`
   ${({ color }) =>
     color === 'success' &&
     `
-      min-width: ${sizes.button.minWidth.small};
+      min-width: ${sizes.button.minWidth};
     `}
+  
+    /* FontAwesome icons */
+    > span svg {
+      font-size: 10px;
+      vertical-align: initial;
+    }
+    /* Custom icons */
+    > svg {
+      height: 10px;
+      width: auto;
+      margin-right: 10px;
+      vertical-align: baseline;
+    }
 `;
 
 Button.defaultProps = {

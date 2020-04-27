@@ -1,27 +1,41 @@
 /**
  *
- * DatePicker
+ * Datepicker
  *
  */
 
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
+
 import moment from 'moment';
 import momentPropTypes from 'react-moment-proptypes';
 import 'react-dates/initialize';
 import { DayPickerSingleDateController } from 'react-dates';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { DatePicker as StyledDatepicker } from '@buffetjs/styles';
+
+import reducer, { initialState } from './reducer';
+
 import Input from '../InputText';
 
-class DatePicker extends React.PureComponent {
-  state = { date: null, displayedDate: '', isFocused: false, visible: false };
+function Datepicker({
+  className,
+  value,
+  withDefaultValue,
+  disabled,
+  displayFormat,
+  id,
+  name,
+  onChange,
+  readOnly,
+  tabIndex,
+  wait,
+}) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  timer = null;
-
-  componentDidMount() {
-    const { value, withDefaultValue } = this.props;
+  useEffect(() => {
     let date = null;
     let displayedDate = '';
 
@@ -35,134 +49,128 @@ class DatePicker extends React.PureComponent {
       displayedDate = date.format('MM/DD/YYYY');
     }
 
-    this.setState({ date, displayedDate });
-  }
-
-  // Temporary fix it the component will be migrated to react hooks in another PR
-  componentDidUpdate(prevProps) {
-    if (prevProps.value !== this.props.value) {
-      const { value, withDefaultValue } = this.props;
-      let date = null;
-      let displayedDate = '';
-
-      if (withDefaultValue && !value) {
-        date = moment();
-        displayedDate = date.format('MM/DD/YYYY');
-      }
-
-      if (!!value && moment(value).isValid()) {
-        date = value._isAMomentObject === true ? value : moment(value);
-        displayedDate = date.format('MM/DD/YYYY');
-      }
-
-      // Disabling this rule as it this component will be updated in the upcoming
-      // ui improvement PR
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ date, displayedDate });
-    }
-  }
-
-  handleChange = ({ target }) => {
-    this.setState({ displayedDate: target.value });
-
-    clearTimeout(this.timer);
-
-    this.timer = setTimeout(() => {
-      this.handleDateChange(moment(target.value));
-    }, this.props.wait);
-  };
-
-  handleDateChange = date => {
-    const { name, onChange } = this.props;
-
-    if (moment(date).isValid()) {
-      this.setState(
-        { date, displayedDate: date.format('MM/DD/YYYY'), visible: true },
-        () => onChange({ target: { name, type: 'date', value: date } })
-      );
-    }
-  };
-
-  handleFocusChange = ({ focused }) => {
-    /* istanbul ignore next */
-    this.setState({ isFocused: focused });
-  };
-
-  handleOutsideClick = () => {
-    this.setState({
-      visible: false,
+    dispatch({
+      type: 'SET_DATE',
+      date,
     });
-  };
 
-  handleTabClick = ({ keyCode, which }) => {
-    const code = keyCode || which;
-
-    if (code === 9) {
-      this.handleOutsideClick();
-    }
-  };
-
-  showDatepicker = () => {
-    this.setState({
-      visible: true,
+    dispatch({
+      type: 'SET_DISPLAYED_DATE',
+      displayedDate,
     });
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  render() {
-    const {
-      className,
-      disabled,
-      displayFormat,
-      id,
-      name,
-      readOnly,
-      tabIndex,
-    } = this.props;
-    const { date, displayedDate, isFocused, visible } = this.state;
-    let dateValue = date ? moment(date).format(displayFormat) : '';
+  let timer = null;
+  const { date, displayedDate, isFocused, isVisible } = state;
 
-    if (visible) {
+  const getDateValue = () => {
+    let dateValue = date ? date.format(displayFormat) : '';
+
+    if (isVisible) {
       dateValue = displayedDate;
     }
 
-    return (
-      <StyledDatepicker className={`${className} ${visible && 'is-open'}`}>
-        <div>
-          <Input
-            disabled={disabled}
-            type="text"
-            name="start_date"
-            id={id || name}
-            value={dateValue}
-            readOnly={readOnly}
-            onChange={this.handleChange}
-            icon={<FontAwesomeIcon icon={faCalendarAlt} />}
-            onClick={this.showDatepicker}
-            onFocus={this.showDatepicker}
-            onKeyDown={this.handleTabClick}
-            tabIndex={tabIndex}
-          />
-        </div>
-        {visible && (
-          <DayPickerSingleDateController
-            date={date}
-            focused={isFocused}
-            numberOfMonths={1}
-            keepOpenOnDateSelect
-            onFocusChange={this.handleFocusChange}
-            onDateChange={this.handleDateChange}
-            onOutsideClick={this.handleOutsideClick}
-          />
-        )}
-      </StyledDatepicker>
-    );
-  }
+    return dateValue;
+  };
+
+  const handleChange = ({ target }) => {
+    clearTimeout(timer);
+
+    dispatch({
+      type: 'SET_IS_FOCUSED',
+      isFocused: false,
+    });
+
+    dispatch({
+      type: 'SET_DISPLAYED_DATE',
+      displayedDate: target.value,
+    });
+
+    timer = setTimeout(() => {
+      handleDateChange(moment(target.value, 'MM/DD/YYYY'));
+    }, wait);
+  };
+
+  const handleDateChange = dateValue => {
+    if (moment(dateValue).isValid()) {
+      onChange({ target: { name, type: 'date', value: dateValue } });
+
+      dispatch({
+        type: 'SET_DATE',
+        date: dateValue,
+      });
+
+      dispatch({
+        type: 'SET_DISPLAYED_DATE',
+        displayedDate: dateValue.format('MM/DD/YYYY'),
+      });
+    }
+  };
+
+  const handleDateClick = dateValue => {
+    handleDateChange(dateValue);
+
+    toggleDatepicker(false);
+  };
+
+  const handleTabClick = ({ keyCode, which }) => {
+    const code = keyCode || which;
+
+    if (code === 9) {
+      toggleDatepicker(false);
+    }
+  };
+
+  const toggleDatepicker = shown => {
+    dispatch({
+      type: 'SET_IS_VISIBLE',
+      isVisible: shown,
+    });
+
+    dispatch({
+      type: 'SET_IS_FOCUSED',
+      isFocused: shown,
+    });
+  };
+
+  return (
+    <StyledDatepicker isOpen={isVisible} className={className}>
+      <div>
+        <Input
+          disabled={disabled}
+          type="text"
+          name="start_date"
+          id={id || name}
+          value={getDateValue()}
+          readOnly={readOnly}
+          onChange={handleChange}
+          icon={<FontAwesomeIcon icon={faCalendarAlt} />}
+          onFocus={() => toggleDatepicker(true)}
+          onClick={() => toggleDatepicker(true)}
+          onKeyDown={handleTabClick}
+          tabIndex={tabIndex}
+        />
+      </div>
+      {isFocused && (
+        <DayPickerSingleDateController
+          date={date}
+          focused
+          numberOfMonths={1}
+          onDateChange={handleDateClick}
+          onOutsideClick={() => toggleDatepicker(false)}
+          daySize={37}
+          transitionDuration={0}
+        />
+      )}
+    </StyledDatepicker>
+  );
 }
 
-DatePicker.defaultProps = {
+Datepicker.defaultProps = {
   className: null,
   disabled: false,
-  displayFormat: 'MMMM DD, YY',
+  displayFormat: 'MMMM DD, YYYY',
   id: 'date',
   onChange: () => {},
   readOnly: false,
@@ -172,7 +180,7 @@ DatePicker.defaultProps = {
   withDefaultValue: false,
 };
 
-DatePicker.propTypes = {
+Datepicker.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   displayFormat: PropTypes.string,
@@ -186,4 +194,4 @@ DatePicker.propTypes = {
   withDefaultValue: PropTypes.bool,
 };
 
-export default DatePicker;
+export default Datepicker;

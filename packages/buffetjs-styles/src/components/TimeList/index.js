@@ -12,7 +12,7 @@ const TimeList = styled.ul`
   width: 100%;
   height: 0;
   font-family: 'Lato';
-  font-weight: 600;
+  font-weight: ${sizes.fontWeight.bold};
   font-size: ${sizes.input.fontSize};
   color: ${colors.greyIconColor};
   border: 1px solid transparent;
@@ -60,10 +60,10 @@ const TimeList = styled.ul`
       z-index: 0;
       width: 100%;
       height: 100%;
-      padding: ${sizes.margin * 0.3}px 0 ${sizes.margin * 0.3}px
+      padding: ${sizes.margin * 0.4}px 0 ${sizes.margin * 0.2}px
         calc(${sizes.input.height} + ${sizes.input.padding});
       font-size: 13px;
-      line-height: 24px;
+      line-height: 30px;
       margin-bottom: 0;
     }
   }

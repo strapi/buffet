@@ -11,7 +11,7 @@ const ListHeader = styled.div`
   position: relative;
   button {
     position: absolute;
-    top: 1.6rem;
+    top: 1.7rem;
     right: 3rem;
     outline: 0;
   }
