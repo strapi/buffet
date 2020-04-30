@@ -19,8 +19,8 @@ exports[`<LoadingBar /> should match snapshot 1`] = `
   width: 200px;
   height: 6px;
   background-color: rgb(227,227,231);
-  -webkit-animation: hMpXOK 2s linear infinite;
-  animation: hMpXOK 2s linear infinite;
+  -webkit-animation: dBQFcQ 2s linear infinite;
+  animation: dBQFcQ 2s linear infinite;
 }
 
 <div
