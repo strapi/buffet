@@ -19,7 +19,6 @@ const HeaderTitle = styled.div`
     font-size: 2.4rem;
     line-height: normal;
     font-weight: ${sizes.fontWeight.bold};
-    text-transform: capitalize;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

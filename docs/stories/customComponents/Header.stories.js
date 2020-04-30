@@ -1,134 +1,187 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
-
 import { Header } from '@buffetjs/custom';
-// import { InputText } from '@buffetjs/core';
+import { InputText } from '@buffetjs/core';
 import styled from 'styled-components';
-
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 const Wrapper = styled.div`
   padding-top: 10px;
-  margin-bottom: 35px;
-
-  .input-wrapper {
-    margin-left: 1.8rem;
-    height: 30px;
-    > input {
-      height: 30px;
-    }
-  }
 `;
 
-function HeaderStory() {
-  const cta = {
-    icon: 'fa fa-pencil',
-    onClick: () => alert('Edit button clicked'),
-  };
-
-  const actions = [
-    {
-      label: 'Cancel',
-      onClick: () => alert('Cancel button clicked'),
-      color: 'cancel',
-      type: 'button',
-    },
-    {
-      label: 'Save',
-      onClick: () => alert('Save button clicked'),
-      color: 'success',
-      type: 'submit',
-    },
-    // // Passing custom component
-    // {
-    //   Component: InputText,
-    //   className: 'input-wrapper',
-    //   name: 'example',
-    //   key: 'example',
-    // },
-  ];
-
-  const props = {
-    title: {
-      label: 'restaurant de paris',
-      cta: cta,
-    },
-    content: 'Restaurant description',
-    actions: actions,
-  };
-
+function SimpleHeaderStory() {
   return (
-    <Presentation title="Header" description="Display data.">
+    <Presentation title="Header" description="Simple Header">
       <Wrapper>
-        <Header {...props} />
+        <Header
+          title={{ label: 'restaurant de Paris' }}
+          content="Restaurant description"
+        />
       </Wrapper>
-      <Pre>{source}</Pre>
+      <Pre>{defaultHeaderSource}</Pre>
     </Presentation>
   );
 }
 
-const source = `
-import React, { useState } from 'react';
+function ActionsHeaderStory() {
+  return (
+    <Presentation title="Header" description="Header with actions">
+      <Wrapper>
+        <Header
+          actions={[
+            {
+              label: 'Cancel',
+              onClick: () => alert('Cancel button clicked'),
+              color: 'cancel',
+              type: 'button',
+            },
+            {
+              label: 'Save',
+              onClick: () => alert('Save button clicked'),
+              color: 'success',
+              type: 'submit',
+            },
+          ]}
+          title={{
+            label: 'restaurant de Paris',
+            cta: {
+              icon: 'fa fa-pencil',
+              onClick: () => alert('Edit button clicked'),
+            },
+          }}
+          content="Restaurant description"
+        />
+        <Pre>{headerActionsSource}</Pre>
+      </Wrapper>
+    </Presentation>
+  );
+}
+
+function LoadingHeaderStory() {
+  return (
+    <Presentation title="Header" description="Header in loading state">
+      <Wrapper>
+        <Header
+          title={{
+            label: 'restaurant de Paris',
+          }}
+          content="Restaurant description"
+          isLoading
+        />
+        <Pre>{loadingHeaderSource}</Pre>
+      </Wrapper>
+    </Presentation>
+  );
+}
+
+function CustomHeaderStory() {
+  return (
+    <Presentation title="Header" description="Header with custom components">
+      <Wrapper>
+        <Header
+          actions={[
+            {
+              Component: InputText,
+              name: 'example',
+              key: 'example',
+              placeholder: 'Custom component',
+            },
+          ]}
+          title={{
+            label: 'restaurant de Paris',
+          }}
+          content="Restaurant description"
+        />
+        <Pre>{customHeaderSource}</Pre>
+      </Wrapper>
+    </Presentation>
+  );
+}
+
+const customHeaderSource = `
+import React from 'react';
 import { Header } from '@buffetjs/custom';
 import { InputText } from '@buffetjs/core';
-import styled from 'styled-components';
-
-const Wrapper = styled.div\`
-  padding-top: 9px;
-  margin-bottom: 35px;
-
-  .input-wrapper {
-    margin-left: 1.8rem;
-    height: 30px;
-    > input {
-      height: 30px;
-    }
-  }
-\`;
-
 function Example() {
-  const cta = {
-    icon: 'fa fa-pencil',
-    onClick: () => alert('Edit button clicked'),
-  };
-
-  const actions = [
-    {
-      title: 'Cancel',
-      onClick: () => alert('Cancel button clicked'),
-      color: 'cancel',
-      type: 'button',
-    },
-    {
-      title: 'Save',
-      onClick: () => alert('Save button clicked'),
-      color: 'success',
-      type: 'submit',
-    },
-    // Passing custom component
-    {
-      Component: InputText,
-      className: 'input-wrapper',
-      name: 'example',
-    },
-  ];
-
-  const headerProps = {
-    title: {
-      label: 'Restaurant',
-      cta: cta,
-    },
-    content: 'Restaurant description',
-    actions: actions,
-  };
-
   return (
-    <Wrapper>
-      <Header {...headerProps} />
-    </Wrapper>
+    <Header
+    actions={[
+      {
+        Component: InputText,
+        name: 'example',
+        key: 'example',
+        placeholder: 'Custom component',
+      },
+    ]}
+    title={{
+      label: 'restaurant de pPris',
+    }}
+    content="Restaurant description"
   );
-}`;
+}
+`;
 
-storiesOf('Custom', module).add('Header', () => <HeaderStory />);
+const defaultHeaderSource = `
+import React from 'react';
+import { Header } from '@buffetjs/custom';
+function Example() {
+  return (
+    <Header
+      title={{ label: 'restaurant de Paris' }}
+      content="Restaurant description"
+  );
+}
+`;
+
+const headerActionsSource = `
+import React from 'react';
+import { Header } from '@buffetjs/custom';
+function Example() {
+  return (
+    <Header
+      actions={[
+        {
+          label: 'Cancel',
+          onClick: () => alert('Cancel button clicked'),
+          color: 'cancel',
+          type: 'button',
+        },
+        {
+          label: 'Save',
+          onClick: () => alert('Save button clicked'),
+          color: 'success',
+          type: 'submit',
+        },
+      ]}
+      title={{
+        label: 'restaurant de Paris',
+        cta: {
+          icon: 'fa fa-pencil',
+          onClick: () => alert('Edit button clicked'),
+        },
+      }}
+      content="Restaurant description"
+  );
+}
+`;
+
+const loadingHeaderSource = `
+import React from 'react';
+import { Header } from '@buffetjs/custom';
+function Example() {
+  return (
+    <Header
+      title={{ label: 'restaurant de paris' }}
+      content="Restaurant description"
+      isLoading
+  );
+}
+`;
+
+storiesOf('Custom|Header', module)
+  .add('Simple', () => <SimpleHeaderStory />)
+  .add('Loading', () => <LoadingHeaderStory />)
+  .add('With Actions', () => <ActionsHeaderStory />)
+  .add('Custom', () => <CustomHeaderStory />);

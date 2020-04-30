@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { HeaderTitle } from '@buffetjs/core';
+import { LoadingBar } from '@buffetjs/styles';
 
 import Header from '../index';
 
@@ -15,6 +16,7 @@ describe('<Header />', () => {
   it('should not crash', () => {
     renderComponent();
   });
+
   it('should render title and subtitle', () => {
     const compo = renderComponent();
     const titles = compo.find('.header-title');
@@ -24,5 +26,20 @@ describe('<Header />', () => {
 
     const subtitle = titles.find('p');
     expect(subtitle.text()).toEqual('restaurant description');
+  });
+
+  it('should not render a LoadingBar if isLoading is false', () => {
+    const wrapper = renderComponent();
+
+    expect(wrapper.find(LoadingBar).exists()).toEqual(false);
+  });
+
+  it('should render a LoadingBar if isLoading is true', () => {
+    const wrapper = renderComponent({
+      ...defaultProps,
+      isLoading: true,
+    });
+
+    expect(wrapper.find(LoadingBar).exists()).toEqual(true);
   });
 });
