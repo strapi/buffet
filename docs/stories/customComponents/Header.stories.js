@@ -16,7 +16,7 @@ function SimpleHeaderStory() {
     <Presentation title="Header" description="Simple Header">
       <Wrapper>
         <Header
-          title={{ label: 'restaurant de paris' }}
+          title={{ label: 'restaurant de Paris' }}
           content="Restaurant description"
         />
       </Wrapper>
@@ -45,7 +45,7 @@ function ActionsHeaderStory() {
             },
           ]}
           title={{
-            label: 'restaurant de paris',
+            label: 'restaurant de Paris',
             cta: {
               icon: 'fa fa-pencil',
               onClick: () => alert('Edit button clicked'),
@@ -65,7 +65,7 @@ function LoadingHeaderStory() {
       <Wrapper>
         <Header
           title={{
-            label: 'restaurant de paris',
+            label: 'restaurant de Paris',
           }}
           content="Restaurant description"
           isLoading
@@ -90,7 +90,7 @@ function CustomHeaderStory() {
             },
           ]}
           title={{
-            label: 'restaurant de paris',
+            label: 'restaurant de Paris',
           }}
           content="Restaurant description"
         />
@@ -116,7 +116,7 @@ function Example() {
       },
     ]}
     title={{
-      label: 'restaurant de paris',
+      label: 'restaurant de pPris',
     }}
     content="Restaurant description"
   );
@@ -129,7 +129,7 @@ import { Header } from '@buffetjs/custom';
 function Example() {
   return (
     <Header
-      title={{ label: 'restaurant de paris' }}
+      title={{ label: 'restaurant de Paris' }}
       content="Restaurant description"
   );
 }
@@ -156,7 +156,7 @@ function Example() {
         },
       ]}
       title={{
-        label: 'restaurant de paris',
+        label: 'restaurant de Paris',
         cta: {
           icon: 'fa fa-pencil',
           onClick: () => alert('Edit button clicked'),
