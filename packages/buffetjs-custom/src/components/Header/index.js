@@ -40,8 +40,7 @@ function Header({ actions, content, isLoading, stickable, title }) {
         <div className="row">
           <div className="col-sm-6 header-title">
             <HeaderTitle title={label} cta={cta} />
-            {isLoading && <LoadingBar />}
-            {!isLoading && <p>{content}</p>}
+            {isLoading ? <LoadingBar /> : <p>{content}</p>}
           </div>
           <div className="col-sm-6 justify-content-end">
             <HeaderActions actions={actions} />
