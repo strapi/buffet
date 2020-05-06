@@ -52,7 +52,7 @@ const Tab = styled.li`
       border-top: 3px solid ${colors.blueTabBorder};
       border-bottom: 3px solid white;
       background-color: white;
-      font-weight: bold;
+      font-weight: ${sizes.fontWeight.bold};
     }
   }
 `;

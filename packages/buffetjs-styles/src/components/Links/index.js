@@ -17,6 +17,7 @@ const Links = styled.div`
     color: ${colors.blueTxt};
     svg {
       font-size: 10px;
+      color: ${colors.blueTxt};
     }
   }
 `;

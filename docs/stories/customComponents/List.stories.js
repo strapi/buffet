@@ -9,7 +9,7 @@ import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTrash,
+  faTrashAlt,
   faPencilAlt,
   faCube,
 } from '@fortawesome/free-solid-svg-icons';
@@ -30,9 +30,7 @@ const CustomRow = ({ icon, description, links, name, onClick }) => {
 
   return (
     <Row onClick={onClick}>
-      <td>
-        <i className={icon} />
-      </td>
+      <td>{icon}</td>
       <td>
         <p style={styles.name}>{name}</p>
       </td>
@@ -104,7 +102,7 @@ function ListStory() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -120,7 +118,7 @@ function ListStory() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -159,7 +157,7 @@ function ListStory() {
   return (
     <Presentation title="List" description="Display data.">
       <section style={{ marginTop: 29, paddingBottom: 40 }}>
-        <Subtitle style={{ marginBottom: 30 }}>Default List</Subtitle>
+        <Subtitle style={{ marginBottom: 32 }}>Default List</Subtitle>
         <div style={{ marginBottom: 35 }}>
           <List {...initProps} items={defaultItems} />
         </div>
@@ -229,7 +227,7 @@ import React from 'react';
 import { List } from '@buffetjs/custom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTrash,
+  faTrashAlt,
   faPencilAlt,
   faCube,
 } from '@fortawesome/free-solid-svg-icons';
@@ -295,7 +293,7 @@ function Example() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],
@@ -311,7 +309,7 @@ function Example() {
           onClick: handleEditClick,
         },
         {
-          icon: <FontAwesomeIcon icon={faTrash} />,
+          icon: <FontAwesomeIcon icon={faTrashAlt} />,
           onClick: handleDeleteClick,
         },
       ],

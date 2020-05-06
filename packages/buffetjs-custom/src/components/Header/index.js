@@ -8,9 +8,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { HeaderTitle, HeaderActions } from '@buffetjs/core';
-import { Header as Wrapper } from '@buffetjs/styles';
+import { Header as Wrapper, LoadingBar } from '@buffetjs/styles';
 
-function Header({ actions, content, stickable, title }) {
+function Header({ actions, content, isLoading, stickable, title }) {
   const [isHeaderSticky, setHeaderSticky] = useState(false);
   const headerRef = useRef(null);
 
@@ -40,7 +40,7 @@ function Header({ actions, content, stickable, title }) {
         <div className="row">
           <div className="col-sm-6 header-title">
             <HeaderTitle title={label} cta={cta} />
-            <p>{content}</p>
+            {isLoading ? <LoadingBar /> : <p>{content}</p>}
           </div>
           <div className="col-sm-6 justify-content-end">
             <HeaderActions actions={actions} />
@@ -54,6 +54,7 @@ function Header({ actions, content, stickable, title }) {
 Header.defaultProps = {
   actions: [],
   content: null,
+  isLoading: false,
   stickable: true,
   title: {
     label: null,
@@ -69,6 +70,7 @@ Header.propTypes = {
     })
   ),
   content: PropTypes.string,
+  isLoading: PropTypes.bool,
   stickable: PropTypes.bool,
   title: PropTypes.shape({
     cta: PropTypes.shape({
