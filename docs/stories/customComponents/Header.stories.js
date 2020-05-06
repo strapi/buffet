@@ -116,7 +116,7 @@ function Example() {
       },
     ]}
     title={{
-      label: 'restaurant de pPris',
+      label: 'restaurant de Paris',
     }}
     content="Restaurant description"
   );
