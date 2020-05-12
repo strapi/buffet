@@ -15,6 +15,7 @@ export { default as ListRow } from './components/ListRow';
 export { default as NavTabs } from './components/NavTabs';
 export { default as HeaderActions } from './components/HeaderActions';
 export { default as HeaderTitle } from './components/HeaderTitle';
+export { default as Option } from './components/Option';
 export { default as PrefixIcon } from './components/PrefixIcon';
 export { default as Select } from './components/Select';
 export { default as Table } from './components/Table';
