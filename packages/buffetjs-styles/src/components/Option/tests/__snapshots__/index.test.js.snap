@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> snapshot 1`] = `
+exports[`<Option /> should match the snapshot 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
