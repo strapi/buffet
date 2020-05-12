@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PickerSection /> should match snapshot 1`] = `
+.c0 {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  z-index: 1046;
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #e3e9f3;
+  box-shadow: 0 2px 4px rgba(227,233,243,0.5);
+}
+
+<div
+  className="c0"
+/>
+`;
