@@ -11,7 +11,7 @@ const Option = styled.div`
   border-radius: 2px;
   line-height: ${({ lineHeight }) => lineHeight};
   color: #007eff;
-  font-size: ${({ theme }) => theme.sizes.fonts.md};
+  font-size: ${({ theme }) => theme.main.sizes.fonts.md};
   -webkit-font-smoothing: antialiased;
 `;
 
@@ -20,12 +20,14 @@ Option.defaultProps = {
   lineHeight: '28px',
   margin: '0',
   theme: {
-    sizes: {
-      fonts: {
-        xs: '11px',
-        sm: '12px',
-        md: '13px',
-        lg: '18px',
+    main: {
+      sizes: {
+        fonts: {
+          xs: '11px',
+          sm: '12px',
+          md: '13px',
+          lg: '18px',
+        },
       },
     },
   },
