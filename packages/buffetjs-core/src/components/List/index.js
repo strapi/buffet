@@ -15,13 +15,15 @@ function List({ className, items, customRowComponent }) {
     <StyledList className={className}>
       <table>
         <tbody>
-          {items.map(item =>
+          {items.map((item, index) =>
             customRowComponent ? (
-              <React.Fragment key={JSON.stringify(item)}>
+              // eslint-disable-next-line react/no-array-index-key
+              <React.Fragment key={index}>
                 {customRowComponent(item)}
               </React.Fragment>
             ) : (
-              <ListRow cells={item} key={JSON.stringify(item)} />
+              // eslint-disable-next-line react/no-array-index-key
+              <ListRow cells={item} key={index} />
             )
           )}
         </tbody>
