@@ -52,6 +52,7 @@ function Inputs({
   name,
   onBlur: handleBlur,
   onChange,
+  translatedErrors,
   type,
   validations,
   value,
@@ -97,6 +98,7 @@ function Inputs({
     <Error
       inputError={inputError}
       name={name}
+      translatedErrors={translatedErrors}
       type={type}
       validations={validations}
     >
@@ -152,6 +154,20 @@ Inputs.defaultProps = {
   label: null,
   onBlur: null,
   onChange: () => {},
+  translatedErrors: {
+    date: 'This is not a date',
+    email: 'This is not an email',
+    string: 'This is not a string',
+    number: 'This is not a number',
+    json: 'This is not a JSON',
+    max: 'This is too high',
+    maxLength: 'This is too long',
+    min: 'This is too small',
+    minLength: 'This is too short',
+    required: 'This value is required',
+    regex: 'This does not match the format',
+    uppercase: 'This must be a upper case string',
+  },
   validations: {},
   value: null,
 };
@@ -165,6 +181,7 @@ Inputs.propTypes = {
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: () => {},
+  translatedErrors: PropTypes.objectOf(PropTypes.string),
   type: PropTypes.string.isRequired,
   validations: PropTypes.object,
   value: PropTypes.any,

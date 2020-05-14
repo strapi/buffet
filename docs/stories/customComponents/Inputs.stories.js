@@ -147,6 +147,20 @@ function InputStory() {
                         ? form[input].value
                         : state[input]
                     }
+                    translatedErrors={{
+                      date: 'This is not a date',
+                      email: 'This is not an email',
+                      string: 'This is not a string',
+                      number: 'This is not a number',
+                      json: 'This is not a JSON',
+                      max: 'This is too high',
+                      maxLength: 'This is too long',
+                      min: 'This is too small',
+                      minLength: 'This is too short',
+                      required: 'This value is required',
+                      regex: 'This does not match the format',
+                      uppercase: 'This must be a upper case string',
+                    }}
                   />
                 </div>
               ))}
@@ -281,6 +295,20 @@ function Example() {
                 name={input}
                 {...form[input]}
                 onChange={handleChange}
+                translatedErrors={{
+                  date: 'This is not a date',
+                  email: 'This is not an email',
+                  string: 'This is not a string',
+                  number: 'This is not a number',
+                  json: 'This is not a JSON',
+                  max: 'This is too high',
+                  maxLength: 'This is too long',
+                  min: 'This is too small',
+                  minLength: 'This is too short',
+                  required: 'This value is required',
+                  regex: 'This does not match the format',
+                  uppercase: 'This must be a upper case string',
+                }}
                 value={state[input] || form[input].value}
               />
             </div>
