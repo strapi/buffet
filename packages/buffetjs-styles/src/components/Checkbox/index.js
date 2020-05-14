@@ -74,7 +74,7 @@ const Checkbox = styled.input`
   }
   & + label {
     display: inline-block;
-    font-weight: ${sizes.fontWeight.regular};
+    font-weight: ${sizes.fontWeight.semiBold};
     font-size: ${sizes.input.fontSize};
   }
 `;
