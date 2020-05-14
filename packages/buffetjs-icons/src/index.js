@@ -4,6 +4,7 @@ export { default as Carret } from './components/Carret';
 export { default as Calendar } from './components/Calendar';
 export { default as ContentType } from './components/ContentType';
 export { default as Component } from './components/Component';
+export { default as Duplicate } from './components/Duplicate';
 export { default as DynamicZone } from './components/DynamicZone';
 export { default as Email } from './components/Email';
 export { default as Enumeration } from './components/Enumeration';
