@@ -8,6 +8,7 @@ import {
   Calendar,
   Component,
   ContentType,
+  Duplicate,
   DynamicZone,
   Email,
   Enumeration,
@@ -75,6 +76,13 @@ const IconsStory = () => {
     {
       name: 'content-type',
       Compo: ContentType,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'duplicate',
+      Compo: Duplicate,
       props: {
         fill: '#b3b5b9',
       },
@@ -271,6 +279,7 @@ import {
   Calendar,
   Component,
   ContentType,
+  Duplicate,
   DynamicZone,
   Email,
   Enumeration,
@@ -338,6 +347,13 @@ const icons = [
     props: {
       fill: '#b3b5b9',
     },
+  },
+  {
+    name: 'duplicate',
+    Compo: Duplicate,
+    props: {
+      fill: '#b3b5b9',
+    }
   },
   {
     name: 'dynamic-zone',
