@@ -22,15 +22,23 @@ function Select({
   const lengthOfReactElementsInOptions = options.filter(option =>
     React.isValidElement(option)
   ).length;
+
   const formatOptions = () =>
-    options.map(option => (
-      <option
-        key={JSON.stringify(option.value) || option}
-        value={option.value || option}
-      >
-        {option.label || option}
-      </option>
-    ));
+    options.map(option => {
+      let optionValue = option;
+
+      // Type check
+      // Use option.value if it is defined (ie. even when it is an empty string)
+      if (option && typeof option.value !== 'undefined') {
+        optionValue = option.value;
+      }
+
+      return (
+        <option key={JSON.stringify(optionValue)} value={optionValue}>
+          {option.label || option}
+        </option>
+      );
+    });
   const renderOptions = () => {
     const areOptionsValidReactElements = options.every(option =>
       React.isValidElement(option)
