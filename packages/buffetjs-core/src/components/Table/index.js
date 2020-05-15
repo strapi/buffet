@@ -7,7 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Table as StyledTable, TableRowEmpty } from '@buffetjs/styles';
+import {
+  LoadingIndicator,
+  Table as StyledTable,
+  TableRowEmpty,
+} from '@buffetjs/styles';
 import TableHeader from '../TableHeader';
 import TableRow from '../TableRow';
 import ActionCollapse from './ActionCollapse';
@@ -17,12 +21,14 @@ function Table({
   className,
   customRow,
   headers,
+  isLoading,
   onChangeSort,
   onClickRow,
   onSelect,
   onSelectAll,
   rows,
   rowLinks,
+  showActionCollapse,
   sortBy,
   sortOrder,
   tableEmptyText,
@@ -36,7 +42,7 @@ function Table({
 
   const areAllEntriesSelected =
     rows.length > 0 && rows.some(row => row._isChecked === true);
-  const shouldDisplayEmptyRow = rows.length === 0;
+  const shouldDisplayEmptyRow = rows.length === 0 && !isLoading;
 
   return (
     <StyledTable className={className}>
@@ -52,7 +58,7 @@ function Table({
           withBulkAction={withBulkAction}
         />
         <tbody>
-          {withBulkAction && areAllEntriesSelected && (
+          {withBulkAction && areAllEntriesSelected && showActionCollapse && (
             <ActionCollapse
               colSpan={colSpan}
               numberOfSelectedEntries={
@@ -60,6 +66,13 @@ function Table({
               }
               {...bulkActionProps}
             />
+          )}
+          {isLoading && (
+            <TableRowEmpty isLoading>
+              <td colSpan={colSpan}>
+                <LoadingIndicator />
+              </td>
+            </TableRowEmpty>
           )}
           {shouldDisplayEmptyRow && (
             <TableRowEmpty>
@@ -111,12 +124,14 @@ Table.defaultProps = {
   className: null,
   customRow: null,
   headers: [],
+  isLoading: false,
   onChangeSort: () => {},
   onClickRow: () => {},
   onSelect: () => {},
   onSelectAll: () => {},
   rows: [],
   rowLinks: [],
+  showActionCollapse: false,
   sortBy: null,
   sortOrder: 'asc',
   tableEmptyText: 'There is no data',
@@ -140,13 +155,14 @@ Table.propTypes = {
       value: PropTypes.string,
     })
   ),
-
+  isLoading: PropTypes.bool,
   onChangeSort: PropTypes.func,
   onClickRow: PropTypes.func,
   onSelect: PropTypes.func,
   onSelectAll: PropTypes.func,
   rowLinks: PropTypes.instanceOf(Array),
   rows: PropTypes.instanceOf(Array),
+  showActionCollapse: PropTypes.bool,
   sortBy: PropTypes.string,
   sortOrder: PropTypes.string,
   tableEmptyText: PropTypes.string,
