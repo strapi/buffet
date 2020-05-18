@@ -12,6 +12,7 @@ import {
   DynamicZone,
   Email,
   Enumeration,
+  Envelope,
   Fail,
   Grab,
   GrabLarge,
@@ -104,6 +105,13 @@ const IconsStory = () => {
     {
       name: 'enum',
       Compo: Enumeration,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'envelope',
+      Compo: Envelope,
       props: {
         fill: '#b3b5b9',
       },
@@ -283,6 +291,7 @@ import {
   DynamicZone,
   Email,
   Enumeration,
+  Envelope,
   Fail,
   Grab,
   GrabLarge,
@@ -372,6 +381,13 @@ const icons = [
   {
     name: 'enum',
     Compo: Enumeration,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'envelope',
+    Compo: Envelope,
     props: {
       fill: '#b3b5b9',
     },
