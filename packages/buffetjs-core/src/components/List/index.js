@@ -6,24 +6,31 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List as StyledList } from '@buffetjs/styles';
+import { List as StyledList, LoadingIndicator } from '@buffetjs/styles';
 
 import ListRow from '../ListRow';
+import Padded from '../Padded';
 
-function List({ className, items, customRowComponent }) {
+function List({ className, items, isLoading, customRowComponent }) {
   return (
     <StyledList className={className}>
       <table>
         <tbody>
-          {items.map((item, index) =>
-            customRowComponent ? (
-              // eslint-disable-next-line react/no-array-index-key
-              <React.Fragment key={index}>
-                {customRowComponent(item)}
-              </React.Fragment>
-            ) : (
-              // eslint-disable-next-line react/no-array-index-key
-              <ListRow cells={item} key={index} />
+          {isLoading ? (
+            <Padded top bottom size="md">
+              <LoadingIndicator />
+            </Padded>
+          ) : (
+            items.map((item, index) =>
+              customRowComponent ? (
+                // eslint-disable-next-line react/no-array-index-key
+                <React.Fragment key={index}>
+                  {customRowComponent(item)}
+                </React.Fragment>
+              ) : (
+                // eslint-disable-next-line react/no-array-index-key
+                <ListRow cells={item} key={index} />
+              )
             )
           )}
         </tbody>
@@ -34,13 +41,15 @@ function List({ className, items, customRowComponent }) {
 
 List.defaultProps = {
   className: null,
-  items: [],
   customRowComponent: null,
+  isLoading: false,
+  items: [],
 };
 
 List.propTypes = {
   className: PropTypes.string,
   customRowComponent: PropTypes.func,
+  isLoading: PropTypes.bool,
   items: PropTypes.instanceOf(Array),
 };
 
