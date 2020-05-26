@@ -14,14 +14,14 @@ import Padded from '../Padded';
 function List({ className, items, isLoading, customRowComponent }) {
   return (
     <StyledList className={className}>
-      <table>
-        <tbody>
-          {isLoading ? (
-            <Padded top bottom size="md">
-              <LoadingIndicator />
-            </Padded>
-          ) : (
-            items.map((item, index) =>
+      {isLoading ? (
+        <Padded top bottom size="md">
+          <LoadingIndicator />
+        </Padded>
+      ) : (
+        <table>
+          <tbody>
+            {items.map((item, index) =>
               customRowComponent ? (
                 // eslint-disable-next-line react/no-array-index-key
                 <React.Fragment key={index}>
@@ -31,10 +31,10 @@ function List({ className, items, isLoading, customRowComponent }) {
                 // eslint-disable-next-line react/no-array-index-key
                 <ListRow cells={item} key={index} />
               )
-            )
-          )}
-        </tbody>
-      </table>
+            )}
+          </tbody>
+        </table>
+      )}
     </StyledList>
   );
 }
