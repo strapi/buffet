@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { List as ListCompo, ListHeader } from '@buffetjs/core';
+import { List as ListCompo, ListHeader, Padded } from '@buffetjs/core';
 import { Card } from '@buffetjs/styles';
 
 function List({
@@ -20,7 +20,9 @@ function List({
 }) {
   return (
     <Card>
-      <ListHeader title={title} subtitle={subtitle} button={button} />
+      <Padded right left size="md">
+        <ListHeader title={title} subtitle={subtitle} button={button} />
+      </Padded>
       <ListCompo
         items={items}
         isLoading={isLoading}

@@ -152,6 +152,7 @@ function ListStory() {
   const initProps = {
     title,
     button,
+    subtitle,
   };
 
   return (
