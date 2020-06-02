@@ -13,7 +13,6 @@ const List = styled.div`
   position: relative;
   overflow-x: scroll;
   border-radius: ${sizes.borderRadius};
-  box-shadow: 0 2px 4px #e3e9f3;
   background: white;
   table {
     border-collapse: collapse;
@@ -43,8 +42,8 @@ const List = styled.div`
         color: transparent;
         background-color: transparent;
         position: absolute;
-        left: ${sizes.margin * 2}px;
-        width: calc(100% - ${sizes.margin * 4}px);
+        left: 3rem;
+        width: calc(100% - 6rem);
         height: 1px;
         margin-top: -${sizes.margin * 0.1}px;
       }
@@ -58,10 +57,10 @@ const List = styled.div`
       font-size: 1.3rem;
       line-height: 1.8rem;
       &:first-of-type:not(:last-of-type) {
-        padding-left: calc(3rem + 0.75em);
+        padding-left: 3rem;
       }
       &:last-of-type:not(:first-of-type) {
-        padding-right: calc(3rem + 0.7em);
+        padding-right: 3rem;
       }
     }
   }

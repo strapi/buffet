@@ -25,6 +25,7 @@ Padded.defaultProps = {
         paddings: {
           xs: '5px',
           sm: '10px',
+          smd: '20px',
           md: '30px',
           lg: '40px',
         },
