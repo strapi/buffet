@@ -33,7 +33,7 @@ function TableHeader({
             <Checkbox
               onChange={onSelectAll}
               checked={checked}
-              shouldDisplayNotChecked={shouldDisplayNotChecked}
+              someChecked={shouldDisplayNotChecked}
             />
           </td>
         )}

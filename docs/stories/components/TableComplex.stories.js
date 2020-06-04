@@ -182,6 +182,7 @@ function TableStory() {
           rows={sortedRows}
           sortBy={state.sortBy}
           sortOrder={state.sortOrder}
+          showActionCollapse
           withBulkAction
           rowLinks={[
             {
@@ -381,6 +382,7 @@ function Example() {
         dispatch({ type });
       }}
       rows={sortedRows}
+      showActionCollapse
       sortBy={state.sortBy}
       sortOrder={state.sortOrder}
       withBulkAction
