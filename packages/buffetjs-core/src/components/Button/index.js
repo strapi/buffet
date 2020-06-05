@@ -32,7 +32,7 @@ function Button({
 
   if (isLoading) {
     return (
-      <StyledButton color={color} disabled={disabled} {...rest}>
+      <StyledButton color={color} disabled {...rest}>
         <Flex justifyContent="space-around">
           <Spinner />
         </Flex>
