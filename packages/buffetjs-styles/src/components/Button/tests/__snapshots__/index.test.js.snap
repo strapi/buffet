@@ -27,6 +27,16 @@ exports[`<Button /> <Button /> icons should render a custom icon 1`] = `
   outline: 0;
 }
 
+.c0 .spinner {
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 2px solid #f7f5f0;
+  border-top: 2px solid #d1cec7;
+  border-radius: 50%;
+  -webkit-animation: qOXMj .6s linear infinite;
+  animation: qOXMj .6s linear infinite;
+}
+
 .c0 > span svg {
   font-size: 10px;
   vertical-align: initial;
@@ -74,6 +84,16 @@ exports[`<Button /> <Button /> icons should render the add icon 1`] = `
   outline: 0;
 }
 
+.c0 .spinner {
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 2px solid #f7f5f0;
+  border-top: 2px solid #d1cec7;
+  border-radius: 50%;
+  -webkit-animation: qOXMj .6s linear infinite;
+  animation: qOXMj .6s linear infinite;
+}
+
 .c0 > span svg {
   font-size: 10px;
   vertical-align: initial;
@@ -119,6 +139,16 @@ exports[`<Button /> <Button /> icons should render the add trash 1`] = `
 
 .c0:focus {
   outline: 0;
+}
+
+.c0 .spinner {
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 2px solid #f7f5f0;
+  border-top: 2px solid #d1cec7;
+  border-radius: 50%;
+  -webkit-animation: qOXMj .6s linear infinite;
+  animation: qOXMj .6s linear infinite;
 }
 
 .c0 > span svg {

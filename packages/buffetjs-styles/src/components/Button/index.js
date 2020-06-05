@@ -4,11 +4,20 @@
  *
  */
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 const Button = styled.button`
 
@@ -31,6 +40,16 @@ const Button = styled.button`
   }
   &:focus {
     outline: 0;
+  }
+
+  /* TODO set the correct colors */
+  .spinner {
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid #f7f5f0;
+    border-top: 2px solid #d1cec7;
+    border-radius: 50%;
+    animation: ${spin} .6s linear infinite;
   }
 
   ${({ disabled }) =>
@@ -81,6 +100,9 @@ const Button = styled.button`
       margin-right: 10px;
       vertical-align: baseline;
     }
+
+
+    
 `;
 
 Button.defaultProps = {

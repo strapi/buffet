@@ -8,9 +8,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as StyledButton, colors } from '@buffetjs/styles';
 import { Plus } from '@buffetjs/icons';
+import Flex from '../Flex';
 import PrefixIcon from '../PrefixIcon';
 
-function Button({ children, color, disabled, icon, label, ...rest }) {
+function Button({
+  children,
+  color,
+  disabled,
+  icon,
+  label,
+  isLoading,
+  ...rest
+}) {
   const content = label || children;
 
   const img =
@@ -19,6 +28,16 @@ function Button({ children, color, disabled, icon, label, ...rest }) {
     ) : (
       <PrefixIcon icon={icon} />
     );
+
+  if (isLoading) {
+    return (
+      <StyledButton color={color} disabled={disabled} {...rest}>
+        <Flex justifyContent="space-around">
+          <div className="spinner" />
+        </Flex>
+      </StyledButton>
+    );
+  }
 
   return (
     <StyledButton color={color} disabled={disabled} {...rest}>
@@ -33,6 +52,7 @@ Button.defaultProps = {
   color: 'primary',
   disabled: false,
   icon: false,
+  isLoading: false,
   label: null,
   type: 'button',
 };
@@ -49,6 +69,7 @@ Button.propTypes = {
   ]),
   disabled: PropTypes.bool,
   icon: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+  isLoading: PropTypes.bool,
   label: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'menu']),
 };
