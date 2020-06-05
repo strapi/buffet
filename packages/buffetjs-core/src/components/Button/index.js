@@ -32,7 +32,15 @@ function Button({
 
   if (isLoading) {
     return (
-      <StyledButton color={color} disabled {...rest}>
+      <StyledButton
+        color={color}
+        disabled={disabled}
+        {...rest}
+        onClick={e => {
+          // Preventing the user from clicking the button when loading
+          e.preventDefault();
+        }}
+      >
         <Flex justifyContent="space-around">
           <Spinner />
         </Flex>
