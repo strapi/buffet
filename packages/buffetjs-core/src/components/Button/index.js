@@ -10,6 +10,7 @@ import { Button as StyledButton, colors } from '@buffetjs/styles';
 import { Plus } from '@buffetjs/icons';
 import Flex from '../Flex';
 import PrefixIcon from '../PrefixIcon';
+import Spinner from './Spinner';
 
 function Button({
   children,
@@ -33,7 +34,7 @@ function Button({
     return (
       <StyledButton color={color} disabled={disabled} {...rest}>
         <Flex justifyContent="space-around">
-          <div className="spinner" />
+          <Spinner />
         </Flex>
       </StyledButton>
     );
