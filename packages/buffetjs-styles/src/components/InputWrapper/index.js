@@ -37,7 +37,6 @@ const InputWrapper = styled.div`
     }
   }
   span {
-    z-index: 0;
     border-top-left-radius: ${sizes.borderRadius};
     border-bottom-left-radius: ${sizes.borderRadius};
   }

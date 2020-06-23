@@ -141,6 +141,7 @@ function InputStory() {
                     customInputs={{ custom: Foo }}
                     name={input}
                     {...form[input]}
+                    disabled
                     onChange={handleChange}
                     value={
                       isUndefined(state[input])
