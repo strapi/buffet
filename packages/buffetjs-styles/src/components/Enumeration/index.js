@@ -16,7 +16,7 @@ const Enumeration = styled.input`
   left: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   margin: 0;
   opacity: 0;
   &:checked + span {
@@ -28,10 +28,12 @@ const Enumeration = styled.input`
 `;
 
 Enumeration.defaultProps = {
+  disabled: false,
   type: 'radio',
 };
 
 Enumeration.propTypes = {
+  disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 
