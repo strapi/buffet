@@ -8,15 +8,23 @@ import faSolidHeavy2 from '@fortawesome/fontawesome-free/webfonts/fa-solid-900.w
 
 /* Lato Regular */
 import latoRegular from '../../assets/fonts/lato/Lato-Regular.ttf';
+import latoRegularWoff from '../../assets/fonts/lato/Lato-Regular.woff';
+import latoRegularWoff2 from '../../assets/fonts/lato/Lato-Regular.woff2';
 
 /* Lato SemiBold */
 import latoSemiBold from '../../assets/fonts/lato/Lato-SemiBold.ttf';
+import latoSemiBoldWoff from '../../assets/fonts/lato/Lato-SemiBold.woff';
+import latoSemiBoldWoff2 from '../../assets/fonts/lato/Lato-SemiBold.woff2';
 
 /* Lato Bold */
 import latoBold from '../../assets/fonts/lato/Lato-Bold.ttf';
+import latoBoldWoff from '../../assets/fonts/lato/Lato-Bold.woff';
+import latoBoldWoff2 from '../../assets/fonts/lato/Lato-Bold.woff2';
 
 /* Lato Black */
 import latoBlack from '../../assets/fonts/lato/Lato-Black.ttf';
+import latoBlackWoff from '../../assets/fonts/lato/Lato-Black.woff';
+import latoBlackWoff2 from '../../assets/fonts/lato/Lato-Black.woff2';
 
 const Font = createGlobalStyle`
 @font-face {
@@ -43,7 +51,7 @@ const Font = createGlobalStyle`
 /* Lato Regular - 400 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoRegular}) format('truetype');
+  src: url(${latoRegularWoff2}) format('woff2'), url(${latoRegularWoff}) format('woff'), url(${latoRegular}) format('truetype');
   font-weight: 400;
   font-style: normal;
 };
@@ -51,7 +59,7 @@ const Font = createGlobalStyle`
 /* Lato Semi-Bold - 500 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoSemiBold}) format('truetype');
+  src: url(${latoSemiBoldWoff2}) format('woff2'), url(${latoSemiBoldWoff}) format('woff'), url(${latoSemiBold}) format('truetype');
   font-weight: 500;
   font-style: normal;
 };
@@ -59,7 +67,7 @@ const Font = createGlobalStyle`
 /* Lato Bold - 600 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoBold}) format('truetype');
+  src: url(${latoBoldWoff2}) format('woff2'), url(${latoBoldWoff}) format('woff'), url(${latoBold}) format('truetype');
   font-weight: 600;
   font-style: normal;
 };
@@ -67,7 +75,7 @@ const Font = createGlobalStyle`
 /* Lato Black - 900 */
 @font-face {
   font-family: 'Lato';
-  src: url(${latoBlack}) format('truetype');
+  src:  url(${latoBlackWoff2}) format('woff2'), url(${latoBlackWoff}) format('woff'), url(${latoBlack}) format('truetype');
   font-weight: 900;
   font-style: normal;
 };`;
