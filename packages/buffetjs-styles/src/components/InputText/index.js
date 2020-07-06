@@ -36,14 +36,12 @@ const InputText = styled.input`
     cursor: not-allowed;
   }
 
-  {/* Search with left icon */}
   ${props =>
     (props.type === 'search' || props.type === 'email' || props.icon) &&
     `
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 
-  {*/ Password with right icon */}
   ${props =>
     props.type === 'password' &&
     `

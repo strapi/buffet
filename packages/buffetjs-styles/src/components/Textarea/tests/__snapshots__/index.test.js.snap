@@ -24,6 +24,11 @@ exports[`<Textarea /> should match the snapshot when empty 1`] = `
   border-color: #78caff;
 }
 
+.c0:disabled {
+  background-color: #FAFAFB;
+  cursor: not-allowed;
+}
+
 <textarea
   className="c0"
   placeholder="Write a short description"
@@ -52,6 +57,11 @@ exports[`<Textarea /> should match the snapshot when not empty 1`] = `
 
 .c0:focus {
   border-color: #78caff;
+}
+
+.c0:disabled {
+  background-color: #FAFAFB;
+  cursor: not-allowed;
 }
 
 <textarea
