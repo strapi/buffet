@@ -47,6 +47,7 @@ function InputText({
         autoFocus={autoFocus}
         id={id || name}
         name={name}
+        disabled
         onChange={onChange}
         tabIndex={tabIndex}
         type={showPassword ? 'text' : type}
