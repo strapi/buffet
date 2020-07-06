@@ -147,7 +147,7 @@ const InputNumber = styled.div`
         border-color: ${colors.blueBorder};
       }
       &:disabled {
-        cursor: initial;
+        cursor: not-allowed;
         background-color: ${colors.greyIconBkgd};
       }
     }
