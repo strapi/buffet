@@ -4,7 +4,13 @@
  *
  */
 
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+} from 'react';
 import { isInteger, toNumber } from 'lodash';
 import PropTypes from 'prop-types';
 
@@ -232,6 +238,8 @@ function TimePicker(props) {
     updateTime(target.value);
   };
 
+  const handleChangeRadio = useCallback(() => {}, []);
+
   const formatInputValue = time => {
     if (!seconds) {
       setInputVal(short(time));
@@ -277,7 +285,8 @@ function TimePicker(props) {
             <li key={option.value} ref={listRefs[option.value]}>
               <input
                 type="radio"
-                onChange={handleClick}
+                onChange={handleChangeRadio}
+                onClick={handleClick}
                 value={option.value}
                 id={option.value}
                 name="time"
