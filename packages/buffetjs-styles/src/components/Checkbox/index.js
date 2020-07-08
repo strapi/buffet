@@ -71,6 +71,9 @@ const Checkbox = styled.input`
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: initial;
+    &:after {
+      color: ${colors.brightGrey};
+    }
   }
   & + label {
     display: inline-block;

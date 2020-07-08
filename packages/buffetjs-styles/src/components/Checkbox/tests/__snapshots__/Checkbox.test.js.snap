@@ -53,6 +53,10 @@ exports[`<Checkbox /> should match snapshot 1`] = `
   cursor: initial;
 }
 
+.c0:disabled:after {
+  color: #9ea7b8;
+}
+
 .c0 + label {
   display: inline-block;
   font-weight: 500;
