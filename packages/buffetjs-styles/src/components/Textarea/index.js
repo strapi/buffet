@@ -30,6 +30,7 @@ const StyledTextarea = styled.textarea`
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: not-allowed;
+    color: ${colors.brightGrey};
   }
 `;
 

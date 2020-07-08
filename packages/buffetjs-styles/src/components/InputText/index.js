@@ -34,6 +34,7 @@ const InputText = styled.input`
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: not-allowed;
+    color: ${colors.brightGrey};
   }
 
   ${props =>

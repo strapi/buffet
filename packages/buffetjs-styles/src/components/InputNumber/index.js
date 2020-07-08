@@ -149,6 +149,8 @@ const InputNumber = styled.div`
       &:disabled {
         cursor: not-allowed;
         background-color: ${colors.greyIconBkgd};
+        color: ${colors.brightGrey};
+        opacity: 1;
       }
     }
     .rc-input-number-handler-wrap {
