@@ -11,6 +11,7 @@ import sizes from '../../assets/styles/sizes';
 const InputWrapper = styled.div`
   position: relative;
   background-color: ${colors.white};
+  border-radius: ${sizes.borderRadius};
   button[type='button'] {
     width: ${sizes.input.height};
     height: ${sizes.input.height};

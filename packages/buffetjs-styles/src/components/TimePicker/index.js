@@ -31,6 +31,7 @@ const TimePicker = styled.input`
   }
   &:disabled {
     cursor: not-allowed;
+    color: ${colors.brightGrey};
   }
 `;
 

@@ -38,6 +38,8 @@ const Select = styled.select`
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: not-allowed;
+    color: ${colors.brightGrey};
+    opacity: 1;
   }
 `;
 
