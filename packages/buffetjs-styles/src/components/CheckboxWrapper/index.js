@@ -25,8 +25,12 @@ const CheckboxWrapper = styled.div`
     margin-left: ${sizes.margin}px;
     margin-bottom: 0;
     line-height: 18px;
-    cursor: pointer;
+    cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   }
 `;
+
+CheckboxWrapper.defaultProps = {
+  disabled: false,
+};
 
 export default CheckboxWrapper;

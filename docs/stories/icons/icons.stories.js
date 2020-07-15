@@ -8,9 +8,11 @@ import {
   Calendar,
   Component,
   ContentType,
+  Duplicate,
   DynamicZone,
   Email,
   Enumeration,
+  Envelope,
   Fail,
   Grab,
   GrabLarge,
@@ -80,6 +82,13 @@ const IconsStory = () => {
       },
     },
     {
+      name: 'duplicate',
+      Compo: Duplicate,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
       name: 'dynamic-zone',
       Compo: DynamicZone,
       props: {
@@ -96,6 +105,13 @@ const IconsStory = () => {
     {
       name: 'enum',
       Compo: Enumeration,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'envelope',
+      Compo: Envelope,
       props: {
         fill: '#b3b5b9',
       },
@@ -271,9 +287,11 @@ import {
   Calendar,
   Component,
   ContentType,
+  Duplicate,
   DynamicZone,
   Email,
   Enumeration,
+  Envelope,
   Fail,
   Grab,
   GrabLarge,
@@ -340,6 +358,13 @@ const icons = [
     },
   },
   {
+    name: 'duplicate',
+    Compo: Duplicate,
+    props: {
+      fill: '#b3b5b9',
+    }
+  },
+  {
     name: 'dynamic-zone',
     Compo: DynamicZone,
     props: {
@@ -356,6 +381,13 @@ const icons = [
   {
     name: 'enum',
     Compo: Enumeration,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'envelope',
+    Compo: Envelope,
     props: {
       fill: '#b3b5b9',
     },

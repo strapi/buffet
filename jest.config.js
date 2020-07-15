@@ -23,4 +23,5 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(@buffetjs/core|@buffetjs/styles|@buffetjs/custom|@buffetjs/utils|react)/)',
   ],
+  testPathIgnorePatterns: ['/node_modules/', '/OLD/', '/dist/'],
 };

@@ -27,6 +27,11 @@ const StyledTextarea = styled.textarea`
   &:focus {
     border-color: ${colors.blueBorder};
   }
+  &:disabled {
+    background-color: ${colors.greyIconBkgd};
+    cursor: not-allowed;
+    color: ${colors.brightGrey};
+  }
 `;
 
 export default StyledTextarea;

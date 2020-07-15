@@ -4,12 +4,12 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const IconWrapper = styled.span`
-  width: ${sizes.input.height};
-  height: ${sizes.input.height};
+  width: calc(${sizes.input.height} - 2px);
+  height: calc(${sizes.input.height} - 2px);
   color: ${colors.greyIconColor};
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 1px;
+  top: 1px;
   background-color: ${props =>
     props.background ? colors.greyIconBkgd : 'transparent'};
   display: flex;

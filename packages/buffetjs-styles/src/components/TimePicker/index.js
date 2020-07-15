@@ -30,7 +30,8 @@ const TimePicker = styled.input`
     border-color: ${colors.blueBorder};
   }
   &:disabled {
-    cursor: initial;
+    cursor: not-allowed;
+    color: ${colors.brightGrey};
   }
 `;
 

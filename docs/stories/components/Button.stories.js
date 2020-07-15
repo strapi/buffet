@@ -9,7 +9,7 @@ import {
   faTrashAlt,
   faBaseballBall,
 } from '@fortawesome/free-solid-svg-icons';
-import { Button } from '@buffetjs/core';
+import { Button, Flex } from '@buffetjs/core';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 import Subtitle from '../ui/Subtitle';
@@ -50,6 +50,8 @@ function Example() {
       <Button color="${color}" icon={<FontAwesomeIcon icon={faPlus} />} label="${label}" />
 
       <Button color="${color}" icon={<FontAwesomeIcon icon={faPlus} />}>${label}</Button>
+
+      <Button color="sucess" isLoading>Submit</Button>
     </>
   );
 }
@@ -58,67 +60,70 @@ function Example() {
 
         <section style={{ marginTop: 32 }}>
           <Subtitle style={{ marginBottom: 12 }}>Examples</Subtitle>
-          <div className="btn-wrapper">
-            <Button type="submit">Save</Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="primary" icon>
-              Add
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="delete">
-              Delete
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button
-              type="submit"
-              color="delete"
-              icon={<FontAwesomeIcon icon={faTrashAlt} />}
-            >
-              Delete
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="cancel">
-              Cancel
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="success">
-              Submit
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="secondary">
-              Text
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button
-              type="submit"
-              color="secondary"
-              icon={<FontAwesomeIcon icon={faBaseballBall} />}
-            >
-              Text
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button type="submit" color="none">
-              Text
-            </Button>
-          </div>
-          <div className="btn-wrapper">
-            <Button
-              type="submit"
-              color="delete"
-              icon={<FontAwesomeIcon icon={faBaseballBall} />}
-              disabled
-            >
-              Disabled
-            </Button>
-          </div>
+          <Flex flexWrap="wrap">
+            <div className="btn-wrapper">
+              <Button type="submit">Save</Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="primary" icon>
+                Add
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="delete">
+                Delete
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button
+                type="submit"
+                color="delete"
+                icon={<FontAwesomeIcon icon={faTrashAlt} />}
+              >
+                Delete
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="cancel">
+                Cancel
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="success">
+                Submit
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="success" isLoading>
+                Submit
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button type="submit" color="secondary">
+                Text
+              </Button>
+            </div>
+            <div className="btn-wrapper">
+              <Button
+                type="submit"
+                color="secondary"
+                icon={<FontAwesomeIcon icon={faBaseballBall} />}
+              >
+                Text
+              </Button>
+            </div>
+
+            <div className="btn-wrapper">
+              <Button
+                type="submit"
+                color="delete"
+                icon={<FontAwesomeIcon icon={faBaseballBall} />}
+                disabled
+              >
+                Disabled
+              </Button>
+            </div>
+          </Flex>
         </section>
       </>
     </Presentation>

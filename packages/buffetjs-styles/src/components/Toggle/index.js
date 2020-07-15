@@ -16,7 +16,7 @@ const Toggle = styled.input`
   left: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   margin: 0;
   opacity: 0;
   & + span {
@@ -45,13 +45,30 @@ const Toggle = styled.input`
       font-weight: ${sizes.fontWeight.black};
     }
   }
+  &:disabled {
+    &:not(:checked) + span {
+      background-color: ${colors.greyIconBkgd};
+      color: ${colors.brightGrey};
+      box-shadow: inset -1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &:checked + span {
+      & + span {
+        background-color: ${colors.greyIconBkgd};
+        color: ${colors.brightGrey};
+        box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 `;
 
 Toggle.defaultProps = {
+  disabled: false,
   type: 'checkbox',
 };
 
 Toggle.propTypes = {
+  disabled: PropTypes.bool,
   type: PropTypes.string,
 };
 

@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isObject } from 'lodash';
+import { isFunction, isObject } from 'lodash';
 import { Checkbox, Links as StyledLinks } from '@buffetjs/styles';
 import Icon from '../Icon';
 
@@ -18,7 +18,7 @@ function TableRow({
   rowLinks,
   withBulkAction,
 }) {
-  const displayedCells = headers.map(header => header.value);
+  // const displayedCells = headers.map(header => ({ key: header.value, );
 
   return (
     <tr
@@ -39,12 +39,22 @@ function TableRow({
           />
         </td>
       )}
-      {displayedCells.map(cellName => {
-        const displayedValue = !isObject(row[cellName]) ? row[cellName] : '-';
+      {headers.map(({ value: cellName, cellFormatter, cellAdapter }) => {
+        let displayedValue = !isObject(row[cellName]) ? row[cellName] : '-';
+
+        if (isFunction(cellFormatter)) {
+          displayedValue = cellFormatter(row[cellName], row);
+        }
+
+        let displayedContent = <p>{displayedValue || '-'}</p>;
+
+        if (isFunction(cellAdapter)) {
+          displayedContent = cellAdapter(row);
+        }
 
         return (
           <td key={cellName} className={`${cellName}-cell`}>
-            <p>{displayedValue || '-'}</p>
+            {displayedContent}
           </td>
         );
       })}

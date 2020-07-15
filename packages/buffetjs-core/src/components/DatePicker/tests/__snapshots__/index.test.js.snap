@@ -167,12 +167,12 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c2 {
-  width: 3.4rem;
-  height: 3.4rem;
+  width: calc(3.4rem - 2px);
+  height: calc(3.4rem - 2px);
   color: #B3B5B9;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 1px;
+  top: 1px;
   background-color: #FAFAFB;
   display: -webkit-box;
   display: -webkit-flex;
@@ -214,11 +214,14 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 
 .c3:disabled {
   background-color: #FAFAFB;
+  cursor: not-allowed;
+  color: #9ea7b8;
 }
 
 .c1 {
   position: relative;
   background-color: #ffffff;
+  border-radius: 2px;
 }
 
 .c1 button[type='button'] {
@@ -247,7 +250,6 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c1 span {
-  z-index: 0;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }

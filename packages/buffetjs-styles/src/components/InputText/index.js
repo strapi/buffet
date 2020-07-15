@@ -22,24 +22,27 @@ const InputText = styled.input`
   border-radius: ${sizes.borderRadius};
   color: ${colors.blueTxt};
   background-color: transparent;
+
   &::-webkit-input-placeholder {
     color: ${colors.greyPlaceholder};
   }
+
   &:focus {
     border-color: ${colors.blueBorder};
   }
+
   &:disabled {
-    background-color: ${colors.greyIconBkgd}
+    background-color: ${colors.greyIconBkgd};
+    cursor: not-allowed;
+    color: ${colors.brightGrey};
   }
 
-  // Search with left icon
   ${props =>
     (props.type === 'search' || props.type === 'email' || props.icon) &&
     `
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
     `}}
 
-  // Password with right icon
   ${props =>
     props.type === 'password' &&
     `
