@@ -27,6 +27,8 @@ export { default as ListRow } from './components/ListRow';
 export { default as ListSubtitle } from './components/ListSubtitle';
 export { default as ListTitle } from './components/ListTitle';
 export { default as LoadingBar } from './components/LoadingBar';
+export { default as LoadingIndicator } from './components/LoadingIndicator';
+export { default as Option } from './components/Option';
 export { default as Paging } from './components/Paging';
 export { default as Select } from './components/Select';
 export { default as Tab } from './components/Tab';

@@ -17,6 +17,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "jest-styled-components": "^7.0.0",
     "react": "^16.12.0"
   },
   "peerDependencies": {

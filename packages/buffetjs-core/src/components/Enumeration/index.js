@@ -13,12 +13,21 @@ import {
 
 import Label from '../Label';
 
-function Enumeration({ id, className, name, onChange, options, value }) {
+function Enumeration({
+  disabled,
+  id,
+  className,
+  name,
+  onChange,
+  options,
+  value,
+}) {
   return (
     <EnumerationWrapper className={className}>
       {options.map(option => (
         <Label key={option.value} htmlFor={id || name}>
           <StyledEnumeration
+            disabled={disabled}
             checked={option.value === value}
             name={id || name}
             onChange={onChange}
@@ -33,6 +42,7 @@ function Enumeration({ id, className, name, onChange, options, value }) {
 
 Enumeration.defaultProps = {
   className: null,
+  disabled: false,
   id: null,
   onChange: () => {},
   options: [],
@@ -41,6 +51,7 @@ Enumeration.defaultProps = {
 
 Enumeration.propTypes = {
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,

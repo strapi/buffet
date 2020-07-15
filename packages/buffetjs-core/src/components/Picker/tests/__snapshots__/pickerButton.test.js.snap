@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PickerButton /> should match snapshot 1`] = `
+.c0 {
+  margin: 0;
+  line-height: normal;
+  color: #292b2c;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 30px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  border: 1px solid #e3e9f3;
+  border-radius: 2px;
+}
+
+.c1:active,
+.c1:focus {
+  outline: 0;
+}
+
+.c1 > svg + span,
+.c1 > span + svg {
+  margin-left: 10px;
+}
+
+.c1 > svg g {
+  stroke: #292b2c;
+}
+
+.c1:hover {
+  background-color: #fbfbfb;
+}
+
+<button
+  className="c0 c1"
+  color="greyDark"
+  fontSize="md"
+  fontWeight="semiBold"
+  type="button"
+/>
+`;

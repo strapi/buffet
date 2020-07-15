@@ -11,6 +11,7 @@ import sizes from '../../assets/styles/sizes';
 const InputWrapper = styled.div`
   position: relative;
   background-color: ${colors.white};
+  border-radius: ${sizes.borderRadius};
   button[type='button'] {
     width: ${sizes.input.height};
     height: ${sizes.input.height};
@@ -37,7 +38,6 @@ const InputWrapper = styled.div`
     }
   }
   span {
-    z-index: 0;
     border-top-left-radius: ${sizes.borderRadius};
     border-bottom-left-radius: ${sizes.borderRadius};
   }

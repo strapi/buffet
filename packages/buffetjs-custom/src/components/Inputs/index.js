@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { get, isEmpty, isFunction, isUndefined } from 'lodash';
 import {
@@ -52,27 +52,33 @@ function Inputs({
   name,
   onBlur: handleBlur,
   onChange,
+  translatedErrors,
   type,
   validations,
   value,
   ...rest
 }) {
-  let inputValue;
+  const inputValue = useMemo(() => {
+    let ret;
 
-  switch (type) {
-    case 'checkbox':
-    case 'bool':
-      inputValue = value || false;
-      break;
-    case 'number':
-      inputValue = isUndefined(value) ? '' : value;
-      break;
-    default:
-      inputValue = value || '';
-  }
-  const allInputs = Object.assign(inputs, customInputs);
-  const InputComponent = allInputs[type] || UnknownInput;
-  const inputId = id || name;
+    switch (type) {
+      case 'checkbox':
+      case 'bool':
+        ret = value || false;
+        break;
+      case 'number':
+        ret = isUndefined(value) ? '' : value;
+        break;
+      default:
+        ret = value || '';
+    }
+
+    return ret;
+  }, [type, value]);
+
+  const allInputs = useRef(Object.assign(inputs, customInputs));
+  const InputComponent = allInputs.current[type] || UnknownInput;
+  const inputId = useMemo(() => id || name, [id, name]);
   const descriptionId = `description-${inputId}`;
   const errorId = `error-${inputId}`;
 
@@ -97,6 +103,7 @@ function Inputs({
     <Error
       inputError={inputError}
       name={name}
+      translatedErrors={translatedErrors}
       type={type}
       validations={validations}
     >
@@ -152,6 +159,20 @@ Inputs.defaultProps = {
   label: null,
   onBlur: null,
   onChange: () => {},
+  translatedErrors: {
+    date: 'This is not a date',
+    email: 'This is not an email',
+    string: 'This is not a string',
+    number: 'This is not a number',
+    json: 'This is not a JSON',
+    max: 'This is too high',
+    maxLength: 'This is too long',
+    min: 'This is too small',
+    minLength: 'This is too short',
+    required: 'This value is required',
+    regex: 'This does not match the format',
+    uppercase: 'This must be a upper case string',
+  },
   validations: {},
   value: null,
 };
@@ -165,6 +186,7 @@ Inputs.propTypes = {
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: () => {},
+  translatedErrors: PropTypes.objectOf(PropTypes.string),
   type: PropTypes.string.isRequired,
   validations: PropTypes.object,
   value: PropTypes.any,

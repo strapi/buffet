@@ -37,7 +37,9 @@ const Select = styled.select`
   }
   &:disabled {
     background-color: ${colors.greyIconBkgd};
-    cursor: initial;
+    cursor: not-allowed;
+    color: ${colors.brightGrey};
+    opacity: 1;
   }
 `;
 

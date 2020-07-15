@@ -32,7 +32,7 @@ function Checkbox({
   };
 
   return (
-    <CheckboxWrapper className={className}>
+    <CheckboxWrapper className={className} disabled={rest.disabled}>
       <StyledCheckbox
         {...rest}
         autoFocus={autoFocus}
@@ -51,6 +51,7 @@ Checkbox.defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
   className: null,
+  disabled: false,
   id: null,
   message: null,
   onChange: () => {},
@@ -62,6 +63,7 @@ Checkbox.propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   id: PropTypes.string,
   message: PropTypes.oneOfType([
     PropTypes.func,

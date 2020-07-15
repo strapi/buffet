@@ -71,10 +71,13 @@ const Checkbox = styled.input`
   &:disabled {
     background-color: ${colors.greyIconBkgd};
     cursor: initial;
+    &:after {
+      color: ${colors.brightGrey};
+    }
   }
   & + label {
     display: inline-block;
-    font-weight: ${sizes.fontWeight.regular};
+    font-weight: ${sizes.fontWeight.semiBold};
     font-size: ${sizes.input.fontSize};
   }
 `;

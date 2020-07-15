@@ -33,7 +33,7 @@ function ListStory() {
 
   return (
     <Presentation title="List" description="Display data.">
-      <div style={{ paddingTop: 3, marginBottom: 35 }}>
+      <div style={{ paddingTop: 8, marginBottom: 35 }}>
         <List {...defaultProps} />
       </div>
       <Pre>{source}</Pre>
