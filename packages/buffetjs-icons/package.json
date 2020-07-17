@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/icons",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "Icons kit",
   "main": "dist/index.js",
   "module": "src/index.js",
