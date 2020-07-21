@@ -65,6 +65,7 @@ const Table = styled.div`
     padding-left: 2.5em;
     padding-right: 2.5em;
     text-align: left;
+    th,
     td {
       font-size: 1.3rem;
       padding: 0 25px;
@@ -78,6 +79,7 @@ const Table = styled.div`
       line-height: 0.1rem;
       font-weight: ${sizes.fontWeight.bold};
       text-transform: capitalize;
+      th,
       td {
         background-color: ${colors.greyHeader};
         height: ${sizes.table.header.height};
