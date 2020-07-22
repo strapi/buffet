@@ -6,6 +6,10 @@
 # testing
 /coverage
 
+# build:
+build
+!build/index.js
+
 # production
 /build
 /dist

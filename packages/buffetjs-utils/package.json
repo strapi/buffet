@@ -2,13 +2,21 @@
   "name": "@buffetjs/utils",
   "version": "3.2.1",
   "description": "Buffetjs Utils",
-  "main": "dist/index.js",
-  "module": "src/index.js",
-  "files": [
-    "dist/*"
+  "main": "build",
+  "module": "build/esm/index.js",
+  "bundlesize": [
+    {
+      "path": "build/bundle.production.js"
+    }
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
+    "build": "yarn build:development && yarn build:production && yarn build:esm",
+    "build:analyze": "cross-env NODE_ENV=production webpack-cli --json > build/stats.production.json && webpack-bundle-analyzer build/stats.production.json",
+    "build:development": "cross-env NODE_ENV=development webpack-cli",
+    "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\"",
+    "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
+    "build:watch": "cross-env NODE_ENV=development webpack-cli -w",
+    "builde": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "lint": "eslint --c ../../.eslintrc src",
     "prepublishOnly": "npm run build",
     "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
@@ -16,14 +24,34 @@
   "author": "Strapi team",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.15",
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "jest-styled-components": "^7.0.0",
-    "lodash": "^4.17.15"
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-module-resolver": "3.0.0",
+    "bundlesize": "^0.17.0",
+    "cross-env": "^5.1.4",
+    "url-loader": "^1.0.1",
+    "webpack": "~4.5.0",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "~2.0.14"
   },
   "peerDependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "yup": "^0.27.0"
   },
   "repository": {
     "type": "git",
