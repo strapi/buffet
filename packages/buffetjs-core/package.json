@@ -8,9 +8,10 @@
     "*.css"
   ],
   "scripts": {
+    "zbuilde": "yarn build:development && yarn build:production && yarn build:esm",
     "build": "yarn build:development && yarn build:production && yarn build:esm",
-    "build:analyze": "cross-env NODE_ENV=production webpack-cli --json > build/stats.production.json && webpack-bundle-analyzer build/stats.production.json",
-    "build:development": "cross-env NODE_ENV=development webpack-cli",
+    "build:analyze": "cross-env NODE_ENV=production APP_ENV=production webpack-cli --json > build/stats.production.json && webpack-bundle-analyzer build/stats.production.json",
+    "build:development": "cross-env NODE_ENV=development APP_ENV=development webpack-cli",
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" ",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development APP_ENV=development webpack-cli -w",

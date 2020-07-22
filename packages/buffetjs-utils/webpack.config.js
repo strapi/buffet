@@ -36,7 +36,7 @@ const bundleConfig = {
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/build`,
-    filename: `bundle.${process.env.APP_ENV}.js`,
+    filename: `bundle.${process.env.APP_ENV || 'development'}.js`,
     library: packageJson.name,
     libraryTarget: 'umd',
     umdNamedDefine: true,

@@ -7,8 +7,6 @@ const packages = fs
   .readdirSync(packagesPath)
   .filter(f => fs.statSync(path.join(packagesPath, f)).isDirectory());
 
-console.log(packages);
-
 module.exports = async ({ config }, configType) => {
   if (process.env.NODE_ENV === 'development') {
     packages.forEach(function(package) {

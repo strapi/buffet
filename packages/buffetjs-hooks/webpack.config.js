@@ -17,7 +17,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   output: {
     path: `${__dirname}/build`,
-    filename: `bundle.${process.env.APP_ENV}.js`,
+    filename: `bundle.${process.env.APP_ENV || 'development'}.js`,
     library: packageJson.name,
     libraryTarget: 'umd',
     umdNamedDefine: true,
