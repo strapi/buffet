@@ -10,17 +10,16 @@ const packages = fs
 console.log(packages);
 
 module.exports = async ({ config }, configType) => {
-  // config.resolve.mainFields = ['main'];
-
-  // config.module.rules[0].exclude = /(node_modules|build|lib)/;
-
-  // storybookBaseConfig.resolve.alias = {};
-  // packages.forEach(function(package) {
-  //   config.resolve.alias[`@buffetjs/${package.split('-')[1]}$`] = path.resolve(
-  //     __dirname,
-  //     `../../packages/${package}/src`
-  //   );
-  // });
+  if (process.env.NODE_ENV === 'development') {
+    packages.forEach(function(package) {
+      config.resolve.alias[
+        `@buffetjs/${package.split('-')[1]}$`
+      ] = path.resolve(
+        __dirname,
+        `../../packages/${package}/build/bundle.development.js`
+      );
+    });
+  }
 
   return config;
 };

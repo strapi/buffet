@@ -13,7 +13,7 @@
     "build:development": "cross-env NODE_ENV=development webpack-cli",
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\"  && node ./deployAssets.js",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
-    "build:watch": "cross-env NODE_ENV=development webpack-cli -w",
+    "build:watch": "cross-env NODE_ENV=development  APP_ENV=development  webpack-cli -w",
     "builde": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --c ../../.eslintrc src",

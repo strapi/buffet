@@ -14,7 +14,7 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "test:update": "cross-env NODE_ENV=test jest -u",
-    "watch": "cross-env NODE_ENV=development && lerna run --stream --parallel watch --no-private --concurrency 999"
+    "watch": "cross-env NODE_ENV=development && lerna run --stream --parallel build:watch --no-private --concurrency 999"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
