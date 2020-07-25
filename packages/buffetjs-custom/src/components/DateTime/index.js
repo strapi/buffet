@@ -78,9 +78,12 @@ function DateTime({
 
   useEffect(() => {
     if (!!value && moment(value).isValid()) {
-      const newDate = value._isAMomentObject === true ? value : moment(value);
-
-      setDateRef.current(newDate);
+      if (value._isAMomentObject) {
+        setDateRef.current(value);
+      } else {
+        // Avoid 'onChange' triggered on first rendering
+        setTimestamp(moment(value));
+      }
     } else {
       setTimestamp(null);
     }
