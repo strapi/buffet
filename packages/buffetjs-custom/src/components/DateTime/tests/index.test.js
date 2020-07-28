@@ -77,12 +77,15 @@ describe('<DateTime />', () => {
     const timepicker = renderedComponent.find(TimePicker);
 
     const mock = { target: { value: '10' } };
-    timepicker.simulate('change', mock);
+
+    act(() => {
+      timepicker.props().onChange(mock);
+    });
 
     const expected = value
       .set('hour', 10)
-      .set('minute', 10)
-      .set('second', 10);
+      .set('minute', 11)
+      .set('second', 11);
 
     expect(renderedComponent.prop('onChange')).toHaveBeenLastCalledWith({
       target: {
