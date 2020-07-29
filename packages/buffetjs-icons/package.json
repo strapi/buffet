@@ -30,7 +30,9 @@
     "type": "git",
     "url": "https://github.com/strapi/buffet"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -53,14 +55,12 @@
     "jest-styled-components": "^7.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "url-loader": "^1.0.1",
-    "webpack": "~4.5.0",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "~2.0.14"
+    "webpack": "~4.44.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "~3.3.12"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.10",
     "react": "^16.9.0",
-    "react-is": "^16.8",
     "styled-components": "^5.0.0"
   }
 }
