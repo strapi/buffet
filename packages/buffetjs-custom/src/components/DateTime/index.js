@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
@@ -74,19 +74,17 @@ function DateTime({
     onChange({ target: { name, type: 'datetime', value: date } });
   };
 
-  const setDateRef = useRef(setDate);
-
   useEffect(() => {
-    if (!!value && moment(value).isValid()) {
-      const newDate = value._isAMomentObject === true ? value : moment(value);
+    if (!isInit) {
+      if (!!value && moment(value).isValid()) {
+        const newDate = value._isAMomentObject === true ? value : moment(value);
 
-      setDateRef.current(newDate);
-    } else {
-      setTimestamp(null);
+        setTimestamp(newDate);
+      }
+
+      setIsInit(true);
     }
-
-    setIsInit(true);
-  }, [value]);
+  }, [isInit, value]);
 
   if (!isInit) {
     return null;
