@@ -7,3 +7,4 @@ OLD/**
 internals/**
 docs/**
 packages/**/node_modules/**
+tools-configuration
