@@ -8,6 +8,7 @@ const renderComponent = (props = defaultProps) =>
   mount(<HeaderTitle {...props} />);
 
 describe('<HeaderTitle />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('should not crash', () => {
     renderComponent();
   });

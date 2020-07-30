@@ -64,6 +64,7 @@ describe('<TimePicker />', () => {
   });
 
   describe('<TimePicker /> behavior', () => {
+    // eslint-disable-next-line jest/expect-expect
     it('should not crash', () => {
       renderComponent();
     });

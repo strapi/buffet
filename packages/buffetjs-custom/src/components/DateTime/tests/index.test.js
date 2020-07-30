@@ -7,6 +7,7 @@ import { DatePicker, TimePicker } from '@buffetjs/core';
 import DateTime from '../index';
 
 describe('<DateTime />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(<DateTime name="datetime" value={null} />);
   });
@@ -82,10 +83,7 @@ describe('<DateTime />', () => {
       timepicker.props().onChange(mock);
     });
 
-    const expected = value
-      .set('hour', 10)
-      .set('minute', 11)
-      .set('second', 11);
+    const expected = value.set('hour', 10).set('minute', 11).set('second', 11);
 
     expect(renderedComponent.prop('onChange')).toHaveBeenLastCalledWith({
       target: {

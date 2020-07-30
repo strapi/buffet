@@ -3,8 +3,6 @@ const path = require('path');
 
 const copy = async () => {
   try {
-    // await fs.copy('/src/assets/icons/icon_select', '/build/esm/assets/icons/');
-    // const exists = await fs.pathExists('/src/assets/icons/icon_select.svg');
     const icons = path.resolve(__dirname, 'src', 'assets', 'icons');
     const fonts = path.resolve(__dirname, 'src', 'assets', 'fonts');
     const iconsTo = path.resolve(__dirname, 'build', 'esm', 'assets', 'icons');
@@ -13,6 +11,7 @@ const copy = async () => {
     await fs.copy(icons, iconsTo);
     await fs.copy(fonts, fontsTo);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
   }
 };

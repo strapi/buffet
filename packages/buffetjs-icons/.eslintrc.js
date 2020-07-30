@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   parser: 'babel-eslint',
   env: {
@@ -75,7 +77,11 @@ module.exports = {
     'react/sort-prop-types': 2,
     'react/self-closing-comp': 0,
   },
-  // settings: {
-  //   'import/resolver': { webpack: { config: './webpack.config.js' } },
-  // },
+  settings: {
+    'import/resolver': {
+      'eslint-import-resolver-lerna': {
+        packages: path.resolve(__dirname, '../../packages'),
+      },
+    },
+  },
 };

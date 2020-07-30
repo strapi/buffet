@@ -5,6 +5,7 @@
     "setup": "yarn && yarn build",
     "build": "lerna run --stream build --no-private",
     "lint": "lerna run --stream test:lint",
+    "lint:quiet": "lerna run --stream test:lint",
     "lint:fix": "lerna run --stream lint:fix",
     "lint:code": "eslint .",
     "format": "npm-run-all -p format:*",
