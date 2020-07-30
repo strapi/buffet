@@ -55,6 +55,7 @@
     "eslint-plugin-jest": "^23.19.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
+    "rimraf": "^3.0.2",
     "url-loader": "^1.0.1",
     "webpack": "~4.44.0",
     "webpack-bundle-analyzer": "^3.8.0",

@@ -8,6 +8,7 @@
     "*.css"
   ],
   "scripts": {
+    "prebuild": "rimraf build",
     "build": "yarn build:development && yarn build:production && yarn build:esm",
     "build:analyze": "cross-env NODE_ENV=production webpack-cli --json > build/stats.production.json && webpack-bundle-analyzer build/stats.production.json",
     "build:development": "cross-env NODE_ENV=development webpack-cli",
@@ -77,6 +78,7 @@
     "jest-styled-components": "^7.0.2",
     "mini-css-extract-plugin": "^0.4.0",
     "react-test-renderer": "^16.13.1",
+    "rimraf": "^3.0.2",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
