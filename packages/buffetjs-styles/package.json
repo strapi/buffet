@@ -14,19 +14,14 @@
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\"  && node ./deployAssets.js",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development  APP_ENV=development  webpack-cli -w",
-    "builde": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
-    "test": "yarn test:jest && yarn test:prettier && yarn test:lint && yarn test:style",
+    "test": "yarn test:jest && yarn test:lint:quiet",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js 2>&1",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "test:prettier": "echo \"Error: no test specified\" && exit 1",
-    "test:prettiere": "prettier-check \"**/*.js\"",
-    "test:style": "echo \"Error: no test specified\" && exit 1",
-    "test:stylee": "stylelint **/*.style.js **/style.js",
     "coverage:unit": "jest --coverage",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "npm run build",
-    "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "styled-components",

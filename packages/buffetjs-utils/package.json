@@ -10,19 +10,18 @@
     }
   ],
   "scripts": {
+    "prebuild": "rimraf build",
     "build": "yarn build:development && yarn build:production && yarn build:esm",
     "build:analyze": "cross-env NODE_ENV=production webpack-cli --json > build/stats.production.json && webpack-bundle-analyzer build/stats.production.json",
     "build:development": "cross-env NODE_ENV=development webpack-cli",
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\"",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development APP_ENV=development  webpack-cli -w",
-    "builde": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "test": "yarn run test:lint",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "npm run build",
-    "watch": "cross-env NODE_ENV=development && babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+    "prepublishOnly": "npm run build"
   },
   "author": "Strapi team",
   "license": "MIT",

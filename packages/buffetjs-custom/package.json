@@ -15,19 +15,16 @@
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" ",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development APP_ENV=development  webpack-cli -w",
-    "test": "cross-env APP_ENV=development yarn test:jest && yarn test:prettier && yarn test:lint && yarn test:lint",
+    "test": "cross-env APP_ENV=development yarn test:jest && yarn test:lint:quiet",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:watch": "jest --config=jest.config.js --watchAll",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
-    "test:prettier": "echo \"Error: no test specified\" && exit 1",
+    "test:prettier": "echo \"Error: no test specified\"",
     "test:prettiers": "prettier-check \"**/*.js\"",
     "test:styles": "stylelint **/*.style.js **/style.js",
-    "test:style": "echo \"Error: no test specified\" && exit 1",
-    "builde": "cross-env NODE_ENV=production rimraf dist && babel --config-file ../../.babelrc src --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "npm run build",
-    "watch": "babel --config-file ../../.babelrc src --watch --out-dir dist --copy-files --no-comments && rimraf dist/**/**/tests"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@buffetjs/core": "3.2.1",
