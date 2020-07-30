@@ -33,6 +33,7 @@ const Paging = styled.div`
           font-weight: ${sizes.fontWeight.black};
         }
       }
+
       /* Left & right arrows */
       &:first-of-type,
       &:last-of-type {

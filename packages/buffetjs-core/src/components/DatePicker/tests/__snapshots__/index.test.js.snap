@@ -126,7 +126,7 @@ exports[`<DatePicker /> should match snapshot 1`] = `
 }
 
 .c0 .DayPickerNavigation div[role='button']:hover {
-  background: #eeeeee;
+  background: #eee;
 }
 
 .c0 td {

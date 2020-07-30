@@ -37,7 +37,7 @@ const Checkbox = styled.input`
     content: '\f00c';
     font-family: 'FontAwesome';
     position: absolute;
-    left: 0px;
+    left: 0;
     top: 55%;
     margin-top: calc(-${sizes.checkbox.width} / 2);
     width: ${sizes.checkbox.width};

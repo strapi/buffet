@@ -26,12 +26,15 @@ const DatePicker = styled.div`
     outline: 0;
     box-sizing: border-box;
   }
+
   .DateInput {
     width: 100%;
   }
+
   svg.fa-calendar-alt {
     font-size: 14px;
   }
+
   input {
     font-weight: ${sizes.fontWeight.regular};
     position: relative;
@@ -54,16 +57,20 @@ const DatePicker = styled.div`
       cursor: not-allowed;
     }
   }
+
   .SingleDatePicker,
   .SingleDatePickerInput__withBorder {
     width: 100%;
   }
+
   .SingleDatePickerInput__withBorder {
     border: 0;
   }
+
   .DateInput_input__focused {
     border-color: ${colors.blueBorder};
   }
+
   .DayPicker_weekHeader {
     color: ${colors.black};
     border-top: 1px solid #f9f9f9;
@@ -77,27 +84,31 @@ const DatePicker = styled.div`
     }
   }
 
-  // To remove for new UI
   .DayPicker__withBorder {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border: 1px solid #f9f9f9;
     background: white;
     position: absolute;
   }
+
   .DateInput_fang {
     display: none;
   }
+
   .CalendarMonth_caption {
     font-size: 1.3rem;
     padding-bottom: 45px;
     padding-top: 23px;
   }
+
   .DayPicker_transitionContainer {
     padding: 4px;
   }
+
   .DayPickerKeyboardShortcuts_show {
     display: none;
   }
+
   .DayPickerNavigation {
     div[role='button'] {
       font-size: 21px;
@@ -125,10 +136,11 @@ const DatePicker = styled.div`
         display: none;
       }
       &:hover {
-        background: #eeeeee;
+        background: #eee;
       }
     }
   }
+
   td {
     position: relative;
     cursor: pointer;

@@ -12,7 +12,7 @@ import colors from '../../assets/styles/colors';
 
 const Tab = styled.li`
   display: inline-block;
-  width: calc(100% / ${props => props.count});
+  width: calc(100% / ${(props) => props.count});
   height: 3.6rem;
   &:first-of-type a {
     border-top-left-radius: 2px;
@@ -30,7 +30,7 @@ const Tab = styled.li`
   }
   a {
     display: flex;
-    width: 100%.
+    width: 100%;
     height: 100%;
     padding: 0 ${sizes.margin * 2}px;
     color: ${colors.blueTxt};
@@ -42,10 +42,11 @@ const Tab = styled.li`
     text-overflow: ellipsis;
     text-decoration: none;
     cursor: pointer;
-    background-color: ${props => props.background};
-    border-top: 3px solid ${props => props.background};
-    border-bottom: 3px solid ${props => props.background};
-    p, span {
+    background-color: ${(props) => props.background};
+    border-top: 3px solid ${(props) => props.background};
+    border-bottom: 3px solid ${(props) => props.background};
+    p,
+    span {
       margin: auto;
     }
     &.active {

@@ -26,7 +26,9 @@ const TimeList = styled.ul`
   transition: all 0.2s ease-out;
   visibility: hidden;
   ::-webkit-scrollbar {
+    /* stylelint-disable */
     width: 0 !important;
+    /* stylelint-enable */
   }
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;

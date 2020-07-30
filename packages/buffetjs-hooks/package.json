@@ -15,9 +15,8 @@
     "build:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" ",
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development APP_ENV=development webpack-cli -w",
-    "test": "yarn run test:lint:quiet",
+    "test": "yarn run test:lint",
     "test:lint": "eslint .",
-    "test:lint:quiet": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "npm run build"
   },
