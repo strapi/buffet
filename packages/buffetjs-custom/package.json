@@ -19,9 +19,11 @@
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:watch": "jest --config=jest.config.js --watchAll",
     "test:lint": "eslint .",
+    "test:lint:quiet": "eslint . --quiet",
     "test:prettier": "echo \"Error: no test specified\"",
     "test:prettiers": "prettier-check \"**/*.js\"",
     "test:style": "stylelint src/components/**/*.js",
+    "test:style:quiet": "stylelint src/components/**/*.js --quiet",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "npm run build"
   },
