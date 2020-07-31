@@ -4,7 +4,7 @@ const packageJson = require('./package.json');
 
 const nodeModules = [];
 [
-  ...Object.keys(packageJson.dependencies),
+  ...Object.keys(packageJson.dependencies || {}),
   ...Object.keys(packageJson.peerDependencies),
   ...Object.keys(packageJson.devDependencies),
 ].forEach(module => {
@@ -38,8 +38,8 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
-      APP_ENV: 'development',
+      NODE_ENV: process.env.NODE_ENV || 'development',
+      APP_ENV: process.env.APP_ENV || 'development',
     }),
   ],
 };

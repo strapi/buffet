@@ -22,7 +22,6 @@
   },
   "license": "MIT",
   "private": false,
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
