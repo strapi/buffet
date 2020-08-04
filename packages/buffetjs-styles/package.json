@@ -16,7 +16,7 @@
     "build:production": "cross-env NODE_ENV=production APP_ENV=production webpack-cli",
     "build:watch": "cross-env NODE_ENV=development  APP_ENV=development  webpack-cli -w",
     "test": "yarn test:lint && yarn test:style && yarn test:jest",
-    "test:jest": "jest --runInBand --no-cache --config=jest.config.js 2>&1",
+    "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "test:style": "stylelint src/components/**/*.js",
