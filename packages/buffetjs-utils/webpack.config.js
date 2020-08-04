@@ -19,7 +19,7 @@ const bundleConfig = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /(node_modules|build|lib)/,
+        exclude: /(node_modules|lib)/,
       },
     ],
   },

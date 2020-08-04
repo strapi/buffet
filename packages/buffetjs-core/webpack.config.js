@@ -29,7 +29,7 @@ module.exports = {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader',
-        exclude: /(node_modules|build|lib)/,
+        exclude: /(node_modules|lib)/,
       },
       {
         test: /\.css$/,

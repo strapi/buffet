@@ -4,6 +4,11 @@ module.exports = Object.assign({}, rootConf, {
   moduleNameMapper: {
     ...rootConf.moduleNameMapper,
   },
-  testPathIgnorePatterns: ['/node_modules/', '/OLD/', '/dist/', '/build/'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/OLD/',
+    '/dist/',
+    '<rootDir>/build/',
+  ],
   setupFilesAfterEnv: ['./test-bundler.js'],
 });
