@@ -1,34 +1,15 @@
-# sudo: required
-
-# git:
-#   depth: 1
-
 language: node_js
 
 node_js:
   - '10'
   - '12'
 
-# dist: xenial
-# services:
-#   - xvfb
-
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
-  # - export CHROME_BIN=chromium-browser
-  # - export DISPLAY=:99.0
-  # - git fetch -a
-  # - git fetch origin master
-
-# before_script:
 
 script:
   - yarn run -s build
   - yarn run -s test:lint:quiet
   - yarn run -s test:style:quiet
   - yarn run -s test:jest
-# cache:
-#   yarn: true
-#   directories:
-#     - 'node_modules'
