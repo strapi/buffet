@@ -8,7 +8,6 @@ const packages = fs
   .filter(f => fs.statSync(path.join(packagesPath, f)).isDirectory());
 
 module.exports = async ({ config }, configType) => {
-  
   if (process.env.NODE_ENV === 'development') {
     packages.forEach(function(package) {
       config.resolve.alias[
