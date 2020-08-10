@@ -26,7 +26,6 @@ const bundleConfig = {
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: process.env.NODE_ENV || 'development',
-      APP_ENV: process.env.APP_ENV || 'development',
     }),
   ],
   resolve: {
@@ -36,7 +35,7 @@ const bundleConfig = {
   entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/build`,
-    filename: `bundle.${process.env.APP_ENV || 'development'}.js`,
+    filename: `bundle.${process.env.NODE_ENV || 'development'}.js`,
     library: packageJson.name,
     libraryTarget: 'umd',
     umdNamedDefine: true,
