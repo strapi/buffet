@@ -9,7 +9,7 @@ Using yarn
 ```bash
 yarn add @buffetjs/icons
 # Install the required dependencies
-yarn add lodash prop-types react react-dom react-router-dom styled-components
+yarn add prop-types react styled-components
 ```
 
 or npm
@@ -17,7 +17,7 @@ or npm
 ```bash
 npm install @buffetjs/icons --save
 # Install the required dependencies
-npm install lodash prop-types react react-dom react-router-dom styled-components --save
+npm install prop-types react styled-components --save
 ```
 
 ### Contributing

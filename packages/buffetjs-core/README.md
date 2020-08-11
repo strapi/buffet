@@ -9,7 +9,7 @@ Using yarn
 ```bash
 yarn add @buffetjs/core
 # Install the required dependencies
-yarn add lodash prop-types react react-dom react-router-dom styled-components
+yarn add @buffetjs/styles react react-dom  styled-components
 ```
 
 or npm
@@ -17,7 +17,7 @@ or npm
 ```bash
 npm install @buffetjs/core --save
 # Install the required dependencies
-npm install lodash prop-types react react-dom react-router-dom styled-components --save
+npm install @buffetjs/styles  prop-types react react-dom  styled-components --save
 ```
 
 ### Available commands
