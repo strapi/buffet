@@ -16,7 +16,7 @@ function TableHeader({
   onChangeSort,
   onSelectAll,
   rows,
-  shouldAddTd,
+  shouldAddCell,
   sortBy,
   sortOrder,
   withBulkAction,
@@ -29,13 +29,13 @@ function TableHeader({
     <thead>
       <tr>
         {withBulkAction && (
-          <td className="checkCell">
+          <th className="checkCell">
             <Checkbox
               onChange={onSelectAll}
               checked={checked}
               someChecked={shouldDisplayNotChecked}
             />
-          </td>
+          </th>
         )}
         {headers.map(header => {
           const { isSortEnabled, name, value } = header;
@@ -48,7 +48,7 @@ function TableHeader({
 
           return (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-            <td
+            <th
               key={value}
               onClick={() => {
                 onChangeSort({
@@ -62,10 +62,10 @@ function TableHeader({
                 {name}
                 {shouldDisplaySort && <Icon icon={sortOrder || 'asc'} />}
               </p>
-            </td>
+            </th>
           );
         })}
-        {shouldAddTd && <td />}
+        {shouldAddCell && <th />}
       </tr>
     </thead>
   );
@@ -76,7 +76,7 @@ TableHeader.defaultProps = {
   onChangeSort: () => {},
   onSelectAll: () => {},
   rows: [],
-  shouldAddTd: false,
+  shouldAddCell: false,
   sortBy: null,
   sortOrder: 'asc',
   withBulkAction: false,
@@ -93,7 +93,7 @@ TableHeader.propTypes = {
   onChangeSort: PropTypes.func,
   onSelectAll: PropTypes.func,
   rows: PropTypes.instanceOf(Array),
-  shouldAddTd: PropTypes.bool,
+  shouldAddCell: PropTypes.bool,
   sortBy: PropTypes.string,
   sortOrder: PropTypes.string,
   withBulkAction: PropTypes.bool,
