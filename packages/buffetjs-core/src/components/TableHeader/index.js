@@ -12,7 +12,7 @@ import Icon from '../Icon';
 
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 function TableHeader({
-  addCell,
+  shouldAddCell,
   headers,
   onChangeSort,
   onSelectAll,
@@ -65,25 +65,24 @@ function TableHeader({
             </th>
           );
         })}
-        {addCell && <th />}
+        {shouldAddCell && <th />}
       </tr>
     </thead>
   );
 }
 
 TableHeader.defaultProps = {
-  addCell: false,
   headers: [],
   onChangeSort: () => {},
   onSelectAll: () => {},
   rows: [],
+  shouldAddCell: false,
   sortBy: null,
   sortOrder: 'asc',
   withBulkAction: false,
 };
 
 TableHeader.propTypes = {
-  addCell: PropTypes.bool,
   headers: PropTypes.arrayOf(
     PropTypes.shape({
       isSortEnabled: PropTypes.bool,
@@ -94,6 +93,7 @@ TableHeader.propTypes = {
   onChangeSort: PropTypes.func,
   onSelectAll: PropTypes.func,
   rows: PropTypes.instanceOf(Array),
+  shouldAddCell: PropTypes.bool,
   sortBy: PropTypes.string,
   sortOrder: PropTypes.string,
   withBulkAction: PropTypes.bool,

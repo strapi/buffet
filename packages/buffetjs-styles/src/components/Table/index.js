@@ -79,8 +79,7 @@ const Table = styled.div`
       line-height: 0.1rem;
       font-weight: ${sizes.fontWeight.bold};
       text-transform: capitalize;
-      th,
-      td {
+      th {
         background-color: ${colors.greyHeader};
         height: ${sizes.table.header.height};
         p {
