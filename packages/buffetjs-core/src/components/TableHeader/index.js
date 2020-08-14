@@ -12,11 +12,11 @@ import Icon from '../Icon';
 
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 function TableHeader({
-  shouldAddCell,
   headers,
   onChangeSort,
   onSelectAll,
   rows,
+  shouldAddCell,
   sortBy,
   sortOrder,
   withBulkAction,
