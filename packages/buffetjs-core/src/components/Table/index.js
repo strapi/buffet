@@ -52,7 +52,7 @@ function Table({
           onChangeSort={onChangeSort}
           onSelectAll={onSelectAll}
           rows={rows}
-          shouldAddTd={rowLinks.length > 0}
+          shouldAddCell={rowLinks.length > 0}
           sortBy={sortBy}
           sortOrder={sortOrder}
           withBulkAction={withBulkAction}
