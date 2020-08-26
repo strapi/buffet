@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/hooks",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "description": "Buffetjs react-hooks",
   "main": "dist/index.js",
   "module": "src/index.js",
