@@ -20,6 +20,7 @@ const renderComponent = (props = defaultProps) =>
 describe('<DatePicker />', () => {
   afterEach(cleanup);
 
+  // eslint-disable-next-line jest/expect-expect
   it('should not crash', () => {
     renderComponent();
   });

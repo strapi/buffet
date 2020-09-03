@@ -1,0 +1,19 @@
+# Ignore sources
+jest
+build/stats.*
+
+# Ignore scripts
+createBuildIndex.js
+
+# Ignore tooling
+.babelrc
+.eslintignore
+.eslintrc.js
+jest.config.js
+stylelint.config.js
+test-bundler.js
+webpack.config.js
+yarn-error.log
+
+# Ignore utils
+deployAssets.js

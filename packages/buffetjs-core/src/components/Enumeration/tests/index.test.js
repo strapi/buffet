@@ -25,6 +25,7 @@ const renderComponent = (props = defaultProps) =>
   mount(<Enumeration {...props} />);
 
 describe('<Enumeration />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('should not crash', () => {
     renderComponent();
   });

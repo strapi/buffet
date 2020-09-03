@@ -10,7 +10,6 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
 const InputText = styled.input`
-  // General style
   width: 100%;
   height: ${sizes.input.height};
   padding: 0 ${sizes.input.padding};
@@ -37,17 +36,17 @@ const InputText = styled.input`
     color: ${colors.brightGrey};
   }
 
-  ${props =>
+  ${(props) =>
     (props.type === 'search' || props.type === 'email' || props.icon) &&
     `
       padding-left: calc(${sizes.input.height} + ${sizes.input.padding});
-    `}}
+    `}
 
-  ${props =>
+  ${(props) =>
     props.type === 'password' &&
     `
       padding-right: calc(${sizes.input.height} + ${sizes.input.padding});
-    `}}
+    `}
 `;
 
 InputText.defaultProps = {

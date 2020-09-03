@@ -11,6 +11,7 @@ import { Checkbox } from '@buffetjs/styles';
 import Icon from '../Icon';
 
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 function TableHeader({
   headers,
   onChangeSort,

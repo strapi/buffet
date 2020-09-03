@@ -7,6 +7,7 @@ import Table from '../index';
 import ActionCollapse from '../ActionCollapse';
 
 describe('<Table />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(<Table />);
   });
@@ -36,7 +37,7 @@ describe('<Table />', () => {
       },
     ];
     const wrapper = mount(
-      <Table customRow={Custom} rows={rows} headers={headers} />
+      <Table customRow={Custom} rows={rows} headers={headers} />,
     );
 
     expect(wrapper.find(TableRow)).toHaveLength(0);
@@ -58,7 +59,7 @@ describe('<Table />', () => {
       },
     ];
     const wrapper = mount(
-      <Table rows={rows} headers={headers} withBulkAction />
+      <Table rows={rows} headers={headers} withBulkAction />,
     );
     const collapse = wrapper.find(ActionCollapse);
 
@@ -81,7 +82,7 @@ describe('<Table />', () => {
     ];
     const rowLinks = [{ icon: 'trash', onClick: jest.fn() }];
     const wrapper = mount(
-      <Table rows={rows} headers={headers} rowLinks={rowLinks} withBulkAction />
+      <Table rows={rows} headers={headers} rowLinks={rowLinks} withBulkAction />,
     );
     const collapse = wrapper.find(ActionCollapse);
     expect(collapse).toHaveLength(1);
@@ -108,7 +109,7 @@ describe('<Table />', () => {
     ];
     const rowLinks = [{ icon: 'trash', onClick: jest.fn() }];
     const wrapper = mount(
-      <Table rows={rows} headers={headers} rowLinks={rowLinks} withBulkAction />
+      <Table rows={rows} headers={headers} rowLinks={rowLinks} withBulkAction />,
     );
     const collapse = wrapper.find(ActionCollapse);
 
@@ -136,7 +137,7 @@ describe('<Table />', () => {
     ];
     const rowLinks = [{ icon: 'trash', onClick: jest.fn() }];
     const wrapper = mount(
-      <Table rows={rows} headers={headers} rowLinks={rowLinks} />
+      <Table rows={rows} headers={headers} rowLinks={rowLinks} />,
     );
     const collapse = wrapper.find(ActionCollapse);
 

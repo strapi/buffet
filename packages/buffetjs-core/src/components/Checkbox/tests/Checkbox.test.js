@@ -12,6 +12,7 @@ const renderComponent = (props = defaultProps) =>
   mount(<Checkbox {...props} />);
 
 describe('<Checkbox />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('should not crash', () => {
     renderComponent();
   });

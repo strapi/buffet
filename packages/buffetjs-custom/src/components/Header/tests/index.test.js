@@ -13,6 +13,7 @@ const defaultProps = {
 const renderComponent = (props = defaultProps) => mount(<Header {...props} />);
 
 describe('<Header />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('should not crash', () => {
     renderComponent();
   });

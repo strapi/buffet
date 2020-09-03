@@ -5,6 +5,10 @@
 
 # testing
 /coverage
+/jest
+# build:
+build
+!build/index.js
 
 # production
 /build

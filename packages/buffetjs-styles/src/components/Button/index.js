@@ -11,11 +11,6 @@ import sizes from '../../assets/styles/sizes';
 import mixins from '../../assets/styles/mixins';
 
 const Button = styled.button`
-
-  /*
-  * Theme
-  */
-
   /* General style */
   height: ${sizes.button.height.large};
   padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
@@ -71,11 +66,14 @@ const Button = styled.button`
     `}
   
     /* FontAwesome icons */
+
     > span svg {
       font-size: 10px;
       vertical-align: initial;
     }
+
     /* Custom icons */
+    
     > svg {
       height: 10px;
       width: auto;

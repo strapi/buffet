@@ -5,13 +5,14 @@ import { Checkbox, Links as StyledLinks } from '@buffetjs/styles';
 import TableRow from '../index';
 
 describe('<TableRow />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(
       <table>
         <tbody>
           <TableRow />
         </tbody>
-      </table>
+      </table>,
     );
   });
 
@@ -21,7 +22,7 @@ describe('<TableRow />', () => {
         <tbody>
           <TableRow withBulkAction />
         </tbody>
-      </table>
+      </table>,
     );
 
     expect(wrapper.find(Checkbox)).toHaveLength(1);
@@ -43,7 +44,7 @@ describe('<TableRow />', () => {
         <tbody>
           <TableRow headers={headers} row={row} />
         </tbody>
-      </table>
+      </table>,
     );
 
     expect(wrapper.find('td')).toHaveLength(1);
@@ -71,7 +72,7 @@ describe('<TableRow />', () => {
         <tbody>
           <TableRow headers={headers} row={row} rowLinks={rowLinks} />
         </tbody>
-      </table>
+      </table>,
     );
 
     expect(wrapper.find('td')).toHaveLength(2);

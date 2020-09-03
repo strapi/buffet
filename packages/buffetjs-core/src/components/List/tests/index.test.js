@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import List from '../index';
 
 describe('<List />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(<List />);
   });
