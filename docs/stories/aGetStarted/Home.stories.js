@@ -59,12 +59,11 @@ function IntroStory() {
 }
 
 const source = `
-import { Fonts, GlobalStyle } from '@buffetjs/styles';
+import { GlobalStyle } from '@buffetjs/styles';
 
 function MyApp() {
   return (
     <>
-      <Fonts />
       <GlobalStyle />
       <HomePage />
     </>

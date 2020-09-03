@@ -10,6 +10,7 @@ const copy = async () => {
 
     await fs.copy(icons, iconsTo);
     await fs.copy(fonts, fontsTo);
+    await fs.copy(fonts, path.resolve(__dirname, 'build', 'fonts'));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log(err);
