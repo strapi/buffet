@@ -7,7 +7,6 @@ exports[`<Textarea /> should match the snapshot when empty 1`] = `
   padding: 0.6rem 1rem;
   font-weight: 400;
   font-size: 1.3rem;
-  cursor: pointer;
   outline: 0;
   border: 1px solid #E3E9F3;
   border-radius: 2px;
@@ -43,7 +42,6 @@ exports[`<Textarea /> should match the snapshot when not empty 1`] = `
   padding: 0.6rem 1rem;
   font-weight: 400;
   font-size: 1.3rem;
-  cursor: pointer;
   outline: 0;
   border: 1px solid #E3E9F3;
   border-radius: 2px;
