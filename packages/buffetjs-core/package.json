@@ -16,7 +16,7 @@
     "build:production": "cross-env NODE_ENV=production webpack-cli",
     "build:watch": "yarn create:index && cross-env NODE_ENV=development webpack-cli -w ",
     "build:watch:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" --watch",
-    "create:index":"node ./createBuildIndex.js",
+    "create:index": "node ./createBuildIndex.js",
     "test": "cross-env NODE_ENV=development yarn test:lint && yarn test:style && yarn test:jest",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:watch": "jest --config=jest.config.js --watchAll",
