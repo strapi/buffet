@@ -33,7 +33,7 @@
     "@buffetjs/core": "3.2.3",
     "@buffetjs/styles": "3.2.3",
     "@buffetjs/utils": "3.2.3",
-    "lodash": "^4.17.19",
+    "lodash": "4.17.19",
     "moment": "^2.24.0",
     "prop-types": "^15.5.10",
     "react-moment-proptypes": "^1.7.0"
