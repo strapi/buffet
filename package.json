@@ -16,7 +16,7 @@
     "test:style": "lerna run --stream test:style",
     "test:style:quiet": "lerna run --stream test:style:quiet",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "test:update": "cross-env NODE_ENV=test jest -u",
+    "test:update": "lerna run --stream test:jest:update",
     "watch": "cross-env NODE_ENV=development && lerna run --stream --parallel build:watch:esm --no-private --concurrency 999"
   },
   "devDependencies": {
