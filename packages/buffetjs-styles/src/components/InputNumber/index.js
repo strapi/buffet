@@ -9,7 +9,10 @@ import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 import img from '../../assets/icons/icon_select.svg';
 
+// TODO
+
 const InputNumber = styled.div`
+  /* stylelint-disable */
   .rc-input-number {
     margin: 0;
     padding: 0;

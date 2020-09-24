@@ -1,7 +1,10 @@
 website/**
 packages/**/dist/**
+packages/**/build/**
+packages/**/jest.config.js
 node_modules/**
 OLD/**
 internals/**
 docs/**
 packages/**/node_modules/**
+tools-configuration

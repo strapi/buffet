@@ -20,7 +20,9 @@ const TableRowEmpty = styled.tr`
     color: ${colors.blueTxt};
     text-align: center;
     border-collapse: collapse;
+    /* stylelint-disable */
     border-top: 1px solid #f1f1f2 !important;
+    /* stylelint-enable */
   }
 `;
 

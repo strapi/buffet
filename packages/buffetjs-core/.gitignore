@@ -5,11 +5,12 @@
 
 # testing
 /coverage
-
+/jest
 # production
 /build
 /dist
 /buffet/storybook-static
+
 
 # misc
 .DS_Store

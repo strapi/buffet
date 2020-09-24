@@ -4,13 +4,14 @@ import { mount } from 'enzyme';
 import ListRow from '../index';
 
 describe('<ListRow />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(
       <table>
         <tbody>
           <ListRow />
         </tbody>
-      </table>
+      </table>,
     );
   });
 
@@ -21,7 +22,7 @@ describe('<ListRow />', () => {
         <tbody>
           <ListRow cells={cells} />
         </tbody>
-      </table>
+      </table>,
     );
     const tds = renderedComponent.find('td');
 

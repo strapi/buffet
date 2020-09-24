@@ -14,7 +14,6 @@ const StyledTextarea = styled.textarea`
   padding: ${sizes.textarea.padding} ${sizes.input.padding};
   font-weight: ${sizes.fontWeight.regular};
   font-size: ${sizes.input.fontSize};
-  cursor: pointer;
   outline: 0;
   border: 1px solid ${colors.lightGrey};
   border-radius: ${sizes.borderRadius};

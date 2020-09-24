@@ -46,7 +46,7 @@ function Error({
     });
   };
 
-  const setError = message => {
+  const setError = (message) => {
     if (!ref.current) {
       return;
     }
@@ -61,7 +61,7 @@ function Error({
     if (canCheck) {
       try {
         await createYupSchema(type, validations, translatedErrors).validate(
-          target.value
+          target.value,
         );
         resetError();
       } catch (err) {
@@ -80,7 +80,7 @@ function Error({
           error,
           onBlur: handleBlur,
         })}
-        <span style={{ display: 'none' }} ref={ref}></span>
+        <span style={{ display: 'none' }} ref={ref} />
       </>
     );
   }

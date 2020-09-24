@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import IconLinks from '../index';
 
 describe('<IconLinks />', () => {
+  // eslint-disable-next-line jest/expect-expect
   it('Should not crash', () => {
     mount(<IconLinks />);
   });
@@ -16,11 +17,6 @@ describe('<IconLinks />', () => {
     buttons.at(0).simulate('click');
 
     expect(icons[0].onClick).toHaveBeenCalled();
-    expect(
-      buttons
-        .at(0)
-        .find('svg')
-        .prop('className')
-    ).toContain('trash');
+    expect(buttons.at(0).find('svg').prop('className')).toContain('trash');
   });
 });

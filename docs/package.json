@@ -5,7 +5,7 @@
   "description": "Buffetjs Documentation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "storybook": "start-storybook -p 6006",
     "develop": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -21,7 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
-    "lodash": "^4.17.15",
+    "lodash": "4.17.19",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react-highlight": "^0.12.0",

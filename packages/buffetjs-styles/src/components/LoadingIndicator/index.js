@@ -24,7 +24,9 @@ const Loader = styled.div`
     width: ${({ small }) => (small ? '11px' : '26px')};
     height: ${({ small }) => (small ? '11px' : '26px')};
     border: 4px solid #f3f3f3;
+    /* stylelint-disable */
     border-top: 4px solid #555555 !important;
+    /* stylelint-enable */
     border-radius: 50%;
     animation: ${spin} 2s linear infinite;
   }

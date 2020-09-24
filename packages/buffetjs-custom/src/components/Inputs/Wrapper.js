@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
   > p {
-    width 100%;
+    width: 100%;
     padding-top: 10px;
     font-size: 13px;
     line-height: normal;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     text-overflow: ellipsis;
     margin-bottom: -8px;
   }
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     margin-bottom: 13px;
   }
   ${({ error }) =>

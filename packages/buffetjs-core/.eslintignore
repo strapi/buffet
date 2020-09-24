@@ -1,0 +1,7 @@
+build
+jest
+node_modules
+dist
+jest.config.js
+stylelint.config.js
+.eslintrc.js

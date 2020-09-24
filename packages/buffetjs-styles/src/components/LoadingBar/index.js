@@ -8,7 +8,9 @@ import styled, { keyframes } from 'styled-components';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
+/* stylelint-disable */
 const loading = keyframes`
+
   from {left: -200px; width: 30%;}
   50% {width: 30%;}
   70% {width: 70%;}
@@ -16,6 +18,7 @@ const loading = keyframes`
   95% {left: 120%;}
   to {left: 100%;}
 `;
+/* stylelint-enable */
 
 const LoadingBar = styled.div`
   height: 6px;
