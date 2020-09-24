@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/custom",
-  "version": "3.2.3",
+  "version": "3.3.0",
   "description": "Buffetjs Custom Components",
   "main": "build",
   "module": "build/esm/index.js",
@@ -16,7 +16,7 @@
     "build:production": "cross-env NODE_ENV=production webpack-cli",
     "build:watch": "yarn create:index && cross-env NODE_ENV=development  webpack-cli -w",
     "build:watch:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" --watch",
-    "create:index":"node ./createBuildIndex.js",
+    "create:index": "node ./createBuildIndex.js",
     "test": "cross-env NODE_ENV=development yarn test:lint && yarn test:style && yarn test:jest",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",
@@ -31,9 +31,9 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@buffetjs/core": "3.2.3",
-    "@buffetjs/styles": "3.2.3",
-    "@buffetjs/utils": "3.2.3",
+    "@buffetjs/core": "3.3.0",
+    "@buffetjs/styles": "3.3.0",
+    "@buffetjs/utils": "3.3.0",
     "lodash": "4.17.19",
     "moment": "^2.24.0",
     "prop-types": "^15.5.10",

@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/styles",
-  "version": "3.2.3",
+  "version": "3.3.0",
   "description": "Buffetjs Styles - The styling solution of Buffetjs",
   "main": "build",
   "module": "build/esm/index.js",
@@ -16,7 +16,7 @@
     "build:production": "cross-env NODE_ENV=production webpack-cli",
     "build:watch": "yarn create:index && cross-env NODE_ENV=development webpack-cli -w",
     "build:watch:esm": "node ./deployAssets.js && cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\"  --watch",
-    "create:index":"node ./createBuildIndex.js",
+    "create:index": "node ./createBuildIndex.js",
     "test": "yarn test:lint && yarn test:style && yarn test:jest",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",

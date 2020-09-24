@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/icons",
-  "version": "3.2.3",
+  "version": "3.3.0",
   "description": "Icons kit",
   "main": "build",
   "module": "build/esm/index.js",
@@ -16,7 +16,7 @@
     "build:production": "cross-env NODE_ENV=production webpack-cli",
     "build:watch": "yarn create:index && cross-env NODE_ENV=development  webpack-cli -w",
     "build:watch:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" --watch",
-    "create:index":"node ./createBuildIndex.js",
+    "create:index": "node ./createBuildIndex.js",
     "test": "yarn run test:lint && yarn run test:style",
     "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",
     "test:lint": "eslint .",
