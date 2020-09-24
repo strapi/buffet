@@ -20,6 +20,7 @@
     "test": "cross-env NODE_ENV=development yarn test:lint && yarn test:style && yarn test:jest",
     "test:jest": "jest --runInBand --no-cache --config=jest.config.js",
     "test:jest:watch": "jest --config=jest.config.js --watchAll",
+    "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "test:prettier": "echo \"Error: no test specified\"",
