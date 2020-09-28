@@ -142,7 +142,7 @@ function Inputs({
             value={inputValue}
           />
           {!error && description && (
-            <Description id={descriptionId}>{description}</Description>
+            <Description id={descriptionId} title={description}>{description}</Description>
           )}
           {error && <ErrorMessage id={errorId}>{error}</ErrorMessage>}
         </Wrapper>
