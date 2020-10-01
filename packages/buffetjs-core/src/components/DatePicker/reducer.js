@@ -11,7 +11,7 @@ function reducer(state, action) {
 
   switch (type) {
     case 'SET_DATE':
-      return { ...state, date, displayedDate };
+      return { ...state, date };
     case 'SET_DISPLAYED_DATE':
       return { ...state, displayedDate };
     case 'SET_IS_FOCUSED':
