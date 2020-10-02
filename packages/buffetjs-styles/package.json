@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/styles",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Buffetjs Styles - The styling solution of Buffetjs",
   "main": "build",
   "module": "build/esm/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/utils",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Buffetjs Utils",
   "main": "build",
   "module": "build/esm/index.js",
