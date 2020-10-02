@@ -64,6 +64,15 @@ function DateTime({
     setDate(currentDate);
   };
   const setDate = (date, time) => {
+    // Clearing the date
+    if (date === null) {
+      setTimestamp(null);
+
+      onChange({ target: { name, type: 'datetime', value: null } });
+
+      return;
+    }
+
     const newDate = time || date;
     date.set(getTimeObject(newDate));
     date.toISOString();

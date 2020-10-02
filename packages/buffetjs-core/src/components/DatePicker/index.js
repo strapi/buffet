@@ -88,6 +88,23 @@ function Datepicker({
     });
 
     timer = setTimeout(() => {
+      // Clearing the input
+      if (!target.value) {
+        onChange({ target: { name, type: 'date', value: null } });
+
+        dispatch({
+          type: 'SET_DATE',
+          date: null,
+        });
+
+        dispatch({
+          type: 'SET_DISPLAYED_DATE',
+          displayedDate: '',
+        });
+
+        return;
+      }
+
       handleDateChange(moment(target.value, 'MM/DD/YYYY'));
     }, wait);
   };
