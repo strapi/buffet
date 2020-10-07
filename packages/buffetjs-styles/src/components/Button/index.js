@@ -13,7 +13,7 @@ import mixins from '../../assets/styles/mixins';
 const Button = styled.button`
   /* General style */
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
+  padding: ${sizes.button.padding.topBottom} ${sizes.button.padding.leftRight};
   font-weight: ${sizes.fontWeight.bold};
   font-size: 1.3rem;
   line-height: normal;
@@ -28,7 +28,7 @@ const Button = styled.button`
     outline: 0;
   }
 
-  
+
   ${({ disabled }) =>
     disabled &&
     `
@@ -64,7 +64,7 @@ const Button = styled.button`
     `
       min-width: ${sizes.button.minWidth};
     `}
-  
+
     /* FontAwesome icons */
 
     > span svg {
@@ -73,7 +73,7 @@ const Button = styled.button`
     }
 
     /* Custom icons */
-    
+
     > svg {
       height: 10px;
       width: auto;
@@ -82,7 +82,7 @@ const Button = styled.button`
     }
 
 
-    
+
 `;
 
 Button.defaultProps = {
