@@ -9,8 +9,6 @@ const Wrapper = styled(Flex)`
   height: 1.4rem;
   min-width: 1.4rem;
   padding: 0 0.2rem;
-  margin-top: 0.2rem;
-  margin-left: ${({ theme }) => theme.main.sizes.paddings.xs};
   border-radius: ${({ theme }) => theme.main.sizes.borderRadius};
   background-color: ${({ theme, isActive }) =>
     isActive ? theme.main.colors.lightBlue : '#e9eaeb'};
