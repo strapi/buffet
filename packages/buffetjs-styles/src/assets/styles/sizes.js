@@ -10,7 +10,6 @@ const sizes = {
       large: '30px',
     },
     padding: {
-      bottom: '2px',
       leftRight: '15px',
     },
     minWidth: '140px',

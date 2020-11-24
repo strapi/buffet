@@ -13,10 +13,10 @@ import mixins from '../../assets/styles/mixins';
 const Button = styled.button`
   /* General style */
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
+  padding: 0 ${sizes.button.padding.leftRight};
   font-weight: ${sizes.fontWeight.bold};
   font-size: 1.3rem;
-  line-height: normal;
+  line-height: ${sizes.button.height.large};
   border-radius: ${sizes.borderRadius};
   cursor: pointer;
   outline: 0;
