@@ -6,11 +6,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as StyledButton, colors } from '@buffetjs/styles';
+import {
+  LoadingIndicator,
+  Button as StyledButton,
+  colors,
+} from '@buffetjs/styles';
 import { Plus } from '@buffetjs/icons';
 import Flex from '../Flex';
 import PrefixIcon from '../PrefixIcon';
-import Spinner from './Spinner';
 
 function Button({
   children,
@@ -42,7 +45,13 @@ function Button({
         }}
       >
         <Flex justifyContent="space-around">
-          <Spinner />
+          <LoadingIndicator
+            animationTime="0.6s"
+            borderWidth="2px"
+            borderColor="#f7f5f0"
+            borderTopColor="#d1cec7"
+            size="1.3rem"
+          />
         </Flex>
       </StyledButton>
     );

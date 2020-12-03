@@ -5,9 +5,9 @@
   "version": "3.3.1-next.2",
   "author": "Strapi Team <hi@strapi.io>",
   "dependencies": {
-    "@buffetjs/core": "3.3.1-next.1",
-    "@buffetjs/custom": "3.3.1-next.1",
-    "@buffetjs/styles": "3.3.1-next.1",
+    "@buffetjs/core": "3.3.1",
+    "@buffetjs/custom": "3.3.1",
+    "@buffetjs/styles": "3.3.1",
     "babel-plugin-styled-components": "^1.10.0",
     "chalk": "^2.4.2",
     "gatsby": "^2.3.25",
