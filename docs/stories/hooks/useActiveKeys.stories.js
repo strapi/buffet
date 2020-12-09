@@ -8,7 +8,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 const Story = () => {
-  const [enableActiveKeysListener, setEnableActiveKeysListerner] = useState(
+  const [enableActiveKeysListener, setEnableActiveKeysListener] = useState(
     false
   );
   const activeKeys = useActiveKeys(enableActiveKeysListener);
@@ -21,7 +21,7 @@ const Story = () => {
       <div style={{ marginBottom: 23 }}>
         <Button
           type="button"
-          onClick={() => setEnableActiveKeysListerner(prev => !prev)}
+          onClick={() => setEnableActiveKeysListener(prev => !prev)}
         >
           {enableActiveKeysListener ? 'Disable' : 'Enable'} hook
         </Button>
