@@ -7,7 +7,7 @@ import PickerButton from './PickerButton';
 import PickerSection from './PickerSection';
 import PickerWrapper from './PickerWrapper';
 
-const Picker = ({ renderButtonContent, renderSectionContent }) => {
+const Picker = ({ position, renderButtonContent, renderSectionContent }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef();
 
@@ -22,7 +22,7 @@ const Picker = ({ renderButtonContent, renderSectionContent }) => {
       <PickerButton onClick={handleToggle} isActive={isOpen}>
         {renderButtonContent(isOpen)}
       </PickerButton>
-      <PickerSection isOpen={isOpen}>
+      <PickerSection isOpen={isOpen} position={position}>
         {renderSectionContent(handleToggle)}
       </PickerSection>
     </PickerWrapper>
@@ -30,11 +30,13 @@ const Picker = ({ renderButtonContent, renderSectionContent }) => {
 };
 
 Picker.defaultProps = {
+  position: 'left',
   renderButtonContent: () => {},
   renderSectionContent: () => {},
 };
 
 Picker.propTypes = {
+  position: PropTypes.oneOf(['left', 'right']),
   renderButtonContent: PropTypes.func,
   renderSectionContent: PropTypes.func,
 };
