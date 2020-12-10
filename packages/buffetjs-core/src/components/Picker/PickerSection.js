@@ -5,7 +5,8 @@ const PickerSection = styled.div`
   display: none;
   position: absolute;
   top: 38px;
-  left: 0;
+  left: ${({ position }) => (position === 'left' ? '0' : 'auto')};
+  right: ${({ position }) => (position === 'right' ? '0' : 'auto')};
   z-index: 1046;
   background-color: ${({ theme }) => theme.main.colors.white};
   border-radius: ${({ theme }) => theme.main.sizes.borderRadius};
@@ -16,6 +17,7 @@ const PickerSection = styled.div`
 
 PickerSection.defaultProps = {
   isOpen: false,
+  position: 'left',
   // TODO : This is temporary
   theme: {
     main: {
@@ -33,6 +35,7 @@ PickerSection.defaultProps = {
 
 PickerSection.propTypes = {
   isOpen: PropTypes.bool,
+  position: PropTypes.oneOf(['left', 'right']),
 };
 
 export default PickerSection;

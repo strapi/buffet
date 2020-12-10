@@ -3,9 +3,10 @@
  * LoadingIndicator
  *
  */
+/* eslint-disable indent */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const spin = keyframes`
   0% {
@@ -16,34 +17,75 @@ const spin = keyframes`
   }
 `;
 
+const getSize = (size, small) => {
+  if (size) {
+    return size;
+  }
+
+  if (small) {
+    return '11px';
+  }
+
+  return '26px';
+};
+
 const Loader = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
   > div {
-    width: ${({ small }) => (small ? '11px' : '26px')};
-    height: ${({ small }) => (small ? '11px' : '26px')};
-    border: 4px solid #f3f3f3;
+    width: ${({ size, small }) => getSize(size, small)};
+    height: ${({ size, small }) => getSize(size, small)};
     /* stylelint-disable */
-    border-top: 4px solid #555555 !important;
+    border: ${({ borderColor, borderWidth }) =>
+      `${borderWidth} solid ${borderColor}`};
+    border-top: ${({ borderWidth, borderTopColor }) =>
+      `${borderWidth} solid ${borderTopColor} !important;`};
+
     /* stylelint-enable */
     border-radius: 50%;
-    animation: ${spin} 2s linear infinite;
-  }
+    animation: ${({ animationTime }) =>
+      css`
+        ${spin} ${animationTime} linear infinite
+      `};
 `;
 
-const LoadingIndicator = ({ small }) => (
-  <Loader small={small}>
+const LoadingIndicator = ({
+  animationTime,
+  borderColor,
+  borderTopColor,
+  borderWidth,
+  small,
+  size,
+}) => (
+  <Loader
+    animationTime={animationTime}
+    borderColor={borderColor}
+    borderTopColor={borderTopColor}
+    borderWidth={borderWidth}
+    small={small}
+    size={size}
+  >
     <div />
   </Loader>
 );
 
-LoadingIndicator.propTypes = {
-  small: PropTypes.bool,
+LoadingIndicator.defaultProps = {
+  animationTime: '2s',
+  borderColor: '#f3f3f3',
+  borderTopColor: '#555555',
+  borderWidth: '4px',
+  size: null,
+  small: false,
 };
 
-LoadingIndicator.defaultProps = {
-  small: false,
+LoadingIndicator.propTypes = {
+  animationTime: PropTypes.string,
+  borderColor: PropTypes.string,
+  borderTopColor: PropTypes.string,
+  borderWidth: PropTypes.string,
+  size: PropTypes.string,
+  small: PropTypes.bool,
 };
 
 export default LoadingIndicator;
