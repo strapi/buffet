@@ -98,7 +98,7 @@ const form = {
       max: 99,
     },
   },
-  text: {
+  textarea: {
     styleName: 'col-6',
     description: 'You should enter how many children you have',
     label: 'Children',
