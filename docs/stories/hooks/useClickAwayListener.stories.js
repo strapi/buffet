@@ -44,7 +44,7 @@ const Story = () => {
       </div>
       <Pre>
         {`
-import React, { useState } from 'react';
+import React from 'react';
 import { useClickAwayListener } from '@buffetjs/hooks';
 
 const ClickAwayListenerExample = () => {
