@@ -7,9 +7,10 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function SelectStory() {
-  const [val, setValue] = useState('First option');
+  const [val, setValue] = useState();
 
   const defaultProps = {
+    placeholder: 'Select an option',
     name: 'select',
     options: ['First option', 'Second option'],
   };

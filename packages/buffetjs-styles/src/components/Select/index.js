@@ -17,9 +17,11 @@ const Select = styled.select`
   font-size: ${sizes.input.fontSize};
   cursor: pointer;
   outline: 0;
-  border: 1px solid ${colors.lightGrey};
+  border: 1px solid
+    ${({ displayError }) => (displayError ? colors.orange : colors.lightGrey)};
   border-radius: ${sizes.borderRadius};
-  color: ${colors.blueTxt};
+  color: ${({ placeholder, value }) =>
+    placeholder && !value ? colors.greyPlaceholder : colors.blueTxt};
   background-color: ${colors.white};
   padding-right: 30px;
   appearance: none;

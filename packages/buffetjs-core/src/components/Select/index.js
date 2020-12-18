@@ -17,6 +17,7 @@ function Select({
   options,
   tabIndex,
   value,
+  placeholder,
   ...rest
 }) {
   const lengthOfReactElementsInOptions = options.filter(option =>
@@ -62,8 +63,14 @@ function Select({
       onChange={onChange}
       tabIndex={tabIndex}
       value={value}
+      placeholder={placeholder}
       {...rest}
     >
+      {placeholder && (
+        <option disabled selected hidden>
+          {placeholder}
+        </option>
+      )}
       {renderOptions()}
     </StyledSelect>
   );
@@ -72,6 +79,7 @@ function Select({
 Select.defaultProps = {
   autoComplete: 'off',
   autoFocus: false,
+  displayError: false,
   id: null,
   options: [],
   placeholder: null,
@@ -81,6 +89,7 @@ Select.defaultProps = {
 Select.propTypes = {
   autoComplete: PropTypes.string,
   autoFocus: PropTypes.bool,
+  displayError: PropTypes.bool,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
