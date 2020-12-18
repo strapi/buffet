@@ -47,7 +47,7 @@ function DateTime({
   ...rest
 }) {
   const [timestamp, setTimestamp] = useState(null);
-  const [isInit, setIsInit] = useState(false);
+
   const setData = time => {
     const [hour, minute, second] = time.split(':');
     const timeObj = {
@@ -84,20 +84,12 @@ function DateTime({
   };
 
   useEffect(() => {
-    if (!isInit) {
-      if (!!value && moment(value).isValid()) {
-        const newDate = value._isAMomentObject === true ? value : moment(value);
+    if (!!value && moment(value).isValid()) {
+      const newDate = value._isAMomentObject === true ? value : moment(value);
 
-        setTimestamp(newDate);
-      }
-
-      setIsInit(true);
+      setTimestamp(newDate);
     }
-  }, [isInit, value]);
-
-  if (!isInit) {
-    return null;
-  }
+  }, [value]);
 
   return (
     <Wrapper>
