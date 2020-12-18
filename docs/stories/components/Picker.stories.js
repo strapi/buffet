@@ -45,19 +45,36 @@ import { Picker, Padded, Text } from '@buffetjs/core';
 function Example() {
   return (
     <Picker
-        renderButtonContent={(isOpen) => <Text>Picker button {isOpen ? 'open' : 'close'}</Text>}
-        renderSectionContent={(onToggle) => (
-            <>
-                <Padded top left right bottom>
-                    <Text>Picker content</Text>
-                </Padded>
-                <Padded top left right bottom>
-                    <Button onClick={onToggle}>
-                        <Text color='white' fontSize='md'>Close</Text>
-                    </Button>
-                </Padded>
-            </>
-        )}
+      position="left"
+      renderButtonContent={(isOpen) => <Text>Picker button {isOpen ? 'open' : 'close'}</Text>}
+      renderSectionContent={(onToggle) => (
+          <>
+              <Padded top left right bottom>
+                  <Text>Picker content</Text>
+              </Padded>
+              <Padded top left right bottom>
+                  <Button onClick={onToggle}>
+                      <Text color='white' fontSize='md'>Close</Text>
+                  </Button>
+              </Padded>
+          </>
+      )}
+    />
+    <Picker
+      position="right"
+      renderButtonContent={(isOpen) => <Text>Picker button {isOpen ? 'open' : 'close'}</Text>}
+      renderSectionContent={(onToggle) => (
+          <>
+              <Padded top left right bottom>
+                  <Text>Picker content</Text>
+              </Padded>
+              <Padded top left right bottom>
+                  <Button onClick={onToggle}>
+                      <Text color='white' fontSize='md'>Close</Text>
+                  </Button>
+              </Padded>
+          </>
+      )}
     />
   );
 }

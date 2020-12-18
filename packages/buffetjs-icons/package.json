@@ -18,7 +18,6 @@
     "build:watch:esm": "cross-env BABEL_ENV=esm babel ./src --out-dir ./build/esm --ignore \"**/*.test.js\" --ignore \"**/test.js\" --watch",
     "create:index": "node ./createBuildIndex.js",
     "test": "yarn run test:lint && yarn run test:style",
-    "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "test:style": "stylelint src/components/**/*.js",

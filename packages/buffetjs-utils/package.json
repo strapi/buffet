@@ -23,7 +23,6 @@
     "test:lint": "eslint .",
     "test:lint:quiet": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
-    "test:jest:update": "jest --runInBand --no-cache --config=jest.config.js -u",
     "prepublishOnly": "npm run build"
   },
   "author": "Strapi team",

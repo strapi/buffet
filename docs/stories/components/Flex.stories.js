@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { Flex, Text, Padded } from '@buffetjs/core';
-import { boolean, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';

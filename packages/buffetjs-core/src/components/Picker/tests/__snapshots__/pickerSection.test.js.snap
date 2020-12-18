@@ -6,6 +6,7 @@ exports[`<PickerSection /> should match snapshot 1`] = `
   position: absolute;
   top: 38px;
   left: 0;
+  right: auto;
   z-index: 1046;
   background-color: #ffffff;
   border-radius: 2px;
