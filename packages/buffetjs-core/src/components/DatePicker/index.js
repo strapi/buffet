@@ -58,8 +58,7 @@ function Datepicker({
       type: 'SET_DISPLAYED_DATE',
       displayedDate,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [value, withDefaultValue]);
 
   let timer = null;
   const { date, displayedDate, isFocused, isVisible } = state;
