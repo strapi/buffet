@@ -22,6 +22,7 @@ export { default as Padded } from './components/Padded';
 export { default as Picker } from './components/Picker';
 export { default as PrefixIcon } from './components/PrefixIcon';
 export { default as Select } from './components/Select';
+export { default as Separator } from './components/Separator';
 export { default as Table } from './components/Table';
 export { default as TableHeader } from './components/TableHeader';
 export { default as TableRow } from './components/TableRow';
