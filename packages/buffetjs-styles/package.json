@@ -42,7 +42,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "prop-types": "^15.7.2",
-    "react-dates": "^21.1.0"
+    "react-dates": "^21.1.0",
+    "react-tooltip": "^4.2.11"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
