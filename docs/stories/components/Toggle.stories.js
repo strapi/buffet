@@ -9,7 +9,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function ToggleCombo(props) {
-  const [val, setValue] = useState(props.value);
+  const [val, setValue] = useState(props.initValue);
   const initValue = useRef(props.initValue);
   if (props.initValue !== initValue.current) {
     setValue(props.initValue);
