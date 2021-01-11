@@ -11,17 +11,29 @@ import { Toggle as StyledToggle, ToggleWrapper } from '@buffetjs/styles';
 import Label from '../Label';
 
 function Toggle({ disabled, id, className, name, onChange, value }) {
+  const handleRef = element => {
+    if (element) {
+      element.indeterminate = value === null; // eslint-disable-line no-param-reassign
+    }
+  };
+
   return (
     <ToggleWrapper className={className}>
       <Label htmlFor={id || name}>
         <StyledToggle
           disabled={disabled}
-          checked={value}
+          checked={value || false}
           id={id || name}
           name={id || name}
           onChange={e => {
-            onChange({ target: { name, value: e.target.checked } });
+            let targetValue = e.target.checked;
+            if (value === null) {
+              // indeterminate
+              targetValue = e.nativeEvent.offsetX >= e.target.offsetWidth / 2;
+            }
+            onChange({ target: { name, value: targetValue } });
           }}
+          ref={handleRef}
         />
         <span>OFF</span>
         <span>ON</span>

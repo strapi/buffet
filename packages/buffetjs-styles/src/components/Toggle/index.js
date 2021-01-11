@@ -22,31 +22,31 @@ const Toggle = styled.input`
   & + span {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    background-color: ${colors.darkOrange};
-    color: ${colors.white};
+    color: ${colors.greyToggle};
+    background: white;
     font-weight: ${sizes.fontWeight.bold};
     & + span {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
       color: ${colors.greyToggle};
       background: white;
       font-weight: ${sizes.fontWeight.bold};
     }
   }
-  &:not(:checked) + span {
+  &:not(:checked):not(:indeterminate) + span {
+    background-color: ${colors.darkOrange};
+    color: ${colors.white};
     font-weight: ${sizes.fontWeight.black};
   }
   &:checked + span {
-    color: ${colors.greyToggle};
-    background: white;
     & + span {
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
       background-color: ${colors.blue};
       color: ${colors.white};
       font-weight: ${sizes.fontWeight.black};
     }
   }
   &:disabled {
-    &:not(:checked) + span {
+    &:not(:checked):not(:indeterminate) + span {
       background-color: ${colors.greyIconBkgd};
       color: ${colors.brightGrey};
       box-shadow: inset -1px 1px 3px rgba(0, 0, 0, 0.1);

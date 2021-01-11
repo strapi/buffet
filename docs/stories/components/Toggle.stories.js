@@ -7,7 +7,7 @@ import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 
 function ToggleStory() {
-  const [val, setValue] = useState(false);
+  const [val, setValue] = useState(null);
 
   const defaultProps = {
     name: 'toggle',
@@ -16,7 +16,7 @@ function ToggleStory() {
   return (
     <Presentation
       title="Toggle"
-      description="Similar to the Checkbox it returns only true or false."
+      description="Similar to the Checkbox it returns only true or false. Can be initialize as null."
     >
       <div style={{ marginBottom: 23 }}>
         <Toggle
@@ -31,7 +31,7 @@ import React, { useState } from 'react';
 import { Toggle } from '@buffet/core';
 
 function Example() {
-  const [val, setValue] = useState(false);
+  const [val, setValue] = useState(null);
 
   return (
     <Toggle
