@@ -17,6 +17,16 @@ function Toggle({ disabled, id, className, name, onChange, value }) {
     }
   };
 
+  const handleChange = e => {
+    let targetValue = e.target.checked;
+    // Handle click when the state is inteterminate
+    if (value === null) {
+      // Select the right value depending on the mouse position
+      targetValue = e.nativeEvent.offsetX >= e.target.offsetWidth / 2;
+    }
+    onChange({ target: { name, value: targetValue } });
+  };
+
   return (
     <ToggleWrapper className={className}>
       <Label htmlFor={id || name}>
@@ -25,14 +35,7 @@ function Toggle({ disabled, id, className, name, onChange, value }) {
           checked={value || false}
           id={id || name}
           name={id || name}
-          onChange={e => {
-            let targetValue = e.target.checked;
-            if (value === null) {
-              // indeterminate
-              targetValue = e.nativeEvent.offsetX >= e.target.offsetWidth / 2;
-            }
-            onChange({ target: { name, value: targetValue } });
-          }}
+          onChange={handleChange}
           ref={handleRef}
         />
         <span>OFF</span>
