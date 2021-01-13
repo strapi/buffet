@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
@@ -10,11 +10,11 @@ import Pre from '../ui/Pre';
 
 function ToggleCombo(props) {
   const [val, setValue] = useState(props.initValue);
-  const initValue = useRef(props.initValue);
-  if (props.initValue !== initValue.current) {
+
+  useEffect(() => {
     setValue(props.initValue);
-    initValue.current = props.initValue;
-  }
+  }, [props.initValue]);
+
   return (
     <Toggle
       {...props}
