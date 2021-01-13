@@ -40,7 +40,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "invariant": "^2.2.4",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "rc-input-number": "^4.5.0",
@@ -101,7 +101,7 @@
     "webpack-cli": "^3.3.12"
   },
   "peerDependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "styled-components": "^5.0.0"

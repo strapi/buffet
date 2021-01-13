@@ -34,7 +34,7 @@
     "@buffetjs/core": "3.3.3",
     "@buffetjs/styles": "3.3.3",
     "@buffetjs/utils": "3.3.3",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "moment": "^2.24.0",
     "prop-types": "^15.5.10",
     "react-moment-proptypes": "^1.7.0"
@@ -89,7 +89,7 @@
     "webpack-cli": "~3.3.12"
   },
   "peerDependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "react": "^16.8.6",
     "styled-components": "^5.0.0"
   },
