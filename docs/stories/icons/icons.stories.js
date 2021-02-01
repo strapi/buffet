@@ -8,6 +8,7 @@ import {
   Calendar,
   Component,
   ContentType,
+  Dots,
   Duplicate,
   DynamicZone,
   Email,
@@ -77,6 +78,13 @@ const IconsStory = () => {
     {
       name: 'content-type',
       Compo: ContentType,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'dots',
+      Compo: Dots,
       props: {
         fill: '#b3b5b9',
       },
@@ -287,6 +295,7 @@ import {
   Calendar,
   Component,
   ContentType,
+  Dots,
   Duplicate,
   DynamicZone,
   Email,
@@ -353,6 +362,13 @@ const icons = [
   {
     name: 'content-type',
     Compo: ContentType,
+    props: {
+      fill: '#b3b5b9',
+    },
+  },
+  {
+    name: 'dots',
+    Compo: Dots,
     props: {
       fill: '#b3b5b9',
     },

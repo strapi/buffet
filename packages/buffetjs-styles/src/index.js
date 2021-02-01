@@ -40,6 +40,7 @@ export { default as TimePicker } from './components/TimePicker';
 export { default as TimePickerWrapper } from './components/TimePickerWrapper';
 export { default as Toggle } from './components/Toggle';
 export { default as ToggleWrapper } from './components/ToggleWrapper';
+export { default as Tooltip } from './components/Tooltip';
 
 export { default as colors } from './assets/styles/colors';
 export { default as mixins } from './assets/styles/mixins';
