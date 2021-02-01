@@ -63,8 +63,10 @@ function Inputs({
 
     switch (type) {
       case 'checkbox':
-      case 'bool':
         ret = value || false;
+        break;
+      case 'bool':
+        ret = value;
         break;
       case 'number':
         ret = isUndefined(value) ? '' : value;
@@ -142,7 +144,9 @@ function Inputs({
             value={inputValue}
           />
           {!error && description && (
-            <Description id={descriptionId} title={description}>{description}</Description>
+            <Description id={descriptionId} title={description}>
+              {description}
+            </Description>
           )}
           {error && <ErrorMessage id={errorId}>{error}</ErrorMessage>}
         </Wrapper>
