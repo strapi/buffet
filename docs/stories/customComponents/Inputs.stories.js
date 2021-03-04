@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Inputs } from '@buffetjs/custom';
 import { isUndefined } from 'lodash';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 import Subtitle from '../ui/Subtitle';
@@ -23,6 +24,9 @@ const form = {
     styleName: 'col-6',
     description: 'You should enter your name',
     label: 'Name',
+    labelIcon: (
+      <FontAwesomeIcon icon={faGlobeAmericas} style={{ fontSize: 11 }} />
+    ),
     placeholder: 'Paul Bocuse',
     type: 'text',
     validations: {

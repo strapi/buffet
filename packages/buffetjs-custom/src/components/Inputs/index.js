@@ -24,7 +24,7 @@ import {
 import { Description, ErrorMessage } from '@buffetjs/styles';
 
 import DateTime from '../DateTime';
-import Wrapper from './Wrapper';
+import Wrapper, { IconWrapper } from './Wrapper';
 /* eslint-disable react/forbid-prop-types */
 
 const inputs = {
@@ -113,8 +113,11 @@ function Inputs({
         <Wrapper error={error}>
           {type !== 'checkbox' && (
             <Label htmlFor={inputId}>
-              {label}
-              {isEmpty(label) && <>&nbsp;</>}
+              <span>
+                {label}
+                {isEmpty(label) && <>&nbsp;</>}
+              </span>
+              {rest.labelIcon && <IconWrapper>{rest.labelIcon}</IconWrapper>}
             </Label>
           )}
           <InputComponent
@@ -161,6 +164,7 @@ Inputs.defaultProps = {
   id: null,
   error: null,
   label: null,
+  labelIcon: null,
   onBlur: null,
   onChange: () => {},
   translatedErrors: {
@@ -187,6 +191,7 @@ Inputs.propTypes = {
   error: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
+  labelIcon: PropTypes.any,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: () => {},

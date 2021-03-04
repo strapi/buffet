@@ -38,4 +38,9 @@ const Wrapper = styled.div`
     `}
 `;
 
+const IconWrapper = styled.span`
+  margin-left: 5px;
+`;
+
 export default Wrapper;
+export { IconWrapper };
