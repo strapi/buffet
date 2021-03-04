@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { Inputs } from '@buffetjs/custom';
+import { Globe, GlobeCrossed } from '@buffetjs/icons';
 import { isUndefined } from 'lodash';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import Presentation from '../ui/Presentation';
 import Pre from '../ui/Pre';
 import Subtitle from '../ui/Subtitle';
@@ -24,9 +23,7 @@ const form = {
     styleName: 'col-6',
     description: 'You should enter your name',
     label: 'Name',
-    labelIcon: (
-      <FontAwesomeIcon icon={faGlobeAmericas} style={{ fontSize: 11 }} />
-    ),
+    labelIcon: <GlobeCrossed />,
     placeholder: 'Paul Bocuse',
     type: 'text',
     validations: {
@@ -38,6 +35,7 @@ const form = {
     styleName: 'col-6',
     label: 'Time',
     description: 'Select a slot',
+    labelIcon: <Globe />,
     type: 'time',
     validations: {
       required: true,
@@ -196,6 +194,7 @@ function InputStory() {
             {`
 import React, { useState } from 'react';
 import { Inputs } from '@buffetjs/custom';
+import { Globe } from '@buffetjs/icons';
 
 const Foo = () => (
   <div>This is a custom component that can be passed to the component</div>
@@ -214,6 +213,9 @@ const form = {
     label: 'First Name',
     placeholder: 'Viky',
     type: 'text',
+    labelIcon: (
+      <Globe />
+    ),
     validations: {
       required: true,
       uppercase: true,

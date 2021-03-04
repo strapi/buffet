@@ -11,6 +11,8 @@ export { default as Email } from './components/Email';
 export { default as Enumeration } from './components/Enumeration';
 export { default as Envelope } from './components/Envelope';
 export { default as Fail } from './components/Fail';
+export { default as Globe } from './components/Globe';
+export { default as GlobeCrossed } from './components/GlobeCrossed';
 export { default as Grab } from './components/Grab';
 export { default as GrabLarge } from './components/GrabLarge';
 export { default as Json } from './components/Json';
