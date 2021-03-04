@@ -40,6 +40,7 @@ const Wrapper = styled.div`
 
 const IconWrapper = styled.span`
   margin-left: 5px;
+  cursor: pointer;
 `;
 
 export default Wrapper;
