@@ -117,7 +117,11 @@ function Inputs({
                 {label}
                 {isEmpty(label) && <>&nbsp;</>}
               </span>
-              {rest.labelIcon && <IconWrapper>{rest.labelIcon}</IconWrapper>}
+              {rest.labelIcon && (
+                <IconWrapper title={rest.labelIcon.title}>
+                  {rest.labelIcon.icon}
+                </IconWrapper>
+              )}
             </Label>
           )}
           <InputComponent
@@ -191,7 +195,7 @@ Inputs.propTypes = {
   error: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
-  labelIcon: PropTypes.any,
+  labelIcon: PropTypes.shape({ icon: PropTypes.any, title: PropTypes.string }),
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: () => {},

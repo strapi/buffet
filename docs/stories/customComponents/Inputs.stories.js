@@ -23,7 +23,10 @@ const form = {
     styleName: 'col-6',
     description: 'You should enter your name',
     label: 'Name',
-    labelIcon: <GlobeCrossed />,
+    labelIcon: {
+      title: 'Not localized',
+      icon: <GlobeCrossed />,
+    },
     placeholder: 'Paul Bocuse',
     type: 'text',
     validations: {
@@ -35,7 +38,10 @@ const form = {
     styleName: 'col-6',
     label: 'Time',
     description: 'Select a slot',
-    labelIcon: <Globe />,
+    labelIcon: {
+      title: 'Localized',
+      icon: <Globe />,
+    },
     type: 'time',
     validations: {
       required: true,
@@ -213,9 +219,10 @@ const form = {
     label: 'First Name',
     placeholder: 'Viky',
     type: 'text',
-    labelIcon: (
-      <Globe />
-    ),
+    labelIcon: {
+      icon: <Globe />,
+      title: 'Localized',
+    },
     validations: {
       required: true,
       uppercase: true,
