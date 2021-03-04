@@ -15,6 +15,8 @@ import {
   Enumeration,
   Envelope,
   Fail,
+  Globe,
+  GlobeCrossed,
   Grab,
   GrabLarge,
   Json,
@@ -132,6 +134,20 @@ const IconsStory = () => {
       },
       width: '55px',
       height: '55px',
+    },
+    {
+      name: 'globe',
+      Compo: Globe,
+      props: {
+        fill: '#b3b5b9',
+      },
+    },
+    {
+      name: 'globeCrossed',
+      Compo: GlobeCrossed,
+      props: {
+        fill: '#b3b5b9',
+      },
     },
     {
       name: 'grab',
