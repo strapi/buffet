@@ -37,7 +37,7 @@ const FlexStory = () => (
             'flex-start'
           )}
           justifyContent={select(
-            'jusify-content',
+            'justify-content',
             [
               'flex-start',
               'center',
