@@ -17,9 +17,10 @@ function List({
   isLoading,
   items,
   customRowComponent,
+  ...props
 }) {
   return (
-    <Card>
+    <Card {...props}>
       <Padded right left size="md">
         <ListHeader title={title} subtitle={subtitle} button={button} />
       </Padded>

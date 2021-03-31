@@ -24,6 +24,7 @@ const Card = styled.div`
       overflow-x: inherit;
     }
   }
+  border-radius: ${p => p.radius};
 `;
 
 export default Card;
