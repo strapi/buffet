@@ -114,6 +114,7 @@ function TableStory() {
 const source = `
 import React from 'react';
 import { Table } from '@buffetjs/core';
+import { CustomRow as Row } from '@buffetjs/styles';
 
 const CustomRow = ({ row }) => {
   const { firstname, id, lastname, recipe, restaurant } = row;
