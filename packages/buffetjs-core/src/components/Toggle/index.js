@@ -43,8 +43,8 @@ function Toggle({ disabled, id, className, name, onChange, value, labelLeft, lab
           onChange={handleChange}
           ref={handleRef}
         />
-        <span>{{labelLeft || OFF}}</span>
-        <span>{{labelRight || ON}}</span>
+        <span>{labelLeft}</span>
+        <span>{labelRight}</span>
       </Label>
     </ToggleWrapper>
   );
@@ -56,6 +56,8 @@ Toggle.defaultProps = {
   id: null,
   onChange: () => {},
   value: false,
+  labelLeft: "OFF",
+  labelRight: "ON"
 };
 
 Toggle.propTypes = {
