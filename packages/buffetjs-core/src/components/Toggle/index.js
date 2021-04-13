@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Toggle as StyledToggle, ToggleWrapper } from '@buffetjs/styles';
 import Label from '../Label';
 
-function Toggle({ disabled, id, className, name, onChange, value }) {
+function Toggle({ disabled, id, className, name, onChange, value, labelLeft, labelRight }) {
   const isIndeterminate = value === null;
 
   const handleRef = useCallback(
@@ -43,8 +43,8 @@ function Toggle({ disabled, id, className, name, onChange, value }) {
           onChange={handleChange}
           ref={handleRef}
         />
-        <span>OFF</span>
-        <span>ON</span>
+        <span>{{labelLeft || OFF}}</span>
+        <span>{{labelRight || ON}}</span>
       </Label>
     </ToggleWrapper>
   );
@@ -65,6 +65,8 @@ Toggle.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   value: PropTypes.bool,
+  labelLeft: PropTypes.string,
+  labelRight: PropTypes.string,
 };
 
 export default Toggle;
