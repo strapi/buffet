@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { get, isEmpty, isFunction, isUndefined } from 'lodash';
 import {
@@ -21,10 +21,10 @@ import {
   Toggle,
   UnknownInput,
 } from '@buffetjs/core';
-import { Description, ErrorMessage } from '@buffetjs/styles';
+import { Description, ErrorMessage, Tooltip } from '@buffetjs/styles';
 
 import DateTime from '../DateTime';
-import Wrapper from './Wrapper';
+import Wrapper, { IconWrapper } from './Wrapper';
 /* eslint-disable react/forbid-prop-types */
 
 const inputs = {
@@ -58,6 +58,8 @@ function Inputs({
   value,
   ...rest
 }) {
+  const [isOver, setIsOver] = useState(false);
+
   const inputValue = useMemo(() => {
     let ret;
 
@@ -83,6 +85,9 @@ function Inputs({
   const inputId = useMemo(() => id || name, [id, name]);
   const descriptionId = `description-${inputId}`;
   const errorId = `error-${inputId}`;
+  const handleMouseEvent = () => {
+    setIsOver(prev => !prev);
+  };
 
   if (get(customInputs, type, null) !== null) {
     return (
@@ -113,8 +118,23 @@ function Inputs({
         <Wrapper error={error}>
           {type !== 'checkbox' && (
             <Label htmlFor={inputId}>
-              {label}
-              {isEmpty(label) && <>&nbsp;</>}
+              <span>
+                {label}
+                {isEmpty(label) && <>&nbsp;</>}
+              </span>
+              {rest.labelIcon && (
+                <>
+                  <IconWrapper
+                    data-tip={rest.labelIcon.title}
+                    data-for="icon-title"
+                    onMouseEnter={handleMouseEvent}
+                    onMouseLeave={handleMouseEvent}
+                  >
+                    {rest.labelIcon.icon}
+                  </IconWrapper>
+                  {isOver && <Tooltip id="icon-title" />}
+                </>
+              )}
             </Label>
           )}
           <InputComponent
@@ -161,6 +181,7 @@ Inputs.defaultProps = {
   id: null,
   error: null,
   label: null,
+  labelIcon: null,
   onBlur: null,
   onChange: () => {},
   translatedErrors: {
@@ -187,6 +208,7 @@ Inputs.propTypes = {
   error: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
+  labelIcon: PropTypes.shape({ icon: PropTypes.any, title: PropTypes.string }),
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
   onChange: () => {},
