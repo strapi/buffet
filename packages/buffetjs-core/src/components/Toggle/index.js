@@ -10,19 +10,28 @@ import PropTypes from 'prop-types';
 import { Toggle as StyledToggle, ToggleWrapper } from '@buffetjs/styles';
 import Label from '../Label';
 
-function Toggle({ disabled, id, className, name, onChange, value, leftLabel, rightLabel }) {
+function Toggle({
+  disabled,
+  id,
+  className,
+  name,
+  onChange,
+  value,
+  leftLabel,
+  rightLabel,
+}) {
   const isIndeterminate = value === null;
 
   const handleRef = useCallback(
-    element => {
+    (element) => {
       if (element) {
         element.indeterminate = isIndeterminate; // eslint-disable-line no-param-reassign
       }
     },
-    [isIndeterminate]
+    [isIndeterminate],
   );
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     let targetValue = e.target.checked;
     // Handle click when the state is inteterminate
     if (isIndeterminate) {
@@ -54,21 +63,21 @@ Toggle.defaultProps = {
   className: null,
   disabled: false,
   id: null,
+  leftLabel: 'OFF',
   onChange: () => {},
+  rightLabel: 'ON',
   value: false,
-  leftLabel: "OFF",
-  rightLabel: "ON"
 };
 
 Toggle.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   id: PropTypes.string,
+  leftLabel: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  value: PropTypes.bool,
-  leftLabel: PropTypes.string,
   rightLabel: PropTypes.string,
+  value: PropTypes.bool,
 };
 
 export default Toggle;
