@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/icons",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "description": "Icons kit",
   "main": "build",
   "module": "build/esm/index.js",

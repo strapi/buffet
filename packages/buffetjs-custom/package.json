@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/custom",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "description": "Buffetjs Custom Components",
   "main": "build",
   "module": "build/esm/index.js",
@@ -31,9 +31,9 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@buffetjs/core": "3.3.5",
-    "@buffetjs/styles": "3.3.5",
-    "@buffetjs/utils": "3.3.5",
+    "@buffetjs/core": "3.3.6",
+    "@buffetjs/styles": "3.3.6",
+    "@buffetjs/utils": "3.3.6",
     "lodash": "4.17.21",
     "moment": "^2.24.0",
     "prop-types": "^15.5.10",
