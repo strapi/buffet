@@ -12,11 +12,13 @@ import mixins from '../../assets/styles/mixins';
 
 const Button = styled.button`
   /* General style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: ${sizes.button.height.large};
-  padding: 0 ${sizes.button.padding.leftRight} ${sizes.button.padding.bottom};
+  padding: 0 ${sizes.button.padding.leftRight};
   font-weight: ${sizes.fontWeight.bold};
   font-size: 1.3rem;
-  line-height: normal;
   border-radius: ${sizes.borderRadius};
   cursor: pointer;
   outline: 0;
@@ -69,7 +71,6 @@ const Button = styled.button`
 
     > span svg {
       font-size: 10px;
-      vertical-align: initial;
     }
 
     /* Custom icons */
@@ -78,7 +79,6 @@ const Button = styled.button`
       height: 10px;
       width: auto;
       margin-right: 10px;
-      vertical-align: baseline;
     }
 
 
