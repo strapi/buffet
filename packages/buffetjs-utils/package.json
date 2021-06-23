@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "4.17.21",
-    "yup": "^0.27.0"
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -65,7 +65,7 @@
   },
   "peerDependencies": {
     "lodash": "4.17.21",
-    "yup": "^0.27.0"
+    "yup": "^0.32.9"
   },
   "repository": {
     "type": "git",
