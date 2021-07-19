@@ -12,7 +12,7 @@ import mixins from '../../assets/styles/mixins';
 
 const Button = styled.button`
   /* General style */
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   height: ${sizes.button.height.large};
