@@ -1,6 +1,6 @@
 {
   "name": "@buffetjs/core",
-  "version": "3.3.7",
+  "version": "3.3.8",
   "description": "Buffetjs Core Components",
   "main": "build",
   "module": "build/esm/index.js",
@@ -31,10 +31,10 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@buffetjs/hooks": "3.3.7",
-    "@buffetjs/icons": "3.3.7",
-    "@buffetjs/styles": "3.3.7",
-    "@buffetjs/utils": "3.3.7",
+    "@buffetjs/hooks": "3.3.8",
+    "@buffetjs/icons": "3.3.8",
+    "@buffetjs/styles": "3.3.8",
+    "@buffetjs/utils": "3.3.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
