@@ -13,4 +13,5 @@ module.exports = {
   },
   setupFiles: ['jest-canvas-mock'],
   setupFilesAfterEnv: ['<rootDir>../../tools-configuration/test-bundler.js'],
+  testEnvironment: 'jest-environment-jsdom-sixteen',
 };
